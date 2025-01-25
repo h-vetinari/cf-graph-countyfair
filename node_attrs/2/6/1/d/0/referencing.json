@@ -8,6 +8,7 @@
   "conda_build": {
    "error_overlinking": true
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -18,35 +19,83 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "doc_url": "https://referencing.readthedocs.io",
+   "doc_url": "https://referencing.readthedocs.io/",
    "home": "https://github.com/python-jsonschema/referencing",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "COPYING",
    "summary": "JSON Referencing + Python"
   },
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-   "script_env": [
-    "REFERENCING_SUITE=./suite"
-   ]
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "referencing",
+    "requirements": {
+     "build": [],
+     "host": [
+      "hatch-vcs",
+      "hatchling",
+      "pip",
+      "python 3.9.*"
+     ],
+     "run": [
+      "attrs >=22.2.0",
+      "python >=3.9",
+      "rpds-py >=0.7.0",
+      "typing_extensions >=4.4.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "referencing"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "suite/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "jsonschema",
+        "pytest-cov",
+        "pytest-subtests",
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "export REFERENCING_SUITE=./suite || set REFERENCING_SUITE=./suite",
+       "pytest -vv --tb=long --color=yes --pyargs referencing --cov=referencing --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "referencing",
-   "version": "0.36.1"
+   "version": "0.36.2"
   },
   "requirements": {
    "host": [
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ],
    "run": [
     "attrs >=22.2.0",
@@ -55,28 +104,10 @@
     "typing_extensions >=4.4.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade",
-   "url": "https://pypi.org/packages/source/r/referencing/referencing-0.36.1.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pytest -vv --pyargs referencing --cov=referencing --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99"
-   ],
-   "imports": [
-    "referencing"
-   ],
-   "requires": [
-    "pip",
-    "pytest-cov",
-    "pytest-subtests",
-    "python 3.9"
-   ],
-   "source_files": [
-    "suite"
-   ]
+   "sha256": "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa",
+   "url": "https://pypi.org/packages/source/r/referencing/referencing-0.36.2.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -105,6 +136,7 @@
   "test": {
    "__set__": true,
    "elements": [
+    "jsonschema",
     "pip",
     "pytest-cov",
     "pytest-subtests",
@@ -114,35 +146,83 @@
  },
  "meta_yaml": {
   "about": {
-   "doc_url": "https://referencing.readthedocs.io",
+   "doc_url": "https://referencing.readthedocs.io/",
    "home": "https://github.com/python-jsonschema/referencing",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "COPYING",
    "summary": "JSON Referencing + Python"
   },
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-   "script_env": [
-    "REFERENCING_SUITE=./suite"
-   ]
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "referencing",
+    "requirements": {
+     "build": [],
+     "host": [
+      "hatch-vcs",
+      "hatchling",
+      "pip",
+      "python 3.9.*"
+     ],
+     "run": [
+      "attrs >=22.2.0",
+      "python >=3.9",
+      "rpds-py >=0.7.0",
+      "typing_extensions >=4.4.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "referencing"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "suite/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "jsonschema",
+        "pytest-cov",
+        "pytest-subtests",
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "export REFERENCING_SUITE=./suite || set REFERENCING_SUITE=./suite",
+       "pytest -vv --tb=long --color=yes --pyargs referencing --cov=referencing --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "referencing",
-   "version": "0.36.1"
+   "version": "0.36.2"
   },
   "requirements": {
    "host": [
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ],
    "run": [
     "attrs >=22.2.0",
@@ -151,28 +231,10 @@
     "typing_extensions >=4.4.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade",
-   "url": "https://pypi.org/packages/source/r/referencing/referencing-0.36.1.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pytest -vv --pyargs referencing --cov=referencing --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99"
-   ],
-   "imports": [
-    "referencing"
-   ],
-   "requires": [
-    "pip",
-    "pytest-cov",
-    "pytest-subtests",
-    "python 3.9"
-   ],
-   "source_files": [
-    "suite"
-   ]
+   "sha256": "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa",
+   "url": "https://pypi.org/packages/source/r/referencing/referencing-0.36.2.tar.gz"
   }
  },
  "name": "referencing",
@@ -189,7 +251,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/referencing.json"
  },
- "raw_meta_yaml": "{% set version = \"0.36.1\" %}\n\npackage:\n  name: referencing\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/r/referencing/referencing-{{ version }}.tar.gz\n  sha256: ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade\n\nbuild:\n  noarch: python\n  number: 0\n  script_env:\n    - REFERENCING_SUITE=./suite\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - hatch-vcs\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - attrs >=22.2.0\n    - python >={{ python_min }}\n    - rpds-py >=0.7.0\n    - typing_extensions >=4.4.0\n\ntest:\n  source_files:\n    - suite\n  imports:\n    - referencing\n  commands:\n    - pip check\n    - pytest -vv --pyargs referencing --cov=referencing --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99\n  requires:\n    - pip\n    - pytest-cov\n    - pytest-subtests\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/python-jsonschema/referencing\n  summary: JSON Referencing + Python\n  license: MIT\n  license_file: COPYING\n  doc_url: https://referencing.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 0.36.2\n\npackage:\n  name: referencing\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/r/referencing/referencing-${{ version }}.tar.gz\n  sha256: df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n\nrequirements:\n  host:\n    - hatch-vcs\n    - hatchling\n    - pip\n    - python ${{ python_min }}.*\n  run:\n    - attrs >=22.2.0\n    - python >=${{ python_min }}\n    - rpds-py >=0.7.0\n    - typing_extensions >=4.4.0\n\ntests:\n  - python:\n      python_version: ${{ python_min }}.*\n      pip_check: true\n      imports:\n        - referencing\n  - files:\n      source:\n        - suite/\n    requirements:\n      run:\n        - jsonschema\n        - pytest-cov\n        - pytest-subtests\n        - python ${{ python_min }}.*\n    script:\n      - export REFERENCING_SUITE=./suite || set REFERENCING_SUITE=./suite\n      - pytest -vv --tb=long --color=yes --pyargs referencing --cov=referencing --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99\n\nabout:\n  summary: JSON Referencing + Python\n  license: MIT\n  license_file: COPYING\n  homepage: https://github.com/python-jsonschema/referencing\n  documentation: https://referencing.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -228,6 +290,7 @@
   "test": {
    "__set__": true,
    "elements": [
+    "jsonschema",
     "pip",
     "pytest-cov",
     "pytest-subtests",
@@ -247,7 +310,7 @@
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ]
   },
   "run": {
@@ -262,15 +325,16 @@
   "test": {
    "__set__": true,
    "elements": [
+    "jsonschema",
     "pip",
     "pytest-cov",
     "pytest-subtests",
-    "python 3.9"
+    "python 3.9.*"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/r/referencing/referencing-0.36.1.tar.gz",
- "version": "0.36.1",
+ "url": "https://pypi.org/packages/source/r/referencing/referencing-0.36.2.tar.gz",
+ "version": "0.36.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/referencing.json"
  }
