@@ -24,7 +24,7 @@
    "summary": "Portable mixed-precision BLAS-like vector math library for x86 and ARM"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "simsimd",
-   "version": "6.2.3"
+   "version": "6.3.0"
   },
   "requirements": {
    "build": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "68476ccbcef5b6c39d923117d981c9f9ad77d775cfd3513d6bddf7f45b33bd7d",
-   "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.2.3.tar.gz"
+   "sha256": "497ba4aba53efcdc033ab45c59bc8bca98d127981fd49a75d8708054ddfa976d",
+   "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -110,7 +110,7 @@
    "summary": "Portable mixed-precision BLAS-like vector math library for x86 and ARM"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -120,7 +120,7 @@
   },
   "package": {
    "name": "simsimd",
-   "version": "6.2.3"
+   "version": "6.3.0"
   },
   "requirements": {
    "build": [
@@ -143,8 +143,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "68476ccbcef5b6c39d923117d981c9f9ad77d775cfd3513d6bddf7f45b33bd7d",
-   "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.2.3.tar.gz"
+   "sha256": "497ba4aba53efcdc033ab45c59bc8bca98d127981fd49a75d8708054ddfa976d",
+   "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -167,7 +167,7 @@
    "summary": "Portable mixed-precision BLAS-like vector math library for x86 and ARM"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -177,7 +177,7 @@
   },
   "package": {
    "name": "simsimd",
-   "version": "6.2.3"
+   "version": "6.3.0"
   },
   "requirements": {
    "build": [
@@ -198,8 +198,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "68476ccbcef5b6c39d923117d981c9f9ad77d775cfd3513d6bddf7f45b33bd7d",
-   "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.2.3.tar.gz"
+   "sha256": "497ba4aba53efcdc033ab45c59bc8bca98d127981fd49a75d8708054ddfa976d",
+   "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -260,7 +260,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/simsimd.json"
  },
- "raw_meta_yaml": "{% set name = \"SimSIMD\" %}\n{% set version = \"6.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ashvardanian/SimSIMD/archive/v{{ version }}.tar.gz\n  sha256: 68476ccbcef5b6c39d923117d981c9f9ad77d775cfd3513d6bddf7f45b33bd7d\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - llvm-openmp                    # [osx]\n    - libgomp                        # [linux]\n  host:\n    - python\n    - setuptools\n    - wheel\n    - pip\n    - llvm-openmp                    # [osx]\n    - libgomp                        # [linux]\n  run:\n    - python\n\ntest:\n  requires:\n    - pip\n  imports:\n    - simsimd\n  commands:\n    - pip check\n\n\nabout:\n  home: https://github.com/ashvardanian/SimSIMD\n  summary: Portable mixed-precision BLAS-like vector math library for x86 and ARM\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mukhery\n",
+ "raw_meta_yaml": "{% set name = \"SimSIMD\" %}\n{% set version = \"6.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ashvardanian/SimSIMD/archive/v{{ version }}.tar.gz\n  sha256: 497ba4aba53efcdc033ab45c59bc8bca98d127981fd49a75d8708054ddfa976d\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - llvm-openmp                    # [osx]\n    - libgomp                        # [linux]\n  host:\n    - python\n    - setuptools\n    - wheel\n    - pip\n    - llvm-openmp                    # [osx]\n    - libgomp                        # [linux]\n  run:\n    - python\n\ntest:\n  requires:\n    - pip\n  imports:\n    - simsimd\n  commands:\n    - pip check\n\n\nabout:\n  home: https://github.com/ashvardanian/SimSIMD\n  summary: Portable mixed-precision BLAS-like vector math library for x86 and ARM\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mukhery\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -351,8 +351,8 @@
    ]
   }
  },
- "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.2.3.tar.gz",
- "version": "6.2.3",
+ "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.3.0.tar.gz",
+ "version": "6.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/simsimd.json"
  },
@@ -364,7 +364,7 @@
    "summary": "Portable mixed-precision BLAS-like vector math library for x86 and ARM"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -374,7 +374,7 @@
   },
   "package": {
    "name": "simsimd",
-   "version": "6.2.3"
+   "version": "6.3.0"
   },
   "requirements": {
    "build": [
@@ -393,8 +393,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "68476ccbcef5b6c39d923117d981c9f9ad77d775cfd3513d6bddf7f45b33bd7d",
-   "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.2.3.tar.gz"
+   "sha256": "497ba4aba53efcdc033ab45c59bc8bca98d127981fd49a75d8708054ddfa976d",
+   "url": "https://github.com/ashvardanian/SimSIMD/archive/v6.3.0.tar.gz"
   },
   "test": {
    "commands": [
