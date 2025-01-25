@@ -1,0 +1,261 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pybis",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "pyBIS is a Python module for interacting with openBIS. pyBIS is\ndesigned to be most useful in a Jupyter Notebook or IPython\nenvironment, especially if you are developing Python scripts for\nautomatisation. Jupyter Notebooks offer some sort of IDE for\nopenBIS, supporting TAB completition and immediate data checks,\nmaking the life of a researcher hopefully easier.\n",
+   "doc_url": "https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis/src/python",
+   "home": "https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "openBIS connection and interaction, optimized for using with Jupyter"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "fabianegli",
+    "laskadam"
+   ]
+  },
+  "package": {
+   "name": "pybis",
+   "version": "1.37.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "pandas",
+    "pytest",
+    "python >=3.6",
+    "python-dateutil",
+    "requests",
+    "tabulate",
+    "texttable",
+    "urllib3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f9ba209f4683722c72a6c1be07e7f38b9e1391815bd01d6f6e308098d01332df",
+   "url": "https://pypi.io/packages/source/P/PyBIS/PyBIS-1.37.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "pybis"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "pytest",
+    "python",
+    "python-dateutil",
+    "requests",
+    "tabulate",
+    "texttable",
+    "urllib3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "pyBIS is a Python module for interacting with openBIS. pyBIS is\ndesigned to be most useful in a Jupyter Notebook or IPython\nenvironment, especially if you are developing Python scripts for\nautomatisation. Jupyter Notebooks offer some sort of IDE for\nopenBIS, supporting TAB completition and immediate data checks,\nmaking the life of a researcher hopefully easier.\n",
+   "doc_url": "https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis/src/python",
+   "home": "https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "openBIS connection and interaction, optimized for using with Jupyter"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "fabianegli",
+    "laskadam"
+   ]
+  },
+  "package": {
+   "name": "pybis",
+   "version": "1.37.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "pandas",
+    "pytest",
+    "python >=3.6",
+    "python-dateutil",
+    "requests",
+    "tabulate",
+    "texttable",
+    "urllib3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f9ba209f4683722c72a6c1be07e7f38b9e1391815bd01d6f6e308098d01332df",
+   "url": "https://pypi.io/packages/source/P/PyBIS/PyBIS-1.37.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "pybis"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "pybis",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pybis"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pybis.json"
+ },
+ "raw_meta_yaml": "{% set name = \"PyBIS\" %}\n{% set version = \"1.37.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f9ba209f4683722c72a6c1be07e7f38b9e1391815bd01d6f6e308098d01332df\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - pandas\n    - pytest\n    - python >=3.6\n    - python-dateutil\n    - requests\n    - tabulate\n    - texttable\n    - urllib3\n\ntest:\n  imports:\n    - pybis\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis\n  summary: openBIS connection and interaction, optimized for using with Jupyter\n  license: Apache-2.0\n  license_file: LICENSE\n  description: |\n    pyBIS is a Python module for interacting with openBIS. pyBIS is\n    designed to be most useful in a Jupyter Notebook or IPython\n    environment, especially if you are developing Python scripts for\n    automatisation. Jupyter Notebooks offer some sort of IDE for\n    openBIS, supporting TAB completition and immediate data checks,\n    making the life of a researcher hopefully easier.\n  doc_url: https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis/src/python\n\nextra:\n  recipe-maintainers:\n    - fabianegli\n    - laskadam\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pandas",
+   "pip",
+   "pytest",
+   "python",
+   "python-dateutil",
+   "requests",
+   "tabulate",
+   "texttable",
+   "urllib3"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "pytest",
+    "python",
+    "python-dateutil",
+    "requests",
+    "tabulate",
+    "texttable",
+    "urllib3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "pytest",
+    "python >=3.6",
+    "python-dateutil",
+    "requests",
+    "tabulate",
+    "texttable",
+    "urllib3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/P/PyBIS/PyBIS-1.37.0.tar.gz",
+ "version": "1.37.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pybis.json"
+ }
+}

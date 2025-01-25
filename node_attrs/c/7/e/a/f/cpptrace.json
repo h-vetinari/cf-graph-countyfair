@@ -1,0 +1,389 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "cpptrace",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Cpptrace is a simple, portable, and self-contained C++ stacktrace library supporting C++11 and greater on Linux, macOS, and\nWindows including MinGW and Cygwin environments. The goal: Make stack traces simple for once.\n",
+   "home": "https://github.com/jeremy-rifkin/cpptrace",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Simple, portable, and self-contained stacktrace library for C++11 and newer"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "cpptrace"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jeremy-rifkin"
+   ]
+  },
+  "package": {
+   "name": "cpptrace",
+   "version": "0.7.5"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja",
+    "pkg-config"
+   ],
+   "host": [
+    "libdwarf",
+    "libdwarf-dev",
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7df0cae3d7da9be2dc82616292cc86a4a08a8209898716231aef80477a8ca35d",
+   "url": "https://github.com/jeremy-rifkin/cpptrace/archive/v0.7.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libcpptrace${SHLIB_EXT}",
+    "test -f $PREFIX/include/cpptrace/cpptrace.hpp",
+    "test -f $PREFIX/include/cpptrace/basic.hpp",
+    "test -f $PREFIX/include/cpptrace/version.hpp",
+    "test -f $PREFIX/lib/cmake/cpptrace/cpptrace-targets.cmake",
+    "cd test",
+    "cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug",
+    "cmake --build . --config Debug",
+    "./program"
+   ],
+   "files": [
+    "test"
+   ],
+   "requires": [
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "libdwarf",
+    "libdwarf-dev",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Cpptrace is a simple, portable, and self-contained C++ stacktrace library supporting C++11 and greater on Linux, macOS, and\nWindows including MinGW and Cygwin environments. The goal: Make stack traces simple for once.\n",
+   "home": "https://github.com/jeremy-rifkin/cpptrace",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Simple, portable, and self-contained stacktrace library for C++11 and newer"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "cpptrace"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jeremy-rifkin"
+   ]
+  },
+  "package": {
+   "name": "cpptrace",
+   "version": "0.7.5"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja",
+    "pkg-config"
+   ],
+   "host": [
+    "libdwarf",
+    "libdwarf-dev",
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7df0cae3d7da9be2dc82616292cc86a4a08a8209898716231aef80477a8ca35d",
+   "url": "https://github.com/jeremy-rifkin/cpptrace/archive/v0.7.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libcpptrace${SHLIB_EXT}",
+    "test -f $PREFIX/include/cpptrace/cpptrace.hpp",
+    "test -f $PREFIX/include/cpptrace/basic.hpp",
+    "test -f $PREFIX/include/cpptrace/version.hpp",
+    "test -f $PREFIX/lib/cmake/cpptrace/cpptrace-targets.cmake",
+    "cd test",
+    "cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug",
+    "cmake --build . --config Debug",
+    "./program"
+   ],
+   "files": [
+    "test"
+   ],
+   "requires": [
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ },
+ "name": "cpptrace",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "Cpptrace is a simple, portable, and self-contained C++ stacktrace library supporting C++11 and greater on Linux, macOS, and\nWindows including MinGW and Cygwin environments. The goal: Make stack traces simple for once.\n",
+   "home": "https://github.com/jeremy-rifkin/cpptrace",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Simple, portable, and self-contained stacktrace library for C++11 and newer"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "cpptrace"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jeremy-rifkin"
+   ]
+  },
+  "package": {
+   "name": "cpptrace",
+   "version": "0.7.5"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja",
+    "pkg-config"
+   ],
+   "host": [
+    "libdwarf",
+    "libdwarf-dev",
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7df0cae3d7da9be2dc82616292cc86a4a08a8209898716231aef80477a8ca35d",
+   "url": "https://github.com/jeremy-rifkin/cpptrace/archive/v0.7.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libcpptrace${SHLIB_EXT}",
+    "test -f $PREFIX/include/cpptrace/cpptrace.hpp",
+    "test -f $PREFIX/include/cpptrace/basic.hpp",
+    "test -f $PREFIX/include/cpptrace/version.hpp",
+    "test -f $PREFIX/lib/cmake/cpptrace/cpptrace-targets.cmake",
+    "cd test",
+    "cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug",
+    "cmake --build . --config Debug",
+    "./program"
+   ],
+   "files": [
+    "test"
+   ],
+   "requires": [
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "libdwarf",
+    "libdwarf-dev",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "cpptrace"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/cpptrace.json"
+ },
+ "raw_meta_yaml": "{% set name = \"cpptrace\" %}\n{% set version = \"0.7.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jeremy-rifkin/cpptrace/archive/v{{ version }}.tar.gz\n  sha256: 7df0cae3d7da9be2dc82616292cc86a4a08a8209898716231aef80477a8ca35d\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\n  run_exports:\n    - {{ pin_subpackage('cpptrace', max_pin='x.x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - cmake\n    - ninja\n    - pkg-config\n  host:\n    - libdwarf\n    - libdwarf-dev\n    - zlib\n\ntest:\n  requires:\n    - cmake\n    - {{ compiler(\"cxx\") }}\n    - ninja\n  files:\n    - test\n  commands:\n    - test -f $PREFIX/lib/libcpptrace${SHLIB_EXT}\n    - test -f $PREFIX/include/cpptrace/cpptrace.hpp\n    - test -f $PREFIX/include/cpptrace/basic.hpp\n    - test -f $PREFIX/include/cpptrace/version.hpp\n    - test -f $PREFIX/lib/cmake/cpptrace/cpptrace-targets.cmake\n    - cd test\n    - cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug\n    - cmake --build . --config Debug\n    - ./program\n\nabout:\n  home: https://github.com/jeremy-rifkin/cpptrace\n  summary: 'Simple, portable, and self-contained stacktrace library for C++11 and newer'\n  description: |\n    Cpptrace is a simple, portable, and self-contained C++ stacktrace library supporting C++11 and greater on Linux, macOS, and\n    Windows including MinGW and Cygwin environments. The goal: Make stack traces simple for once.\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jeremy-rifkin\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "cmake",
+   "cxx_compiler_stub",
+   "libdwarf",
+   "libdwarf-dev",
+   "ninja",
+   "pkg-config",
+   "zlib"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libdwarf",
+    "libdwarf-dev",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "libdwarf",
+    "libdwarf-dev",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ },
+ "url": "https://github.com/jeremy-rifkin/cpptrace/archive/v0.7.5.tar.gz",
+ "version": "0.7.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/cpptrace.json"
+ }
+}

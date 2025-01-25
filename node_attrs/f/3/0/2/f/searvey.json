@@ -1,0 +1,379 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "searvey",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Searvey aims to provide near real time observational data related to sea state.\nData analysis/clean up to facilitate comparison with numerical models.\nOn demand data retrieval from multiple sources.\n",
+   "dev_url": "https://github.com/oceanmodeling/searvey",
+   "doc_url": "https://searvey.readthedocs.io/",
+   "home": "https://github.com/oceanmodeling/searvey",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "Sea state observational data retrieval"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "__version__=0.3.14"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "SorooshMani-NOAA",
+    "zacharyburnett",
+    "pmav99",
+    "brey"
+   ]
+  },
+  "package": {
+   "name": "searvey",
+   "version": "0.3.14"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "poetry-core <=1.6.0",
+    "poetry-dynamic-versioning"
+   ],
+   "run": [
+    "python >=3.9",
+    "beautifulsoup4",
+    "dataretrieval >=1.0.0",
+    "deprecated",
+    "erddapy",
+    "geopandas",
+    "html5lib",
+    "httpx",
+    "limits",
+    "lxml",
+    "multifutures",
+    "numpy",
+    "pandas",
+    "pydantic",
+    "requests",
+    "shapely",
+    "tenacity",
+    "tqdm",
+    "typing_extensions",
+    "xarray"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "bd4f8739c2ba11da4042a4d3db813124d4eb478fed781813a2dcfefd9a82d5a2",
+   "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.14.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -c 'import searvey.coops; searvey.coops.get_coops_stations()'",
+    "python -c 'import searvey.ioc; searvey.ioc.get_ioc_stations()'",
+    "python -c 'import searvey.usgs; searvey.usgs.get_usgs_stations()'",
+    "python -c 'import searvey.stations; searvey.stations.get_stations()'"
+   ],
+   "imports": [
+    "searvey",
+    "searvey.coops",
+    "searvey.ioc",
+    "searvey.usgs"
+   ],
+   "requires": [
+    "pip",
+    "pytest",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "dataretrieval",
+    "deprecated",
+    "erddapy",
+    "geopandas",
+    "html5lib",
+    "httpx",
+    "limits",
+    "lxml",
+    "multifutures",
+    "numpy",
+    "pandas",
+    "pydantic",
+    "python",
+    "requests",
+    "shapely",
+    "tenacity",
+    "tqdm",
+    "typing_extensions",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Searvey aims to provide near real time observational data related to sea state.\nData analysis/clean up to facilitate comparison with numerical models.\nOn demand data retrieval from multiple sources.\n",
+   "dev_url": "https://github.com/oceanmodeling/searvey",
+   "doc_url": "https://searvey.readthedocs.io/",
+   "home": "https://github.com/oceanmodeling/searvey",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "Sea state observational data retrieval"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "__version__=0.3.14"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "SorooshMani-NOAA",
+    "zacharyburnett",
+    "pmav99",
+    "brey"
+   ]
+  },
+  "package": {
+   "name": "searvey",
+   "version": "0.3.14"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "poetry-core <=1.6.0",
+    "poetry-dynamic-versioning"
+   ],
+   "run": [
+    "python >=3.9",
+    "beautifulsoup4",
+    "dataretrieval >=1.0.0",
+    "deprecated",
+    "erddapy",
+    "geopandas",
+    "html5lib",
+    "httpx",
+    "limits",
+    "lxml",
+    "multifutures",
+    "numpy",
+    "pandas",
+    "pydantic",
+    "requests",
+    "shapely",
+    "tenacity",
+    "tqdm",
+    "typing_extensions",
+    "xarray"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "bd4f8739c2ba11da4042a4d3db813124d4eb478fed781813a2dcfefd9a82d5a2",
+   "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.14.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -c 'import searvey.coops; searvey.coops.get_coops_stations()'",
+    "python -c 'import searvey.ioc; searvey.ioc.get_ioc_stations()'",
+    "python -c 'import searvey.usgs; searvey.usgs.get_usgs_stations()'",
+    "python -c 'import searvey.stations; searvey.stations.get_stations()'"
+   ],
+   "imports": [
+    "searvey",
+    "searvey.coops",
+    "searvey.ioc",
+    "searvey.usgs"
+   ],
+   "requires": [
+    "pip",
+    "pytest",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "searvey",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "searvey"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/searvey.json"
+ },
+ "raw_meta_yaml": "{% set name = \"searvey\" %}\n{% set version = \"0.3.14\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/oceanmodeling/searvey/archive/v{{ version }}.tar.gz\n  sha256: bd4f8739c2ba11da4042a4d3db813124d4eb478fed781813a2dcfefd9a82d5a2\n\nbuild:\n  noarch: python\n  script_env:\n    - __version__={{ version }}\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - poetry-core <=1.6.0\n    - poetry-dynamic-versioning\n  run:\n    - python >={{ python_min }}\n    - beautifulsoup4\n    - dataretrieval >=1.0.0\n    - deprecated\n    - erddapy\n    - geopandas\n    - html5lib\n    - httpx\n    - limits\n    - lxml\n    - multifutures\n    - numpy\n    - pandas\n    - pydantic\n    - requests\n    - shapely\n    - tenacity\n    - tqdm\n    - typing_extensions\n    - xarray\n\ntest:\n  requires:\n    - pip\n    - pytest\n    - python {{ python_min }}\n  imports:\n    - searvey\n    - searvey.coops\n    - searvey.ioc\n    - searvey.usgs\n  commands:\n    - python -c 'import searvey.coops; searvey.coops.get_coops_stations()'\n    - python -c 'import searvey.ioc; searvey.ioc.get_ioc_stations()'\n    - python -c 'import searvey.usgs; searvey.usgs.get_usgs_stations()'\n    - python -c 'import searvey.stations; searvey.stations.get_stations()'\n\nabout:\n  home: https://github.com/oceanmodeling/searvey\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: Sea state observational data retrieval\n\n  description: |\n    Searvey aims to provide near real time observational data related to sea state.\n    Data analysis/clean up to facilitate comparison with numerical models.\n    On demand data retrieval from multiple sources.\n  doc_url: https://searvey.readthedocs.io/\n  dev_url: https://github.com/oceanmodeling/searvey\n\nextra:\n  recipe-maintainers:\n    - SorooshMani-NOAA\n    - zacharyburnett\n    - pmav99\n    - brey\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "beautifulsoup4",
+   "dataretrieval",
+   "deprecated",
+   "erddapy",
+   "geopandas",
+   "html5lib",
+   "httpx",
+   "limits",
+   "lxml",
+   "multifutures",
+   "numpy",
+   "pandas",
+   "pip",
+   "poetry-core",
+   "poetry-dynamic-versioning",
+   "pydantic",
+   "python",
+   "requests",
+   "shapely",
+   "tenacity",
+   "tqdm",
+   "typing_extensions",
+   "xarray"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "dataretrieval",
+    "deprecated",
+    "erddapy",
+    "geopandas",
+    "html5lib",
+    "httpx",
+    "limits",
+    "lxml",
+    "multifutures",
+    "numpy",
+    "pandas",
+    "pydantic",
+    "python",
+    "requests",
+    "shapely",
+    "tenacity",
+    "tqdm",
+    "typing_extensions",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core <=1.6.0",
+    "poetry-dynamic-versioning",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "dataretrieval >=1.0.0",
+    "deprecated",
+    "erddapy",
+    "geopandas",
+    "html5lib",
+    "httpx",
+    "limits",
+    "lxml",
+    "multifutures",
+    "numpy",
+    "pandas",
+    "pydantic",
+    "python >=3.9",
+    "requests",
+    "shapely",
+    "tenacity",
+    "tqdm",
+    "typing_extensions",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.14.tar.gz",
+ "version": "0.3.14",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/searvey.json"
+ }
+}

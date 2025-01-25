@@ -1,0 +1,239 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "webtest",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Webtest tests any application that has a WSGI interface, including an application written\nin a framework that supports WSGI.\n",
+   "dev_url": "https://github.com/Pylons/webtest",
+   "doc_source_url": "https://github.com/Pylons/webtest/blob/master/docs/index.rst",
+   "doc_url": "http://webtest.pythonpaste.org/",
+   "home": "https://docs.pylonsproject.org/projects/webtest/en/latest/",
+   "license": "MIT",
+   "license_file": "license.rst",
+   "summary": "helper to test WSGI applications"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "webtest",
+   "version": "3.0.3"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "setuptools",
+    "python 3.9"
+   ],
+   "run": [
+    "beautifulsoup4",
+    "python >=3.9",
+    "waitress >=0.8.5",
+    "webob >=1.2"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b635f6fe6584bc9737496b687155e9373f3d01bcb1b46169007da0f7ba6238f9",
+   "url": "https://pypi.org/packages/source/W/WebTest/webtest-3.0.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "webtest"
+   ],
+   "requires": [
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "python",
+    "waitress",
+    "webob"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Webtest tests any application that has a WSGI interface, including an application written\nin a framework that supports WSGI.\n",
+   "dev_url": "https://github.com/Pylons/webtest",
+   "doc_source_url": "https://github.com/Pylons/webtest/blob/master/docs/index.rst",
+   "doc_url": "http://webtest.pythonpaste.org/",
+   "home": "https://docs.pylonsproject.org/projects/webtest/en/latest/",
+   "license": "MIT",
+   "license_file": "license.rst",
+   "summary": "helper to test WSGI applications"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "webtest",
+   "version": "3.0.3"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "setuptools",
+    "python 3.9"
+   ],
+   "run": [
+    "beautifulsoup4",
+    "python >=3.9",
+    "waitress >=0.8.5",
+    "webob >=1.2"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b635f6fe6584bc9737496b687155e9373f3d01bcb1b46169007da0f7ba6238f9",
+   "url": "https://pypi.org/packages/source/W/WebTest/webtest-3.0.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "webtest"
+   ],
+   "requires": [
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "webtest",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "webtest"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/webtest.json"
+ },
+ "raw_meta_yaml": "{% set name = \"WebTest\" %}\n{% set version = \"3.0.3\" %}\n\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz\n  sha256: b635f6fe6584bc9737496b687155e9373f3d01bcb1b46169007da0f7ba6238f9\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - python {{ python_min }}\n  run:\n    - beautifulsoup4\n    - python >={{ python_min }}\n    - waitress >=0.8.5\n    - webob >=1.2\n\ntest:\n  imports:\n    - webtest\n  requires:\n    - python {{ python_min }}\n\nabout:\n  home: https://docs.pylonsproject.org/projects/webtest/en/latest/\n  license: MIT\n  license_file: license.rst\n  summary: helper to test WSGI applications\n  description: |\n    Webtest tests any application that has a WSGI interface, including an application written\n    in a framework that supports WSGI.\n  doc_url: http://webtest.pythonpaste.org/\n  doc_source_url: https://github.com/Pylons/webtest/blob/master/docs/index.rst\n  dev_url: https://github.com/Pylons/webtest\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "beautifulsoup4",
+   "pip",
+   "python",
+   "setuptools",
+   "waitress",
+   "webob"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "python",
+    "waitress",
+    "webob"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "python >=3.9",
+    "waitress >=0.8.5",
+    "webob >=1.2"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/W/WebTest/webtest-3.0.3.tar.gz",
+ "version": "3.0.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/webtest.json"
+ }
+}

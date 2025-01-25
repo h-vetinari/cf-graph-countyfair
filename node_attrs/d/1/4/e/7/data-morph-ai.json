@@ -1,0 +1,280 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "data-morph-ai",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Data Morph transforms an input dataset of 2D points into select shapes,\nwhile preserving the summary statistics to a given number of decimal points\nthrough simulated annealing.\n",
+   "dev_url": "https://github.com/stefmolin/data-morph",
+   "doc_url": "https://stefmolin.github.io/data-morph",
+   "home": "https://stefmolin.github.io/data-morph",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Teaching tool on the importance of data visualization."
+  },
+  "build": {
+   "entry_points": [
+    "data-morph = data_morph.cli:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "stefmolin"
+   ]
+  },
+  "package": {
+   "name": "data-morph-ai",
+   "version": "0.2.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools",
+    "setuptools-scm",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "matplotlib-base >=3.3",
+    "numpy >=1.20",
+    "pandas >=1.2",
+    "pytweening >=1.0.5",
+    "scipy >=1.10.0",
+    "tqdm >=4.64.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "23b22a133b8fdf673ed47321dc74d8cfa4ea78178bb0dcd8169eeb7ce7583490",
+   "url": "https://pypi.org/packages/source/d/data-morph-ai/data-morph-ai-0.2.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "data-morph --help"
+   ],
+   "imports": [
+    "data_morph"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "pytweening",
+    "scipy",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Data Morph transforms an input dataset of 2D points into select shapes,\nwhile preserving the summary statistics to a given number of decimal points\nthrough simulated annealing.\n",
+   "dev_url": "https://github.com/stefmolin/data-morph",
+   "doc_url": "https://stefmolin.github.io/data-morph",
+   "home": "https://stefmolin.github.io/data-morph",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Teaching tool on the importance of data visualization."
+  },
+  "build": {
+   "entry_points": [
+    "data-morph = data_morph.cli:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "stefmolin"
+   ]
+  },
+  "package": {
+   "name": "data-morph-ai",
+   "version": "0.2.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools",
+    "setuptools-scm",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "matplotlib-base >=3.3",
+    "numpy >=1.20",
+    "pandas >=1.2",
+    "pytweening >=1.0.5",
+    "scipy >=1.10.0",
+    "tqdm >=4.64.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "23b22a133b8fdf673ed47321dc74d8cfa4ea78178bb0dcd8169eeb7ce7583490",
+   "url": "https://pypi.org/packages/source/d/data-morph-ai/data-morph-ai-0.2.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "data-morph --help"
+   ],
+   "imports": [
+    "data_morph"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "data-morph-ai",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "data-morph-ai"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/data-morph-ai.json"
+ },
+ "raw_meta_yaml": "{% set name = \"data-morph-ai\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 23b22a133b8fdf673ed47321dc74d8cfa4ea78178bb0dcd8169eeb7ce7583490\n\nbuild:\n  entry_points:\n    - data-morph = data_morph.cli:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - setuptools-scm\n    - pip\n  run:\n    - python >={{ python_min }}\n    - matplotlib-base >=3.3\n    - numpy >=1.20\n    - pandas >=1.2\n    - pytweening >=1.0.5\n    - scipy >=1.10.0\n    - tqdm >=4.64.1\n\ntest:\n  imports:\n    - data_morph\n  commands:\n    - pip check\n    - data-morph --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Teaching tool on the importance of data visualization.\n  home: https://stefmolin.github.io/data-morph\n  dev_url: https://github.com/stefmolin/data-morph\n  doc_url: https://stefmolin.github.io/data-morph\n  license: MIT\n  license_file: LICENSE\n  description: |\n    Data Morph transforms an input dataset of 2D points into select shapes,\n    while preserving the summary statistics to a given number of decimal points\n    through simulated annealing.\n\nextra:\n  recipe-maintainers:\n    - stefmolin\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "matplotlib-base",
+   "numpy",
+   "pandas",
+   "pip",
+   "python",
+   "pytweening",
+   "scipy",
+   "setuptools",
+   "setuptools-scm",
+   "tqdm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "pytweening",
+    "scipy",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base >=3.3",
+    "numpy >=1.20",
+    "pandas >=1.2",
+    "python >=3.9",
+    "pytweening >=1.0.5",
+    "scipy >=1.10.0",
+    "tqdm >=4.64.1"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/d/data-morph-ai/data-morph-ai-0.2.0.tar.gz",
+ "version": "0.2.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/data-morph-ai.json"
+ }
+}

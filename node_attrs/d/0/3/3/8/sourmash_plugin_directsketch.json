@@ -1,0 +1,295 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "sourmash_plugin_directsketch",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/sourmash-bio/sourmash_plugin_directsketch",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "download and sketch data directly"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ctb",
+    "bluegenes"
+   ]
+  },
+  "package": {
+   "name": "sourmash_plugin_directsketch",
+   "version": "0.4.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "make",
+    "cargo-bundle-licenses",
+    "libclang",
+    "clangdev",
+    "xz"
+   ],
+   "host": [
+    "python",
+    "maturin >=1.1.0,<2",
+    "pip"
+   ],
+   "run": [
+    "python",
+    "xz",
+    "sourmash-minimal >=4.8.3,<5"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7c043c7cf92e4311526fbacb5a20fe704bd6fb0a21ae6eddc359269f5f8a86b9",
+   "url": "https://pypi.io/packages/source/s/sourmash_plugin_directsketch/sourmash_plugin_directsketch-0.4.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sourmash_plugin_directsketch"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "clangdev",
+    "cxx_compiler_stub",
+    "libclang",
+    "make",
+    "rust_compiler_stub",
+    "xz"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "maturin",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "sourmash-minimal",
+    "xz"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/sourmash-bio/sourmash_plugin_directsketch",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "download and sketch data directly"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ctb",
+    "bluegenes"
+   ]
+  },
+  "package": {
+   "name": "sourmash_plugin_directsketch",
+   "version": "0.4.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "make",
+    "cargo-bundle-licenses",
+    "libclang",
+    "clangdev",
+    "xz"
+   ],
+   "host": [
+    "python",
+    "maturin >=1.1.0,<2",
+    "pip"
+   ],
+   "run": [
+    "python",
+    "xz",
+    "sourmash-minimal >=4.8.3,<5"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7c043c7cf92e4311526fbacb5a20fe704bd6fb0a21ae6eddc359269f5f8a86b9",
+   "url": "https://pypi.io/packages/source/s/sourmash_plugin_directsketch/sourmash_plugin_directsketch-0.4.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sourmash_plugin_directsketch"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "sourmash_plugin_directsketch",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "sourmash_plugin_directsketch"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/sourmash_plugin_directsketch.json"
+ },
+ "raw_meta_yaml": "{% set name = \"sourmash_plugin_directsketch\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sourmash_plugin_directsketch-{{ version }}.tar.gz\n  sha256: 7c043c7cf92e4311526fbacb5a20fe704bd6fb0a21ae6eddc359269f5f8a86b9\n\nbuild:\n  number: 0\n  skip: true  # [osx or win or py<310]\n\nrequirements:\n  build:\n    - python                              # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n    - crossenv                            # [build_platform != target_platform]\n    - maturin >=1.0,<2.0                  # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('rust') }}\n    - {{ stdlib(\"c\") }}\n    - posix                               # [win]\n    - make                                # [unix]\n    - cargo-bundle-licenses\n    - libclang                            # [unix]\n    - clangdev                            # [unix]\n    - xz\n  host:\n    - python\n    - maturin >=1.1.0,<2\n    - pip\n  run:\n    - python\n    - xz\n    - sourmash-minimal >=4.8.3,<5\n\ntest:\n  imports:\n    - sourmash_plugin_directsketch\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/sourmash-bio/sourmash_plugin_directsketch\n  summary: download and sketch data directly\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ctb\n    - bluegenes\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "cargo-bundle-licenses",
+   "clangdev",
+   "cxx_compiler_stub",
+   "libclang",
+   "make",
+   "maturin",
+   "pip",
+   "python",
+   "rust_compiler_stub",
+   "sourmash-minimal",
+   "xz"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "clangdev",
+    "cxx_compiler_stub",
+    "libclang",
+    "make",
+    "rust_compiler_stub",
+    "xz"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "maturin",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "python",
+    "sourmash-minimal",
+    "xz"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "clangdev",
+    "cxx_compiler_stub",
+    "libclang",
+    "make",
+    "rust_compiler_stub",
+    "xz"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "maturin >=1.1.0,<2",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "sourmash-minimal >=4.8.3,<5",
+    "xz"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/s/sourmash_plugin_directsketch/sourmash_plugin_directsketch-0.4.1.tar.gz",
+ "version": "0.4.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/sourmash_plugin_directsketch.json"
+ }
+}

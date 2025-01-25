@@ -1,0 +1,269 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "compiler_stack": "comp7",
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "max_py_ver": "37",
+  "max_r_ver": "35"
+ },
+ "feedstock_name": "ragel",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Ragel provides a very flexible interface to the host language that attempts\nto place minimal restrictions on how the generated code is integrated into\nthe application. The generated code has no dependencies.\n",
+   "home": "https://www.colm.net/open-source/ragel/",
+   "license": "GPLv2",
+   "license_file": "COPYING",
+   "summary": "Ragel State Machine Compiler"
+  },
+  "build": {
+   "number": "1002"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "rmax"
+   ]
+  },
+  "package": {
+   "name": "ragel",
+   "version": "6.10"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "ragel-6.10.tar.gz",
+   "patches": [
+    "patches/0001-Fix-undeclared-setiosflags-function.patch"
+   ],
+   "sha256": "5f156edb65d20b856d638dd9ee2dfb43285914d9aa2b6ec779dac0270cd56c3f",
+   "url": "https://www.colm.net/files/ragel/ragel-6.10.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Ragel provides a very flexible interface to the host language that attempts\nto place minimal restrictions on how the generated code is integrated into\nthe application. The generated code has no dependencies.\n",
+   "home": "https://www.colm.net/open-source/ragel/",
+   "license": "GPLv2",
+   "license_file": "COPYING",
+   "summary": "Ragel State Machine Compiler"
+  },
+  "build": {
+   "number": "1002"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "rmax"
+   ]
+  },
+  "package": {
+   "name": "ragel",
+   "version": "6.10"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "ragel-6.10.tar.gz",
+   "patches": [
+    "patches/0001-Fix-undeclared-setiosflags-function.patch"
+   ],
+   "sha256": "5f156edb65d20b856d638dd9ee2dfb43285914d9aa2b6ec779dac0270cd56c3f",
+   "url": "https://www.colm.net/files/ragel/ragel-6.10.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "name": "ragel",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "Ragel provides a very flexible interface to the host language that attempts\nto place minimal restrictions on how the generated code is integrated into\nthe application. The generated code has no dependencies.\n",
+   "home": "https://www.colm.net/open-source/ragel/",
+   "license": "GPLv2",
+   "license_file": "COPYING",
+   "summary": "Ragel State Machine Compiler"
+  },
+  "build": {
+   "number": "1002"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "rmax"
+   ]
+  },
+  "package": {
+   "name": "ragel",
+   "version": "6.10"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "ragel-6.10.tar.gz",
+   "patches": [
+    "patches/0001-Fix-undeclared-setiosflags-function.patch"
+   ],
+   "sha256": "5f156edb65d20b856d638dd9ee2dfb43285914d9aa2b6ec779dac0270cd56c3f",
+   "url": "https://www.colm.net/files/ragel/ragel-6.10.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "ragel"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/ragel.json"
+ },
+ "raw_meta_yaml": "{% set name = \"ragel\" %}\n{% set version = \"6.10\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"5f156edb65d20b856d638dd9ee2dfb43285914d9aa2b6ec779dac0270cd56c3f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://www.colm.net/files/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n  patches:\n    - patches/0001-Fix-undeclared-setiosflags-function.patch\n\nbuild:\n  number: 1002\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n\ntest:\n  requires:\n    - {{ compiler(\"c\") }}\n\nabout:\n  home: https://www.colm.net/open-source/ragel/\n  license: GPLv2\n  license_file: COPYING\n  summary: Ragel State Machine Compiler\n  description: |\n    Ragel provides a very flexible interface to the host language that attempts\n    to place minimal restrictions on how the generated code is integrated into\n    the application. The generated code has no dependencies.\n\nextra:\n  recipe-maintainers:\n    - rmax\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "cxx_compiler_stub"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "url": "https://www.colm.net/files/ragel/ragel-6.10.tar.gz",
+ "version": "6.10",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/ragel.json"
+ }
+}

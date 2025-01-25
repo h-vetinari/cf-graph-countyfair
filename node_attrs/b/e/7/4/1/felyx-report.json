@@ -1,0 +1,270 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "felyx-report",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://gitlab.ifremer.fr/felyx/felyx_report",
+   "license": "LGPL-3.0-only",
+   "license_file": "LICENSE",
+   "summary": "Produce monitoring report from data processed by Felyx processor"
+  },
+  "build": {
+   "entry_points": [
+    "felyx-report = felyx_report.cli.main:felyx_monitoring_report"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "marie59"
+   ]
+  },
+  "package": {
+   "name": "felyx-report",
+   "version": "1.1.2"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning"
+   ],
+   "run": [
+    "python >=3.6",
+    "elasticsearch >=7.17.0,<7.18",
+    "pyarrow >=7.0.0,<8.0",
+    "pydantic >=1.9.0,<2.0",
+    "numpy >=1.22.2,<1.23",
+    "pandas >=1.4.1,<1.5",
+    "pyyaml >=6.0,<7.0",
+    "shapely >=1.8.0,<1.9",
+    "xarray >=0.19,<1.0",
+    "jinja2 >=3.0.3,<3.1",
+    "netcdf4 >=1.5.4,<1.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c9d821944a6387231acaf0d2b7467923a014fc8b2db55afed3cb5c8ed36cf67f",
+   "url": "https://gitlab.ifremer.fr/felyx/felyx_report/-/archive/1.1.2/felyx_report-1.1.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "felyx_report"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "elasticsearch",
+    "jinja2",
+    "netcdf4",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "pydantic",
+    "python",
+    "pyyaml",
+    "shapely",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://gitlab.ifremer.fr/felyx/felyx_report",
+   "license": "LGPL-3.0-only",
+   "license_file": "LICENSE",
+   "summary": "Produce monitoring report from data processed by Felyx processor"
+  },
+  "build": {
+   "entry_points": [
+    "felyx-report = felyx_report.cli.main:felyx_monitoring_report"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "marie59"
+   ]
+  },
+  "package": {
+   "name": "felyx-report",
+   "version": "1.1.2"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning"
+   ],
+   "run": [
+    "python >=3.6",
+    "elasticsearch >=7.17.0,<7.18",
+    "pyarrow >=7.0.0,<8.0",
+    "pydantic >=1.9.0,<2.0",
+    "numpy >=1.22.2,<1.23",
+    "pandas >=1.4.1,<1.5",
+    "pyyaml >=6.0,<7.0",
+    "shapely >=1.8.0,<1.9",
+    "xarray >=0.19,<1.0",
+    "jinja2 >=3.0.3,<3.1",
+    "netcdf4 >=1.5.4,<1.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c9d821944a6387231acaf0d2b7467923a014fc8b2db55afed3cb5c8ed36cf67f",
+   "url": "https://gitlab.ifremer.fr/felyx/felyx_report/-/archive/1.1.2/felyx_report-1.1.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "felyx_report"
+   ]
+  }
+ },
+ "name": "felyx-report",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "felyx-report"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/felyx-report.json"
+ },
+ "raw_meta_yaml": "{% set name = \"felyx-report\" %}\n{% set version = \"1.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/felyx/felyx_report/-/archive/{{ version }}/felyx_report-{{ version }}.tar.gz\n  sha256: c9d821944a6387231acaf0d2b7467923a014fc8b2db55afed3cb5c8ed36cf67f\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  noarch: python\n  entry_points:\n    - felyx-report = felyx_report.cli.main:felyx_monitoring_report\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n  run:\n    - python >=3.6\n    - elasticsearch >=7.17.0,<7.18\n    - pyarrow >=7.0.0,<8.0\n    - pydantic >=1.9.0,<2.0\n    - numpy >=1.22.2,<1.23\n    - pandas >=1.4.1,<1.5\n    - pyyaml >=6.0,<7.0\n    - shapely >=1.8.0,<1.9\n    - xarray >=0.19,<1.0\n    - jinja2 >=3.0.3,<3.1\n    - netcdf4 >=1.5.4,<1.6\n    \ntest:\n  imports:\n    - felyx_report\n    \nabout:\n  home: https://gitlab.ifremer.fr/felyx/felyx_report\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: Produce monitoring report from data processed by Felyx processor\n\nextra:\n  recipe-maintainers:\n    - marie59\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "elasticsearch",
+   "jinja2",
+   "netcdf4",
+   "numpy",
+   "pandas",
+   "pip",
+   "poetry-core",
+   "poetry-dynamic-versioning",
+   "pyarrow",
+   "pydantic",
+   "python",
+   "pyyaml",
+   "shapely",
+   "xarray"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "elasticsearch",
+    "jinja2",
+    "netcdf4",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "pydantic",
+    "python",
+    "pyyaml",
+    "shapely",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "elasticsearch >=7.17.0,<7.18",
+    "jinja2 >=3.0.3,<3.1",
+    "netcdf4 >=1.5.4,<1.6",
+    "numpy >=1.22.2,<1.23",
+    "pandas >=1.4.1,<1.5",
+    "pyarrow >=7.0.0,<8.0",
+    "pydantic >=1.9.0,<2.0",
+    "python >=3.6",
+    "pyyaml >=6.0,<7.0",
+    "shapely >=1.8.0,<1.9",
+    "xarray >=0.19,<1.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://gitlab.ifremer.fr/felyx/felyx_report/-/archive/1.1.2/felyx_report-1.1.2.tar.gz",
+ "version": "1.1.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/felyx-report.json"
+ }
+}

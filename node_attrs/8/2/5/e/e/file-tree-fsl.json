@@ -1,0 +1,221 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "file-tree-fsl",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "doc_url": "https://open.win.ox.ac.uk/pages/ndcn0236/file-tree",
+   "home": "https://git.fmrib.ox.ac.uk/ndcn0236/file-tree-fsl",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Filetree definitions for the FSL neuroimaging library"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MichielCottaar"
+   ]
+  },
+  "package": {
+   "name": "file-tree-fsl",
+   "version": "0.2.2"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "file-tree",
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "29a057f6a34fe2ec61e66756f34c4a8cbd068a9095b81fe03634cf44188bd247",
+   "url": "https://pypi.io/packages/source/f/file-tree-fsl/file-tree-fsl-0.2.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "file_tree_fsl"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "file-tree",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "doc_url": "https://open.win.ox.ac.uk/pages/ndcn0236/file-tree",
+   "home": "https://git.fmrib.ox.ac.uk/ndcn0236/file-tree-fsl",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Filetree definitions for the FSL neuroimaging library"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MichielCottaar"
+   ]
+  },
+  "package": {
+   "name": "file-tree-fsl",
+   "version": "0.2.2"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "file-tree",
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "29a057f6a34fe2ec61e66756f34c4a8cbd068a9095b81fe03634cf44188bd247",
+   "url": "https://pypi.io/packages/source/f/file-tree-fsl/file-tree-fsl-0.2.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "file_tree_fsl"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "file-tree-fsl",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "file-tree-fsl"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/file-tree-fsl.json"
+ },
+ "raw_meta_yaml": "{% set name = \"file-tree-fsl\" %}\n{% set version = \"0.2.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/file-tree-fsl-{{ version }}.tar.gz\n  sha256: 29a057f6a34fe2ec61e66756f34c4a8cbd068a9095b81fe03634cf44188bd247\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - file-tree\n    - python >=3.6\n\ntest:\n  imports:\n    - file_tree_fsl\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://git.fmrib.ox.ac.uk/ndcn0236/file-tree-fsl\n  summary: Filetree definitions for the FSL neuroimaging library\n  license: MIT\n  license_file: LICENSE\n  doc_url: https://open.win.ox.ac.uk/pages/ndcn0236/file-tree\n\nextra:\n  recipe-maintainers:\n    - MichielCottaar\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "file-tree",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "file-tree",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "file-tree",
+    "python >=3.6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/f/file-tree-fsl/file-tree-fsl-0.2.2.tar.gz",
+ "version": "0.2.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/file-tree-fsl.json"
+ }
+}

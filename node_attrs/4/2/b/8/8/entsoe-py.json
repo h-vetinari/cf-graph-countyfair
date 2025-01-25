@@ -1,0 +1,244 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "entsoe-py",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/EnergieID/entsoe-py",
+   "home": "https://github.com/EnergieID/entsoe-py",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Python client for the ENTSO-E API (european network of transmission system operators for electricity)"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vvv "
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "FabianHofmann"
+   ]
+  },
+  "package": {
+   "name": "entsoe-py",
+   "version": "0.6.11"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "beautifulsoup4",
+    "pandas",
+    "python >=3.6",
+    "pytz",
+    "requests",
+    "geojson-rewind",
+    "python-dateutil",
+    "geopandas"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "entsoe-py-0.6.11.tar.gz",
+   "sha256": "6f317b34fee4c656e4eb4b3c73c0593f3ef4bd3866564956e46304ae411906e7",
+   "url": "https://pypi.io/packages/source/e/entsoe-py/entsoe_py-0.6.11.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "entsoe"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "geojson-rewind",
+    "geopandas",
+    "pandas",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "requests"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/EnergieID/entsoe-py",
+   "home": "https://github.com/EnergieID/entsoe-py",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Python client for the ENTSO-E API (european network of transmission system operators for electricity)"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vvv "
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "FabianHofmann"
+   ]
+  },
+  "package": {
+   "name": "entsoe-py",
+   "version": "0.6.11"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "beautifulsoup4",
+    "pandas",
+    "python >=3.6",
+    "pytz",
+    "requests",
+    "geojson-rewind",
+    "python-dateutil",
+    "geopandas"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "entsoe-py-0.6.11.tar.gz",
+   "sha256": "6f317b34fee4c656e4eb4b3c73c0593f3ef4bd3866564956e46304ae411906e7",
+   "url": "https://pypi.io/packages/source/e/entsoe-py/entsoe_py-0.6.11.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "entsoe"
+   ]
+  }
+ },
+ "name": "entsoe-py",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "entsoe-py"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/entsoe-py.json"
+ },
+ "raw_meta_yaml": "{% set name = \"entsoe-py\" %}\n{% set version = \"0.6.11\" %}\n{% set sha256 = \"6f317b34fee4c656e4eb4b3c73c0593f3ef4bd3866564956e46304ae411906e7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: '{{ PYTHON }} -m pip install . -vvv '\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - beautifulsoup4\n    - pandas\n    - python >=3.6\n    - pytz\n    - requests\n    - geojson-rewind\n    - python-dateutil\n    - geopandas\n\ntest:\n  imports:\n    - entsoe\n\nabout:\n  home: https://github.com/EnergieID/entsoe-py\n  license: MIT\n  license_file: LICENSE\n  summary: Python client for the ENTSO-E API (european network of transmission system operators for electricity)\n  dev_url: https://github.com/EnergieID/entsoe-py\n\nextra:\n  recipe-maintainers:\n    - FabianHofmann\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "beautifulsoup4",
+   "geojson-rewind",
+   "geopandas",
+   "pandas",
+   "pip",
+   "python",
+   "python-dateutil",
+   "pytz",
+   "requests"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "geojson-rewind",
+    "geopandas",
+    "pandas",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "requests"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "beautifulsoup4",
+    "geojson-rewind",
+    "geopandas",
+    "pandas",
+    "python >=3.6",
+    "python-dateutil",
+    "pytz",
+    "requests"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/e/entsoe-py/entsoe_py-0.6.11.tar.gz",
+ "version": "0.6.11",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/entsoe-py.json"
+ }
+}

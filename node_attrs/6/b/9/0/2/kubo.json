@@ -1,0 +1,535 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "kubo",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Kubo (go-ipfs) the earliest and most widely used implementation of IPFS.\n\nIt includes:\n  - an IPFS daemon server\n  - extensive command line tooling\n  - an HTTP Gateway (/ipfs/, /ipns/) for serving content to HTTP browsers\n  - an HTTP RPC API (/api/v0) for controlling the daemon node\n",
+   "dev_url": "https://github.com/ipfs/kubo",
+   "doc_url": "https://docs.ipfs.tech",
+   "home": "https://ipfs.tech",
+   "license": "Apache-2.0 or MIT",
+   "license_file": [
+    "src/github.com/ipfs/kubo/LICENSE-APACHE",
+    "src/github.com/ipfs/kubo/LICENSE-MIT",
+    "library_licenses/"
+   ],
+   "summary": "IPFS implementation in Go"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "kubo",
+   "version": "0.32.1"
+  },
+  "requirements": {
+   "build": [
+    "go-cgo_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "openssl"
+   ],
+   "run_constrained": [
+    "go-ipfs >=9000"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "src/github.com/ipfs/kubo",
+    "sha256": "ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed",
+    "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "ipfs --version",
+    "ipfs --help",
+    "ipfs commands",
+    "ipfs --debug init",
+    "echo \"hello conda-forge\" > hello.txt",
+    "ipfs --debug add hello.txt"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-cgo_compiler_stub",
+    "go-licenses",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "openssl"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Kubo (go-ipfs) the earliest and most widely used implementation of IPFS.\n\nIt includes:\n  - an IPFS daemon server\n  - extensive command line tooling\n  - an HTTP Gateway (/ipfs/, /ipns/) for serving content to HTTP browsers\n  - an HTTP RPC API (/api/v0) for controlling the daemon node\n",
+   "dev_url": "https://github.com/ipfs/kubo",
+   "doc_url": "https://docs.ipfs.tech",
+   "home": "https://ipfs.tech",
+   "license": "Apache-2.0 or MIT",
+   "license_file": [
+    "src/github.com/ipfs/kubo/LICENSE-APACHE",
+    "src/github.com/ipfs/kubo/LICENSE-MIT",
+    "library_licenses/"
+   ],
+   "summary": "IPFS implementation in Go"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "kubo",
+   "version": "0.32.1"
+  },
+  "requirements": {
+   "build": [
+    "go-cgo_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses",
+    "posix"
+   ],
+   "host": [
+    "openssl"
+   ],
+   "run_constrained": [
+    "go-ipfs >=9000"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "src/github.com/ipfs/kubo",
+    "sha256": "ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed",
+    "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz"
+   },
+   {
+    "folder": "src/github.com/ipfs/kubo",
+    "sha256": "ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed",
+    "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz"
+   },
+   {
+    "folder": "src/github.com/ipfs/kubo",
+    "sha256": "ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed",
+    "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz"
+   },
+   {
+    "folder": "src/github.com/ipfs/kubo",
+    "sha256": "ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed",
+    "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "ipfs --version",
+    "ipfs --help",
+    "ipfs commands",
+    "ipfs --debug init",
+    "echo \"hello conda-forge\" > hello.txt",
+    "ipfs --debug add hello.txt"
+   ]
+  }
+ },
+ "name": "kubo",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "Kubo (go-ipfs) the earliest and most widely used implementation of IPFS.\n\nIt includes:\n  - an IPFS daemon server\n  - extensive command line tooling\n  - an HTTP Gateway (/ipfs/, /ipns/) for serving content to HTTP browsers\n  - an HTTP RPC API (/api/v0) for controlling the daemon node\n",
+   "dev_url": "https://github.com/ipfs/kubo",
+   "doc_url": "https://docs.ipfs.tech",
+   "home": "https://ipfs.tech",
+   "license": "Apache-2.0 or MIT",
+   "license_file": [
+    "src/github.com/ipfs/kubo/LICENSE-APACHE",
+    "src/github.com/ipfs/kubo/LICENSE-MIT",
+    "library_licenses/"
+   ],
+   "summary": "IPFS implementation in Go"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "kubo",
+   "version": "0.32.1"
+  },
+  "requirements": {
+   "build": [
+    "go-cgo_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "openssl"
+   ],
+   "run_constrained": [
+    "go-ipfs >=9000"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "src/github.com/ipfs/kubo",
+    "sha256": "ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed",
+    "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "ipfs --version",
+    "ipfs --help",
+    "ipfs commands",
+    "ipfs --debug init",
+    "echo \"hello conda-forge\" > hello.txt",
+    "ipfs --debug add hello.txt"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-cgo_compiler_stub",
+    "go-licenses",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "openssl"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "Kubo (go-ipfs) the earliest and most widely used implementation of IPFS.\n\nIt includes:\n  - an IPFS daemon server\n  - extensive command line tooling\n  - an HTTP Gateway (/ipfs/, /ipns/) for serving content to HTTP browsers\n  - an HTTP RPC API (/api/v0) for controlling the daemon node\n",
+   "dev_url": "https://github.com/ipfs/kubo",
+   "doc_url": "https://docs.ipfs.tech",
+   "home": "https://ipfs.tech",
+   "license": "Apache-2.0 or MIT",
+   "license_file": [
+    "src/github.com/ipfs/kubo/LICENSE-APACHE",
+    "src/github.com/ipfs/kubo/LICENSE-MIT",
+    "library_licenses/"
+   ],
+   "summary": "IPFS implementation in Go"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "kubo",
+   "version": "0.32.1"
+  },
+  "requirements": {
+   "build": [
+    "go-cgo_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "openssl"
+   ],
+   "run_constrained": [
+    "go-ipfs >=9000"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "src/github.com/ipfs/kubo",
+    "sha256": "ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed",
+    "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "ipfs --version",
+    "ipfs --help",
+    "ipfs commands",
+    "ipfs --debug init",
+    "echo \"hello conda-forge\" > hello.txt",
+    "ipfs --debug add hello.txt"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-cgo_compiler_stub",
+    "go-licenses",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "openssl"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "kubo"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64",
+  "osx_arm64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/kubo.json"
+ },
+ "raw_meta_yaml": "{% set go_min = \">=1.22\" %}\n{% set version = \"0.32.1\" %}\n\n{% set name = \"kubo\" %}\n{% set gomodule = \"github.com/ipfs/\" ~ name %}\n{% set go_min = \">=1.22\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - folder: src/{{ gomodule }}\n    url: https://{{ gomodule }}/releases/download/v{{ version }}/{{ name }}-source.tar.gz\n    sha256: ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler(\"go-cgo\") }}  # [build_platform == target_platform]\n    - go {{ go_min }}           # [build_platform != target_platform]\n    - go-cgo {{ go_min }}       # [build_platform != target_platform]\n    - posix                     # [win]\n    - make                      # [unix]\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n    - go-licenses\n  host:\n    - openssl\n  run_constrained:\n    - go-ipfs >=9000\n\n{% set cid = \"/ipfs/Qmc5gCcjYypU7y28oCALwfSvxCBskLuPKWpK4qpterKC7z\" %}\n{% set ipfs_args = \"--debug\" %}\n\ntest:\n  commands:\n    - ipfs --version\n    - ipfs --help\n    - ipfs commands\n    - ipfs {{ ipfs_args }} init\n    - echo \"hello conda-forge\" > hello.txt\n    - ipfs {{ ipfs_args }} add hello.txt\n\nabout:\n  home: https://ipfs.tech\n  license: Apache-2.0 or MIT\n  license_file:\n    # directly provided by upstream\n    - src/{{ gomodule }}/LICENSE-APACHE\n    - src/{{ gomodule }}/LICENSE-MIT\n    - library_licenses/\n\n  summary: IPFS implementation in Go\n\n  description: |\n    Kubo (go-ipfs) the earliest and most widely used implementation of IPFS.\n\n    It includes:\n      - an IPFS daemon server\n      - extensive command line tooling\n      - an HTTP Gateway (/ipfs/, /ipns/) for serving content to HTTP browsers\n      - an HTTP RPC API (/api/v0) for controlling the daemon node\n\n  doc_url: https://docs.ipfs.tech\n  dev_url: https://{{ gomodule }}\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "go-cgo_compiler_stub",
+   "go-licenses",
+   "make",
+   "openssl",
+   "posix"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-cgo_compiler_stub",
+    "go-licenses",
+    "make",
+    "posix"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "openssl"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-cgo_compiler_stub",
+    "go-licenses",
+    "make",
+    "posix"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "openssl"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz",
+ "version": "0.32.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/kubo.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "Kubo (go-ipfs) the earliest and most widely used implementation of IPFS.\n\nIt includes:\n  - an IPFS daemon server\n  - extensive command line tooling\n  - an HTTP Gateway (/ipfs/, /ipns/) for serving content to HTTP browsers\n  - an HTTP RPC API (/api/v0) for controlling the daemon node\n",
+   "dev_url": "https://github.com/ipfs/kubo",
+   "doc_url": "https://docs.ipfs.tech",
+   "home": "https://ipfs.tech",
+   "license": "Apache-2.0 or MIT",
+   "license_file": [
+    "src/github.com/ipfs/kubo/LICENSE-APACHE",
+    "src/github.com/ipfs/kubo/LICENSE-MIT",
+    "library_licenses/"
+   ],
+   "summary": "IPFS implementation in Go"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "kubo",
+   "version": "0.32.1"
+  },
+  "requirements": {
+   "build": [
+    "go-cgo_compiler_stub",
+    "posix",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "openssl"
+   ],
+   "run_constrained": [
+    "go-ipfs >=9000"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "src/github.com/ipfs/kubo",
+    "sha256": "ffbda89ac0d9dbe9ee3c79195ed477312b315a27310b462716629c1c5db60bed",
+    "url": "https://github.com/ipfs/kubo/releases/download/v0.32.1/kubo-source.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "ipfs --version",
+    "ipfs --help",
+    "ipfs commands",
+    "ipfs --debug init",
+    "echo \"hello conda-forge\" > hello.txt",
+    "ipfs --debug add hello.txt"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-cgo_compiler_stub",
+    "go-licenses",
+    "posix"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "openssl"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ }
+}

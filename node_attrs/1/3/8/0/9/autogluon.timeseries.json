@@ -1,0 +1,334 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "update-grayskull"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "autogluon.timeseries",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "AutoGluon automates machine learning tasks enabling you to easily achieve strong\npredictive performance in your applications. With just a few lines of code, you\ncan train and deploy high-accuracy machine learning and deep learning models on\nimage, text, time series, and tabular data.\n",
+   "dev_url": "https://github.com/autogluon/autogluon/",
+   "home": "https://pypi.org/project/autogluon.timeseries",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "AutoML for Image, Text, and Tabular Data"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install ./timeseries -vv",
+   "script_env": [
+    "RELEASE=1"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "giswqs",
+    "Innixma",
+    "suzhoum",
+    "tonyhoo",
+    "prateekdesai04"
+   ]
+  },
+  "package": {
+   "name": "autogluon.timeseries",
+   "version": "0.8.3"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8,<3.11",
+    "packaging",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8,<3.11",
+    "joblib >=1.1,<2",
+    "numpy >=1.21,<1.27",
+    "scipy >=1.5.4,<1.12",
+    "pandas >=2.0.0,<2.2.0",
+    "statsmodels >=0.13.0,<0.15",
+    "gluonts >=0.13.1,<0.14",
+    "pytorch >=1.13,<2.1",
+    "pytorch-lightning >=2.0.0,<2.5",
+    "networkx >=3.0,<4",
+    "statsforecast >=1.4.0,<1.5",
+    "mlforecast >=0.7.0,<0.7.4",
+    "tqdm >=4.38,<5",
+    "ujson >=5,<6",
+    "autogluon.core ==0.8.3",
+    "autogluon.common ==0.8.3",
+    "autogluon.tabular ==0.8.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1ccc6834b753ad0dc1d96338d8d56ada5b86356a2d34a9e2a29c3e685af277e1",
+   "url": "https://autogluon.s3.us-west-2.amazonaws.com/tarballs/0.8.3_patch/tarball.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -c \"from autogluon.timeseries import __version__ as v; from packaging.version import parse; expected = '0.8.3'; assert parse(v) == parse(expected), f'{v} != {expected}'\""
+   ],
+   "imports": [
+    "autogluon.timeseries"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "packaging",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "autogluon.common",
+    "autogluon.core",
+    "autogluon.tabular",
+    "gluonts",
+    "joblib",
+    "mlforecast",
+    "networkx",
+    "numpy",
+    "pandas",
+    "python",
+    "pytorch",
+    "pytorch-lightning",
+    "scipy",
+    "statsforecast",
+    "statsmodels",
+    "tqdm",
+    "ujson"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "AutoGluon automates machine learning tasks enabling you to easily achieve strong\npredictive performance in your applications. With just a few lines of code, you\ncan train and deploy high-accuracy machine learning and deep learning models on\nimage, text, time series, and tabular data.\n",
+   "dev_url": "https://github.com/autogluon/autogluon/",
+   "home": "https://pypi.org/project/autogluon.timeseries",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "AutoML for Image, Text, and Tabular Data"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install ./timeseries -vv",
+   "script_env": [
+    "RELEASE=1"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "giswqs",
+    "Innixma",
+    "suzhoum",
+    "tonyhoo",
+    "prateekdesai04"
+   ]
+  },
+  "package": {
+   "name": "autogluon.timeseries",
+   "version": "0.8.3"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8,<3.11",
+    "packaging",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8,<3.11",
+    "joblib >=1.1,<2",
+    "numpy >=1.21,<1.27",
+    "scipy >=1.5.4,<1.12",
+    "pandas >=2.0.0,<2.2.0",
+    "statsmodels >=0.13.0,<0.15",
+    "gluonts >=0.13.1,<0.14",
+    "pytorch >=1.13,<2.1",
+    "pytorch-lightning >=2.0.0,<2.5",
+    "networkx >=3.0,<4",
+    "statsforecast >=1.4.0,<1.5",
+    "mlforecast >=0.7.0,<0.7.4",
+    "tqdm >=4.38,<5",
+    "ujson >=5,<6",
+    "autogluon.core ==0.8.3",
+    "autogluon.common ==0.8.3",
+    "autogluon.tabular ==0.8.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1ccc6834b753ad0dc1d96338d8d56ada5b86356a2d34a9e2a29c3e685af277e1",
+   "url": "https://autogluon.s3.us-west-2.amazonaws.com/tarballs/0.8.3_patch/tarball.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -c \"from autogluon.timeseries import __version__ as v; from packaging.version import parse; expected = '0.8.3'; assert parse(v) == parse(expected), f'{v} != {expected}'\""
+   ],
+   "imports": [
+    "autogluon.timeseries"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "autogluon.timeseries",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "autogluon.timeseries"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/autogluon.timeseries.json"
+ },
+ "raw_meta_yaml": "{% set name = \"autogluon.timeseries\" %}\n{% set version = \"0.8.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://autogluon.s3.us-west-2.amazonaws.com/tarballs/0.8.3_patch/tarball.tar.gz\n  sha256: 1ccc6834b753ad0dc1d96338d8d56ada5b86356a2d34a9e2a29c3e685af277e1\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install ./timeseries -vv\n  number: 1\n  script_env:\n    - RELEASE=1\n\nrequirements:\n  host:\n    - python >=3.8,<3.11\n    - packaging\n    - pip\n  run:\n    - python >=3.8,<3.11\n    - joblib >=1.1,<2\n    - numpy >=1.21,<1.27\n    - scipy >=1.5.4,<1.12\n    - pandas >=2.0.0,<2.2.0\n    - statsmodels >=0.13.0,<0.15\n    - gluonts >=0.13.1,<0.14\n    - pytorch >=1.13,<2.1\n    - pytorch-lightning >=2.0.0,<2.5\n    - networkx >=3.0,<4\n    - statsforecast >=1.4.0,<1.5\n    - mlforecast >=0.7.0,<0.7.4\n    - tqdm >=4.38,<5\n    - ujson >=5,<6\n    - autogluon.core =={{ version }}\n    - autogluon.common =={{ version }}\n    - autogluon.tabular =={{ version }}\n\ntest:\n  imports:\n    - autogluon.timeseries\n  commands:\n    - python -c \"from autogluon.timeseries import __version__ as v; from packaging.version import parse; expected = '{{ version }}'; assert parse(v) == parse(expected), f'{v} != {expected}'\" \n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/autogluon.timeseries\n  summary: AutoML for Image, Text, and Tabular Data\n  description: |\n    AutoGluon automates machine learning tasks enabling you to easily achieve strong \n    predictive performance in your applications. With just a few lines of code, you \n    can train and deploy high-accuracy machine learning and deep learning models on \n    image, text, time series, and tabular data.  \n  dev_url: https://github.com/autogluon/autogluon/\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - giswqs\n    - Innixma\n    - suzhoum\n    - tonyhoo\n    - prateekdesai04\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "autogluon.common",
+   "autogluon.core",
+   "autogluon.tabular",
+   "gluonts",
+   "joblib",
+   "mlforecast",
+   "networkx",
+   "numpy",
+   "packaging",
+   "pandas",
+   "pip",
+   "python",
+   "pytorch",
+   "pytorch-lightning",
+   "scipy",
+   "statsforecast",
+   "statsmodels",
+   "tqdm",
+   "ujson"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "packaging",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "autogluon.common",
+    "autogluon.core",
+    "autogluon.tabular",
+    "gluonts",
+    "joblib",
+    "mlforecast",
+    "networkx",
+    "numpy",
+    "pandas",
+    "python",
+    "pytorch",
+    "pytorch-lightning",
+    "scipy",
+    "statsforecast",
+    "statsmodels",
+    "tqdm",
+    "ujson"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "packaging",
+    "pip",
+    "python >=3.8,<3.11"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "autogluon.common ==0.8.3",
+    "autogluon.core ==0.8.3",
+    "autogluon.tabular ==0.8.3",
+    "gluonts >=0.13.1,<0.14",
+    "joblib >=1.1,<2",
+    "mlforecast >=0.7.0,<0.7.4",
+    "networkx >=3.0,<4",
+    "numpy >=1.21,<1.27",
+    "pandas >=2.0.0,<2.2.0",
+    "python >=3.8,<3.11",
+    "pytorch >=1.13,<2.1",
+    "pytorch-lightning >=2.0.0,<2.5",
+    "scipy >=1.5.4,<1.12",
+    "statsforecast >=1.4.0,<1.5",
+    "statsmodels >=0.13.0,<0.15",
+    "tqdm >=4.38,<5",
+    "ujson >=5,<6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://autogluon.s3.us-west-2.amazonaws.com/tarballs/0.8.3_patch/tarball.tar.gz",
+ "version": "0.8.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/autogluon.timeseries.json"
+ }
+}

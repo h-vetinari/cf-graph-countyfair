@@ -1,0 +1,269 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "safety-schemas",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://pypi.org/project/safety-schemas",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Schemas for Safety CLI"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": [
+    "PYTHON -c \"from pathlib import Path; [p.unlink() for p in Path.cwd().rglob('.DS_Store')]\"",
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "safety-schemas",
+   "version": "0.0.10"
+  },
+  "requirements": {
+   "host": [
+    "hatchling",
+    "pip",
+    "python 3.9"
+   ],
+   "run": [
+    "dparse >=0.6.4",
+    "ruamel.yaml >=0.17.21",
+    "packaging >=21.0",
+    "pydantic >=2.5.0,<2.10.0",
+    "python >=3.9",
+    "typing-extensions >=4.7.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "5ec83bb19e17003748d2a4b11e43e1f2b4471c9434329e9a0d80d1069966b96c",
+   "url": "https://pypi.org/packages/source/s/safety-schemas/safety_schemas-0.0.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "safety_schemas",
+    "safety_schemas.models",
+    "safety_schemas.report",
+    "safety_schemas.config"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dparse",
+    "packaging",
+    "pydantic",
+    "python",
+    "ruamel.yaml",
+    "typing-extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://pypi.org/project/safety-schemas",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Schemas for Safety CLI"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": [
+    "PYTHON -c \"from pathlib import Path; [p.unlink() for p in Path.cwd().rglob('.DS_Store')]\"",
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "safety-schemas",
+   "version": "0.0.10"
+  },
+  "requirements": {
+   "host": [
+    "hatchling",
+    "pip",
+    "python 3.9"
+   ],
+   "run": [
+    "dparse >=0.6.4",
+    "ruamel.yaml >=0.17.21",
+    "packaging >=21.0",
+    "pydantic >=2.5.0,<2.10.0",
+    "python >=3.9",
+    "typing-extensions >=4.7.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "5ec83bb19e17003748d2a4b11e43e1f2b4471c9434329e9a0d80d1069966b96c",
+   "url": "https://pypi.org/packages/source/s/safety-schemas/safety_schemas-0.0.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "safety_schemas",
+    "safety_schemas.models",
+    "safety_schemas.report",
+    "safety_schemas.config"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "safety-schemas",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "safety-schemas"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/safety-schemas.json"
+ },
+ "raw_meta_yaml": "{% set version = \"0.0.10\" %}\n{% set python_min = python_min | default(\"3.9\") %}\n\npackage:\n  name: safety-schemas\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/s/safety-schemas/safety_schemas-{{ version }}.tar.gz\n  sha256: 5ec83bb19e17003748d2a4b11e43e1f2b4471c9434329e9a0d80d1069966b96c\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - {{ PYTHON }} -c \"from pathlib import Path; [p.unlink() for p in Path.cwd().rglob('.DS_Store')]\"\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - dparse >=0.6.4\n    - ruamel.yaml >=0.17.21\n    - packaging >=21.0\n    - pydantic >=2.5.0,<2.10.0\n    - python >={{ python_min }}\n    - typing-extensions >=4.7.1\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - safety_schemas\n    - safety_schemas.models\n    - safety_schemas.report\n    - safety_schemas.config\n  commands:\n    - pip check\n\nabout:\n  home: https://pypi.org/project/safety-schemas\n  summary: Schemas for Safety CLI\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "dparse",
+   "hatchling",
+   "packaging",
+   "pip",
+   "pydantic",
+   "python",
+   "ruamel.yaml",
+   "typing-extensions"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dparse",
+    "packaging",
+    "pydantic",
+    "python",
+    "ruamel.yaml",
+    "typing-extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dparse >=0.6.4",
+    "packaging >=21.0",
+    "pydantic >=2.5.0,<2.10.0",
+    "python >=3.9",
+    "ruamel.yaml >=0.17.21",
+    "typing-extensions >=4.7.1"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/s/safety-schemas/safety_schemas-0.0.10.tar.gz",
+ "version": "0.0.10",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/safety-schemas.json"
+ }
+}

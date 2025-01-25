@@ -1,0 +1,253 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "textstat",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/shivam5992/textstat",
+   "doc_url": "https://pypi.org/project/textstat/",
+   "home": "https://github.com/shivam5992/textstat",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Calculate statistical features from text"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mxr-conda",
+    "mwilson8",
+    "oblute",
+    "benhuff",
+    "rxm7706"
+   ]
+  },
+  "package": {
+   "name": "textstat",
+   "version": "0.7.4"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "python >=3.9",
+    "pyphen",
+    "setuptools"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "88708e35d228ac7bd8a7e6119882690b926e4757b065ef165153ba0331519e04",
+   "url": "https://github.com/textstat/textstat/archive/0.7.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "textstat"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pyphen",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/shivam5992/textstat",
+   "doc_url": "https://pypi.org/project/textstat/",
+   "home": "https://github.com/shivam5992/textstat",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Calculate statistical features from text"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mxr-conda",
+    "mwilson8",
+    "oblute",
+    "benhuff",
+    "rxm7706"
+   ]
+  },
+  "package": {
+   "name": "textstat",
+   "version": "0.7.4"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "python >=3.9",
+    "pyphen",
+    "setuptools"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "88708e35d228ac7bd8a7e6119882690b926e4757b065ef165153ba0331519e04",
+   "url": "https://github.com/textstat/textstat/archive/0.7.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "textstat"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "textstat",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "textstat"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/textstat.json"
+ },
+ "raw_meta_yaml": "{% set name = \"textstat\" %}\n{% set version = \"0.7.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/textstat/textstat/archive/{{ version }}.tar.gz\n  sha256: 88708e35d228ac7bd8a7e6119882690b926e4757b065ef165153ba0331519e04\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - pyphen\n    - setuptools\n\ntest:\n  imports:\n    - textstat\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/shivam5992/textstat\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Calculate statistical features from text\n  doc_url: https://pypi.org/project/textstat/\n  dev_url: https://github.com/shivam5992/textstat\n\nextra:\n  recipe-maintainers:\n    - mxr-conda\n    - mwilson8\n    - oblute\n    - benhuff\n    - rxm7706\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "pyphen",
+   "python",
+   "setuptools"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pyphen",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pyphen",
+    "python >=3.9",
+    "setuptools"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://github.com/textstat/textstat/archive/0.7.4.tar.gz",
+ "version": "0.7.4",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/textstat.json"
+ }
+}

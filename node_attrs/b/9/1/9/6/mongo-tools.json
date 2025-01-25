@@ -1,0 +1,686 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "win": "azure"
+  }
+ },
+ "feedstock_name": "mongo-tools",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/mongodb/mongo-tools",
+   "doc_url": "https://docs.mongodb.com/master/reference/program/",
+   "home": "https://www.mongodb.com",
+   "license": "Apache-2.0",
+   "license_file": [
+    "gopath/src/github.com/mongodb/mongo-tools/LICENSE.md",
+    "gopath/src/github.com/mongodb/mongo-tools/licenses/"
+   ],
+   "summary": "Tools for managing and monitoring MongoDB clusters"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "cd gopath/src/github.com/mongodb/mongo-tools",
+    "GOPATH=$SRC_DIR/gopath ./make build",
+    "go clean -modcache",
+    "go-licenses save --save_path licenses ."
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sodre",
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "mongo-tools",
+   "version": "100.10.0"
+  },
+  "requirements": {
+   "build": [
+    "cgo_compiler_stub",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "krb5"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "bsondump --help",
+    "mongodump --help",
+    "mongorestore --help",
+    "mongoimport --help",
+    "mongoexport --help",
+    "mongostat --help",
+    "mongotop --help",
+    "mongofiles --help"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cgo_compiler_stub",
+    "go-licenses"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "krb5"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/mongodb/mongo-tools",
+   "doc_url": "https://docs.mongodb.com/master/reference/program/",
+   "home": "https://www.mongodb.com",
+   "license": "Apache-2.0",
+   "license_file": [
+    "gopath/src/github.com/mongodb/mongo-tools/LICENSE.md",
+    "gopath/src/github.com/mongodb/mongo-tools/licenses/"
+   ],
+   "summary": "Tools for managing and monitoring MongoDB clusters"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "cd gopath/src/github.com/mongodb/mongo-tools",
+    "GOPATH=$SRC_DIR/gopath ./make build",
+    "go clean -modcache",
+    "go-licenses save --save_path licenses ."
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sodre",
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "mongo-tools",
+   "version": "100.10.0"
+  },
+  "requirements": {
+   "build": [
+    "cgo_compiler_stub",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "krb5"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "bsondump --help",
+    "mongodump --help",
+    "mongorestore --help",
+    "mongoimport --help",
+    "mongoexport --help",
+    "mongostat --help",
+    "mongotop --help",
+    "mongofiles --help"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cgo_compiler_stub",
+    "go-licenses"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "krb5"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/mongodb/mongo-tools",
+   "doc_url": "https://docs.mongodb.com/master/reference/program/",
+   "home": "https://www.mongodb.com",
+   "license": "Apache-2.0",
+   "license_file": [
+    "gopath/src/github.com/mongodb/mongo-tools/LICENSE.md",
+    "gopath/src/github.com/mongodb/mongo-tools/licenses/"
+   ],
+   "summary": "Tools for managing and monitoring MongoDB clusters"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "cd gopath/src/github.com/mongodb/mongo-tools",
+    "GOPATH=$SRC_DIR/gopath ./make build",
+    "go clean -modcache",
+    "go-licenses save --save_path licenses ."
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sodre",
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "mongo-tools",
+   "version": "100.10.0"
+  },
+  "requirements": {
+   "build": [
+    "cgo_compiler_stub",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "krb5"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "bsondump --help",
+    "mongodump --help",
+    "mongorestore --help",
+    "mongoimport --help",
+    "mongoexport --help",
+    "mongostat --help",
+    "mongotop --help",
+    "mongofiles --help"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cgo_compiler_stub",
+    "go-licenses"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "krb5"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/mongodb/mongo-tools",
+   "doc_url": "https://docs.mongodb.com/master/reference/program/",
+   "home": "https://www.mongodb.com",
+   "license": "Apache-2.0",
+   "license_file": [
+    "gopath/src/github.com/mongodb/mongo-tools/LICENSE.md",
+    "gopath/src/github.com/mongodb/mongo-tools/licenses/"
+   ],
+   "summary": "Tools for managing and monitoring MongoDB clusters"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "cd gopath/src/github.com/mongodb/mongo-tools",
+    "GOPATH=$SRC_DIR/gopath ./make build",
+    "go clean -modcache",
+    "go-licenses save --save_path licenses .",
+    "bash -c 'GOPATH=$SRC_DIR/gopath PREFIX=$LIBRARY_PREFIX PATH=$PATH:$LIBRARY_BIN ./make build'"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sodre",
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "mongo-tools",
+   "version": "100.10.0"
+  },
+  "requirements": {
+   "build": [
+    "cgo_compiler_stub",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses",
+    "m2w64_c_compiler_stub",
+    "m2w64_c_stdlib_stub"
+   ],
+   "host": [
+    "krb5",
+    "m2-bash",
+    "m2-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   },
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   },
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   },
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   },
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "bsondump --help",
+    "mongodump --help",
+    "mongorestore --help",
+    "mongoimport --help",
+    "mongoexport --help",
+    "mongostat --help",
+    "mongotop --help",
+    "mongofiles --help"
+   ]
+  }
+ },
+ "name": "mongo-tools",
+ "osx_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/mongodb/mongo-tools",
+   "doc_url": "https://docs.mongodb.com/master/reference/program/",
+   "home": "https://www.mongodb.com",
+   "license": "Apache-2.0",
+   "license_file": [
+    "gopath/src/github.com/mongodb/mongo-tools/LICENSE.md",
+    "gopath/src/github.com/mongodb/mongo-tools/licenses/"
+   ],
+   "summary": "Tools for managing and monitoring MongoDB clusters"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "cd gopath/src/github.com/mongodb/mongo-tools",
+    "GOPATH=$SRC_DIR/gopath ./make build",
+    "go clean -modcache",
+    "go-licenses save --save_path licenses ."
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sodre",
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "mongo-tools",
+   "version": "100.10.0"
+  },
+  "requirements": {
+   "build": [
+    "cgo_compiler_stub",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "krb5"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "bsondump --help",
+    "mongodump --help",
+    "mongorestore --help",
+    "mongoimport --help",
+    "mongoexport --help",
+    "mongostat --help",
+    "mongotop --help",
+    "mongofiles --help"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cgo_compiler_stub",
+    "go-licenses"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "krb5"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "mongo-tools"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
+  "osx_64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/mongo-tools.json"
+ },
+ "raw_meta_yaml": "{% set name = \"mongo-tools\" %}\n{% set version = \"100.10.0\" %}\n{% set gopath = \"gopath/src/github.com/mongodb/mongo-tools\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: {{ gopath }}\n    url: https://github.com/mongodb/{{ name }}/archive/{{ version }}.tar.gz\n    sha256: 0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866\n    patches:\n      - 0001-Conda-ecosystem-specific-changes-to-the-build-system.patch\n\nbuild:\n  number: 0\n  script:\n    - cd {{ gopath }}\n    - GOPATH=$SRC_DIR/gopath ./make build                                                           # [unix]\n    - bash -c 'GOPATH=$SRC_DIR/gopath PREFIX=$LIBRARY_PREFIX PATH=$PATH:$LIBRARY_BIN ./make build'  # [win]\n    - go clean -modcache\n    - go-licenses save --save_path licenses .\n\nrequirements:\n  build:\n    - {{ compiler('cgo') }}\n    - {{ compiler('c') }}        # [unix]\n    - {{ stdlib(\"c\") }}          # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ stdlib(\"m2w64_c\") }}    # [win]\n    - go-licenses\n  host:\n    - krb5     # [unix]\n    - m2-bash  # [win]\n    - m2-base  # [win]\n\ntest:\n  commands:\n    # Binary Import and Export Tools\n    - bsondump --help\n    - mongodump --help\n    - mongorestore --help\n\n    # Data Import and Export Tools\n    - mongoimport --help\n    - mongoexport --help\n\n    # Diagnostic Tools\n    - mongostat --help\n    - mongotop --help\n    # - mongoldap is not available in the OpenSource repo\n\n    # GridFS\n    - mongofiles --help\n\nabout:\n  home: https://www.mongodb.com\n  license: Apache-2.0\n  license_file:\n    - {{ gopath }}/LICENSE.md\n    - {{ gopath }}/licenses/\n  summary: Tools for managing and monitoring MongoDB clusters\n  dev_url: https://github.com/mongodb/mongo-tools\n  doc_url: https://docs.mongodb.com/master/reference/program/\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - nehaljwani\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "cgo_compiler_stub",
+   "go-licenses",
+   "krb5",
+   "m2-base",
+   "m2-bash",
+   "m2w64_c_compiler_stub",
+   "m2w64_c_stdlib_stub"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cgo_compiler_stub",
+    "go-licenses",
+    "m2w64_c_compiler_stub",
+    "m2w64_c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "krb5",
+    "m2-base",
+    "m2-bash"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "time": 1568135303.0203686,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cgo_compiler_stub",
+    "go-licenses",
+    "m2w64_c_compiler_stub",
+    "m2w64_c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "krb5",
+    "m2-base",
+    "m2-bash"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz",
+ "version": "100.10.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/mongo-tools.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/mongodb/mongo-tools",
+   "doc_url": "https://docs.mongodb.com/master/reference/program/",
+   "home": "https://www.mongodb.com",
+   "license": "Apache-2.0",
+   "license_file": [
+    "gopath/src/github.com/mongodb/mongo-tools/LICENSE.md",
+    "gopath/src/github.com/mongodb/mongo-tools/licenses/"
+   ],
+   "summary": "Tools for managing and monitoring MongoDB clusters"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "cd gopath/src/github.com/mongodb/mongo-tools",
+    "bash -c 'GOPATH=$SRC_DIR/gopath PREFIX=$LIBRARY_PREFIX PATH=$PATH:$LIBRARY_BIN ./make build'",
+    "go clean -modcache",
+    "go-licenses save --save_path licenses ."
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sodre",
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "mongo-tools",
+   "version": "100.10.0"
+  },
+  "requirements": {
+   "build": [
+    "cgo_compiler_stub",
+    "m2w64_c_compiler_stub",
+    "m2w64_c_stdlib_stub",
+    "go-licenses"
+   ],
+   "host": [
+    "m2-bash",
+    "m2-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "gopath/src/github.com/mongodb/mongo-tools",
+    "patches": [
+     "0001-Conda-ecosystem-specific-changes-to-the-build-system.patch"
+    ],
+    "sha256": "0eb6254caa828976d077ed1e29d966ecc5671aaa23c7932661d52372031c7866",
+    "url": "https://github.com/mongodb/mongo-tools/archive/100.10.0.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "bsondump --help",
+    "mongodump --help",
+    "mongorestore --help",
+    "mongoimport --help",
+    "mongoexport --help",
+    "mongostat --help",
+    "mongotop --help",
+    "mongofiles --help"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "cgo_compiler_stub",
+    "go-licenses",
+    "m2w64_c_compiler_stub",
+    "m2w64_c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "m2-base",
+    "m2-bash"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ }
+}

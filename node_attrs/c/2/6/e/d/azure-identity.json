@@ -1,0 +1,251 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "azure-identity",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/identity/azure-identity",
+   "license": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Microsoft Azure Identity Library for Python"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "marcelotrevisani",
+    "dhirschfeld"
+   ]
+  },
+  "package": {
+   "name": "azure-identity",
+   "version": "1.17.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ],
+   "run": [
+    "typing-extensions >=4.0.0",
+    "azure-core >=1.23.0",
+    "cryptography >=2.5",
+    "msal >=1.24.0",
+    "msal_extensions >=0.3.0",
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "32ecc67cc73f4bd0595e4f64b1ca65cd05186f4fe6f98ed2ae9f1aa32646efea",
+   "url": "https://pypi.org/packages/source/a/azure-identity/azure-identity-1.17.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "azure.identity",
+    "azure.identity._credentials"
+   ],
+   "requires": [
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "azure-core",
+    "cryptography",
+    "msal",
+    "msal_extensions",
+    "python",
+    "typing-extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/identity/azure-identity",
+   "license": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Microsoft Azure Identity Library for Python"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "marcelotrevisani",
+    "dhirschfeld"
+   ]
+  },
+  "package": {
+   "name": "azure-identity",
+   "version": "1.17.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ],
+   "run": [
+    "typing-extensions >=4.0.0",
+    "azure-core >=1.23.0",
+    "cryptography >=2.5",
+    "msal >=1.24.0",
+    "msal_extensions >=0.3.0",
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "32ecc67cc73f4bd0595e4f64b1ca65cd05186f4fe6f98ed2ae9f1aa32646efea",
+   "url": "https://pypi.org/packages/source/a/azure-identity/azure-identity-1.17.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "azure.identity",
+    "azure.identity._credentials"
+   ],
+   "requires": [
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "azure-identity",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "azure-identity"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/azure-identity.json"
+ },
+ "raw_meta_yaml": "{% set name = \"azure-identity\" %}\n{% set version = \"1.17.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 32ecc67cc73f4bd0595e4f64b1ca65cd05186f4fe6f98ed2ae9f1aa32646efea\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - typing-extensions >=4.0.0\n    - azure-core >=1.23.0\n    - cryptography >=2.5\n    - msal >=1.24.0\n    - msal_extensions >=0.3.0\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - azure.identity\n    - azure.identity._credentials\n  # commands:\n  #   - pip check\n  # requires:\n  #   - pip\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/identity/azure-identity\n  summary: Microsoft Azure Identity Library for Python\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n    - dhirschfeld\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "azure-core",
+   "cryptography",
+   "msal",
+   "msal_extensions",
+   "pip",
+   "python",
+   "setuptools",
+   "typing-extensions"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "azure-core",
+    "cryptography",
+    "msal",
+    "msal_extensions",
+    "python",
+    "typing-extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "azure-core >=1.23.0",
+    "cryptography >=2.5",
+    "msal >=1.24.0",
+    "msal_extensions >=0.3.0",
+    "python >=3.9",
+    "typing-extensions >=4.0.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/a/azure-identity/azure-identity-1.17.1.tar.gz",
+ "version": "1.17.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/azure-identity.json"
+ }
+}

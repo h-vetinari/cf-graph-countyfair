@@ -1,0 +1,631 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "libtool",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "GNU libtool is a generic library support script. Libtool hides the\ncomplexity of using shared libraries behind a consistent, portable\ninterface.\n",
+   "dev_url": "http://git.savannah.gnu.org/cgit/libtool.git",
+   "doc_url": "http://www.gnu.org/software/libtool/manual/",
+   "home": "http://www.gnu.org/software/libtool/",
+   "license": "GPL-2.0-or-later",
+   "license_file": "COPYING",
+   "summary": "The GNU Portable Library Tool"
+  },
+  "build": {
+   "ignore_run_exports_from": [
+    "cxx_compiler_stub"
+   ],
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "msarahan",
+    "jakirkham",
+    "mingwandroid",
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "package": {
+   "name": "libtool",
+   "version": "2.4.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "m4",
+    "help2man",
+    "autoconf",
+    "automake",
+    "make",
+    "patch"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-link-as-needed.patch",
+    "patches/0002-apple-silicon.patch"
+   ],
+   "sha256": "04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8",
+   "url": "http://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "help2man",
+    "m4",
+    "make",
+    "patch"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "description": "GNU libtool is a generic library support script. Libtool hides the\ncomplexity of using shared libraries behind a consistent, portable\ninterface.\n",
+   "dev_url": "http://git.savannah.gnu.org/cgit/libtool.git",
+   "doc_url": "http://www.gnu.org/software/libtool/manual/",
+   "home": "http://www.gnu.org/software/libtool/",
+   "license": "GPL-2.0-or-later",
+   "license_file": "COPYING",
+   "summary": "The GNU Portable Library Tool"
+  },
+  "build": {
+   "ignore_run_exports_from": [
+    "cxx_compiler_stub"
+   ],
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "msarahan",
+    "jakirkham",
+    "mingwandroid",
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "package": {
+   "name": "libtool",
+   "version": "2.4.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "m4",
+    "help2man",
+    "autoconf",
+    "automake",
+    "make",
+    "patch"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-link-as-needed.patch",
+    "patches/0002-apple-silicon.patch"
+   ],
+   "sha256": "04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8",
+   "url": "http://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "help2man",
+    "m4",
+    "make",
+    "patch"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "description": "GNU libtool is a generic library support script. Libtool hides the\ncomplexity of using shared libraries behind a consistent, portable\ninterface.\n",
+   "dev_url": "http://git.savannah.gnu.org/cgit/libtool.git",
+   "doc_url": "http://www.gnu.org/software/libtool/manual/",
+   "home": "http://www.gnu.org/software/libtool/",
+   "license": "GPL-2.0-or-later",
+   "license_file": "COPYING",
+   "summary": "The GNU Portable Library Tool"
+  },
+  "build": {
+   "ignore_run_exports_from": [
+    "cxx_compiler_stub"
+   ],
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "msarahan",
+    "jakirkham",
+    "mingwandroid",
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "package": {
+   "name": "libtool",
+   "version": "2.4.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "m4",
+    "help2man",
+    "autoconf",
+    "automake",
+    "make",
+    "patch"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-link-as-needed.patch",
+    "patches/0002-apple-silicon.patch"
+   ],
+   "sha256": "04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8",
+   "url": "http://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "help2man",
+    "m4",
+    "make",
+    "patch"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "GNU libtool is a generic library support script. Libtool hides the\ncomplexity of using shared libraries behind a consistent, portable\ninterface.\n",
+   "dev_url": "http://git.savannah.gnu.org/cgit/libtool.git",
+   "doc_url": "http://www.gnu.org/software/libtool/manual/",
+   "home": "http://www.gnu.org/software/libtool/",
+   "license": "GPL-2.0-or-later",
+   "license_file": "COPYING",
+   "summary": "The GNU Portable Library Tool"
+  },
+  "build": {
+   "ignore_run_exports_from": [
+    "cxx_compiler_stub"
+   ],
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "msarahan",
+    "jakirkham",
+    "mingwandroid",
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "package": {
+   "name": "libtool",
+   "version": "2.4.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "m4",
+    "help2man",
+    "autoconf",
+    "automake",
+    "make",
+    "patch"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-link-as-needed.patch",
+    "patches/0002-apple-silicon.patch"
+   ],
+   "sha256": "04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8",
+   "url": "http://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "name": "libtool",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "GNU libtool is a generic library support script. Libtool hides the\ncomplexity of using shared libraries behind a consistent, portable\ninterface.\n",
+   "dev_url": "http://git.savannah.gnu.org/cgit/libtool.git",
+   "doc_url": "http://www.gnu.org/software/libtool/manual/",
+   "home": "http://www.gnu.org/software/libtool/",
+   "license": "GPL-2.0-or-later",
+   "license_file": "COPYING",
+   "summary": "The GNU Portable Library Tool"
+  },
+  "build": {
+   "ignore_run_exports_from": [
+    "cxx_compiler_stub"
+   ],
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "msarahan",
+    "jakirkham",
+    "mingwandroid",
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "package": {
+   "name": "libtool",
+   "version": "2.4.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "m4",
+    "help2man",
+    "autoconf",
+    "automake",
+    "make",
+    "patch"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-link-as-needed.patch",
+    "patches/0002-apple-silicon.patch"
+   ],
+   "sha256": "04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8",
+   "url": "http://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "help2man",
+    "m4",
+    "make",
+    "patch"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "GNU libtool is a generic library support script. Libtool hides the\ncomplexity of using shared libraries behind a consistent, portable\ninterface.\n",
+   "dev_url": "http://git.savannah.gnu.org/cgit/libtool.git",
+   "doc_url": "http://www.gnu.org/software/libtool/manual/",
+   "home": "http://www.gnu.org/software/libtool/",
+   "license": "GPL-2.0-or-later",
+   "license_file": "COPYING",
+   "summary": "The GNU Portable Library Tool"
+  },
+  "build": {
+   "ignore_run_exports_from": [
+    "cxx_compiler_stub"
+   ],
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "msarahan",
+    "jakirkham",
+    "mingwandroid",
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "package": {
+   "name": "libtool",
+   "version": "2.4.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "m4",
+    "help2man",
+    "autoconf",
+    "automake",
+    "make",
+    "patch"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-link-as-needed.patch",
+    "patches/0002-apple-silicon.patch"
+   ],
+   "sha256": "04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8",
+   "url": "http://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "help2man",
+    "m4",
+    "make",
+    "patch"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "libtool"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
+  "osx_64",
+  "osx_arm64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/libtool.json"
+ },
+ "raw_meta_yaml": "{% set version = \"2.4.7\" %}\n\npackage:\n  name: libtool\n  version: {{ version }}\n\nsource:\n  url: http://ftpmirror.gnu.org/libtool/libtool-{{ version }}.tar.gz\n  sha256: 04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8\n  patches:\n    # From: https://bugs.debian.org/cgi-bin/bugreport.cgi?att=1;bug=557388;filename=link-as-needed.patch;msg=5\n    # See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=347650\n    # and: https://sigquit.wordpress.com/2011/02/16/why-asneeded-doesnt-work-as-expected-for-your-libraries-on-your-autotools-project/\n    - patches/0001-link-as-needed.patch\n    - patches/0002-apple-silicon.patch\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  ignore_run_exports_from:\n    - {{ compiler('cxx') }}\n\nrequirements:\n  build:\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - m4\n    - help2man\n    - autoconf\n    - automake\n    - make\n    - patch\n\ntest:\n  requires:\n    - {{ compiler('cxx') }}\n\nabout:\n  home: http://www.gnu.org/software/libtool/\n  license: GPL-2.0-or-later\n  license_file: COPYING\n  summary: The GNU Portable Library Tool\n  description: |\n    GNU libtool is a generic library support script. Libtool hides the\n    complexity of using shared libraries behind a consistent, portable\n    interface.\n  doc_url: http://www.gnu.org/software/libtool/manual/\n  dev_url: http://git.savannah.gnu.org/cgit/libtool.git\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - msarahan\n    - jakirkham\n    - mingwandroid\n    - isuruf\n    - saraedum\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "autoconf",
+   "automake",
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "cxx_compiler_stub",
+   "help2man",
+   "m4",
+   "make",
+   "patch"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "help2man",
+    "m4",
+    "make",
+    "patch"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "help2man",
+    "m4",
+    "make",
+    "patch"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  }
+ },
+ "url": "http://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz",
+ "version": "2.4.7",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/libtool.json"
+ }
+}

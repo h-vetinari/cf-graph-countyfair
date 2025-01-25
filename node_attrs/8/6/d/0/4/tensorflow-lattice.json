@@ -1,0 +1,272 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "tensorflow-lattice",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/tensorflow/lattice",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "A library that implements optionally monotonic lattice based models."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "maresb"
+   ]
+  },
+  "package": {
+   "name": "tensorflow-lattice",
+   "version": "2.1.1"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "absl-py",
+    "numpy",
+    "pandas",
+    "six",
+    "scikit-learn",
+    "matplotlib-base",
+    "python-graphviz",
+    "tf-keras"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "setup.py.patch"
+   ],
+   "sha256": "0fb71bbc6fe79fd1bf78f4a0623aa9854bf4e6616ae8cd4a7263efe843158d12",
+   "url": "https://pypi.org/packages/source/t/tensorflow-lattice/tensorflow_lattice-2.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "tensorflow_lattice"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "absl-py",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "python-graphviz",
+    "scikit-learn",
+    "six",
+    "tf-keras"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/tensorflow/lattice",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "A library that implements optionally monotonic lattice based models."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "maresb"
+   ]
+  },
+  "package": {
+   "name": "tensorflow-lattice",
+   "version": "2.1.1"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "absl-py",
+    "numpy",
+    "pandas",
+    "six",
+    "scikit-learn",
+    "matplotlib-base",
+    "python-graphviz",
+    "tf-keras"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "setup.py.patch"
+   ],
+   "sha256": "0fb71bbc6fe79fd1bf78f4a0623aa9854bf4e6616ae8cd4a7263efe843158d12",
+   "url": "https://pypi.org/packages/source/t/tensorflow-lattice/tensorflow_lattice-2.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "tensorflow_lattice"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "tensorflow-lattice",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "tensorflow-lattice"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/tensorflow-lattice.json"
+ },
+ "raw_meta_yaml": "{% set name = \"tensorflow-lattice\" %}\n{% set version = \"2.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tensorflow_lattice-{{ version }}.tar.gz\n  sha256: 0fb71bbc6fe79fd1bf78f4a0623aa9854bf4e6616ae8cd4a7263efe843158d12\n  patches:\n    - setup.py.patch\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - absl-py\n    - numpy\n    - pandas\n    - six\n    - scikit-learn\n    - matplotlib-base\n    - python-graphviz\n    - tf-keras\n\ntest:\n  imports:\n    - tensorflow_lattice\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tensorflow/lattice\n  summary: A library that implements optionally monotonic lattice based models.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maresb\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "absl-py",
+   "matplotlib-base",
+   "numpy",
+   "pandas",
+   "pip",
+   "python",
+   "python-graphviz",
+   "scikit-learn",
+   "six",
+   "tf-keras"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "absl-py",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "python-graphviz",
+    "scikit-learn",
+    "six",
+    "tf-keras"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "absl-py",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python >=3.9",
+    "python-graphviz",
+    "scikit-learn",
+    "six",
+    "tf-keras"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/t/tensorflow-lattice/tensorflow_lattice-2.1.1.tar.gz",
+ "version": "2.1.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/tensorflow-lattice.json"
+ }
+}

@@ -1,0 +1,374 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "emsarray",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/csiro-coasts/emsarray/",
+   "doc_url": "https://emsarray.readthedocs.io/",
+   "home": "https://pypi.org/project/emsarray/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Utilities for working with non-CF grid datasets"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "feedstock-name": "emsarray",
+   "recipe-maintainers": [
+    "david-sh-csiro",
+    "mx-moth"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "entry_points": [
+      "emsarray = emsarray.cli:main"
+     ],
+     "noarch": "python"
+    },
+    "name": "emsarray-core",
+    "requirements": {
+     "host": [
+      "python >=3.10",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python >=3.10",
+      "bottleneck >=1.3",
+      "dask >=2023.07.0",
+      "geojson >=3.0",
+      "netcdf4 >=1.6.4",
+      "numpy >=1.24",
+      "packaging >=23.1",
+      "pyshp >=2.3.0",
+      "shapely >=2.0.0",
+      "xarray >=2023.5"
+     ]
+    },
+    "script": "build_base.sh",
+    "test": {
+     "commands": [
+      "pip check",
+      "emsarray --help"
+     ],
+     "imports": [
+      "emsarray"
+     ],
+     "requires": [
+      "pip"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic",
+     "string": "0_fullpackage"
+    },
+    "name": "emsarray",
+    "requirements": {
+     "run": [
+      "emsarray-core",
+      "cartopy >=0.21.1",
+      "cfunits >=3.3.5",
+      "matplotlib-base >=3.7",
+      "pykdtree >=1.3.5",
+      "pooch >=1.7"
+     ]
+    },
+    "test": {
+     "imports": [
+      "emsarray"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "emsarray-meta",
+   "version": "0.8.0"
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "84c7d1281312d5df8aec3c66213500d493da702e18d300e706c7a650c89726eb",
+   "url": "https://pypi.io/packages/source/e/emsarray/emsarray-0.8.0.tar.gz"
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bottleneck",
+    "cartopy",
+    "cfunits",
+    "dask",
+    "emsarray-core",
+    "geojson",
+    "matplotlib-base",
+    "netcdf4",
+    "numpy",
+    "packaging",
+    "pooch",
+    "pykdtree",
+    "pyshp",
+    "python",
+    "shapely",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/csiro-coasts/emsarray/",
+   "doc_url": "https://emsarray.readthedocs.io/",
+   "home": "https://pypi.org/project/emsarray/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Utilities for working with non-CF grid datasets"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "feedstock-name": "emsarray",
+   "recipe-maintainers": [
+    "david-sh-csiro",
+    "mx-moth"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "entry_points": [
+      "emsarray = emsarray.cli:main"
+     ],
+     "noarch": "python"
+    },
+    "name": "emsarray-core",
+    "requirements": {
+     "host": [
+      "python >=3.10",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python >=3.10",
+      "bottleneck >=1.3",
+      "dask >=2023.07.0",
+      "geojson >=3.0",
+      "netcdf4 >=1.6.4",
+      "numpy >=1.24",
+      "packaging >=23.1",
+      "pyshp >=2.3.0",
+      "shapely >=2.0.0",
+      "xarray >=2023.5"
+     ]
+    },
+    "script": "build_base.sh",
+    "test": {
+     "commands": [
+      "pip check",
+      "emsarray --help"
+     ],
+     "imports": [
+      "emsarray"
+     ],
+     "requires": [
+      "pip"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic",
+     "string": "0_fullpackage"
+    },
+    "name": "emsarray",
+    "requirements": {
+     "run": [
+      "emsarray-core",
+      "cartopy >=0.21.1",
+      "cfunits >=3.3.5",
+      "matplotlib-base >=3.7",
+      "pykdtree >=1.3.5",
+      "pooch >=1.7"
+     ]
+    },
+    "test": {
+     "imports": [
+      "emsarray"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "emsarray-meta",
+   "version": "0.8.0"
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "84c7d1281312d5df8aec3c66213500d493da702e18d300e706c7a650c89726eb",
+   "url": "https://pypi.io/packages/source/e/emsarray/emsarray-0.8.0.tar.gz"
+  }
+ },
+ "name": "emsarray-meta",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "emsarray",
+   "emsarray-core"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/emsarray.json"
+ },
+ "raw_meta_yaml": "{% set name = \"emsarray\" %}\n{% set version = \"0.8.0\" %}\n{% set build_num = 0 %}\n\npackage:\n  name: {{ name|lower }}-meta\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/emsarray-{{ version }}.tar.gz\n  sha256: 84c7d1281312d5df8aec3c66213500d493da702e18d300e706c7a650c89726eb\n\nbuild:\n  number: {{ build_num }}\n\noutputs:\n  - name: emsarray-core\n    build:\n      noarch: python\n      entry_points:\n        - emsarray = emsarray.cli:main\n    script: build_base.sh\n\n    requirements:\n      host:\n        - python >=3.10\n        - pip\n        - setuptools\n      run:\n        - python >=3.10\n        - bottleneck >=1.3\n        - dask >=2023.07.0\n        - geojson >=3.0\n        - netcdf4 >=1.6.4\n        - numpy >=1.24\n        - packaging >=23.1\n        - pyshp >=2.3.0\n        - shapely >=2.0.0\n        - xarray >=2023.5\n    test:\n      imports:\n        - emsarray\n      commands:\n        - pip check\n        - emsarray --help\n      requires:\n        - pip\n\n  - name: emsarray\n    build:\n      noarch: generic\n      string: {{ build_num }}_fullpackage\n    requirements:\n      run:\n        - {{ pin_subpackage(\"emsarray-core\", exact=True) }}\n          # plot extra\n        - cartopy >=0.21.1\n        - cfunits >=3.3.5\n        - matplotlib-base >=3.7\n        - pykdtree >=1.3.5\n          # tutorial extra\n        - pooch >=1.7\n    test:\n      imports:\n        - emsarray\n\n\nabout:\n  home: https://pypi.org/project/emsarray/\n  summary: Utilities for working with non-CF grid datasets\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  doc_url: https://emsarray.readthedocs.io/\n  dev_url: https://github.com/csiro-coasts/emsarray/\n\nextra:\n  recipe-maintainers:\n    - david-sh-csiro\n    - mx-moth\n  feedstock-name: {{ name|lower }}\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "bottleneck",
+   "cartopy",
+   "cfunits",
+   "dask",
+   "emsarray-core",
+   "geojson",
+   "matplotlib-base",
+   "netcdf4",
+   "numpy",
+   "packaging",
+   "pip",
+   "pooch",
+   "pykdtree",
+   "pyshp",
+   "python",
+   "setuptools",
+   "shapely",
+   "xarray"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bottleneck",
+    "cartopy",
+    "cfunits",
+    "dask",
+    "emsarray-core",
+    "geojson",
+    "matplotlib-base",
+    "netcdf4",
+    "numpy",
+    "packaging",
+    "pooch",
+    "pykdtree",
+    "pyshp",
+    "python",
+    "shapely",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.10",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bottleneck >=1.3",
+    "cartopy >=0.21.1",
+    "cfunits >=3.3.5",
+    "dask >=2023.07.0",
+    "emsarray-core",
+    "geojson >=3.0",
+    "matplotlib-base >=3.7",
+    "netcdf4 >=1.6.4",
+    "numpy >=1.24",
+    "packaging >=23.1",
+    "pooch >=1.7",
+    "pykdtree >=1.3.5",
+    "pyshp >=2.3.0",
+    "python >=3.10",
+    "shapely >=2.0.0",
+    "xarray >=2023.5"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/e/emsarray/emsarray-0.8.0.tar.gz",
+ "version": "0.8.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/emsarray.json"
+ }
+}

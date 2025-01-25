@@ -1,0 +1,238 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "edfio",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/the-siesta-group/edfio",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "Read and write EDF/EDF+ files."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DerPhysikeR",
+    "marcoross",
+    "hofaflo"
+   ]
+  },
+  "package": {
+   "name": "edfio",
+   "version": "0.4.5"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9,<3.13",
+    "hatchling",
+    "hatch-vcs",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9.0,<4.0.0,<3.13",
+    "numpy >=1.22.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b4d8e276899c578cc585126f1c2e130f708eeeb61d9bcd760d6f4c91b87f9423",
+   "url": "https://pypi.io/packages/source/e/edfio/edfio-0.4.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "edfio"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/the-siesta-group/edfio",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "Read and write EDF/EDF+ files."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DerPhysikeR",
+    "marcoross",
+    "hofaflo"
+   ]
+  },
+  "package": {
+   "name": "edfio",
+   "version": "0.4.5"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9,<3.13",
+    "hatchling",
+    "hatch-vcs",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9.0,<4.0.0,<3.13",
+    "numpy >=1.22.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b4d8e276899c578cc585126f1c2e130f708eeeb61d9bcd760d6f4c91b87f9423",
+   "url": "https://pypi.io/packages/source/e/edfio/edfio-0.4.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "edfio"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "edfio",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "edfio"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/edfio.json"
+ },
+ "raw_meta_yaml": "{% set name = \"edfio\" %}\n{% set version = \"0.4.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/edfio-{{ version }}.tar.gz\n  sha256: b4d8e276899c578cc585126f1c2e130f708eeeb61d9bcd760d6f4c91b87f9423\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9,<3.13\n    - hatchling\n    - hatch-vcs\n    - pip\n  run:\n    - python >=3.9.0,<4.0.0,<3.13\n    - numpy >=1.22.0\n\ntest:\n  imports:\n    - edfio\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/the-siesta-group/edfio\n  summary: Read and write EDF/EDF+ files.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - DerPhysikeR\n    - marcoross\n    - hofaflo\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "hatch-vcs",
+   "hatchling",
+   "numpy",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python >=3.9,<3.13"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy >=1.22.0",
+    "python >=3.9.0,<4.0.0,<3.13"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/e/edfio/edfio-0.4.5.tar.gz",
+ "version": "0.4.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/edfio.json"
+ }
+}

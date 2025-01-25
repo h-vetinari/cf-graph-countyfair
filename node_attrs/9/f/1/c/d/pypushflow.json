@@ -1,0 +1,363 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pypushflow",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://gitlab.esrf.fr/workflow/pypushflow/",
+   "home": "https://gitlab.esrf.fr/workflow/pypushflow/",
+   "license": "MIT",
+   "license_file": "LICENSE.md",
+   "summary": "A task scheduler for cyclic and acyclic graphs"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "woutdenolf",
+    "olofsvensson",
+    "payno"
+   ]
+  },
+  "outputs": [
+   {
+    "name": "pypushflow"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "pypushflow-mx",
+    "requirements": {
+     "host": [
+      "python 3.9",
+      "setuptools >=46.4",
+      "wheel",
+      "pip"
+     ],
+     "run": [
+      "python >=3.9",
+      "pypushflow",
+      "pymongo >=3"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pytest --pyargs pypushflow --ignore \"$(python -c \"from pypushflow import tests;print(tests.__path__[0])\")/concurrent/test_interrupt.py\""
+     ],
+     "imports": [
+      "pypushflow"
+     ],
+     "requires": [
+      "pip",
+      "pytest >=7",
+      "pytest-subtests >=0.4",
+      "psutil >=5.8",
+      "mongita >=1",
+      "mongomock",
+      "numpy",
+      "python 3.9"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "pypushflow",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools >=46.4",
+    "wheel",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f833565292dac5e4f34e7a0ce6768c784ce4cc6ef403680b95984ebfad23a394",
+   "url": "https://pypi.org/packages/source/p/pypushflow/pypushflow-1.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "pytest --pyargs pypushflow --ignore \"$(python -c \"from pypushflow import tests;print(tests.__path__[0])\")/concurrent/test_interrupt.py\""
+   ],
+   "imports": [
+    "pypushflow"
+   ],
+   "requires": [
+    "pip",
+    "pytest >=7",
+    "pytest-subtests >=0.4",
+    "psutil >=5.8",
+    "mongita >=1",
+    "mongomock",
+    "numpy",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pymongo",
+    "pypushflow",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "mongita",
+    "mongomock",
+    "numpy",
+    "pip",
+    "psutil",
+    "pytest",
+    "pytest-subtests",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://gitlab.esrf.fr/workflow/pypushflow/",
+   "home": "https://gitlab.esrf.fr/workflow/pypushflow/",
+   "license": "MIT",
+   "license_file": "LICENSE.md",
+   "summary": "A task scheduler for cyclic and acyclic graphs"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "woutdenolf",
+    "olofsvensson",
+    "payno"
+   ]
+  },
+  "outputs": [
+   {
+    "name": "pypushflow"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "pypushflow-mx",
+    "requirements": {
+     "host": [
+      "python 3.9",
+      "setuptools >=46.4",
+      "wheel",
+      "pip"
+     ],
+     "run": [
+      "python >=3.9",
+      "pypushflow",
+      "pymongo >=3"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pytest --pyargs pypushflow --ignore \"$(python -c \"from pypushflow import tests;print(tests.__path__[0])\")/concurrent/test_interrupt.py\""
+     ],
+     "imports": [
+      "pypushflow"
+     ],
+     "requires": [
+      "pip",
+      "pytest >=7",
+      "pytest-subtests >=0.4",
+      "psutil >=5.8",
+      "mongita >=1",
+      "mongomock",
+      "numpy",
+      "python 3.9"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "pypushflow",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools >=46.4",
+    "wheel",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f833565292dac5e4f34e7a0ce6768c784ce4cc6ef403680b95984ebfad23a394",
+   "url": "https://pypi.org/packages/source/p/pypushflow/pypushflow-1.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "pytest --pyargs pypushflow --ignore \"$(python -c \"from pypushflow import tests;print(tests.__path__[0])\")/concurrent/test_interrupt.py\""
+   ],
+   "imports": [
+    "pypushflow"
+   ],
+   "requires": [
+    "pip",
+    "pytest >=7",
+    "pytest-subtests >=0.4",
+    "psutil >=5.8",
+    "mongita >=1",
+    "mongomock",
+    "numpy",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "pypushflow",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pypushflow",
+   "pypushflow-mx"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pypushflow.json"
+ },
+ "raw_meta_yaml": "{% set name = \"pypushflow\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pypushflow-{{ version }}.tar.gz\n  sha256: f833565292dac5e4f34e7a0ce6768c784ce4cc6ef403680b95984ebfad23a394\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=46.4\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pypushflow\n  commands:\n    - pip check\n    - pytest --pyargs pypushflow --ignore \"$(python -c \"from pypushflow import tests;print(tests.__path__[0])\")/concurrent/test_interrupt.py\"\n  requires:\n    - pip\n    - pytest >=7\n    - pytest-subtests >=0.4\n    - psutil >=5.8\n    - mongita >=1\n    - mongomock\n    - numpy\n    - python {{ python_min }}\n\noutputs:\n  - name: pypushflow\n  - name: pypushflow-mx\n    requirements:\n      host:\n        - python {{ python_min }}\n        - setuptools >=46.4\n        - wheel\n        - pip\n      run:\n        - python >={{ python_min }}\n        - \"{{ pin_subpackage('pypushflow', exact=True) }}\"\n        - pymongo >=3\n    test:\n      imports:\n        - pypushflow\n      commands:\n        - pip check\n        - pytest --pyargs pypushflow --ignore \"$(python -c \"from pypushflow import tests;print(tests.__path__[0])\")/concurrent/test_interrupt.py\"\n      requires:\n        - pip\n        - pytest >=7\n        - pytest-subtests >=0.4\n        - psutil >=5.8\n        - mongita >=1\n        - mongomock\n        - numpy\n        - python {{ python_min }}\n    build:\n      noarch: python\n\nabout:\n  home: https://gitlab.esrf.fr/workflow/pypushflow/\n  summary: A task scheduler for cyclic and acyclic graphs\n  dev_url: https://gitlab.esrf.fr/workflow/pypushflow/\n  license: MIT\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - woutdenolf\n    - olofsvensson\n    - payno\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "pymongo",
+   "pypushflow",
+   "python",
+   "setuptools",
+   "wheel"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pymongo",
+    "pypushflow",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "mongita",
+    "mongomock",
+    "numpy",
+    "pip",
+    "psutil",
+    "pytest",
+    "pytest-subtests",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools >=46.4",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pymongo >=3",
+    "pypushflow",
+    "python >=3.9"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "mongita >=1",
+    "mongomock",
+    "numpy",
+    "pip",
+    "psutil >=5.8",
+    "pytest >=7",
+    "pytest-subtests >=0.4",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/p/pypushflow/pypushflow-1.0.0.tar.gz",
+ "version": "1.0.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pypushflow.json"
+ }
+}

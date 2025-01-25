@@ -1,0 +1,255 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pynsee",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://pynsee.readthedocs.io/en/latest/",
+   "license": "MIT",
+   "license_file": "LICENSE.md",
+   "summary": "Tools to Easily Search and Download French Data From INSEE and IGN APIs"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install .[full] -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hadrilec"
+   ]
+  },
+  "package": {
+   "name": "pynsee",
+   "version": "0.1.7"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "pip"
+   ],
+   "run": [
+    "python >=3.7",
+    "pandas >=0.24.2",
+    "tqdm >=4.56.0",
+    "requests >=2.23",
+    "appdirs >=1.4.4",
+    "unidecode >=1.1.0",
+    "shapely >=1.8.0,<2.0",
+    "urllib3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "fa46d8790cc331d55f8083bb2f241ae38ad1acca1d5b98f3af88d22b27eca171",
+   "url": "https://pypi.io/packages/source/p/pynsee/pynsee-0.1.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "pynsee"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "appdirs",
+    "pandas",
+    "python",
+    "requests",
+    "shapely",
+    "tqdm",
+    "unidecode",
+    "urllib3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://pynsee.readthedocs.io/en/latest/",
+   "license": "MIT",
+   "license_file": "LICENSE.md",
+   "summary": "Tools to Easily Search and Download French Data From INSEE and IGN APIs"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install .[full] -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hadrilec"
+   ]
+  },
+  "package": {
+   "name": "pynsee",
+   "version": "0.1.7"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "pip"
+   ],
+   "run": [
+    "python >=3.7",
+    "pandas >=0.24.2",
+    "tqdm >=4.56.0",
+    "requests >=2.23",
+    "appdirs >=1.4.4",
+    "unidecode >=1.1.0",
+    "shapely >=1.8.0,<2.0",
+    "urllib3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "fa46d8790cc331d55f8083bb2f241ae38ad1acca1d5b98f3af88d22b27eca171",
+   "url": "https://pypi.io/packages/source/p/pynsee/pynsee-0.1.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "pynsee"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "pynsee",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pynsee"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pynsee.json"
+ },
+ "raw_meta_yaml": "{% set name = \"pynsee\" %}\n{% set version = \"0.1.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pynsee-{{ version }}.tar.gz\n  sha256: fa46d8790cc331d55f8083bb2f241ae38ad1acca1d5b98f3af88d22b27eca171\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install .[full] -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - pandas >=0.24.2\n    - tqdm >=4.56.0\n    - requests >=2.23\n    - appdirs >=1.4.4\n    - unidecode >=1.1.0\n    - shapely >=1.8.0,<2.0\n    - urllib3\n\ntest:\n  imports:\n    - pynsee\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pynsee.readthedocs.io/en/latest/\n  summary: Tools to Easily Search and Download French Data From INSEE and IGN APIs\n  license: MIT\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - hadrilec\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "appdirs",
+   "pandas",
+   "pip",
+   "python",
+   "requests",
+   "shapely",
+   "tqdm",
+   "unidecode",
+   "urllib3"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "appdirs",
+    "pandas",
+    "python",
+    "requests",
+    "shapely",
+    "tqdm",
+    "unidecode",
+    "urllib3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.7"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "appdirs >=1.4.4",
+    "pandas >=0.24.2",
+    "python >=3.7",
+    "requests >=2.23",
+    "shapely >=1.8.0,<2.0",
+    "tqdm >=4.56.0",
+    "unidecode >=1.1.0",
+    "urllib3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/p/pynsee/pynsee-0.1.7.tar.gz",
+ "version": "0.1.7",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pynsee.json"
+ }
+}

@@ -1,0 +1,273 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "skrub",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/skrub-data/skrub",
+   "home": "https://github.com/skrub-data/skrub",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE.txt",
+   "summary": "Prepping tables for machine learning"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jeromedockes",
+    "Vincent-Maladiere",
+    "glemaitre"
+   ]
+  },
+  "package": {
+   "name": "skrub",
+   "version": "0.4.1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools",
+    "wheel",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "scikit-learn >=1.2.1",
+    "numpy >=1.23.5",
+    "scipy >=1.9.3",
+    "pandas >=1.5.3",
+    "packaging >=23.1",
+    "jinja2 >=3.1.2",
+    "matplotlib-base >=3.4.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2d32267fcae3aec0af187f209039d78b283fe37ddbee112862b7cefc51f0c2d4",
+   "url": "https://pypi.io/packages/source/s/skrub/skrub-0.4.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "skrub"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "jinja2",
+    "matplotlib-base",
+    "numpy",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/skrub-data/skrub",
+   "home": "https://github.com/skrub-data/skrub",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE.txt",
+   "summary": "Prepping tables for machine learning"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jeromedockes",
+    "Vincent-Maladiere",
+    "glemaitre"
+   ]
+  },
+  "package": {
+   "name": "skrub",
+   "version": "0.4.1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools",
+    "wheel",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "scikit-learn >=1.2.1",
+    "numpy >=1.23.5",
+    "scipy >=1.9.3",
+    "pandas >=1.5.3",
+    "packaging >=23.1",
+    "jinja2 >=3.1.2",
+    "matplotlib-base >=3.4.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2d32267fcae3aec0af187f209039d78b283fe37ddbee112862b7cefc51f0c2d4",
+   "url": "https://pypi.io/packages/source/s/skrub/skrub-0.4.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "skrub"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "skrub",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "skrub"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/skrub.json"
+ },
+ "raw_meta_yaml": "{% set name = \"skrub\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/skrub-{{ version }}.tar.gz\n  sha256: 2d32267fcae3aec0af187f209039d78b283fe37ddbee112862b7cefc51f0c2d4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools\n    - wheel\n    - pip\n  run:\n    - python >=3.9\n    - scikit-learn >=1.2.1\n    - numpy >=1.23.5\n    - scipy >=1.9.3\n    - pandas >=1.5.3\n    - packaging >=23.1\n    - jinja2 >=3.1.2\n    - matplotlib-base >=3.4.3\n\ntest:\n  imports:\n    - skrub\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/skrub-data/skrub\n  summary: Prepping tables for machine learning\n  dev_url: https://github.com/skrub-data/skrub\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jeromedockes\n    - Vincent-Maladiere\n    - glemaitre\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "jinja2",
+   "matplotlib-base",
+   "numpy",
+   "packaging",
+   "pandas",
+   "pip",
+   "python",
+   "scikit-learn",
+   "scipy",
+   "setuptools",
+   "wheel"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "jinja2",
+    "matplotlib-base",
+    "numpy",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.9",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "jinja2 >=3.1.2",
+    "matplotlib-base >=3.4.3",
+    "numpy >=1.23.5",
+    "packaging >=23.1",
+    "pandas >=1.5.3",
+    "python >=3.9",
+    "scikit-learn >=1.2.1",
+    "scipy >=1.9.3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/s/skrub/skrub-0.4.1.tar.gz",
+ "version": "0.4.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/skrub.json"
+ }
+}

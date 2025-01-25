@@ -1,0 +1,337 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "evtgen",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "EvtGen is a Monte Carlo event generator that simulates the decays of heavy\nflavour particles, primarily B and D mesons. It contains a range of decay\nmodels for intermediate and final states containing scalar, vector and\ntensor mesons or resonances, as well as leptons, photons and baryons. Decay\namplitudes are used to generate each branch of a given full decay tree,\ntaking into account angular and time-dependent correlations which allows\nfor the simulation of CP-violating processes.\n",
+   "dev_url": "https://phab.hepforge.org/source/evtgen/",
+   "doc_url": "https://evtgen.hepforge.org/doc/",
+   "home": "https://evtgen.hepforge.org/",
+   "license": "GPL-3.0-or-later",
+   "license_file": "COPYING",
+   "summary": "A Monte Carlo event generator that simulates the decays of heavy flavour particles"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "evtgen"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "evtgen",
+   "version": "2.2.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "pythia8",
+    "hepmc3",
+    "photos",
+    "tauloa"
+   ],
+   "run": [
+    "hepmc3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1fcae56c6b27b89c4a2f4b224d27980607442185f5570e961f6334a3543c6e77",
+   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.01.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libEvtGen$SHLIB_EXT",
+    "test -f $PREFIX/lib/libEvtGenExternal$SHLIB_EXT"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hepmc3",
+    "photos",
+    "pythia8",
+    "tauloa"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "EvtGen is a Monte Carlo event generator that simulates the decays of heavy\nflavour particles, primarily B and D mesons. It contains a range of decay\nmodels for intermediate and final states containing scalar, vector and\ntensor mesons or resonances, as well as leptons, photons and baryons. Decay\namplitudes are used to generate each branch of a given full decay tree,\ntaking into account angular and time-dependent correlations which allows\nfor the simulation of CP-violating processes.\n",
+   "dev_url": "https://phab.hepforge.org/source/evtgen/",
+   "doc_url": "https://evtgen.hepforge.org/doc/",
+   "home": "https://evtgen.hepforge.org/",
+   "license": "GPL-3.0-or-later",
+   "license_file": "COPYING",
+   "summary": "A Monte Carlo event generator that simulates the decays of heavy flavour particles"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "evtgen"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "evtgen",
+   "version": "2.2.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "pythia8",
+    "hepmc3",
+    "photos",
+    "tauloa"
+   ],
+   "run": [
+    "hepmc3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1fcae56c6b27b89c4a2f4b224d27980607442185f5570e961f6334a3543c6e77",
+   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.01.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libEvtGen$SHLIB_EXT",
+    "test -f $PREFIX/lib/libEvtGenExternal$SHLIB_EXT"
+   ]
+  }
+ },
+ "name": "evtgen",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "EvtGen is a Monte Carlo event generator that simulates the decays of heavy\nflavour particles, primarily B and D mesons. It contains a range of decay\nmodels for intermediate and final states containing scalar, vector and\ntensor mesons or resonances, as well as leptons, photons and baryons. Decay\namplitudes are used to generate each branch of a given full decay tree,\ntaking into account angular and time-dependent correlations which allows\nfor the simulation of CP-violating processes.\n",
+   "dev_url": "https://phab.hepforge.org/source/evtgen/",
+   "doc_url": "https://evtgen.hepforge.org/doc/",
+   "home": "https://evtgen.hepforge.org/",
+   "license": "GPL-3.0-or-later",
+   "license_file": "COPYING",
+   "summary": "A Monte Carlo event generator that simulates the decays of heavy flavour particles"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "evtgen"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "evtgen",
+   "version": "2.2.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "pythia8",
+    "hepmc3",
+    "photos",
+    "tauloa"
+   ],
+   "run": [
+    "hepmc3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1fcae56c6b27b89c4a2f4b224d27980607442185f5570e961f6334a3543c6e77",
+   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.01.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libEvtGen$SHLIB_EXT",
+    "test -f $PREFIX/lib/libEvtGenExternal$SHLIB_EXT"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hepmc3",
+    "photos",
+    "pythia8",
+    "tauloa"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "evtgen"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/evtgen.json"
+ },
+ "raw_meta_yaml": "{% set name = \"evtgen\" %}\n{% set version = \"2.02.01\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version|replace(\".0\", \".\") }}\n\nsource:\n  url: https://evtgen.hepforge.org/downloads?f=EvtGen-0{{ version }}.tar.gz\n  sha256: 1fcae56c6b27b89c4a2f4b224d27980607442185f5570e961f6334a3543c6e77\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('evtgen', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n  host:\n    - pythia8\n    - hepmc3\n    - photos\n    - tauloa\n  run:\n    - {{ pin_compatible('hepmc3') }}\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libEvtGen$SHLIB_EXT  # [unix]\n    - test -f $PREFIX/lib/libEvtGenExternal$SHLIB_EXT  # [unix]\n\nabout:\n  home: https://evtgen.hepforge.org/\n  license: GPL-3.0-or-later\n  license_file: COPYING\n  summary: 'A Monte Carlo event generator that simulates the decays of heavy flavour particles'\n  description: |\n    EvtGen is a Monte Carlo event generator that simulates the decays of heavy\n    flavour particles, primarily B and D mesons. It contains a range of decay\n    models for intermediate and final states containing scalar, vector and\n    tensor mesons or resonances, as well as leptons, photons and baryons. Decay\n    amplitudes are used to generate each branch of a given full decay tree,\n    taking into account angular and time-dependent correlations which allows\n    for the simulation of CP-violating processes.\n  doc_url: https://evtgen.hepforge.org/doc/\n  dev_url: https://phab.hepforge.org/source/evtgen/\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "cmake",
+   "cxx_compiler_stub",
+   "hepmc3",
+   "make",
+   "photos",
+   "pythia8",
+   "tauloa"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "hepmc3",
+    "photos",
+    "pythia8",
+    "tauloa"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "hepmc3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hepmc3",
+    "photos",
+    "pythia8",
+    "tauloa"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.01.tar.gz",
+ "version": "2.2.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/evtgen.json"
+ }
+}

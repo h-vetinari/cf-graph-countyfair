@@ -1,0 +1,219 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "agate-excel",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/wireservice/agate-excel",
+   "doc_url": "https://agate-excel.readthedocs.org/",
+   "home": "https://agate-excel.readthedocs.org/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "agate-excel adds read support for Excel files (xls and xlsx) to agate."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr"
+   ]
+  },
+  "package": {
+   "name": "agate-excel",
+   "version": "0.2.3"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "pip"
+   ],
+   "run": [
+    "python",
+    "agate >=1.5.0",
+    "openpyxl >=2.3.0",
+    "xlrd >=0.9.4"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "8f255ef2c87c436b7132049e1dd86c8e08bf82d8c773aea86f3069b461a17d52",
+   "url": "https://pypi.io/packages/source/a/agate-excel/agate-excel-0.2.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "agateexcel"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "agate",
+    "openpyxl",
+    "python",
+    "xlrd"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/wireservice/agate-excel",
+   "doc_url": "https://agate-excel.readthedocs.org/",
+   "home": "https://agate-excel.readthedocs.org/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "agate-excel adds read support for Excel files (xls and xlsx) to agate."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr"
+   ]
+  },
+  "package": {
+   "name": "agate-excel",
+   "version": "0.2.3"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "pip"
+   ],
+   "run": [
+    "python",
+    "agate >=1.5.0",
+    "openpyxl >=2.3.0",
+    "xlrd >=0.9.4"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "8f255ef2c87c436b7132049e1dd86c8e08bf82d8c773aea86f3069b461a17d52",
+   "url": "https://pypi.io/packages/source/a/agate-excel/agate-excel-0.2.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "agateexcel"
+   ]
+  }
+ },
+ "name": "agate-excel",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "agate-excel"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/agate-excel.json"
+ },
+ "raw_meta_yaml": "{% set version = \"0.2.3\" %}\n\npackage:\n  name: agate-excel\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/a/agate-excel/agate-excel-{{ version }}.tar.gz\n  sha256: 8f255ef2c87c436b7132049e1dd86c8e08bf82d8c773aea86f3069b461a17d52\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - agate >=1.5.0\n    - openpyxl >=2.3.0\n    - xlrd >=0.9.4\n\ntest:\n  imports:\n    - agateexcel\n\nabout:\n  home: https://agate-excel.readthedocs.org/\n  license_file: COPYING\n  license: MIT\n  license_family: MIT\n  summary: agate-excel adds read support for Excel files (xls and xlsx) to agate.\n  doc_url: https://agate-excel.readthedocs.org/\n  dev_url: https://github.com/wireservice/agate-excel\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "agate",
+   "openpyxl",
+   "pip",
+   "python",
+   "xlrd"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "agate",
+    "openpyxl",
+    "python",
+    "xlrd"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "agate >=1.5.0",
+    "openpyxl >=2.3.0",
+    "python",
+    "xlrd >=0.9.4"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/a/agate-excel/agate-excel-0.2.3.tar.gz",
+ "version": "0.2.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/agate-excel.json"
+ }
+}

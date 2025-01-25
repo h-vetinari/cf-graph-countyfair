@@ -1,0 +1,288 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "uvicore",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/uvicore/framework",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "The Async Python Framework for Artisans. An Elegant Fullstack Python Web, API and CLI Framework"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "uvicore",
+   "version": "0.2.8"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "poetry-core >=1.0.0"
+   ],
+   "run": [
+    "aiohttp 3.9.*",
+    "anyio 4.3.*",
+    "argon2-cffi 23.1.*",
+    "colored 2.2.*",
+    "cryptography 42.0.*",
+    "environs 10.3.*",
+    "httpx 0.26.*",
+    "merge-args 0.1.*",
+    "prettyprinter 0.18.*",
+    "python >=3.9,<4.0",
+    "pydantic 1.10.*"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c73dca04a14808f79bdfb0ebcb4297d211f695b6a5f7bf4f3a9dc0bcdc7e8b6a",
+   "url": "https://pypi.org/packages/source/u/uvicore/uvicore-0.2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "uvicore"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "aiohttp",
+    "anyio",
+    "argon2-cffi",
+    "colored",
+    "cryptography",
+    "environs",
+    "httpx",
+    "merge-args",
+    "prettyprinter",
+    "pydantic",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/uvicore/framework",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "The Async Python Framework for Artisans. An Elegant Fullstack Python Web, API and CLI Framework"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "uvicore",
+   "version": "0.2.8"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "poetry-core >=1.0.0"
+   ],
+   "run": [
+    "aiohttp 3.9.*",
+    "anyio 4.3.*",
+    "argon2-cffi 23.1.*",
+    "colored 2.2.*",
+    "cryptography 42.0.*",
+    "environs 10.3.*",
+    "httpx 0.26.*",
+    "merge-args 0.1.*",
+    "prettyprinter 0.18.*",
+    "python >=3.9,<4.0",
+    "pydantic 1.10.*"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c73dca04a14808f79bdfb0ebcb4297d211f695b6a5f7bf4f3a9dc0bcdc7e8b6a",
+   "url": "https://pypi.org/packages/source/u/uvicore/uvicore-0.2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "uvicore"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "uvicore",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "uvicore"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/uvicore.json"
+ },
+ "raw_meta_yaml": "{% set name = \"uvicore\" %}\n{% set version = \"0.2.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/uvicore-{{ version }}.tar.gz\n  sha256: c73dca04a14808f79bdfb0ebcb4297d211f695b6a5f7bf4f3a9dc0bcdc7e8b6a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n  run:\n    - aiohttp 3.9.*\n    - anyio 4.3.*\n    - argon2-cffi 23.1.*\n    - colored 2.2.*\n    - cryptography 42.0.*\n    - environs 10.3.*\n    - httpx 0.26.*\n    - merge-args 0.1.*\n    - prettyprinter 0.18.*\n    - python >={{ python_min }},<4.0\n    - pydantic 1.10.*\n\ntest:\n  imports:\n    - uvicore\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/uvicore/framework\n  summary: The Async Python Framework for Artisans. An Elegant Fullstack Python Web, API and CLI Framework\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "aiohttp",
+   "anyio",
+   "argon2-cffi",
+   "colored",
+   "cryptography",
+   "environs",
+   "httpx",
+   "merge-args",
+   "pip",
+   "poetry-core",
+   "prettyprinter",
+   "pydantic",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "aiohttp",
+    "anyio",
+    "argon2-cffi",
+    "colored",
+    "cryptography",
+    "environs",
+    "httpx",
+    "merge-args",
+    "prettyprinter",
+    "pydantic",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core >=1.0.0",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "aiohttp 3.9.*",
+    "anyio 4.3.*",
+    "argon2-cffi 23.1.*",
+    "colored 2.2.*",
+    "cryptography 42.0.*",
+    "environs 10.3.*",
+    "httpx 0.26.*",
+    "merge-args 0.1.*",
+    "prettyprinter 0.18.*",
+    "pydantic 1.10.*",
+    "python >=3.9,<4.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/u/uvicore/uvicore-0.2.8.tar.gz",
+ "version": "0.2.8",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/uvicore.json"
+ }
+}

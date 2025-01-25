@@ -1,0 +1,367 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "datashader",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Datashader is a data rasterization pipeline for automating the process of\ncreating meaningful representations of large amounts of data.\n",
+   "dev_url": "https://github.com/holoviz/datashader",
+   "doc_url": "https://datashader.org",
+   "home": "https://datashader.org",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "Data visualization toolchain based on aggregating into a grid"
+  },
+  "build": {
+   "entry_points": [
+    "datashader = datashader.__main__:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "maximlt",
+    "jbednar",
+    "ocefpaf",
+    "philippjfr",
+    "hoxbro"
+   ]
+  },
+  "package": {
+   "name": "datashader",
+   "version": "0.16.3"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "param",
+    "pyct-core"
+   ],
+   "run": [
+    "python >=3.9",
+    "colorcet",
+    "dask-core",
+    "multipledispatch",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "param",
+    "pillow",
+    "pyct",
+    "requests",
+    "scipy",
+    "toolz",
+    "xarray"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9d0040c7887f7a5a5edd374c297402fd208a62bf6845e87631b54f03b9ae479d",
+   "url": "https://pypi.org/packages/source/d/datashader/datashader-0.16.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "datashader copy-examples --path=. --force",
+    "pytest --nbsmoke-run -k \".ipynb\" getting_started/2_Pipeline.ipynb"
+   ],
+   "imports": [
+    "datashader"
+   ],
+   "requires": [
+    "fastparquet",
+    "flake8",
+    "nbsmoke >=0.5.0",
+    "pytest",
+    "pytest-benchmark",
+    "holoviews >=1.14.1",
+    "netcdf4",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "param",
+    "pip",
+    "pyct-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "colorcet",
+    "dask-core",
+    "multipledispatch",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "param",
+    "pillow",
+    "pyct",
+    "python",
+    "requests",
+    "scipy",
+    "toolz",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "fastparquet",
+    "flake8",
+    "holoviews",
+    "nbsmoke",
+    "netcdf4",
+    "pytest",
+    "pytest-benchmark",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Datashader is a data rasterization pipeline for automating the process of\ncreating meaningful representations of large amounts of data.\n",
+   "dev_url": "https://github.com/holoviz/datashader",
+   "doc_url": "https://datashader.org",
+   "home": "https://datashader.org",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "Data visualization toolchain based on aggregating into a grid"
+  },
+  "build": {
+   "entry_points": [
+    "datashader = datashader.__main__:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "maximlt",
+    "jbednar",
+    "ocefpaf",
+    "philippjfr",
+    "hoxbro"
+   ]
+  },
+  "package": {
+   "name": "datashader",
+   "version": "0.16.3"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "param",
+    "pyct-core"
+   ],
+   "run": [
+    "python >=3.9",
+    "colorcet",
+    "dask-core",
+    "multipledispatch",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "param",
+    "pillow",
+    "pyct",
+    "requests",
+    "scipy",
+    "toolz",
+    "xarray"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9d0040c7887f7a5a5edd374c297402fd208a62bf6845e87631b54f03b9ae479d",
+   "url": "https://pypi.org/packages/source/d/datashader/datashader-0.16.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "datashader copy-examples --path=. --force",
+    "pytest --nbsmoke-run -k \".ipynb\" getting_started/2_Pipeline.ipynb"
+   ],
+   "imports": [
+    "datashader"
+   ],
+   "requires": [
+    "fastparquet",
+    "flake8",
+    "nbsmoke >=0.5.0",
+    "pytest",
+    "pytest-benchmark",
+    "holoviews >=1.14.1",
+    "netcdf4",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "datashader",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "datashader"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/datashader.json"
+ },
+ "raw_meta_yaml": "{% set version = \"0.16.3\" %}\n\npackage:\n  name: datashader\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/d/datashader/datashader-{{ version }}.tar.gz\n  sha256: 9d0040c7887f7a5a5edd374c297402fd208a62bf6845e87631b54f03b9ae479d\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - datashader = datashader.__main__:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - param\n    - pyct-core\n  run:\n    - python >={{ python_min }}\n    - colorcet\n    - dask-core\n    - multipledispatch\n    - numba\n    - numpy\n    - packaging\n    - pandas\n    - param\n    - pillow\n    - pyct\n    - requests\n    - scipy\n    - toolz\n    - xarray\n\ntest:\n  requires:\n    - fastparquet\n    - flake8\n    - nbsmoke >=0.5.0\n    - pytest\n    - pytest-benchmark\n    - holoviews >=1.14.1\n    - netcdf4\n    - python {{ python_min }}\n  imports:\n    - datashader\n  commands:\n    - datashader copy-examples --path=. --force\n    # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data\n    - pytest --nbsmoke-run -k \".ipynb\" getting_started/2_Pipeline.ipynb\n\nabout:\n  home: https://datashader.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Data visualization toolchain based on aggregating into a grid\n  description: |\n    Datashader is a data rasterization pipeline for automating the process of\n    creating meaningful representations of large amounts of data.\n  doc_url: https://datashader.org\n  dev_url: https://github.com/holoviz/datashader\n\nextra:\n  recipe-maintainers:\n    - maximlt\n    - jbednar\n    - ocefpaf\n    - philippjfr\n    - hoxbro\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "colorcet",
+   "dask-core",
+   "multipledispatch",
+   "numba",
+   "numpy",
+   "packaging",
+   "pandas",
+   "param",
+   "pillow",
+   "pip",
+   "pyct",
+   "pyct-core",
+   "python",
+   "requests",
+   "scipy",
+   "toolz",
+   "xarray"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "param",
+    "pip",
+    "pyct-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "colorcet",
+    "dask-core",
+    "multipledispatch",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "param",
+    "pillow",
+    "pyct",
+    "python",
+    "requests",
+    "scipy",
+    "toolz",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "fastparquet",
+    "flake8",
+    "holoviews",
+    "nbsmoke",
+    "netcdf4",
+    "pytest",
+    "pytest-benchmark",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "param",
+    "pip",
+    "pyct-core",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "colorcet",
+    "dask-core",
+    "multipledispatch",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "param",
+    "pillow",
+    "pyct",
+    "python >=3.9",
+    "requests",
+    "scipy",
+    "toolz",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "fastparquet",
+    "flake8",
+    "holoviews >=1.14.1",
+    "nbsmoke >=0.5.0",
+    "netcdf4",
+    "pytest",
+    "pytest-benchmark",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/d/datashader/datashader-0.16.3.tar.gz",
+ "version": "0.16.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/datashader.json"
+ }
+}

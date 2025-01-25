@@ -1,0 +1,657 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "sleepecg",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/cbrnr/sleepecg",
+   "home": "https://sleepecg.readthedocs.io/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A package for sleep stage classification using ECG data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cbrnr",
+    "hoechenberger",
+    "larsoner"
+   ]
+  },
+  "package": {
+   "name": "sleepecg",
+   "version": "0.5.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "numpy >=1.20.0"
+   ],
+   "run": [
+    "numpy",
+    "python",
+    "requests >=2.25.0",
+    "scipy >=1.7.0",
+    "tqdm >=4.60.0",
+    "PyYAML >=5.4.0",
+    "joblib >=1.0.0",
+    "matplotlib-base >=3.5.0",
+    "mne-base >=1.0.0",
+    "numba >=0.55.0",
+    "tensorflow >=2.7.0",
+    "wfdb >=3.4.0",
+    "edfio >=0.1.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "07971f52af329598a95f3e3d36e227fbb82b0f1df8acab32abf5c1c7f6a94ea7",
+   "url": "https://pypi.io/packages/source/s/sleepecg/sleepecg-0.5.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sleepecg"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "edfio",
+    "joblib",
+    "matplotlib-base",
+    "mne-base",
+    "numba",
+    "numpy",
+    "python",
+    "pyyaml",
+    "requests",
+    "scipy",
+    "tensorflow",
+    "tqdm",
+    "wfdb"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/cbrnr/sleepecg",
+   "home": "https://sleepecg.readthedocs.io/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A package for sleep stage classification using ECG data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cbrnr",
+    "hoechenberger",
+    "larsoner"
+   ]
+  },
+  "package": {
+   "name": "sleepecg",
+   "version": "0.5.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "numpy >=1.20.0"
+   ],
+   "run": [
+    "numpy",
+    "python",
+    "requests >=2.25.0",
+    "scipy >=1.7.0",
+    "tqdm >=4.60.0",
+    "PyYAML >=5.4.0",
+    "joblib >=1.0.0",
+    "matplotlib-base >=3.5.0",
+    "mne-base >=1.0.0",
+    "numba >=0.55.0",
+    "tensorflow >=2.7.0",
+    "wfdb >=3.4.0",
+    "edfio >=0.1.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "07971f52af329598a95f3e3d36e227fbb82b0f1df8acab32abf5c1c7f6a94ea7",
+   "url": "https://pypi.io/packages/source/s/sleepecg/sleepecg-0.5.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sleepecg"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "sleepecg",
+ "osx_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/cbrnr/sleepecg",
+   "home": "https://sleepecg.readthedocs.io/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A package for sleep stage classification using ECG data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cbrnr",
+    "hoechenberger",
+    "larsoner"
+   ]
+  },
+  "package": {
+   "name": "sleepecg",
+   "version": "0.5.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "numpy >=1.20.0"
+   ],
+   "run": [
+    "numpy",
+    "python",
+    "requests >=2.25.0",
+    "scipy >=1.7.0",
+    "tqdm >=4.60.0",
+    "PyYAML >=5.4.0",
+    "joblib >=1.0.0",
+    "matplotlib-base >=3.5.0",
+    "mne-base >=1.0.0",
+    "numba >=0.55.0",
+    "tensorflow >=2.7.0",
+    "wfdb >=3.4.0",
+    "edfio >=0.1.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "07971f52af329598a95f3e3d36e227fbb82b0f1df8acab32abf5c1c7f6a94ea7",
+   "url": "https://pypi.io/packages/source/s/sleepecg/sleepecg-0.5.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sleepecg"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "edfio",
+    "joblib",
+    "matplotlib-base",
+    "mne-base",
+    "numba",
+    "numpy",
+    "python",
+    "pyyaml",
+    "requests",
+    "scipy",
+    "tensorflow",
+    "tqdm",
+    "wfdb"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/cbrnr/sleepecg",
+   "home": "https://sleepecg.readthedocs.io/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A package for sleep stage classification using ECG data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cbrnr",
+    "hoechenberger",
+    "larsoner"
+   ]
+  },
+  "package": {
+   "name": "sleepecg",
+   "version": "0.5.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "numpy >=1.20.0"
+   ],
+   "run": [
+    "numpy",
+    "python",
+    "requests >=2.25.0",
+    "scipy >=1.7.0",
+    "tqdm >=4.60.0",
+    "PyYAML >=5.4.0",
+    "joblib >=1.0.0",
+    "matplotlib-base >=3.5.0",
+    "mne-base >=1.0.0",
+    "numba >=0.55.0",
+    "tensorflow >=2.7.0",
+    "wfdb >=3.4.0",
+    "edfio >=0.1.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "07971f52af329598a95f3e3d36e227fbb82b0f1df8acab32abf5c1c7f6a94ea7",
+   "url": "https://pypi.io/packages/source/s/sleepecg/sleepecg-0.5.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sleepecg"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "edfio",
+    "joblib",
+    "matplotlib-base",
+    "mne-base",
+    "numba",
+    "numpy",
+    "python",
+    "pyyaml",
+    "requests",
+    "scipy",
+    "tensorflow",
+    "tqdm",
+    "wfdb"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "sleepecg"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64",
+  "osx_arm64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/sleepecg.json"
+ },
+ "raw_meta_yaml": "{% set name = \"sleepecg\" %}\n{% set version = \"0.5.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 07971f52af329598a95f3e3d36e227fbb82b0f1df8acab32abf5c1c7f6a94ea7\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py<39]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n  host:\n    - python\n    - pip\n    - numpy\n    - numpy >=1.20.0\n  run:\n    - {{ pin_compatible('numpy') }}\n    - python\n    - requests >=2.25.0\n    - scipy >=1.7.0\n    - tqdm >=4.60.0\n    - PyYAML >=5.4.0\n    - joblib >=1.0.0\n    - matplotlib-base >=3.5.0\n    - mne-base >=1.0.0\n    - numba >=0.55.0  # [py<312]\n    - tensorflow >=2.7.0  # [not win and py<312]\n    - wfdb >=3.4.0\n    - edfio >=0.1.1\n\ntest:\n  imports:\n    - sleepecg\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://sleepecg.readthedocs.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A package for sleep stage classification using ECG data\n  dev_url: https://github.com/cbrnr/sleepecg\n\nextra:\n  recipe-maintainers:\n    - cbrnr\n    - hoechenberger\n    - larsoner\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "edfio",
+   "joblib",
+   "matplotlib-base",
+   "mne-base",
+   "numba",
+   "numpy",
+   "pip",
+   "python",
+   "pyyaml",
+   "requests",
+   "scipy",
+   "tensorflow",
+   "tqdm",
+   "wfdb"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "edfio",
+    "joblib",
+    "matplotlib-base",
+    "mne-base",
+    "numba",
+    "numpy",
+    "python",
+    "pyyaml",
+    "requests",
+    "scipy",
+    "tensorflow",
+    "tqdm",
+    "wfdb"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "numpy >=1.20.0",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "PyYAML >=5.4.0",
+    "edfio >=0.1.1",
+    "joblib >=1.0.0",
+    "matplotlib-base >=3.5.0",
+    "mne-base >=1.0.0",
+    "numba >=0.55.0",
+    "numpy",
+    "python",
+    "requests >=2.25.0",
+    "scipy >=1.7.0",
+    "tensorflow >=2.7.0",
+    "tqdm >=4.60.0",
+    "wfdb >=3.4.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/s/sleepecg/sleepecg-0.5.8.tar.gz",
+ "version": "0.5.8",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/sleepecg.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/cbrnr/sleepecg",
+   "home": "https://sleepecg.readthedocs.io/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A package for sleep stage classification using ECG data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cbrnr",
+    "hoechenberger",
+    "larsoner"
+   ]
+  },
+  "package": {
+   "name": "sleepecg",
+   "version": "0.5.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "numpy >=1.20.0"
+   ],
+   "run": [
+    "numpy",
+    "python",
+    "requests >=2.25.0",
+    "scipy >=1.7.0",
+    "tqdm >=4.60.0",
+    "PyYAML >=5.4.0",
+    "joblib >=1.0.0",
+    "matplotlib-base >=3.5.0",
+    "mne-base >=1.0.0",
+    "numba >=0.55.0",
+    "wfdb >=3.4.0",
+    "edfio >=0.1.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "07971f52af329598a95f3e3d36e227fbb82b0f1df8acab32abf5c1c7f6a94ea7",
+   "url": "https://pypi.io/packages/source/s/sleepecg/sleepecg-0.5.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sleepecg"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "edfio",
+    "joblib",
+    "matplotlib-base",
+    "mne-base",
+    "numba",
+    "numpy",
+    "python",
+    "pyyaml",
+    "requests",
+    "scipy",
+    "tqdm",
+    "wfdb"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ }
+}

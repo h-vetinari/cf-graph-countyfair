@@ -1,0 +1,281 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "thermoextrap",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "A package to perform thermodynamic extrapolation of molecular simulations.\n",
+   "home": "https://github.com/usnistgov/thermoextrap",
+   "license": "NIST-PD",
+   "license_file": "LICENSE",
+   "summary": "Thermodynamic extrapolation"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "wpk-nist-gov"
+   ]
+  },
+  "package": {
+   "name": "thermoextrap",
+   "version": "0.5.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8,<3.12",
+    "hatch-fancy-pypi-readme",
+    "hatch-vcs",
+    "hatchling",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8,<3.12",
+    "attrs",
+    "cmomy >=0.8",
+    "lazy_loader",
+    "module-utilities >=0.2",
+    "numpy >=1.20",
+    "scipy",
+    "sympy",
+    "xarray >=0.16"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "884fba5d383ca55be53f4eff0c791b59c022e5f1171c65327c4ebe32dc60efa3",
+   "url": "https://pypi.io/packages/source/t/thermoextrap/thermoextrap-0.5.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "thermoextrap"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-fancy-pypi-readme",
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "attrs",
+    "cmomy",
+    "lazy_loader",
+    "module-utilities",
+    "numpy",
+    "python",
+    "scipy",
+    "sympy",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "A package to perform thermodynamic extrapolation of molecular simulations.\n",
+   "home": "https://github.com/usnistgov/thermoextrap",
+   "license": "NIST-PD",
+   "license_file": "LICENSE",
+   "summary": "Thermodynamic extrapolation"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "wpk-nist-gov"
+   ]
+  },
+  "package": {
+   "name": "thermoextrap",
+   "version": "0.5.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8,<3.12",
+    "hatch-fancy-pypi-readme",
+    "hatch-vcs",
+    "hatchling",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8,<3.12",
+    "attrs",
+    "cmomy >=0.8",
+    "lazy_loader",
+    "module-utilities >=0.2",
+    "numpy >=1.20",
+    "scipy",
+    "sympy",
+    "xarray >=0.16"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "884fba5d383ca55be53f4eff0c791b59c022e5f1171c65327c4ebe32dc60efa3",
+   "url": "https://pypi.io/packages/source/t/thermoextrap/thermoextrap-0.5.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "thermoextrap"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "thermoextrap",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "thermoextrap"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/thermoextrap.json"
+ },
+ "raw_meta_yaml": "{% set name = \"thermoextrap\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/thermoextrap-{{ version }}.tar.gz\n  sha256: 884fba5d383ca55be53f4eff0c791b59c022e5f1171c65327c4ebe32dc60efa3\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8,<3.12\n    - hatch-fancy-pypi-readme\n    - hatch-vcs\n    - hatchling\n    - pip\n  run:\n    - python >=3.8,<3.12\n    - attrs\n    - cmomy >=0.8\n    - lazy_loader\n    - module-utilities >=0.2\n    - numpy >=1.20\n    - scipy\n    - sympy\n    - xarray >=0.16\n\ntest:\n  imports:\n    - thermoextrap\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/usnistgov/thermoextrap\n  summary: Thermodynamic extrapolation\n  description: |\n    A package to perform thermodynamic extrapolation of molecular simulations.\n  license: NIST-PD\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - wpk-nist-gov\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "attrs",
+   "cmomy",
+   "hatch-fancy-pypi-readme",
+   "hatch-vcs",
+   "hatchling",
+   "lazy_loader",
+   "module-utilities",
+   "numpy",
+   "pip",
+   "python",
+   "scipy",
+   "sympy",
+   "xarray"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-fancy-pypi-readme",
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "attrs",
+    "cmomy",
+    "lazy_loader",
+    "module-utilities",
+    "numpy",
+    "python",
+    "scipy",
+    "sympy",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-fancy-pypi-readme",
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python >=3.8,<3.12"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "attrs",
+    "cmomy >=0.8",
+    "lazy_loader",
+    "module-utilities >=0.2",
+    "numpy >=1.20",
+    "python >=3.8,<3.12",
+    "scipy",
+    "sympy",
+    "xarray >=0.16"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/t/thermoextrap/thermoextrap-0.5.0.tar.gz",
+ "version": "0.5.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/thermoextrap.json"
+ }
+}

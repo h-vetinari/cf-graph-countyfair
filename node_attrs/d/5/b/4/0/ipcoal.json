@@ -1,0 +1,259 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "ipcoal",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "A minimalist library for simulating and analyzing genealogies\nand sequences across genomes in a phylogenetic context.\n",
+   "dev_url": "https://github.com/eaton-lab/ipcoal",
+   "doc_url": "https://ipcoal.readthedocs.io/",
+   "home": "https://github.com/eaton-lab/ipcoal",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "Coalescent simulations in Python"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "eaton-lab",
+    "pmckenz1"
+   ]
+  },
+  "package": {
+   "name": "ipcoal",
+   "version": "0.1.5"
+  },
+  "requirements": {
+   "host": [
+    "python",
+    "pip"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "scipy",
+    "pandas",
+    "numba",
+    "toytree",
+    "toyplot",
+    "requests",
+    "future",
+    "msprime"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9d4fac7dc6ba22cd7a5e6536cb83c4ff702556293cdf4df6be59ec3dce0fce19",
+   "url": "https://github.com/eaton-lab/ipcoal/archive/0.1.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "ipcoal"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "future",
+    "msprime",
+    "numba",
+    "numpy",
+    "pandas",
+    "python",
+    "requests",
+    "scipy",
+    "toyplot",
+    "toytree"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "A minimalist library for simulating and analyzing genealogies\nand sequences across genomes in a phylogenetic context.\n",
+   "dev_url": "https://github.com/eaton-lab/ipcoal",
+   "doc_url": "https://ipcoal.readthedocs.io/",
+   "home": "https://github.com/eaton-lab/ipcoal",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "Coalescent simulations in Python"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "eaton-lab",
+    "pmckenz1"
+   ]
+  },
+  "package": {
+   "name": "ipcoal",
+   "version": "0.1.5"
+  },
+  "requirements": {
+   "host": [
+    "python",
+    "pip"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "scipy",
+    "pandas",
+    "numba",
+    "toytree",
+    "toyplot",
+    "requests",
+    "future",
+    "msprime"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9d4fac7dc6ba22cd7a5e6536cb83c4ff702556293cdf4df6be59ec3dce0fce19",
+   "url": "https://github.com/eaton-lab/ipcoal/archive/0.1.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "ipcoal"
+   ]
+  }
+ },
+ "name": "ipcoal",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "ipcoal"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/ipcoal.json"
+ },
+ "raw_meta_yaml": "{% set name = \"ipcoal\" %}\n{% set version = \"0.1.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/ipcoal/archive/{{ version }}.tar.gz\n  sha256: 9d4fac7dc6ba22cd7a5e6536cb83c4ff702556293cdf4df6be59ec3dce0fce19\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - scipy\n    - pandas\n    - numba\n    - toytree\n    - toyplot\n    - requests\n    - future\n    - msprime\n\ntest:\n  imports:\n    - ipcoal\n\nabout:\n  home: https://github.com/eaton-lab/ipcoal\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Coalescent simulations in Python\n  description: |\n    A minimalist library for simulating and analyzing genealogies\n    and sequences across genomes in a phylogenetic context.\n  doc_url: https://ipcoal.readthedocs.io/\n  dev_url: https://github.com/eaton-lab/ipcoal\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n    - pmckenz1\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "future",
+   "msprime",
+   "numba",
+   "numpy",
+   "pandas",
+   "pip",
+   "python",
+   "requests",
+   "scipy",
+   "toyplot",
+   "toytree"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "future",
+    "msprime",
+    "numba",
+    "numpy",
+    "pandas",
+    "python",
+    "requests",
+    "scipy",
+    "toyplot",
+    "toytree"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "future",
+    "msprime",
+    "numba",
+    "numpy",
+    "pandas",
+    "python",
+    "requests",
+    "scipy",
+    "toyplot",
+    "toytree"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/eaton-lab/ipcoal/archive/0.1.5.tar.gz",
+ "version": "0.1.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/ipcoal.json"
+ }
+}

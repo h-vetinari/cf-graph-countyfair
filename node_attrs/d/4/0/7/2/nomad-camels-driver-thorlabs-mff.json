@@ -1,0 +1,217 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "nomad-camels-driver-thorlabs-mff",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/FAU-LAP/CAMELS_drivers",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE.txt",
+   "summary": "Instrument driver for Thorlabs motorized flip mounts for NOMAD-CAMELS"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "nomad-camels-driver-thorlabs-mff",
+   "version": "0.1.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9.6",
+    "setuptools >=61.0",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9.6",
+    "pylablib",
+    "nomad-camels"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "92e3a41611ac94fc0d48663e931185765933464dee81ec14bb5f5475b0e882f5",
+   "url": "https://pypi.io/packages/source/n/nomad-camels-driver-thorlabs-MFF/nomad_camels_driver_thorlabs_MFF-0.1.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "nomad_camels_driver_thorlabs_MFF"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "nomad-camels",
+    "pylablib",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/FAU-LAP/CAMELS_drivers",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE.txt",
+   "summary": "Instrument driver for Thorlabs motorized flip mounts for NOMAD-CAMELS"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "nomad-camels-driver-thorlabs-mff",
+   "version": "0.1.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9.6",
+    "setuptools >=61.0",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9.6",
+    "pylablib",
+    "nomad-camels"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "92e3a41611ac94fc0d48663e931185765933464dee81ec14bb5f5475b0e882f5",
+   "url": "https://pypi.io/packages/source/n/nomad-camels-driver-thorlabs-MFF/nomad_camels_driver_thorlabs_MFF-0.1.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "nomad_camels_driver_thorlabs_MFF"
+   ]
+  }
+ },
+ "name": "nomad-camels-driver-thorlabs-mff",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "nomad-camels-driver-thorlabs-mff"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/nomad-camels-driver-thorlabs-mff.json"
+ },
+ "raw_meta_yaml": "{% set name = \"nomad-camels-driver-thorlabs-MFF\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nomad_camels_driver_thorlabs_MFF-{{ version }}.tar.gz\n  sha256: 92e3a41611ac94fc0d48663e931185765933464dee81ec14bb5f5475b0e882f5\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python >=3.9.6\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >=3.9.6\n    - pylablib\n    - nomad-camels\n\ntest:\n  imports:\n    - nomad_camels_driver_thorlabs_MFF\n\nabout:\n  home: https://github.com/FAU-LAP/CAMELS_drivers\n  summary: Instrument driver for Thorlabs motorized flip mounts for NOMAD-CAMELS\n  license: GPL-3.0-or-later\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "nomad-camels",
+   "pip",
+   "pylablib",
+   "python",
+   "setuptools"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "nomad-camels",
+    "pylablib",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.9.6",
+    "setuptools >=61.0"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "nomad-camels",
+    "pylablib",
+    "python >=3.9.6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/n/nomad-camels-driver-thorlabs-MFF/nomad_camels_driver_thorlabs_MFF-0.1.0.tar.gz",
+ "version": "0.1.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/nomad-camels-driver-thorlabs-mff.json"
+ }
+}

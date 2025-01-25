@@ -1,0 +1,241 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "fps",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "A fast plugin server based on FastAPI and pluggy, providing a composable way to build a web-server",
+   "dev_url": "https://github.com/jupyter-server/fps",
+   "home": "https://github.com/jupyter-server/fps",
+   "keywords": "asgi, server, fastapi, pluggy, plugins",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A fast plugin server"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "adriendelsalle",
+    "davidbrochart"
+   ]
+  },
+  "package": {
+   "name": "fps",
+   "version": "0.0.21"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "pip",
+    "hatchling"
+   ],
+   "run": [
+    "python >=3.7",
+    "fastapi",
+    "pluggy >=1.0.0,<2.0.0",
+    "toml",
+    "typer",
+    "rich"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "93d908c8b518b14879f1128f467834311ad1ae546ca6e49b47d72d0aa00f22f6",
+   "url": "https://pypi.io/packages/source/f/fps/fps-0.0.21.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "fps"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fastapi",
+    "pluggy",
+    "python",
+    "rich",
+    "toml",
+    "typer"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "A fast plugin server based on FastAPI and pluggy, providing a composable way to build a web-server",
+   "dev_url": "https://github.com/jupyter-server/fps",
+   "home": "https://github.com/jupyter-server/fps",
+   "keywords": "asgi, server, fastapi, pluggy, plugins",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A fast plugin server"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "adriendelsalle",
+    "davidbrochart"
+   ]
+  },
+  "package": {
+   "name": "fps",
+   "version": "0.0.21"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "pip",
+    "hatchling"
+   ],
+   "run": [
+    "python >=3.7",
+    "fastapi",
+    "pluggy >=1.0.0,<2.0.0",
+    "toml",
+    "typer",
+    "rich"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "93d908c8b518b14879f1128f467834311ad1ae546ca6e49b47d72d0aa00f22f6",
+   "url": "https://pypi.io/packages/source/f/fps/fps-0.0.21.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "fps"
+   ]
+  }
+ },
+ "name": "fps",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "fps"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/fps.json"
+ },
+ "raw_meta_yaml": "{% set name = \"fps\" %}\n{% set version = \"0.0.21\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 93d908c8b518b14879f1128f467834311ad1ae546ca6e49b47d72d0aa00f22f6\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - hatchling\n  run:\n    - python >=3.7\n    - fastapi\n    - pluggy >=1.0.0,<2.0.0\n    - toml\n    - typer\n    - rich\n\ntest:\n  imports:\n    - fps\n\nabout:\n  home: https://github.com/jupyter-server/fps\n  summary: A fast plugin server\n  description: A fast plugin server based on FastAPI and pluggy, providing a composable way to build a web-server\n  keywords: asgi, server, fastapi, pluggy, plugins\n  dev_url: https://github.com/jupyter-server/fps\n  license_file: LICENSE\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - adriendelsalle\n    - davidbrochart\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "fastapi",
+   "hatchling",
+   "pip",
+   "pluggy",
+   "python",
+   "rich",
+   "toml",
+   "typer"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fastapi",
+    "pluggy",
+    "python",
+    "rich",
+    "toml",
+    "typer"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python >=3.7"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fastapi",
+    "pluggy >=1.0.0,<2.0.0",
+    "python >=3.7",
+    "rich",
+    "toml",
+    "typer"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/f/fps/fps-0.0.21.tar.gz",
+ "version": "0.0.21",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/fps.json"
+ }
+}

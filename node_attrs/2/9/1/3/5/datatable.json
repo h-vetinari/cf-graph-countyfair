@@ -1,0 +1,369 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "datatable",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/h2oai/datatable",
+   "license": "MPL-2.0",
+   "license_file": "LICENSE",
+   "summary": "Python library for fast multi-threaded data manipulation and munging."
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": null
+  },
+  "package": {
+   "name": "datatable",
+   "version": "0.11.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub"
+   ],
+   "host": [
+    "pip",
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3c3a7d3bee3c463a36fe77c5d4747278a741c23fc6c6e2dba110deec200502ba",
+   "url": "https://pypi.io/packages/source/d/datatable/datatable-0.11.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "rm tests/test-docs.py",
+    "pytest tests -k 'not test_fread_from_cmd2 and not test_dt_version'"
+   ],
+   "files": [
+    "setup.cfg"
+   ],
+   "imports": [
+    "datatable"
+   ],
+   "requires": [
+    "pip",
+    "numpy",
+    "pandas",
+    "xlrd",
+    "pytest >=3.1",
+    "pytest-cov",
+    "docutils >=0.14"
+   ],
+   "source_files": [
+    "src",
+    "tests",
+    "tests_random",
+    "LICENSE"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "docutils",
+    "numpy",
+    "pandas",
+    "pip",
+    "pytest",
+    "pytest-cov",
+    "xlrd"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/h2oai/datatable",
+   "license": "MPL-2.0",
+   "license_file": "LICENSE",
+   "summary": "Python library for fast multi-threaded data manipulation and munging."
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": null
+  },
+  "package": {
+   "name": "datatable",
+   "version": "0.11.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub"
+   ],
+   "host": [
+    "pip",
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3c3a7d3bee3c463a36fe77c5d4747278a741c23fc6c6e2dba110deec200502ba",
+   "url": "https://pypi.io/packages/source/d/datatable/datatable-0.11.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "rm tests/test-docs.py",
+    "pytest tests -k 'not test_fread_from_cmd2 and not test_dt_version'"
+   ],
+   "files": [
+    "setup.cfg"
+   ],
+   "imports": [
+    "datatable"
+   ],
+   "requires": [
+    "pip",
+    "numpy",
+    "pandas",
+    "xlrd",
+    "pytest >=3.1",
+    "pytest-cov",
+    "docutils >=0.14"
+   ],
+   "source_files": [
+    "src",
+    "tests",
+    "tests_random",
+    "LICENSE"
+   ]
+  }
+ },
+ "name": "datatable",
+ "osx_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/h2oai/datatable",
+   "license": "MPL-2.0",
+   "license_file": "LICENSE",
+   "summary": "Python library for fast multi-threaded data manipulation and munging."
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": null
+  },
+  "package": {
+   "name": "datatable",
+   "version": "0.11.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub"
+   ],
+   "host": [
+    "pip",
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3c3a7d3bee3c463a36fe77c5d4747278a741c23fc6c6e2dba110deec200502ba",
+   "url": "https://pypi.io/packages/source/d/datatable/datatable-0.11.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "rm tests/test-docs.py",
+    "pytest tests -k 'not test_fread_from_cmd2 and not test_dt_version'"
+   ],
+   "files": [
+    "setup.cfg"
+   ],
+   "imports": [
+    "datatable"
+   ],
+   "requires": [
+    "pip",
+    "numpy",
+    "pandas",
+    "xlrd",
+    "pytest >=3.1",
+    "pytest-cov",
+    "docutils >=0.14"
+   ],
+   "source_files": [
+    "src",
+    "tests",
+    "tests_random",
+    "LICENSE"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "docutils",
+    "numpy",
+    "pandas",
+    "pip",
+    "pytest",
+    "pytest-cov",
+    "xlrd"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "datatable"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/datatable.json"
+ },
+ "raw_meta_yaml": "{% set name = \"datatable\" %}\n{% set version = \"0.11.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datatable-{{ version }}.tar.gz\n  sha256: 3c3a7d3bee3c463a36fe77c5d4747278a741c23fc6c6e2dba110deec200502ba\n\nbuild:\n  number: 0\n  skip: true  # [py<35 or win]\n\n# numpy and pandas are _optional_ dependencies of dataframe\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - datatable\n  files:\n    - setup.cfg\n  source_files:\n    - src\n    - tests\n    - tests_random\n    - LICENSE\n  commands:\n    - rm tests/test-docs.py\n    - pytest tests -k 'not test_fread_from_cmd2 and not test_dt_version'\n  requires:\n    - pip\n    - numpy\n    - pandas\n    - xlrd\n    - pytest >=3.1\n    - pytest-cov\n    - docutils >=0.14\n\nabout:\n  home: https://github.com/h2oai/datatable\n  summary: Python library for fast multi-threaded data manipulation and munging.\n  license: MPL-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "cxx_compiler_stub",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "docutils",
+    "numpy",
+    "pandas",
+    "pip",
+    "pytest",
+    "pytest-cov",
+    "xlrd"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "docutils >=0.14",
+    "numpy",
+    "pandas",
+    "pip",
+    "pytest >=3.1",
+    "pytest-cov",
+    "xlrd"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/d/datatable/datatable-0.11.1.tar.gz",
+ "version": "0.11.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/datatable.json"
+ }
+}

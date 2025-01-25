@@ -1,0 +1,209 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "unumpy",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "`unumpy` is a backend-dispatchable version of NumPy.\n",
+   "dev_url": "https://github.com/Quansight-Labs/unumpy",
+   "doc_url": "http://unumpy.readthedocs.io/",
+   "home": "http://github.com/Quansight-Labs/unumpy",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A backend-dispatchable version of NumPy"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hameerabbasi"
+   ]
+  },
+  "package": {
+   "name": "unumpy",
+   "version": "0.6.1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.5",
+    "pip"
+   ],
+   "run": [
+    "python >=3.5",
+    "uarray ==0.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "98b3be46548e941f0d00bacf377835a3471e3deb1630d1fefe642d8b53232a3c",
+   "url": "https://github.com/Quansight-Labs/unumpy/archive/0.6.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "unumpy"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "uarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "`unumpy` is a backend-dispatchable version of NumPy.\n",
+   "dev_url": "https://github.com/Quansight-Labs/unumpy",
+   "doc_url": "http://unumpy.readthedocs.io/",
+   "home": "http://github.com/Quansight-Labs/unumpy",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A backend-dispatchable version of NumPy"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hameerabbasi"
+   ]
+  },
+  "package": {
+   "name": "unumpy",
+   "version": "0.6.1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.5",
+    "pip"
+   ],
+   "run": [
+    "python >=3.5",
+    "uarray ==0.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "98b3be46548e941f0d00bacf377835a3471e3deb1630d1fefe642d8b53232a3c",
+   "url": "https://github.com/Quansight-Labs/unumpy/archive/0.6.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "unumpy"
+   ]
+  }
+ },
+ "name": "unumpy",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "unumpy"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/unumpy.json"
+ },
+ "raw_meta_yaml": "{% set name = \"unumpy\" %}\n{% set version = \"0.6.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Quansight-Labs/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 98b3be46548e941f0d00bacf377835a3471e3deb1630d1fefe642d8b53232a3c\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - uarray ==0.6\n\ntest:\n  imports:\n    - unumpy\n\nabout:\n  home: http://github.com/Quansight-Labs/unumpy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A backend-dispatchable version of NumPy'\n  description: |\n    `unumpy` is a backend-dispatchable version of NumPy.\n  doc_url: http://unumpy.readthedocs.io/\n  dev_url: https://github.com/Quansight-Labs/unumpy\n\nextra:\n  recipe-maintainers:\n    - hameerabbasi\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "python",
+   "uarray"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "uarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.5"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python >=3.5",
+    "uarray ==0.6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/Quansight-Labs/unumpy/archive/0.6.1.tar.gz",
+ "version": "0.6.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/unumpy.json"
+ }
+}

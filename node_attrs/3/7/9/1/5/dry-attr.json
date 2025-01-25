@@ -1,0 +1,217 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "dry-attr",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/denis-ryzhkov/attr",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Simple decorator to set attributes of target function or class in a DRY way."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "denis-ryzhkov",
+    "iamthebot"
+   ]
+  },
+  "package": {
+   "name": "dry-attr",
+   "version": "0.3.2"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6.0",
+    "pip"
+   ],
+   "run": [
+    "python >=3.6.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1ceebca768181cdcce9827611b1d728e592be5d293911539ea3d0b0bfa1146f4",
+   "url": "https://pypi.io/packages/source/a/attr/attr-0.3.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "attr",
+    "dry_attr"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/denis-ryzhkov/attr",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Simple decorator to set attributes of target function or class in a DRY way."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "denis-ryzhkov",
+    "iamthebot"
+   ]
+  },
+  "package": {
+   "name": "dry-attr",
+   "version": "0.3.2"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6.0",
+    "pip"
+   ],
+   "run": [
+    "python >=3.6.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1ceebca768181cdcce9827611b1d728e592be5d293911539ea3d0b0bfa1146f4",
+   "url": "https://pypi.io/packages/source/a/attr/attr-0.3.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "attr",
+    "dry_attr"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "dry-attr",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "dry-attr"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/dry-attr.json"
+ },
+ "raw_meta_yaml": "{% set version = \"0.3.2\" %}\n{% set name = \"dry-attr\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/a/attr/attr-{{ version }}.tar.gz\n  sha256: 1ceebca768181cdcce9827611b1d728e592be5d293911539ea3d0b0bfa1146f4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6.0\n    - pip\n  run:\n    - python >=3.6.0\n\ntest:\n  imports:\n    - attr\n    - dry_attr\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/denis-ryzhkov/attr\n  summary: Simple decorator to set attributes of target function or class in a DRY way.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - denis-ryzhkov\n    - iamthebot\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6.0"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python >=3.6.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/a/attr/attr-0.3.2.tar.gz",
+ "version": "0.3.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/dry-attr.json"
+ }
+}

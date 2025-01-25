@@ -1,0 +1,273 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "digdem",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/marcperuz/digdem",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Semi-automated modification of Digital Elevation Models"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "marcperuz"
+   ]
+  },
+  "package": {
+   "name": "digdem",
+   "version": "0.2.3"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "setuptools >=61.0.0",
+    "wheel",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy",
+    "pandas",
+    "shapely",
+    "geopandas",
+    "requests",
+    "scipy",
+    "matplotlib-base",
+    "rasterio"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "827dd15f385d7051572d3cf3673af58991237778b7b63bd2e3d867890da82b6f",
+   "url": "https://pypi.io/packages/source/d/digdem/digdem-0.2.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "digdem"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "geopandas",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "rasterio",
+    "requests",
+    "scipy",
+    "shapely"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/marcperuz/digdem",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Semi-automated modification of Digital Elevation Models"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "marcperuz"
+   ]
+  },
+  "package": {
+   "name": "digdem",
+   "version": "0.2.3"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "setuptools >=61.0.0",
+    "wheel",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy",
+    "pandas",
+    "shapely",
+    "geopandas",
+    "requests",
+    "scipy",
+    "matplotlib-base",
+    "rasterio"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "827dd15f385d7051572d3cf3673af58991237778b7b63bd2e3d867890da82b6f",
+   "url": "https://pypi.io/packages/source/d/digdem/digdem-0.2.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "digdem"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "digdem",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "digdem"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/digdem.json"
+ },
+ "raw_meta_yaml": "{% set name = \"digdem\" %}\n{% set version = \"0.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/digdem-{{ version }}.tar.gz\n  sha256: 827dd15f385d7051572d3cf3673af58991237778b7b63bd2e3d867890da82b6f\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python >=3.8\n    - setuptools >=61.0.0\n    - wheel\n    - pip\n  run:\n    - python >=3.8\n    - numpy\n    - pandas\n    - shapely\n    - geopandas\n    - requests\n    - scipy\n    - matplotlib-base\n    - rasterio\n\ntest:\n  imports:\n    - digdem\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/marcperuz/digdem\n  summary: Semi-automated modification of Digital Elevation Models\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - marcperuz\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "geopandas",
+   "matplotlib-base",
+   "numpy",
+   "pandas",
+   "pip",
+   "python",
+   "rasterio",
+   "requests",
+   "scipy",
+   "setuptools",
+   "shapely",
+   "wheel"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "geopandas",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "rasterio",
+    "requests",
+    "scipy",
+    "shapely"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.8",
+    "setuptools >=61.0.0",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "geopandas",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python >=3.8",
+    "rasterio",
+    "requests",
+    "scipy",
+    "shapely"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/d/digdem/digdem-0.2.3.tar.gz",
+ "version": "0.2.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/digdem.json"
+ }
+}

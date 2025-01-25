@@ -1,0 +1,269 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "flaml",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/microsoft/FLAML",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A fast and lightweight autoML system"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "michalchromcak",
+    "skzhang1"
+   ]
+  },
+  "package": {
+   "name": "flaml",
+   "version": "2.1.2"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "numpy >=1.17.0rc1",
+    "lightgbm >=2.3.1",
+    "xgboost >=0.90",
+    "scipy >=1.4.1",
+    "pandas >=1.1.4",
+    "scikit-learn >=0.24",
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "33102862a21c63d004f78e1349ccd55753e3534bfcdcb6e65a08562c14d69e44",
+   "url": "https://pypi.io/packages/source/F/FLAML/FLAML-2.1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest -m conda"
+   ],
+   "requires": [
+    "pip",
+    "pytest",
+    "pandas >=1.1.4",
+    "scikit-learn >=0.24"
+   ],
+   "source_files": [
+    "test/test_conda_distribution.py"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "lightgbm",
+    "numpy",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "xgboost"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "pip",
+    "pytest",
+    "scikit-learn"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/microsoft/FLAML",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A fast and lightweight autoML system"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "michalchromcak",
+    "skzhang1"
+   ]
+  },
+  "package": {
+   "name": "flaml",
+   "version": "2.1.2"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "numpy >=1.17.0rc1",
+    "lightgbm >=2.3.1",
+    "xgboost >=0.90",
+    "scipy >=1.4.1",
+    "pandas >=1.1.4",
+    "scikit-learn >=0.24",
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "33102862a21c63d004f78e1349ccd55753e3534bfcdcb6e65a08562c14d69e44",
+   "url": "https://pypi.io/packages/source/F/FLAML/FLAML-2.1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest -m conda"
+   ],
+   "requires": [
+    "pip",
+    "pytest",
+    "pandas >=1.1.4",
+    "scikit-learn >=0.24"
+   ],
+   "source_files": [
+    "test/test_conda_distribution.py"
+   ]
+  }
+ },
+ "name": "flaml",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "flaml"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/flaml.json"
+ },
+ "raw_meta_yaml": "{% set name = \"FLAML\" %}\n{% set version = \"2.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 33102862a21c63d004f78e1349ccd55753e3534bfcdcb6e65a08562c14d69e44\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - numpy >=1.17.0rc1\n    - lightgbm >=2.3.1\n    - xgboost >=0.90\n    - scipy >=1.4.1\n    - pandas >=1.1.4\n    - scikit-learn >=0.24\n    - python >=3.6\n\ntest:\n  requires:\n    - pip\n    - pytest\n    - pandas >=1.1.4\n    - scikit-learn >=0.24\n  source_files:\n    # list all conda related test files here\n    # note: keep the conda related tests directly in the test folder, so that bundling to tar.gz includes them\n    # or just extend the test_conda_distribution.py file with more tests (and make sure to mark it as conda)\n    - test/test_conda_distribution.py\n  commands:\n    - pytest -m conda\n\nabout:\n  home: https://github.com/microsoft/FLAML\n  summary: A fast and lightweight autoML system\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - michalchromcak\n    - skzhang1\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "lightgbm",
+   "numpy",
+   "pandas",
+   "pip",
+   "python",
+   "scikit-learn",
+   "scipy",
+   "xgboost"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "lightgbm",
+    "numpy",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "xgboost"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "pip",
+    "pytest",
+    "scikit-learn"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "lightgbm >=2.3.1",
+    "numpy >=1.17.0rc1",
+    "pandas >=1.1.4",
+    "python >=3.6",
+    "scikit-learn >=0.24",
+    "scipy >=1.4.1",
+    "xgboost >=0.90"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pandas >=1.1.4",
+    "pip",
+    "pytest",
+    "scikit-learn >=0.24"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/F/FLAML/FLAML-2.1.2.tar.gz",
+ "version": "2.1.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/flaml.json"
+ }
+}

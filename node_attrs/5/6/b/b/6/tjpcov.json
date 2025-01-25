@@ -1,0 +1,261 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "tjpcov",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/LSSTDESC/TJPCov",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Covariances for LSST DESC"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mattkwiecien"
+   ]
+  },
+  "package": {
+   "name": "tjpcov",
+   "version": "0.4.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "scipy",
+    "numpy",
+    "jinja2",
+    "pyyaml",
+    "pyccl >=3.0.0",
+    "sacc >=0.12",
+    "camb",
+    "healpy",
+    "h5py",
+    "mpi4py",
+    "namaster >=1.4.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "fd4cd437105521e11c7f977d522cdfae75fed6d7e0c06afa599cc7eec8d7a4eb",
+   "url": "https://pypi.io/packages/source/t/tjpcov/tjpcov-0.4.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "tjpcov"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "camb",
+    "h5py",
+    "healpy",
+    "jinja2",
+    "mpi4py",
+    "namaster",
+    "numpy",
+    "pyccl",
+    "python",
+    "pyyaml",
+    "sacc",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/LSSTDESC/TJPCov",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Covariances for LSST DESC"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mattkwiecien"
+   ]
+  },
+  "package": {
+   "name": "tjpcov",
+   "version": "0.4.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "scipy",
+    "numpy",
+    "jinja2",
+    "pyyaml",
+    "pyccl >=3.0.0",
+    "sacc >=0.12",
+    "camb",
+    "healpy",
+    "h5py",
+    "mpi4py",
+    "namaster >=1.4.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "fd4cd437105521e11c7f977d522cdfae75fed6d7e0c06afa599cc7eec8d7a4eb",
+   "url": "https://pypi.io/packages/source/t/tjpcov/tjpcov-0.4.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "tjpcov"
+   ]
+  }
+ },
+ "name": "tjpcov",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "tjpcov"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/tjpcov.json"
+ },
+ "raw_meta_yaml": "{% set name = \"tjpcov\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tjpcov-{{ version }}.tar.gz\n  sha256: fd4cd437105521e11c7f977d522cdfae75fed6d7e0c06afa599cc7eec8d7a4eb\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n  run: \n    - python >=3.8\n    - scipy\n    - numpy\n    - jinja2\n    - pyyaml\n    - pyccl >=3.0.0\n    - sacc >=0.12\n    - camb\n    - healpy\n    - h5py\n    - mpi4py\n    - namaster >=1.4.0        \n\ntest:\n  imports:\n    - tjpcov\n\nabout:\n  home: https://github.com/LSSTDESC/TJPCov\n  summary: Covariances for LSST DESC\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mattkwiecien\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "camb",
+   "h5py",
+   "healpy",
+   "jinja2",
+   "mpi4py",
+   "namaster",
+   "numpy",
+   "pip",
+   "pyccl",
+   "python",
+   "pyyaml",
+   "sacc",
+   "scipy"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "camb",
+    "h5py",
+    "healpy",
+    "jinja2",
+    "mpi4py",
+    "namaster",
+    "numpy",
+    "pyccl",
+    "python",
+    "pyyaml",
+    "sacc",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.8"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "camb",
+    "h5py",
+    "healpy",
+    "jinja2",
+    "mpi4py",
+    "namaster >=1.4.0",
+    "numpy",
+    "pyccl >=3.0.0",
+    "python >=3.8",
+    "pyyaml",
+    "sacc >=0.12",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/t/tjpcov/tjpcov-0.4.0.tar.gz",
+ "version": "0.4.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/tjpcov.json"
+ }
+}

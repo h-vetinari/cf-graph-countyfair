@@ -1,0 +1,335 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "slcl1butils",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "python tool to read/display/enrich Sentinel-1 SAR Level-1 B SLC products produced at IFREMER\n",
+   "home": "https://github.com/umr-lops/utils_xsarslc_l1b",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "Python library to exploit SAR IFREMER L1B products"
+  },
+  "build": {
+   "entry_points": [
+    "do_IW_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_IW_L1C_SAFE_from_L1B_SAFE:main",
+    "do_WV_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_WV_L1C_SAFE_from_L1B_SAFE:main",
+    "stack_WV_L1C_to_ZARR = slcl1butils.compute.stack_wv_l1c_monthly:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "agrouaze",
+    "alxmouche"
+   ]
+  },
+  "package": {
+   "name": "slcl1butils",
+   "version": "2024.1.18.post1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools >=64.0",
+    "setuptools-scm",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "xarray",
+    "dask",
+    "numpy",
+    "netcdf4",
+    "shapely",
+    "scipy",
+    "matplotlib-base",
+    "xarray-datatree",
+    "tqdm",
+    "zarr",
+    "fsspec",
+    "aiohttp",
+    "PyYAML",
+    "holoviews",
+    "geoviews"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0d4d1cea54051fee03295f0a4dd38107c0f10187b6b9878eaf84d3a532a49b72",
+   "url": "https://pypi.io/packages/source/s/slcl1butils/slcl1butils-2024.1.18.post1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "do_IW_L1C_SAFE_from_L1B_SAFE --help",
+    "do_WV_L1C_SAFE_from_L1B_SAFE --help",
+    "stack_WV_L1C_to_ZARR --help"
+   ],
+   "imports": [
+    "slcl1butils"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "aiohttp",
+    "dask",
+    "fsspec",
+    "geoviews",
+    "holoviews",
+    "matplotlib-base",
+    "netcdf4",
+    "numpy",
+    "python",
+    "pyyaml",
+    "scipy",
+    "shapely",
+    "tqdm",
+    "xarray",
+    "xarray-datatree",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "python tool to read/display/enrich Sentinel-1 SAR Level-1 B SLC products produced at IFREMER\n",
+   "home": "https://github.com/umr-lops/utils_xsarslc_l1b",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "Python library to exploit SAR IFREMER L1B products"
+  },
+  "build": {
+   "entry_points": [
+    "do_IW_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_IW_L1C_SAFE_from_L1B_SAFE:main",
+    "do_WV_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_WV_L1C_SAFE_from_L1B_SAFE:main",
+    "stack_WV_L1C_to_ZARR = slcl1butils.compute.stack_wv_l1c_monthly:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "agrouaze",
+    "alxmouche"
+   ]
+  },
+  "package": {
+   "name": "slcl1butils",
+   "version": "2024.1.18.post1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools >=64.0",
+    "setuptools-scm",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "xarray",
+    "dask",
+    "numpy",
+    "netcdf4",
+    "shapely",
+    "scipy",
+    "matplotlib-base",
+    "xarray-datatree",
+    "tqdm",
+    "zarr",
+    "fsspec",
+    "aiohttp",
+    "PyYAML",
+    "holoviews",
+    "geoviews"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0d4d1cea54051fee03295f0a4dd38107c0f10187b6b9878eaf84d3a532a49b72",
+   "url": "https://pypi.io/packages/source/s/slcl1butils/slcl1butils-2024.1.18.post1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "do_IW_L1C_SAFE_from_L1B_SAFE --help",
+    "do_WV_L1C_SAFE_from_L1B_SAFE --help",
+    "stack_WV_L1C_to_ZARR --help"
+   ],
+   "imports": [
+    "slcl1butils"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "slcl1butils",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "slcl1butils"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/slcl1butils.json"
+ },
+ "raw_meta_yaml": "{% set name = \"slcl1butils\" %}\n{% set version = \"2024.1.18.post1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/slcl1butils-{{ version }}.tar.gz\n  sha256: 0d4d1cea54051fee03295f0a4dd38107c0f10187b6b9878eaf84d3a532a49b72\n\nbuild:\n  entry_points:\n    - do_IW_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_IW_L1C_SAFE_from_L1B_SAFE:main\n    - do_WV_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_WV_L1C_SAFE_from_L1B_SAFE:main\n    - stack_WV_L1C_to_ZARR = slcl1butils.compute.stack_wv_l1c_monthly:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=64.0\n    - setuptools-scm\n    - pip\n  run:\n    - python >=3.9\n    - xarray\n    - dask\n    - numpy\n    - netcdf4\n    - shapely\n    - scipy\n    - matplotlib-base\n    - xarray-datatree\n    - tqdm\n    - zarr\n    - fsspec\n    - aiohttp\n    - PyYAML\n    - holoviews\n    - geoviews\n\ntest:\n  imports:\n    - slcl1butils\n  commands:\n    - pip check\n    - do_IW_L1C_SAFE_from_L1B_SAFE --help\n    - do_WV_L1C_SAFE_from_L1B_SAFE --help\n    - stack_WV_L1C_to_ZARR --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/umr-lops/utils_xsarslc_l1b\n  summary: Python library to exploit SAR IFREMER L1B products\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  description: |\n    python tool to read/display/enrich Sentinel-1 SAR Level-1 B SLC products produced at IFREMER\n\nextra:\n  recipe-maintainers:\n    - agrouaze\n    - alxmouche\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "aiohttp",
+   "dask",
+   "fsspec",
+   "geoviews",
+   "holoviews",
+   "matplotlib-base",
+   "netcdf4",
+   "numpy",
+   "pip",
+   "python",
+   "pyyaml",
+   "scipy",
+   "setuptools",
+   "setuptools-scm",
+   "shapely",
+   "tqdm",
+   "xarray",
+   "xarray-datatree",
+   "zarr"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "aiohttp",
+    "dask",
+    "fsspec",
+    "geoviews",
+    "holoviews",
+    "matplotlib-base",
+    "netcdf4",
+    "numpy",
+    "python",
+    "pyyaml",
+    "scipy",
+    "shapely",
+    "tqdm",
+    "xarray",
+    "xarray-datatree",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.9",
+    "setuptools >=64.0",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "PyYAML",
+    "aiohttp",
+    "dask",
+    "fsspec",
+    "geoviews",
+    "holoviews",
+    "matplotlib-base",
+    "netcdf4",
+    "numpy",
+    "python >=3.9",
+    "scipy",
+    "shapely",
+    "tqdm",
+    "xarray",
+    "xarray-datatree",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/s/slcl1butils/slcl1butils-2024.1.18.post1.tar.gz",
+ "version": "2024.1.18.post1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/slcl1butils.json"
+ }
+}

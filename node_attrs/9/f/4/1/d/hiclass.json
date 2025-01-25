@@ -1,0 +1,254 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "hiclass",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "HiClass is a library for hierarchical classification which\nis inspired in scikit-learn's usability and is optimized\nfor speed. It is pure python code compatible with\nPython 3.8+ and requires networkx, numpy and scikit-learn.\n",
+   "dev_url": "https://github.com/scikit-learn-contrib/hiclass",
+   "doc_url": "https://hiclass.readthedocs.io/",
+   "home": "https://github.com/scikit-learn-contrib/hiclass",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Hierarchical Classification Library"
+  },
+  "build": {
+   "entry_points": [
+    "hiclass = hiclass.__main__:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mirand863"
+   ]
+  },
+  "package": {
+   "name": "hiclass",
+   "version": "4.13.3"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7,<3.9",
+    "pip"
+   ],
+   "run": [
+    "python >=3.7,<3.9",
+    "networkx",
+    "numpy <1.24",
+    "scikit-learn",
+    "ray-core"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "e42ef64b66a05bed88cbc1c7ffe3b22147269fa455c8d50d44fad45cf3d069a7",
+   "url": "https://pypi.org/packages/source/h/hiclass/hiclass-4.13.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "hiclass"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "networkx",
+    "numpy",
+    "python",
+    "ray-core",
+    "scikit-learn"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "HiClass is a library for hierarchical classification which\nis inspired in scikit-learn's usability and is optimized\nfor speed. It is pure python code compatible with\nPython 3.8+ and requires networkx, numpy and scikit-learn.\n",
+   "dev_url": "https://github.com/scikit-learn-contrib/hiclass",
+   "doc_url": "https://hiclass.readthedocs.io/",
+   "home": "https://github.com/scikit-learn-contrib/hiclass",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Hierarchical Classification Library"
+  },
+  "build": {
+   "entry_points": [
+    "hiclass = hiclass.__main__:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mirand863"
+   ]
+  },
+  "package": {
+   "name": "hiclass",
+   "version": "4.13.3"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7,<3.9",
+    "pip"
+   ],
+   "run": [
+    "python >=3.7,<3.9",
+    "networkx",
+    "numpy <1.24",
+    "scikit-learn",
+    "ray-core"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "e42ef64b66a05bed88cbc1c7ffe3b22147269fa455c8d50d44fad45cf3d069a7",
+   "url": "https://pypi.org/packages/source/h/hiclass/hiclass-4.13.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "hiclass"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "hiclass",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "hiclass"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/hiclass.json"
+ },
+ "raw_meta_yaml": "{% set name = \"hiclass\" %}\n{% set version = \"4.13.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e42ef64b66a05bed88cbc1c7ffe3b22147269fa455c8d50d44fad45cf3d069a7\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - hiclass = hiclass.__main__:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7,<3.9\n    - pip\n  run:\n    - python >=3.7,<3.9\n    - networkx\n    - numpy <1.24\n    - scikit-learn\n    - ray-core\n\ntest:\n  imports:\n    - hiclass\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/scikit-learn-contrib/hiclass\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Hierarchical Classification Library\n  description: |\n    HiClass is a library for hierarchical classification which\n    is inspired in scikit-learn's usability and is optimized\n    for speed. It is pure python code compatible with\n    Python 3.8+ and requires networkx, numpy and scikit-learn.\n  doc_url: https://hiclass.readthedocs.io/\n  dev_url: https://github.com/scikit-learn-contrib/hiclass\n\nextra:\n  recipe-maintainers:\n    - mirand863\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "networkx",
+   "numpy",
+   "pip",
+   "python",
+   "ray-core",
+   "scikit-learn"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "networkx",
+    "numpy",
+    "python",
+    "ray-core",
+    "scikit-learn"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.7,<3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "networkx",
+    "numpy <1.24",
+    "python >=3.7,<3.9",
+    "ray-core",
+    "scikit-learn"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/h/hiclass/hiclass-4.13.3.tar.gz",
+ "version": "4.13.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/hiclass.json"
+ }
+}

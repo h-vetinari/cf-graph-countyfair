@@ -1,0 +1,282 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pyapetnet",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/gschramm/pyapetnet",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "CNN for anatomy-guided PET reconstruction"
+  },
+  "build": {
+   "entry_points": [
+    "pyapetnet_list_models = pyapetnet.scripts.list_models:list_models",
+    "pyapetnet_predict_from_dicom = pyapetnet.scripts.predict_from_dicom:predict_from_dicom",
+    "pyapetnet_predict_from_nifti = pyapetnet.scripts.predict_from_nifti:predict_from_nifti"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "gschramm"
+   ]
+  },
+  "package": {
+   "name": "pyapetnet",
+   "version": "1.5.5"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9,<3.11",
+    "pdm-backend",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9,<3.11",
+    "simpleitk >=2.0,<3.dev0",
+    "pymirc >=0.29,<1.dev0",
+    "click >=8.0,<9.dev0",
+    "tensorflow >=2.13,<3.dev0",
+    "keras >=2.0,<3.dev0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d7eb43e8bd26a8ab3dad1dafae7e19e7ec8a15599b885b2b065c9511d7db818b",
+   "url": "https://github.com/gschramm/pyapetnet/archive/refs/tags/v1.5.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "pyapetnet_list_models",
+    "pyapetnet_predict_from_dicom --help",
+    "pyapetnet_predict_from_nifti --help",
+    "pyapetnet_predict_from_nifti demo_data/brainweb_06_osem_cropped.nii demo_data/brainweb_06_t1_cropped.nii S2_osem_b10_fdg_pe2i --no-save_preproc --verbose --no-coreg_inputs",
+    "pytest -v tests"
+   ],
+   "imports": [
+    "pyapetnet"
+   ],
+   "requires": [
+    "pip",
+    "pytest"
+   ],
+   "source_files": [
+    "./demo_data",
+    "./tests"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pdm-backend",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click",
+    "keras",
+    "pymirc",
+    "python",
+    "simpleitk",
+    "tensorflow"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/gschramm/pyapetnet",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "CNN for anatomy-guided PET reconstruction"
+  },
+  "build": {
+   "entry_points": [
+    "pyapetnet_list_models = pyapetnet.scripts.list_models:list_models",
+    "pyapetnet_predict_from_dicom = pyapetnet.scripts.predict_from_dicom:predict_from_dicom",
+    "pyapetnet_predict_from_nifti = pyapetnet.scripts.predict_from_nifti:predict_from_nifti"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "gschramm"
+   ]
+  },
+  "package": {
+   "name": "pyapetnet",
+   "version": "1.5.5"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9,<3.11",
+    "pdm-backend",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9,<3.11",
+    "simpleitk >=2.0,<3.dev0",
+    "pymirc >=0.29,<1.dev0",
+    "click >=8.0,<9.dev0",
+    "tensorflow >=2.13,<3.dev0",
+    "keras >=2.0,<3.dev0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d7eb43e8bd26a8ab3dad1dafae7e19e7ec8a15599b885b2b065c9511d7db818b",
+   "url": "https://github.com/gschramm/pyapetnet/archive/refs/tags/v1.5.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "pyapetnet_list_models",
+    "pyapetnet_predict_from_dicom --help",
+    "pyapetnet_predict_from_nifti --help",
+    "pyapetnet_predict_from_nifti demo_data/brainweb_06_osem_cropped.nii demo_data/brainweb_06_t1_cropped.nii S2_osem_b10_fdg_pe2i --no-save_preproc --verbose --no-coreg_inputs",
+    "pytest -v tests"
+   ],
+   "imports": [
+    "pyapetnet"
+   ],
+   "requires": [
+    "pip",
+    "pytest"
+   ],
+   "source_files": [
+    "./demo_data",
+    "./tests"
+   ]
+  }
+ },
+ "name": "pyapetnet",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pyapetnet"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pyapetnet.json"
+ },
+ "raw_meta_yaml": "{% set name = \"pyapetnet\" %}\n{% set version = \"1.5.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/gschramm/pyapetnet/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: d7eb43e8bd26a8ab3dad1dafae7e19e7ec8a15599b885b2b065c9511d7db818b\n\nbuild:\n  entry_points:\n    - pyapetnet_list_models = pyapetnet.scripts.list_models:list_models\n    - pyapetnet_predict_from_dicom = pyapetnet.scripts.predict_from_dicom:predict_from_dicom\n    - pyapetnet_predict_from_nifti = pyapetnet.scripts.predict_from_nifti:predict_from_nifti\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9,<3.11\n    - pdm-backend\n    - pip\n  run:\n    - python >=3.9,<3.11\n    - simpleitk >=2.0,<3.dev0\n    - pymirc >=0.29,<1.dev0\n    - click >=8.0,<9.dev0\n    - tensorflow >=2.13,<3.dev0\n    - keras >=2.0,<3.dev0\n\ntest:\n  imports:\n    - pyapetnet\n  source_files:\n    - ./demo_data\n    - ./tests\n  commands:\n    - pip check\n    - pyapetnet_list_models\n    - pyapetnet_predict_from_dicom --help\n    - pyapetnet_predict_from_nifti --help\n    - pyapetnet_predict_from_nifti demo_data/brainweb_06_osem_cropped.nii demo_data/brainweb_06_t1_cropped.nii S2_osem_b10_fdg_pe2i --no-save_preproc --verbose --no-coreg_inputs\n    - pytest -v tests\n  requires:\n    - pip\n    - pytest\n\nabout:\n  home: https://github.com/gschramm/pyapetnet\n  summary: CNN for anatomy-guided PET reconstruction\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - gschramm\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "click",
+   "keras",
+   "pdm-backend",
+   "pip",
+   "pymirc",
+   "python",
+   "simpleitk",
+   "tensorflow"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pdm-backend",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click",
+    "keras",
+    "pymirc",
+    "python",
+    "simpleitk",
+    "tensorflow"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pdm-backend",
+    "pip",
+    "python >=3.9,<3.11"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click >=8.0,<9.dev0",
+    "keras >=2.0,<3.dev0",
+    "pymirc >=0.29,<1.dev0",
+    "python >=3.9,<3.11",
+    "simpleitk >=2.0,<3.dev0",
+    "tensorflow >=2.13,<3.dev0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest"
+   ]
+  }
+ },
+ "url": "https://github.com/gschramm/pyapetnet/archive/refs/tags/v1.5.5.tar.gz",
+ "version": "1.5.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pyapetnet.json"
+ }
+}

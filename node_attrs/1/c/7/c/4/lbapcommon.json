@@ -1,0 +1,339 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default",
+   "osx_arm64": "default"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "lbapcommon",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://gitlab.cern.ch/lhcb-dpa/analysis-productions/LbAPCommon",
+   "home": "https://gitlab.cern.ch/lhcb-dpa/analysis-productions/LbAPCommon",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "Common utilities used by LHCb DPA WP2 related software"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ryuwd",
+    "AidanWiederhold",
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "lbapcommon",
+   "version": "0.12.12"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools-scm",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "strictyaml",
+    "jinja2",
+    "lxml",
+    "pyyaml",
+    "setuptools",
+    "boost-histogram",
+    "hist",
+    "pandas",
+    "numpy",
+    "requests",
+    "uproot >=5.0.0",
+    "awkward >=2.1.1",
+    "matplotlib-base",
+    "networkx",
+    "lbdiracwrappers",
+    "pydantic >=2"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "539eedf33296095eb705c5147580291d8b66247dbf1ccb78c6dee748b0668288",
+   "url": "https://pypi.org/packages/source/l/lbapcommon/lbapcommon-0.12.12.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "LbAPCommon",
+    "LbAPCommon.linting",
+    "LbAPCommon.validators"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "awkward",
+    "boost-histogram",
+    "hist",
+    "jinja2",
+    "lbdiracwrappers",
+    "lxml",
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "pandas",
+    "pydantic",
+    "python",
+    "pyyaml",
+    "requests",
+    "setuptools",
+    "strictyaml",
+    "uproot"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://gitlab.cern.ch/lhcb-dpa/analysis-productions/LbAPCommon",
+   "home": "https://gitlab.cern.ch/lhcb-dpa/analysis-productions/LbAPCommon",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "Common utilities used by LHCb DPA WP2 related software"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ryuwd",
+    "AidanWiederhold",
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "lbapcommon",
+   "version": "0.12.12"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools-scm",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "strictyaml",
+    "jinja2",
+    "lxml",
+    "pyyaml",
+    "setuptools",
+    "boost-histogram",
+    "hist",
+    "pandas",
+    "numpy",
+    "requests",
+    "uproot >=5.0.0",
+    "awkward >=2.1.1",
+    "matplotlib-base",
+    "networkx",
+    "lbdiracwrappers",
+    "pydantic >=2"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "539eedf33296095eb705c5147580291d8b66247dbf1ccb78c6dee748b0668288",
+   "url": "https://pypi.org/packages/source/l/lbapcommon/lbapcommon-0.12.12.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "LbAPCommon",
+    "LbAPCommon.linting",
+    "LbAPCommon.validators"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "lbapcommon",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "lbapcommon"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/lbapcommon.json"
+ },
+ "raw_meta_yaml": "{% set name = \"lbapcommon\" %}\n{% set version = \"0.12.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 539eedf33296095eb705c5147580291d8b66247dbf1ccb78c6dee748b0668288\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools-scm\n    - pip\n  run:\n    - python >=3.9\n    - strictyaml\n    - jinja2\n    - lxml\n    - pyyaml\n    - setuptools\n    - boost-histogram\n    - hist\n    - pandas\n    - numpy\n    - requests\n    - uproot >=5.0.0\n    - awkward >=2.1.1\n    - matplotlib-base\n    - networkx\n    - lbdiracwrappers\n    - pydantic >=2\n\ntest:\n  imports:\n    - LbAPCommon\n    - LbAPCommon.linting\n    - LbAPCommon.validators\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-dpa/analysis-productions/LbAPCommon\n  summary: Common utilities used by LHCb DPA WP2 related software\n  dev_url: https://gitlab.cern.ch/lhcb-dpa/analysis-productions/LbAPCommon\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ryuwd\n    - AidanWiederhold\n    - chrisburr\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "awkward",
+   "boost-histogram",
+   "hist",
+   "jinja2",
+   "lbdiracwrappers",
+   "lxml",
+   "matplotlib-base",
+   "networkx",
+   "numpy",
+   "pandas",
+   "pip",
+   "pydantic",
+   "python",
+   "pyyaml",
+   "requests",
+   "setuptools",
+   "setuptools-scm",
+   "strictyaml",
+   "uproot"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "awkward",
+    "boost-histogram",
+    "hist",
+    "jinja2",
+    "lbdiracwrappers",
+    "lxml",
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "pandas",
+    "pydantic",
+    "python",
+    "pyyaml",
+    "requests",
+    "setuptools",
+    "strictyaml",
+    "uproot"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.9",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "awkward >=2.1.1",
+    "boost-histogram",
+    "hist",
+    "jinja2",
+    "lbdiracwrappers",
+    "lxml",
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "pandas",
+    "pydantic >=2",
+    "python >=3.9",
+    "pyyaml",
+    "requests",
+    "setuptools",
+    "strictyaml",
+    "uproot >=5.0.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/l/lbapcommon/lbapcommon-0.12.12.tar.gz",
+ "version": "0.12.12",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/lbapcommon.json"
+ }
+}

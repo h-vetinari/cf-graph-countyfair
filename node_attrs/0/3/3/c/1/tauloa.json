@@ -1,0 +1,349 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "tauloa",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "doc_url": "http://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.1.1.8/Tauola_interface_design.1.1.8.pdf",
+   "home": "https://tauolapp.web.cern.ch/tauolapp/",
+   "license": "GPL-3.0-only",
+   "license_file": "COPYING",
+   "summary": "Package for simulating tau lepton decays"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "tauloa"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "tauloa",
+   "version": "1.1.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "autoconf",
+    "pkg-config"
+   ],
+   "host": [
+    "hepmc2",
+    "hepmc3"
+   ],
+   "run": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d5905ba4bc479400ea7e407e436929a5e1d673c40a8f1175b148423b41afcc61",
+   "url": "https://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.1.1.8/TAUOLA.1.1.8-LHC.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f \"${PREFIX}/lib/libTauolaCxxInterface$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaFortran$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHEPEVT$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHepMC$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHepMC3$SHLIB_EXT\""
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "doc_url": "http://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.1.1.8/Tauola_interface_design.1.1.8.pdf",
+   "home": "https://tauolapp.web.cern.ch/tauolapp/",
+   "license": "GPL-3.0-only",
+   "license_file": "COPYING",
+   "summary": "Package for simulating tau lepton decays"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "tauloa"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "tauloa",
+   "version": "1.1.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "autoconf",
+    "pkg-config"
+   ],
+   "host": [
+    "hepmc2",
+    "hepmc3"
+   ],
+   "run": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d5905ba4bc479400ea7e407e436929a5e1d673c40a8f1175b148423b41afcc61",
+   "url": "https://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.1.1.8/TAUOLA.1.1.8-LHC.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f \"${PREFIX}/lib/libTauolaCxxInterface$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaFortran$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHEPEVT$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHepMC$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHepMC3$SHLIB_EXT\""
+   ]
+  }
+ },
+ "name": "tauloa",
+ "osx_64_meta_yaml": {
+  "about": {
+   "doc_url": "http://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.1.1.8/Tauola_interface_design.1.1.8.pdf",
+   "home": "https://tauolapp.web.cern.ch/tauolapp/",
+   "license": "GPL-3.0-only",
+   "license_file": "COPYING",
+   "summary": "Package for simulating tau lepton decays"
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "tauloa"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "tauloa",
+   "version": "1.1.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "autoconf",
+    "pkg-config"
+   ],
+   "host": [
+    "hepmc2",
+    "hepmc3"
+   ],
+   "run": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d5905ba4bc479400ea7e407e436929a5e1d673c40a8f1175b148423b41afcc61",
+   "url": "https://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.1.1.8/TAUOLA.1.1.8-LHC.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f \"${PREFIX}/lib/libTauolaCxxInterface$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaFortran$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHEPEVT$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHepMC$SHLIB_EXT\"",
+    "test -f \"${PREFIX}/lib/libTauolaHepMC3$SHLIB_EXT\""
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "tauloa"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/tauloa.json"
+ },
+ "raw_meta_yaml": "{% set name = \"tauloa\" %}\n{% set version = \"1.1.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.{{ version }}/TAUOLA.{{ version }}-LHC.tar.gz\n  sha256: d5905ba4bc479400ea7e407e436929a5e1d673c40a8f1175b148423b41afcc61\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('tauloa', max_pin='x.x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - make\n    - autoconf\n    - pkg-config\n  host:\n    - hepmc2\n    - hepmc3\n  run:\n    - {{ pin_compatible('hepmc2', max_pin=\"x.x.x\") }}\n    - {{ pin_compatible('hepmc3', max_pin=\"x.x.x\") }}\n\ntest:\n  commands:\n   - test -f \"${PREFIX}/lib/libTauolaCxxInterface$SHLIB_EXT\"\n   - test -f \"${PREFIX}/lib/libTauolaFortran$SHLIB_EXT\"\n   - test -f \"${PREFIX}/lib/libTauolaHEPEVT$SHLIB_EXT\"\n   - test -f \"${PREFIX}/lib/libTauolaHepMC$SHLIB_EXT\"\n   - test -f \"${PREFIX}/lib/libTauolaHepMC3$SHLIB_EXT\"\n\nabout:\n  home: https://tauolapp.web.cern.ch/tauolapp/\n  license: GPL-3.0-only\n  license_file: COPYING\n  summary: Package for simulating tau lepton decays\n  doc_url: http://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.{{ version }}/Tauola_interface_design.{{ version }}.pdf\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "autoconf",
+   "c_compiler_stub",
+   "cxx_compiler_stub",
+   "fortran_compiler_stub",
+   "hepmc2",
+   "hepmc3",
+   "make",
+   "pkg-config"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "hepmc3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.1.1.8/TAUOLA.1.1.8-LHC.tar.gz",
+ "version": "1.1.8",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/tauloa.json"
+ }
+}

@@ -1,0 +1,283 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "lbenv",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://gitlab.cern.ch/lhcb-core/LbEnv",
+   "doc_url": "https://gitlab.cern.ch/lhcb-core/LbEnv",
+   "home": "https://gitlab.cern.ch/lhcb-core/LbEnv",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "LHCb Environment tools"
+  },
+  "build": {
+   "entry_points": [
+    "lb-run = LbEnv.ProjectEnv.script:main",
+    "lb-completion-helper = LbEnv.Utils.Completion:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "lbenv",
+   "version": "2.2.5"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools >=61.2",
+    "setuptools-scm >=6.2",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "lbplatformutils >=4.2.3",
+    "xenv <1.0.0",
+    "importlib-resources",
+    "importlib-metadata"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9ccc0f845fcd91bf03724e635ac1baeace0ab8818e2cd6d6c1fc5bba000bd054",
+   "url": "https://pypi.org/packages/source/l/lbenv/lbenv-2.2.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "lb-run --help",
+    "lb-completion-helper --help"
+   ],
+   "imports": [
+    "LbEnv",
+    "LbEnv.ProjectEnv",
+    "LbEnv.Utils"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "importlib-metadata",
+    "importlib-resources",
+    "lbplatformutils",
+    "python",
+    "xenv"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://gitlab.cern.ch/lhcb-core/LbEnv",
+   "doc_url": "https://gitlab.cern.ch/lhcb-core/LbEnv",
+   "home": "https://gitlab.cern.ch/lhcb-core/LbEnv",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "LHCb Environment tools"
+  },
+  "build": {
+   "entry_points": [
+    "lb-run = LbEnv.ProjectEnv.script:main",
+    "lb-completion-helper = LbEnv.Utils.Completion:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "lbenv",
+   "version": "2.2.5"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools >=61.2",
+    "setuptools-scm >=6.2",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "lbplatformutils >=4.2.3",
+    "xenv <1.0.0",
+    "importlib-resources",
+    "importlib-metadata"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9ccc0f845fcd91bf03724e635ac1baeace0ab8818e2cd6d6c1fc5bba000bd054",
+   "url": "https://pypi.org/packages/source/l/lbenv/lbenv-2.2.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "lb-run --help",
+    "lb-completion-helper --help"
+   ],
+   "imports": [
+    "LbEnv",
+    "LbEnv.ProjectEnv",
+    "LbEnv.Utils"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "lbenv",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "lbenv"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/lbenv.json"
+ },
+ "raw_meta_yaml": "{% set name = \"lbenv\" %}\n{% set version = \"2.2.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9ccc0f845fcd91bf03724e635ac1baeace0ab8818e2cd6d6c1fc5bba000bd054\n\nbuild:\n  entry_points:\n    - lb-run = LbEnv.ProjectEnv.script:main\n    - lb-completion-helper = LbEnv.Utils.Completion:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.2\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - lbplatformutils >=4.2.3\n    - xenv <1.0.0\n    - importlib-resources\n    - importlib-metadata\n\ntest:\n  imports:\n    - LbEnv\n    - LbEnv.ProjectEnv\n    - LbEnv.Utils\n  commands:\n    - pip check\n    - lb-run --help\n    - lb-completion-helper --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-core/LbEnv\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: LHCb Environment tools\n  doc_url: https://gitlab.cern.ch/lhcb-core/LbEnv\n  dev_url: https://gitlab.cern.ch/lhcb-core/LbEnv\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "importlib-metadata",
+   "importlib-resources",
+   "lbplatformutils",
+   "pip",
+   "python",
+   "setuptools",
+   "setuptools-scm",
+   "xenv"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "importlib-metadata",
+    "importlib-resources",
+    "lbplatformutils",
+    "python",
+    "xenv"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools >=61.2",
+    "setuptools-scm >=6.2"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "importlib-metadata",
+    "importlib-resources",
+    "lbplatformutils >=4.2.3",
+    "python >=3.9",
+    "xenv <1.0.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/l/lbenv/lbenv-2.2.5.tar.gz",
+ "version": "2.2.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/lbenv.json"
+ }
+}

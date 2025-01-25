@@ -1,0 +1,319 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "os_version": {
+   "linux_64": "cos7"
+  }
+ },
+ "feedstock_name": "botorch",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "BoTorch is a library for Bayesian Optimization built on PyTorch.\n",
+   "dev_url": "https://github.com/pytorch/botorch",
+   "doc_url": "https://botorch.org/docs/introduction",
+   "home": "https://botorch.org",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Bayesian Optimization in PyTorch"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": [
+    "PYTHON -m pip install . -vv"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "maclandrol",
+    "ngam",
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "botorch",
+   "version": "0.12.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10",
+    "pip",
+    "setuptools",
+    "setuptools_scm",
+    "toml"
+   ],
+   "run": [
+    "python >=3.10",
+    "linear_operator ==0.5.3",
+    "pytorch >=2.0.1",
+    "gpytorch ==1.13",
+    "scipy",
+    "pyro-ppl >=1.8.4",
+    "multipledispatch"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "6c810efa0a9cba4cca8ccd829ae8e9bee88ed4e08548c072a19b423c114bd211",
+   "url": "https://pypi.org/packages/source/b/botorch/botorch-0.12.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "botorch",
+    "botorch.acquisition",
+    "botorch.exceptions",
+    "botorch.generation",
+    "botorch.models",
+    "botorch.optim",
+    "botorch.posteriors",
+    "botorch.sampling",
+    "botorch.test_functions",
+    "botorch.utils",
+    "botorch.cross_validation",
+    "botorch.fit",
+    "botorch.logging",
+    "botorch.settings"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools_scm",
+    "toml"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "gpytorch",
+    "linear_operator",
+    "multipledispatch",
+    "pyro-ppl",
+    "python",
+    "pytorch",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "BoTorch is a library for Bayesian Optimization built on PyTorch.\n",
+   "dev_url": "https://github.com/pytorch/botorch",
+   "doc_url": "https://botorch.org/docs/introduction",
+   "home": "https://botorch.org",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Bayesian Optimization in PyTorch"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": [
+    "PYTHON -m pip install . -vv"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "maclandrol",
+    "ngam",
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "botorch",
+   "version": "0.12.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10",
+    "pip",
+    "setuptools",
+    "setuptools_scm",
+    "toml"
+   ],
+   "run": [
+    "python >=3.10",
+    "linear_operator ==0.5.3",
+    "pytorch >=2.0.1",
+    "gpytorch ==1.13",
+    "scipy",
+    "pyro-ppl >=1.8.4",
+    "multipledispatch"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "6c810efa0a9cba4cca8ccd829ae8e9bee88ed4e08548c072a19b423c114bd211",
+   "url": "https://pypi.org/packages/source/b/botorch/botorch-0.12.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "botorch",
+    "botorch.acquisition",
+    "botorch.exceptions",
+    "botorch.generation",
+    "botorch.models",
+    "botorch.optim",
+    "botorch.posteriors",
+    "botorch.sampling",
+    "botorch.test_functions",
+    "botorch.utils",
+    "botorch.cross_validation",
+    "botorch.fit",
+    "botorch.logging",
+    "botorch.settings"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "name": "botorch",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "botorch"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/botorch.json"
+ },
+ "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"botorch\" %}\n{% set version = \"0.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/botorch-{{ version }}.tar.gz\n  sha256: 6c810efa0a9cba4cca8ccd829ae8e9bee88ed4e08548c072a19b423c114bd211\n\nbuild:\n  noarch: python\n  number: 1\n  script:\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools_scm\n    - toml\n  run:\n    - python >={{ python_min }}\n    - linear_operator ==0.5.3\n    - pytorch >=2.0.1\n    - gpytorch ==1.13\n    - scipy\n    - pyro-ppl >=1.8.4\n    - multipledispatch\n\ntest:\n  imports:\n    - botorch\n    - botorch.acquisition\n    - botorch.exceptions\n    - botorch.generation\n    - botorch.models\n    - botorch.optim\n    - botorch.posteriors\n    - botorch.sampling\n    - botorch.test_functions\n    - botorch.utils\n    - botorch.cross_validation\n    - botorch.fit\n    - botorch.logging\n    - botorch.settings\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://botorch.org\n  license: MIT\n  license_file: LICENSE\n  summary: Bayesian Optimization in PyTorch\n  doc_url: https://botorch.org/docs/introduction\n  dev_url: https://github.com/pytorch/botorch\n\n  description: |\n    BoTorch is a library for Bayesian Optimization built on PyTorch.\n\nextra:\n  recipe-maintainers:\n    - maclandrol\n    - ngam\n    - thewchan\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "gpytorch",
+   "linear_operator",
+   "multipledispatch",
+   "pip",
+   "pyro-ppl",
+   "python",
+   "pytorch",
+   "scipy",
+   "setuptools",
+   "setuptools_scm",
+   "toml"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools_scm",
+    "toml"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "gpytorch",
+    "linear_operator",
+    "multipledispatch",
+    "pyro-ppl",
+    "python",
+    "pytorch",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.10",
+    "setuptools",
+    "setuptools_scm",
+    "toml"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "gpytorch ==1.13",
+    "linear_operator ==0.5.3",
+    "multipledispatch",
+    "pyro-ppl >=1.8.4",
+    "python >=3.10",
+    "pytorch >=2.0.1",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/b/botorch/botorch-0.12.0.tar.gz",
+ "version": "0.12.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/botorch.json"
+ }
+}

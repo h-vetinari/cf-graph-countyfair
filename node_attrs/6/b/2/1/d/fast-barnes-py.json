@@ -1,0 +1,237 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "fast-barnes-py",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/MeteoSwiss/fast-barnes-py/",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Fast Barnes Interpolation"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "fast-barnes-py",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy",
+    "scipy",
+    "numba"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "missing_long_description.patch"
+   ],
+   "sha256": "1273f85ba85cd9620f6110404fd0f5f5084367e4da75b278688232c9d61be314",
+   "url": "https://pypi.io/packages/source/f/fast-barnes-py/fast-barnes-py-1.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "fastbarnes"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numba",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/MeteoSwiss/fast-barnes-py/",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Fast Barnes Interpolation"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "fast-barnes-py",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy",
+    "scipy",
+    "numba"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "missing_long_description.patch"
+   ],
+   "sha256": "1273f85ba85cd9620f6110404fd0f5f5084367e4da75b278688232c9d61be314",
+   "url": "https://pypi.io/packages/source/f/fast-barnes-py/fast-barnes-py-1.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "fastbarnes"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "fast-barnes-py",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "fast-barnes-py"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/fast-barnes-py.json"
+ },
+ "raw_meta_yaml": "{% set name = \"fast-barnes-py\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fast-barnes-py-{{ version }}.tar.gz\n  sha256: 1273f85ba85cd9620f6110404fd0f5f5084367e4da75b278688232c9d61be314\n  patches:\n    - missing_long_description.patch\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n  run:\n    - python >=3.8\n    - numpy\n    - scipy\n    - numba\n\ntest:\n  imports:\n    - fastbarnes\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/MeteoSwiss/fast-barnes-py/\n  summary: Fast Barnes Interpolation\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "numba",
+   "numpy",
+   "pip",
+   "python",
+   "scipy"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numba",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.8"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numba",
+    "numpy",
+    "python >=3.8",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/f/fast-barnes-py/fast-barnes-py-1.0.0.tar.gz",
+ "version": "1.0.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/fast-barnes-py.json"
+ }
+}

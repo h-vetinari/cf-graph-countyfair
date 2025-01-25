@@ -1,0 +1,291 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "openfermion",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/quantumlib/OpenFermion",
+   "home": "https://quantumai.google/openfermion",
+   "license": "Apache-2.0 AND BSD-3-Clause",
+   "license_file": [
+    "LICENSE",
+    "NOTICE"
+   ],
+   "summary": "The electronic structure package for quantum computers."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "BastianZim"
+   ]
+  },
+  "package": {
+   "name": "openfermion",
+   "version": "1.6.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9"
+   ],
+   "run": [
+    "cirq-core >=1.0,<2.dev0",
+    "cirq-google >=0.15.0",
+    "deprecation",
+    "h5py >=2.8",
+    "networkx",
+    "numpy >=1.11.0",
+    "pubchempy",
+    "python >=3.9",
+    "requests >=2.18",
+    "scipy >=1.1.0,<1.10.0",
+    "sympy"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b41280b3f07cd4c23db486639d27a3e89e6f801c2044e7459c74f5b6aaedfaae",
+   "url": "https://pypi.org/packages/source/o/openfermion/openfermion-1.6.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "openfermion",
+    "openfermion.chem"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cirq-core",
+    "cirq-google",
+    "deprecation",
+    "h5py",
+    "networkx",
+    "numpy",
+    "pubchempy",
+    "python",
+    "requests",
+    "scipy",
+    "sympy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/quantumlib/OpenFermion",
+   "home": "https://quantumai.google/openfermion",
+   "license": "Apache-2.0 AND BSD-3-Clause",
+   "license_file": [
+    "LICENSE",
+    "NOTICE"
+   ],
+   "summary": "The electronic structure package for quantum computers."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "BastianZim"
+   ]
+  },
+  "package": {
+   "name": "openfermion",
+   "version": "1.6.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9"
+   ],
+   "run": [
+    "cirq-core >=1.0,<2.dev0",
+    "cirq-google >=0.15.0",
+    "deprecation",
+    "h5py >=2.8",
+    "networkx",
+    "numpy >=1.11.0",
+    "pubchempy",
+    "python >=3.9",
+    "requests >=2.18",
+    "scipy >=1.1.0,<1.10.0",
+    "sympy"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b41280b3f07cd4c23db486639d27a3e89e6f801c2044e7459c74f5b6aaedfaae",
+   "url": "https://pypi.org/packages/source/o/openfermion/openfermion-1.6.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "openfermion",
+    "openfermion.chem"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "openfermion",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "openfermion"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/openfermion.json"
+ },
+ "raw_meta_yaml": "{% set name = \"openfermion\" %}\n{% set version = \"1.6.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/openfermion-{{ version }}.tar.gz\n  sha256: b41280b3f07cd4c23db486639d27a3e89e6f801c2044e7459c74f5b6aaedfaae\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - cirq-core >=1.0,<2.dev0\n    - cirq-google >=0.15.0\n    - deprecation\n    - h5py >=2.8\n    - networkx\n    - numpy >=1.11.0\n    - pubchempy\n    - python >={{ python_min }}\n    - requests >=2.18\n    - scipy >=1.1.0,<1.10.0\n    - sympy\n\ntest:\n  imports:\n    - openfermion\n    - openfermion.chem\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://quantumai.google/openfermion\n  summary: The electronic structure package for quantum computers.\n  license: Apache-2.0 AND BSD-3-Clause\n  license_file:\n    - LICENSE\n    - NOTICE\n  dev_url: https://github.com/quantumlib/OpenFermion\n\nextra:\n  recipe-maintainers:\n    - BastianZim\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "cirq-core",
+   "cirq-google",
+   "deprecation",
+   "h5py",
+   "networkx",
+   "numpy",
+   "pip",
+   "pubchempy",
+   "python",
+   "requests",
+   "scipy",
+   "sympy"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cirq-core",
+    "cirq-google",
+    "deprecation",
+    "h5py",
+    "networkx",
+    "numpy",
+    "pubchempy",
+    "python",
+    "requests",
+    "scipy",
+    "sympy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cirq-core >=1.0,<2.dev0",
+    "cirq-google >=0.15.0",
+    "deprecation",
+    "h5py >=2.8",
+    "networkx",
+    "numpy >=1.11.0",
+    "pubchempy",
+    "python >=3.9",
+    "requests >=2.18",
+    "scipy >=1.1.0,<1.10.0",
+    "sympy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/o/openfermion/openfermion-1.6.0.tar.gz",
+ "version": "1.6.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/openfermion.json"
+ }
+}

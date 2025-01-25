@@ -1,0 +1,280 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "dash-pydantic-form",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/RenaudLN/dash-pydantic-form",
+   "home": "https://pydf-docs.onrender.com",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Create Dash forms from pydantic objects"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "RenaudLN"
+   ]
+  },
+  "package": {
+   "name": "dash-pydantic-form",
+   "version": "0.13.3"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10.*",
+    "setuptools >=67",
+    "setuptools-scm >=7.1",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10,<3.13",
+    "dash >=2.16",
+    "dash-mantine-components >=0.14.6",
+    "dash-iconify",
+    "dash-ag-grid >=31",
+    "pandas",
+    "pydantic ==2.*",
+    "fsspec",
+    "Werkzeug <3.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0fc3e0c2c997232b69ee115c78e60dd676ee46ae6d05310e0c6f572d164d0a53",
+   "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.13.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "dash_pydantic_form"
+   ],
+   "requires": [
+    "python =3.10",
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dash",
+    "dash-ag-grid",
+    "dash-iconify",
+    "dash-mantine-components",
+    "fsspec",
+    "pandas",
+    "pydantic",
+    "python",
+    "werkzeug"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/RenaudLN/dash-pydantic-form",
+   "home": "https://pydf-docs.onrender.com",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Create Dash forms from pydantic objects"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "RenaudLN"
+   ]
+  },
+  "package": {
+   "name": "dash-pydantic-form",
+   "version": "0.13.3"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10.*",
+    "setuptools >=67",
+    "setuptools-scm >=7.1",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10,<3.13",
+    "dash >=2.16",
+    "dash-mantine-components >=0.14.6",
+    "dash-iconify",
+    "dash-ag-grid >=31",
+    "pandas",
+    "pydantic ==2.*",
+    "fsspec",
+    "Werkzeug <3.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0fc3e0c2c997232b69ee115c78e60dd676ee46ae6d05310e0c6f572d164d0a53",
+   "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.13.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "dash_pydantic_form"
+   ],
+   "requires": [
+    "python =3.10",
+    "pip"
+   ]
+  }
+ },
+ "name": "dash-pydantic-form",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "dash-pydantic-form"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/dash-pydantic-form.json"
+ },
+ "raw_meta_yaml": "{% set name = \"dash-pydantic-form\" %}\n{% set version = \"0.13.3\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz\n  sha256: 0fc3e0c2c997232b69ee115c78e60dd676ee46ae6d05310e0c6f572d164d0a53\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}.*\n    - setuptools >=67\n    - setuptools-scm >=7.1\n    - pip\n  run:\n    - python >={{ python_min }},<3.13\n    - dash >=2.16\n    - dash-mantine-components >=0.14.6\n    - dash-iconify\n    - dash-ag-grid >=31\n    - pandas\n    - pydantic ==2.*\n    - fsspec\n    # For some reason the below is not picked up from Dash's deps\n    - Werkzeug <3.1\n\ntest:\n  imports:\n    - dash_pydantic_form\n  commands:\n    - pip check\n  requires:\n    - python ={{ python_min }}\n    - pip\n\nabout:\n  home: https://pydf-docs.onrender.com\n  summary: Create Dash forms from pydantic objects\n  dev_url: https://github.com/RenaudLN/dash-pydantic-form\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - RenaudLN\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "dash",
+   "dash-ag-grid",
+   "dash-iconify",
+   "dash-mantine-components",
+   "fsspec",
+   "pandas",
+   "pip",
+   "pydantic",
+   "python",
+   "setuptools",
+   "setuptools-scm",
+   "werkzeug"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dash",
+    "dash-ag-grid",
+    "dash-iconify",
+    "dash-mantine-components",
+    "fsspec",
+    "pandas",
+    "pydantic",
+    "python",
+    "werkzeug"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.10.*",
+    "setuptools >=67",
+    "setuptools-scm >=7.1"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "Werkzeug <3.1",
+    "dash >=2.16",
+    "dash-ag-grid >=31",
+    "dash-iconify",
+    "dash-mantine-components >=0.14.6",
+    "fsspec",
+    "pandas",
+    "pydantic ==2.*",
+    "python >=3.10,<3.13"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python =3.10"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.13.3.tar.gz",
+ "version": "0.13.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/dash-pydantic-form.json"
+ }
+}

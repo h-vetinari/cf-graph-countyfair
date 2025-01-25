@@ -1,0 +1,282 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "spectrally",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/ToFuProject/spectrally",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A python library for generic spectrum fitting, using datastock"
+  },
+  "build": {
+   "entry_points": [
+    "spectrally-version = spectrally.scripts.spectrallyversion:main",
+    "specrally-custom=spectrally.scripts.spectrallycustom:main",
+    "spectrally = spectrally.scripts.spectrally_bash:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "Didou09"
+   ]
+  },
+  "package": {
+   "name": "spectrally",
+   "version": "0.0.7"
+  },
+  "requirements": {
+   "host": [
+    "python 3.8",
+    "setuptools >=40.8.0",
+    "wheel",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy <2.0",
+    "scipy",
+    "matplotlib-base",
+    "pandas",
+    "requests",
+    "datastock >=0.0.42",
+    "bsplines2d >=0.0.17"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "44ebcd04c76fad8e6a9eb094d36f09bf88d4983a899cbcf20c4a926f1c3a5133",
+   "url": "https://pypi.org/packages/source/s/spectrally/spectrally-0.0.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "spectrally"
+   ],
+   "requires": [
+    "pip",
+    "python 3.8"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bsplines2d",
+    "datastock",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "requests",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/ToFuProject/spectrally",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A python library for generic spectrum fitting, using datastock"
+  },
+  "build": {
+   "entry_points": [
+    "spectrally-version = spectrally.scripts.spectrallyversion:main",
+    "specrally-custom=spectrally.scripts.spectrallycustom:main",
+    "spectrally = spectrally.scripts.spectrally_bash:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "Didou09"
+   ]
+  },
+  "package": {
+   "name": "spectrally",
+   "version": "0.0.7"
+  },
+  "requirements": {
+   "host": [
+    "python 3.8",
+    "setuptools >=40.8.0",
+    "wheel",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy <2.0",
+    "scipy",
+    "matplotlib-base",
+    "pandas",
+    "requests",
+    "datastock >=0.0.42",
+    "bsplines2d >=0.0.17"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "44ebcd04c76fad8e6a9eb094d36f09bf88d4983a899cbcf20c4a926f1c3a5133",
+   "url": "https://pypi.org/packages/source/s/spectrally/spectrally-0.0.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "spectrally"
+   ],
+   "requires": [
+    "pip",
+    "python 3.8"
+   ]
+  }
+ },
+ "name": "spectrally",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "spectrally"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/spectrally.json"
+ },
+ "raw_meta_yaml": "{% set name = \"spectrally\" %}\n{% set version = \"0.0.7\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/spectrally-{{ version }}.tar.gz\n  sha256: 44ebcd04c76fad8e6a9eb094d36f09bf88d4983a899cbcf20c4a926f1c3a5133\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  entry_points:\n    - spectrally-version = spectrally.scripts.spectrallyversion:main\n    - specrally-custom=spectrally.scripts.spectrallycustom:main\n    - spectrally = spectrally.scripts.spectrally_bash:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=40.8.0\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy <2.0\n    - scipy\n    - matplotlib-base\n    - pandas\n    - requests\n    - datastock >=0.0.42\n    - bsplines2d >=0.0.17\n\ntest:\n  imports:\n    - spectrally\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ToFuProject/spectrally\n  summary: A python library for generic spectrum fitting, using datastock\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - Didou09\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "bsplines2d",
+   "datastock",
+   "matplotlib-base",
+   "numpy",
+   "pandas",
+   "pip",
+   "python",
+   "requests",
+   "scipy",
+   "setuptools",
+   "wheel"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bsplines2d",
+    "datastock",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "requests",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.8",
+    "setuptools >=40.8.0",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bsplines2d >=0.0.17",
+    "datastock >=0.0.42",
+    "matplotlib-base",
+    "numpy <2.0",
+    "pandas",
+    "python >=3.8",
+    "requests",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.8"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/s/spectrally/spectrally-0.0.7.tar.gz",
+ "version": "0.0.7",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/spectrally.json"
+ }
+}

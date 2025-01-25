@@ -1,0 +1,387 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pipefunc",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/pipefunc/pipefunc",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A Python library for defining, managing, and executing function pipelines."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "basnijholt"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "noarch": "python",
+     "script": "$PYTHON -m pip install . -vv"
+    },
+    "name": "pipefunc",
+    "requirements": {
+     "host": [
+      "python 3.10",
+      "hatchling",
+      "wheel",
+      "versioningit",
+      "pip"
+     ],
+     "run": [
+      "python >=3.10",
+      "networkx",
+      "psutil",
+      "cloudpickle",
+      "numpy"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "pipefunc"
+     ],
+     "requires": [
+      "pip",
+      "python 3.10"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "pipefunc-extras",
+    "requirements": {
+     "run": [
+      "pipefunc",
+      "adaptive",
+      "graphviz",
+      "graphviz-anywidget",
+      "griffe",
+      "ipywidgets",
+      "matplotlib-base",
+      "pandas",
+      "psutil",
+      "rich",
+      "xarray",
+      "zarr"
+     ]
+    },
+    "test": {
+     "imports": [
+      "pipefunc"
+     ],
+     "requires": [
+      "pip",
+      "python 3.10"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "pipefunc",
+   "version": "0.51.0"
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "da8f6559be0e362fb72c5085e4ef21c0d1533e52a934417056f0cb78bce3c3d0",
+   "url": "https://pypi.org/packages/source/p/pipefunc/pipefunc-0.51.0.tar.gz"
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python",
+    "versioningit",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "adaptive",
+    "cloudpickle",
+    "graphviz",
+    "graphviz-anywidget",
+    "griffe",
+    "ipywidgets",
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "pandas",
+    "pipefunc",
+    "psutil",
+    "python",
+    "rich",
+    "xarray",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/pipefunc/pipefunc",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A Python library for defining, managing, and executing function pipelines."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "basnijholt"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "noarch": "python",
+     "script": "$PYTHON -m pip install . -vv"
+    },
+    "name": "pipefunc",
+    "requirements": {
+     "host": [
+      "python 3.10",
+      "hatchling",
+      "wheel",
+      "versioningit",
+      "pip"
+     ],
+     "run": [
+      "python >=3.10",
+      "networkx",
+      "psutil",
+      "cloudpickle",
+      "numpy"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "pipefunc"
+     ],
+     "requires": [
+      "pip",
+      "python 3.10"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "pipefunc-extras",
+    "requirements": {
+     "run": [
+      "pipefunc",
+      "adaptive",
+      "graphviz",
+      "graphviz-anywidget",
+      "griffe",
+      "ipywidgets",
+      "matplotlib-base",
+      "pandas",
+      "psutil",
+      "rich",
+      "xarray",
+      "zarr"
+     ]
+    },
+    "test": {
+     "imports": [
+      "pipefunc"
+     ],
+     "requires": [
+      "pip",
+      "python 3.10"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "pipefunc",
+   "version": "0.51.0"
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "da8f6559be0e362fb72c5085e4ef21c0d1533e52a934417056f0cb78bce3c3d0",
+   "url": "https://pypi.org/packages/source/p/pipefunc/pipefunc-0.51.0.tar.gz"
+  }
+ },
+ "name": "pipefunc",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pipefunc",
+   "pipefunc-extras"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pipefunc.json"
+ },
+ "raw_meta_yaml": "{% set name = \"pipefunc\" %}\n{% set version = \"0.51.0\" %}\n{% set python_min = \"3.10\" %}\n\n# handle undefined PYTHON in `noarch: generic` outputs\n{% if PYTHON is not defined %}{% set PYTHON = \"$PYTHON\" %}{% endif %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pipefunc-{{ version }}.tar.gz\n  sha256: da8f6559be0e362fb72c5085e4ef21c0d1533e52a934417056f0cb78bce3c3d0\n\nbuild:\n  noarch: python\n  number: 1\n\noutputs:\n  - name: {{ name }}\n    build:\n      noarch: python\n      script: {{ PYTHON }} -m pip install . -vv\n    requirements:\n      host:\n        - python {{ python_min }}\n        - hatchling\n        - wheel\n        - versioningit\n        - pip\n      run:\n        - python >={{ python_min }}\n        - networkx\n        - psutil  # technically not a requirement\n        - cloudpickle\n        - numpy\n    test:\n      imports:\n        - pipefunc\n      commands:\n        - pip check\n      requires:\n        - pip\n        - python {{ python_min }}\n\n  - name: {{ name }}-extras\n    build:\n      noarch: python\n    requirements:\n      run:\n        - {{ pin_subpackage(name, exact=True) }}\n        - adaptive\n        - graphviz\n        - graphviz-anywidget\n        - griffe\n        - ipywidgets\n        - matplotlib-base\n        - pandas\n        - psutil\n        - rich\n        - xarray\n        - zarr\n    test:\n      imports:\n        - pipefunc\n      requires:\n        - pip\n        - python {{ python_min }}\n\nabout:\n  home: https://github.com/pipefunc/pipefunc\n  summary: A Python library for defining, managing, and executing function pipelines.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "adaptive",
+   "cloudpickle",
+   "graphviz",
+   "graphviz-anywidget",
+   "griffe",
+   "hatchling",
+   "ipywidgets",
+   "matplotlib-base",
+   "networkx",
+   "numpy",
+   "pandas",
+   "pip",
+   "pipefunc",
+   "psutil",
+   "python",
+   "rich",
+   "versioningit",
+   "wheel",
+   "xarray",
+   "zarr"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python",
+    "versioningit",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "adaptive",
+    "cloudpickle",
+    "graphviz",
+    "graphviz-anywidget",
+    "griffe",
+    "ipywidgets",
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "pandas",
+    "pipefunc",
+    "psutil",
+    "python",
+    "rich",
+    "xarray",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python 3.10",
+    "versioningit",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "adaptive",
+    "cloudpickle",
+    "graphviz",
+    "graphviz-anywidget",
+    "griffe",
+    "ipywidgets",
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "pandas",
+    "pipefunc",
+    "psutil",
+    "python >=3.10",
+    "rich",
+    "xarray",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/p/pipefunc/pipefunc-0.51.0.tar.gz",
+ "version": "0.51.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pipefunc.json"
+ }
+}

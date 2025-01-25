@@ -1,0 +1,237 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "sphinx-jinja2-compat",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/sphinx-toolbox/sphinx-jinja2-compat",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Patches Jinja2 v3 to restore compatibility with earlier Sphinx versions."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "domdfcoding"
+   ]
+  },
+  "package": {
+   "name": "sphinx-jinja2-compat",
+   "version": "0.2.0.post1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6",
+    "whey >=0.0.20",
+    "whey-pth >=0.0.4"
+   ],
+   "run": [
+    "jinja2 >=2.10",
+    "markupsafe >=1",
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "974289a12a9f402108dead621e9c15f7004e945d5cfcaea8d6419e94d3fa95a3",
+   "url": "https://pypi.io/packages/source/s/sphinx-jinja2-compat/sphinx_jinja2_compat-0.2.0.post1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sphinx_jinja2_compat"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "whey",
+    "whey-pth"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "jinja2",
+    "markupsafe",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/sphinx-toolbox/sphinx-jinja2-compat",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Patches Jinja2 v3 to restore compatibility with earlier Sphinx versions."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "domdfcoding"
+   ]
+  },
+  "package": {
+   "name": "sphinx-jinja2-compat",
+   "version": "0.2.0.post1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6",
+    "whey >=0.0.20",
+    "whey-pth >=0.0.4"
+   ],
+   "run": [
+    "jinja2 >=2.10",
+    "markupsafe >=1",
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "974289a12a9f402108dead621e9c15f7004e945d5cfcaea8d6419e94d3fa95a3",
+   "url": "https://pypi.io/packages/source/s/sphinx-jinja2-compat/sphinx_jinja2_compat-0.2.0.post1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sphinx_jinja2_compat"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "sphinx-jinja2-compat",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "sphinx-jinja2-compat"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/sphinx-jinja2-compat.json"
+ },
+ "raw_meta_yaml": "{% set name = \"sphinx-jinja2-compat\" %}\n{% set version = \"0.2.0.post1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx_jinja2_compat-{{ version }}.tar.gz\n  sha256: 974289a12a9f402108dead621e9c15f7004e945d5cfcaea8d6419e94d3fa95a3\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - whey >=0.0.20\n    - whey-pth >=0.0.4\n  run:\n    - jinja2 >=2.10\n    - markupsafe >=1\n    - python >=3.6\n\ntest:\n  imports:\n    - sphinx_jinja2_compat\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/sphinx-toolbox/sphinx-jinja2-compat\n  summary: Patches Jinja2 v3 to restore compatibility with earlier Sphinx versions.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - domdfcoding\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "jinja2",
+   "markupsafe",
+   "pip",
+   "python",
+   "whey",
+   "whey-pth"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "whey",
+    "whey-pth"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "jinja2",
+    "markupsafe",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6",
+    "whey >=0.0.20",
+    "whey-pth >=0.0.4"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "jinja2 >=2.10",
+    "markupsafe >=1",
+    "python >=3.6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/s/sphinx-jinja2-compat/sphinx_jinja2_compat-0.2.0.post1.tar.gz",
+ "version": "0.2.0.post1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/sphinx-jinja2-compat.json"
+ }
+}

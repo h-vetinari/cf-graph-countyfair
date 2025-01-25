@@ -1,0 +1,260 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "quadax",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/f0uriest/quadax",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Numerical quadrature with JAX"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "beckermr"
+   ]
+  },
+  "package": {
+   "name": "quadax",
+   "version": "0.2.5"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools >=40.8.0",
+    "wheel",
+    "versioneer-518",
+    "versioneer",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "equinox",
+    "jax >=0.3.2,<=0.5.0",
+    "numpy >=1.20.0,<2.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "26b57477ea869fba8040ffbb6d9f67be3f63850856d0c5fb2e755676b640007b",
+   "url": "https://pypi.org/packages/source/q/quadax/quadax-0.2.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "quadax"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "versioneer",
+    "versioneer-518",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "equinox",
+    "jax",
+    "numpy",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/f0uriest/quadax",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Numerical quadrature with JAX"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "beckermr"
+   ]
+  },
+  "package": {
+   "name": "quadax",
+   "version": "0.2.5"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools >=40.8.0",
+    "wheel",
+    "versioneer-518",
+    "versioneer",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "equinox",
+    "jax >=0.3.2,<=0.5.0",
+    "numpy >=1.20.0,<2.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "26b57477ea869fba8040ffbb6d9f67be3f63850856d0c5fb2e755676b640007b",
+   "url": "https://pypi.org/packages/source/q/quadax/quadax-0.2.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "quadax"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "quadax",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "quadax"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/quadax.json"
+ },
+ "raw_meta_yaml": "{% set name = \"quadax\" %}\n{% set version = \"0.2.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/quadax-{{ version }}.tar.gz\n  sha256: 26b57477ea869fba8040ffbb6d9f67be3f63850856d0c5fb2e755676b640007b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=40.8.0\n    - wheel\n    - versioneer-518\n    - versioneer\n    - pip\n  run:\n    - python >={{ python_min }}\n    - equinox\n    - jax >=0.3.2,<=0.5.0\n    - numpy >=1.20.0,<2.0\n\ntest:\n  imports:\n    - quadax\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/f0uriest/quadax\n  summary: Numerical quadrature with JAX\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "equinox",
+   "jax",
+   "numpy",
+   "pip",
+   "python",
+   "setuptools",
+   "versioneer",
+   "versioneer-518",
+   "wheel"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "versioneer",
+    "versioneer-518",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "equinox",
+    "jax",
+    "numpy",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools >=40.8.0",
+    "versioneer",
+    "versioneer-518",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "equinox",
+    "jax >=0.3.2,<=0.5.0",
+    "numpy >=1.20.0,<2.0",
+    "python >=3.9"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/q/quadax/quadax-0.2.5.tar.gz",
+ "version": "0.2.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/quadax.json"
+ }
+}

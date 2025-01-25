@@ -1,0 +1,379 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "safety",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/pyupio/safety",
+   "doc_url": "https://pyup.io/docs",
+   "home": "https://pyup.io/safety",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Safety checks your installed dependencies for known security vulnerabilities."
+  },
+  "build": {
+   "entry_points": [
+    "safety=safety.cli:cli"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": [
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jkornblum",
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "safety",
+   "version": "3.2.14"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools >=42"
+   ],
+   "run": [
+    "authlib >=1.2.0",
+    "click >=8.0.2",
+    "dparse >=0.6.4",
+    "filelock >=3.16.1,<3.17",
+    "jinja2 >=3.1.0",
+    "marshmallow >=3.15.0",
+    "packaging >=21.0",
+    "psutil >=6.1.0,<6.2",
+    "pydantic >=2.6.0,<2.10.0",
+    "python >=3.9",
+    "requests",
+    "rich",
+    "ruamel.yaml >=0.17.21",
+    "safety-schemas ==0.0.10",
+    "setuptools >=65.5.1",
+    "typer >=0.12.1",
+    "typing_extensions >=4.7.1",
+    "urllib3 >=1.26.5"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7a45d88b1903c5b7c370eaeb6ca131a52f147e0b8a0b302265f82824ef92adc7",
+   "url": "https://pypi.org/packages/source/s/safety/safety-3.2.14.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "safety --help",
+    "safety --version",
+    "python -c \"__import__('shutil').rmtree('tests/alerts')\"",
+    "coverage run --source safety --branch -m pytest -vv --tb=long --color=yes -k \"not (validate_with_basic_policy_file or debug_flag or generate_pass)\"",
+    "coverage report --show-missing --skip-covered --fail-under=49"
+   ],
+   "imports": [
+    "safety"
+   ],
+   "requires": [
+    "coverage",
+    "git",
+    "pip",
+    "python 3.9",
+    "pytest",
+    "safety-schemas ==0.0.10"
+   ],
+   "source_files": [
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "authlib",
+    "click",
+    "dparse",
+    "filelock",
+    "jinja2",
+    "marshmallow",
+    "packaging",
+    "psutil",
+    "pydantic",
+    "python",
+    "requests",
+    "rich",
+    "ruamel.yaml",
+    "safety-schemas",
+    "setuptools",
+    "typer",
+    "typing_extensions",
+    "urllib3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "git",
+    "pip",
+    "pytest",
+    "python",
+    "safety-schemas"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/pyupio/safety",
+   "doc_url": "https://pyup.io/docs",
+   "home": "https://pyup.io/safety",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Safety checks your installed dependencies for known security vulnerabilities."
+  },
+  "build": {
+   "entry_points": [
+    "safety=safety.cli:cli"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": [
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jkornblum",
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "safety",
+   "version": "3.2.14"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools >=42"
+   ],
+   "run": [
+    "authlib >=1.2.0",
+    "click >=8.0.2",
+    "dparse >=0.6.4",
+    "filelock >=3.16.1,<3.17",
+    "jinja2 >=3.1.0",
+    "marshmallow >=3.15.0",
+    "packaging >=21.0",
+    "psutil >=6.1.0,<6.2",
+    "pydantic >=2.6.0,<2.10.0",
+    "python >=3.9",
+    "requests",
+    "rich",
+    "ruamel.yaml >=0.17.21",
+    "safety-schemas ==0.0.10",
+    "setuptools >=65.5.1",
+    "typer >=0.12.1",
+    "typing_extensions >=4.7.1",
+    "urllib3 >=1.26.5"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7a45d88b1903c5b7c370eaeb6ca131a52f147e0b8a0b302265f82824ef92adc7",
+   "url": "https://pypi.org/packages/source/s/safety/safety-3.2.14.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "safety --help",
+    "safety --version",
+    "python -c \"__import__('shutil').rmtree('tests/alerts')\"",
+    "coverage run --source safety --branch -m pytest -vv --tb=long --color=yes -k \"not (validate_with_basic_policy_file or debug_flag or generate_pass)\"",
+    "coverage report --show-missing --skip-covered --fail-under=49"
+   ],
+   "imports": [
+    "safety"
+   ],
+   "requires": [
+    "coverage",
+    "git",
+    "pip",
+    "python 3.9",
+    "pytest",
+    "safety-schemas ==0.0.10"
+   ],
+   "source_files": [
+    "tests"
+   ]
+  }
+ },
+ "name": "safety",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "safety"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/safety.json"
+ },
+ "raw_meta_yaml": "{% set version = \"3.2.14\" %}\n{% set python_min = python_min | default(\"3.9\") %}\n\n{% set test_skips = \"not (validate_with_basic_policy_file or debug_flag or generate_pass)\" %}\n{% set cov_fail_under = 49 %}\n{% set min_safety_schema = \"0.0.10\" %}\n\npackage:\n  name: safety\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/s/safety/safety-{{ version }}.tar.gz\n  sha256: 7a45d88b1903c5b7c370eaeb6ca131a52f147e0b8a0b302265f82824ef92adc7\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n  entry_points:\n    - safety=safety.cli:cli\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools >=42\n  run:\n    - authlib >=1.2.0\n    - click >=8.0.2\n    - dparse >=0.6.4\n    - filelock >=3.16.1,<3.17\n    - jinja2 >=3.1.0\n    - marshmallow >=3.15.0\n    - packaging >=21.0\n    - psutil >=6.1.0,<6.2\n    - pydantic >=2.6.0,<2.10.0\n    - python >={{ python_min }}\n    - requests\n    - rich\n    - ruamel.yaml >=0.17.21\n    - safety-schemas =={{ min_safety_schema }}\n    - setuptools >=65.5.1\n    - typer >=0.12.1\n    - typing_extensions >=4.7.1\n    - urllib3 >=1.26.5\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - coverage\n    - git\n    - pip\n    - python {{ python_min }}\n    - pytest\n    - safety-schemas =={{ min_safety_schema }}\n  imports:\n    - safety\n  commands:\n    - pip check\n    - safety --help\n    - safety --version\n    # as of 3.0.1, `test_utils.py` circular imports when not tested next to source\n    - python -c \"__import__('shutil').rmtree('tests/alerts')\"\n    - coverage run --source safety --branch -m pytest -vv --tb=long --color=yes -k \"{{ test_skips }}\"\n    - coverage report --show-missing --skip-covered --fail-under={{ cov_fail_under }}\n\nabout:\n  home: https://pyup.io/safety\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Safety checks your installed dependencies for known security vulnerabilities.\n  doc_url: https://pyup.io/docs\n  dev_url: https://github.com/pyupio/safety\n\nextra:\n  recipe-maintainers:\n    - jkornblum\n    - bollwyvl\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "authlib",
+   "click",
+   "dparse",
+   "filelock",
+   "jinja2",
+   "marshmallow",
+   "packaging",
+   "pip",
+   "psutil",
+   "pydantic",
+   "python",
+   "requests",
+   "rich",
+   "ruamel.yaml",
+   "safety-schemas",
+   "setuptools",
+   "typer",
+   "typing_extensions",
+   "urllib3"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "authlib",
+    "click",
+    "dparse",
+    "filelock",
+    "jinja2",
+    "marshmallow",
+    "packaging",
+    "psutil",
+    "pydantic",
+    "python",
+    "requests",
+    "rich",
+    "ruamel.yaml",
+    "safety-schemas",
+    "setuptools",
+    "typer",
+    "typing_extensions",
+    "urllib3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "git",
+    "pip",
+    "pytest",
+    "python",
+    "safety-schemas"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools >=42"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "authlib >=1.2.0",
+    "click >=8.0.2",
+    "dparse >=0.6.4",
+    "filelock >=3.16.1,<3.17",
+    "jinja2 >=3.1.0",
+    "marshmallow >=3.15.0",
+    "packaging >=21.0",
+    "psutil >=6.1.0,<6.2",
+    "pydantic >=2.6.0,<2.10.0",
+    "python >=3.9",
+    "requests",
+    "rich",
+    "ruamel.yaml >=0.17.21",
+    "safety-schemas ==0.0.10",
+    "setuptools >=65.5.1",
+    "typer >=0.12.1",
+    "typing_extensions >=4.7.1",
+    "urllib3 >=1.26.5"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "git",
+    "pip",
+    "pytest",
+    "python 3.9",
+    "safety-schemas ==0.0.10"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/s/safety/safety-3.2.14.tar.gz",
+ "version": "3.2.14",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/safety.json"
+ }
+}

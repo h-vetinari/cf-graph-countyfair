@@ -1,0 +1,245 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "stripe",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/stripe/stripe-python",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Python bindings for the Stripe API"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "stripe",
+   "version": "11.4.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools",
+    "wheel"
+   ],
+   "run": [
+    "python >=3.9",
+    "requests >=2.20",
+    "typing_extensions >=4.5.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7ddd251b622d490fe57d78487855dc9f4d95b1bb113607e81fd377037a133d5a",
+   "url": "https://pypi.org/packages/source/s/stripe/stripe-11.4.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "stripe"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "requests",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/stripe/stripe-python",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Python bindings for the Stripe API"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "stripe",
+   "version": "11.4.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools",
+    "wheel"
+   ],
+   "run": [
+    "python >=3.9",
+    "requests >=2.20",
+    "typing_extensions >=4.5.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7ddd251b622d490fe57d78487855dc9f4d95b1bb113607e81fd377037a133d5a",
+   "url": "https://pypi.org/packages/source/s/stripe/stripe-11.4.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "stripe"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "stripe",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "stripe"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/stripe.json"
+ },
+ "raw_meta_yaml": "{% set version = \"11.4.1\" %}\n\n{% set python_min = python_min | default(\"3.9\") %}\n\npackage:\n  name: stripe\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/s/stripe/stripe-{{ version }}.tar.gz\n  sha256: 7ddd251b622d490fe57d78487855dc9f4d95b1bb113607e81fd377037a133d5a\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - wheel\n  run:\n    - python >={{ python_min }}\n    - requests >=2.20\n    - typing_extensions >=4.5.0\n\ntest:\n  imports:\n    - stripe\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/stripe/stripe-python\n  summary: Python bindings for the Stripe API\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "python",
+   "requests",
+   "setuptools",
+   "typing_extensions",
+   "wheel"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "requests",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python >=3.9",
+    "requests >=2.20",
+    "typing_extensions >=4.5.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/s/stripe/stripe-11.4.1.tar.gz",
+ "version": "11.4.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/stripe.json"
+ }
+}

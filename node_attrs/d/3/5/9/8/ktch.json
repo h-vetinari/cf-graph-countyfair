@@ -1,0 +1,249 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "ktch",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://doc.ktch.dev",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "ktch is a python package for model-based morphometrics."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "noshita"
+   ]
+  },
+  "package": {
+   "name": "ktch",
+   "version": "0.4.2"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9,<3.12",
+    "poetry-core >=1.0.0",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9,<3.12",
+    "numpy >=1.22.0,<2.0.0",
+    "pandas[pyarrow] >=1.5.0,<3.0.0",
+    "scikit-learn >=1.2.0,<2.0.0",
+    "scipy >=1.8.0,<2.0.0",
+    "toml >=0.10.0,<0.11.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4b8479e7d5963508b29e8df98a4a0ed2c08ab8d9501f03eeed6ba5f13c097940",
+   "url": "https://pypi.io/packages/source/k/ktch/ktch-0.4.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "ktch"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "toml"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://doc.ktch.dev",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "ktch is a python package for model-based morphometrics."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "noshita"
+   ]
+  },
+  "package": {
+   "name": "ktch",
+   "version": "0.4.2"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9,<3.12",
+    "poetry-core >=1.0.0",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9,<3.12",
+    "numpy >=1.22.0,<2.0.0",
+    "pandas[pyarrow] >=1.5.0,<3.0.0",
+    "scikit-learn >=1.2.0,<2.0.0",
+    "scipy >=1.8.0,<2.0.0",
+    "toml >=0.10.0,<0.11.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4b8479e7d5963508b29e8df98a4a0ed2c08ab8d9501f03eeed6ba5f13c097940",
+   "url": "https://pypi.io/packages/source/k/ktch/ktch-0.4.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "ktch"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "ktch",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "ktch"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/ktch.json"
+ },
+ "raw_meta_yaml": "{% set name = \"ktch\" %}\n{% set version = \"0.4.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ktch-{{ version }}.tar.gz\n  sha256: 4b8479e7d5963508b29e8df98a4a0ed2c08ab8d9501f03eeed6ba5f13c097940\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9,<3.12\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >=3.9,<3.12\n    - numpy >=1.22.0,<2.0.0\n    - pandas[pyarrow] >=1.5.0,<3.0.0\n    - scikit-learn >=1.2.0,<2.0.0\n    - scipy >=1.8.0,<2.0.0\n    - toml >=0.10.0,<0.11.0\n\ntest:\n  imports:\n    - ktch\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://doc.ktch.dev\n  summary: ktch is a python package for model-based morphometrics.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - noshita\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "numpy",
+   "pandas",
+   "pip",
+   "poetry-core",
+   "python",
+   "scikit-learn",
+   "scipy",
+   "toml"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "toml"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core >=1.0.0",
+    "python >=3.9,<3.12"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy >=1.22.0,<2.0.0",
+    "pandas[pyarrow] >=1.5.0,<3.0.0",
+    "python >=3.9,<3.12",
+    "scikit-learn >=1.2.0,<2.0.0",
+    "scipy >=1.8.0,<2.0.0",
+    "toml >=0.10.0,<0.11.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/k/ktch/ktch-0.4.2.tar.gz",
+ "version": "0.4.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/ktch.json"
+ }
+}

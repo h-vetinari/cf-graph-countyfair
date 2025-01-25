@@ -1,0 +1,215 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "emoji-extractor",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/alexanderrobertson/emoji-extractor",
+   "home": "https://github.com/alexanderrobertson/emoji-extractor",
+   "license": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Extract, detect and count emoji"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "a-d-robertson"
+   ]
+  },
+  "package": {
+   "name": "emoji-extractor",
+   "version": "2.1.2"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9a0bab9f8a9d6584247a0eb7165e10e0a0d864c0d3ee3928d52b74414c8865b3",
+   "url": "https://pypi.io/packages/source/e/emoji-extractor/emoji_extractor-2.1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "emoji_extractor"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/alexanderrobertson/emoji-extractor",
+   "home": "https://github.com/alexanderrobertson/emoji-extractor",
+   "license": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Extract, detect and count emoji"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "a-d-robertson"
+   ]
+  },
+  "package": {
+   "name": "emoji-extractor",
+   "version": "2.1.2"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9a0bab9f8a9d6584247a0eb7165e10e0a0d864c0d3ee3928d52b74414c8865b3",
+   "url": "https://pypi.io/packages/source/e/emoji-extractor/emoji_extractor-2.1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "emoji_extractor"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "emoji-extractor",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "emoji-extractor"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/emoji-extractor.json"
+ },
+ "raw_meta_yaml": "{% set name = \"emoji-extractor\" %}\n{% set version = \"2.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/emoji_extractor-{{ version }}.tar.gz\n  sha256: 9a0bab9f8a9d6584247a0eb7165e10e0a0d864c0d3ee3928d52b74414c8865b3\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n\ntest:\n  imports:\n    - emoji_extractor\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/alexanderrobertson/emoji-extractor\n  dev_url: https://github.com/alexanderrobertson/emoji-extractor\n  summary: Extract, detect and count emoji\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - a-d-robertson\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python >=3.6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/e/emoji-extractor/emoji_extractor-2.1.2.tar.gz",
+ "version": "2.1.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/emoji-extractor.json"
+ }
+}

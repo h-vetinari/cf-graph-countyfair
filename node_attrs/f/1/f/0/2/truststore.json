@@ -1,0 +1,223 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "truststore",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/sethmlarson/truststore",
+   "doc_url": "https://truststore.readthedocs.io/en/latest/",
+   "home": "https://github.com/sethmlarson/truststore",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Verify certificates using native system trust stores"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "wolfv"
+   ]
+  },
+  "package": {
+   "name": "truststore",
+   "version": "0.10.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.10",
+    "flit-core >=3.2,<4",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "5da347c665714fdfbd46f738c823fe9f0d8775e41ac5fb94f325749091187896",
+   "url": "https://pypi.io/packages/source/t/truststore/truststore-0.10.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "truststore"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "flit-core",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/sethmlarson/truststore",
+   "doc_url": "https://truststore.readthedocs.io/en/latest/",
+   "home": "https://github.com/sethmlarson/truststore",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Verify certificates using native system trust stores"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "wolfv"
+   ]
+  },
+  "package": {
+   "name": "truststore",
+   "version": "0.10.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.10",
+    "flit-core >=3.2,<4",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "5da347c665714fdfbd46f738c823fe9f0d8775e41ac5fb94f325749091187896",
+   "url": "https://pypi.io/packages/source/t/truststore/truststore-0.10.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "truststore"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "truststore",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "truststore"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/truststore.json"
+ },
+ "raw_meta_yaml": "{% set name = \"truststore\" %}\n{% set version = \"0.10.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/truststore-{{ version }}.tar.gz\n  sha256: 5da347c665714fdfbd46f738c823fe9f0d8775e41ac5fb94f325749091187896\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.10\n    - flit-core >=3.2,<4\n    - pip\n  run:\n    - python >=3.10\n\ntest:\n  imports:\n    - truststore\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/sethmlarson/truststore\n  summary: Verify certificates using native system trust stores\n  dev_url: https://github.com/sethmlarson/truststore\n  doc_url: https://truststore.readthedocs.io/en/latest/\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - wolfv\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "flit-core",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "flit-core",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "flit-core >=3.2,<4",
+    "pip",
+    "python >=3.10"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python >=3.10"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/t/truststore/truststore-0.10.0.tar.gz",
+ "version": "0.10.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/truststore.json"
+ }
+}

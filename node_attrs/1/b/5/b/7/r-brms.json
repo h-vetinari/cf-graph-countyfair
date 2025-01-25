@@ -1,0 +1,444 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "azure",
+   "linux_ppc64le": "azure",
+   "win": "azure"
+  }
+ },
+ "feedstock_name": "r-brms",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/paul-buerkner/brms",
+   "home": "http://discourse.mc-stan.org",
+   "license": "GPL-2.0-only",
+   "license_family": "GPL2",
+   "license_file": [
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary": "Fit Bayesian generalized (non-)linear multivariate multilevel models using 'Stan' for full Bayesian inference. A wide range of distributions  and link functions are supported, allowing users to fit -- among others --  linear, robust linear, count data, survival, response times, ordinal,  zero-inflated, hurdle, and even self-defined mixture models all in a  multilevel context. Further modeling options include non-linear and  smooth terms, auto-correlation structures, censored data, meta-analytic  standard errors, and quite a few more. In addition, all parameters of the  response distribution can be predicted in order to perform distributional  regression. Prior specifications are flexible and explicitly encourage  users to apply prior distributions that actually reflect their beliefs. Model fit can easily be assessed and compared with posterior predictive  checks and leave-one-out cross-validation. References: B\u00FCrkner (2017) <doi:10.18637/jss.v080.i01>; B\u00FCrkner (2018) <doi:10.32614/RJ-2018-017>; Carpenter et al. (2017) <doi:10.18637/jss.v076.i01>."
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "noarch": "generic",
+   "number": "0",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-brms",
+   "version": "2.22.0"
+  },
+  "requirements": {
+   "build": [],
+   "host": [
+    "r-base",
+    "r-matrix >=1.1.1",
+    "r-rcpp >=0.12.0",
+    "r-abind",
+    "r-backports",
+    "r-bayesplot >=1.5.0",
+    "r-bridgesampling >=0.3_0",
+    "r-coda",
+    "r-future >=1.19.0",
+    "r-future.apply >=1.0.0",
+    "r-ggplot2 >=2.0.0",
+    "r-glue >=1.3.0",
+    "r-loo >=2.8.0",
+    "r-matrixstats",
+    "r-mgcv >=1.8_13",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior >=1.6.0",
+    "r-rlang >=1.0.0",
+    "r-rstan >=2.29.0",
+    "r-rstantools >=2.1.1"
+   ],
+   "run": [
+    "r-base",
+    "r-matrix >=1.1.1",
+    "r-rcpp >=0.12.0",
+    "r-abind",
+    "r-backports",
+    "r-bayesplot >=1.5.0",
+    "r-bridgesampling >=0.3_0",
+    "r-coda",
+    "r-future >=1.19.0",
+    "r-future.apply >=1.0.0",
+    "r-ggplot2 >=2.0.0",
+    "r-glue >=1.3.0",
+    "r-loo >=2.8.0",
+    "r-matrixstats",
+    "r-mgcv >=1.8_13",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior >=1.6.0",
+    "r-rlang >=1.0.0",
+    "r-rstan >=2.29.0",
+    "r-rstantools >=2.1.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1721ad13e1f851ff4593ab1c3b7f1f70a88351c7d904945c76d594a16cbb81be",
+   "url": [
+    "https://cran.r-project.org/src/contrib/brms_2.22.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/brms/brms_2.22.0.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('brms')\""
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "r-abind",
+    "r-backports",
+    "r-base",
+    "r-bayesplot",
+    "r-bridgesampling",
+    "r-coda",
+    "r-future",
+    "r-future.apply",
+    "r-ggplot2",
+    "r-glue",
+    "r-loo",
+    "r-matrix",
+    "r-matrixstats",
+    "r-mgcv",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior",
+    "r-rcpp",
+    "r-rlang",
+    "r-rstan",
+    "r-rstantools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-abind",
+    "r-backports",
+    "r-base",
+    "r-bayesplot",
+    "r-bridgesampling",
+    "r-coda",
+    "r-future",
+    "r-future.apply",
+    "r-ggplot2",
+    "r-glue",
+    "r-loo",
+    "r-matrix",
+    "r-matrixstats",
+    "r-mgcv",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior",
+    "r-rcpp",
+    "r-rlang",
+    "r-rstan",
+    "r-rstantools"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/paul-buerkner/brms",
+   "home": "http://discourse.mc-stan.org",
+   "license": "GPL-2.0-only",
+   "license_family": "GPL2",
+   "license_file": [
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary": "Fit Bayesian generalized (non-)linear multivariate multilevel models using 'Stan' for full Bayesian inference. A wide range of distributions  and link functions are supported, allowing users to fit -- among others --  linear, robust linear, count data, survival, response times, ordinal,  zero-inflated, hurdle, and even self-defined mixture models all in a  multilevel context. Further modeling options include non-linear and  smooth terms, auto-correlation structures, censored data, meta-analytic  standard errors, and quite a few more. In addition, all parameters of the  response distribution can be predicted in order to perform distributional  regression. Prior specifications are flexible and explicitly encourage  users to apply prior distributions that actually reflect their beliefs. Model fit can easily be assessed and compared with posterior predictive  checks and leave-one-out cross-validation. References: B\u00FCrkner (2017) <doi:10.18637/jss.v080.i01>; B\u00FCrkner (2018) <doi:10.32614/RJ-2018-017>; Carpenter et al. (2017) <doi:10.18637/jss.v076.i01>."
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "noarch": "generic",
+   "number": "0",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-brms",
+   "version": "2.22.0"
+  },
+  "requirements": {
+   "build": [],
+   "host": [
+    "r-base",
+    "r-matrix >=1.1.1",
+    "r-rcpp >=0.12.0",
+    "r-abind",
+    "r-backports",
+    "r-bayesplot >=1.5.0",
+    "r-bridgesampling >=0.3_0",
+    "r-coda",
+    "r-future >=1.19.0",
+    "r-future.apply >=1.0.0",
+    "r-ggplot2 >=2.0.0",
+    "r-glue >=1.3.0",
+    "r-loo >=2.8.0",
+    "r-matrixstats",
+    "r-mgcv >=1.8_13",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior >=1.6.0",
+    "r-rlang >=1.0.0",
+    "r-rstan >=2.29.0",
+    "r-rstantools >=2.1.1"
+   ],
+   "run": [
+    "r-base",
+    "r-matrix >=1.1.1",
+    "r-rcpp >=0.12.0",
+    "r-abind",
+    "r-backports",
+    "r-bayesplot >=1.5.0",
+    "r-bridgesampling >=0.3_0",
+    "r-coda",
+    "r-future >=1.19.0",
+    "r-future.apply >=1.0.0",
+    "r-ggplot2 >=2.0.0",
+    "r-glue >=1.3.0",
+    "r-loo >=2.8.0",
+    "r-matrixstats",
+    "r-mgcv >=1.8_13",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior >=1.6.0",
+    "r-rlang >=1.0.0",
+    "r-rstan >=2.29.0",
+    "r-rstantools >=2.1.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1721ad13e1f851ff4593ab1c3b7f1f70a88351c7d904945c76d594a16cbb81be",
+   "url": [
+    "https://cran.r-project.org/src/contrib/brms_2.22.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/brms/brms_2.22.0.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('brms')\""
+   ]
+  }
+ },
+ "name": "r-brms",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "r-brms"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/r-brms.json"
+ },
+ "raw_meta_yaml": "{% set version = \"2.22.0\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-brms\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/brms_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/brms/brms_{{ version }}.tar.gz\n  sha256: 1721ad13e1f851ff4593ab1c3b7f1f70a88351c7d904945c76d594a16cbb81be\n\nbuild:\n  number: 0\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n  missing_dso_whitelist:\n    - '*/R.dll'        # [win]\n    - '*/Rblas.dll'    # [win]\n    - '*/Rlapack.dll'  # [win]\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-matrix >=1.1.1\n    - r-rcpp >=0.12.0\n    - r-abind\n    - r-backports\n    - r-bayesplot >=1.5.0\n    - r-bridgesampling >=0.3_0\n    - r-coda\n    - r-future >=1.19.0\n    - r-future.apply >=1.0.0\n    - r-ggplot2 >=2.0.0\n    - r-glue >=1.3.0\n    - r-loo >=2.8.0\n    - r-matrixstats\n    - r-mgcv >=1.8_13\n    - r-nleqslv\n    - r-nlme\n    - r-posterior >=1.6.0\n    - r-rlang >=1.0.0\n    - r-rstan >=2.29.0\n    - r-rstantools >=2.1.1\n  run:\n    - r-base\n    - r-matrix >=1.1.1\n    - r-rcpp >=0.12.0\n    - r-abind\n    - r-backports\n    - r-bayesplot >=1.5.0\n    - r-bridgesampling >=0.3_0\n    - r-coda\n    - r-future >=1.19.0\n    - r-future.apply >=1.0.0\n    - r-ggplot2 >=2.0.0\n    - r-glue >=1.3.0\n    - r-loo >=2.8.0\n    - r-matrixstats\n    - r-mgcv >=1.8_13\n    - r-nleqslv\n    - r-nlme\n    - r-posterior >=1.6.0\n    - r-rlang >=1.0.0\n    - r-rstan >=2.29.0\n    - r-rstantools >=2.1.1\n\ntest:\n  commands:\n    - $R -e \"library('brms')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('brms')\\\"\"  # [win]\n\nabout:\n  home: http://discourse.mc-stan.org\n  dev_url: https://github.com/paul-buerkner/brms\n  license: GPL-2.0-only\n  summary: \"Fit Bayesian generalized (non-)linear multivariate multilevel models using 'Stan' for full Bayesian inference. A wide range of distributions  and link functions are supported, allowing users to fit -- among others --  linear, robust linear, count data, survival, response times, ordinal,  zero-inflated, hurdle,\n    and even self-defined mixture models all in a  multilevel context. Further modeling options include non-linear and  smooth terms, auto-correlation structures, censored data, meta-analytic  standard errors, and quite a few more. In addition, all parameters of the  response distribution can be predicted in order to perform\n    distributional  regression. Prior specifications are flexible and explicitly encourage  users to apply prior distributions that actually reflect their beliefs. Model fit can easily be assessed and compared with posterior predictive  checks and leave-one-out cross-validation. References: B\u00FCrkner (2017) <doi:10.18637/jss.v080.i01>;\n    B\u00FCrkner (2018) <doi:10.32614/RJ-2018-017>; Carpenter et al. (2017) <doi:10.18637/jss.v076.i01>.\"\n  license_family: GPL2\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "r-abind",
+   "r-backports",
+   "r-base",
+   "r-bayesplot",
+   "r-bridgesampling",
+   "r-coda",
+   "r-future",
+   "r-future.apply",
+   "r-ggplot2",
+   "r-glue",
+   "r-loo",
+   "r-matrix",
+   "r-matrixstats",
+   "r-mgcv",
+   "r-nleqslv",
+   "r-nlme",
+   "r-posterior",
+   "r-rcpp",
+   "r-rlang",
+   "r-rstan",
+   "r-rstantools"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "r-abind",
+    "r-backports",
+    "r-base",
+    "r-bayesplot",
+    "r-bridgesampling",
+    "r-coda",
+    "r-future",
+    "r-future.apply",
+    "r-ggplot2",
+    "r-glue",
+    "r-loo",
+    "r-matrix",
+    "r-matrixstats",
+    "r-mgcv",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior",
+    "r-rcpp",
+    "r-rlang",
+    "r-rstan",
+    "r-rstantools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-abind",
+    "r-backports",
+    "r-base",
+    "r-bayesplot",
+    "r-bridgesampling",
+    "r-coda",
+    "r-future",
+    "r-future.apply",
+    "r-ggplot2",
+    "r-glue",
+    "r-loo",
+    "r-matrix",
+    "r-matrixstats",
+    "r-mgcv",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior",
+    "r-rcpp",
+    "r-rlang",
+    "r-rstan",
+    "r-rstantools"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "r-abind",
+    "r-backports",
+    "r-base",
+    "r-bayesplot >=1.5.0",
+    "r-bridgesampling >=0.3_0",
+    "r-coda",
+    "r-future >=1.19.0",
+    "r-future.apply >=1.0.0",
+    "r-ggplot2 >=2.0.0",
+    "r-glue >=1.3.0",
+    "r-loo >=2.8.0",
+    "r-matrix >=1.1.1",
+    "r-matrixstats",
+    "r-mgcv >=1.8_13",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior >=1.6.0",
+    "r-rcpp >=0.12.0",
+    "r-rlang >=1.0.0",
+    "r-rstan >=2.29.0",
+    "r-rstantools >=2.1.1"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-abind",
+    "r-backports",
+    "r-base",
+    "r-bayesplot >=1.5.0",
+    "r-bridgesampling >=0.3_0",
+    "r-coda",
+    "r-future >=1.19.0",
+    "r-future.apply >=1.0.0",
+    "r-ggplot2 >=2.0.0",
+    "r-glue >=1.3.0",
+    "r-loo >=2.8.0",
+    "r-matrix >=1.1.1",
+    "r-matrixstats",
+    "r-mgcv >=1.8_13",
+    "r-nleqslv",
+    "r-nlme",
+    "r-posterior >=1.6.0",
+    "r-rcpp >=0.12.0",
+    "r-rlang >=1.0.0",
+    "r-rstan >=2.29.0",
+    "r-rstantools >=2.1.1"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": [
+  "https://cran.r-project.org/src/contrib/brms_2.22.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/brms/brms_2.22.0.tar.gz"
+ ],
+ "version": "2.22.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/r-brms.json"
+ }
+}

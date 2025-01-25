@@ -1,0 +1,282 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "kineticstoolkit",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://kineticstoolkit.uqam.ca",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE.txt",
+   "summary": "An open-source python library to facilitate research in biomechanics."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "felixchenier"
+   ]
+  },
+  "package": {
+   "name": "kineticstoolkit",
+   "version": "0.15.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.10"
+   ],
+   "run": [
+    "matplotlib-base",
+    "pandas",
+    "pyqt",
+    "python >=3.10",
+    "scikit-learn",
+    "scipy",
+    "tqdm",
+    "limitedinteraction",
+    "ezc3d >=1.5.2",
+    "requests",
+    "requests-cache",
+    "ffmpeg"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ec5236755d26d28ac78a42aa278796914fc601eb04a24efe96a8da87f6ea4149",
+   "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.15.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "kineticstoolkit"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ezc3d",
+    "ffmpeg",
+    "limitedinteraction",
+    "matplotlib-base",
+    "pandas",
+    "pyqt",
+    "python",
+    "requests",
+    "requests-cache",
+    "scikit-learn",
+    "scipy",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://kineticstoolkit.uqam.ca",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE.txt",
+   "summary": "An open-source python library to facilitate research in biomechanics."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "felixchenier"
+   ]
+  },
+  "package": {
+   "name": "kineticstoolkit",
+   "version": "0.15.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.10"
+   ],
+   "run": [
+    "matplotlib-base",
+    "pandas",
+    "pyqt",
+    "python >=3.10",
+    "scikit-learn",
+    "scipy",
+    "tqdm",
+    "limitedinteraction",
+    "ezc3d >=1.5.2",
+    "requests",
+    "requests-cache",
+    "ffmpeg"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ec5236755d26d28ac78a42aa278796914fc601eb04a24efe96a8da87f6ea4149",
+   "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.15.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "kineticstoolkit"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "kineticstoolkit",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "kineticstoolkit"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/kineticstoolkit.json"
+ },
+ "raw_meta_yaml": "{% set name = \"kineticstoolkit\" %}\n{% set version = \"0.15.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kineticstoolkit-{{ version }}.tar.gz\n  sha256: ec5236755d26d28ac78a42aa278796914fc601eb04a24efe96a8da87f6ea4149\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.10\n  run:\n    - matplotlib-base\n    - pandas\n    - pyqt\n    - python >=3.10\n    - scikit-learn\n    - scipy\n    - tqdm\n    - limitedinteraction\n    - ezc3d >=1.5.2\n    - requests\n    - requests-cache\n    - ffmpeg\n\ntest:\n  imports:\n    - kineticstoolkit\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://kineticstoolkit.uqam.ca\n  summary: An open-source python library to facilitate research in biomechanics.\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - felixchenier\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "ezc3d",
+   "ffmpeg",
+   "limitedinteraction",
+   "matplotlib-base",
+   "pandas",
+   "pip",
+   "pyqt",
+   "python",
+   "requests",
+   "requests-cache",
+   "scikit-learn",
+   "scipy",
+   "tqdm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ezc3d",
+    "ffmpeg",
+    "limitedinteraction",
+    "matplotlib-base",
+    "pandas",
+    "pyqt",
+    "python",
+    "requests",
+    "requests-cache",
+    "scikit-learn",
+    "scipy",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.10"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ezc3d >=1.5.2",
+    "ffmpeg",
+    "limitedinteraction",
+    "matplotlib-base",
+    "pandas",
+    "pyqt",
+    "python >=3.10",
+    "requests",
+    "requests-cache",
+    "scikit-learn",
+    "scipy",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.15.0.tar.gz",
+ "version": "0.15.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/kineticstoolkit.json"
+ }
+}

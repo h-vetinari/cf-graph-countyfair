@@ -1,0 +1,313 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "dask-ml",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Distributed and parallel machine learning using dask.\n",
+   "dev_url": "https://github.com/dask/dask-ml",
+   "doc_url": "https://ml.dask.org",
+   "home": "https://github.com/dask/dask-ml",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "Distributed and parallel machine learning using dask."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "TomAugspurger",
+    "jrbourbeau"
+   ]
+  },
+  "package": {
+   "name": "dask-ml",
+   "version": "2024.4.4"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip",
+    "hatchling",
+    "hatch-vcs"
+   ],
+   "run": [
+    "dask >=2.4.0",
+    "dask-glm >=0.2.0",
+    "distributed >=2.4.0",
+    "multipledispatch >=0.4.9",
+    "numba >=0.51.0",
+    "numpy >=1.20.0",
+    "packaging",
+    "pandas >=0.24.2",
+    "python >=3.8",
+    "scikit-learn >=1.2.0",
+    "scipy"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7956910a49e1e31944280fdb311adf245da11ef410d67deb7a05c67c7d0c4498",
+   "url": "https://pypi.io/packages/source/d/dask-ml/dask_ml-2024.4.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "dask_ml",
+    "dask_ml.cluster",
+    "dask_ml.decomposition",
+    "dask_ml.feature_extraction",
+    "dask_ml.linear_model",
+    "dask_ml.metrics",
+    "dask_ml.model_selection",
+    "dask_ml.preprocessing",
+    "dask_ml.utils",
+    "dask_ml.wrappers"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dask",
+    "dask-glm",
+    "distributed",
+    "multipledispatch",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Distributed and parallel machine learning using dask.\n",
+   "dev_url": "https://github.com/dask/dask-ml",
+   "doc_url": "https://ml.dask.org",
+   "home": "https://github.com/dask/dask-ml",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "Distributed and parallel machine learning using dask."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "TomAugspurger",
+    "jrbourbeau"
+   ]
+  },
+  "package": {
+   "name": "dask-ml",
+   "version": "2024.4.4"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip",
+    "hatchling",
+    "hatch-vcs"
+   ],
+   "run": [
+    "dask >=2.4.0",
+    "dask-glm >=0.2.0",
+    "distributed >=2.4.0",
+    "multipledispatch >=0.4.9",
+    "numba >=0.51.0",
+    "numpy >=1.20.0",
+    "packaging",
+    "pandas >=0.24.2",
+    "python >=3.8",
+    "scikit-learn >=1.2.0",
+    "scipy"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7956910a49e1e31944280fdb311adf245da11ef410d67deb7a05c67c7d0c4498",
+   "url": "https://pypi.io/packages/source/d/dask-ml/dask_ml-2024.4.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "dask_ml",
+    "dask_ml.cluster",
+    "dask_ml.decomposition",
+    "dask_ml.feature_extraction",
+    "dask_ml.linear_model",
+    "dask_ml.metrics",
+    "dask_ml.model_selection",
+    "dask_ml.preprocessing",
+    "dask_ml.utils",
+    "dask_ml.wrappers"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "dask-ml",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "dask-ml"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/dask-ml.json"
+ },
+ "raw_meta_yaml": "{% set version = \"2024.4.4\" %}\n\npackage:\n  name: dask-ml\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dask-ml/dask_ml-{{ version }}.tar.gz\n  sha256: 7956910a49e1e31944280fdb311adf245da11ef410d67deb7a05c67c7d0c4498\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - hatchling\n    - hatch-vcs\n  run:\n    - dask >=2.4.0\n    - dask-glm >=0.2.0\n    - distributed >=2.4.0\n    - multipledispatch >=0.4.9\n    - numba >=0.51.0\n    - numpy >=1.20.0\n    - packaging\n    - pandas >=0.24.2\n    - python >=3.8\n    - scikit-learn >=1.2.0\n    - scipy\n\ntest:\n  imports:\n    - dask_ml\n    - dask_ml.cluster\n    - dask_ml.decomposition\n    - dask_ml.feature_extraction\n    - dask_ml.linear_model\n    - dask_ml.metrics\n    - dask_ml.model_selection\n    - dask_ml.preprocessing\n    - dask_ml.utils\n    - dask_ml.wrappers\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/dask/dask-ml\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Distributed and parallel machine learning using dask.\n  description: |\n    Distributed and parallel machine learning using dask.\n  doc_url: https://ml.dask.org\n  dev_url: https://github.com/dask/dask-ml\n\nextra:\n  recipe-maintainers:\n    - TomAugspurger\n    - jrbourbeau\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "dask",
+   "dask-glm",
+   "distributed",
+   "hatch-vcs",
+   "hatchling",
+   "multipledispatch",
+   "numba",
+   "numpy",
+   "packaging",
+   "pandas",
+   "pip",
+   "python",
+   "scikit-learn",
+   "scipy"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dask",
+    "dask-glm",
+    "distributed",
+    "multipledispatch",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python >=3.8"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dask >=2.4.0",
+    "dask-glm >=0.2.0",
+    "distributed >=2.4.0",
+    "multipledispatch >=0.4.9",
+    "numba >=0.51.0",
+    "numpy >=1.20.0",
+    "packaging",
+    "pandas >=0.24.2",
+    "python >=3.8",
+    "scikit-learn >=1.2.0",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/d/dask-ml/dask_ml-2024.4.4.tar.gz",
+ "version": "2024.4.4",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/dask-ml.json"
+ }
+}

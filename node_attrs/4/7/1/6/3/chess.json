@@ -1,0 +1,217 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "chess",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/niklasf/python-chess",
+   "license": "GPL-3.0-only",
+   "license_file": "LICENSE.txt",
+   "summary": "A chess library with move generation and validation, Polyglot opening book probing, PGN reading and writing, Gaviota tablebase probing, Syzygy tablebase probing, and XBoard/UCI engine communication."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "0xbe7a"
+   ]
+  },
+  "package": {
+   "name": "chess",
+   "version": "1.11.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "pip"
+   ],
+   "run": [
+    "python >=3.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3c63cace177860987705b71dedcfab63fb1065186799a06db7eccd76e833b279",
+   "url": "https://pypi.io/packages/source/c/chess/chess-1.11.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "chess"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/niklasf/python-chess",
+   "license": "GPL-3.0-only",
+   "license_file": "LICENSE.txt",
+   "summary": "A chess library with move generation and validation, Polyglot opening book probing, PGN reading and writing, Gaviota tablebase probing, Syzygy tablebase probing, and XBoard/UCI engine communication."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "0xbe7a"
+   ]
+  },
+  "package": {
+   "name": "chess",
+   "version": "1.11.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "pip"
+   ],
+   "run": [
+    "python >=3.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3c63cace177860987705b71dedcfab63fb1065186799a06db7eccd76e833b279",
+   "url": "https://pypi.io/packages/source/c/chess/chess-1.11.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "chess"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "chess",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "chess"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/chess.json"
+ },
+ "raw_meta_yaml": "{% set name = \"chess\" %}\n{% set version = \"1.11.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/chess-{{ version }}.tar.gz\n  sha256: 3c63cace177860987705b71dedcfab63fb1065186799a06db7eccd76e833b279\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n\ntest:\n  imports:\n    - chess\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/niklasf/python-chess\n  summary: A chess library with move generation and validation, Polyglot opening book probing, PGN reading and writing, Gaviota tablebase probing, Syzygy tablebase probing, and XBoard/UCI engine communication.\n  license: GPL-3.0-only\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - '0xbe7a'\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.7"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python >=3.7"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/c/chess/chess-1.11.0.tar.gz",
+ "version": "1.11.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/chess.json"
+ }
+}

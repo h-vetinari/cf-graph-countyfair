@@ -1,0 +1,254 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "django-stubs-ext",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/typeddjango/django-stubs/tree/master/django_stubs_ext",
+   "home": "https://github.com/typeddjango/django-stubs",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE.txt",
+   "summary": "Monkey-patching and extensions for django-stubs"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "django-stubs-ext",
+   "version": "5.1.2"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ],
+   "run": [
+    "django",
+    "python >=3.9",
+    "typing_extensions"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "421c0c3025a68e3ab8e16f065fad9ba93335ecefe2dd92a0cff97a665680266c",
+   "url": "https://pypi.org/packages/source/d/django-stubs-ext/django_stubs_ext-5.1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "pytest -vvv --capture=tee-sys tests"
+   ],
+   "imports": [
+    "django_stubs_ext"
+   ],
+   "requires": [
+    "pip",
+    "pytest",
+    "python 3.9"
+   ],
+   "source_files": [
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "django",
+    "python",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/typeddjango/django-stubs/tree/master/django_stubs_ext",
+   "home": "https://github.com/typeddjango/django-stubs",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE.txt",
+   "summary": "Monkey-patching and extensions for django-stubs"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "django-stubs-ext",
+   "version": "5.1.2"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ],
+   "run": [
+    "django",
+    "python >=3.9",
+    "typing_extensions"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "421c0c3025a68e3ab8e16f065fad9ba93335ecefe2dd92a0cff97a665680266c",
+   "url": "https://pypi.org/packages/source/d/django-stubs-ext/django_stubs_ext-5.1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "pytest -vvv --capture=tee-sys tests"
+   ],
+   "imports": [
+    "django_stubs_ext"
+   ],
+   "requires": [
+    "pip",
+    "pytest",
+    "python 3.9"
+   ],
+   "source_files": [
+    "tests"
+   ]
+  }
+ },
+ "name": "django-stubs-ext",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "django-stubs-ext"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/django-stubs-ext.json"
+ },
+ "raw_meta_yaml": "{% set name = \"django-stubs-ext\" %}\n{% set version = \"5.1.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 421c0c3025a68e3ab8e16f065fad9ba93335ecefe2dd92a0cff97a665680266c\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - django\n    - python >={{ python_min }}\n    - typing_extensions\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - django_stubs_ext\n  commands:\n    - pip check\n    - pytest -vvv --capture=tee-sys tests\n  requires:\n    - pip\n    - pytest\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/typeddjango/django-stubs\n  dev_url: https://github.com/typeddjango/django-stubs/tree/master/django_stubs_ext\n  summary: Monkey-patching and extensions for django-stubs\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "django",
+   "pip",
+   "python",
+   "setuptools",
+   "typing_extensions"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "django",
+    "python",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "django",
+    "python >=3.9",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pytest",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/d/django-stubs-ext/django_stubs_ext-5.1.2.tar.gz",
+ "version": "5.1.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/django-stubs-ext.json"
+ }
+}

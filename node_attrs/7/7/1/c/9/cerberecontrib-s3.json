@@ -1,0 +1,217 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "cerberecontrib-s3",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE.txt",
+   "summary": "Companion package of cerbere for Copernicus Sentinel-3 products."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": [
+    "PYTHON -m pip install . -vv"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "marie59"
+   ]
+  },
+  "package": {
+   "name": "cerberecontrib-s3",
+   "version": "1.1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "cerbere >=2.1.1",
+    "gdal",
+    "lxml"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d6001d8c27f1833665bd8d4ca13f0d45a6ffa61a306f49a650da8cb38993f165",
+   "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v1.1/cerberecontrib-s3-NOV-FE-1187-DT-115_v1.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "cerberecontrib_s3"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cerbere",
+    "gdal",
+    "lxml",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE.txt",
+   "summary": "Companion package of cerbere for Copernicus Sentinel-3 products."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": [
+    "PYTHON -m pip install . -vv"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "marie59"
+   ]
+  },
+  "package": {
+   "name": "cerberecontrib-s3",
+   "version": "1.1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip"
+   ],
+   "run": [
+    "python >=3.8",
+    "cerbere >=2.1.1",
+    "gdal",
+    "lxml"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d6001d8c27f1833665bd8d4ca13f0d45a6ffa61a306f49a650da8cb38993f165",
+   "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v1.1/cerberecontrib-s3-NOV-FE-1187-DT-115_v1.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "cerberecontrib_s3"
+   ]
+  }
+ },
+ "name": "cerberecontrib-s3",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "cerberecontrib-s3"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/cerberecontrib-s3.json"
+ },
+ "raw_meta_yaml": "{% set name = \"cerberecontrib-s3\" %}\n{% set version = \"1.1\" %}\n\npackage: \n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v{{ version }}/cerberecontrib-s3-NOV-FE-1187-DT-115_v{{ version }}.tar.gz\n  sha256: d6001d8c27f1833665bd8d4ca13f0d45a6ffa61a306f49a650da8cb38993f165\n  \nbuild:\n  number: 0\n  noarch: python\n  script: \n  - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n  run:\n    - python >=3.8\n    - cerbere >=2.1.1\n    - gdal\n    - lxml \n \ntest:\n  imports:\n    - cerberecontrib_s3\n    \nabout:\n  home: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3\n  license: GPL-3.0-or-later\n  license_file: LICENSE.txt\n  summary: Companion package of cerbere for Copernicus Sentinel-3 products.\n\nextra:\n  recipe-maintainers:\n    - marie59\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "cerbere",
+   "gdal",
+   "lxml",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cerbere",
+    "gdal",
+    "lxml",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.8"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cerbere >=2.1.1",
+    "gdal",
+    "lxml",
+    "python >=3.8"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v1.1/cerberecontrib-s3-NOV-FE-1187-DT-115_v1.1.tar.gz",
+ "version": "1.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/cerberecontrib-s3.json"
+ }
+}

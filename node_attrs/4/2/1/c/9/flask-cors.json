@@ -1,0 +1,247 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "flask-cors",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/corydolphin/flask-cors",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A Flask extension adding a decorator for CORS support"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr",
+    "jan-janssen",
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "flask-cors",
+   "version": "5.0.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ],
+   "run": [
+    "flask >=0.9",
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "5aadb4b950c4e93745034594d9f3ea6591f734bb3662e16e255ffbf5e89c88ef",
+   "url": "https://pypi.org/packages/source/f/flask-cors/flask_cors-5.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "flask_cors",
+    "flask_cors.core",
+    "flask_cors.decorator",
+    "flask_cors.extension",
+    "flask_cors.version"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "flask",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/corydolphin/flask-cors",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A Flask extension adding a decorator for CORS support"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr",
+    "jan-janssen",
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "flask-cors",
+   "version": "5.0.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ],
+   "run": [
+    "flask >=0.9",
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "5aadb4b950c4e93745034594d9f3ea6591f734bb3662e16e255ffbf5e89c88ef",
+   "url": "https://pypi.org/packages/source/f/flask-cors/flask_cors-5.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "flask_cors",
+    "flask_cors.core",
+    "flask_cors.decorator",
+    "flask_cors.extension",
+    "flask_cors.version"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "flask-cors",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "flask-cors"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/flask-cors.json"
+ },
+ "raw_meta_yaml": "{% set version = \"5.0.0\" %}\n\npackage:\n  name: flask-cors\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/f/flask-cors/flask_cors-{{ version }}.tar.gz\n  sha256: 5aadb4b950c4e93745034594d9f3ea6591f734bb3662e16e255ffbf5e89c88ef\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - flask >=0.9\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - flask_cors\n    - flask_cors.core\n    - flask_cors.decorator\n    - flask_cors.extension\n    - flask_cors.version\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/corydolphin/flask-cors\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: A Flask extension adding a decorator for CORS support\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - jan-janssen\n    - bollwyvl\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "flask",
+   "pip",
+   "python",
+   "setuptools"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "flask",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "flask >=0.9",
+    "python >=3.9"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/f/flask-cors/flask_cors-5.0.0.tar.gz",
+ "version": "5.0.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/flask-cors.json"
+ }
+}

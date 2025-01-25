@@ -1,0 +1,481 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "tramway",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "doc_url": "https://tramway.readthedocs.io/",
+   "home": "https://github.com/DecBayComp/TRamWAy",
+   "license": "CECILL-2.1",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install --no-deps ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DecBayComp"
+   ]
+  },
+  "package": {
+   "name": "tramway",
+   "version": "0.6.8"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "poetry",
+    "python"
+   ],
+   "run": [
+    "setuptools",
+    "hdf5",
+    "python",
+    "rwa-python =0.9.3",
+    "matplotlib-base",
+    "cvxopt",
+    "polytope",
+    "tqdm",
+    "scikit-image",
+    "stopit"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac",
+   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest tests/test_core.py tests/test_analyzer.py::TestSptDataAccess tests/test_analyzer.py::TestTesseller tests/test_analyzer.py::TestIndexer tests/test_analyzer.py::TestAssignment tests/test_analyzer.py::TestSideEffects"
+   ],
+   "imports": [
+    "tramway"
+   ],
+   "requires": [
+    "pytest"
+   ],
+   "source_files": [
+    "tests/test_core.py",
+    "tests/test_analyzer.py",
+    "tests/test_analyzer_pipeline.py"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cvxopt",
+    "hdf5",
+    "matplotlib-base",
+    "polytope",
+    "python",
+    "rwa-python",
+    "scikit-image",
+    "setuptools",
+    "stopit",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "doc_url": "https://tramway.readthedocs.io/",
+   "home": "https://github.com/DecBayComp/TRamWAy",
+   "license": "CECILL-2.1",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install --no-deps ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DecBayComp"
+   ]
+  },
+  "package": {
+   "name": "tramway",
+   "version": "0.6.8"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "poetry",
+    "python"
+   ],
+   "run": [
+    "setuptools",
+    "hdf5",
+    "python",
+    "rwa-python =0.9.3",
+    "matplotlib-base",
+    "cvxopt",
+    "polytope",
+    "tqdm",
+    "scikit-image",
+    "stopit"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac",
+   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest tests/test_core.py tests/test_analyzer.py::TestSptDataAccess tests/test_analyzer.py::TestTesseller tests/test_analyzer.py::TestIndexer tests/test_analyzer.py::TestAssignment tests/test_analyzer.py::TestSideEffects"
+   ],
+   "imports": [
+    "tramway"
+   ],
+   "requires": [
+    "pytest"
+   ],
+   "source_files": [
+    "tests/test_core.py",
+    "tests/test_analyzer.py",
+    "tests/test_analyzer_pipeline.py"
+   ]
+  }
+ },
+ "name": "tramway",
+ "osx_64_meta_yaml": {
+  "about": {
+   "doc_url": "https://tramway.readthedocs.io/",
+   "home": "https://github.com/DecBayComp/TRamWAy",
+   "license": "CECILL-2.1",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install --no-deps ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DecBayComp"
+   ]
+  },
+  "package": {
+   "name": "tramway",
+   "version": "0.6.8"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "poetry",
+    "python"
+   ],
+   "run": [
+    "setuptools",
+    "hdf5",
+    "python",
+    "rwa-python =0.9.3",
+    "matplotlib-base",
+    "cvxopt",
+    "polytope",
+    "tqdm",
+    "scikit-image",
+    "stopit"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac",
+   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest tests/test_core.py tests/test_analyzer.py::TestSptDataAccess tests/test_analyzer.py::TestTesseller tests/test_analyzer.py::TestIndexer tests/test_analyzer.py::TestAssignment tests/test_analyzer.py::TestSideEffects"
+   ],
+   "imports": [
+    "tramway"
+   ],
+   "requires": [
+    "pytest"
+   ],
+   "source_files": [
+    "tests/test_core.py",
+    "tests/test_analyzer.py",
+    "tests/test_analyzer_pipeline.py"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cvxopt",
+    "hdf5",
+    "matplotlib-base",
+    "polytope",
+    "python",
+    "rwa-python",
+    "scikit-image",
+    "setuptools",
+    "stopit",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "tramway"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/tramway.json"
+ },
+ "raw_meta_yaml": "{% set name = \"tramway\" %}\n{% set version = \"0.6.8\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DecBayComp/TRamWAy/archive/v{{ version }}.tar.gz\n  sha256: ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac\n\nbuild:\n  skip: true  # [py<38]\n  number: 0\n  script: {{ PYTHON }} -m pip install --no-deps .\n\nrequirements:\n  host:\n    - pip\n    - poetry\n    - python\n  run:\n    - setuptools\n    - hdf5\n    - python\n    - rwa-python =0.9.3\n    - matplotlib-base\n    - cvxopt\n    - polytope\n    - tqdm\n    - scikit-image\n    - stopit  # [not win]\n\ntest:\n  imports:\n    - tramway\n  source_files:\n    - tests/test_core.py\n    - tests/test_analyzer.py\n    - tests/test_analyzer_pipeline.py\n  requires:\n    - pytest\n  commands:\n    - pytest tests/test_core.py tests/test_analyzer.py::TestSptDataAccess tests/test_analyzer.py::TestTesseller tests/test_analyzer.py::TestIndexer tests/test_analyzer.py::TestAssignment tests/test_analyzer.py::TestSideEffects\n\nabout:\n  home: https://github.com/DecBayComp/TRamWAy\n  license: CECILL-2.1\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data'\n  doc_url: https://tramway.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - DecBayComp\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "cvxopt",
+   "hdf5",
+   "matplotlib-base",
+   "pip",
+   "poetry",
+   "polytope",
+   "python",
+   "rwa-python",
+   "scikit-image",
+   "setuptools",
+   "stopit",
+   "tqdm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cvxopt",
+    "hdf5",
+    "matplotlib-base",
+    "polytope",
+    "python",
+    "rwa-python",
+    "scikit-image",
+    "setuptools",
+    "stopit",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cvxopt",
+    "hdf5",
+    "matplotlib-base",
+    "polytope",
+    "python",
+    "rwa-python =0.9.3",
+    "scikit-image",
+    "setuptools",
+    "stopit",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz",
+ "version": "0.6.8",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/tramway.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "doc_url": "https://tramway.readthedocs.io/",
+   "home": "https://github.com/DecBayComp/TRamWAy",
+   "license": "CECILL-2.1",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install --no-deps ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DecBayComp"
+   ]
+  },
+  "package": {
+   "name": "tramway",
+   "version": "0.6.8"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "poetry",
+    "python"
+   ],
+   "run": [
+    "setuptools",
+    "hdf5",
+    "python",
+    "rwa-python =0.9.3",
+    "matplotlib-base",
+    "cvxopt",
+    "polytope",
+    "tqdm",
+    "scikit-image"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac",
+   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest tests/test_core.py tests/test_analyzer.py::TestSptDataAccess tests/test_analyzer.py::TestTesseller tests/test_analyzer.py::TestIndexer tests/test_analyzer.py::TestAssignment tests/test_analyzer.py::TestSideEffects"
+   ],
+   "imports": [
+    "tramway"
+   ],
+   "requires": [
+    "pytest"
+   ],
+   "source_files": [
+    "tests/test_core.py",
+    "tests/test_analyzer.py",
+    "tests/test_analyzer_pipeline.py"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cvxopt",
+    "hdf5",
+    "matplotlib-base",
+    "polytope",
+    "python",
+    "rwa-python",
+    "scikit-image",
+    "setuptools",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ }
+}

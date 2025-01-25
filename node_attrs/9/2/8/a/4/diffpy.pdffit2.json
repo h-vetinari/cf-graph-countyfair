@@ -1,0 +1,503 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "diffpy.pdffit2",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "The diffpy.pdffit2 package provides functions for calculation and refinement of atomic pair distribution function\nfrom crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and\neasy-to-use user interface for chemists, physicists, and materials scientists.\n",
+   "dev_url": "https://github.com/diffpy/diffpy.pdffit2",
+   "doc_url": "https://www.diffpy.org/doc/pdffit2",
+   "home": "https://github.com/diffpy/diffpy.pdffit2",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "PDFfit2 - real space structure refinement program."
+  },
+  "build": {
+   "number": "8",
+   "preserve_egg_dir": true,
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bobleesj",
+    "dragonyanglong",
+    "sbillinge"
+   ]
+  },
+  "package": {
+   "name": "diffpy.pdffit2",
+   "version": "1.4.3"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl 2.7"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "setuptools",
+    "gsl 2.7"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "six",
+    "diffpy.structure",
+    "gsl 2.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "45f053323bdc7f94d2e12766f8ee0b7d2d3db9efc100c104592cb2473c4577d2",
+   "url": "https://pypi.io/packages/source/d/diffpy.pdffit2/diffpy.pdffit2-1.4.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "diffpy",
+    "diffpy.pdffit2",
+    "diffpy.pdffit2.pdffit2",
+    "diffpy.pdffit2.ipy_ext",
+    "diffpy.pdffit2.tests"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "gsl",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "diffpy.structure",
+    "gsl",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "The diffpy.pdffit2 package provides functions for calculation and refinement of atomic pair distribution function\nfrom crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and\neasy-to-use user interface for chemists, physicists, and materials scientists.\n",
+   "dev_url": "https://github.com/diffpy/diffpy.pdffit2",
+   "doc_url": "https://www.diffpy.org/doc/pdffit2",
+   "home": "https://github.com/diffpy/diffpy.pdffit2",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "PDFfit2 - real space structure refinement program."
+  },
+  "build": {
+   "number": "8",
+   "preserve_egg_dir": true,
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bobleesj",
+    "dragonyanglong",
+    "sbillinge"
+   ]
+  },
+  "package": {
+   "name": "diffpy.pdffit2",
+   "version": "1.4.3"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl 2.7"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "setuptools",
+    "gsl 2.7"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "six",
+    "diffpy.structure",
+    "gsl 2.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "45f053323bdc7f94d2e12766f8ee0b7d2d3db9efc100c104592cb2473c4577d2",
+   "url": "https://pypi.io/packages/source/d/diffpy.pdffit2/diffpy.pdffit2-1.4.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "diffpy",
+    "diffpy.pdffit2",
+    "diffpy.pdffit2.pdffit2",
+    "diffpy.pdffit2.ipy_ext",
+    "diffpy.pdffit2.tests"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "diffpy.pdffit2",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "The diffpy.pdffit2 package provides functions for calculation and refinement of atomic pair distribution function\nfrom crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and\neasy-to-use user interface for chemists, physicists, and materials scientists.\n",
+   "dev_url": "https://github.com/diffpy/diffpy.pdffit2",
+   "doc_url": "https://www.diffpy.org/doc/pdffit2",
+   "home": "https://github.com/diffpy/diffpy.pdffit2",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "PDFfit2 - real space structure refinement program."
+  },
+  "build": {
+   "number": "8",
+   "preserve_egg_dir": true,
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bobleesj",
+    "dragonyanglong",
+    "sbillinge"
+   ]
+  },
+  "package": {
+   "name": "diffpy.pdffit2",
+   "version": "1.4.3"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl 2.7"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "setuptools",
+    "gsl 2.7"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "six",
+    "diffpy.structure",
+    "gsl 2.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "45f053323bdc7f94d2e12766f8ee0b7d2d3db9efc100c104592cb2473c4577d2",
+   "url": "https://pypi.io/packages/source/d/diffpy.pdffit2/diffpy.pdffit2-1.4.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "diffpy",
+    "diffpy.pdffit2",
+    "diffpy.pdffit2.pdffit2",
+    "diffpy.pdffit2.ipy_ext",
+    "diffpy.pdffit2.tests"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "gsl",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "diffpy.structure",
+    "gsl",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "diffpy.pdffit2"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/diffpy.pdffit2.json"
+ },
+ "raw_meta_yaml": "{% set name = \"diffpy.pdffit2\" %}\n{% set version = \"1.4.3\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 45f053323bdc7f94d2e12766f8ee0b7d2d3db9efc100c104592cb2473c4577d2\n\nbuild:\n  # we need egg_dir to avoid overlapping diffpy/__init__.py files.\n  preserve_egg_dir: true\n  number: 8\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - gsl {{ gsl }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - gsl {{ gsl }}\n  run:\n    - python\n    - setuptools\n    - six\n    - diffpy.structure\n    - gsl {{ gsl }}\n\ntest:\n  imports:\n    - diffpy\n    - diffpy.pdffit2\n    - diffpy.pdffit2.pdffit2\n    - diffpy.pdffit2.ipy_ext\n    - diffpy.pdffit2.tests\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/diffpy/diffpy.pdffit2\n  summary: PDFfit2 - real space structure refinement program.\n  description: |\n    The diffpy.pdffit2 package provides functions for calculation and refinement of atomic pair distribution function \n    from crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and \n    easy-to-use user interface for chemists, physicists, and materials scientists.\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  doc_url: https://www.diffpy.org/doc/pdffit2\n  dev_url: https://github.com/diffpy/diffpy.pdffit2\n\nextra:\n  recipe-maintainers:\n    - bobleesj\n    - dragonyanglong\n    - sbillinge\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "cxx_compiler_stub",
+   "diffpy.structure",
+   "gsl",
+   "pip",
+   "python",
+   "setuptools",
+   "six"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "diffpy.structure",
+    "gsl",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl 2.7"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "gsl 2.7",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "diffpy.structure",
+    "gsl 2.7",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/d/diffpy.pdffit2/diffpy.pdffit2-1.4.3.tar.gz",
+ "version": "1.4.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/diffpy.pdffit2.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "The diffpy.pdffit2 package provides functions for calculation and refinement of atomic pair distribution function\nfrom crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and\neasy-to-use user interface for chemists, physicists, and materials scientists.\n",
+   "dev_url": "https://github.com/diffpy/diffpy.pdffit2",
+   "doc_url": "https://www.diffpy.org/doc/pdffit2",
+   "home": "https://github.com/diffpy/diffpy.pdffit2",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "PDFfit2 - real space structure refinement program."
+  },
+  "build": {
+   "number": "8",
+   "preserve_egg_dir": true,
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bobleesj",
+    "dragonyanglong",
+    "sbillinge"
+   ]
+  },
+  "package": {
+   "name": "diffpy.pdffit2",
+   "version": "1.4.3"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl 2.7"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "setuptools",
+    "gsl 2.7"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "six",
+    "diffpy.structure",
+    "gsl 2.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "45f053323bdc7f94d2e12766f8ee0b7d2d3db9efc100c104592cb2473c4577d2",
+   "url": "https://pypi.io/packages/source/d/diffpy.pdffit2/diffpy.pdffit2-1.4.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "diffpy",
+    "diffpy.pdffit2",
+    "diffpy.pdffit2.pdffit2",
+    "diffpy.pdffit2.ipy_ext",
+    "diffpy.pdffit2.tests"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gsl"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "gsl",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "diffpy.structure",
+    "gsl",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ }
+}

@@ -1,0 +1,277 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "tensorflow-hub",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://www.tensorflow.org/hub/",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "A library for transfer learning by reusing parts of TensorFlow models."
+  },
+  "build": {
+   "ignore_run_exports": [
+    "libgcc-ng",
+    "libstdcxx-ng"
+   ],
+   "noarch": "python",
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "tensorflow-hub",
+   "version": "0.16.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "bazel >=0.24",
+    "setuptools",
+    "wheel"
+   ],
+   "host": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "__linux",
+    "python >=3.6",
+    "numpy >=1.12.0",
+    "protobuf >=3.19.6",
+    "tf-keras >=2.14.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ce6abd3f1d39d42333b07c608ae022ac09a3f5984b297b21436c3389d7b77af5",
+   "url": "https://github.com/tensorflow/hub/archive/v0.16.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "tensorflow_hub"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "bazel",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "__linux",
+    "numpy",
+    "protobuf",
+    "python",
+    "tf-keras"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://www.tensorflow.org/hub/",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "A library for transfer learning by reusing parts of TensorFlow models."
+  },
+  "build": {
+   "ignore_run_exports": [
+    "libgcc-ng",
+    "libstdcxx-ng"
+   ],
+   "noarch": "python",
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "tensorflow-hub",
+   "version": "0.16.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "bazel >=0.24",
+    "setuptools",
+    "wheel"
+   ],
+   "host": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "__linux",
+    "python >=3.6",
+    "numpy >=1.12.0",
+    "protobuf >=3.19.6",
+    "tf-keras >=2.14.1"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ce6abd3f1d39d42333b07c608ae022ac09a3f5984b297b21436c3389d7b77af5",
+   "url": "https://github.com/tensorflow/hub/archive/v0.16.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "tensorflow_hub"
+   ]
+  }
+ },
+ "name": "tensorflow-hub",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "tensorflow-hub"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/tensorflow-hub.json"
+ },
+ "raw_meta_yaml": "{% set version = \"0.16.1\" %}\n\npackage:\n  name: tensorflow-hub\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz\n  sha256: ce6abd3f1d39d42333b07c608ae022ac09a3f5984b297b21436c3389d7b77af5\n\nbuild:\n  number: 1\n  # This is a noarch: python package, it contains no compiled code but a\n  # compiler is required to convert protocol buffer definitions.\n  noarch: python\n  ignore_run_exports:\n    - libgcc-ng\n    - libstdcxx-ng\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - bazel >=0.24\n    - setuptools\n    - wheel\n  host:\n    - python >=3.6\n    - pip\n  run:\n    # The build has only been tested on linux-64\n    - __linux\n    - python >=3.6\n    - numpy >=1.12.0\n    - protobuf >=3.19.6\n    - tf-keras >=2.14.1\n\ntest:\n  imports:\n    - tensorflow_hub\n\nabout:\n  home: https://www.tensorflow.org/hub/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: A library for transfer learning by reusing parts of TensorFlow models.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "__linux",
+   "bazel",
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "cxx_compiler_stub",
+   "numpy",
+   "pip",
+   "protobuf",
+   "python",
+   "setuptools",
+   "tf-keras",
+   "wheel"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "bazel",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "__linux",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "numpy",
+    "protobuf",
+    "python",
+    "tf-keras"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "bazel >=0.24",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "__linux",
+    "numpy >=1.12.0",
+    "protobuf >=3.19.6",
+    "python >=3.6",
+    "tf-keras >=2.14.1"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/tensorflow/hub/archive/v0.16.1.tar.gz",
+ "version": "0.16.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/tensorflow-hub.json"
+ }
+}

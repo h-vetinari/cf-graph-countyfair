@@ -1,0 +1,275 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "molsets",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://pypi.org/project/molsets/",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Molecular Sets (MOSES): A Benchmarking Platform for Molecular Generation Models"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hadim"
+   ]
+  },
+  "package": {
+   "name": "molsets",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.5"
+   ],
+   "run": [
+    "fcd_torch >=1.0.5",
+    "matplotlib-base >=3.0.0",
+    "numpy >=1.15",
+    "pandas >=0.25",
+    "pomegranate ==0.12.0",
+    "python >=3.5",
+    "scipy >=1.1.0",
+    "seaborn >=0.9.0",
+    "pytorch >=1.1.0",
+    "tqdm >=4.26.0",
+    "rdkit >=2019.09.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7ed3713e6f27cd7aed8099be21b527acf7a858c43205ddeb8eba94e7a7f70743",
+   "url": "https://pypi.io/packages/source/m/molsets/molsets-0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "moses",
+    "moses.aae"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fcd_torch",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "pomegranate",
+    "python",
+    "pytorch",
+    "rdkit",
+    "scipy",
+    "seaborn",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://pypi.org/project/molsets/",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Molecular Sets (MOSES): A Benchmarking Platform for Molecular Generation Models"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hadim"
+   ]
+  },
+  "package": {
+   "name": "molsets",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.5"
+   ],
+   "run": [
+    "fcd_torch >=1.0.5",
+    "matplotlib-base >=3.0.0",
+    "numpy >=1.15",
+    "pandas >=0.25",
+    "pomegranate ==0.12.0",
+    "python >=3.5",
+    "scipy >=1.1.0",
+    "seaborn >=0.9.0",
+    "pytorch >=1.1.0",
+    "tqdm >=4.26.0",
+    "rdkit >=2019.09.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "7ed3713e6f27cd7aed8099be21b527acf7a858c43205ddeb8eba94e7a7f70743",
+   "url": "https://pypi.io/packages/source/m/molsets/molsets-0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "moses",
+    "moses.aae"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "molsets",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "molsets"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/molsets.json"
+ },
+ "raw_meta_yaml": "{% set name = \"molsets\" %}\n{% set version = \"0.3.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7ed3713e6f27cd7aed8099be21b527acf7a858c43205ddeb8eba94e7a7f70743\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n  run:\n    - fcd_torch >=1.0.5\n    - matplotlib-base >=3.0.0\n    - numpy >=1.15\n    - pandas >=0.25\n    - pomegranate ==0.12.0\n    - python >=3.5\n    - scipy >=1.1.0\n    - seaborn >=0.9.0\n    - pytorch >=1.1.0\n    - tqdm >=4.26.0\n    - rdkit >=2019.09.3\n\ntest:\n  imports:\n    - moses\n    - moses.aae\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/molsets/\n  summary: 'Molecular Sets (MOSES): A Benchmarking Platform for Molecular Generation Models'\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hadim\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "fcd_torch",
+   "matplotlib-base",
+   "numpy",
+   "pandas",
+   "pip",
+   "pomegranate",
+   "python",
+   "pytorch",
+   "rdkit",
+   "scipy",
+   "seaborn",
+   "tqdm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fcd_torch",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "pomegranate",
+    "python",
+    "pytorch",
+    "rdkit",
+    "scipy",
+    "seaborn",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.5"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fcd_torch >=1.0.5",
+    "matplotlib-base >=3.0.0",
+    "numpy >=1.15",
+    "pandas >=0.25",
+    "pomegranate ==0.12.0",
+    "python >=3.5",
+    "pytorch >=1.1.0",
+    "rdkit >=2019.09.3",
+    "scipy >=1.1.0",
+    "seaborn >=0.9.0",
+    "tqdm >=4.26.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/m/molsets/molsets-0.3.1.tar.gz",
+ "version": "0.3.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/molsets.json"
+ }
+}

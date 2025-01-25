@@ -1,0 +1,272 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pydeck",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/visgl/deck.gl/tree/master/bindings/pydeck",
+   "doc_url": "https://deckgl.readthedocs.io",
+   "home": "https://github.com/visgl/deck.gl/tree/master/bindings/pydeck",
+   "license": "Apache-2.0",
+   "license_family": "Apache",
+   "license_file": "LICENSE.txt",
+   "summary": "Widget for deck.gl maps"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ajduberstein",
+    "Jesus89"
+   ]
+  },
+  "package": {
+   "name": "pydeck",
+   "version": "0.8.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "ipykernel",
+    "ipython",
+    "jinja2",
+    "pip",
+    "traitlets",
+    "numpy >=1.16.4"
+   ],
+   "run": [
+    "python >=3.7",
+    "ipykernel",
+    "ipywidgets",
+    "jinja2",
+    "traitlets",
+    "numpy"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "07edde833f7cfcef6749124351195aa7dcd24663d4909fd7898dbd0b6fbc01ec",
+   "url": "https://pypi.io/packages/source/p/pydeck/pydeck-0.8.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pydeck",
+    "pydeck.bindings",
+    "pydeck.data_utils",
+    "pydeck.io",
+    "pydeck.nbextension",
+    "pydeck.widget"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "ipykernel",
+    "ipython",
+    "jinja2",
+    "numpy",
+    "pip",
+    "python",
+    "traitlets"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ipykernel",
+    "ipywidgets",
+    "jinja2",
+    "numpy",
+    "python",
+    "traitlets"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/visgl/deck.gl/tree/master/bindings/pydeck",
+   "doc_url": "https://deckgl.readthedocs.io",
+   "home": "https://github.com/visgl/deck.gl/tree/master/bindings/pydeck",
+   "license": "Apache-2.0",
+   "license_family": "Apache",
+   "license_file": "LICENSE.txt",
+   "summary": "Widget for deck.gl maps"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ajduberstein",
+    "Jesus89"
+   ]
+  },
+  "package": {
+   "name": "pydeck",
+   "version": "0.8.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "ipykernel",
+    "ipython",
+    "jinja2",
+    "pip",
+    "traitlets",
+    "numpy >=1.16.4"
+   ],
+   "run": [
+    "python >=3.7",
+    "ipykernel",
+    "ipywidgets",
+    "jinja2",
+    "traitlets",
+    "numpy"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "07edde833f7cfcef6749124351195aa7dcd24663d4909fd7898dbd0b6fbc01ec",
+   "url": "https://pypi.io/packages/source/p/pydeck/pydeck-0.8.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pydeck",
+    "pydeck.bindings",
+    "pydeck.data_utils",
+    "pydeck.io",
+    "pydeck.nbextension",
+    "pydeck.widget"
+   ]
+  }
+ },
+ "name": "pydeck",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pydeck"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pydeck.json"
+ },
+ "raw_meta_yaml": "{% set name = \"pydeck\" %}\n{% set version = \"0.8.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 07edde833f7cfcef6749124351195aa7dcd24663d4909fd7898dbd0b6fbc01ec\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.7\n    - ipykernel\n    - ipython\n    - jinja2\n    - pip\n    - traitlets\n    - numpy >=1.16.4\n  run:\n    - python >=3.7\n    - ipykernel\n    - ipywidgets\n    - jinja2\n    - traitlets\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - pydeck\n    - pydeck.bindings\n    - pydeck.data_utils\n    - pydeck.io\n    - pydeck.nbextension\n    - pydeck.widget\n\nabout:\n  home: https://github.com/visgl/deck.gl/tree/master/bindings/pydeck\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: Widget for deck.gl maps\n  doc_url: https://deckgl.readthedocs.io\n  dev_url: https://github.com/visgl/deck.gl/tree/master/bindings/pydeck\n\nextra:\n  recipe-maintainers:\n    - ajduberstein\n    - Jesus89\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "ipykernel",
+   "ipython",
+   "ipywidgets",
+   "jinja2",
+   "numpy",
+   "pip",
+   "python",
+   "traitlets"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "ipykernel",
+    "ipython",
+    "jinja2",
+    "numpy",
+    "pip",
+    "python",
+    "traitlets"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ipykernel",
+    "ipywidgets",
+    "jinja2",
+    "numpy",
+    "python",
+    "traitlets"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "ipykernel",
+    "ipython",
+    "jinja2",
+    "numpy >=1.16.4",
+    "pip",
+    "python >=3.7",
+    "traitlets"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ipykernel",
+    "ipywidgets",
+    "jinja2",
+    "numpy",
+    "python >=3.7",
+    "traitlets"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/p/pydeck/pydeck-0.8.0.tar.gz",
+ "version": "0.8.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pydeck.json"
+ }
+}

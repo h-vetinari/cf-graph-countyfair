@@ -1,0 +1,977 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "glum",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
+   "dev_url": "https://github.com/Quantco/glum",
+   "doc_url": "https://glum.readthedocs.io/",
+   "home": "https://github.com/Quantco/glum",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "High performance Python GLMs with all the features! "
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "GLM_ARCHITECTURE=default"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MatthiasSchmidtblaicherQC",
+    "MarcAntoineSchmidtQC",
+    "xhochy",
+    "stanmart",
+    "janjagusch",
+    "jtilly"
+   ]
+  },
+  "package": {
+   "name": "glum",
+   "version": "3.1.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ],
+   "host": [
+    "python",
+    "cython",
+    "numpy",
+    "pip",
+    "scikit-learn >=0.23",
+    "setuptools",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python",
+    "formulaic >=0.6",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "scikit-learn >=0.23",
+    "scipy",
+    "tabmat >=4.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0354f792a1467ae295b9f9ec9fe2fb1b4af9ee97c0f72cb5ef2cf785c0cca792",
+   "url": "https://pypi.org/packages/source/g/glum/glum-3.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "glum"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "formulaic",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tabmat"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
+   "dev_url": "https://github.com/Quantco/glum",
+   "doc_url": "https://glum.readthedocs.io/",
+   "home": "https://github.com/Quantco/glum",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "High performance Python GLMs with all the features! "
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "GLM_ARCHITECTURE=default"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MatthiasSchmidtblaicherQC",
+    "MarcAntoineSchmidtQC",
+    "xhochy",
+    "stanmart",
+    "janjagusch",
+    "jtilly"
+   ]
+  },
+  "package": {
+   "name": "glum",
+   "version": "3.1.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ],
+   "host": [
+    "python",
+    "cython",
+    "numpy",
+    "pip",
+    "scikit-learn >=0.23",
+    "setuptools",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python",
+    "formulaic >=0.6",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "scikit-learn >=0.23",
+    "scipy",
+    "tabmat >=4.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0354f792a1467ae295b9f9ec9fe2fb1b4af9ee97c0f72cb5ef2cf785c0cca792",
+   "url": "https://pypi.org/packages/source/g/glum/glum-3.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "glum"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "formulaic",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tabmat"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
+   "dev_url": "https://github.com/Quantco/glum",
+   "doc_url": "https://glum.readthedocs.io/",
+   "home": "https://github.com/Quantco/glum",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "High performance Python GLMs with all the features! "
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "GLM_ARCHITECTURE=default"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MatthiasSchmidtblaicherQC",
+    "MarcAntoineSchmidtQC",
+    "xhochy",
+    "stanmart",
+    "janjagusch",
+    "jtilly"
+   ]
+  },
+  "package": {
+   "name": "glum",
+   "version": "3.1.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ],
+   "host": [
+    "python",
+    "cython",
+    "numpy",
+    "pip",
+    "scikit-learn >=0.23",
+    "setuptools",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python",
+    "formulaic >=0.6",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "scikit-learn >=0.23",
+    "scipy",
+    "tabmat >=4.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0354f792a1467ae295b9f9ec9fe2fb1b4af9ee97c0f72cb5ef2cf785c0cca792",
+   "url": "https://pypi.org/packages/source/g/glum/glum-3.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "glum"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "formulaic",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tabmat"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
+   "dev_url": "https://github.com/Quantco/glum",
+   "doc_url": "https://glum.readthedocs.io/",
+   "home": "https://github.com/Quantco/glum",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "High performance Python GLMs with all the features! "
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "GLM_ARCHITECTURE=default"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MatthiasSchmidtblaicherQC",
+    "MarcAntoineSchmidtQC",
+    "xhochy",
+    "stanmart",
+    "janjagusch",
+    "jtilly"
+   ]
+  },
+  "package": {
+   "name": "glum",
+   "version": "3.1.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp",
+    "llvm-openmp"
+   ],
+   "host": [
+    "python",
+    "cython",
+    "numpy",
+    "pip",
+    "scikit-learn >=0.23",
+    "setuptools",
+    "setuptools_scm",
+    "llvm-openmp"
+   ],
+   "run": [
+    "python",
+    "formulaic >=0.6",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "scikit-learn >=0.23",
+    "scipy",
+    "tabmat >=4.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0354f792a1467ae295b9f9ec9fe2fb1b4af9ee97c0f72cb5ef2cf785c0cca792",
+   "url": "https://pypi.org/packages/source/g/glum/glum-3.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "glum"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "glum",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
+   "dev_url": "https://github.com/Quantco/glum",
+   "doc_url": "https://glum.readthedocs.io/",
+   "home": "https://github.com/Quantco/glum",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "High performance Python GLMs with all the features! "
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "GLM_ARCHITECTURE=default"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MatthiasSchmidtblaicherQC",
+    "MarcAntoineSchmidtQC",
+    "xhochy",
+    "stanmart",
+    "janjagusch",
+    "jtilly"
+   ]
+  },
+  "package": {
+   "name": "glum",
+   "version": "3.1.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "llvm-openmp"
+   ],
+   "host": [
+    "python",
+    "cython",
+    "llvm-openmp",
+    "numpy",
+    "pip",
+    "scikit-learn >=0.23",
+    "setuptools",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python",
+    "formulaic >=0.6",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "scikit-learn >=0.23",
+    "scipy",
+    "tabmat >=4.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0354f792a1467ae295b9f9ec9fe2fb1b4af9ee97c0f72cb5ef2cf785c0cca792",
+   "url": "https://pypi.org/packages/source/g/glum/glum-3.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "glum"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "llvm-openmp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "llvm-openmp",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "formulaic",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tabmat"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
+   "dev_url": "https://github.com/Quantco/glum",
+   "doc_url": "https://glum.readthedocs.io/",
+   "home": "https://github.com/Quantco/glum",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "High performance Python GLMs with all the features! "
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "GLM_ARCHITECTURE=default"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MatthiasSchmidtblaicherQC",
+    "MarcAntoineSchmidtQC",
+    "xhochy",
+    "stanmart",
+    "janjagusch",
+    "jtilly"
+   ]
+  },
+  "package": {
+   "name": "glum",
+   "version": "3.1.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "llvm-openmp"
+   ],
+   "host": [
+    "python",
+    "cython",
+    "llvm-openmp",
+    "numpy",
+    "pip",
+    "scikit-learn >=0.23",
+    "setuptools",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python",
+    "formulaic >=0.6",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "scikit-learn >=0.23",
+    "scipy",
+    "tabmat >=4.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0354f792a1467ae295b9f9ec9fe2fb1b4af9ee97c0f72cb5ef2cf785c0cca792",
+   "url": "https://pypi.org/packages/source/g/glum/glum-3.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "glum"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "llvm-openmp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "llvm-openmp",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "formulaic",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tabmat"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "glum"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
+  "osx_64",
+  "osx_arm64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/glum.json"
+ },
+ "raw_meta_yaml": "{% set name = \"glum\" %}\n{% set version = \"3.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0354f792a1467ae295b9f9ec9fe2fb1b4af9ee97c0f72cb5ef2cf785c0cca792\n\n\nbuild:\n  number: 0\n  skip: true  # [py<39]\n  skip: true  # [python_impl == \"pypy\"]\n  script: {{ PYTHON }} -m pip install . -vv\n  script_env:\n    - GLM_ARCHITECTURE=default\n\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n  host:\n    - python\n    - cython\n    - llvm-openmp  # [osx]\n    - numpy\n    - pip\n    - scikit-learn >=0.23\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - formulaic >=0.6\n    - joblib\n    - numexpr\n    - packaging\n    - pandas\n    - scikit-learn >=0.23\n    - scipy\n    - tabmat >=4.0.0\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - glum\n\nabout:\n  home: https://github.com/Quantco/glum\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'High performance Python GLMs with all the features! '\n  description: |\n    glum is a fast and feature-complete GLM estimator. It supports built-in\n    cross-validation, exploiting regularization path, L1 and L2 regularization\n    with Tikhonov penalties, sample weights, offsets, linear inequality constraints,\n    and more!\n  doc_url: https://glum.readthedocs.io/\n  dev_url: https://github.com/Quantco/glum\n\nextra:\n  recipe-maintainers:\n    - MatthiasSchmidtblaicherQC\n    - MarcAntoineSchmidtQC\n    - xhochy\n    - stanmart\n    - janjagusch\n    - jtilly\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "cxx_compiler_stub",
+   "cython",
+   "formulaic",
+   "joblib",
+   "libgomp",
+   "llvm-openmp",
+   "numexpr",
+   "numpy",
+   "packaging",
+   "pandas",
+   "pip",
+   "python",
+   "scikit-learn",
+   "scipy",
+   "setuptools",
+   "setuptools_scm",
+   "tabmat"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp",
+    "llvm-openmp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "ctng-compilers",
+    "cxx_compiler_stub",
+    "cython",
+    "llvm-openmp",
+    "numpy",
+    "openmp",
+    "pip",
+    "python",
+    "scikit-learn",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "ctng-compilers",
+    "cxx_compiler_stub",
+    "formulaic",
+    "joblib",
+    "numexpr",
+    "openmp",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tabmat"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "libgomp",
+    "llvm-openmp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "llvm-openmp",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn >=0.23",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "formulaic >=0.6",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn >=0.23",
+    "scipy",
+    "tabmat >=4.0.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/g/glum/glum-3.1.1.tar.gz",
+ "version": "3.1.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/glum.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
+   "dev_url": "https://github.com/Quantco/glum",
+   "doc_url": "https://glum.readthedocs.io/",
+   "home": "https://github.com/Quantco/glum",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "High performance Python GLMs with all the features! "
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "GLM_ARCHITECTURE=default"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MatthiasSchmidtblaicherQC",
+    "MarcAntoineSchmidtQC",
+    "xhochy",
+    "stanmart",
+    "janjagusch",
+    "jtilly"
+   ]
+  },
+  "package": {
+   "name": "glum",
+   "version": "3.1.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "cython",
+    "numpy",
+    "pip",
+    "scikit-learn >=0.23",
+    "setuptools",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python",
+    "formulaic >=0.6",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "scikit-learn >=0.23",
+    "scipy",
+    "tabmat >=4.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0354f792a1467ae295b9f9ec9fe2fb1b4af9ee97c0f72cb5ef2cf785c0cca792",
+   "url": "https://pypi.org/packages/source/g/glum/glum-3.1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "glum"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "formulaic",
+    "joblib",
+    "numexpr",
+    "packaging",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tabmat"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ }
+}

@@ -1,0 +1,234 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "sh",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/amoffat/sh",
+   "doc_url": "https://sh.readthedocs.io/",
+   "home": "https://sh.readthedocs.io/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Python subprocess replacement"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "sh",
+   "version": "2.2.1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8.1",
+    "pip",
+    "poetry-core >=1.0.0a5"
+   ],
+   "run": [
+    "python >=3.8.1",
+    "__unix"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "287021ae84183dea49787985e33797dda7fe769e4f95f2c94dff8e245ab4cb00",
+   "url": "https://pypi.org/packages/source/s/sh/sh-2.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sh"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "__unix",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/amoffat/sh",
+   "doc_url": "https://sh.readthedocs.io/",
+   "home": "https://sh.readthedocs.io/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Python subprocess replacement"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "sh",
+   "version": "2.2.1"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8.1",
+    "pip",
+    "poetry-core >=1.0.0a5"
+   ],
+   "run": [
+    "python >=3.8.1",
+    "__unix"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "287021ae84183dea49787985e33797dda7fe769e4f95f2c94dff8e245ab4cb00",
+   "url": "https://pypi.org/packages/source/s/sh/sh-2.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "sh"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "sh",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "sh"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/sh.json"
+ },
+ "raw_meta_yaml": "{% set version = \"2.2.1\" %}\n{% set sha256 = \"287021ae84183dea49787985e33797dda7fe769e4f95f2c94dff8e245ab4cb00\" %}\n\npackage:\n  name: sh\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/s/sh/sh-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8.1\n    - pip\n    - poetry-core >=1.0.0a5\n  run:\n    - python >=3.8.1\n    - __unix\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - sh\n\nabout:\n  home: https://sh.readthedocs.io/\n  doc_url: https://sh.readthedocs.io/\n  dev_url: https://github.com/amoffat/sh\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Python subprocess replacement\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "__unix",
+   "pip",
+   "poetry-core",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "__unix",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core >=1.0.0a5",
+    "python >=3.8.1"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "__unix",
+    "python >=3.8.1"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/s/sh/sh-2.2.1.tar.gz",
+ "version": "2.2.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/sh.json"
+ }
+}

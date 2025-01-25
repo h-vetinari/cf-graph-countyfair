@@ -1,0 +1,214 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pyvmomi",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/vmware/pyvmomi",
+   "license": "Apache Software",
+   "license_family": "APACHE",
+   "license_file": "LICENSE",
+   "summary": "VMware vSphere Python SDK"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv "
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pg-hbk",
+    "sy-hbk"
+   ]
+  },
+  "package": {
+   "name": "pyvmomi",
+   "version": "7.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python"
+   ],
+   "run": [
+    "python",
+    "requests >=2.3.0",
+    "six >=1.7.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4e1802494a6bbc4c3be36afd11f730e4a85094b2074e9d5806a47131cf788232",
+   "url": "https://pypi.io/packages/source/p/pyvmomi/pyvmomi-7.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pyVim",
+    "pyVmomi"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "requests",
+    "six"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/vmware/pyvmomi",
+   "license": "Apache Software",
+   "license_family": "APACHE",
+   "license_file": "LICENSE",
+   "summary": "VMware vSphere Python SDK"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv "
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pg-hbk",
+    "sy-hbk"
+   ]
+  },
+  "package": {
+   "name": "pyvmomi",
+   "version": "7.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python"
+   ],
+   "run": [
+    "python",
+    "requests >=2.3.0",
+    "six >=1.7.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4e1802494a6bbc4c3be36afd11f730e4a85094b2074e9d5806a47131cf788232",
+   "url": "https://pypi.io/packages/source/p/pyvmomi/pyvmomi-7.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pyVim",
+    "pyVmomi"
+   ]
+  }
+ },
+ "name": "pyvmomi",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pyvmomi"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pyvmomi.json"
+ },
+ "raw_meta_yaml": "{% set name = \"pyvmomi\" %}\n{% set version = \"7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4e1802494a6bbc4c3be36afd11f730e4a85094b2074e9d5806a47131cf788232\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - requests >=2.3.0\n    - six >=1.7.3\n\ntest:\n  imports:\n    - pyVim\n    - pyVmomi\n\nabout:\n  home: https://github.com/vmware/pyvmomi\n  license: Apache Software\n  license_family: APACHE\n  license_file: LICENSE\n  summary: VMware vSphere Python SDK\n\nextra:\n  recipe-maintainers:\n    - pg-hbk\n    - sy-hbk\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "python",
+   "requests",
+   "six"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "requests",
+    "six"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "time": 1568135306.693116,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python",
+    "requests >=2.3.0",
+    "six >=1.7.3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/p/pyvmomi/pyvmomi-7.0.tar.gz",
+ "version": "7.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pyvmomi.json"
+ }
+}

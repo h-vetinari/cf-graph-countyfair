@@ -1,0 +1,211 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "marshmallow-jsonapi",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "marshmallow-jsonapi provides a simple way to produce JSON API-compliant data in any Python web framework.\n",
+   "dev_url": "https://github.com/marshmallow-code/marshmallow-jsonapi",
+   "doc_url": "http://marshmallow-jsonapi.readthedocs.io/",
+   "home": "http://github.com/marshmallow-code/marshmallow-jsonapi",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "JSON API 1.0 formatting with marshmallow"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sodre"
+   ]
+  },
+  "package": {
+   "name": "marshmallow-jsonapi",
+   "version": "0.21.2"
+  },
+  "requirements": {
+   "build": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "python >=3.6",
+    "marshmallow >=2.8.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "marshmallow-jsonapi-0.21.2.tar.gz",
+   "sha256": "83e33b41e8f411d34a4b515c39f10192919a9d4f7eeccd4d6b49a4030a163374",
+   "url": "https://pypi.io/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.21.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "marshmallow_jsonapi"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "marshmallow",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "marshmallow-jsonapi provides a simple way to produce JSON API-compliant data in any Python web framework.\n",
+   "dev_url": "https://github.com/marshmallow-code/marshmallow-jsonapi",
+   "doc_url": "http://marshmallow-jsonapi.readthedocs.io/",
+   "home": "http://github.com/marshmallow-code/marshmallow-jsonapi",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "JSON API 1.0 formatting with marshmallow"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sodre"
+   ]
+  },
+  "package": {
+   "name": "marshmallow-jsonapi",
+   "version": "0.21.2"
+  },
+  "requirements": {
+   "build": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "python >=3.6",
+    "marshmallow >=2.8.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "marshmallow-jsonapi-0.21.2.tar.gz",
+   "sha256": "83e33b41e8f411d34a4b515c39f10192919a9d4f7eeccd4d6b49a4030a163374",
+   "url": "https://pypi.io/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.21.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "marshmallow_jsonapi"
+   ]
+  }
+ },
+ "name": "marshmallow-jsonapi",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "marshmallow-jsonapi"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/marshmallow-jsonapi.json"
+ },
+ "raw_meta_yaml": "{% set name = \"marshmallow-jsonapi\" %}\n{% set version = \"0.21.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 83e33b41e8f411d34a4b515c39f10192919a9d4f7eeccd4d6b49a4030a163374\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - marshmallow >=2.8.0\n\ntest:\n  imports:\n    - marshmallow_jsonapi\n\nabout:\n  home: http://github.com/marshmallow-code/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'JSON API 1.0 formatting with marshmallow'\n\n  description: |\n      marshmallow-jsonapi provides a simple way to produce JSON API-compliant data in any Python web framework.\n\n  doc_url: http://{{ name }}.readthedocs.io/\n  dev_url: https://github.com/marshmallow-code/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "marshmallow",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "marshmallow",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "marshmallow >=2.8.0",
+    "python >=3.6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.21.2.tar.gz",
+ "version": "0.21.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/marshmallow-jsonapi.json"
+ }
+}

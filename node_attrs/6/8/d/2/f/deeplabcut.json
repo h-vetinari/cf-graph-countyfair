@@ -1,0 +1,379 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "deeplabcut",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/DeepLabCut/DeepLabCut",
+   "home": "www.deeplabcut.org",
+   "license": "LGPL-3.0-only",
+   "license_family": "LGPL",
+   "license_file": "LICENSE",
+   "summary": "DeepLabCut is a toolbox for markerless pose estimation of animals performing various tasks."
+  },
+  "build": {
+   "entry_points": [
+    "dlc = deeplabcut.cli:main",
+    "deeplabcut = deeplabcut.gui.launch_script:launch_dlc"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hmaarrfk"
+   ]
+  },
+  "package": {
+   "name": "deeplabcut",
+   "version": "2.3.10"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "dlclibrary >=0.0.6",
+    "filterpy >=1.4.4",
+    "ruamel.yaml >=0.15.0",
+    "imgaug >=0.4.0",
+    "imageio-ffmpeg",
+    "numba >=0.54",
+    "matplotlib-base >=3.3,!=3.7.0,!=3.7.1",
+    "networkx >=2.6",
+    "numpy >=1.18.5",
+    "opencv",
+    "pandas >=1.0.1,!=1.5.0",
+    "scikit-image >=0.17",
+    "scikit-learn >=1.0",
+    "scipy >=1.9",
+    "statsmodels >=0.11",
+    "pytables >=3.7.0",
+    "tf_slim >=1.1.0",
+    "tensorpack >=0.11",
+    "tqdm",
+    "pyyaml",
+    "pillow >=7.1"
+   ],
+   "run_constrained": [
+    "napari-deeplabcut >=0.0.9",
+    "napari >=0.4.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-Do-not-install-download-script.patch",
+    "patches/0002-silence-warnings-about-tensorflow-lite.patch",
+    "patches/0003-Do-not-modify-tensorflow-warnings.patch",
+    "patches/0004-silence-warnings-about-pytorch.patch",
+    "patches/0005-Use-qtpy-instead-of-PySide6.patch",
+    "patches/0006-Remove-hard-dependency-on-torch.patch",
+    "patches/0007-Lazy-import-qtpy-and-default-to-PySide6.patch",
+    "patches/0008-add-outputs-for-multi-animal-model-export.patch"
+   ],
+   "sha256": "6eb0db8d1485f35a0492ddc74484c1dfe798e3177f29ff3b0c18d62bb1d8d62e",
+   "url": "https://pypi.io/packages/source/d/deeplabcut/deeplabcut-2.3.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "deeplabcut"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dlclibrary",
+    "filterpy",
+    "imageio-ffmpeg",
+    "imgaug",
+    "matplotlib-base",
+    "networkx",
+    "numba",
+    "numpy",
+    "opencv",
+    "pandas",
+    "pillow",
+    "pytables",
+    "python",
+    "pyyaml",
+    "ruamel.yaml",
+    "scikit-image",
+    "scikit-learn",
+    "scipy",
+    "statsmodels",
+    "tensorpack",
+    "tf_slim",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/DeepLabCut/DeepLabCut",
+   "home": "www.deeplabcut.org",
+   "license": "LGPL-3.0-only",
+   "license_family": "LGPL",
+   "license_file": "LICENSE",
+   "summary": "DeepLabCut is a toolbox for markerless pose estimation of animals performing various tasks."
+  },
+  "build": {
+   "entry_points": [
+    "dlc = deeplabcut.cli:main",
+    "deeplabcut = deeplabcut.gui.launch_script:launch_dlc"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hmaarrfk"
+   ]
+  },
+  "package": {
+   "name": "deeplabcut",
+   "version": "2.3.10"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "dlclibrary >=0.0.6",
+    "filterpy >=1.4.4",
+    "ruamel.yaml >=0.15.0",
+    "imgaug >=0.4.0",
+    "imageio-ffmpeg",
+    "numba >=0.54",
+    "matplotlib-base >=3.3,!=3.7.0,!=3.7.1",
+    "networkx >=2.6",
+    "numpy >=1.18.5",
+    "opencv",
+    "pandas >=1.0.1,!=1.5.0",
+    "scikit-image >=0.17",
+    "scikit-learn >=1.0",
+    "scipy >=1.9",
+    "statsmodels >=0.11",
+    "pytables >=3.7.0",
+    "tf_slim >=1.1.0",
+    "tensorpack >=0.11",
+    "tqdm",
+    "pyyaml",
+    "pillow >=7.1"
+   ],
+   "run_constrained": [
+    "napari-deeplabcut >=0.0.9",
+    "napari >=0.4.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-Do-not-install-download-script.patch",
+    "patches/0002-silence-warnings-about-tensorflow-lite.patch",
+    "patches/0003-Do-not-modify-tensorflow-warnings.patch",
+    "patches/0004-silence-warnings-about-pytorch.patch",
+    "patches/0005-Use-qtpy-instead-of-PySide6.patch",
+    "patches/0006-Remove-hard-dependency-on-torch.patch",
+    "patches/0007-Lazy-import-qtpy-and-default-to-PySide6.patch",
+    "patches/0008-add-outputs-for-multi-animal-model-export.patch"
+   ],
+   "sha256": "6eb0db8d1485f35a0492ddc74484c1dfe798e3177f29ff3b0c18d62bb1d8d62e",
+   "url": "https://pypi.io/packages/source/d/deeplabcut/deeplabcut-2.3.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "deeplabcut"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "deeplabcut",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "deeplabcut"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/deeplabcut.json"
+ },
+ "raw_meta_yaml": "{% set version = \"2.3.10\" %}\n\npackage:\n  name: deeplabcut\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz\n  sha256: 6eb0db8d1485f35a0492ddc74484c1dfe798e3177f29ff3b0c18d62bb1d8d62e\n  patches:\n    - patches/0001-Do-not-install-download-script.patch\n    - patches/0002-silence-warnings-about-tensorflow-lite.patch\n    - patches/0003-Do-not-modify-tensorflow-warnings.patch\n    - patches/0004-silence-warnings-about-pytorch.patch\n    - patches/0005-Use-qtpy-instead-of-PySide6.patch\n    - patches/0006-Remove-hard-dependency-on-torch.patch\n    - patches/0007-Lazy-import-qtpy-and-default-to-PySide6.patch\n    - patches/0008-add-outputs-for-multi-animal-model-export.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n  # Confirm with upstream before making this entry point\n  # https://github.com/DeepLabCut/DeepLabCut/pull/1547\n  entry_points:\n    - dlc = deeplabcut.cli:main\n    - deeplabcut = deeplabcut.gui.launch_script:launch_dlc\n\nrequirements:\n  host:\n    - python >=3.9\n    - pip\n  run:\n    - python >=3.9\n    - dlclibrary >=0.0.6\n    - filterpy >=1.4.4\n    - ruamel.yaml >=0.15.0\n    - imgaug >=0.4.0\n    - imageio-ffmpeg\n    - numba >=0.54\n    - matplotlib-base >=3.3,!=3.7.0,!=3.7.1\n    - networkx >=2.6\n    - numpy >=1.18.5\n    - opencv\n    - pandas >=1.0.1,!=1.5.0\n    - scikit-image >=0.17\n    - scikit-learn >=1.0\n    - scipy >=1.9\n    - statsmodels >=0.11\n    - pytables >=3.7.0\n    - tf_slim >=1.1.0\n    - tensorpack >=0.11\n    - tqdm\n    - pyyaml\n    - pillow >=7.1\n\n  run_constrained:\n    - napari-deeplabcut >=0.0.9\n    # not to sure on this lower bound, but lets go with it\n    - napari >=0.4.0\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - deeplabcut\n  # Confirm with upstream before making this entry point\n  # https://github.com/DeepLabCut/DeepLabCut/pull/1547\n  # commands:\n  #   - dlc --help\n\nabout:\n  home: www.deeplabcut.org\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: DeepLabCut is a toolbox for markerless pose estimation of animals performing various tasks.\n  dev_url: https://github.com/DeepLabCut/DeepLabCut\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "dlclibrary",
+   "filterpy",
+   "imageio-ffmpeg",
+   "imgaug",
+   "matplotlib-base",
+   "networkx",
+   "numba",
+   "numpy",
+   "opencv",
+   "pandas",
+   "pillow",
+   "pip",
+   "pytables",
+   "python",
+   "pyyaml",
+   "ruamel.yaml",
+   "scikit-image",
+   "scikit-learn",
+   "scipy",
+   "statsmodels",
+   "tensorpack",
+   "tf_slim",
+   "tqdm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dlclibrary",
+    "filterpy",
+    "imageio-ffmpeg",
+    "imgaug",
+    "matplotlib-base",
+    "networkx",
+    "numba",
+    "numpy",
+    "opencv",
+    "pandas",
+    "pillow",
+    "pytables",
+    "python",
+    "pyyaml",
+    "ruamel.yaml",
+    "scikit-image",
+    "scikit-learn",
+    "scipy",
+    "statsmodels",
+    "tensorpack",
+    "tf_slim",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dlclibrary >=0.0.6",
+    "filterpy >=1.4.4",
+    "imageio-ffmpeg",
+    "imgaug >=0.4.0",
+    "matplotlib-base >=3.3,!=3.7.0,!=3.7.1",
+    "networkx >=2.6",
+    "numba >=0.54",
+    "numpy >=1.18.5",
+    "opencv",
+    "pandas >=1.0.1,!=1.5.0",
+    "pillow >=7.1",
+    "pytables >=3.7.0",
+    "python >=3.9",
+    "pyyaml",
+    "ruamel.yaml >=0.15.0",
+    "scikit-image >=0.17",
+    "scikit-learn >=1.0",
+    "scipy >=1.9",
+    "statsmodels >=0.11",
+    "tensorpack >=0.11",
+    "tf_slim >=1.1.0",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/d/deeplabcut/deeplabcut-2.3.10.tar.gz",
+ "version": "2.3.10",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/deeplabcut.json"
+ }
+}

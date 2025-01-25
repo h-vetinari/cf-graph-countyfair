@@ -1,0 +1,272 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pydiverse-transform",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/pydiverse/pydiverse.transform",
+   "home": "https://github.com/pydiverse/pydiverse.transform",
+   "license": "BSD-3-Clause",
+   "license_file": [
+    "LICENSE"
+   ],
+   "summary": "Pipe based dataframe manipulation library that can also transform data on SQL databases"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "finn-rudolph",
+    "pavelzw",
+    "windiana42",
+    "NMAC427"
+   ]
+  },
+  "package": {
+   "name": "pydiverse-transform",
+   "version": "0.2.2"
+  },
+  "requirements": {
+   "host": [
+    "hatchling",
+    "pip",
+    "python 3.10"
+   ],
+   "run": [
+    "python >=3.10",
+    "pandas >=2.0.0",
+    "polars >=1.6.0",
+    "sqlalchemy >=2.0.0",
+    "pyarrow >=11.0.0"
+   ],
+   "run_constrained": [
+    "python-duckdb >=0.8.1",
+    "duckdb-engine >=0.9.1",
+    "psycopg2 >=2.9.3",
+    "pyodbc >=4.0.35"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "017151c342113fde3716a358be6e9a59bfaf9671c9983aba347420daf85fa434",
+   "url": "https://pypi.org/packages/source/p/pydiverse-transform/pydiverse_transform-0.2.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "pydiverse.transform"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "polars",
+    "pyarrow",
+    "python",
+    "sqlalchemy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/pydiverse/pydiverse.transform",
+   "home": "https://github.com/pydiverse/pydiverse.transform",
+   "license": "BSD-3-Clause",
+   "license_file": [
+    "LICENSE"
+   ],
+   "summary": "Pipe based dataframe manipulation library that can also transform data on SQL databases"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "finn-rudolph",
+    "pavelzw",
+    "windiana42",
+    "NMAC427"
+   ]
+  },
+  "package": {
+   "name": "pydiverse-transform",
+   "version": "0.2.2"
+  },
+  "requirements": {
+   "host": [
+    "hatchling",
+    "pip",
+    "python 3.10"
+   ],
+   "run": [
+    "python >=3.10",
+    "pandas >=2.0.0",
+    "polars >=1.6.0",
+    "sqlalchemy >=2.0.0",
+    "pyarrow >=11.0.0"
+   ],
+   "run_constrained": [
+    "python-duckdb >=0.8.1",
+    "duckdb-engine >=0.9.1",
+    "psycopg2 >=2.9.3",
+    "pyodbc >=4.0.35"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "017151c342113fde3716a358be6e9a59bfaf9671c9983aba347420daf85fa434",
+   "url": "https://pypi.org/packages/source/p/pydiverse-transform/pydiverse_transform-0.2.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "pydiverse.transform"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "name": "pydiverse-transform",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pydiverse-transform"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pydiverse-transform.json"
+ },
+ "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"pydiverse-transform\" %}\n{% set version = \"0.2.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pydiverse_transform-{{ version }}.tar.gz\n  sha256: 017151c342113fde3716a358be6e9a59bfaf9671c9983aba347420daf85fa434\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - pandas >=2.0.0\n    - polars >=1.6.0\n    - sqlalchemy >=2.0.0\n    - pyarrow >=11.0.0\n  run_constrained:\n    - python-duckdb >=0.8.1\n    - duckdb-engine >=0.9.1\n    - psycopg2 >=2.9.3\n    - pyodbc >=4.0.35\n\ntest:\n  imports:\n    - pydiverse.transform\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/pydiverse/pydiverse.transform\n  summary: Pipe based dataframe manipulation library that can also transform data on SQL databases\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n  dev_url: https://github.com/pydiverse/pydiverse.transform\n\nextra:\n  recipe-maintainers:\n    - finn-rudolph\n    - pavelzw\n    - windiana42\n    - NMAC427\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "hatchling",
+   "pandas",
+   "pip",
+   "polars",
+   "pyarrow",
+   "python",
+   "sqlalchemy"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "polars",
+    "pyarrow",
+    "python",
+    "sqlalchemy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python 3.10"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas >=2.0.0",
+    "polars >=1.6.0",
+    "pyarrow >=11.0.0",
+    "python >=3.10",
+    "sqlalchemy >=2.0.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/p/pydiverse-transform/pydiverse_transform-0.2.2.tar.gz",
+ "version": "0.2.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pydiverse-transform.json"
+ }
+}

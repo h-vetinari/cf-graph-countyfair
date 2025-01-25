@@ -1,0 +1,497 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "hammer",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "A C++ software library, designed to provide fast and efficient reweighting\nof large Monte Carlo datasets containing semileptonic b-Hadron decays to\nany desired New Physics, or to any description of the hadronic matrix\nelements. See the HAMMER website for more information.\n",
+   "dev_url": "https://gitlab.com/mpapucci/Hammer",
+   "doc_url": "https://hammer.physics.lbl.gov/HammerManual.pdf",
+   "home": "https://hammer.physics.lbl.gov/",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "Helicity Amplitude Module for Matrix Element Reweighting"
+  },
+  "build": {
+   "number": "10"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "hammer",
+   "version": "1.2.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "pkg-config"
+   ],
+   "host": [
+    "python",
+    "root_base",
+    "libboost-devel",
+    "hepmc2",
+    "yaml-cpp",
+    "numpy",
+    "matplotlib-base",
+    "cython <3",
+    "cymove",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "yaml-cpp",
+    "hepmc2",
+    "numpy",
+    "matplotlib-base"
+   ],
+   "run_constrained": null
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "0001-Fix-errors-when-using-GCC-12.patch",
+    "0002-Fix-TestProcess.cc-for-boost-1.81.patch"
+   ],
+   "sha256": "caeceff0135b7fef5f392915c8362138b200eacda19d8fd78b223c538449dfb9",
+   "url": "https://gitlab.com/mpapucci/Hammer/-/archive/v1.2.1/Hammer-v1.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "cd $CONDA_PREFIX/share/Hammer/examples",
+    "./demo01",
+    "./demo01card",
+    "./demo01root",
+    "./demo02",
+    "./demo02root",
+    "./demo03",
+    "./demo03root",
+    "./demo04",
+    "./demo04root",
+    "./demo04root2",
+    "./demo05",
+    "./demo07",
+    "./demo08",
+    "./demo09",
+    "./demo10",
+    "python demo03.py",
+    "python demo04.py"
+   ],
+   "imports": [
+    "hammer"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cymove",
+    "cython",
+    "hepmc2",
+    "libboost-devel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "root_base",
+    "setuptools",
+    "yaml-cpp"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "yaml-cpp"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "A C++ software library, designed to provide fast and efficient reweighting\nof large Monte Carlo datasets containing semileptonic b-Hadron decays to\nany desired New Physics, or to any description of the hadronic matrix\nelements. See the HAMMER website for more information.\n",
+   "dev_url": "https://gitlab.com/mpapucci/Hammer",
+   "doc_url": "https://hammer.physics.lbl.gov/HammerManual.pdf",
+   "home": "https://hammer.physics.lbl.gov/",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "Helicity Amplitude Module for Matrix Element Reweighting"
+  },
+  "build": {
+   "number": "10"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "hammer",
+   "version": "1.2.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "pkg-config"
+   ],
+   "host": [
+    "python",
+    "root_base",
+    "libboost-devel",
+    "hepmc2",
+    "yaml-cpp",
+    "numpy",
+    "matplotlib-base",
+    "cython <3",
+    "cymove",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "yaml-cpp",
+    "hepmc2",
+    "numpy",
+    "matplotlib-base"
+   ],
+   "run_constrained": null
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "0001-Fix-errors-when-using-GCC-12.patch",
+    "0002-Fix-TestProcess.cc-for-boost-1.81.patch"
+   ],
+   "sha256": "caeceff0135b7fef5f392915c8362138b200eacda19d8fd78b223c538449dfb9",
+   "url": "https://gitlab.com/mpapucci/Hammer/-/archive/v1.2.1/Hammer-v1.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "cd $CONDA_PREFIX/share/Hammer/examples",
+    "./demo01",
+    "./demo01card",
+    "./demo01root",
+    "./demo02",
+    "./demo02root",
+    "./demo03",
+    "./demo03root",
+    "./demo04",
+    "./demo04root",
+    "./demo04root2",
+    "./demo05",
+    "./demo07",
+    "./demo08",
+    "./demo09",
+    "./demo10",
+    "python demo03.py",
+    "python demo04.py"
+   ],
+   "imports": [
+    "hammer"
+   ]
+  }
+ },
+ "name": "hammer",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "A C++ software library, designed to provide fast and efficient reweighting\nof large Monte Carlo datasets containing semileptonic b-Hadron decays to\nany desired New Physics, or to any description of the hadronic matrix\nelements. See the HAMMER website for more information.\n",
+   "dev_url": "https://gitlab.com/mpapucci/Hammer",
+   "doc_url": "https://hammer.physics.lbl.gov/HammerManual.pdf",
+   "home": "https://hammer.physics.lbl.gov/",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "Helicity Amplitude Module for Matrix Element Reweighting"
+  },
+  "build": {
+   "number": "10"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "hammer",
+   "version": "1.2.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "pkg-config"
+   ],
+   "host": [
+    "python",
+    "root_base",
+    "libboost-devel",
+    "hepmc2",
+    "yaml-cpp",
+    "numpy",
+    "matplotlib-base",
+    "cython <3",
+    "cymove",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "yaml-cpp",
+    "hepmc2",
+    "numpy",
+    "matplotlib-base"
+   ],
+   "run_constrained": null
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "0001-Fix-errors-when-using-GCC-12.patch",
+    "0002-Fix-TestProcess.cc-for-boost-1.81.patch"
+   ],
+   "sha256": "caeceff0135b7fef5f392915c8362138b200eacda19d8fd78b223c538449dfb9",
+   "url": "https://gitlab.com/mpapucci/Hammer/-/archive/v1.2.1/Hammer-v1.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "cd $CONDA_PREFIX/share/Hammer/examples",
+    "./demo01",
+    "./demo01card",
+    "./demo01root",
+    "./demo02",
+    "./demo02root",
+    "./demo03",
+    "./demo03root",
+    "./demo04",
+    "./demo04root",
+    "./demo04root2",
+    "./demo05",
+    "./demo07",
+    "./demo08",
+    "./demo09",
+    "./demo10",
+    "python demo03.py",
+    "python demo04.py"
+   ],
+   "imports": [
+    "hammer"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cymove",
+    "cython",
+    "hepmc2",
+    "libboost-devel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "root_base",
+    "setuptools",
+    "yaml-cpp"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "yaml-cpp"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "hammer"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/hammer.json"
+ },
+ "raw_meta_yaml": "{% set name = \"hammer\" %}\n{% set version = \"1.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.com/mpapucci/Hammer/-/archive/v{{ version }}/Hammer-v{{ version }}.tar.gz\n  sha256: caeceff0135b7fef5f392915c8362138b200eacda19d8fd78b223c538449dfb9\n  patches:\n    - 0001-Fix-errors-when-using-GCC-12.patch\n    - 0002-Fix-TestProcess.cc-for-boost-1.81.patch\n\nbuild:\n  number: 10\n  skip: true  # [win or py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - pkg-config\n  host:\n    - python\n    - root_base\n    - libboost-devel\n    - hepmc2\n    - yaml-cpp\n    - numpy\n    - matplotlib-base\n    - cython <3\n    - cymove\n    - setuptools\n  run:\n    - python\n    - yaml-cpp\n    - hepmc2\n    - {{ pin_compatible('numpy') }}\n    - matplotlib-base\n  run_constrained:\n\ntest:\n  imports:\n    - hammer\n  commands:\n    - cd $CONDA_PREFIX/share/Hammer/examples\n    - ./demo01\n    - ./demo01card\n    - ./demo01root\n    - ./demo02\n    - ./demo02root\n    - ./demo03\n    - ./demo03root\n    - ./demo04\n    # Disabled due to being very slow\n    # - ./demo04parallel\n    - ./demo04root\n    - ./demo04root2\n    - ./demo05\n    - ./demo07\n    - ./demo08\n    - ./demo09\n    - ./demo10\n    - python demo03.py\n    - python demo04.py\n\nabout:\n  home: https://hammer.physics.lbl.gov/\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: COPYING\n  summary: Helicity Amplitude Module for Matrix Element Reweighting\n\n  description: |\n    A C++ software library, designed to provide fast and efficient reweighting\n    of large Monte Carlo datasets containing semileptonic b-Hadron decays to\n    any desired New Physics, or to any description of the hadronic matrix\n    elements. See the HAMMER website for more information.\n  doc_url: https://hammer.physics.lbl.gov/HammerManual.pdf\n  dev_url: https://gitlab.com/mpapucci/Hammer\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "cmake",
+   "cxx_compiler_stub",
+   "cymove",
+   "cython",
+   "hepmc2",
+   "libboost-devel",
+   "make",
+   "matplotlib-base",
+   "numpy",
+   "pkg-config",
+   "python",
+   "root_base",
+   "setuptools",
+   "yaml-cpp"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "cymove",
+    "cython",
+    "hepmc2",
+    "libboost-devel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "root_base",
+    "setuptools",
+    "yaml-cpp"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "hepmc2",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "yaml-cpp"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cymove",
+    "cython <3",
+    "hepmc2",
+    "libboost-devel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "root_base",
+    "setuptools",
+    "yaml-cpp"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "hepmc2",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "yaml-cpp"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://gitlab.com/mpapucci/Hammer/-/archive/v1.2.1/Hammer-v1.2.1.tar.gz",
+ "version": "1.2.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/hammer.json"
+ }
+}

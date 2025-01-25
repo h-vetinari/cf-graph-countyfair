@@ -1,0 +1,268 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "lume-impact",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "LUME Python wrapper for Impact-T\n",
+   "home": "https://github.com/ChristopherMayes/lume-impact",
+   "license": "APACHE-2.0",
+   "license_family": "APACHE",
+   "license_file": "LICENSE",
+   "summary": "LUME Python wrapper for Impact-T"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ChristopherMayes"
+   ]
+  },
+  "package": {
+   "name": "lume-impact",
+   "version": "0.9.7"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python >=3.8",
+    "bokeh",
+    "distgen",
+    "numpy",
+    "openpmd-beamphysics",
+    "psutil",
+    "impact-t",
+    "lume-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0d8be8424dcdc21418bd3bda427a544f0fbaf2269dcee5561f86cb716cf82275",
+   "url": "https://pypi.io/packages/source/l/lume-impact/lume_impact-0.9.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -m pytest --pyargs impact"
+   ],
+   "imports": [
+    "impact"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bokeh",
+    "distgen",
+    "impact-t",
+    "lume-base",
+    "numpy",
+    "openpmd-beamphysics",
+    "psutil",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "LUME Python wrapper for Impact-T\n",
+   "home": "https://github.com/ChristopherMayes/lume-impact",
+   "license": "APACHE-2.0",
+   "license_family": "APACHE",
+   "license_file": "LICENSE",
+   "summary": "LUME Python wrapper for Impact-T"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ChristopherMayes"
+   ]
+  },
+  "package": {
+   "name": "lume-impact",
+   "version": "0.9.7"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python >=3.8",
+    "bokeh",
+    "distgen",
+    "numpy",
+    "openpmd-beamphysics",
+    "psutil",
+    "impact-t",
+    "lume-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0d8be8424dcdc21418bd3bda427a544f0fbaf2269dcee5561f86cb716cf82275",
+   "url": "https://pypi.io/packages/source/l/lume-impact/lume_impact-0.9.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -m pytest --pyargs impact"
+   ],
+   "imports": [
+    "impact"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "name": "lume-impact",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "lume-impact"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/lume-impact.json"
+ },
+ "raw_meta_yaml": "{% set name = \"lume-impact\" %}\n{% set version = \"0.9.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(\"-\", \"_\") }}-{{ version }}.tar.gz\n  sha256: 0d8be8424dcdc21418bd3bda427a544f0fbaf2269dcee5561f86cb716cf82275\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - setuptools_scm\n  run:\n    - python >=3.8\n    - bokeh\n    - distgen\n    - numpy\n    - openpmd-beamphysics\n    - psutil\n    - impact-t\n    - lume-base\n\ntest:\n  imports:\n    - impact\n  requires:\n    - pytest\n  commands:\n    - python -m pytest --pyargs impact\n\nabout:\n  home: https://github.com/ChristopherMayes/{{ name }}\n  license: APACHE-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: LUME Python wrapper for Impact-T\n  description: |\n    LUME Python wrapper for Impact-T\n\nextra:\n  recipe-maintainers:\n    - ChristopherMayes\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "bokeh",
+   "distgen",
+   "impact-t",
+   "lume-base",
+   "numpy",
+   "openpmd-beamphysics",
+   "pip",
+   "psutil",
+   "python",
+   "setuptools_scm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bokeh",
+    "distgen",
+    "impact-t",
+    "lume-base",
+    "numpy",
+    "openpmd-beamphysics",
+    "psutil",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.8",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "bokeh",
+    "distgen",
+    "impact-t",
+    "lume-base",
+    "numpy",
+    "openpmd-beamphysics",
+    "psutil",
+    "python >=3.8"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/l/lume-impact/lume_impact-0.9.7.tar.gz",
+ "version": "0.9.7",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/lume-impact.json"
+ }
+}

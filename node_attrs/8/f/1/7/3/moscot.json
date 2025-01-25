@@ -1,0 +1,277 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "moscot",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "A scalable framework for optimal transport applications in single-cell genomics.\n",
+   "dev_url": "https://github.com/theislab/moscot",
+   "doc_url": "https://moscot.readthedocs.io",
+   "home": "https://github.com/theislab/moscot",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Multi-omic single-cell optimal transport"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "michalk8",
+    "MUCDK",
+    "giovp"
+   ]
+  },
+  "package": {
+   "name": "moscot",
+   "version": "0.3.4"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy >=1.20.0",
+    "scipy >=1.7.0",
+    "pandas >=2.0.1",
+    "networkx >=2.6.3",
+    "matplotlib-base >=3.5.0",
+    "anndata >=0.9.1",
+    "scanpy >=1.9.3",
+    "wrapt >=1.13.2",
+    "ott-jax >=0.4.4",
+    "cloudpickle >=2.2.0",
+    "rich >=13.5"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "438b9ee5a619b21e554573bd61d30d2db331a493cab875289fceb09952a711e7",
+   "url": "https://pypi.io/packages/source/m/moscot/moscot-0.3.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "moscot"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "anndata",
+    "cloudpickle",
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "ott-jax",
+    "pandas",
+    "python",
+    "rich",
+    "scanpy",
+    "scipy",
+    "wrapt"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "A scalable framework for optimal transport applications in single-cell genomics.\n",
+   "dev_url": "https://github.com/theislab/moscot",
+   "doc_url": "https://moscot.readthedocs.io",
+   "home": "https://github.com/theislab/moscot",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Multi-omic single-cell optimal transport"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "michalk8",
+    "MUCDK",
+    "giovp"
+   ]
+  },
+  "package": {
+   "name": "moscot",
+   "version": "0.3.4"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy >=1.20.0",
+    "scipy >=1.7.0",
+    "pandas >=2.0.1",
+    "networkx >=2.6.3",
+    "matplotlib-base >=3.5.0",
+    "anndata >=0.9.1",
+    "scanpy >=1.9.3",
+    "wrapt >=1.13.2",
+    "ott-jax >=0.4.4",
+    "cloudpickle >=2.2.0",
+    "rich >=13.5"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "438b9ee5a619b21e554573bd61d30d2db331a493cab875289fceb09952a711e7",
+   "url": "https://pypi.io/packages/source/m/moscot/moscot-0.3.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "moscot"
+   ]
+  }
+ },
+ "name": "moscot",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "moscot"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/moscot.json"
+ },
+ "raw_meta_yaml": "{% set name = \"moscot\" %}\n{% set version = \"0.3.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz\n  sha256: 438b9ee5a619b21e554573bd61d30d2db331a493cab875289fceb09952a711e7\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - setuptools_scm\n  run:\n    - python >=3.8\n    - numpy >=1.20.0\n    - scipy >=1.7.0\n    - pandas >=2.0.1\n    - networkx >=2.6.3\n    - matplotlib-base >=3.5.0\n    - anndata >=0.9.1\n    - scanpy >=1.9.3\n    - wrapt >=1.13.2\n    - ott-jax >=0.4.4\n    - cloudpickle >=2.2.0\n    - rich >=13.5\n\ntest:\n  imports:\n    - moscot\n  # TODO(michalk8): re-enable once https://github.com/pypa/pip/issues/11157 is merged\n  # or the false positives are resolved in moscot/ott-jax/umap-learn\n\n  # requires:\n  #   - pip\n  # commands:\n  #   - pip check\n\nabout:\n  home: https://github.com/theislab/moscot\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Multi-omic single-cell optimal transport\n  description: |\n    A scalable framework for optimal transport applications in single-cell genomics.\n  doc_url: https://moscot.readthedocs.io\n  dev_url: https://github.com/theislab/moscot\n\nextra:\n  recipe-maintainers:\n    - michalk8\n    - MUCDK\n    - giovp\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "anndata",
+   "cloudpickle",
+   "matplotlib-base",
+   "networkx",
+   "numpy",
+   "ott-jax",
+   "pandas",
+   "pip",
+   "python",
+   "rich",
+   "scanpy",
+   "scipy",
+   "setuptools_scm",
+   "wrapt"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "anndata",
+    "cloudpickle",
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "ott-jax",
+    "pandas",
+    "python",
+    "rich",
+    "scanpy",
+    "scipy",
+    "wrapt"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.8",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "anndata >=0.9.1",
+    "cloudpickle >=2.2.0",
+    "matplotlib-base >=3.5.0",
+    "networkx >=2.6.3",
+    "numpy >=1.20.0",
+    "ott-jax >=0.4.4",
+    "pandas >=2.0.1",
+    "python >=3.8",
+    "rich >=13.5",
+    "scanpy >=1.9.3",
+    "scipy >=1.7.0",
+    "wrapt >=1.13.2"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/m/moscot/moscot-0.3.4.tar.gz",
+ "version": "0.3.4",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/moscot.json"
+ }
+}

@@ -1,0 +1,711 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "win": "azure"
+  }
+ },
+ "feedstock_name": "tpot",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Consider TPOT your Data Science Assistant. TPOT is a Python Automated\nMachine Learning tool that optimizes machine learning pipelines using\ngenetic programming.\n\nTPOT will automate the most tedious part of machine learning by\nintelligently exploring thousands of possible pipelines to find the best\none for your data.\n\nOnce TPOT is finished searching (or you get tired of waiting), it provides\nyou with the Python code for the best pipeline it found so you can tinker\nwith the pipeline from there.\n\nTPOT is built on top of scikit-learn, so all of the code it generates\nshould look familiar... if you're familiar with scikit-learn, anyway.\n\nTPOT is still under active development and we encourage you to check back\non this repository regularly for updates.\n",
+   "dev_url": "https://github.com/EpistasisLab/tpot",
+   "home": "https://epistasislab.github.io/tpot",
+   "license": "LGPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "A Python tool that automatically creates and optimizes Machine Learning pipelines using genetic programming.\n"
+  },
+  "build": {
+   "entry_points": [
+    "tpot = tpot:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": [
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
+  },
+  "extra": {
+   "feedstock-name": "tpot",
+   "recipe-maintainers": [
+    "proinsias",
+    "bollwyvl",
+    "jay-m-dev"
+   ]
+  },
+  "outputs": [
+   {
+    "name": "tpot"
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-skrebate",
+    "requirements": {
+     "run": [
+      "tpot",
+      "skrebate >=0.3.4"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-mdr",
+    "requirements": {
+     "run": [
+      "tpot",
+      "scikit-mdr >=0.4.4"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-dask",
+    "requirements": {
+     "run": [
+      "tpot",
+      "dask >=0.18.2",
+      "dask-ml >=1.0.0",
+      "distributed >=1.22.1"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-torch",
+    "requirements": {
+     "run": [
+      "tpot",
+      "pytorch 1.13.*"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot.builtins.nn"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-imblearn",
+    "requirements": {
+     "run": [
+      "tpot",
+      "imbalanced-learn >=0.7.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-full",
+    "requirements": {
+     "run": [
+      "tpot-dask",
+      "tpot-imblearn",
+      "tpot-mdr",
+      "tpot-skrebate",
+      "tpot-torch",
+      "tpot"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "python -c \"import os; [os.unlink(p) for p in ['tests/tpot_tests.py', 'tests/stacking_estimator_tests.py']]\"",
+      "coverage run --source=tpot --branch -m nose tests -s -v -e test_dask_matches -e test_StackingEstimator_4 -e test_sample_weight_func -e one_hot_encoder_tests -e test_score_2 -e test_varOr -e test_mate_operator -e test_get_params -e test_mate_operator_stats_update",
+      "coverage report --show-missing --skip-covered --fail-under=74"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "coverage",
+      "nose",
+      "pip",
+      "python 3.9",
+      "scikit-learn <1.6.0"
+     ],
+     "source_files": [
+      "tests"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "tpot",
+   "version": "0.12.2"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "deap >=1.2",
+    "joblib >=0.13.2",
+    "numpy >=1.16.3",
+    "pandas >=0.24.2",
+    "py-xgboost >=1.1.0",
+    "python >=3.9",
+    "scikit-learn >=1.4.1",
+    "scipy >=1.3.1",
+    "stopit >=1.1.2",
+    "tqdm >=4.36.1",
+    "update_checker >=0.16"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "e92777cf41cbf01ee0439632264d21ef89a1c0b5ec532b73dcb679c3ce67bec1",
+   "url": "https://pypi.org/packages/source/T/TPOT/TPOT-0.12.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "tpot --version",
+    "tpot --help"
+   ],
+   "imports": [
+    "tpot"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dask",
+    "dask-ml",
+    "deap",
+    "distributed",
+    "imbalanced-learn",
+    "joblib",
+    "numpy",
+    "pandas",
+    "py-xgboost",
+    "python",
+    "pytorch",
+    "scikit-learn",
+    "scikit-mdr",
+    "scipy",
+    "skrebate",
+    "stopit",
+    "tpot",
+    "tpot-dask",
+    "tpot-imblearn",
+    "tpot-mdr",
+    "tpot-skrebate",
+    "tpot-torch",
+    "tqdm",
+    "update_checker"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "nose",
+    "pip",
+    "python",
+    "scikit-learn"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Consider TPOT your Data Science Assistant. TPOT is a Python Automated\nMachine Learning tool that optimizes machine learning pipelines using\ngenetic programming.\n\nTPOT will automate the most tedious part of machine learning by\nintelligently exploring thousands of possible pipelines to find the best\none for your data.\n\nOnce TPOT is finished searching (or you get tired of waiting), it provides\nyou with the Python code for the best pipeline it found so you can tinker\nwith the pipeline from there.\n\nTPOT is built on top of scikit-learn, so all of the code it generates\nshould look familiar... if you're familiar with scikit-learn, anyway.\n\nTPOT is still under active development and we encourage you to check back\non this repository regularly for updates.\n",
+   "dev_url": "https://github.com/EpistasisLab/tpot",
+   "home": "https://epistasislab.github.io/tpot",
+   "license": "LGPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "A Python tool that automatically creates and optimizes Machine Learning pipelines using genetic programming.\n"
+  },
+  "build": {
+   "entry_points": [
+    "tpot = tpot:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": [
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
+  },
+  "extra": {
+   "feedstock-name": "tpot",
+   "recipe-maintainers": [
+    "proinsias",
+    "bollwyvl",
+    "jay-m-dev"
+   ]
+  },
+  "outputs": [
+   {
+    "name": "tpot"
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-skrebate",
+    "requirements": {
+     "run": [
+      "tpot",
+      "skrebate >=0.3.4"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-mdr",
+    "requirements": {
+     "run": [
+      "tpot",
+      "scikit-mdr >=0.4.4"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-dask",
+    "requirements": {
+     "run": [
+      "tpot",
+      "dask >=0.18.2",
+      "dask-ml >=1.0.0",
+      "distributed >=1.22.1"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-torch",
+    "requirements": {
+     "run": [
+      "tpot",
+      "pytorch 1.13.*"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot.builtins.nn"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-imblearn",
+    "requirements": {
+     "run": [
+      "tpot",
+      "imbalanced-learn >=0.7.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "pip",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "tpot-full",
+    "requirements": {
+     "run": [
+      "tpot-dask",
+      "tpot-imblearn",
+      "tpot-mdr",
+      "tpot-skrebate",
+      "tpot-torch",
+      "tpot"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "python -c \"import os; [os.unlink(p) for p in ['tests/tpot_tests.py', 'tests/stacking_estimator_tests.py']]\"",
+      "coverage run --source=tpot --branch -m nose tests -s -v -e test_dask_matches -e test_StackingEstimator_4 -e test_sample_weight_func -e one_hot_encoder_tests -e test_score_2 -e test_varOr -e test_mate_operator -e test_get_params -e test_mate_operator_stats_update",
+      "coverage report --show-missing --skip-covered --fail-under=74"
+     ],
+     "imports": [
+      "tpot"
+     ],
+     "requires": [
+      "coverage",
+      "nose",
+      "pip",
+      "python 3.9",
+      "scikit-learn <1.6.0"
+     ],
+     "source_files": [
+      "tests"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "tpot",
+   "version": "0.12.2"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "deap >=1.2",
+    "joblib >=0.13.2",
+    "numpy >=1.16.3",
+    "pandas >=0.24.2",
+    "py-xgboost >=1.1.0",
+    "python >=3.9",
+    "scikit-learn >=1.4.1",
+    "scipy >=1.3.1",
+    "stopit >=1.1.2",
+    "tqdm >=4.36.1",
+    "update_checker >=0.16"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "e92777cf41cbf01ee0439632264d21ef89a1c0b5ec532b73dcb679c3ce67bec1",
+   "url": "https://pypi.org/packages/source/T/TPOT/TPOT-0.12.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "tpot --version",
+    "tpot --help"
+   ],
+   "imports": [
+    "tpot"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "tpot",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "tpot",
+   "tpot-dask",
+   "tpot-full",
+   "tpot-imblearn",
+   "tpot-mdr",
+   "tpot-skrebate",
+   "tpot-torch"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/tpot.json"
+ },
+ "raw_meta_yaml": "{% set version = \"0.12.2\" %}\n\n# handle undefined PYTHON in `noarch: generic` outputs\n{% if PYTHON is not defined %}{% set PYTHON = \"$PYTHON\" %}{% endif %}\n\n# handle unimportable tests\n{% set delete_tests = [\"tests/tpot_tests.py\", \"tests/stacking_estimator_tests.py\"] %}\n\npackage:\n  name: tpot\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/T/TPOT/TPOT-{{ version }}.tar.gz\n  sha256: e92777cf41cbf01ee0439632264d21ef89a1c0b5ec532b73dcb679c3ce67bec1\n\nbuild:\n  number: 1\n  noarch: python\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n  entry_points:\n    - tpot = tpot:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - deap >=1.2\n    - joblib >=0.13.2\n    - numpy >=1.16.3\n    - pandas >=0.24.2\n    - py-xgboost >=1.1.0\n    - python >={{ python_min }}\n    - scikit-learn >=1.4.1\n    - scipy >=1.3.1\n    - stopit >=1.1.2\n    - tqdm >=4.36.1\n    - update_checker >=0.16\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - tpot\n  commands:\n    - pip check\n    - tpot --version\n    - tpot --help\n\noutputs:\n  - name: tpot\n\n  - name: tpot-skrebate\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"tpot\", max_pin=\"x.x.x\") }}\n        - skrebate >=0.3.4\n    test:\n      imports:\n        - tpot\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - pip check\n\n  - name: tpot-mdr\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"tpot\", max_pin=\"x.x.x\") }}\n        - scikit-mdr >=0.4.4\n    test:\n      imports:\n        - tpot\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - pip check\n\n  - name: tpot-dask\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"tpot\", max_pin=\"x.x.x\") }}\n        - dask >=0.18.2\n        - dask-ml >=1.0.0\n        - distributed >=1.22.1\n    test:\n      imports:\n        - tpot\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - pip check\n\n  - name: tpot-torch\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"tpot\", max_pin=\"x.x.x\") }}\n        - pytorch 1.13.*\n    test:\n      imports:\n        - tpot.builtins.nn\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - pip check\n\n  - name: tpot-imblearn\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"tpot\", max_pin=\"x.x.x\") }}\n        - imbalanced-learn >=0.7.0\n    test:\n      imports:\n        - tpot\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - pip check\n\n  - name: tpot-full\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"tpot-dask\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"tpot-imblearn\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"tpot-mdr\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"tpot-skrebate\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"tpot-torch\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"tpot\", max_pin=\"x.x.x\") }}\n    test:\n      imports:\n        - tpot\n      requires:\n        - coverage\n        - nose\n        - pip\n        - python {{ python_min }}\n        # newer causes one test fail\n        - scikit-learn <1.6.0\n      source_files:\n        - tests\n      commands:\n        - pip check\n        - python -c \"import os; [os.unlink(p) for p in {{ delete_tests }}]\"\n        -\n          coverage run --source=tpot --branch -m\n            nose tests -s -v\n              -e test_dask_matches\n              -e test_StackingEstimator_4\n              -e test_sample_weight_func\n              -e one_hot_encoder_tests\n              -e test_score_2\n              -e test_varOr\n              -e test_mate_operator\n              -e test_get_params\n              -e test_mate_operator_stats_update\n        - coverage report --show-missing --skip-covered --fail-under=74\n\nabout:\n  home: https://epistasislab.github.io/tpot\n  license: LGPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: |\n    A Python tool that automatically creates and optimizes Machine Learning pipelines using genetic programming.\n  dev_url: https://github.com/EpistasisLab/tpot\n  description: |\n    Consider TPOT your Data Science Assistant. TPOT is a Python Automated\n    Machine Learning tool that optimizes machine learning pipelines using\n    genetic programming.\n\n    TPOT will automate the most tedious part of machine learning by\n    intelligently exploring thousands of possible pipelines to find the best\n    one for your data.\n\n    Once TPOT is finished searching (or you get tired of waiting), it provides\n    you with the Python code for the best pipeline it found so you can tinker\n    with the pipeline from there.\n\n    TPOT is built on top of scikit-learn, so all of the code it generates\n    should look familiar... if you're familiar with scikit-learn, anyway.\n\n    TPOT is still under active development and we encourage you to check back\n    on this repository regularly for updates.\n\nextra:\n  feedstock-name: tpot\n  recipe-maintainers:\n    - proinsias\n    - bollwyvl\n    - jay-m-dev\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "dask",
+   "dask-ml",
+   "deap",
+   "distributed",
+   "imbalanced-learn",
+   "joblib",
+   "numpy",
+   "pandas",
+   "pip",
+   "py-xgboost",
+   "python",
+   "pytorch",
+   "scikit-learn",
+   "scikit-mdr",
+   "scipy",
+   "setuptools",
+   "skrebate",
+   "stopit",
+   "tpot",
+   "tpot-dask",
+   "tpot-imblearn",
+   "tpot-mdr",
+   "tpot-skrebate",
+   "tpot-torch",
+   "tqdm",
+   "update_checker"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dask",
+    "dask-ml",
+    "deap",
+    "distributed",
+    "imbalanced-learn",
+    "joblib",
+    "numpy",
+    "pandas",
+    "py-xgboost",
+    "python",
+    "pytorch",
+    "scikit-learn",
+    "scikit-mdr",
+    "scipy",
+    "skrebate",
+    "stopit",
+    "tpot",
+    "tpot-dask",
+    "tpot-imblearn",
+    "tpot-mdr",
+    "tpot-skrebate",
+    "tpot-torch",
+    "tqdm",
+    "update_checker"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "nose",
+    "pip",
+    "python",
+    "scikit-learn"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "dask >=0.18.2",
+    "dask-ml >=1.0.0",
+    "deap >=1.2",
+    "distributed >=1.22.1",
+    "imbalanced-learn >=0.7.0",
+    "joblib >=0.13.2",
+    "numpy >=1.16.3",
+    "pandas >=0.24.2",
+    "py-xgboost >=1.1.0",
+    "python >=3.9",
+    "pytorch 1.13.*",
+    "scikit-learn >=1.4.1",
+    "scikit-mdr >=0.4.4",
+    "scipy >=1.3.1",
+    "skrebate >=0.3.4",
+    "stopit >=1.1.2",
+    "tpot",
+    "tpot-dask",
+    "tpot-imblearn",
+    "tpot-mdr",
+    "tpot-skrebate",
+    "tpot-torch",
+    "tqdm >=4.36.1",
+    "update_checker >=0.16"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "nose",
+    "pip",
+    "python 3.9",
+    "scikit-learn <1.6.0"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/T/TPOT/TPOT-0.12.2.tar.gz",
+ "version": "0.12.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/tpot.json"
+ }
+}

@@ -1,0 +1,233 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "dist-meta",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "doc_url": "https://dist-meta.readthedocs.io/en/latest",
+   "home": "https://github.com/repo-helper/dist-meta",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Parse and create Python distribution metadata."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "domdfcoding"
+   ]
+  },
+  "package": {
+   "name": "dist-meta",
+   "version": "0.8.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "domdf-python-tools >=3.1.0",
+    "handy-archives >=0.1.0",
+    "packaging >=20.9",
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "e73b873b08361835e25592d4d74129f0353bca4451dd12bfa10aaf14af4682e4",
+   "url": "https://pypi.io/packages/source/d/dist-meta/dist-meta-0.8.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "dist_meta"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "domdf-python-tools",
+    "handy-archives",
+    "packaging",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "doc_url": "https://dist-meta.readthedocs.io/en/latest",
+   "home": "https://github.com/repo-helper/dist-meta",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Parse and create Python distribution metadata."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "domdfcoding"
+   ]
+  },
+  "package": {
+   "name": "dist-meta",
+   "version": "0.8.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "domdf-python-tools >=3.1.0",
+    "handy-archives >=0.1.0",
+    "packaging >=20.9",
+    "python >=3.6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "e73b873b08361835e25592d4d74129f0353bca4451dd12bfa10aaf14af4682e4",
+   "url": "https://pypi.io/packages/source/d/dist-meta/dist-meta-0.8.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "dist_meta"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "dist-meta",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "dist-meta"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/dist-meta.json"
+ },
+ "raw_meta_yaml": "{% set name = \"dist-meta\" %}\n{% set version = \"0.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dist-meta-{{ version }}.tar.gz\n  sha256: e73b873b08361835e25592d4d74129f0353bca4451dd12bfa10aaf14af4682e4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - domdf-python-tools >=3.1.0\n    - handy-archives >=0.1.0\n    - packaging >=20.9\n    - python >=3.6\n\ntest:\n  imports:\n    - dist_meta\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/repo-helper/dist-meta\n  summary: Parse and create Python distribution metadata.\n  license: MIT\n  license_file: LICENSE\n  doc_url: https://dist-meta.readthedocs.io/en/latest\n\nextra:\n  recipe-maintainers:\n    - domdfcoding\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "domdf-python-tools",
+   "handy-archives",
+   "packaging",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "domdf-python-tools",
+    "handy-archives",
+    "packaging",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "domdf-python-tools >=3.1.0",
+    "handy-archives >=0.1.0",
+    "packaging >=20.9",
+    "python >=3.6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/d/dist-meta/dist-meta-0.8.1.tar.gz",
+ "version": "0.8.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/dist-meta.json"
+ }
+}

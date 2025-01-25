@@ -1,0 +1,258 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "kerchunk",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/fsspec/kerchunk",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Functions to make reference descriptions for ReferenceFileSystem"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "valeriupredoi",
+    "martindurant",
+    "rsignell-usgs"
+   ]
+  },
+  "package": {
+   "name": "kerchunk",
+   "version": "0.2.7"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools_scm",
+    "setuptools"
+   ],
+   "run": [
+    "fsspec",
+    "python >=3.9",
+    "numcodecs",
+    "ujson",
+    "zarr"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0425aa0fbf56f898053ee4c4dd40b35cea12d2fc986e036086e99a4ad16bd4e6",
+   "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "kerchunk"
+   ],
+   "requires": [
+    "pip",
+    "python >=3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fsspec",
+    "numcodecs",
+    "python",
+    "ujson",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/fsspec/kerchunk",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Functions to make reference descriptions for ReferenceFileSystem"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "valeriupredoi",
+    "martindurant",
+    "rsignell-usgs"
+   ]
+  },
+  "package": {
+   "name": "kerchunk",
+   "version": "0.2.7"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9",
+    "setuptools_scm",
+    "setuptools"
+   ],
+   "run": [
+    "fsspec",
+    "python >=3.9",
+    "numcodecs",
+    "ujson",
+    "zarr"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0425aa0fbf56f898053ee4c4dd40b35cea12d2fc986e036086e99a4ad16bd4e6",
+   "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "kerchunk"
+   ],
+   "requires": [
+    "pip",
+    "python >=3.9"
+   ]
+  }
+ },
+ "name": "kerchunk",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "kerchunk"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/kerchunk.json"
+ },
+ "raw_meta_yaml": "{% set name = \"kerchunk\" %}\n{% set version = \"0.2.7\" %}\n{% set python_min = \"3.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kerchunk-{{ version }}.tar.gz\n  sha256: 0425aa0fbf56f898053ee4c4dd40b35cea12d2fc986e036086e99a4ad16bd4e6\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm\n    - setuptools\n  run:\n    - fsspec\n    - python >={{ python_min }}\n    - numcodecs\n    - ujson\n    - zarr\n\ntest:\n  imports:\n    - kerchunk\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python >={{ python_min }}\n\nabout:\n  home: https://github.com/fsspec/kerchunk\n  summary: Functions to make reference descriptions for ReferenceFileSystem\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - valeriupredoi\n    - martindurant\n    - rsignell-usgs\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "fsspec",
+   "numcodecs",
+   "pip",
+   "python",
+   "setuptools",
+   "setuptools_scm",
+   "ujson",
+   "zarr"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fsspec",
+    "numcodecs",
+    "python",
+    "ujson",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fsspec",
+    "numcodecs",
+    "python >=3.9",
+    "ujson",
+    "zarr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.7.tar.gz",
+ "version": "0.2.7",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/kerchunk.json"
+ }
+}

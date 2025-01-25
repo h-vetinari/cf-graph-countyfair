@@ -1,0 +1,239 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "neurodsp",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/neurodsp-tools/neurodsp",
+   "doc_url": "https://neurodsp-tools.github.io/neurodsp/",
+   "home": "https://github.com/neurodsp-tools/neurodsp",
+   "license": "Apache-2.0",
+   "license_family": "Apache",
+   "license_file": "LICENSE",
+   "summary": "Digital signal processing for neural time series."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ryanhammonds"
+   ]
+  },
+  "package": {
+   "name": "neurodsp",
+   "version": "2.2.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.5",
+    "pip"
+   ],
+   "run": [
+    "python >=3.5",
+    "numpy",
+    "scipy",
+    "matplotlib-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "acdfef6d990f16bd488e11e36d05f58f282079f6c4f17e40f85a0ac5f5713805",
+   "url": "https://github.com/neurodsp-tools/neurodsp/archive/2.2.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "neurodsp",
+    "neurodsp.aperiodic",
+    "neurodsp.burst",
+    "neurodsp.filt",
+    "neurodsp.plts",
+    "neurodsp.rhythm",
+    "neurodsp.sim",
+    "neurodsp.spectral",
+    "neurodsp.tests",
+    "neurodsp.timefrequency",
+    "neurodsp.utils"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/neurodsp-tools/neurodsp",
+   "doc_url": "https://neurodsp-tools.github.io/neurodsp/",
+   "home": "https://github.com/neurodsp-tools/neurodsp",
+   "license": "Apache-2.0",
+   "license_family": "Apache",
+   "license_file": "LICENSE",
+   "summary": "Digital signal processing for neural time series."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ryanhammonds"
+   ]
+  },
+  "package": {
+   "name": "neurodsp",
+   "version": "2.2.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.5",
+    "pip"
+   ],
+   "run": [
+    "python >=3.5",
+    "numpy",
+    "scipy",
+    "matplotlib-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "acdfef6d990f16bd488e11e36d05f58f282079f6c4f17e40f85a0ac5f5713805",
+   "url": "https://github.com/neurodsp-tools/neurodsp/archive/2.2.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "neurodsp",
+    "neurodsp.aperiodic",
+    "neurodsp.burst",
+    "neurodsp.filt",
+    "neurodsp.plts",
+    "neurodsp.rhythm",
+    "neurodsp.sim",
+    "neurodsp.spectral",
+    "neurodsp.tests",
+    "neurodsp.timefrequency",
+    "neurodsp.utils"
+   ]
+  }
+ },
+ "name": "neurodsp",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "neurodsp"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/neurodsp.json"
+ },
+ "raw_meta_yaml": "{% set name = \"neurodsp\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/neurodsp-tools/neurodsp/archive/{{ version }}.tar.gz\n  sha256: acdfef6d990f16bd488e11e36d05f58f282079f6c4f17e40f85a0ac5f5713805\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - numpy\n    - scipy\n    - matplotlib-base\n\ntest:\n  imports:\n    - neurodsp\n    - neurodsp.aperiodic\n    - neurodsp.burst\n    - neurodsp.filt\n    - neurodsp.plts\n    - neurodsp.rhythm\n    - neurodsp.sim\n    - neurodsp.spectral\n    - neurodsp.tests\n    - neurodsp.timefrequency\n    - neurodsp.utils\n\nabout:\n  home: https://github.com/neurodsp-tools/neurodsp\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Digital signal processing for neural time series.\n  doc_url: https://neurodsp-tools.github.io/neurodsp/\n  dev_url: https://github.com/neurodsp-tools/neurodsp\n\nextra:\n  recipe-maintainers:\n    - ryanhammonds\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "matplotlib-base",
+   "numpy",
+   "pip",
+   "python",
+   "scipy"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.5"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base",
+    "numpy",
+    "python >=3.5",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/neurodsp-tools/neurodsp/archive/2.2.0.tar.gz",
+ "version": "2.2.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/neurodsp.json"
+ }
+}

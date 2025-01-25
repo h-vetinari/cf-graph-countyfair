@@ -1,0 +1,239 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "tensorflow-metadata",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://pypi.org/project/tensorflow-metadata/",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "Library and standards for schema and statistics."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mxr-conda",
+    "rluria14",
+    "oblute",
+    "ndmaxar",
+    "ngam"
+   ]
+  },
+  "package": {
+   "name": "tensorflow-metadata",
+   "version": "1.15.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.7"
+   ],
+   "run": [
+    "googleapis-common-protos >=1.56.4,<2",
+    "protobuf >=4.25.2,<5",
+    "absl-py >=0.9,<3.0.0",
+    "python >=3.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "cb84d8e159128aeae7b3f6013ccd7969c69d2e6d1a7b255dbfa6f5344d962986",
+   "url": "https://pypi.io/packages/py3/t/tensorflow-metadata/tensorflow_metadata-1.15.0-py3-none-any.whl"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "tensorflow_metadata",
+    "tensorflow_metadata.proto"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "absl-py",
+    "googleapis-common-protos",
+    "protobuf",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://pypi.org/project/tensorflow-metadata/",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "Library and standards for schema and statistics."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mxr-conda",
+    "rluria14",
+    "oblute",
+    "ndmaxar",
+    "ngam"
+   ]
+  },
+  "package": {
+   "name": "tensorflow-metadata",
+   "version": "1.15.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.7"
+   ],
+   "run": [
+    "googleapis-common-protos >=1.56.4,<2",
+    "protobuf >=4.25.2,<5",
+    "absl-py >=0.9,<3.0.0",
+    "python >=3.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "cb84d8e159128aeae7b3f6013ccd7969c69d2e6d1a7b255dbfa6f5344d962986",
+   "url": "https://pypi.io/packages/py3/t/tensorflow-metadata/tensorflow_metadata-1.15.0-py3-none-any.whl"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "tensorflow_metadata",
+    "tensorflow_metadata.proto"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "tensorflow-metadata",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "tensorflow-metadata"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/tensorflow-metadata.json"
+ },
+ "raw_meta_yaml": "{% set name = \"tensorflow-metadata\" %}\n{% set version = \"1.15.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/py3/t/tensorflow-metadata/tensorflow_metadata-{{ version }}-py3-none-any.whl\n  sha256: cb84d8e159128aeae7b3f6013ccd7969c69d2e6d1a7b255dbfa6f5344d962986\n\nbuild:\n  number: 0\n  noarch: python\n\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n  run:\n    - googleapis-common-protos >=1.56.4,<2\n    - protobuf >=4.25.2,<5\n    - absl-py >=0.9,<3.0.0 \n    - python >=3.7\ntest:\n  imports:\n    - tensorflow_metadata\n    - tensorflow_metadata.proto\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/tensorflow-metadata/\n  summary: Library and standards for schema and statistics.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mxr-conda\n    - rluria14\n    - oblute\n    - ndmaxar\n    - ngam\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "absl-py",
+   "googleapis-common-protos",
+   "pip",
+   "protobuf",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "absl-py",
+    "googleapis-common-protos",
+    "protobuf",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.7"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "absl-py >=0.9,<3.0.0",
+    "googleapis-common-protos >=1.56.4,<2",
+    "protobuf >=4.25.2,<5",
+    "python >=3.7"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/py3/t/tensorflow-metadata/tensorflow_metadata-1.15.0-py3-none-any.whl",
+ "version": "1.15.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/tensorflow-metadata.json"
+ }
+}

@@ -1,0 +1,290 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "cset",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/MetOffice/CSET",
+   "doc_url": "https://metoffice.github.io/CSET",
+   "home": "https://github.com/MetOffice/CSET",
+   "license": "Apache-2.0",
+   "license_file": "LICENCE",
+   "summary": "Convective Scale Evaluation Tool for evaluation and investigation of regional models."
+  },
+  "build": {
+   "entry_points": [
+    "cset = CSET:main"
+   ],
+   "noarch": "python",
+   "number": "2",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jfrost-mo"
+   ]
+  },
+  "package": {
+   "name": "cset",
+   "version": "24.8.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10",
+    "setuptools >=64.0",
+    "setuptools_scm >=8",
+    "pip >=24.0"
+   ],
+   "run": [
+    "python >=3.10",
+    "numpy",
+    "iris >=3.6",
+    "ruamel.yaml >=0.17",
+    "pygraphviz >=1.11",
+    "mo_pack >=0.3",
+    "isodate >=0.6",
+    "markdown-it-py >=3.0",
+    "nc-time-axis"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c2d704877bd7b996a655fe42bbdda434f38d36f061dff3b18c90e4890b652ee3",
+   "url": "https://files.pythonhosted.org/packages/36/5e/9843512e407de724a61621f1573df14941c4b0b92a405c010de598eb5954/cset-24.8.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "cset --version"
+   ],
+   "imports": [
+    "CSET"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "iris",
+    "isodate",
+    "markdown-it-py",
+    "mo_pack",
+    "nc-time-axis",
+    "numpy",
+    "pygraphviz",
+    "python",
+    "ruamel.yaml"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/MetOffice/CSET",
+   "doc_url": "https://metoffice.github.io/CSET",
+   "home": "https://github.com/MetOffice/CSET",
+   "license": "Apache-2.0",
+   "license_file": "LICENCE",
+   "summary": "Convective Scale Evaluation Tool for evaluation and investigation of regional models."
+  },
+  "build": {
+   "entry_points": [
+    "cset = CSET:main"
+   ],
+   "noarch": "python",
+   "number": "2",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jfrost-mo"
+   ]
+  },
+  "package": {
+   "name": "cset",
+   "version": "24.8.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10",
+    "setuptools >=64.0",
+    "setuptools_scm >=8",
+    "pip >=24.0"
+   ],
+   "run": [
+    "python >=3.10",
+    "numpy",
+    "iris >=3.6",
+    "ruamel.yaml >=0.17",
+    "pygraphviz >=1.11",
+    "mo_pack >=0.3",
+    "isodate >=0.6",
+    "markdown-it-py >=3.0",
+    "nc-time-axis"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c2d704877bd7b996a655fe42bbdda434f38d36f061dff3b18c90e4890b652ee3",
+   "url": "https://files.pythonhosted.org/packages/36/5e/9843512e407de724a61621f1573df14941c4b0b92a405c010de598eb5954/cset-24.8.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "cset --version"
+   ],
+   "imports": [
+    "CSET"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "name": "cset",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "cset"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/cset.json"
+ },
+ "raw_meta_yaml": "{% set python_min = \"3.10\" %}\n\npackage:\n  name: cset\n  version: 24.8.0\n\nsource:\n  url: https://files.pythonhosted.org/packages/36/5e/9843512e407de724a61621f1573df14941c4b0b92a405c010de598eb5954/cset-24.8.0.tar.gz\n  sha256: c2d704877bd7b996a655fe42bbdda434f38d36f061dff3b18c90e4890b652ee3\n\nbuild:\n  noarch: python\n  entry_points:\n    - cset = CSET:main\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  number: 2\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64.0\n    - setuptools_scm >=8\n    - pip >=24.0\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - iris >=3.6\n    - ruamel.yaml >=0.17\n    - pygraphviz >=1.11\n    - mo_pack >=0.3\n    - isodate >=0.6\n    - markdown-it-py >=3.0\n    - nc-time-axis\n\ntest:\n  imports:\n    - CSET\n  commands:\n    - pip check\n    - cset --version\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/MetOffice/CSET\n  summary: Convective Scale Evaluation Tool for evaluation and investigation of regional models.\n  doc_url: https://metoffice.github.io/CSET\n  dev_url: https://github.com/MetOffice/CSET\n  license: Apache-2.0\n  license_file: LICENCE\n\nextra:\n  recipe-maintainers:\n    - jfrost-mo\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "iris",
+   "isodate",
+   "markdown-it-py",
+   "mo_pack",
+   "nc-time-axis",
+   "numpy",
+   "pip",
+   "pygraphviz",
+   "python",
+   "ruamel.yaml",
+   "setuptools",
+   "setuptools_scm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "iris",
+    "isodate",
+    "markdown-it-py",
+    "mo_pack",
+    "nc-time-axis",
+    "numpy",
+    "pygraphviz",
+    "python",
+    "ruamel.yaml"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip >=24.0",
+    "python 3.10",
+    "setuptools >=64.0",
+    "setuptools_scm >=8"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "iris >=3.6",
+    "isodate >=0.6",
+    "markdown-it-py >=3.0",
+    "mo_pack >=0.3",
+    "nc-time-axis",
+    "numpy",
+    "pygraphviz >=1.11",
+    "python >=3.10",
+    "ruamel.yaml >=0.17"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "url": "https://files.pythonhosted.org/packages/36/5e/9843512e407de724a61621f1573df14941c4b0b92a405c010de598eb5954/cset-24.8.0.tar.gz",
+ "version": "24.8.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/cset.json"
+ }
+}

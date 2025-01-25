@@ -1,0 +1,636 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "diffoscope",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "diffoscope will try to get to the bottom of what makes files or directories\ndifferent. It will recursively unpack archives of many kinds and transform\nvarious binary formats into more human readable form to compare them. It can\ncompare two tarballs, ISO images, or PDF just as easily.",
+   "dev_url": "https://salsa.debian.org/reproducible-builds/diffoscope",
+   "home": "https://diffoscope.org",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "in-depth comparison of files, archives, and directories"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0"
+  },
+  "extra": {
+   "feedstock-name": "diffoscope",
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "entry_points": [
+      "diffoscope = diffoscope.main:main"
+     ],
+     "noarch": "python",
+     "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
+    },
+    "name": "diffoscope",
+    "requirements": {
+     "host": [
+      "python 3.9",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python >=3.9",
+      "python-libarchive-c",
+      "python-magic"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "diffoscope --version | grep 286",
+      "diffoscope --help",
+      "diffoscope --list-tools",
+      "diffoscope --list-missing-tools"
+     ],
+     "imports": [
+      "diffoscope"
+     ],
+     "requires": [
+      "pip <24",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "diffoscope-all-tools",
+    "requirements": {
+     "run": [
+      "diffoscope",
+      "argcomplete",
+      "binutils",
+      "binwalk",
+      "bzip2",
+      "cctools",
+      "defusedxml",
+      "docx2txt",
+      "e2fsprogs",
+      "ffmpeg",
+      "fonttools",
+      "gettext",
+      "ghc",
+      "giflib",
+      "gnupg",
+      "h5py",
+      "hdf5",
+      "html2text",
+      "imagemagick",
+      "jsondiff",
+      "libdb",
+      "llvmdev",
+      "lzip",
+      "mono",
+      "ocaml",
+      "openjdk",
+      "openssh",
+      "perl",
+      "pdfminer.six",
+      "poppler",
+      "postgresql",
+      "progressbar",
+      "pycryptodome",
+      "pypdf",
+      "python-debian",
+      "python-tlsh",
+      "r",
+      "rpm-tools",
+      "squashfs-tools",
+      "unzip",
+      "vim",
+      "wabt",
+      "xz-tools",
+      "zip"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "diffoscope --list-missing-tools",
+      "python run_tests.py"
+     ],
+     "files": [
+      "run_tests.py"
+     ],
+     "requires": [
+      "pip <24",
+      "file",
+      "pytest",
+      "coverage"
+     ],
+     "source_files": [
+      "tests"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "diffoscope-split",
+   "version": "286"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9"
+   ],
+   "run": [
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "190f8c6d23fc04410f4ae592e3fab9c25dbe20c6d4406a981400214616217a34",
+   "url": "https://pypi.org/packages/source/d/diffoscope/diffoscope-286.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "echo \"tests in subpackages\""
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "argcomplete",
+    "binutils",
+    "binwalk",
+    "bzip2",
+    "cctools",
+    "defusedxml",
+    "diffoscope",
+    "docx2txt",
+    "e2fsprogs",
+    "ffmpeg",
+    "fonttools",
+    "gettext",
+    "ghc",
+    "giflib",
+    "gnupg",
+    "h5py",
+    "hdf5",
+    "html2text",
+    "imagemagick",
+    "jsondiff",
+    "libdb",
+    "llvmdev",
+    "lzip",
+    "mono",
+    "ocaml",
+    "openjdk",
+    "openssh",
+    "pdfminer.six",
+    "perl",
+    "poppler",
+    "postgresql",
+    "progressbar",
+    "pycryptodome",
+    "pypdf",
+    "python",
+    "python-debian",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh",
+    "r",
+    "rpm-tools",
+    "squashfs-tools",
+    "unzip",
+    "vim",
+    "wabt",
+    "xz-tools",
+    "zip"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "file",
+    "pip",
+    "pytest",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "diffoscope will try to get to the bottom of what makes files or directories\ndifferent. It will recursively unpack archives of many kinds and transform\nvarious binary formats into more human readable form to compare them. It can\ncompare two tarballs, ISO images, or PDF just as easily.",
+   "dev_url": "https://salsa.debian.org/reproducible-builds/diffoscope",
+   "home": "https://diffoscope.org",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "in-depth comparison of files, archives, and directories"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0"
+  },
+  "extra": {
+   "feedstock-name": "diffoscope",
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "entry_points": [
+      "diffoscope = diffoscope.main:main"
+     ],
+     "noarch": "python",
+     "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
+    },
+    "name": "diffoscope",
+    "requirements": {
+     "host": [
+      "python 3.9",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python >=3.9",
+      "python-libarchive-c",
+      "python-magic"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "diffoscope --version | grep 286",
+      "diffoscope --help",
+      "diffoscope --list-tools",
+      "diffoscope --list-missing-tools"
+     ],
+     "imports": [
+      "diffoscope"
+     ],
+     "requires": [
+      "pip <24",
+      "python 3.9"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "diffoscope-all-tools",
+    "requirements": {
+     "run": [
+      "diffoscope",
+      "argcomplete",
+      "binutils",
+      "binwalk",
+      "bzip2",
+      "cctools",
+      "defusedxml",
+      "docx2txt",
+      "e2fsprogs",
+      "ffmpeg",
+      "fonttools",
+      "gettext",
+      "ghc",
+      "giflib",
+      "gnupg",
+      "h5py",
+      "hdf5",
+      "html2text",
+      "imagemagick",
+      "jsondiff",
+      "libdb",
+      "llvmdev",
+      "lzip",
+      "mono",
+      "ocaml",
+      "openjdk",
+      "openssh",
+      "perl",
+      "pdfminer.six",
+      "poppler",
+      "postgresql",
+      "progressbar",
+      "pycryptodome",
+      "pypdf",
+      "python-debian",
+      "python-tlsh",
+      "r",
+      "rpm-tools",
+      "squashfs-tools",
+      "unzip",
+      "vim",
+      "wabt",
+      "xz-tools",
+      "zip"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "diffoscope --list-missing-tools",
+      "python run_tests.py"
+     ],
+     "files": [
+      "run_tests.py"
+     ],
+     "requires": [
+      "pip <24",
+      "file",
+      "pytest",
+      "coverage"
+     ],
+     "source_files": [
+      "tests"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "diffoscope-split",
+   "version": "286"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9"
+   ],
+   "run": [
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "190f8c6d23fc04410f4ae592e3fab9c25dbe20c6d4406a981400214616217a34",
+   "url": "https://pypi.org/packages/source/d/diffoscope/diffoscope-286.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "echo \"tests in subpackages\""
+   ]
+  }
+ },
+ "name": "diffoscope-split",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "diffoscope",
+   "diffoscope-all-tools",
+   "diffoscope-split"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/diffoscope.json"
+ },
+ "raw_meta_yaml": "{% set version = \"286\" %}\n\n# handle undefined PYTHON in `noarch: generic` outputs\n{% if PYTHON is not defined %}{% set PYTHON = \"$PYTHON\" %}{% endif %}\n{% set python_min = python_min | default(\"3.9\") %}\n\npackage:\n  name: diffoscope-split\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/d/diffoscope/diffoscope-{{ version }}.tar.gz\n  sha256: 190f8c6d23fc04410f4ae592e3fab9c25dbe20c6d4406a981400214616217a34\n\nbuild:\n  number: 0\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\ntest:\n  commands:\n    - echo \"tests in subpackages\"\n\noutputs:\n  - name: diffoscope\n    build:\n      noarch: python\n      script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check\n      entry_points:\n        - diffoscope = diffoscope.main:main\n    requirements:\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools\n      run:\n        - python >={{ python_min }}\n        - python-libarchive-c\n        - python-magic\n    test:\n      requires:\n        - pip <24\n        - python {{ python_min }}\n      imports:\n        - diffoscope\n      commands:\n        - pip check\n        - diffoscope --version | grep {{ version }}\n        - diffoscope --help\n        - diffoscope --list-tools\n        - diffoscope --list-missing-tools\n\n  - name: diffoscope-all-tools\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"diffoscope\", max_pin=\"x.x\") }}\n        - argcomplete\n        - binutils\n        - binwalk\n        - bzip2\n        - cctools\n        - defusedxml\n        - docx2txt\n        - e2fsprogs\n        - ffmpeg\n        - fonttools\n        - gettext\n        - ghc\n        - giflib\n        - gnupg\n        - h5py\n        - hdf5\n        - html2text\n        - imagemagick\n        - jsondiff\n        - libdb\n        - llvmdev\n        - lzip\n        - mono\n        - ocaml\n        - openjdk\n        - openssh\n        - perl\n        - pdfminer.six\n        - poppler\n        - postgresql\n        - progressbar\n        - pycryptodome\n        - pypdf\n        - python-debian\n        - python-tlsh\n        - r\n        - rpm-tools\n        # - sng  TODO: investigate issues, might be also missing other tools to pass tests\n        - squashfs-tools\n        - unzip\n        - vim\n        - wabt\n        - xz-tools\n        - zip\n    test:\n      files:\n        - run_tests.py\n      source_files:\n        - tests\n      requires:\n        # pip check\n        - pip <24\n        # real test deps\n        - file\n        - pytest\n        # test extras\n        - coverage\n      commands:\n        - pip check\n        - diffoscope --list-missing-tools\n        - python run_tests.py\n\nabout:\n  home: https://diffoscope.org\n  license: GPL-3.0-or-later\n  summary: in-depth comparison of files, archives, and directories\n  license_family: GPL\n  license_file: COPYING\n  description: |-\n    diffoscope will try to get to the bottom of what makes files or directories\n    different. It will recursively unpack archives of many kinds and transform\n    various binary formats into more human readable form to compare them. It can\n    compare two tarballs, ISO images, or PDF just as easily.\n  dev_url: https://salsa.debian.org/reproducible-builds/diffoscope\n\nextra:\n  feedstock-name: diffoscope\n  recipe-maintainers:\n    - bollwyvl\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "argcomplete",
+   "binutils",
+   "binwalk",
+   "bzip2",
+   "cctools",
+   "defusedxml",
+   "diffoscope",
+   "docx2txt",
+   "e2fsprogs",
+   "ffmpeg",
+   "fonttools",
+   "gettext",
+   "ghc",
+   "giflib",
+   "gnupg",
+   "h5py",
+   "hdf5",
+   "html2text",
+   "imagemagick",
+   "jsondiff",
+   "libdb",
+   "llvmdev",
+   "lzip",
+   "mono",
+   "ocaml",
+   "openjdk",
+   "openssh",
+   "pdfminer.six",
+   "perl",
+   "pip",
+   "poppler",
+   "postgresql",
+   "progressbar",
+   "pycryptodome",
+   "pypdf",
+   "python",
+   "python-debian",
+   "python-libarchive-c",
+   "python-magic",
+   "python-tlsh",
+   "r",
+   "rpm-tools",
+   "setuptools",
+   "squashfs-tools",
+   "unzip",
+   "vim",
+   "wabt",
+   "xz-tools",
+   "zip"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "argcomplete",
+    "binutils",
+    "binwalk",
+    "bzip2",
+    "cctools",
+    "defusedxml",
+    "diffoscope",
+    "docx2txt",
+    "e2fsprogs",
+    "ffmpeg",
+    "fonttools",
+    "gettext",
+    "ghc",
+    "giflib",
+    "gnupg",
+    "h5py",
+    "hdf5",
+    "html2text",
+    "imagemagick",
+    "jsondiff",
+    "libdb",
+    "llvmdev",
+    "lzip",
+    "mono",
+    "ocaml",
+    "openjdk",
+    "openssh",
+    "pdfminer.six",
+    "perl",
+    "poppler",
+    "postgresql",
+    "progressbar",
+    "pycryptodome",
+    "pypdf",
+    "python",
+    "python-debian",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh",
+    "r",
+    "rpm-tools",
+    "squashfs-tools",
+    "unzip",
+    "vim",
+    "wabt",
+    "xz-tools",
+    "zip"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "file",
+    "pip",
+    "pytest",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "argcomplete",
+    "binutils",
+    "binwalk",
+    "bzip2",
+    "cctools",
+    "defusedxml",
+    "diffoscope",
+    "docx2txt",
+    "e2fsprogs",
+    "ffmpeg",
+    "fonttools",
+    "gettext",
+    "ghc",
+    "giflib",
+    "gnupg",
+    "h5py",
+    "hdf5",
+    "html2text",
+    "imagemagick",
+    "jsondiff",
+    "libdb",
+    "llvmdev",
+    "lzip",
+    "mono",
+    "ocaml",
+    "openjdk",
+    "openssh",
+    "pdfminer.six",
+    "perl",
+    "poppler",
+    "postgresql",
+    "progressbar",
+    "pycryptodome",
+    "pypdf",
+    "python >=3.9",
+    "python-debian",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh",
+    "r",
+    "rpm-tools",
+    "squashfs-tools",
+    "unzip",
+    "vim",
+    "wabt",
+    "xz-tools",
+    "zip"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "coverage",
+    "file",
+    "pip <24",
+    "pytest",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/d/diffoscope/diffoscope-286.tar.gz",
+ "version": "286",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/diffoscope.json"
+ }
+}

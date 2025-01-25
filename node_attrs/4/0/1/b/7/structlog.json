@@ -1,0 +1,235 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "structlog",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "http://www.structlog.org",
+   "license": "Apache-2.0 OR MIT",
+   "license_file": [
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+   ],
+   "summary": "Structured Logging for Python"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "vamega",
+    "aldanor"
+   ]
+  },
+  "package": {
+   "name": "structlog",
+   "version": "24.4.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "hatchling",
+    "hatch-vcs",
+    "hatch-fancy-pypi-readme"
+   ],
+   "run": [
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "structlog-24.4.0.tar.gz",
+   "sha256": "bd10527942dae90e8c44f0e1a170062b3a1787e1139a633508da5eb1ca426cd1",
+   "url": "https://github.com/hynek/structlog/archive/24.4.0.zip"
+  },
+  "test": {
+   "imports": [
+    "structlog"
+   ],
+   "requires": [
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-fancy-pypi-readme",
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "http://www.structlog.org",
+   "license": "Apache-2.0 OR MIT",
+   "license_file": [
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+   ],
+   "summary": "Structured Logging for Python"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "vamega",
+    "aldanor"
+   ]
+  },
+  "package": {
+   "name": "structlog",
+   "version": "24.4.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "hatchling",
+    "hatch-vcs",
+    "hatch-fancy-pypi-readme"
+   ],
+   "run": [
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "structlog-24.4.0.tar.gz",
+   "sha256": "bd10527942dae90e8c44f0e1a170062b3a1787e1139a633508da5eb1ca426cd1",
+   "url": "https://github.com/hynek/structlog/archive/24.4.0.zip"
+  },
+  "test": {
+   "imports": [
+    "structlog"
+   ],
+   "requires": [
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "structlog",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "structlog"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/structlog.json"
+ },
+ "raw_meta_yaml": "{% set version = \"24.4.0\" %}\n{% set sha256 = \"bd10527942dae90e8c44f0e1a170062b3a1787e1139a633508da5eb1ca426cd1\" %}\n\npackage:\n  name: structlog\n  version: {{ version }}\n\nsource:\n  fn: structlog-{{ version }}.tar.gz\n  url: https://github.com/hynek/structlog/archive/{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n    - hatch-vcs\n    - hatch-fancy-pypi-readme\n\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - structlog\n\nabout:\n  home: http://www.structlog.org\n  license: Apache-2.0 OR MIT\n  summary: Structured Logging for Python\n  license_file:\n    - LICENSE-MIT\n    - LICENSE-APACHE\n\nextra:\n  recipe-maintainers:\n    - vamega\n    - aldanor\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "hatch-fancy-pypi-readme",
+   "hatch-vcs",
+   "hatchling",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-fancy-pypi-readme",
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatch-fancy-pypi-readme",
+    "hatch-vcs",
+    "hatchling",
+    "pip",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python >=3.9"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://github.com/hynek/structlog/archive/24.4.0.zip",
+ "version": "24.4.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/structlog.json"
+ }
+}

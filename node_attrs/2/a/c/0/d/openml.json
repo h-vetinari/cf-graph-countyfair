@@ -1,0 +1,294 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "openml",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/openml/openml-python",
+   "doc_url": "https://openml.github.io/openml-python/",
+   "home": "https://openml.org/",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Python API for OpenML"
+  },
+  "build": {
+   "entry_points": [
+    "openml=openml.cli:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "BastianZim",
+    "mfeurer"
+   ]
+  },
+  "package": {
+   "name": "openml",
+   "version": "0.14.2"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9"
+   ],
+   "run": [
+    "liac-arff >=2.4.0",
+    "minio",
+    "numpy >=1.6.2,<2",
+    "pandas >=1.0.0",
+    "pyarrow",
+    "python >=3.9",
+    "python-dateutil",
+    "requests",
+    "scikit-learn >=0.18",
+    "scipy >=0.13.3",
+    "xmltodict"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "cf954bd7918f687c46034f9ca097f9bc9ee5d1cdea0df5a8d627efc96abe127d",
+   "url": "https://pypi.org/packages/source/o/openml/openml-0.14.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "openml --help"
+   ],
+   "imports": [
+    "openml",
+    "openml.datasets"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "liac-arff",
+    "minio",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "python",
+    "python-dateutil",
+    "requests",
+    "scikit-learn",
+    "scipy",
+    "xmltodict"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/openml/openml-python",
+   "doc_url": "https://openml.github.io/openml-python/",
+   "home": "https://openml.org/",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Python API for OpenML"
+  },
+  "build": {
+   "entry_points": [
+    "openml=openml.cli:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "BastianZim",
+    "mfeurer"
+   ]
+  },
+  "package": {
+   "name": "openml",
+   "version": "0.14.2"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python 3.9"
+   ],
+   "run": [
+    "liac-arff >=2.4.0",
+    "minio",
+    "numpy >=1.6.2,<2",
+    "pandas >=1.0.0",
+    "pyarrow",
+    "python >=3.9",
+    "python-dateutil",
+    "requests",
+    "scikit-learn >=0.18",
+    "scipy >=0.13.3",
+    "xmltodict"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "cf954bd7918f687c46034f9ca097f9bc9ee5d1cdea0df5a8d627efc96abe127d",
+   "url": "https://pypi.org/packages/source/o/openml/openml-0.14.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "openml --help"
+   ],
+   "imports": [
+    "openml",
+    "openml.datasets"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "openml",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "openml"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/openml.json"
+ },
+ "raw_meta_yaml": "{% set name = \"openml\" %}\n{% set version = \"0.14.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/openml-{{ version }}.tar.gz\n  sha256: cf954bd7918f687c46034f9ca097f9bc9ee5d1cdea0df5a8d627efc96abe127d\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - openml=openml.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - liac-arff >=2.4.0\n    - minio\n    - numpy >=1.6.2,<2\n    - pandas >=1.0.0\n    - pyarrow\n    - python >={{ python_min }}\n    - python-dateutil\n    - requests\n    - scikit-learn >=0.18\n    - scipy >=0.13.3\n    - xmltodict\n\ntest:\n  imports:\n    - openml\n    - openml.datasets\n  commands:\n    - pip check\n    - openml --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://openml.org/\n  summary: Python API for OpenML\n  license: BSD-3-Clause\n  license_file: LICENSE\n  dev_url: https://github.com/openml/openml-python\n  doc_url: https://openml.github.io/openml-python/\n\nextra:\n  recipe-maintainers:\n    - BastianZim\n    - mfeurer\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "liac-arff",
+   "minio",
+   "numpy",
+   "pandas",
+   "pip",
+   "pyarrow",
+   "python",
+   "python-dateutil",
+   "requests",
+   "scikit-learn",
+   "scipy",
+   "xmltodict"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "liac-arff",
+    "minio",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "python",
+    "python-dateutil",
+    "requests",
+    "scikit-learn",
+    "scipy",
+    "xmltodict"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "liac-arff >=2.4.0",
+    "minio",
+    "numpy >=1.6.2,<2",
+    "pandas >=1.0.0",
+    "pyarrow",
+    "python >=3.9",
+    "python-dateutil",
+    "requests",
+    "scikit-learn >=0.18",
+    "scipy >=0.13.3",
+    "xmltodict"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/o/openml/openml-0.14.2.tar.gz",
+ "version": "0.14.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/openml.json"
+ }
+}

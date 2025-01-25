@@ -1,0 +1,252 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "renumerate",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "doc_url": "https://renumerate.readthedocs.io/",
+   "home": "https://github.com/karpierz/renumerate",
+   "license": "Zlib",
+   "license_file": "LICENSE",
+   "summary": "Reverse enumerate."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "renumerate",
+   "version": "1.2.5"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools >=75.8.0",
+    "packaging >=24.2.0",
+    "tox >=4.23.2",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "setuptools >=75.8.0",
+    "pkg-about >=1.2.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "361fd871ee0224fb402b16def6b05bba2a899645317ab3210f20406c1b793531",
+   "url": "https://pypi.org/packages/source/r/renumerate/renumerate-1.2.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "renumerate"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "packaging",
+    "pip",
+    "python",
+    "setuptools",
+    "tox"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pkg-about",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "doc_url": "https://renumerate.readthedocs.io/",
+   "home": "https://github.com/karpierz/renumerate",
+   "license": "Zlib",
+   "license_file": "LICENSE",
+   "summary": "Reverse enumerate."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "renumerate",
+   "version": "1.2.5"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools >=75.8.0",
+    "packaging >=24.2.0",
+    "tox >=4.23.2",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "setuptools >=75.8.0",
+    "pkg-about >=1.2.7"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "361fd871ee0224fb402b16def6b05bba2a899645317ab3210f20406c1b793531",
+   "url": "https://pypi.org/packages/source/r/renumerate/renumerate-1.2.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "renumerate"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "renumerate",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "renumerate"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/renumerate.json"
+ },
+ "raw_meta_yaml": "{% set name = \"renumerate\" %}\n{% set version = \"1.2.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 361fd871ee0224fb402b16def6b05bba2a899645317ab3210f20406c1b793531\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=75.8.0\n    - packaging >=24.2.0\n    - tox >=4.23.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - setuptools >=75.8.0\n    - pkg-about >=1.2.7\ntest:\n  imports:\n    - renumerate\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/karpierz/renumerate\n  doc_url: https://renumerate.readthedocs.io/\n  summary: Reverse enumerate.\n  license: Zlib\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "packaging",
+   "pip",
+   "pkg-about",
+   "python",
+   "setuptools",
+   "tox"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "packaging",
+    "pip",
+    "python",
+    "setuptools",
+    "tox"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pkg-about",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "packaging >=24.2.0",
+    "pip",
+    "python 3.9",
+    "setuptools >=75.8.0",
+    "tox >=4.23.2"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pkg-about >=1.2.7",
+    "python >=3.9",
+    "setuptools >=75.8.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/r/renumerate/renumerate-1.2.5.tar.gz",
+ "version": "1.2.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/renumerate.json"
+ }
+}

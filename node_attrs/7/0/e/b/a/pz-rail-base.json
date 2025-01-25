@@ -1,0 +1,279 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pz-rail-base",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "RAIL is a flexible software library providing tools to produce at-scale photometric redshift data products, including uncertainties and summary statistics, and stress-test them under realistically complex systematics.\n",
+   "home": "http://github.com/LSSTDESC/rail_base",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Base classes and core code for Redshift Assessment Infrastructure Layers"
+  },
+  "build": {
+   "entry_points": [
+    "rail = rail.cli.commands:cli"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sschmidt23",
+    "eacharles"
+   ]
+  },
+  "package": {
+   "name": "pz-rail-base",
+   "version": "1.0.5"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools >=62",
+    "setuptools-scm >=6.2",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "deprecated",
+    "pyyaml",
+    "numpy <2.0.0",
+    "click",
+    "lsstdesc-ceci >=2.0.1",
+    "qp-prob >=0.8.3",
+    "scipy >=1.9.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "521f56d8432de50a0cbb31f1e2e0f65cf587b76c7d95b21a0d08c34e5712222f",
+   "url": "https://pypi.io/packages/source/p/pz-rail-base/pz_rail_base-1.0.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "rail --help"
+   ],
+   "imports": [
+    "rail.core"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click",
+    "deprecated",
+    "lsstdesc-ceci",
+    "numpy",
+    "python",
+    "pyyaml",
+    "qp-prob",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "RAIL is a flexible software library providing tools to produce at-scale photometric redshift data products, including uncertainties and summary statistics, and stress-test them under realistically complex systematics.\n",
+   "home": "http://github.com/LSSTDESC/rail_base",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Base classes and core code for Redshift Assessment Infrastructure Layers"
+  },
+  "build": {
+   "entry_points": [
+    "rail = rail.cli.commands:cli"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sschmidt23",
+    "eacharles"
+   ]
+  },
+  "package": {
+   "name": "pz-rail-base",
+   "version": "1.0.5"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools >=62",
+    "setuptools-scm >=6.2",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "deprecated",
+    "pyyaml",
+    "numpy <2.0.0",
+    "click",
+    "lsstdesc-ceci >=2.0.1",
+    "qp-prob >=0.8.3",
+    "scipy >=1.9.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "521f56d8432de50a0cbb31f1e2e0f65cf587b76c7d95b21a0d08c34e5712222f",
+   "url": "https://pypi.io/packages/source/p/pz-rail-base/pz_rail_base-1.0.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "rail --help"
+   ],
+   "imports": [
+    "rail.core"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "pz-rail-base",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pz-rail-base"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pz-rail-base.json"
+ },
+ "raw_meta_yaml": "{% set name = \"pz-rail-base\" %}\n{% set version = \"1.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pz_rail_base-{{ version }}.tar.gz\n  sha256: 521f56d8432de50a0cbb31f1e2e0f65cf587b76c7d95b21a0d08c34e5712222f\n\nbuild:\n  entry_points:\n    - rail = rail.cli.commands:cli\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=62\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >=3.9\n    - deprecated\n    - pyyaml\n    - numpy <2.0.0\n    - click\n    - lsstdesc-ceci >=2.0.1\n    - qp-prob >=0.8.3\n    - scipy >=1.9.0\n\ntest:\n  imports:\n    - rail.core\n  commands:\n    - pip check\n    - rail --help\n  requires:\n    - pip\n\nabout:\n  license: MIT\n  license_file: LICENSE\n  home: http://github.com/LSSTDESC/rail_base\n  summary: Base classes and core code for Redshift Assessment Infrastructure Layers\n  description: |\n    RAIL is a flexible software library providing tools to produce at-scale photometric redshift data products, including uncertainties and summary statistics, and stress-test them under realistically complex systematics. \n\nextra:\n  recipe-maintainers:\n    - sschmidt23\n    - eacharles\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "click",
+   "deprecated",
+   "lsstdesc-ceci",
+   "numpy",
+   "pip",
+   "python",
+   "pyyaml",
+   "qp-prob",
+   "scipy",
+   "setuptools",
+   "setuptools-scm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click",
+    "deprecated",
+    "lsstdesc-ceci",
+    "numpy",
+    "python",
+    "pyyaml",
+    "qp-prob",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.9",
+    "setuptools >=62",
+    "setuptools-scm >=6.2"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click",
+    "deprecated",
+    "lsstdesc-ceci >=2.0.1",
+    "numpy <2.0.0",
+    "python >=3.9",
+    "pyyaml",
+    "qp-prob >=0.8.3",
+    "scipy >=1.9.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/p/pz-rail-base/pz_rail_base-1.0.5.tar.gz",
+ "version": "1.0.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pz-rail-base.json"
+ }
+}

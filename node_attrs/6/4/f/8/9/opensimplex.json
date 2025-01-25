@@ -1,0 +1,236 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "opensimplex",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/lmas/opensimplex",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "OpenSimplex is a noise generation function like Perlin or Simplex noise, but better."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MuellerSeb"
+   ]
+  },
+  "package": {
+   "name": "opensimplex",
+   "version": "0.4.5"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip",
+    "setuptools",
+    "numpy >=1.22"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy >=1.22"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c390cf70dea97b32bd1a49ba6781e84f48dc93b1cc6c06f36d9d44c548299f90",
+   "url": "https://pypi.io/packages/source/o/opensimplex/opensimplex-0.4.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest -vv tests"
+   ],
+   "imports": [
+    "opensimplex"
+   ],
+   "requires": [
+    "pytest"
+   ],
+   "source_files": [
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/lmas/opensimplex",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "OpenSimplex is a noise generation function like Perlin or Simplex noise, but better."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "MuellerSeb"
+   ]
+  },
+  "package": {
+   "name": "opensimplex",
+   "version": "0.4.5"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.8",
+    "pip",
+    "setuptools",
+    "numpy >=1.22"
+   ],
+   "run": [
+    "python >=3.8",
+    "numpy >=1.22"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c390cf70dea97b32bd1a49ba6781e84f48dc93b1cc6c06f36d9d44c548299f90",
+   "url": "https://pypi.io/packages/source/o/opensimplex/opensimplex-0.4.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest -vv tests"
+   ],
+   "imports": [
+    "opensimplex"
+   ],
+   "requires": [
+    "pytest"
+   ],
+   "source_files": [
+    "tests"
+   ]
+  }
+ },
+ "name": "opensimplex",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "opensimplex"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/opensimplex.json"
+ },
+ "raw_meta_yaml": "{% set name = \"opensimplex\" %}\n{% set version = \"0.4.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opensimplex-{{ version }}.tar.gz\n  sha256: c390cf70dea97b32bd1a49ba6781e84f48dc93b1cc6c06f36d9d44c548299f90\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - setuptools\n    - numpy >=1.22\n  run:\n    - python >=3.8\n    - numpy >=1.22\n\ntest:\n  imports:\n    - opensimplex\n  requires:\n    - pytest\n  source_files:\n    - tests\n  commands:\n    - pytest -vv tests\n\nabout:\n  home: https://github.com/lmas/opensimplex\n  summary: OpenSimplex is a noise generation function like Perlin or Simplex noise, but better.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MuellerSeb\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "numpy",
+   "pip",
+   "python",
+   "setuptools"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy >=1.22",
+    "pip",
+    "python >=3.8",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy >=1.22",
+    "python >=3.8"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/o/opensimplex/opensimplex-0.4.5.tar.gz",
+ "version": "0.4.5",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/opensimplex.json"
+ }
+}

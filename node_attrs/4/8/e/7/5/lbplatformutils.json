@@ -1,0 +1,244 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "lbplatformutils",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://gitlab.cern.ch/lhcb-core/LbPlatformUtils",
+   "doc_url": "https://gitlab.cern.ch/lhcb-core/LbPlatformUtils",
+   "home": "https://gitlab.cern.ch/lhcb-core/LbPlatformUtils",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "utilities from platform detection"
+  },
+  "build": {
+   "entry_points": [
+    "lb-debug-platform = LbPlatformUtils.debug:main",
+    "lb-describe-platform = LbPlatformUtils.describe:main",
+    "lb-host-binary-tag = LbPlatformUtils.describe:host_binary_tag_script"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "lbplatformutils",
+   "version": "4.4.3"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python !=3.0,!=3.1,!=3.2,!=3.3",
+    "poetry"
+   ],
+   "run": [
+    "python !=3.0,!=3.1,!=3.2,!=3.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ae4691c913d266c18aad997de1b31d606b6d613372663fb85e167b1325a4df80",
+   "url": "https://pypi.io/packages/source/l/lbplatformutils/lbplatformutils-4.4.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "lb-debug-platform --help",
+    "lb-describe-platform --help",
+    "lb-host-binary-tag --help"
+   ],
+   "imports": [
+    "LbPlatformUtils"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://gitlab.cern.ch/lhcb-core/LbPlatformUtils",
+   "doc_url": "https://gitlab.cern.ch/lhcb-core/LbPlatformUtils",
+   "home": "https://gitlab.cern.ch/lhcb-core/LbPlatformUtils",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "utilities from platform detection"
+  },
+  "build": {
+   "entry_points": [
+    "lb-debug-platform = LbPlatformUtils.debug:main",
+    "lb-describe-platform = LbPlatformUtils.describe:main",
+    "lb-host-binary-tag = LbPlatformUtils.describe:host_binary_tag_script"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "chrisburr"
+   ]
+  },
+  "package": {
+   "name": "lbplatformutils",
+   "version": "4.4.3"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python !=3.0,!=3.1,!=3.2,!=3.3",
+    "poetry"
+   ],
+   "run": [
+    "python !=3.0,!=3.1,!=3.2,!=3.3"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "ae4691c913d266c18aad997de1b31d606b6d613372663fb85e167b1325a4df80",
+   "url": "https://pypi.io/packages/source/l/lbplatformutils/lbplatformutils-4.4.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "lb-debug-platform --help",
+    "lb-describe-platform --help",
+    "lb-host-binary-tag --help"
+   ],
+   "imports": [
+    "LbPlatformUtils"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "lbplatformutils",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "lbplatformutils"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/lbplatformutils.json"
+ },
+ "raw_meta_yaml": "{% set name = \"lbplatformutils\" %}\n{% set version = \"4.4.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lbplatformutils-{{ version }}.tar.gz\n  sha256: ae4691c913d266c18aad997de1b31d606b6d613372663fb85e167b1325a4df80\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - lb-debug-platform = LbPlatformUtils.debug:main\n    - lb-describe-platform = LbPlatformUtils.describe:main\n    - lb-host-binary-tag = LbPlatformUtils.describe:host_binary_tag_script\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python !=3.0,!=3.1,!=3.2,!=3.3\n    - poetry\n  run:\n    - python !=3.0,!=3.1,!=3.2,!=3.3\n\ntest:\n  imports:\n    - LbPlatformUtils\n  commands:\n    - pip check\n    - lb-debug-platform --help\n    - lb-describe-platform --help\n    - lb-host-binary-tag --help\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-core/LbPlatformUtils\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: utilities from platform detection\n  doc_url: https://gitlab.cern.ch/lhcb-core/LbPlatformUtils\n  dev_url: https://gitlab.cern.ch/lhcb-core/LbPlatformUtils\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pip",
+   "poetry",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python !=3.0,!=3.1,!=3.2,!=3.3"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python !=3.0,!=3.1,!=3.2,!=3.3"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/l/lbplatformutils/lbplatformutils-4.4.3.tar.gz",
+ "version": "4.4.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/lbplatformutils.json"
+ }
+}

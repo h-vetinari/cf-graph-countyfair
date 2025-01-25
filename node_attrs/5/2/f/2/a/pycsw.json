@@ -1,0 +1,296 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pycsw",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/geopython/pycsw",
+   "license": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "OGC Catalogue Service for the Web (CSW) server implementation written in Python."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kalxas",
+    "tomkralidis",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pycsw",
+   "version": "2.6.1"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "geolinks",
+    "lxml",
+    "owslib",
+    "pyproj",
+    "shapely",
+    "xmltodict"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "dont_use_tight_pins.patch"
+   ],
+   "sha256": "8d4763bfc0674018f0c825b2c533352c1edef161fd76e154c5b7a3dcc44434f0",
+   "url": "https://pypi.org/packages/source/p/pycsw/pycsw-2.6.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "pycsw",
+    "pycsw.core",
+    "pycsw.core.formats",
+    "pycsw.ogc",
+    "pycsw.ogc.csw",
+    "pycsw.ogc.fes",
+    "pycsw.ogc.gml",
+    "pycsw.plugins",
+    "pycsw.plugins.outputschemas",
+    "pycsw.plugins.profiles",
+    "pycsw.plugins.profiles.apiso",
+    "pycsw.plugins.profiles.ebrim",
+    "pycsw.plugins.repository",
+    "pycsw.plugins.repository.odc"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "geolinks",
+    "lxml",
+    "owslib",
+    "pyproj",
+    "python",
+    "shapely",
+    "xmltodict"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/geopython/pycsw",
+   "license": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "OGC Catalogue Service for the Web (CSW) server implementation written in Python."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kalxas",
+    "tomkralidis",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pycsw",
+   "version": "2.6.1"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "setuptools",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "geolinks",
+    "lxml",
+    "owslib",
+    "pyproj",
+    "shapely",
+    "xmltodict"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "dont_use_tight_pins.patch"
+   ],
+   "sha256": "8d4763bfc0674018f0c825b2c533352c1edef161fd76e154c5b7a3dcc44434f0",
+   "url": "https://pypi.org/packages/source/p/pycsw/pycsw-2.6.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "pycsw",
+    "pycsw.core",
+    "pycsw.core.formats",
+    "pycsw.ogc",
+    "pycsw.ogc.csw",
+    "pycsw.ogc.fes",
+    "pycsw.ogc.gml",
+    "pycsw.plugins",
+    "pycsw.plugins.outputschemas",
+    "pycsw.plugins.profiles",
+    "pycsw.plugins.profiles.apiso",
+    "pycsw.plugins.profiles.ebrim",
+    "pycsw.plugins.repository",
+    "pycsw.plugins.repository.odc"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "pycsw",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pycsw"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pycsw.json"
+ },
+ "raw_meta_yaml": "{% set version = \"2.6.1\" %}\n\npackage:\n  name: pycsw\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/pycsw/pycsw-{{ version }}.tar.gz\n  sha256: 8d4763bfc0674018f0c825b2c533352c1edef161fd76e154c5b7a3dcc44434f0\n  patches:\n    - dont_use_tight_pins.patch\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - geolinks\n    - lxml\n    - owslib\n    - pyproj\n    - shapely\n    - xmltodict\n\n\ntest:\n  imports:\n    - pycsw\n    - pycsw.core\n    - pycsw.core.formats\n    - pycsw.ogc\n    - pycsw.ogc.csw\n    - pycsw.ogc.fes\n    - pycsw.ogc.gml\n    - pycsw.plugins\n    - pycsw.plugins.outputschemas\n    - pycsw.plugins.profiles\n    - pycsw.plugins.profiles.apiso\n    - pycsw.plugins.profiles.ebrim\n    - pycsw.plugins.repository\n    - pycsw.plugins.repository.odc\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/geopython/pycsw\n  license: MIT\n  license_file: LICENSE.txt\n  summary: OGC Catalogue Service for the Web (CSW) server implementation written in Python.\n\nextra:\n  recipe-maintainers:\n    - kalxas\n    - tomkralidis\n    - ocefpaf\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "geolinks",
+   "lxml",
+   "owslib",
+   "pip",
+   "pyproj",
+   "python",
+   "setuptools",
+   "shapely",
+   "xmltodict"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "geolinks",
+    "lxml",
+    "owslib",
+    "pyproj",
+    "python",
+    "shapely",
+    "xmltodict"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "geolinks",
+    "lxml",
+    "owslib",
+    "pyproj",
+    "python >=3.9",
+    "shapely",
+    "xmltodict"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/p/pycsw/pycsw-2.6.1.tar.gz",
+ "version": "2.6.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pycsw.json"
+ }
+}

@@ -1,0 +1,247 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "secimport",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/avilum/secimport",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A sandbox/supervisor for python modules."
+  },
+  "build": {
+   "entry_points": [
+    "secimport = secimport.cli:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "secimport",
+   "version": "0.10.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "poetry-core >=1.0.0",
+    "python 3.9"
+   ],
+   "run": [
+    "fire >=0.4,<0.7",
+    "python >=3.9,<4.0",
+    "pyyaml >=6.0.0,<7.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "6748540c911beb4aed5bdc192ffa139c275507d0f526cf6a25ccfc4c2531a29c",
+   "url": "https://pypi.org/packages/source/s/secimport/secimport-0.10.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "secimport --help"
+   ],
+   "imports": [
+    "secimport"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fire",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/avilum/secimport",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A sandbox/supervisor for python modules."
+  },
+  "build": {
+   "entry_points": [
+    "secimport = secimport.cli:main"
+   ],
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "secimport",
+   "version": "0.10.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "poetry-core >=1.0.0",
+    "python 3.9"
+   ],
+   "run": [
+    "fire >=0.4,<0.7",
+    "python >=3.9,<4.0",
+    "pyyaml >=6.0.0,<7.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "6748540c911beb4aed5bdc192ffa139c275507d0f526cf6a25ccfc4c2531a29c",
+   "url": "https://pypi.org/packages/source/s/secimport/secimport-0.10.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "secimport --help"
+   ],
+   "imports": [
+    "secimport"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "secimport",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "secimport"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/secimport.json"
+ },
+ "raw_meta_yaml": "{% set name = \"secimport\" %}\n{% set version = \"0.10.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/secimport-{{ version }}.tar.gz\n  sha256: 6748540c911beb4aed5bdc192ffa139c275507d0f526cf6a25ccfc4c2531a29c\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n  entry_points:\n    - secimport = secimport.cli:main\n\nrequirements:\n  host:\n    - pip\n    - poetry-core >=1.0.0\n    - python {{ python_min }}\n  run:\n    - fire >=0.4,<0.7\n    - python >={{ python_min }},<4.0\n    - pyyaml >=6.0.0,<7.0.0\n\ntest:\n  imports:\n    - secimport\n  commands:\n    - pip check\n    - secimport --help\n  requires:\n    - pip\n    - python {{ python_min }}\nabout:\n  home: https://github.com/avilum/secimport\n  summary: A sandbox/supervisor for python modules.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "fire",
+   "pip",
+   "poetry-core",
+   "python",
+   "pyyaml"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fire",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core >=1.0.0",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fire >=0.4,<0.7",
+    "python >=3.9,<4.0",
+    "pyyaml >=6.0.0,<7.0.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/s/secimport/secimport-0.10.0.tar.gz",
+ "version": "0.10.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/secimport.json"
+ }
+}

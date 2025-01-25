@@ -1,0 +1,615 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "win": "azure"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "geckodriver",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "This program provides the HTTP API described by the WebDriver protocol to\ncommunicate with Gecko browsers, such as Firefox. It translates calls into\nthe Marionette remote protocol by acting as a proxy between the local- and\nremote ends.\n",
+   "dev_url": "https://searchfox.org/mozilla-central/source/testing/geckodriver",
+   "doc_url": "https://firefox-source-docs.mozilla.org/testing/geckodriver/geckodriver",
+   "home": "https://github.com/mozilla/geckodriver",
+   "license": "MPL-2.0",
+   "license_file": [
+    "THIRDPARTY.yml",
+    "toolkit/content/license.html"
+   ],
+   "summary": "geckodriver is a proxy for using W3C WebDriver-compatible clients to\ninteract with Gecko-based browsers.\n"
+  },
+  "build": {
+   "number": "0",
+   "script_env": [
+    "MOZ_HEADLESS=1"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "geckodriver",
+   "version": "0.35.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4-LICENSE.zip",
+    "sha256": "2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4.zip",
+    "sha256": "571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/testing"
+   }
+  ],
+  "test": {
+   "commands": [
+    "geckodriver --version",
+    "geckodriver --help",
+    "geckodriver --version | grep 0.35.0",
+    "conda inspect linkages -p $PREFIX geckodriver",
+    "pytest test_selenium.py"
+   ],
+   "files": [
+    "test_selenium.py"
+   ],
+   "requires": [
+    "firefox >=115",
+    "python >=3.6",
+    "selenium",
+    "pytest"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "cxx_compiler_stub",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "firefox",
+    "pytest",
+    "python",
+    "selenium"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "This program provides the HTTP API described by the WebDriver protocol to\ncommunicate with Gecko browsers, such as Firefox. It translates calls into\nthe Marionette remote protocol by acting as a proxy between the local- and\nremote ends.\n",
+   "dev_url": "https://searchfox.org/mozilla-central/source/testing/geckodriver",
+   "doc_url": "https://firefox-source-docs.mozilla.org/testing/geckodriver/geckodriver",
+   "home": "https://github.com/mozilla/geckodriver",
+   "license": "MPL-2.0",
+   "license_file": [
+    "THIRDPARTY.yml",
+    "toolkit/content/license.html"
+   ],
+   "summary": "geckodriver is a proxy for using W3C WebDriver-compatible clients to\ninteract with Gecko-based browsers.\n"
+  },
+  "build": {
+   "number": "0",
+   "script_env": [
+    "MOZ_HEADLESS=1"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "geckodriver",
+   "version": "0.35.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4-LICENSE.zip",
+    "sha256": "2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4.zip",
+    "sha256": "571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/testing"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4-LICENSE.zip",
+    "sha256": "2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4.zip",
+    "sha256": "571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/testing"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4-LICENSE.zip",
+    "sha256": "2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4.zip",
+    "sha256": "571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/testing"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4-LICENSE.zip",
+    "sha256": "2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4.zip",
+    "sha256": "571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/testing"
+   }
+  ],
+  "test": {
+   "commands": [
+    "geckodriver --version",
+    "geckodriver --help",
+    "geckodriver --version | grep 0.35.0",
+    "conda inspect linkages -p $PREFIX geckodriver",
+    "pytest test_selenium.py",
+    "conda inspect objects -p $PREFIX geckodriver"
+   ],
+   "files": [
+    "test_selenium.py"
+   ],
+   "requires": [
+    "firefox >=115",
+    "python >=3.6",
+    "selenium",
+    "pytest"
+   ]
+  }
+ },
+ "name": "geckodriver",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "This program provides the HTTP API described by the WebDriver protocol to\ncommunicate with Gecko browsers, such as Firefox. It translates calls into\nthe Marionette remote protocol by acting as a proxy between the local- and\nremote ends.\n",
+   "dev_url": "https://searchfox.org/mozilla-central/source/testing/geckodriver",
+   "doc_url": "https://firefox-source-docs.mozilla.org/testing/geckodriver/geckodriver",
+   "home": "https://github.com/mozilla/geckodriver",
+   "license": "MPL-2.0",
+   "license_file": [
+    "THIRDPARTY.yml",
+    "toolkit/content/license.html"
+   ],
+   "summary": "geckodriver is a proxy for using W3C WebDriver-compatible clients to\ninteract with Gecko-based browsers.\n"
+  },
+  "build": {
+   "number": "0",
+   "script_env": [
+    "MOZ_HEADLESS=1"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "geckodriver",
+   "version": "0.35.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4-LICENSE.zip",
+    "sha256": "2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4.zip",
+    "sha256": "571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/testing"
+   }
+  ],
+  "test": {
+   "commands": [
+    "geckodriver --version",
+    "geckodriver --help",
+    "geckodriver --version | grep 0.35.0",
+    "conda inspect linkages -p $PREFIX geckodriver",
+    "conda inspect objects -p $PREFIX geckodriver",
+    "pytest test_selenium.py"
+   ],
+   "files": [
+    "test_selenium.py"
+   ],
+   "requires": [
+    "firefox >=115",
+    "python >=3.6",
+    "selenium",
+    "pytest"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "cxx_compiler_stub",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "firefox",
+    "pytest",
+    "python",
+    "selenium"
+   ]
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "This program provides the HTTP API described by the WebDriver protocol to\ncommunicate with Gecko browsers, such as Firefox. It translates calls into\nthe Marionette remote protocol by acting as a proxy between the local- and\nremote ends.\n",
+   "dev_url": "https://searchfox.org/mozilla-central/source/testing/geckodriver",
+   "doc_url": "https://firefox-source-docs.mozilla.org/testing/geckodriver/geckodriver",
+   "home": "https://github.com/mozilla/geckodriver",
+   "license": "MPL-2.0",
+   "license_file": [
+    "THIRDPARTY.yml",
+    "toolkit/content/license.html"
+   ],
+   "summary": "geckodriver is a proxy for using W3C WebDriver-compatible clients to\ninteract with Gecko-based browsers.\n"
+  },
+  "build": {
+   "number": "0",
+   "script_env": [
+    "MOZ_HEADLESS=1"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "geckodriver",
+   "version": "0.35.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4-LICENSE.zip",
+    "sha256": "2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4.zip",
+    "sha256": "571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/testing"
+   }
+  ],
+  "test": {
+   "commands": [
+    "geckodriver --version",
+    "geckodriver --help",
+    "geckodriver --version | grep 0.35.0",
+    "conda inspect linkages -p $PREFIX geckodriver",
+    "conda inspect objects -p $PREFIX geckodriver",
+    "pytest test_selenium.py"
+   ],
+   "files": [
+    "test_selenium.py"
+   ],
+   "requires": [
+    "firefox >=115",
+    "python >=3.6",
+    "selenium",
+    "pytest"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "cxx_compiler_stub",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "firefox",
+    "pytest",
+    "python",
+    "selenium"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "geckodriver"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64",
+  "osx_arm64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/geckodriver.json"
+ },
+ "raw_meta_yaml": "{% set version = \"0.35.0\" %}\n\n# sourced from:\n# https://firefox-source-docs.mozilla.org/testing/geckodriver/Support.html\n{% set min_firefox = \"115\" %}\n\n# sourced from:\n# https://github.com/mozilla/geckodriver/releases\n{% set changeset = \"9f0a0036bea4\" %}\n\npackage:\n  name: geckodriver\n  version: {{ version }}\n\nsource:\n  - fn: geckodriver-{{ version }}-{{ changeset }}-LICENSE.zip\n    url: https://hg.mozilla.org/mozilla-central/archive/{{ changeset }}.zip/toolkit/content/license.html\n    sha256: 2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb\n  - fn: geckodriver-{{ version }}-{{ changeset }}.zip\n    # all of /testing because of other unpublished crates\n    url: https://hg.mozilla.org/mozilla-central/archive/{{ changeset }}.zip/testing\n    sha256: 571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  script_env:\n    - MOZ_HEADLESS=1\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('rust') }}\n    - {{ stdlib('c') }}\n    - cargo-bundle-licenses\n\ntest:\n  files:\n    - test_selenium.py\n  requires:\n    - firefox >={{ min_firefox }}\n    - python >=3.6\n    - selenium\n    - pytest\n  commands:\n    - geckodriver --version\n    - geckodriver --help\n    # this important just so we know that the version is accurate\n    # https://github.com/mozilla/geckodriver/issues/1615\n    - geckodriver --version | grep {{ version }}  # [not win]\n    - conda inspect linkages -p $PREFIX geckodriver  # [not win]\n    - conda inspect objects -p $PREFIX geckodriver  # [osx]\n    # TODO: may be needed\n    # - set -m && % xattr -r -d com.apple.quarantine $PREFIX/bin/geckodriver  # [osx]\n    - pytest test_selenium.py\n\nabout:\n  home: https://github.com/mozilla/geckodriver\n  license: MPL-2.0\n  license_file:\n    - THIRDPARTY.yml\n    - toolkit/content/license.html\n  summary: |\n    geckodriver is a proxy for using W3C WebDriver-compatible clients to\n    interact with Gecko-based browsers.\n  description: |\n    This program provides the HTTP API described by the WebDriver protocol to\n    communicate with Gecko browsers, such as Firefox. It translates calls into\n    the Marionette remote protocol by acting as a proxy between the local- and\n    remote ends.\n  doc_url: https://firefox-source-docs.mozilla.org/testing/geckodriver/geckodriver\n  dev_url: https://searchfox.org/mozilla-central/source/testing/geckodriver\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "cargo-bundle-licenses",
+   "cxx_compiler_stub",
+   "rust_compiler_stub"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "cxx_compiler_stub",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "firefox",
+    "pytest",
+    "python",
+    "selenium"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "cxx_compiler_stub",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "firefox >=115",
+    "pytest",
+    "python >=3.6",
+    "selenium"
+   ]
+  }
+ },
+ "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html",
+ "version": "0.35.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/geckodriver.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "This program provides the HTTP API described by the WebDriver protocol to\ncommunicate with Gecko browsers, such as Firefox. It translates calls into\nthe Marionette remote protocol by acting as a proxy between the local- and\nremote ends.\n",
+   "dev_url": "https://searchfox.org/mozilla-central/source/testing/geckodriver",
+   "doc_url": "https://firefox-source-docs.mozilla.org/testing/geckodriver/geckodriver",
+   "home": "https://github.com/mozilla/geckodriver",
+   "license": "MPL-2.0",
+   "license_file": [
+    "THIRDPARTY.yml",
+    "toolkit/content/license.html"
+   ],
+   "summary": "geckodriver is a proxy for using W3C WebDriver-compatible clients to\ninteract with Gecko-based browsers.\n"
+  },
+  "build": {
+   "number": "0",
+   "script_env": [
+    "MOZ_HEADLESS=1"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "geckodriver",
+   "version": "0.35.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4-LICENSE.zip",
+    "sha256": "2dfd0e19250e76ccad5b8259e4772a4fca59c8171e8b1aadfd5d6e210b369afb",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/toolkit/content/license.html"
+   },
+   {
+    "fn": "geckodriver-0.35.0-9f0a0036bea4.zip",
+    "sha256": "571d0d844cf1666ddfe8218f9e2c751e259c6933dab101ff3d0dcadc86d1cec8",
+    "url": "https://hg.mozilla.org/mozilla-central/archive/9f0a0036bea4.zip/testing"
+   }
+  ],
+  "test": {
+   "commands": [
+    "geckodriver --version",
+    "geckodriver --help",
+    "pytest test_selenium.py"
+   ],
+   "files": [
+    "test_selenium.py"
+   ],
+   "requires": [
+    "firefox >=115",
+    "python >=3.6",
+    "selenium",
+    "pytest"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "cxx_compiler_stub",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "firefox",
+    "pytest",
+    "python",
+    "selenium"
+   ]
+  }
+ }
+}

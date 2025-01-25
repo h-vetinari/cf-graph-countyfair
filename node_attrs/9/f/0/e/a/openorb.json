@@ -1,0 +1,549 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "azure"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "openorb",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "OpenOrb (or OOrb) is an open-source orbit-computation package.\n",
+   "dev_url": "https://github.com/oorb/oorb",
+   "doc_url": "https://github.com/oorb/oorb/blob/master/README.md",
+   "home": "https://github.com/oorb/oorb",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "An open-source orbit-computation package"
+  },
+  "build": {
+   "number": "6"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mjuric",
+    "bsipocz",
+    "rhiannonlynne"
+   ]
+  },
+  "package": {
+   "name": "openorb",
+   "version": "1.0.1.20191029"
+  },
+  "requirements": {
+   "build": [
+    "make",
+    "fortran_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "numpy"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "git_rev": "475dc9db246bb3380e7d91f6e51fc3cb841f484a",
+   "git_url": "https://github.com/oorb/oorb.git",
+   "patches": [
+    "0001-conda-compat.patch",
+    "0002-use-conda-gfortran.patch",
+    "0003-use-conda-libgfortran.patch"
+   ]
+  },
+  "test": {
+   "commands": [
+    "python python/test.py"
+   ],
+   "imports": [
+    "pyoorb"
+   ],
+   "source_files": [
+    "python/test.py"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "description": "OpenOrb (or OOrb) is an open-source orbit-computation package.\n",
+   "dev_url": "https://github.com/oorb/oorb",
+   "doc_url": "https://github.com/oorb/oorb/blob/master/README.md",
+   "home": "https://github.com/oorb/oorb",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "An open-source orbit-computation package"
+  },
+  "build": {
+   "number": "6"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mjuric",
+    "bsipocz",
+    "rhiannonlynne"
+   ]
+  },
+  "package": {
+   "name": "openorb",
+   "version": "1.0.1.20191029"
+  },
+  "requirements": {
+   "build": [
+    "make",
+    "fortran_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "numpy"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "git_rev": "475dc9db246bb3380e7d91f6e51fc3cb841f484a",
+   "git_url": "https://github.com/oorb/oorb.git",
+   "patches": [
+    "0001-conda-compat.patch",
+    "0002-use-conda-gfortran.patch",
+    "0003-use-conda-libgfortran.patch"
+   ]
+  },
+  "test": {
+   "commands": [
+    "python python/test.py"
+   ],
+   "imports": [
+    "pyoorb"
+   ],
+   "source_files": [
+    "python/test.py"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "OpenOrb (or OOrb) is an open-source orbit-computation package.\n",
+   "dev_url": "https://github.com/oorb/oorb",
+   "doc_url": "https://github.com/oorb/oorb/blob/master/README.md",
+   "home": "https://github.com/oorb/oorb",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "An open-source orbit-computation package"
+  },
+  "build": {
+   "number": "6"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mjuric",
+    "bsipocz",
+    "rhiannonlynne"
+   ]
+  },
+  "package": {
+   "name": "openorb",
+   "version": "1.0.1.20191029"
+  },
+  "requirements": {
+   "build": [
+    "make",
+    "fortran_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "numpy"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "git_rev": "475dc9db246bb3380e7d91f6e51fc3cb841f484a",
+   "git_url": "https://github.com/oorb/oorb.git",
+   "patches": [
+    "0001-conda-compat.patch",
+    "0002-use-conda-gfortran.patch",
+    "0003-use-conda-libgfortran.patch"
+   ]
+  },
+  "test": {
+   "commands": [
+    "python python/test.py"
+   ],
+   "imports": [
+    "pyoorb"
+   ],
+   "source_files": [
+    "python/test.py"
+   ]
+  }
+ },
+ "name": "openorb",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "OpenOrb (or OOrb) is an open-source orbit-computation package.\n",
+   "dev_url": "https://github.com/oorb/oorb",
+   "doc_url": "https://github.com/oorb/oorb/blob/master/README.md",
+   "home": "https://github.com/oorb/oorb",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "An open-source orbit-computation package"
+  },
+  "build": {
+   "number": "6"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mjuric",
+    "bsipocz",
+    "rhiannonlynne"
+   ]
+  },
+  "package": {
+   "name": "openorb",
+   "version": "1.0.1.20191029"
+  },
+  "requirements": {
+   "build": [
+    "make",
+    "fortran_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "numpy"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "git_rev": "475dc9db246bb3380e7d91f6e51fc3cb841f484a",
+   "git_url": "https://github.com/oorb/oorb.git",
+   "patches": [
+    "0001-conda-compat.patch",
+    "0002-use-conda-gfortran.patch",
+    "0003-use-conda-libgfortran.patch"
+   ]
+  },
+  "test": {
+   "commands": [
+    "python python/test.py"
+   ],
+   "imports": [
+    "pyoorb"
+   ],
+   "source_files": [
+    "python/test.py"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "OpenOrb (or OOrb) is an open-source orbit-computation package.\n",
+   "dev_url": "https://github.com/oorb/oorb",
+   "doc_url": "https://github.com/oorb/oorb/blob/master/README.md",
+   "home": "https://github.com/oorb/oorb",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "An open-source orbit-computation package"
+  },
+  "build": {
+   "number": "6"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mjuric",
+    "bsipocz",
+    "rhiannonlynne"
+   ]
+  },
+  "package": {
+   "name": "openorb",
+   "version": "1.0.1.20191029"
+  },
+  "requirements": {
+   "build": [
+    "make",
+    "fortran_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "numpy"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "git_rev": "475dc9db246bb3380e7d91f6e51fc3cb841f484a",
+   "git_url": "https://github.com/oorb/oorb.git",
+   "patches": [
+    "0001-conda-compat.patch",
+    "0002-use-conda-gfortran.patch",
+    "0003-use-conda-libgfortran.patch"
+   ]
+  },
+  "test": {
+   "commands": [
+    "python python/test.py"
+   ],
+   "imports": [
+    "pyoorb"
+   ],
+   "source_files": [
+    "python/test.py"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "openorb"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "linux_aarch64",
+  "osx_64",
+  "osx_arm64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/openorb.json"
+ },
+ "raw_meta_yaml": "{% set name = \"openorb\" %}\n{% set version = \"1.0.1.20191029\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/oorb/oorb.git\n  git_rev: 475dc9db246bb3380e7d91f6e51fc3cb841f484a\n  patches:\n    - 0001-conda-compat.patch # git diff master..conda > ../conda-forge/openorb-feedstock/recipe/conda-compat.patch\n    - 0002-use-conda-gfortran.patch\n    - 0003-use-conda-libgfortran.patch\n\nbuild:\n  number: 6\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - make\n    - {{ compiler('fortran') }}\n  host:\n    - python\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - openorb-data\n    - openorb-data-de430\n\ntest:\n  imports:\n    - pyoorb\n  source_files:\n    - python/test.py\n  commands:\n    - python python/test.py\n\nabout:\n  home: https://github.com/oorb/oorb\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: 'An open-source orbit-computation package'\n\n  description: |\n    OpenOrb (or OOrb) is an open-source orbit-computation package.\n  doc_url: https://github.com/oorb/oorb/blob/master/README.md\n  dev_url: https://github.com/oorb/oorb\n\nextra:\n  recipe-maintainers:\n    - mjuric\n    - bsipocz\n    - rhiannonlynne\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "fortran_compiler_stub",
+   "make",
+   "numpy",
+   "openorb-data",
+   "openorb-data-de430",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "fortran_compiler_stub",
+    "numpy",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "fortran_compiler_stub",
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "time": 1568135296.4618895,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "openorb-data",
+    "openorb-data-de430",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": null,
+ "version": "1.0.1.20191029",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/openorb.json"
+ }
+}

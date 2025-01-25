@@ -1,0 +1,887 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "xeus-r",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Jupyter kernel for the R programming language",
+   "dev_url": "https://github.com/jupyter-xeus/xeus-r",
+   "doc_url": "https://github.com/jupyter-xeus/xeus-r",
+   "home": "https://github.com/jupyter-xeus/xeus-r",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "R kernel for Jupyter based on xeus"
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "IsabelParedes",
+    "JohanMabille",
+    "DerThorsten",
+    "SylvainCorlay",
+    "romainfrancois"
+   ]
+  },
+  "package": {
+   "name": "xeus-r",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "xeus >=5",
+    "xeus-zmq >=3.0,<4.0",
+    "nlohmann_json >=3.11.3,<4",
+    "r-base"
+   ],
+   "run": [
+    "r-base",
+    "r-evaluate",
+    "r-jsonlite",
+    "r-glue",
+    "r-cli",
+    "r-repr",
+    "r-IRdisplay",
+    "r-r6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "xeus-r-0.3.1.tar.gz",
+   "sha256": "b59e7105e809238f8da135508afa6da7b7bbda66725a22db530b52adc4611a53",
+   "url": "https://github.com/jupyter-xeus/xeus-r/archive/0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/bin/xr",
+    "test -f ${PREFIX}/share/jupyter/kernels/xr/kernel.json",
+    "test -d ${PREFIX}/include/xeus-r",
+    "test -f ${PREFIX}/include/xeus-r/xinterpreter.hpp",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "nlohmann_json",
+    "r-base",
+    "xeus",
+    "xeus-zmq"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-evaluate",
+    "r-glue",
+    "r-irdisplay",
+    "r-jsonlite",
+    "r-r6",
+    "r-repr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "description": "Jupyter kernel for the R programming language",
+   "dev_url": "https://github.com/jupyter-xeus/xeus-r",
+   "doc_url": "https://github.com/jupyter-xeus/xeus-r",
+   "home": "https://github.com/jupyter-xeus/xeus-r",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "R kernel for Jupyter based on xeus"
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "IsabelParedes",
+    "JohanMabille",
+    "DerThorsten",
+    "SylvainCorlay",
+    "romainfrancois"
+   ]
+  },
+  "package": {
+   "name": "xeus-r",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "xeus >=5",
+    "xeus-zmq >=3.0,<4.0",
+    "nlohmann_json >=3.11.3,<4",
+    "r-base"
+   ],
+   "run": [
+    "r-base",
+    "r-evaluate",
+    "r-jsonlite",
+    "r-glue",
+    "r-cli",
+    "r-repr",
+    "r-IRdisplay",
+    "r-r6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "xeus-r-0.3.1.tar.gz",
+   "sha256": "b59e7105e809238f8da135508afa6da7b7bbda66725a22db530b52adc4611a53",
+   "url": "https://github.com/jupyter-xeus/xeus-r/archive/0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/bin/xr",
+    "test -f ${PREFIX}/share/jupyter/kernels/xr/kernel.json",
+    "test -d ${PREFIX}/include/xeus-r",
+    "test -f ${PREFIX}/include/xeus-r/xinterpreter.hpp",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "nlohmann_json",
+    "r-base",
+    "xeus",
+    "xeus-zmq"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-evaluate",
+    "r-glue",
+    "r-irdisplay",
+    "r-jsonlite",
+    "r-r6",
+    "r-repr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "description": "Jupyter kernel for the R programming language",
+   "dev_url": "https://github.com/jupyter-xeus/xeus-r",
+   "doc_url": "https://github.com/jupyter-xeus/xeus-r",
+   "home": "https://github.com/jupyter-xeus/xeus-r",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "R kernel for Jupyter based on xeus"
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "IsabelParedes",
+    "JohanMabille",
+    "DerThorsten",
+    "SylvainCorlay",
+    "romainfrancois"
+   ]
+  },
+  "package": {
+   "name": "xeus-r",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "xeus >=5",
+    "xeus-zmq >=3.0,<4.0",
+    "nlohmann_json >=3.11.3,<4",
+    "r-base"
+   ],
+   "run": [
+    "r-base",
+    "r-evaluate",
+    "r-jsonlite",
+    "r-glue",
+    "r-cli",
+    "r-repr",
+    "r-IRdisplay",
+    "r-r6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "xeus-r-0.3.1.tar.gz",
+   "sha256": "b59e7105e809238f8da135508afa6da7b7bbda66725a22db530b52adc4611a53",
+   "url": "https://github.com/jupyter-xeus/xeus-r/archive/0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/bin/xr",
+    "test -f ${PREFIX}/share/jupyter/kernels/xr/kernel.json",
+    "test -d ${PREFIX}/include/xeus-r",
+    "test -f ${PREFIX}/include/xeus-r/xinterpreter.hpp",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "nlohmann_json",
+    "r-base",
+    "xeus",
+    "xeus-zmq"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-evaluate",
+    "r-glue",
+    "r-irdisplay",
+    "r-jsonlite",
+    "r-r6",
+    "r-repr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Jupyter kernel for the R programming language",
+   "dev_url": "https://github.com/jupyter-xeus/xeus-r",
+   "doc_url": "https://github.com/jupyter-xeus/xeus-r",
+   "home": "https://github.com/jupyter-xeus/xeus-r",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "R kernel for Jupyter based on xeus"
+  },
+  "build": {
+   "missing_dso_whitelist": [
+    "*/R.dll"
+   ],
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "IsabelParedes",
+    "JohanMabille",
+    "DerThorsten",
+    "SylvainCorlay",
+    "romainfrancois"
+   ]
+  },
+  "package": {
+   "name": "xeus-r",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "xeus >=5",
+    "xeus-zmq >=3.0,<4.0",
+    "nlohmann_json >=3.11.3,<4",
+    "r-base"
+   ],
+   "run": [
+    "r-base",
+    "r-evaluate",
+    "r-jsonlite",
+    "r-glue",
+    "r-cli",
+    "r-repr",
+    "r-IRdisplay",
+    "r-r6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "xeus-r-0.3.1.tar.gz",
+   "sha256": "b59e7105e809238f8da135508afa6da7b7bbda66725a22db530b52adc4611a53",
+   "url": "https://github.com/jupyter-xeus/xeus-r/archive/0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/bin/xr",
+    "test -f ${PREFIX}/share/jupyter/kernels/xr/kernel.json",
+    "test -d ${PREFIX}/include/xeus-r",
+    "test -f ${PREFIX}/include/xeus-r/xinterpreter.hpp",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfigVersion.cmake",
+    "if not exist %LIBRARY_BIN%\\\\xr.exe (exit 1)",
+    "if not exist %LIBRARY_PREFIX%\\\\share\\\\jupyter\\\\kernels\\\\xr\\\\kernel.json (exit 1)",
+    "if not exist %LIBRARY_LIB%\\\\cmake\\\\xeus-r\\\\xeus-rConfig.cmake (exit 1)",
+    "if not exist %LIBRARY_LIB%\\\\cmake\\\\xeus-r\\\\xeus-rConfigVersion.cmake (exit 1)",
+    "if not exist %PREFIX%\\\\share\\\\jupyter\\\\kernels\\\\xr\\\\kernel.json (exit 1)"
+   ]
+  }
+ },
+ "name": "xeus-r",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "Jupyter kernel for the R programming language",
+   "dev_url": "https://github.com/jupyter-xeus/xeus-r",
+   "doc_url": "https://github.com/jupyter-xeus/xeus-r",
+   "home": "https://github.com/jupyter-xeus/xeus-r",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "R kernel for Jupyter based on xeus"
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "IsabelParedes",
+    "JohanMabille",
+    "DerThorsten",
+    "SylvainCorlay",
+    "romainfrancois"
+   ]
+  },
+  "package": {
+   "name": "xeus-r",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "xeus >=5",
+    "xeus-zmq >=3.0,<4.0",
+    "nlohmann_json >=3.11.3,<4",
+    "r-base"
+   ],
+   "run": [
+    "r-base",
+    "r-evaluate",
+    "r-jsonlite",
+    "r-glue",
+    "r-cli",
+    "r-repr",
+    "r-IRdisplay",
+    "r-r6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "xeus-r-0.3.1.tar.gz",
+   "sha256": "b59e7105e809238f8da135508afa6da7b7bbda66725a22db530b52adc4611a53",
+   "url": "https://github.com/jupyter-xeus/xeus-r/archive/0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/bin/xr",
+    "test -f ${PREFIX}/share/jupyter/kernels/xr/kernel.json",
+    "test -d ${PREFIX}/include/xeus-r",
+    "test -f ${PREFIX}/include/xeus-r/xinterpreter.hpp",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfigVersion.cmake"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "nlohmann_json",
+    "r-base",
+    "xeus",
+    "xeus-zmq"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-evaluate",
+    "r-glue",
+    "r-irdisplay",
+    "r-jsonlite",
+    "r-r6",
+    "r-repr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "Jupyter kernel for the R programming language",
+   "dev_url": "https://github.com/jupyter-xeus/xeus-r",
+   "doc_url": "https://github.com/jupyter-xeus/xeus-r",
+   "home": "https://github.com/jupyter-xeus/xeus-r",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "R kernel for Jupyter based on xeus"
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "IsabelParedes",
+    "JohanMabille",
+    "DerThorsten",
+    "SylvainCorlay",
+    "romainfrancois"
+   ]
+  },
+  "package": {
+   "name": "xeus-r",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "xeus >=5",
+    "xeus-zmq >=3.0,<4.0",
+    "nlohmann_json >=3.11.3,<4",
+    "r-base"
+   ],
+   "run": [
+    "r-base",
+    "r-evaluate",
+    "r-jsonlite",
+    "r-glue",
+    "r-cli",
+    "r-repr",
+    "r-IRdisplay",
+    "r-r6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "xeus-r-0.3.1.tar.gz",
+   "sha256": "b59e7105e809238f8da135508afa6da7b7bbda66725a22db530b52adc4611a53",
+   "url": "https://github.com/jupyter-xeus/xeus-r/archive/0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/bin/xr",
+    "test -f ${PREFIX}/share/jupyter/kernels/xr/kernel.json",
+    "test -d ${PREFIX}/include/xeus-r",
+    "test -f ${PREFIX}/include/xeus-r/xinterpreter.hpp",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfigVersion.cmake"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "nlohmann_json",
+    "r-base",
+    "xeus",
+    "xeus-zmq"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-evaluate",
+    "r-glue",
+    "r-irdisplay",
+    "r-jsonlite",
+    "r-r6",
+    "r-repr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "xeus-r"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
+  "osx_64",
+  "osx_arm64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/xeus-r.json"
+ },
+ "raw_meta_yaml": "{% set name = \"xeus-r\" %}\n\n{% set version = \"0.3.1\" %}\n{% set sha256 = \"b59e7105e809238f8da135508afa6da7b7bbda66725a22db530b52adc4611a53\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/jupyter-xeus/xeus-r/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  rpaths:\n    - lib/R/lib/\n    - lib/\n  missing_dso_whitelist:\n    - '*/R.dll'  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - make  # [unix]\n  host:\n    - xeus >=5\n    - xeus-zmq >=3.0,<4.0\n    - nlohmann_json >=3.11.3,<4\n    - r-base\n  run:\n    - r-base\n    - r-evaluate\n    - r-jsonlite\n    - r-glue\n    - r-cli\n    - r-repr\n    - r-IRdisplay\n    - r-r6\n\ntest:\n  commands:\n    - test -f ${PREFIX}/bin/xr                                                              # [unix]\n    - test -f ${PREFIX}/share/jupyter/kernels/xr/kernel.json                                # [unix]\n    - test -d ${PREFIX}/include/xeus-r                                                      # [unix]\n    - test -f ${PREFIX}/include/xeus-r/xinterpreter.hpp                                     # [unix]\n    - test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfig.cmake                                 # [unix]\n    - test -f ${PREFIX}/lib/cmake/xeus-r/xeus-rConfigVersion.cmake                          # [unix]\n\n    - if not exist %LIBRARY_BIN%\\\\xr.exe (exit 1)                                           # [win]\n    - if not exist %LIBRARY_PREFIX%\\\\share\\\\jupyter\\\\kernels\\\\xr\\\\kernel.json (exit 1)      # [win]\n    - if not exist %LIBRARY_LIB%\\\\cmake\\\\xeus-r\\\\xeus-rConfig.cmake (exit 1)                # [win]\n    - if not exist %LIBRARY_LIB%\\\\cmake\\\\xeus-r\\\\xeus-rConfigVersion.cmake (exit 1)         # [win]\n    # The kernel spec in installed in the general PREFIX\n    - if not exist %PREFIX%\\\\share\\\\jupyter\\\\kernels\\\\xr\\\\kernel.json (exit 1)              # [win]\n\n\nabout:\n  home: https://github.com/jupyter-xeus/xeus-r\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n  summary: R kernel for Jupyter based on xeus\n  description: Jupyter kernel for the R programming language\n  doc_url: https://github.com/jupyter-xeus/xeus-r\n  dev_url: https://github.com/jupyter-xeus/xeus-r\n\nextra:\n  recipe-maintainers:\n    - IsabelParedes\n    - JohanMabille\n    - DerThorsten\n    - SylvainCorlay\n    - romainfrancois\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_stdlib_stub",
+   "cmake",
+   "cxx_compiler_stub",
+   "make",
+   "nlohmann_json",
+   "r-base",
+   "r-cli",
+   "r-evaluate",
+   "r-glue",
+   "r-irdisplay",
+   "r-jsonlite",
+   "r-r6",
+   "r-repr",
+   "xeus",
+   "xeus-zmq"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "nlohmann_json",
+    "r-base",
+    "xeus",
+    "xeus-zmq"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "r-base",
+    "r-cli",
+    "r-evaluate",
+    "r-glue",
+    "r-irdisplay",
+    "r-jsonlite",
+    "r-r6",
+    "r-repr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "nlohmann_json >=3.11.3,<4",
+    "r-base",
+    "xeus >=5",
+    "xeus-zmq >=3.0,<4.0"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-IRdisplay",
+    "r-base",
+    "r-cli",
+    "r-evaluate",
+    "r-glue",
+    "r-jsonlite",
+    "r-r6",
+    "r-repr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/jupyter-xeus/xeus-r/archive/0.3.1.tar.gz",
+ "version": "0.3.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/xeus-r.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "Jupyter kernel for the R programming language",
+   "dev_url": "https://github.com/jupyter-xeus/xeus-r",
+   "doc_url": "https://github.com/jupyter-xeus/xeus-r",
+   "home": "https://github.com/jupyter-xeus/xeus-r",
+   "license": "GPL-3.0-only",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "R kernel for Jupyter based on xeus"
+  },
+  "build": {
+   "missing_dso_whitelist": [
+    "*/R.dll"
+   ],
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "IsabelParedes",
+    "JohanMabille",
+    "DerThorsten",
+    "SylvainCorlay",
+    "romainfrancois"
+   ]
+  },
+  "package": {
+   "name": "xeus-r",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake"
+   ],
+   "host": [
+    "xeus >=5",
+    "xeus-zmq >=3.0,<4.0",
+    "nlohmann_json >=3.11.3,<4",
+    "r-base"
+   ],
+   "run": [
+    "r-base",
+    "r-evaluate",
+    "r-jsonlite",
+    "r-glue",
+    "r-cli",
+    "r-repr",
+    "r-IRdisplay",
+    "r-r6"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "xeus-r-0.3.1.tar.gz",
+   "sha256": "b59e7105e809238f8da135508afa6da7b7bbda66725a22db530b52adc4611a53",
+   "url": "https://github.com/jupyter-xeus/xeus-r/archive/0.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "if not exist %LIBRARY_BIN%\\\\xr.exe (exit 1)",
+    "if not exist %LIBRARY_PREFIX%\\\\share\\\\jupyter\\\\kernels\\\\xr\\\\kernel.json (exit 1)",
+    "if not exist %LIBRARY_LIB%\\\\cmake\\\\xeus-r\\\\xeus-rConfig.cmake (exit 1)",
+    "if not exist %LIBRARY_LIB%\\\\cmake\\\\xeus-r\\\\xeus-rConfigVersion.cmake (exit 1)",
+    "if not exist %PREFIX%\\\\share\\\\jupyter\\\\kernels\\\\xr\\\\kernel.json (exit 1)"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "nlohmann_json",
+    "r-base",
+    "xeus",
+    "xeus-zmq"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-evaluate",
+    "r-glue",
+    "r-irdisplay",
+    "r-jsonlite",
+    "r-r6",
+    "r-repr"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ }
+}

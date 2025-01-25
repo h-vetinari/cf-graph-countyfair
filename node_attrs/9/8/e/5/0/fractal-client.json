@@ -1,0 +1,272 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": false,
+   "inspection": "update-all"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "fractal-client",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/fractal-analytics-platform/fractal-client",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Client component of the Fractal analytics platform"
+  },
+  "build": {
+   "entry_points": [
+    "fractal = fractal_client.client:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ychiucco",
+    "jluethi",
+    "mfranzon",
+    "tcompa"
+   ]
+  },
+  "package": {
+   "name": "fractal-client",
+   "version": "2.6.1"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10.0",
+    "poetry-core",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10.0,<4.0.0",
+    "python-dotenv >=1.0.0,<1.1.0",
+    "rich >=12.5.1,<13.0.0",
+    "httpx >=0.27.0,<0.28.0",
+    "pyjwt >=2.4.0,<3.0.0",
+    "packaging >=23.1.0,<24.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1d41542a9ba24e6f6f403a5c5a9ae095f05d9ee979262dd0fc460bac7e96fccd",
+   "url": "https://pypi.org/packages/source/f/fractal-client/fractal_client-2.6.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "fractal --help"
+   ],
+   "imports": [
+    "fractal_client"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10.0"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "httpx",
+    "packaging",
+    "pyjwt",
+    "python",
+    "python-dotenv",
+    "rich"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/fractal-analytics-platform/fractal-client",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Client component of the Fractal analytics platform"
+  },
+  "build": {
+   "entry_points": [
+    "fractal = fractal_client.client:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ychiucco",
+    "jluethi",
+    "mfranzon",
+    "tcompa"
+   ]
+  },
+  "package": {
+   "name": "fractal-client",
+   "version": "2.6.1"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10.0",
+    "poetry-core",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10.0,<4.0.0",
+    "python-dotenv >=1.0.0,<1.1.0",
+    "rich >=12.5.1,<13.0.0",
+    "httpx >=0.27.0,<0.28.0",
+    "pyjwt >=2.4.0,<3.0.0",
+    "packaging >=23.1.0,<24.0.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "1d41542a9ba24e6f6f403a5c5a9ae095f05d9ee979262dd0fc460bac7e96fccd",
+   "url": "https://pypi.org/packages/source/f/fractal-client/fractal_client-2.6.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "fractal --help"
+   ],
+   "imports": [
+    "fractal_client"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10.0"
+   ]
+  }
+ },
+ "name": "fractal-client",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "fractal-client"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/fractal-client.json"
+ },
+ "raw_meta_yaml": "{% set python_min = \"3.10.0\" %}\n{% set name = \"fractal-client\" %}\n{% set version = \"2.6.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_client-{{ version }}.tar.gz\n  sha256: 1d41542a9ba24e6f6f403a5c5a9ae095f05d9ee979262dd0fc460bac7e96fccd\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - fractal = fractal_client.client:main\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n    - python-dotenv >=1.0.0,<1.1.0\n    - rich >=12.5.1,<13.0.0\n    - httpx >=0.27.0,<0.28.0\n    - pyjwt >=2.4.0,<3.0.0\n    - packaging >=23.1.0,<24.0.0\n\ntest:\n  imports:\n    - fractal_client\n  commands:\n    - pip check\n    - fractal --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/fractal-analytics-platform/fractal-client\n  summary: Client component of the Fractal analytics platform\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ychiucco\n    - jluethi\n    - mfranzon\n    - tcompa\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "httpx",
+   "packaging",
+   "pip",
+   "poetry-core",
+   "pyjwt",
+   "python",
+   "python-dotenv",
+   "rich"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "httpx",
+    "packaging",
+    "pyjwt",
+    "python",
+    "python-dotenv",
+    "rich"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python 3.10.0"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "httpx >=0.27.0,<0.28.0",
+    "packaging >=23.1.0,<24.0.0",
+    "pyjwt >=2.4.0,<3.0.0",
+    "python >=3.10.0,<4.0.0",
+    "python-dotenv >=1.0.0,<1.1.0",
+    "rich >=12.5.1,<13.0.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.10.0"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/f/fractal-client/fractal_client-2.6.1.tar.gz",
+ "version": "2.6.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/fractal-client.json"
+ }
+}

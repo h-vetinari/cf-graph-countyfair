@@ -1,0 +1,227 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "matplotlib-fontja",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/ciffelia/matplotlib-fontja",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "matplotlib\u3092\u65E5\u672C\u8A9E\u8868\u793A\u306B\u5BFE\u5FDC\u3055\u305B\u307E\u3059\u3002(Support matplotlib for Japanese display.)"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ciffelia",
+    "yu9824"
+   ]
+  },
+  "package": {
+   "name": "matplotlib-fontja",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "hatchling",
+    "pip"
+   ],
+   "run": [
+    "python >=3.7",
+    "matplotlib-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d3b92a1927a9c1dad2932423668777742b6b3f9172b33fe86300dc5bbc2755e6",
+   "url": "https://pypi.io/packages/source/m/matplotlib-fontja/matplotlib_fontja-1.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "matplotlib_fontja"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/ciffelia/matplotlib-fontja",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "matplotlib\u3092\u65E5\u672C\u8A9E\u8868\u793A\u306B\u5BFE\u5FDC\u3055\u305B\u307E\u3059\u3002(Support matplotlib for Japanese display.)"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ciffelia",
+    "yu9824"
+   ]
+  },
+  "package": {
+   "name": "matplotlib-fontja",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.7",
+    "hatchling",
+    "pip"
+   ],
+   "run": [
+    "python >=3.7",
+    "matplotlib-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "d3b92a1927a9c1dad2932423668777742b6b3f9172b33fe86300dc5bbc2755e6",
+   "url": "https://pypi.io/packages/source/m/matplotlib-fontja/matplotlib_fontja-1.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "matplotlib_fontja"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "matplotlib-fontja",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "matplotlib-fontja"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/matplotlib-fontja.json"
+ },
+ "raw_meta_yaml": "{% set name = \"matplotlib-fontja\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matplotlib_fontja-{{ version }}.tar.gz\n  sha256: d3b92a1927a9c1dad2932423668777742b6b3f9172b33fe86300dc5bbc2755e6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.7\n    - hatchling\n    - pip\n  run:\n    - python >=3.7\n    - matplotlib-base\n\ntest:\n  imports:\n    - matplotlib_fontja\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/ciffelia/matplotlib-fontja\n  summary: matplotlib\u3092\u65E5\u672C\u8A9E\u8868\u793A\u306B\u5BFE\u5FDC\u3055\u305B\u307E\u3059\u3002(Support matplotlib for Japanese display.)\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ciffelia\n    - yu9824\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "hatchling",
+   "matplotlib-base",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python >=3.7"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "matplotlib-base",
+    "python >=3.7"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/m/matplotlib-fontja/matplotlib_fontja-1.0.0.tar.gz",
+ "version": "1.0.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/matplotlib-fontja.json"
+ }
+}

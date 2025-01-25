@@ -1,0 +1,576 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "pigz",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "pigz, which stands for parallel implementation of gzip, is a fully functional\nreplacement for gzip that exploits multiple processors and multiple cores\nto the hilt when compressing data.\n",
+   "doc_url": "https://zlib.net/pigz/pigz.pdf",
+   "home": "https://zlib.net/pigz/",
+   "license": "Zlib",
+   "license_family": "other",
+   "license_file": "README",
+   "summary": "Parallel implementation of gzip"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "epruesse",
+    "mfansler",
+    "martin-g"
+   ]
+  },
+  "package": {
+   "name": "pigz",
+   "version": "2.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "make"
+   ],
+   "host": [
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706",
+   "url": "https://github.com/madler/pigz/archive/v2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pigz -h",
+    "unpigz -h"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "description": "pigz, which stands for parallel implementation of gzip, is a fully functional\nreplacement for gzip that exploits multiple processors and multiple cores\nto the hilt when compressing data.\n",
+   "doc_url": "https://zlib.net/pigz/pigz.pdf",
+   "home": "https://zlib.net/pigz/",
+   "license": "Zlib",
+   "license_family": "other",
+   "license_file": "README",
+   "summary": "Parallel implementation of gzip"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "epruesse",
+    "mfansler",
+    "martin-g"
+   ]
+  },
+  "package": {
+   "name": "pigz",
+   "version": "2.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "make"
+   ],
+   "host": [
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706",
+   "url": "https://github.com/madler/pigz/archive/v2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pigz -h",
+    "unpigz -h"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "description": "pigz, which stands for parallel implementation of gzip, is a fully functional\nreplacement for gzip that exploits multiple processors and multiple cores\nto the hilt when compressing data.\n",
+   "doc_url": "https://zlib.net/pigz/pigz.pdf",
+   "home": "https://zlib.net/pigz/",
+   "license": "Zlib",
+   "license_family": "other",
+   "license_file": "README",
+   "summary": "Parallel implementation of gzip"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "epruesse",
+    "mfansler",
+    "martin-g"
+   ]
+  },
+  "package": {
+   "name": "pigz",
+   "version": "2.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "make"
+   ],
+   "host": [
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706",
+   "url": "https://github.com/madler/pigz/archive/v2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pigz -h",
+    "unpigz -h"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "pigz, which stands for parallel implementation of gzip, is a fully functional\nreplacement for gzip that exploits multiple processors and multiple cores\nto the hilt when compressing data.\n",
+   "doc_url": "https://zlib.net/pigz/pigz.pdf",
+   "home": "https://zlib.net/pigz/",
+   "license": "Zlib",
+   "license_family": "other",
+   "license_file": "README",
+   "summary": "Parallel implementation of gzip"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "epruesse",
+    "mfansler",
+    "martin-g"
+   ]
+  },
+  "package": {
+   "name": "pigz",
+   "version": "2.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "make",
+    "m2w64_c_compiler_stub",
+    "posix"
+   ],
+   "host": [
+    "zlib",
+    "pthreads-win32"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706",
+   "url": "https://github.com/madler/pigz/archive/v2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pigz -h",
+    "unpigz -h"
+   ]
+  }
+ },
+ "name": "pigz",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "pigz, which stands for parallel implementation of gzip, is a fully functional\nreplacement for gzip that exploits multiple processors and multiple cores\nto the hilt when compressing data.\n",
+   "doc_url": "https://zlib.net/pigz/pigz.pdf",
+   "home": "https://zlib.net/pigz/",
+   "license": "Zlib",
+   "license_family": "other",
+   "license_file": "README",
+   "summary": "Parallel implementation of gzip"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "epruesse",
+    "mfansler",
+    "martin-g"
+   ]
+  },
+  "package": {
+   "name": "pigz",
+   "version": "2.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "make"
+   ],
+   "host": [
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706",
+   "url": "https://github.com/madler/pigz/archive/v2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pigz -h",
+    "unpigz -h"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "pigz, which stands for parallel implementation of gzip, is a fully functional\nreplacement for gzip that exploits multiple processors and multiple cores\nto the hilt when compressing data.\n",
+   "doc_url": "https://zlib.net/pigz/pigz.pdf",
+   "home": "https://zlib.net/pigz/",
+   "license": "Zlib",
+   "license_family": "other",
+   "license_file": "README",
+   "summary": "Parallel implementation of gzip"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "epruesse",
+    "mfansler",
+    "martin-g"
+   ]
+  },
+  "package": {
+   "name": "pigz",
+   "version": "2.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "make"
+   ],
+   "host": [
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706",
+   "url": "https://github.com/madler/pigz/archive/v2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pigz -h",
+    "unpigz -h"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pigz"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
+  "osx_64",
+  "osx_arm64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pigz.json"
+ },
+ "raw_meta_yaml": "{% set version = \"2.8\" %}\n{% set sha256 = \"2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706\" %}\n\npackage:\n  name: pigz\n  version: {{ version }}\n\nsource:\n  url: https://github.com/madler/pigz/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}        # [unix]\n    - {{ compiler(\"m2w64_c\") }}  # [win]\n    - posix                      # [win]\n    - make                       # [unix]\n  host:\n    - pthreads-win32             # [win]\n    - zlib\n\ntest:\n  commands:\n    - pigz -h\n    - unpigz -h\n\nabout:\n  home: https://zlib.net/pigz/\n  license: Zlib\n  license_family: other\n  license_file: README\n  summary: Parallel implementation of gzip\n  description: |\n    pigz, which stands for parallel implementation of gzip, is a fully functional\n    replacement for gzip that exploits multiple processors and multiple cores\n    to the hilt when compressing data.\n  doc_url: https://zlib.net/pigz/pigz.pdf\n\nextra:\n  recipe-maintainers:\n    - epruesse\n    - mfansler \n    - martin-g\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "m2w64_c_compiler_stub",
+   "make",
+   "posix",
+   "pthreads-win32",
+   "zlib"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "m2w64_c_compiler_stub",
+    "make",
+    "posix"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "pthreads-win32",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "m2w64_c_compiler_stub",
+    "make",
+    "posix"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pthreads-win32",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/madler/pigz/archive/v2.8.tar.gz",
+ "version": "2.8",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pigz.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "pigz, which stands for parallel implementation of gzip, is a fully functional\nreplacement for gzip that exploits multiple processors and multiple cores\nto the hilt when compressing data.\n",
+   "doc_url": "https://zlib.net/pigz/pigz.pdf",
+   "home": "https://zlib.net/pigz/",
+   "license": "Zlib",
+   "license_family": "other",
+   "license_file": "README",
+   "summary": "Parallel implementation of gzip"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "epruesse",
+    "mfansler",
+    "martin-g"
+   ]
+  },
+  "package": {
+   "name": "pigz",
+   "version": "2.8"
+  },
+  "requirements": {
+   "build": [
+    "m2w64_c_compiler_stub",
+    "posix"
+   ],
+   "host": [
+    "pthreads-win32",
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706",
+   "url": "https://github.com/madler/pigz/archive/v2.8.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pigz -h",
+    "unpigz -h"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "m2w64_c_compiler_stub",
+    "posix"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pthreads-win32",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ }
+}

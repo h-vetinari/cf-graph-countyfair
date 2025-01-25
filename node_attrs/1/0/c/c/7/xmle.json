@@ -1,0 +1,208 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "xmle",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/jpn--/xmle",
+   "home": "https://github.com/jpn--/xmle",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "xml extension for generating neatly formatted HTML output from a variety of object types"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jpn--"
+   ]
+  },
+  "package": {
+   "name": "xmle",
+   "version": "0.1.24"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "python >=3.6",
+    "pandas"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b557c041afef38060de6dcd90f2f5fb205572be51a28df7bde82dce0fd101fc4",
+   "url": "https://github.com/jpn--/xmle/archive/v0.1.24.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "xmle"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/jpn--/xmle",
+   "home": "https://github.com/jpn--/xmle",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "xml extension for generating neatly formatted HTML output from a variety of object types"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jpn--"
+   ]
+  },
+  "package": {
+   "name": "xmle",
+   "version": "0.1.24"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip"
+   ],
+   "run": [
+    "python >=3.6",
+    "pandas"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b557c041afef38060de6dcd90f2f5fb205572be51a28df7bde82dce0fd101fc4",
+   "url": "https://github.com/jpn--/xmle/archive/v0.1.24.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "xmle"
+   ]
+  }
+ },
+ "name": "xmle",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "xmle"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/xmle.json"
+ },
+ "raw_meta_yaml": "{% set name = \"xmle\" %}\n{% set version = \"0.1.24\" %}\n{% set checksum = \"b557c041afef38060de6dcd90f2f5fb205572be51a28df7bde82dce0fd101fc4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jpn--/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - pandas\n\ntest:\n  imports:\n    - xmle\n\nabout:\n  home: https://github.com/jpn--/xmle\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: xml extension for generating neatly formatted HTML output from a variety of object types\n  dev_url: https://github.com/jpn--/xmle\n\nextra:\n  recipe-maintainers:\n    - jpn--\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "pandas",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "pandas",
+    "python >=3.6"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/jpn--/xmle/archive/v0.1.24.tar.gz",
+ "version": "0.1.24",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/xmle.json"
+ }
+}

@@ -1,0 +1,503 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "maicos",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "MAICoS is an object-oriented python toolkit for analysing the structure and dynamics of interfacial and confined fluids from molecular simulations. Combined with MDAnalysis, MAICoS can be used to extract density profiles, dielectric constants, structure factors, or transport properties from trajectories files, including LAMMPS, GROMACS, CHARMM or NAMD data. MAICoS is open source and is released under the GNU general public license v3.0.",
+   "dev_url": "https://gitlab.com/maicos-devel/maicos",
+   "doc_url": "https://www.maicos-analysis.org",
+   "home": "https://www.maicos-analysis.org",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "A Python package for Molecular Analysis for Interfacial and Confined Systems."
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "srihas29",
+    "PicoCentauri",
+    "hejamu"
+   ]
+  },
+  "package": {
+   "name": "maicos",
+   "version": "0.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "cython",
+    "packaging",
+    "versioneer",
+    "tomli"
+   ],
+   "run": [
+    "python",
+    "scipy >=1.0.0",
+    "numpy",
+    "mdanalysis >=2.7.0",
+    "mdacli >=0.1.28",
+    "tqdm >=4.60.0",
+    "typing_extensions"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f",
+   "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "MDAnalysis",
+    "MDAnalysis.analysis"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "packaging",
+    "pip",
+    "python",
+    "tomli",
+    "versioneer"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "mdacli",
+    "mdanalysis",
+    "numpy",
+    "python",
+    "scipy",
+    "tqdm",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "MAICoS is an object-oriented python toolkit for analysing the structure and dynamics of interfacial and confined fluids from molecular simulations. Combined with MDAnalysis, MAICoS can be used to extract density profiles, dielectric constants, structure factors, or transport properties from trajectories files, including LAMMPS, GROMACS, CHARMM or NAMD data. MAICoS is open source and is released under the GNU general public license v3.0.",
+   "dev_url": "https://gitlab.com/maicos-devel/maicos",
+   "doc_url": "https://www.maicos-analysis.org",
+   "home": "https://www.maicos-analysis.org",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "A Python package for Molecular Analysis for Interfacial and Confined Systems."
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "srihas29",
+    "PicoCentauri",
+    "hejamu"
+   ]
+  },
+  "package": {
+   "name": "maicos",
+   "version": "0.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "cython",
+    "packaging",
+    "versioneer",
+    "tomli"
+   ],
+   "run": [
+    "python",
+    "scipy >=1.0.0",
+    "numpy",
+    "mdanalysis >=2.7.0",
+    "mdacli >=0.1.28",
+    "tqdm >=4.60.0",
+    "typing_extensions"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f",
+   "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "MDAnalysis",
+    "MDAnalysis.analysis"
+   ]
+  }
+ },
+ "name": "maicos",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "MAICoS is an object-oriented python toolkit for analysing the structure and dynamics of interfacial and confined fluids from molecular simulations. Combined with MDAnalysis, MAICoS can be used to extract density profiles, dielectric constants, structure factors, or transport properties from trajectories files, including LAMMPS, GROMACS, CHARMM or NAMD data. MAICoS is open source and is released under the GNU general public license v3.0.",
+   "dev_url": "https://gitlab.com/maicos-devel/maicos",
+   "doc_url": "https://www.maicos-analysis.org",
+   "home": "https://www.maicos-analysis.org",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "A Python package for Molecular Analysis for Interfacial and Confined Systems."
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "srihas29",
+    "PicoCentauri",
+    "hejamu"
+   ]
+  },
+  "package": {
+   "name": "maicos",
+   "version": "0.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "cython",
+    "packaging",
+    "versioneer",
+    "tomli"
+   ],
+   "run": [
+    "python",
+    "scipy >=1.0.0",
+    "numpy",
+    "mdanalysis >=2.7.0",
+    "mdacli >=0.1.28",
+    "tqdm >=4.60.0",
+    "typing_extensions"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f",
+   "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "MDAnalysis",
+    "MDAnalysis.analysis"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "packaging",
+    "pip",
+    "python",
+    "tomli",
+    "versioneer"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "mdacli",
+    "mdanalysis",
+    "numpy",
+    "python",
+    "scipy",
+    "tqdm",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "maicos"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/maicos.json"
+ },
+ "raw_meta_yaml": "{% set name = \"maicos\" %}\n{% set version = \"0.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f\n\nbuild:\n  number: 0\n  skip: true  # [python_impl == 'pypy']\n  skip: true  # [py>312]\n  skip: true  # [py<39]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - libgomp  # [linux]\n  host:\n    - python\n    - pip\n    - numpy {{ numpy }}\n    - cython\n    - packaging\n    - versioneer\n    - tomli\n\n  run:\n    - python\n    - scipy >=1.0.0\n    - {{ pin_compatible('numpy', lower_bound='1.22.3') }}\n    - mdanalysis >=2.7.0\n    - mdacli >=0.1.28\n    - tqdm >=4.60.0\n    - typing_extensions\n\n\n\ntest:\n  imports:\n    - MDAnalysis\n    - MDAnalysis.analysis\n\nabout:\n  home: https://www.maicos-analysis.org\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: A Python package for Molecular Analysis for Interfacial and Confined Systems.\n  description: MAICoS is an object-oriented python toolkit for analysing the structure and dynamics of interfacial and confined fluids from molecular simulations. Combined with MDAnalysis, MAICoS can be used to extract density profiles, dielectric constants, structure factors, or transport properties from trajectories files,\n    including LAMMPS, GROMACS, CHARMM or NAMD data. MAICoS is open source and is released under the GNU general public license v3.0.\n  doc_url: https://www.maicos-analysis.org\n  dev_url: https://gitlab.com/maicos-devel/maicos\n\nextra:\n  recipe-maintainers:\n    - srihas29\n    - PicoCentauri\n    - hejamu\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_compiler_stub",
+   "cxx_compiler_stub",
+   "cython",
+   "libgomp",
+   "mdacli",
+   "mdanalysis",
+   "numpy",
+   "packaging",
+   "pip",
+   "python",
+   "scipy",
+   "tomli",
+   "tqdm",
+   "typing_extensions",
+   "versioneer"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "ctng-compilers",
+    "cxx_compiler_stub",
+    "cython",
+    "numpy",
+    "packaging",
+    "pip",
+    "python",
+    "tomli",
+    "versioneer"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "ctng-compilers",
+    "cxx_compiler_stub",
+    "mdacli",
+    "mdanalysis",
+    "numpy",
+    "python",
+    "scipy",
+    "tqdm",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libgomp"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "packaging",
+    "pip",
+    "python",
+    "tomli",
+    "versioneer"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "mdacli >=0.1.28",
+    "mdanalysis >=2.7.0",
+    "numpy",
+    "python",
+    "scipy >=1.0.0",
+    "tqdm >=4.60.0",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz",
+ "version": "0.8",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/maicos.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "MAICoS is an object-oriented python toolkit for analysing the structure and dynamics of interfacial and confined fluids from molecular simulations. Combined with MDAnalysis, MAICoS can be used to extract density profiles, dielectric constants, structure factors, or transport properties from trajectories files, including LAMMPS, GROMACS, CHARMM or NAMD data. MAICoS is open source and is released under the GNU general public license v3.0.",
+   "dev_url": "https://gitlab.com/maicos-devel/maicos",
+   "doc_url": "https://www.maicos-analysis.org",
+   "home": "https://www.maicos-analysis.org",
+   "license": "GPL-3.0-or-later",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "A Python package for Molecular Analysis for Interfacial and Confined Systems."
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "srihas29",
+    "PicoCentauri",
+    "hejamu"
+   ]
+  },
+  "package": {
+   "name": "maicos",
+   "version": "0.8"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "numpy",
+    "cython",
+    "packaging",
+    "versioneer",
+    "tomli"
+   ],
+   "run": [
+    "python",
+    "scipy >=1.0.0",
+    "numpy",
+    "mdanalysis >=2.7.0",
+    "mdacli >=0.1.28",
+    "tqdm >=4.60.0",
+    "typing_extensions"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f",
+   "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "MDAnalysis",
+    "MDAnalysis.analysis"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "packaging",
+    "pip",
+    "python",
+    "tomli",
+    "versioneer"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "mdacli",
+    "mdanalysis",
+    "numpy",
+    "python",
+    "scipy",
+    "tqdm",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ }
+}

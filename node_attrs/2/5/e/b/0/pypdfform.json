@@ -1,0 +1,251 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "pypdfform",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/chinapandaman/PyPDFForm",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "The Python library for PDF forms."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "pypdfform",
+   "version": "1.5.1"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "python >=3.9",
+    "cryptography",
+    "pillow",
+    "pypdf",
+    "reportlab"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "bbb4673bccdc161c38270c0c646873a7060ab8dc477b41900e706efc60317073",
+   "url": "https://github.com/chinapandaman/PyPDFForm/archive/v1.5.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "PyPDFForm"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cryptography",
+    "pillow",
+    "pypdf",
+    "python",
+    "reportlab"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/chinapandaman/PyPDFForm",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "The Python library for PDF forms."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "thewchan"
+   ]
+  },
+  "package": {
+   "name": "pypdfform",
+   "version": "1.5.1"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "python >=3.9",
+    "cryptography",
+    "pillow",
+    "pypdf",
+    "reportlab"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "bbb4673bccdc161c38270c0c646873a7060ab8dc477b41900e706efc60317073",
+   "url": "https://github.com/chinapandaman/PyPDFForm/archive/v1.5.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "PyPDFForm"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "pypdfform",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "pypdfform"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/pypdfform.json"
+ },
+ "raw_meta_yaml": "{% set name = \"PyPDFForm\" %}\n{% set version = \"1.5.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/chinapandaman/PyPDFForm/archive/v{{ version }}.tar.gz\n  sha256: bbb4673bccdc161c38270c0c646873a7060ab8dc477b41900e706efc60317073\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - cryptography\n    - pillow\n    - pypdf\n    - reportlab\n\ntest:\n  imports:\n    - PyPDFForm\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/chinapandaman/PyPDFForm\n  summary: The Python library for PDF forms.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "cryptography",
+   "pillow",
+   "pip",
+   "pypdf",
+   "python",
+   "reportlab",
+   "setuptools"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cryptography",
+    "pillow",
+    "pypdf",
+    "python",
+    "reportlab"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cryptography",
+    "pillow",
+    "pypdf",
+    "python >=3.9",
+    "reportlab"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://github.com/chinapandaman/PyPDFForm/archive/v1.5.1.tar.gz",
+ "version": "1.5.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/pypdfform.json"
+ }
+}

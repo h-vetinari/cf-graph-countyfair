@@ -1,0 +1,272 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "inspection": "update-grayskull"
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "virtualizarr",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://pypi.org/project/virtualizarr/",
+   "license": "MIT AND Apache-2.0",
+   "license_file": [
+    "LICENSE",
+    "virtualizarr/vendor/zarr/LICENSE.txt"
+   ],
+   "summary": "Create virtual Zarr stores from archival data using xarray API"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "TomNicholas",
+    "maxrjones"
+   ]
+  },
+  "package": {
+   "name": "virtualizarr",
+   "version": "1.2.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.10",
+    "setuptools >=61.0.0",
+    "setuptools-scm >=7.0",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10",
+    "xarray >=2024.10.0",
+    "numpy >=2.0.0",
+    "packaging",
+    "universal_pathlib",
+    "numcodecs",
+    "ujson"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0eb9aecf09fd347d1691b407ed3798f55f038a3044bd9ccd23bd9c49f90e036d",
+   "url": "https://pypi.org/packages/source/v/virtualizarr/virtualizarr-1.2.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "virtualizarr"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numcodecs",
+    "numpy",
+    "packaging",
+    "python",
+    "ujson",
+    "universal_pathlib",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://pypi.org/project/virtualizarr/",
+   "license": "MIT AND Apache-2.0",
+   "license_file": [
+    "LICENSE",
+    "virtualizarr/vendor/zarr/LICENSE.txt"
+   ],
+   "summary": "Create virtual Zarr stores from archival data using xarray API"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "TomNicholas",
+    "maxrjones"
+   ]
+  },
+  "package": {
+   "name": "virtualizarr",
+   "version": "1.2.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.10",
+    "setuptools >=61.0.0",
+    "setuptools-scm >=7.0",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10",
+    "xarray >=2024.10.0",
+    "numpy >=2.0.0",
+    "packaging",
+    "universal_pathlib",
+    "numcodecs",
+    "ujson"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "0eb9aecf09fd347d1691b407ed3798f55f038a3044bd9ccd23bd9c49f90e036d",
+   "url": "https://pypi.org/packages/source/v/virtualizarr/virtualizarr-1.2.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "virtualizarr"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "virtualizarr",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "virtualizarr"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/virtualizarr.json"
+ },
+ "raw_meta_yaml": "{% set name = \"virtualizarr\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/virtualizarr-{{ version }}.tar.gz\n  sha256: 0eb9aecf09fd347d1691b407ed3798f55f038a3044bd9ccd23bd9c49f90e036d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.10\n    - setuptools >=61.0.0\n    - setuptools-scm >=7.0\n    - pip\n  run:\n    - python >=3.10\n    - xarray >=2024.10.0\n    - numpy >=2.0.0\n    - packaging\n    - universal_pathlib\n    - numcodecs\n    - ujson\n\ntest:\n  imports:\n    - virtualizarr\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/virtualizarr/\n  summary: Create virtual Zarr stores from archival data using xarray API\n  license: MIT AND Apache-2.0\n  license_file:\n    - LICENSE\n    - virtualizarr/vendor/zarr/LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - TomNicholas\n    - maxrjones\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "numcodecs",
+   "numpy",
+   "packaging",
+   "pip",
+   "python",
+   "setuptools",
+   "setuptools-scm",
+   "ujson",
+   "universal_pathlib",
+   "xarray"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numcodecs",
+    "numpy",
+    "packaging",
+    "python",
+    "ujson",
+    "universal_pathlib",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.10",
+    "setuptools >=61.0.0",
+    "setuptools-scm >=7.0"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numcodecs",
+    "numpy >=2.0.0",
+    "packaging",
+    "python >=3.10",
+    "ujson",
+    "universal_pathlib",
+    "xarray >=2024.10.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/v/virtualizarr/virtualizarr-1.2.0.tar.gz",
+ "version": "1.2.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/virtualizarr.json"
+ }
+}

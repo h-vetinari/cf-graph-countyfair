@@ -1,0 +1,322 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "av2",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "The official API of the Argoverse 2 dataset.\n",
+   "dev_url": "https://github.com/argoai/av2-api",
+   "doc_url": "https://github.com/argoai/av2-api",
+   "home": "https://github.com/argoai/av2-api",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "LICENSE",
+    "NOTICE"
+   ],
+   "summary": "The official API of the Argoverse 2 dataset."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "benjaminrwilson"
+   ]
+  },
+  "package": {
+   "name": "av2",
+   "version": "0.2.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.8",
+    "setuptools >=42",
+    "wheel"
+   ],
+   "run": [
+    "av",
+    "click",
+    "joblib",
+    "matplotlib-base",
+    "nox",
+    "numba",
+    "numpy >=1.21.5",
+    "opencv",
+    "pandas",
+    "python >=3.8",
+    "pip",
+    "pyarrow",
+    "pyproj",
+    "rich",
+    "scipy"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b6aa3b2fcb702ab1d6a0ac535466d20d0a754ee46b8ab95a4d97337511e45358",
+   "url": "https://github.com/argoai/argoverse2-api/archive/refs/tags/v0.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "av2"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "av",
+    "click",
+    "joblib",
+    "matplotlib-base",
+    "nox",
+    "numba",
+    "numpy",
+    "opencv",
+    "pandas",
+    "pip",
+    "pyarrow",
+    "pyproj",
+    "python",
+    "rich",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "The official API of the Argoverse 2 dataset.\n",
+   "dev_url": "https://github.com/argoai/av2-api",
+   "doc_url": "https://github.com/argoai/av2-api",
+   "home": "https://github.com/argoai/av2-api",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "LICENSE",
+    "NOTICE"
+   ],
+   "summary": "The official API of the Argoverse 2 dataset."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "benjaminrwilson"
+   ]
+  },
+  "package": {
+   "name": "av2",
+   "version": "0.2.1"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.8",
+    "setuptools >=42",
+    "wheel"
+   ],
+   "run": [
+    "av",
+    "click",
+    "joblib",
+    "matplotlib-base",
+    "nox",
+    "numba",
+    "numpy >=1.21.5",
+    "opencv",
+    "pandas",
+    "python >=3.8",
+    "pip",
+    "pyarrow",
+    "pyproj",
+    "rich",
+    "scipy"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "b6aa3b2fcb702ab1d6a0ac535466d20d0a754ee46b8ab95a4d97337511e45358",
+   "url": "https://github.com/argoai/argoverse2-api/archive/refs/tags/v0.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "av2"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "av2",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "av2"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/av2.json"
+ },
+ "raw_meta_yaml": "{% set name = \"av2\" %}\n{% set version = \"0.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/argoai/argoverse2-api/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: b6aa3b2fcb702ab1d6a0ac535466d20d0a754ee46b8ab95a4d97337511e45358\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python >=3.8\n    - setuptools >=42\n    - wheel\n\n  run:\n    - av\n    - click\n    - joblib\n    - matplotlib-base\n    - nox\n    - numba\n    - numpy >=1.21.5\n    - opencv\n    - pandas\n    - python >=3.8\n    - pip\n    - pyarrow\n    - pyproj\n    - rich\n    - scipy\n\ntest:\n  imports:\n    - av2\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/argoai/av2-api\n  summary: The official API of the Argoverse 2 dataset.\n  description: |\n    The official API of the Argoverse 2 dataset.\n  license: MIT\n  license_family: MIT\n  license_file:\n    - LICENSE\n    - NOTICE\n  doc_url: https://github.com/argoai/av2-api\n  dev_url: https://github.com/argoai/av2-api\n\nextra:\n  recipe-maintainers:\n    - benjaminrwilson\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "av",
+   "click",
+   "joblib",
+   "matplotlib-base",
+   "nox",
+   "numba",
+   "numpy",
+   "opencv",
+   "pandas",
+   "pip",
+   "pyarrow",
+   "pyproj",
+   "python",
+   "rich",
+   "scipy",
+   "setuptools",
+   "wheel"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "av",
+    "click",
+    "joblib",
+    "matplotlib-base",
+    "nox",
+    "numba",
+    "numpy",
+    "opencv",
+    "pandas",
+    "pip",
+    "pyarrow",
+    "pyproj",
+    "python",
+    "rich",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.8",
+    "setuptools >=42",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "av",
+    "click",
+    "joblib",
+    "matplotlib-base",
+    "nox",
+    "numba",
+    "numpy >=1.21.5",
+    "opencv",
+    "pandas",
+    "pip",
+    "pyarrow",
+    "pyproj",
+    "python >=3.8",
+    "rich",
+    "scipy"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://github.com/argoai/argoverse2-api/archive/refs/tags/v0.2.1.tar.gz",
+ "version": "0.2.1",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/av2.json"
+ }
+}

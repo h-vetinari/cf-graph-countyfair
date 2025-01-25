@@ -1,0 +1,252 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "ipyvizzu",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "Build animated charts in Jupyter Notebook and similar environments with a simple Python syntax.\n\n[![gif][_gif]](https://ipyvizzu.vizzuhq.com)\n\n[_gif]: https://ipyvizzu.vizzuhq.com/latest/assets/ipyvizzu-promo.gif\n\nPyPI: [https://badge.fury.io/py/ipyvizzu](https://badge.fury.io/py/ipyvizzu)\n",
+   "dev_url": "https://github.com/vizzuhq/ipyvizzu",
+   "doc_url": "https://ipyvizzu.vizzuhq.com",
+   "home": "https://ipyvizzu.vizzuhq.com",
+   "license": "Apache-2.0",
+   "license_file": [
+    "LICENSE"
+   ],
+   "summary": "Build animated charts in Jupyter Notebook and similar environments with a simple Python syntax."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sugatoray",
+    "veghdev"
+   ]
+  },
+  "package": {
+   "name": "ipyvizzu",
+   "version": "0.17.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip",
+    "pdm-backend"
+   ],
+   "run": [
+    "python >=3.6",
+    "typing_extensions",
+    "ipython",
+    "jsonschema"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f31bde4525cb7ab2a4a4fef105a22723913f76c7e326aff53c6c834af421a00f",
+   "url": "https://pypi.io/packages/source/i/ipyvizzu/ipyvizzu-0.17.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "ipyvizzu"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pdm-backend",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ipython",
+    "jsonschema",
+    "python",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "Build animated charts in Jupyter Notebook and similar environments with a simple Python syntax.\n\n[![gif][_gif]](https://ipyvizzu.vizzuhq.com)\n\n[_gif]: https://ipyvizzu.vizzuhq.com/latest/assets/ipyvizzu-promo.gif\n\nPyPI: [https://badge.fury.io/py/ipyvizzu](https://badge.fury.io/py/ipyvizzu)\n",
+   "dev_url": "https://github.com/vizzuhq/ipyvizzu",
+   "doc_url": "https://ipyvizzu.vizzuhq.com",
+   "home": "https://ipyvizzu.vizzuhq.com",
+   "license": "Apache-2.0",
+   "license_file": [
+    "LICENSE"
+   ],
+   "summary": "Build animated charts in Jupyter Notebook and similar environments with a simple Python syntax."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sugatoray",
+    "veghdev"
+   ]
+  },
+  "package": {
+   "name": "ipyvizzu",
+   "version": "0.17.0"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.6",
+    "pip",
+    "pdm-backend"
+   ],
+   "run": [
+    "python >=3.6",
+    "typing_extensions",
+    "ipython",
+    "jsonschema"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f31bde4525cb7ab2a4a4fef105a22723913f76c7e326aff53c6c834af421a00f",
+   "url": "https://pypi.io/packages/source/i/ipyvizzu/ipyvizzu-0.17.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "ipyvizzu"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "ipyvizzu",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "ipyvizzu"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/ipyvizzu.json"
+ },
+ "raw_meta_yaml": "{% set name = \"ipyvizzu\" %}\n{% set version = \"0.17.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ipyvizzu-{{ version }}.tar.gz\n  sha256: f31bde4525cb7ab2a4a4fef105a22723913f76c7e326aff53c6c834af421a00f\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - pdm-backend\n  run:\n    - python >=3.6\n    - typing_extensions\n    - ipython\n    - jsonschema\n\ntest:\n  imports:\n    - ipyvizzu\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://ipyvizzu.vizzuhq.com\n  summary: Build animated charts in Jupyter Notebook and similar environments with a simple Python syntax.\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n  description: |\n    Build animated charts in Jupyter Notebook and similar environments with a simple Python syntax.\n\n    [![gif][_gif]](https://ipyvizzu.vizzuhq.com)\n\n    [_gif]: https://ipyvizzu.vizzuhq.com/latest/assets/ipyvizzu-promo.gif\n\n    PyPI: [https://badge.fury.io/py/ipyvizzu](https://badge.fury.io/py/ipyvizzu)\n\n  doc_url: https://ipyvizzu.vizzuhq.com\n  dev_url: https://github.com/vizzuhq/ipyvizzu\n\nextra:\n  recipe-maintainers:\n    - sugatoray\n    # maintainers from upstream repo\n    - veghdev\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "ipython",
+   "jsonschema",
+   "pdm-backend",
+   "pip",
+   "python",
+   "typing_extensions"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pdm-backend",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ipython",
+    "jsonschema",
+    "python",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pdm-backend",
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ipython",
+    "jsonschema",
+    "python >=3.6",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/i/ipyvizzu/ipyvizzu-0.17.0.tar.gz",
+ "version": "0.17.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/ipyvizzu.json"
+ }
+}

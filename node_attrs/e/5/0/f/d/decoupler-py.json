@@ -1,0 +1,313 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "decoupler-py",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/saezlab/decoupler-py",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "Ensemble of methods to perform enrichment analysis from omics data"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "PauBadiaM"
+   ]
+  },
+  "package": {
+   "name": "decoupler-py",
+   "version": "1.8.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "poetry"
+   ],
+   "run": [
+    "python >=3.9",
+    "numba",
+    "tqdm",
+    "anndata",
+    "typing-extensions",
+    "scikit-learn",
+    "omnipath",
+    "adjustText",
+    "scanpy",
+    "seaborn",
+    "pandas",
+    "scipy",
+    "numpy <2.0.0",
+    "typing_extensions",
+    "python-igraph >=0.10.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4f6cda3fb2c807ff8681f1d15c3167e14f3a419378b4446c8ede3b60d40afb74",
+   "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.8.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "decoupler"
+   ],
+   "requires": [
+    "pip",
+    "poetry",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "adjusttext",
+    "anndata",
+    "numba",
+    "numpy",
+    "omnipath",
+    "pandas",
+    "python",
+    "python-igraph",
+    "scanpy",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "tqdm",
+    "typing-extensions",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/saezlab/decoupler-py",
+   "license": "GPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "Ensemble of methods to perform enrichment analysis from omics data"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "PauBadiaM"
+   ]
+  },
+  "package": {
+   "name": "decoupler-py",
+   "version": "1.8.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "pip",
+    "poetry"
+   ],
+   "run": [
+    "python >=3.9",
+    "numba",
+    "tqdm",
+    "anndata",
+    "typing-extensions",
+    "scikit-learn",
+    "omnipath",
+    "adjustText",
+    "scanpy",
+    "seaborn",
+    "pandas",
+    "scipy",
+    "numpy <2.0.0",
+    "typing_extensions",
+    "python-igraph >=0.10.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4f6cda3fb2c807ff8681f1d15c3167e14f3a419378b4446c8ede3b60d40afb74",
+   "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.8.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "decoupler"
+   ],
+   "requires": [
+    "pip",
+    "poetry",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "decoupler-py",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "decoupler-py"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/decoupler-py.json"
+ },
+ "raw_meta_yaml": "{% set name = \"decoupler\" %}\n{% set conda_package_name = \"decoupler-py\" %}\n{% set version = \"1.8.0\" %}\n\npackage:\n  name: {{ conda_package_name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/decoupler-{{ version }}.tar.gz\n  sha256: 4f6cda3fb2c807ff8681f1d15c3167e14f3a419378b4446c8ede3b60d40afb74\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - poetry\n  run:\n    - python >={{ python_min }}\n    - numba\n    - tqdm\n    - anndata\n    - typing-extensions\n    - scikit-learn\n    - omnipath\n    - adjustText\n    - scanpy\n    - seaborn\n    - pandas\n    - scipy\n    - numpy <2.0.0\n    - typing_extensions\n    - python-igraph >=0.10.0\n\ntest:\n  imports:\n    - decoupler\n  commands:\n    - pip check\n  requires:\n    - pip\n    - poetry\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/saezlab/decoupler-py\n  summary: Ensemble of methods to perform enrichment analysis from omics data\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - PauBadiaM\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "adjusttext",
+   "anndata",
+   "numba",
+   "numpy",
+   "omnipath",
+   "pandas",
+   "pip",
+   "poetry",
+   "python",
+   "python-igraph",
+   "scanpy",
+   "scikit-learn",
+   "scipy",
+   "seaborn",
+   "tqdm",
+   "typing-extensions",
+   "typing_extensions"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "adjusttext",
+    "anndata",
+    "numba",
+    "numpy",
+    "omnipath",
+    "pandas",
+    "python",
+    "python-igraph",
+    "scanpy",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "tqdm",
+    "typing-extensions",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "adjustText",
+    "anndata",
+    "numba",
+    "numpy <2.0.0",
+    "omnipath",
+    "pandas",
+    "python >=3.9",
+    "python-igraph >=0.10.0",
+    "scanpy",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "tqdm",
+    "typing-extensions",
+    "typing_extensions"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.8.0.tar.gz",
+ "version": "1.8.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/decoupler-py.json"
+ }
+}

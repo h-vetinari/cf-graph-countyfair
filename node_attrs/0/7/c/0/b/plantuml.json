@@ -1,0 +1,437 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  },
+  "test": "native_and_emulated"
+ },
+ "feedstock_name": "plantuml",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "PlantUML is a component that allows to quickly write:\n\n  - Sequence diagram,\n  - Use case diagram,\n  - Class diagram,\n  - Activity diagram,\n  - Component diagram,\n  - State diagram,\n  - Object diagram,\n  - Deployment diagram,\n  - Timing diagram\n\nAnd also:\n\n  - Activity diagram (legacy syntax)\n  - Archimate diagram\n  - Gantt charts\n  - SALT UI mockups\n\nFurthermore:\n\n  - Hyperlinks and tooltips\n  - Creole: rich text, emoticons, unicode, icons\n  - OpenIconic icons\n  - Sprite icons\n  - AsciiMath mathematical expressions\n\nTo know more about PlantUML, please visit http://plantuml.com/\n",
+   "dev_url": "https://github.com/plantuml/plantuml",
+   "home": "http://plantuml.com",
+   "license": "GPL-3.0-or-later",
+   "license_file": "COPYING",
+   "summary": "Generate UML diagram from textual description"
+  },
+  "build": {
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "plantuml",
+   "version": "1.2025.0"
+  },
+  "requirements": {
+   "build": [
+    "openjdk",
+    "gradle >=8.11.1",
+    "graphviz"
+   ],
+   "run": [
+    "openjdk",
+    "graphviz"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4430ab69c296ff7cf0656f206b769f3d7cddca599cb69011fc20438ce5bb613a",
+   "url": "https://github.com/plantuml/plantuml/archive/refs/tags/v1.2025.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "plantuml -version | grep -E 1\\.2025\\.0",
+    "plantuml -help"
+   ],
+   "requires": null
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "gradle",
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "PlantUML is a component that allows to quickly write:\n\n  - Sequence diagram,\n  - Use case diagram,\n  - Class diagram,\n  - Activity diagram,\n  - Component diagram,\n  - State diagram,\n  - Object diagram,\n  - Deployment diagram,\n  - Timing diagram\n\nAnd also:\n\n  - Activity diagram (legacy syntax)\n  - Archimate diagram\n  - Gantt charts\n  - SALT UI mockups\n\nFurthermore:\n\n  - Hyperlinks and tooltips\n  - Creole: rich text, emoticons, unicode, icons\n  - OpenIconic icons\n  - Sprite icons\n  - AsciiMath mathematical expressions\n\nTo know more about PlantUML, please visit http://plantuml.com/\n",
+   "dev_url": "https://github.com/plantuml/plantuml",
+   "home": "http://plantuml.com",
+   "license": "GPL-3.0-or-later",
+   "license_file": "COPYING",
+   "summary": "Generate UML diagram from textual description"
+  },
+  "build": {
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "plantuml",
+   "version": "1.2025.0"
+  },
+  "requirements": {
+   "build": [
+    "openjdk",
+    "gradle >=8.11.1",
+    "graphviz"
+   ],
+   "run": [
+    "openjdk",
+    "graphviz"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4430ab69c296ff7cf0656f206b769f3d7cddca599cb69011fc20438ce5bb613a",
+   "url": "https://github.com/plantuml/plantuml/archive/refs/tags/v1.2025.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "plantuml -version | grep -E 1\\.2025\\.0",
+    "plantuml -help"
+   ],
+   "requires": [
+    "m2-grep"
+   ]
+  }
+ },
+ "name": "plantuml",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "PlantUML is a component that allows to quickly write:\n\n  - Sequence diagram,\n  - Use case diagram,\n  - Class diagram,\n  - Activity diagram,\n  - Component diagram,\n  - State diagram,\n  - Object diagram,\n  - Deployment diagram,\n  - Timing diagram\n\nAnd also:\n\n  - Activity diagram (legacy syntax)\n  - Archimate diagram\n  - Gantt charts\n  - SALT UI mockups\n\nFurthermore:\n\n  - Hyperlinks and tooltips\n  - Creole: rich text, emoticons, unicode, icons\n  - OpenIconic icons\n  - Sprite icons\n  - AsciiMath mathematical expressions\n\nTo know more about PlantUML, please visit http://plantuml.com/\n",
+   "dev_url": "https://github.com/plantuml/plantuml",
+   "home": "http://plantuml.com",
+   "license": "GPL-3.0-or-later",
+   "license_file": "COPYING",
+   "summary": "Generate UML diagram from textual description"
+  },
+  "build": {
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "plantuml",
+   "version": "1.2025.0"
+  },
+  "requirements": {
+   "build": [
+    "openjdk",
+    "gradle >=8.11.1",
+    "graphviz"
+   ],
+   "run": [
+    "openjdk",
+    "graphviz"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4430ab69c296ff7cf0656f206b769f3d7cddca599cb69011fc20438ce5bb613a",
+   "url": "https://github.com/plantuml/plantuml/archive/refs/tags/v1.2025.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "plantuml -version | grep -E 1\\.2025\\.0",
+    "plantuml -help"
+   ],
+   "requires": null
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "gradle",
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "PlantUML is a component that allows to quickly write:\n\n  - Sequence diagram,\n  - Use case diagram,\n  - Class diagram,\n  - Activity diagram,\n  - Component diagram,\n  - State diagram,\n  - Object diagram,\n  - Deployment diagram,\n  - Timing diagram\n\nAnd also:\n\n  - Activity diagram (legacy syntax)\n  - Archimate diagram\n  - Gantt charts\n  - SALT UI mockups\n\nFurthermore:\n\n  - Hyperlinks and tooltips\n  - Creole: rich text, emoticons, unicode, icons\n  - OpenIconic icons\n  - Sprite icons\n  - AsciiMath mathematical expressions\n\nTo know more about PlantUML, please visit http://plantuml.com/\n",
+   "dev_url": "https://github.com/plantuml/plantuml",
+   "home": "http://plantuml.com",
+   "license": "GPL-3.0-or-later",
+   "license_file": "COPYING",
+   "summary": "Generate UML diagram from textual description"
+  },
+  "build": {
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "plantuml",
+   "version": "1.2025.0"
+  },
+  "requirements": {
+   "build": [
+    "openjdk",
+    "gradle >=8.11.1",
+    "graphviz"
+   ],
+   "run": [
+    "openjdk",
+    "graphviz"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4430ab69c296ff7cf0656f206b769f3d7cddca599cb69011fc20438ce5bb613a",
+   "url": "https://github.com/plantuml/plantuml/archive/refs/tags/v1.2025.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "plantuml -version | grep -E 1\\.2025\\.0",
+    "plantuml -help"
+   ],
+   "requires": null
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "gradle",
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "plantuml"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64",
+  "osx_arm64",
+  "win_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/plantuml.json"
+ },
+ "raw_meta_yaml": "{% set version = \"1.2025.0\" %}\n\npackage:\n  name: plantuml\n  version: {{ version }}\n\nsource:\n  url: https://github.com/plantuml/plantuml/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 4430ab69c296ff7cf0656f206b769f3d7cddca599cb69011fc20438ce5bb613a\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - openjdk\n    # see https://github.com/conda-forge/plantuml-feedstock/issues/60\n    - gradle >=8.11.1\n    - graphviz\n  run:\n    - openjdk\n    - graphviz\n\ntest:\n  requires:\n    - m2-grep  # [win]\n  commands:\n    - plantuml -version | grep -E {{ version.replace('.', '\\.') }}\n    - plantuml -help\n\nabout:\n  home: http://plantuml.com\n  license: GPL-3.0-or-later\n  license_file: COPYING\n  summary: Generate UML diagram from textual description\n  description: |\n    PlantUML is a component that allows to quickly write:\n\n      - Sequence diagram,\n      - Use case diagram,\n      - Class diagram,\n      - Activity diagram,\n      - Component diagram,\n      - State diagram,\n      - Object diagram,\n      - Deployment diagram,\n      - Timing diagram\n\n    And also:\n\n      - Activity diagram (legacy syntax)\n      - Archimate diagram\n      - Gantt charts\n      - SALT UI mockups\n\n    Furthermore:\n\n      - Hyperlinks and tooltips\n      - Creole: rich text, emoticons, unicode, icons\n      - OpenIconic icons\n      - Sprite icons\n      - AsciiMath mathematical expressions\n\n    To know more about PlantUML, please visit http://plantuml.com/\n\n  dev_url: https://github.com/plantuml/plantuml\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "gradle",
+   "graphviz",
+   "openjdk"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "gradle",
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "m2-grep"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "gradle >=8.11.1",
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "m2-grep"
+   ]
+  }
+ },
+ "url": "https://github.com/plantuml/plantuml/archive/refs/tags/v1.2025.0.tar.gz",
+ "version": "1.2025.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/plantuml.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "PlantUML is a component that allows to quickly write:\n\n  - Sequence diagram,\n  - Use case diagram,\n  - Class diagram,\n  - Activity diagram,\n  - Component diagram,\n  - State diagram,\n  - Object diagram,\n  - Deployment diagram,\n  - Timing diagram\n\nAnd also:\n\n  - Activity diagram (legacy syntax)\n  - Archimate diagram\n  - Gantt charts\n  - SALT UI mockups\n\nFurthermore:\n\n  - Hyperlinks and tooltips\n  - Creole: rich text, emoticons, unicode, icons\n  - OpenIconic icons\n  - Sprite icons\n  - AsciiMath mathematical expressions\n\nTo know more about PlantUML, please visit http://plantuml.com/\n",
+   "dev_url": "https://github.com/plantuml/plantuml",
+   "home": "http://plantuml.com",
+   "license": "GPL-3.0-or-later",
+   "license_file": "COPYING",
+   "summary": "Generate UML diagram from textual description"
+  },
+  "build": {
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "plantuml",
+   "version": "1.2025.0"
+  },
+  "requirements": {
+   "build": [
+    "openjdk",
+    "gradle >=8.11.1",
+    "graphviz"
+   ],
+   "run": [
+    "openjdk",
+    "graphviz"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4430ab69c296ff7cf0656f206b769f3d7cddca599cb69011fc20438ce5bb613a",
+   "url": "https://github.com/plantuml/plantuml/archive/refs/tags/v1.2025.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "plantuml -version | grep -E 1\\.2025\\.0",
+    "plantuml -help"
+   ],
+   "requires": [
+    "m2-grep"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "gradle",
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "graphviz",
+    "openjdk"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "m2-grep"
+   ]
+  }
+ }
+}

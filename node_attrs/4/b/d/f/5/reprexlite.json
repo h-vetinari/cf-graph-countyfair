@@ -1,0 +1,243 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "pkg_format": "2"
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "reprexlite",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/jayqi/reprexlite",
+   "doc_url": "https://jayqi.github.io/reprexlite/",
+   "home": "https://github.com/jayqi/reprexlite",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Render reproducible examples of Python code for sharing."
+  },
+  "build": {
+   "entry_points": [
+    "reprex=reprexlite.cli:app"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jayqi"
+   ]
+  },
+  "package": {
+   "name": "reprexlite",
+   "version": "0.5.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "importlib-metadata",
+    "libcst",
+    "python >=3.6",
+    "typer"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3e8968f23619df1289c0d66bc200c0c79e577d199caf6205645cfc9dc4749de2",
+   "url": "https://pypi.io/packages/source/r/reprexlite/reprexlite-0.5.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "reprex --help"
+   ],
+   "imports": [
+    "reprexlite"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "importlib-metadata",
+    "libcst",
+    "python",
+    "typer"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/jayqi/reprexlite",
+   "doc_url": "https://jayqi.github.io/reprexlite/",
+   "home": "https://github.com/jayqi/reprexlite",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Render reproducible examples of Python code for sharing."
+  },
+  "build": {
+   "entry_points": [
+    "reprex=reprexlite.cli:app"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jayqi"
+   ]
+  },
+  "package": {
+   "name": "reprexlite",
+   "version": "0.5.0"
+  },
+  "requirements": {
+   "host": [
+    "pip",
+    "python >=3.6"
+   ],
+   "run": [
+    "importlib-metadata",
+    "libcst",
+    "python >=3.6",
+    "typer"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3e8968f23619df1289c0d66bc200c0c79e577d199caf6205645cfc9dc4749de2",
+   "url": "https://pypi.io/packages/source/r/reprexlite/reprexlite-0.5.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "reprex --help"
+   ],
+   "imports": [
+    "reprexlite"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "reprexlite",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "reprexlite"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/reprexlite.json"
+ },
+ "raw_meta_yaml": "{% set name = \"reprexlite\" %}\n{% set version = \"0.5.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/reprexlite-{{ version }}.tar.gz\n  sha256: 3e8968f23619df1289c0d66bc200c0c79e577d199caf6205645cfc9dc4749de2\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - reprex=reprexlite.cli:app\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - importlib-metadata\n    - libcst\n    - python >=3.6\n    - typer\n\ntest:\n  imports:\n    - reprexlite\n  commands:\n    - pip check\n    - reprex --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/jayqi/reprexlite\n  summary: Render reproducible examples of Python code for sharing.\n  license: MIT\n  license_file: LICENSE\n  doc_url: https://jayqi.github.io/reprexlite/\n  dev_url: https://github.com/jayqi/reprexlite\n\nextra:\n  recipe-maintainers:\n    - jayqi\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "importlib-metadata",
+   "libcst",
+   "pip",
+   "python",
+   "typer"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "importlib-metadata",
+    "libcst",
+    "python",
+    "typer"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.6"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "importlib-metadata",
+    "libcst",
+    "python >=3.6",
+    "typer"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/r/reprexlite/reprexlite-0.5.0.tar.gz",
+ "version": "0.5.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/reprexlite.json"
+ }
+}

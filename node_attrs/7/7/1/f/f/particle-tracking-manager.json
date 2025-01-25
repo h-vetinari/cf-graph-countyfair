@@ -1,0 +1,270 @@
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "particle-tracking-manager",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/axiom-data-science/particle-tracking-manager",
+   "license": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Manager for particle tracking simulations."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kthyng"
+   ]
+  },
+  "package": {
+   "name": "particle-tracking-manager",
+   "version": "0.9.6"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools >=42",
+    "wheel",
+    "setuptools-scm >=3.4",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "appdirs",
+    "kerchunk",
+    "numpy",
+    "opendrift >=1.11.13",
+    "pandas",
+    "xarray"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "105f88c6dbe828f594fd4063550a62adcf52ff42f5e7389cf9eee5edea9a294c",
+   "url": "https://pypi.io/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.9.6.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "particle_tracking_manager"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "appdirs",
+    "kerchunk",
+    "numpy",
+    "opendrift",
+    "pandas",
+    "python",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/axiom-data-science/particle-tracking-manager",
+   "license": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Manager for particle tracking simulations."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kthyng"
+   ]
+  },
+  "package": {
+   "name": "particle-tracking-manager",
+   "version": "0.9.6"
+  },
+  "requirements": {
+   "host": [
+    "python >=3.9",
+    "setuptools >=42",
+    "wheel",
+    "setuptools-scm >=3.4",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "appdirs",
+    "kerchunk",
+    "numpy",
+    "opendrift >=1.11.13",
+    "pandas",
+    "xarray"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "105f88c6dbe828f594fd4063550a62adcf52ff42f5e7389cf9eee5edea9a294c",
+   "url": "https://pypi.io/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.9.6.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "particle_tracking_manager"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "name": "particle-tracking-manager",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "particle-tracking-manager"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/particle-tracking-manager.json"
+ },
+ "raw_meta_yaml": "{% set name = \"particle-tracking-manager\" %}\n{% set version = \"0.9.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/particle_tracking_manager-{{ version }}.tar.gz\n  sha256: 105f88c6dbe828f594fd4063550a62adcf52ff42f5e7389cf9eee5edea9a294c\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=42\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >=3.9\n    - appdirs\n    - kerchunk\n    - numpy\n    - opendrift >=1.11.13\n    - pandas\n    - xarray\n\ntest:\n  imports:\n    - particle_tracking_manager\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/axiom-data-science/particle-tracking-manager\n  summary: Manager for particle tracking simulations.\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - kthyng\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "appdirs",
+   "kerchunk",
+   "numpy",
+   "opendrift",
+   "pandas",
+   "pip",
+   "python",
+   "setuptools",
+   "setuptools-scm",
+   "wheel",
+   "xarray"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "appdirs",
+    "kerchunk",
+    "numpy",
+    "opendrift",
+    "pandas",
+    "python",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python >=3.9",
+    "setuptools >=42",
+    "setuptools-scm >=3.4",
+    "wheel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "appdirs",
+    "kerchunk",
+    "numpy",
+    "opendrift >=1.11.13",
+    "pandas",
+    "python >=3.9",
+    "xarray"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.io/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.9.6.tar.gz",
+ "version": "0.9.6",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/particle-tracking-manager.json"
+ }
+}
