@@ -25,9 +25,9 @@
    "summary": "A GPU-accelerated molecular docking program"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "cd unidock_tools\npip install . -vv\ncd ..\ncd unidock\nmkdir conda_build\ncd conda_build\ncmake ${CMAKE_ARGS} ${SRC_DIR}/unidock\nmake unidock -j$CPU_COUNT\nmake install\n",
-   "string": "cuda120_h1234567_1"
+   "string": "cuda118_h1234567_0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "unidock",
-   "version": "1.1.2"
+   "version": "1.1.3"
   },
   "requirements": {
    "build": [
@@ -48,7 +48,9 @@
     "libgomp"
    ],
    "host": [
+    "python",
     "pip",
+    "setuptools",
     "libboost-devel",
     "libcurand-dev"
    ],
@@ -57,6 +59,7 @@
     "MDAnalysis",
     "networkx",
     "numpy",
+    "openmm",
     "pandas",
     "pathos",
     "rdkit"
@@ -64,8 +67,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9d20ae73e060e3036092807c7e519030855fd0c0a4ba1f7a4bb4300421cc5119",
-   "url": "https://github.com/dptech-corp/Uni-Dock/archive/refs/tags/1.1.2.tar.gz"
+   "patches": [
+    "0001-fix-boost-path.patch"
+   ],
+   "sha256": "0799f7673ac7d4151ced6a1f7bf670b8d3e78032192f304b6750527c1b0016e5",
+   "url": "https://github.com/dptech-corp/Uni-Dock/archive/refs/tags/1.1.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -91,7 +97,9 @@
    "elements": [
     "libboost-devel",
     "libcurand-dev",
-    "pip"
+    "pip",
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -100,6 +108,7 @@
     "mdanalysis",
     "networkx",
     "numpy",
+    "openmm",
     "pandas",
     "pathos",
     "python",
@@ -123,9 +132,9 @@
    "summary": "A GPU-accelerated molecular docking program"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "cd unidock_tools\npip install . -vv\ncd ..\ncd unidock\nmkdir conda_build\ncd conda_build\ncmake ${CMAKE_ARGS} ${SRC_DIR}/unidock\nmake unidock -j$CPU_COUNT\nmake install\n",
-   "string": "cuda120_h1234567_1"
+   "string": "cuda118_h1234567_0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -134,7 +143,7 @@
   },
   "package": {
    "name": "unidock",
-   "version": "1.1.2"
+   "version": "1.1.3"
   },
   "requirements": {
    "build": [
@@ -146,7 +155,9 @@
     "libgomp"
    ],
    "host": [
+    "python",
     "pip",
+    "setuptools",
     "libboost-devel",
     "libcurand-dev"
    ],
@@ -155,6 +166,7 @@
     "MDAnalysis",
     "networkx",
     "numpy",
+    "openmm",
     "pandas",
     "pathos",
     "rdkit"
@@ -162,8 +174,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9d20ae73e060e3036092807c7e519030855fd0c0a4ba1f7a4bb4300421cc5119",
-   "url": "https://github.com/dptech-corp/Uni-Dock/archive/refs/tags/1.1.2.tar.gz"
+   "patches": [
+    "0001-fix-boost-path.patch"
+   ],
+   "sha256": "0799f7673ac7d4151ced6a1f7bf670b8d3e78032192f304b6750527c1b0016e5",
+   "url": "https://github.com/dptech-corp/Uni-Dock/archive/refs/tags/1.1.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -186,7 +201,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/unidock.json"
  },
- "raw_meta_yaml": "{% set name = \"unidock\" %}\n{% set version = \"1.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/dptech-corp/Uni-Dock/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 9d20ae73e060e3036092807c7e519030855fd0c0a4ba1f7a4bb4300421cc5119\n\nbuild:\n  skip: true  # [not linux]\n  skip: true  # [cuda_compiler_version == \"None\"]\n  skip: true  # [cuda_compiler_version == \"11.2\"]\n  script: |\n    cd unidock_tools\n    pip install . -vv\n    cd ..\n    cd unidock\n    mkdir conda_build\n    cd conda_build\n    cmake ${CMAKE_ARGS} ${SRC_DIR}/unidock\n    make unidock -j$CPU_COUNT\n    make install\n  string: cuda{{ cuda_compiler_version | replace('.', '') }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cuda') }}\n    - cmake\n    - make\n    - libgomp\n  host:\n    - pip\n    - libboost-devel\n    - libcurand-dev  # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run:\n    - python\n    - MDAnalysis\n    - networkx\n    - numpy\n    - pandas\n    - pathos\n    - rdkit\n\ntest:\n  commands:\n    # Dry run to verify dynamic libs are present.\n    - unidock --version\n    - unidocktools --help\n\nabout:\n  home: https://github.com/dptech-corp/Uni-Dock\n  doc_url: https://github.com/dptech-corp/Uni-Dock\n  dev_url: https://github.com/dptech-corp/Uni-Dock\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: unidock/LICENSE\n  summary: A GPU-accelerated molecular docking program\n  description: >\n    Uni-Dock is a GPU-accelerated molecular docking program developed by DP Technology. It supports various scoring functions including vina, vinardo, and ad4. Uni-Dock achieves more than 1000-fold speed-up on V100 GPU with high-accuracy, compared with the AutoDock Vina running in single CPU core. The paper has been accepted\n    by JCTC (doi: 10.1021/acs.jctc.2c01145).\n\nextra:\n  recipe-maintainers:\n    - caic99\n",
+ "raw_meta_yaml": "{% set name = \"unidock\" %}\n{% set version = \"1.1.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/dptech-corp/Uni-Dock/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 0799f7673ac7d4151ced6a1f7bf670b8d3e78032192f304b6750527c1b0016e5\n  patches:\n    - 0001-fix-boost-path.patch\n\nbuild:\n  skip: true  # [not linux]\n  skip: true  # [cuda_compiler_version == \"None\"]\n  script: |\n    cd unidock_tools\n    pip install . -vv\n    cd ..\n    cd unidock\n    mkdir conda_build\n    cd conda_build\n    cmake ${CMAKE_ARGS} ${SRC_DIR}/unidock\n    make unidock -j$CPU_COUNT\n    make install\n  string: cuda{{ cuda_compiler_version | replace('.', '') }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cuda') }}\n    - cmake\n    - make\n    - libgomp\n  host:\n    - python\n    - pip\n    - setuptools\n    - libboost-devel\n    - libcurand-dev  # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run:\n    - python\n    - MDAnalysis\n    - networkx\n    - numpy\n    - openmm\n    - pandas\n    - pathos\n    - rdkit\n\ntest:\n  commands:\n    # Dry run to verify dynamic libs are present.\n    - unidock --version\n    - unidocktools --help\n\nabout:\n  home: https://github.com/dptech-corp/Uni-Dock\n  doc_url: https://github.com/dptech-corp/Uni-Dock\n  dev_url: https://github.com/dptech-corp/Uni-Dock\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: unidock/LICENSE\n  summary: A GPU-accelerated molecular docking program\n  description: >\n    Uni-Dock is a GPU-accelerated molecular docking program developed by DP Technology. It supports various scoring functions including vina, vinardo, and ad4. Uni-Dock achieves more than 1000-fold speed-up on V100 GPU with high-accuracy, compared with the AutoDock Vina running in single CPU core. The paper has been accepted\n    by JCTC (doi: 10.1021/acs.jctc.2c01145).\n\nextra:\n  recipe-maintainers:\n    - caic99\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -201,11 +216,13 @@
    "mdanalysis",
    "networkx",
    "numpy",
+   "openmm",
    "pandas",
    "pathos",
    "pip",
    "python",
-   "rdkit"
+   "rdkit",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -229,7 +246,9 @@
     "cxx_compiler_stub",
     "libboost-devel",
     "libcurand-dev",
-    "pip"
+    "pip",
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -242,6 +261,7 @@
     "mdanalysis",
     "networkx",
     "numpy",
+    "openmm",
     "pandas",
     "pathos",
     "python",
@@ -271,7 +291,9 @@
    "elements": [
     "libboost-devel",
     "libcurand-dev",
-    "pip"
+    "pip",
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -280,6 +302,7 @@
     "MDAnalysis",
     "networkx",
     "numpy",
+    "openmm",
     "pandas",
     "pathos",
     "python",
@@ -291,8 +314,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/dptech-corp/Uni-Dock/archive/refs/tags/1.1.2.tar.gz",
- "version": "1.1.2",
+ "url": "https://github.com/dptech-corp/Uni-Dock/archive/refs/tags/1.1.3.tar.gz",
+ "version": "1.1.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/unidock.json"
  }
