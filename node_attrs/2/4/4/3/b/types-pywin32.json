@@ -35,22 +35,22 @@
   },
   "package": {
    "name": "types-pywin32",
-   "version": "308.0.0.20241221"
+   "version": "308.0.0.20250124"
   },
   "requirements": {
    "host": [
-    "python 3.8",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python >=3.8"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "af25c6752be827e882083f6cf89a0d84e45837727d70c353883b6b4da34bb3ca",
-   "url": "https://pypi.org/packages/source/t/types-pywin32/types_pywin32-308.0.0.20241221.tar.gz"
+   "sha256": "20e0c5b517188d3e1d5d7e3de652c0e13d6156af70f86258baec72e76027a6dc",
+   "url": "https://pypi.org/packages/source/t/types-pywin32/types_pywin32-308.0.0.20250124.tar.gz"
   },
   "test": {
    "commands": [
@@ -58,7 +58,7 @@
     "test -f $SP_DIR/win32-stubs/__init__.pyi"
    ],
    "requires": [
-    "python 3.8",
+    "python 3.9",
     "pip"
    ]
   }
@@ -112,22 +112,22 @@
   },
   "package": {
    "name": "types-pywin32",
-   "version": "308.0.0.20241221"
+   "version": "308.0.0.20250124"
   },
   "requirements": {
    "host": [
-    "python 3.8",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python >=3.8"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "af25c6752be827e882083f6cf89a0d84e45837727d70c353883b6b4da34bb3ca",
-   "url": "https://pypi.org/packages/source/t/types-pywin32/types_pywin32-308.0.0.20241221.tar.gz"
+   "sha256": "20e0c5b517188d3e1d5d7e3de652c0e13d6156af70f86258baec72e76027a6dc",
+   "url": "https://pypi.org/packages/source/t/types-pywin32/types_pywin32-308.0.0.20250124.tar.gz"
   },
   "test": {
    "commands": [
@@ -135,7 +135,7 @@
     "test -f $SP_DIR/win32-stubs/__init__.pyi"
    ],
    "requires": [
-    "python 3.8",
+    "python 3.9",
     "pip"
    ]
   }
@@ -154,7 +154,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/types-pywin32.json"
  },
- "raw_meta_yaml": "{% set name = \"types-pywin32\" %}\n{% set version = \"308.0.0.20241221\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: af25c6752be827e882083f6cf89a0d84e45837727d70c353883b6b4da34bb3ca\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  commands:\n    - pip check\n    - test -f $SP_DIR/win32-stubs/__init__.pyi  # [unix]\n    - if not exist %SP_DIR%\\\\win32-stubs\\\\__init__.pyi exit 1  # [win]\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/python/typeshed\n  summary: Typing stubs for pywin32\n  license: Apache-2.0\n  license_file: LICENSE\n  doc_url: https://github.com/python/typeshed\n  dev_url: https://github.com/python/typeshed/tree/main/stubs/pywin32\n\nextra:\n  recipe-maintainers:\n    - sobolevn\n    - Ubadub\n",
+ "raw_meta_yaml": "{% set name = \"types-pywin32\" %}\n{% set version = \"308.0.0.20250124\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 20e0c5b517188d3e1d5d7e3de652c0e13d6156af70f86258baec72e76027a6dc\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  commands:\n    - pip check\n    - test -f $SP_DIR/win32-stubs/__init__.pyi  # [unix]\n    - if not exist %SP_DIR%\\\\win32-stubs\\\\__init__.pyi exit 1  # [win]\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/python/typeshed\n  summary: Typing stubs for pywin32\n  license: Apache-2.0\n  license_file: LICENSE\n  doc_url: https://github.com/python/typeshed\n  dev_url: https://github.com/python/typeshed/tree/main/stubs/pywin32\n\nextra:\n  recipe-maintainers:\n    - sobolevn\n    - Ubadub\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -200,26 +200,26 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.8",
+    "python 3.9",
     "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.8"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.8"
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/types-pywin32/types_pywin32-308.0.0.20241221.tar.gz",
- "version": "308.0.0.20241221",
+ "url": "https://pypi.org/packages/source/t/types-pywin32/types_pywin32-308.0.0.20250124.tar.gz",
+ "version": "308.0.0.20250124",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/types-pywin32.json"
  }
