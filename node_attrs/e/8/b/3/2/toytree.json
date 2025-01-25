@@ -27,7 +27,7 @@
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "python -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -36,12 +36,13 @@
   },
   "package": {
    "name": "toytree",
-   "version": "3.0.4"
+   "version": "3.0.7"
   },
   "requirements": {
    "host": [
     "python >=3.7",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.7",
@@ -56,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4de362b61d0b1717a26790cef16db80d8887532ce64906966dfb9cbd90cc1df5",
-   "url": "https://github.com/eaton-lab/toytree/archive/3.0.4.tar.gz"
+   "sha256": "8d6568307465bcfe53b0f03d333a796965a9132ed25d77d6b4de54db8698777e",
+   "url": "https://github.com/eaton-lab/toytree/archive/3.0.7.tar.gz"
   },
   "test": {
    "imports": [
@@ -74,7 +75,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -109,7 +111,7 @@
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "python -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -118,12 +120,13 @@
   },
   "package": {
    "name": "toytree",
-   "version": "3.0.4"
+   "version": "3.0.7"
   },
   "requirements": {
    "host": [
     "python >=3.7",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.7",
@@ -138,8 +141,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4de362b61d0b1717a26790cef16db80d8887532ce64906966dfb9cbd90cc1df5",
-   "url": "https://github.com/eaton-lab/toytree/archive/3.0.4.tar.gz"
+   "sha256": "8d6568307465bcfe53b0f03d333a796965a9132ed25d77d6b4de54db8698777e",
+   "url": "https://github.com/eaton-lab/toytree/archive/3.0.7.tar.gz"
   },
   "test": {
    "imports": [
@@ -154,14 +157,14 @@
    "toytree"
   ]
  },
- "parsing_error": "feedstock parsing error: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error RuntimeError raised:\n'conda build error: TypeError(\"CondaError.__init__() missing 1 required positional argument: 'message'\")\nTraceback (most recent call last):\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 360, in yamlize\n    return yaml.load(data, Loader=StringifyNumbersLoader)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/yaml/__init__.py\", line 81, in load\n    return loader.get_single_data()\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/yaml/constructor.py\", line 49, in get_single_data\n    node = self.get_single_node()\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"yaml/_yaml.pyx\", line 673, in yaml._yaml.CParser.get_single_node\n  File \"yaml/_yaml.pyx\", line 687, in yaml._yaml.CParser._compose_document\n  File \"yaml/_yaml.pyx\", line 731, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 845, in yaml._yaml.CParser._compose_mapping_node\n  File \"yaml/_yaml.pyx\", line 731, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 845, in yaml._yaml.CParser._compose_mapping_node\n  File \"yaml/_yaml.pyx\", line 729, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 808, in yaml._yaml.CParser._compose_sequence_node\n  File \"yaml/_yaml.pyx\", line 860, in yaml._yaml.CParser._parse_next_event\nyaml.parser.ParserError: while parsing a block collection\n  in \"<unicode string>\", line 36, column 5\ndid not find expected '-' indicator\n  in \"<unicode string>\", line 37, column 5\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 905, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 995, in _parse_meta_yaml_impl\n    m = MetaData(tmpdir, config=config, variant=var)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1189, in __init__\n    self.parse_again(permit_undefined_jinja=True, allow_no_other_outputs=True)\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1277, in parse_again\n    self.meta = parse(\n                ^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 521, in parse\n    res = yamlize(data)\n          ^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 364, in yamlize\n    raise UnableToParse(original=e)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/exceptions.py\", line 22, in __init__\n    super().__init__(*args, **kwargs)\nTypeError: CondaError.__init__() missing 1 required positional argument: 'message'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 360, in yamlize\n    return yaml.load(data, Loader=StringifyNumbersLoader)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/yaml/__init__.py\", line 81, in load\n    return loader.get_single_data()\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/yaml/constructor.py\", line 49, in get_single_data\n    node = self.get_single_node()\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"yaml/_yaml.pyx\", line 673, in yaml._yaml.CParser.get_single_node\n  File \"yaml/_yaml.pyx\", line 687, in yaml._yaml.CParser._compose_document\n  File \"yaml/_yaml.pyx\", line 731, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 845, in yaml._yaml.CParser._compose_mapping_node\n  File \"yaml/_yaml.pyx\", line 731, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 845, in yaml._yaml.CParser._compose_mapping_node\n  File \"yaml/_yaml.pyx\", line 729, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 808, in yaml._yaml.CParser._compose_sequence_node\n  File \"yaml/_yaml.pyx\", line 860, in yaml._yaml.CParser._parse_next_event\nyaml.parser.ParserError: while parsing a block collection\n  in \"<unicode string>\", line 36, column 5\ndid not find expected '-' indicator\n  in \"<unicode string>\", line 37, column 5\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 909, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 995, in _parse_meta_yaml_impl\n    m = MetaData(tmpdir, config=config, variant=var)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1189, in __init__\n    self.parse_again(permit_undefined_jinja=True, allow_no_other_outputs=True)\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1277, in parse_again\n    self.meta = parse(\n                ^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 521, in parse\n    res = yamlize(data)\n          ^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 364, in yamlize\n    raise UnableToParse(original=e)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/exceptions.py\", line 22, in __init__\n    super().__init__(*args, **kwargs)\nTypeError: CondaError.__init__() missing 1 required positional argument: 'message'\n'\nTraceback (most recent call last):\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/make_graph.py\", line 102, in try_load_feedstock\n    data = load_feedstock(name, attrs.data, mark_not_archived=mark_not_archived)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 705, in load_feedstock\n    return load_feedstock_containerized(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 657, in load_feedstock_containerized\n    data = run_container_operation(\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/micromamba/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/container_utils.py\", line 221, in run_container_operation\n    raise ContainerRuntimeError(\nconda_forge_feedstock_ops.container_utils.ContainerRuntimeError: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error RuntimeError raised:\n'conda build error: TypeError(\"CondaError.__init__() missing 1 required positional argument: 'message'\")\nTraceback (most recent call last):\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 360, in yamlize\n    return yaml.load(data, Loader=StringifyNumbersLoader)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/yaml/__init__.py\", line 81, in load\n    return loader.get_single_data()\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/yaml/constructor.py\", line 49, in get_single_data\n    node = self.get_single_node()\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"yaml/_yaml.pyx\", line 673, in yaml._yaml.CParser.get_single_node\n  File \"yaml/_yaml.pyx\", line 687, in yaml._yaml.CParser._compose_document\n  File \"yaml/_yaml.pyx\", line 731, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 845, in yaml._yaml.CParser._compose_mapping_node\n  File \"yaml/_yaml.pyx\", line 731, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 845, in yaml._yaml.CParser._compose_mapping_node\n  File \"yaml/_yaml.pyx\", line 729, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 808, in yaml._yaml.CParser._compose_sequence_node\n  File \"yaml/_yaml.pyx\", line 860, in yaml._yaml.CParser._parse_next_event\nyaml.parser.ParserError: while parsing a block collection\n  in \"<unicode string>\", line 36, column 5\ndid not find expected '-' indicator\n  in \"<unicode string>\", line 37, column 5\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 905, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 995, in _parse_meta_yaml_impl\n    m = MetaData(tmpdir, config=config, variant=var)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1189, in __init__\n    self.parse_again(permit_undefined_jinja=True, allow_no_other_outputs=True)\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1277, in parse_again\n    self.meta = parse(\n                ^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 521, in parse\n    res = yamlize(data)\n          ^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 364, in yamlize\n    raise UnableToParse(original=e)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/exceptions.py\", line 22, in __init__\n    super().__init__(*args, **kwargs)\nTypeError: CondaError.__init__() missing 1 required positional argument: 'message'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 360, in yamlize\n    return yaml.load(data, Loader=StringifyNumbersLoader)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/yaml/__init__.py\", line 81, in load\n    return loader.get_single_data()\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/yaml/constructor.py\", line 49, in get_single_data\n    node = self.get_single_node()\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"yaml/_yaml.pyx\", line 673, in yaml._yaml.CParser.get_single_node\n  File \"yaml/_yaml.pyx\", line 687, in yaml._yaml.CParser._compose_document\n  File \"yaml/_yaml.pyx\", line 731, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 845, in yaml._yaml.CParser._compose_mapping_node\n  File \"yaml/_yaml.pyx\", line 731, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 845, in yaml._yaml.CParser._compose_mapping_node\n  File \"yaml/_yaml.pyx\", line 729, in yaml._yaml.CParser._compose_node\n  File \"yaml/_yaml.pyx\", line 808, in yaml._yaml.CParser._compose_sequence_node\n  File \"yaml/_yaml.pyx\", line 860, in yaml._yaml.CParser._parse_next_event\nyaml.parser.ParserError: while parsing a block collection\n  in \"<unicode string>\", line 36, column 5\ndid not find expected '-' indicator\n  in \"<unicode string>\", line 37, column 5\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 909, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 995, in _parse_meta_yaml_impl\n    m = MetaData(tmpdir, config=config, variant=var)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1189, in __init__\n    self.parse_again(permit_undefined_jinja=True, allow_no_other_outputs=True)\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1277, in parse_again\n    self.meta = parse(\n                ^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 521, in parse\n    res = yamlize(data)\n          ^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 364, in yamlize\n    raise UnableToParse(original=e)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/exceptions.py\", line 22, in __init__\n    super().__init__(*args, **kwargs)\nTypeError: CondaError.__init__() missing 1 required positional argument: 'message'\n'\n",
+ "parsing_error": false,
  "platforms": [
   "linux_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/toytree.json"
  },
- "raw_meta_yaml": "{% set name = \"toytree\" %}\n{% set version = \"3.0.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/toytree/archive/{{ version }}.tar.gz\n  sha256: 4de362b61d0b1717a26790cef16db80d8887532ce64906966dfb9cbd90cc1df5\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - numpy\n    - scipy\n    - pandas\n    - toyplot\n    - requests\n    - loguru\n    - ghostscript\n\ntest:\n  imports:\n    - toytree\n\nabout:\n  home: https://github.com/eaton-lab/toytree\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Tree visualization, manipulation, and evolutionary analysis library.\n  description: |\n    A simple library for tree visualization, manipulation, and evolutionary analysis in Python.\n  doc_url: https://eaton-lab.org/toytree\n  dev_url: https://github.com/eaton-lab/toytree\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n",
+ "raw_meta_yaml": "{% set name = \"toytree\" %}\n{% set version = \"3.0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/toytree/archive/{{ version }}.tar.gz\n  sha256: 8d6568307465bcfe53b0f03d333a796965a9132ed25d77d6b4de54db8698777e\n\nbuild:\n  noarch: python\n  script: python -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - setuptools\n  run:\n    - python >=3.7\n    - numpy\n    - scipy\n    - pandas\n    - toyplot\n    - requests\n    - loguru\n    - ghostscript\n\ntest:\n  imports:\n    - toytree\n\nabout:\n  home: https://github.com/eaton-lab/toytree\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Tree visualization, manipulation, and evolutionary analysis library.\n  description: |\n    A simple library for tree visualization, manipulation, and evolutionary analysis in Python.\n  doc_url: https://eaton-lab.org/toytree\n  dev_url: https://github.com/eaton-lab/toytree\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -173,6 +176,7 @@
    "python",
    "requests",
    "scipy",
+   "setuptools",
    "toyplot"
   ]
  },
@@ -185,7 +189,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -216,7 +221,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7"
+    "python >=3.7",
+    "setuptools"
    ]
   },
   "run": {
@@ -237,8 +243,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/eaton-lab/toytree/archive/3.0.4.tar.gz",
- "version": "3.0.4",
+ "url": "https://github.com/eaton-lab/toytree/archive/3.0.7.tar.gz",
+ "version": "3.0.7",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/toytree.json"
  }
