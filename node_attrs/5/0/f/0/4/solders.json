@@ -26,7 +26,7 @@
    "summary": "solders is a high-performance Python toolkit for Solana"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "PYTHON -m pip install . -vv"
@@ -39,14 +39,15 @@
   },
   "package": {
    "name": "solders",
-   "version": "0.23.0"
+   "version": "0.24.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
     "rust_compiler_stub",
-    "cargo-bundle-licenses"
+    "cargo-bundle-licenses",
+    "make"
    ],
    "host": [
     "maturin >=1.8.1,<1.9",
@@ -63,8 +64,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c427b1875005696d97ee91d9a5f8ee378e0593f358fce7ea6433c2a6a5fb0f74",
-   "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.23.0.tar.gz"
+   "sha256": "8bfd1b75fe3bfa66a91f7c13e0f17d1d2ed560c09c12afe67c42636d46d280fe",
+   "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.24.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -94,6 +95,7 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "make",
     "rust_compiler_stub"
    ]
   },
@@ -140,7 +142,7 @@
    "summary": "solders is a high-performance Python toolkit for Solana"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "PYTHON -m pip install . -vv"
@@ -153,14 +155,17 @@
   },
   "package": {
    "name": "solders",
-   "version": "0.23.0"
+   "version": "0.24.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
     "rust_compiler_stub",
-    "cargo-bundle-licenses"
+    "cargo-bundle-licenses",
+    "make",
+    "m2-make",
+    "perl"
    ],
    "host": [
     "maturin >=1.8.1,<1.9",
@@ -177,8 +182,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c427b1875005696d97ee91d9a5f8ee378e0593f358fce7ea6433c2a6a5fb0f74",
-   "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.23.0.tar.gz"
+   "sha256": "8bfd1b75fe3bfa66a91f7c13e0f17d1d2ed560c09c12afe67c42636d46d280fe",
+   "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.24.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -215,7 +220,7 @@
    "summary": "solders is a high-performance Python toolkit for Solana"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "PYTHON -m pip install . -vv"
@@ -228,14 +233,15 @@
   },
   "package": {
    "name": "solders",
-   "version": "0.23.0"
+   "version": "0.24.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
     "rust_compiler_stub",
-    "cargo-bundle-licenses"
+    "cargo-bundle-licenses",
+    "make"
    ],
    "host": [
     "maturin >=1.8.1,<1.9",
@@ -252,8 +258,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c427b1875005696d97ee91d9a5f8ee378e0593f358fce7ea6433c2a6a5fb0f74",
-   "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.23.0.tar.gz"
+   "sha256": "8bfd1b75fe3bfa66a91f7c13e0f17d1d2ed560c09c12afe67c42636d46d280fe",
+   "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.24.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -283,6 +289,7 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "make",
     "rust_compiler_stub"
    ]
   },
@@ -331,7 +338,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/solders.json"
  },
- "raw_meta_yaml": "{% set name = \"solders\" %}\n{% set version = \"0.23.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/kevinheavey/solders/archive/refs/tags/{{ version }}.tar.gz\n  sha256: c427b1875005696d97ee91d9a5f8ee378e0593f358fce7ea6433c2a6a5fb0f74\n\nbuild:\n  script:\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n    - {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('rust') }}\n    - cargo-bundle-licenses\n  host:\n    - maturin >=1.8.1,<1.9\n    - poetry\n    - python\n    - pip\n    - setuptools-rust\n  run:\n    - jsonalias =0.1.1\n    - python\n    - typing_extensions\n\ntest:\n  imports:\n    - solders\n  requires:\n    - based58\n    - mnemonic\n    - pip\n    - pybip39\n    - pytest\n    - pytest-asyncio\n  source_files:\n    - tests\n  commands:\n    - pip check\n    - pytest\n\nabout:\n  home: https://github.com/kevinheavey/solders\n  summary: 'solders is a high-performance Python toolkit for Solana'\n  description: |\n    solders is a high-performance Python toolkit for Solana, written in Rust. It provides robust\n    solutions to the following problems:\n       - Core SDK stuff: keypairs, pubkeys, signing and serializing transactions - that sort of thing.\n       - RPC stuff: building requests and parsing responses (no networking stuff - if you want help with that,\n    solana-py is your friend).\n       - Integration testing stuff: the solders.bankrun module is an alternative to solana-test-validator\n    that's much more convenient and much faster. It's based on solana-program-test if you know that is.\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  doc_url: https://kevinheavey.github.io/solders/\n\nextra:\n  recipe-maintainers:\n    - MementoRC\n",
+ "raw_meta_yaml": "{% set name = \"solders\" %}\n{% set version = \"0.24.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/kevinheavey/solders/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 8bfd1b75fe3bfa66a91f7c13e0f17d1d2ed560c09c12afe67c42636d46d280fe\n\nbuild:\n  script:\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n    - {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('rust') }}\n    - cargo-bundle-licenses\n    - make  # [unix]\n    - m2-make  # [not unix]\n    - perl  # [not unix]\n  host:\n    - maturin >=1.8.1,<1.9\n    - poetry\n    - python\n    - pip\n    - setuptools-rust\n  run:\n    - jsonalias =0.1.1\n    - python\n    - typing_extensions\n\ntest:\n  imports:\n    - solders\n  requires:\n    - based58\n    - mnemonic\n    - pip\n    - pybip39\n    - pytest\n    - pytest-asyncio\n  source_files:\n    - tests\n  commands:\n    - pip check\n    - pytest\n\nabout:\n  home: https://github.com/kevinheavey/solders\n  summary: 'solders is a high-performance Python toolkit for Solana'\n  description: |\n    solders is a high-performance Python toolkit for Solana, written in Rust. It provides robust\n    solutions to the following problems:\n       - Core SDK stuff: keypairs, pubkeys, signing and serializing transactions - that sort of thing.\n       - RPC stuff: building requests and parsing responses (no networking stuff - if you want help with that,\n    solana-py is your friend).\n       - Integration testing stuff: the solders.bankrun module is an alternative to solana-test-validator\n    that's much more convenient and much faster. It's based on solana-program-test if you know that is.\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  doc_url: https://kevinheavey.github.io/solders/\n\nextra:\n  recipe-maintainers:\n    - MementoRC\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -339,7 +346,10 @@
    "c_stdlib_stub",
    "cargo-bundle-licenses",
    "jsonalias",
+   "m2-make",
+   "make",
    "maturin",
+   "perl",
    "pip",
    "poetry",
    "python",
@@ -355,6 +365,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "m2-make",
+    "make",
+    "perl",
     "rust_compiler_stub"
    ]
   },
@@ -400,6 +413,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "m2-make",
+    "make",
+    "perl",
     "rust_compiler_stub"
    ]
   },
@@ -433,8 +449,8 @@
    ]
   }
  },
- "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.23.0.tar.gz",
- "version": "0.23.0",
+ "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.24.0.tar.gz",
+ "version": "0.24.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/solders.json"
  },
@@ -451,7 +467,7 @@
    "summary": "solders is a high-performance Python toolkit for Solana"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "PYTHON -m pip install . -vv"
@@ -464,14 +480,16 @@
   },
   "package": {
    "name": "solders",
-   "version": "0.23.0"
+   "version": "0.24.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
     "rust_compiler_stub",
-    "cargo-bundle-licenses"
+    "cargo-bundle-licenses",
+    "m2-make",
+    "perl"
    ],
    "host": [
     "maturin >=1.8.1,<1.9",
@@ -488,8 +506,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c427b1875005696d97ee91d9a5f8ee378e0593f358fce7ea6433c2a6a5fb0f74",
-   "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.23.0.tar.gz"
+   "sha256": "8bfd1b75fe3bfa66a91f7c13e0f17d1d2ed560c09c12afe67c42636d46d280fe",
+   "url": "https://github.com/kevinheavey/solders/archive/refs/tags/0.24.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -519,6 +537,8 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "m2-make",
+    "perl",
     "rust_compiler_stub"
    ]
   },
