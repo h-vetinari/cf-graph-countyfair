@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -36,13 +36,14 @@
   },
   "package": {
    "name": "pytest-aiohttp",
-   "version": "1.0.5"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "pip",
-    "setuptools"
+    "setuptools >=51.0",
+    "setuptools_scm >=6.2"
    ],
    "run": [
     "python >=3.9",
@@ -53,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "880262bc5951e934463b15e3af8bb298f11f7d4d3ebac970aab425aff10a780a",
-   "url": "https://pypi.org/packages/source/p/pytest-aiohttp/pytest-aiohttp-1.0.5.tar.gz"
+   "sha256": "147de8cb164f3fc9d7196967f109ab3c0b93ea3463ab50631e56438eab7b5adc",
+   "url": "https://pypi.org/packages/source/p/pytest-aiohttp/pytest_aiohttp-1.1.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -75,7 +76,8 @@
    "elements": [
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools_scm"
    ]
   },
   "run": {
@@ -106,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -117,13 +119,14 @@
   },
   "package": {
    "name": "pytest-aiohttp",
-   "version": "1.0.5"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "pip",
-    "setuptools"
+    "setuptools >=51.0",
+    "setuptools_scm >=6.2"
    ],
    "run": [
     "python >=3.9",
@@ -134,8 +137,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "880262bc5951e934463b15e3af8bb298f11f7d4d3ebac970aab425aff10a780a",
-   "url": "https://pypi.org/packages/source/p/pytest-aiohttp/pytest-aiohttp-1.0.5.tar.gz"
+   "sha256": "147de8cb164f3fc9d7196967f109ab3c0b93ea3463ab50631e56438eab7b5adc",
+   "url": "https://pypi.org/packages/source/p/pytest-aiohttp/pytest_aiohttp-1.1.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -160,7 +163,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pytest-aiohttp.json"
  },
- "raw_meta_yaml": "{% set name = \"pytest-aiohttp\" %}\n{% set version = \"1.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 880262bc5951e934463b15e3af8bb298f11f7d4d3ebac970aab425aff10a780a\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - pytest >=6.1.0\n    - aiohttp >=3.8.1\n    - pytest-asyncio >=0.17.2\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pytest_aiohttp\n\nabout:\n  home: https://github.com/aio-libs/pytest-aiohttp\n  dev_url: https://github.com/aio-libs/pytest-aiohttp\n  doc_url: https://docs.aiohttp.org/en/stable/testing.html\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: pytest plugin for aiohttp support\n\nextra:\n  recipe-maintainers:\n    - klauer\n    - asmeurer\n",
+ "raw_meta_yaml": "{% set name = \"pytest-aiohttp\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 147de8cb164f3fc9d7196967f109ab3c0b93ea3463ab50631e56438eab7b5adc\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools >=51.0\n    - setuptools_scm >=6.2\n  run:\n    - python >={{ python_min }}\n    - pytest >=6.1.0\n    - aiohttp >=3.8.1\n    - pytest-asyncio >=0.17.2\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pytest_aiohttp\n\nabout:\n  home: https://github.com/aio-libs/pytest-aiohttp\n  dev_url: https://github.com/aio-libs/pytest-aiohttp\n  doc_url: https://docs.aiohttp.org/en/stable/testing.html\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: pytest plugin for aiohttp support\n\nextra:\n  recipe-maintainers:\n    - klauer\n    - asmeurer\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -169,7 +172,8 @@
    "pytest",
    "pytest-asyncio",
    "python",
-   "setuptools"
+   "setuptools",
+   "setuptools_scm"
   ]
  },
  "requirements": {
@@ -182,7 +186,8 @@
    "elements": [
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools_scm"
    ]
   },
   "run": {
@@ -212,7 +217,8 @@
    "elements": [
     "pip",
     "python 3.9",
-    "setuptools"
+    "setuptools >=51.0",
+    "setuptools_scm >=6.2"
    ]
   },
   "run": {
@@ -231,8 +237,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pytest-aiohttp/pytest-aiohttp-1.0.5.tar.gz",
- "version": "1.0.5",
+ "url": "https://pypi.org/packages/source/p/pytest-aiohttp/pytest_aiohttp-1.1.0.tar.gz",
+ "version": "1.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pytest-aiohttp.json"
  }
