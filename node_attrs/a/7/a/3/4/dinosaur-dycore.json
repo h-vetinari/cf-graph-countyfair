@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "dinosaur-dycore",
-   "version": "1.2.1"
+   "version": "1.2.2"
   },
   "requirements": {
    "host": [
@@ -61,8 +61,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "dd25c885829e4dc94120129a316be283851f463d76e611b07bc5a9e3d803d2ca",
-   "url": "https://pypi.org/packages/source/d/dinosaur/dinosaur-1.2.1.tar.gz"
+   "sha256": "bd63a541a4f3f379e98f4661645f6bfdaf47c9923c420a1e6ca0367cf251b743",
+   "url": "https://pypi.org/packages/source/d/dinosaur/dinosaur-1.2.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -125,7 +125,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -135,7 +135,7 @@
   },
   "package": {
    "name": "dinosaur-dycore",
-   "version": "1.2.1"
+   "version": "1.2.2"
   },
   "requirements": {
    "host": [
@@ -161,8 +161,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "dd25c885829e4dc94120129a316be283851f463d76e611b07bc5a9e3d803d2ca",
-   "url": "https://pypi.org/packages/source/d/dinosaur/dinosaur-1.2.1.tar.gz"
+   "sha256": "bd63a541a4f3f379e98f4661645f6bfdaf47c9923c420a1e6ca0367cf251b743",
+   "url": "https://pypi.org/packages/source/d/dinosaur/dinosaur-1.2.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -191,7 +191,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/dinosaur-dycore.json"
  },
- "raw_meta_yaml": "{% set version = \"1.2.1\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: dinosaur-dycore\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/d/dinosaur/dinosaur-{{ version }}.tar.gz\n  sha256: dd25c885829e4dc94120129a316be283851f463d76e611b07bc5a9e3d803d2ca\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - jax\n    - jaxlib\n    - numpy\n    - pint\n    - scipy\n    - scikit-learn\n    - tree-math\n    - dask-core\n    - fsspec\n    - pandas\n    - xarray\n    - xarray-tensorstore\n\ntest:\n  imports:\n    - dinosaur\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/google-research/dinosaur\n  summary: differentiable dynamics for global atmospheric modeling\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml": "{% set version = \"1.2.2\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: dinosaur-dycore\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/d/dinosaur/dinosaur-{{ version }}.tar.gz\n  sha256: bd63a541a4f3f379e98f4661645f6bfdaf47c9923c420a1e6ca0367cf251b743\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - jax\n    - jaxlib\n    - numpy\n    - pint\n    - scipy\n    - scikit-learn\n    - tree-math\n    - dask-core\n    - fsspec\n    - pandas\n    - xarray\n    - xarray-tensorstore\n\ntest:\n  imports:\n    - dinosaur\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/google-research/dinosaur\n  summary: differentiable dynamics for global atmospheric modeling\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -291,8 +291,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/dinosaur/dinosaur-1.2.1.tar.gz",
- "version": "1.2.1",
+ "url": "https://pypi.org/packages/source/d/dinosaur/dinosaur-1.2.2.tar.gz",
+ "version": "1.2.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/dinosaur-dycore.json"
  }
