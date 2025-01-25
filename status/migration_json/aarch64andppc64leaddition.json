@@ -4424,7 +4424,7 @@
         "cuda-cccl",
         "xgboost"
       ],
-      "num_descendants": 445,
+      "num_descendants": 446,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cccl-feedstock",
       "pre_pr_migrator_status": ""
@@ -6626,7 +6626,7 @@
         "cuda-cudart",
         "cuda-libraries-dev"
       ],
-      "num_descendants": 443,
+      "num_descendants": 444,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cuda-cccl-feedstock",
       "pre_pr_migrator_status": ""
@@ -6656,6 +6656,7 @@
         "cuda-nvcc",
         "cuda-nvcc-impl",
         "cuda-profiler-api",
+        "cuda-python",
         "cupy",
         "cuquantum",
         "cusparselt",
@@ -6675,7 +6676,7 @@
         "ucx-split",
         "warp-lang"
       ],
-      "num_descendants": 442,
+      "num_descendants": 443,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cuda-cudart-feedstock",
       "pre_pr_migrator_status": ""
@@ -6753,10 +6754,11 @@
     },
     "cuda-nvcc": {
       "immediate_children": [
+        "cuda-python",
         "triton",
         "warp-lang"
       ],
-      "num_descendants": 23,
+      "num_descendants": 25,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cuda-nvcc-feedstock",
       "pre_pr_migrator_status": ""
@@ -6768,7 +6770,7 @@
         "libcublas",
         "tensorflow"
       ],
-      "num_descendants": 52,
+      "num_descendants": 54,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cuda-nvcc-impl-feedstock",
       "pre_pr_migrator_status": ""
@@ -6820,6 +6822,7 @@
         "cuda-libraries",
         "cuda-libraries-dev",
         "cuda-libraries-static",
+        "cuda-python",
         "cudnn",
         "cupy",
         "cusparselt",
@@ -6829,7 +6832,7 @@
         "pyvkfft",
         "warp-lang"
       ],
-      "num_descendants": 52,
+      "num_descendants": 54,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cuda-nvrtc-feedstock",
       "pre_pr_migrator_status": ""
@@ -6872,11 +6875,12 @@
     "cuda-profiler-api": {
       "immediate_children": [
         "cuda-libraries-dev",
+        "cuda-python",
         "mandrake",
         "pycuda",
         "pytorch-cpu"
       ],
-      "num_descendants": 26,
+      "num_descendants": 28,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cuda-profiler-api-feedstock",
       "pre_pr_migrator_status": ""
@@ -26661,6 +26665,7 @@
         "conda-build",
         "conda-forge-ci-setup",
         "coreforecast",
+        "cuda-python",
         "cwinpy",
         "cwltool",
         "dask-sql",
@@ -26745,7 +26750,7 @@
         "xonsh",
         "yt"
       ],
-      "num_descendants": 424,
+      "num_descendants": 425,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/pywin32-feedstock",
       "pre_pr_migrator_status": ""
@@ -41197,7 +41202,6 @@
     "dwave-greedy",
     "dwave-preprocessing",
     "cython-blis",
-    "cuda-python",
     "contourpy",
     "confection",
     "clarabel",
@@ -41676,7 +41680,6 @@
     "schema-salad",
     "rpy2",
     "numba",
-    "rmm",
     "cudatoolkit",
     "ucc",
     "openmpi",
@@ -42003,6 +42006,8 @@
     "gap",
     "sagelib",
     "cuda-nvcc",
+    "cuda-python",
+    "rmm",
     "cmdstan",
     "prophet",
     "autotools_clang_conda",
