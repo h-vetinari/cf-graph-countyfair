@@ -26,7 +26,7 @@
     "rosversion = rospkg.rosversion:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "rospkg",
-   "version": "1.5.1"
+   "version": "1.6.0"
   },
   "requirements": {
    "host": [
@@ -55,9 +55,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "rospkg-1.5.1.tar.gz",
-   "sha256": "2ad2065ce60dcbdf8c6bec4fc907d05c5a9ce194692ca348e7476dc5c9229270",
-   "url": "https://github.com/ros-infrastructure/rospkg/archive/1.5.1.tar.gz"
+   "fn": "rospkg-1.6.0.tar.gz",
+   "sha256": "9341c8af5f547888ab484ee61b53d8447b6a52081222d2d5257757ab374c657f",
+   "url": "https://github.com/ros-infrastructure/rospkg/archive/1.6.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -114,7 +114,7 @@
     "rosversion = rospkg.rosversion:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -126,7 +126,7 @@
   },
   "package": {
    "name": "rospkg",
-   "version": "1.5.1"
+   "version": "1.6.0"
   },
   "requirements": {
    "host": [
@@ -143,9 +143,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "rospkg-1.5.1.tar.gz",
-   "sha256": "2ad2065ce60dcbdf8c6bec4fc907d05c5a9ce194692ca348e7476dc5c9229270",
-   "url": "https://github.com/ros-infrastructure/rospkg/archive/1.5.1.tar.gz"
+   "fn": "rospkg-1.6.0.tar.gz",
+   "sha256": "9341c8af5f547888ab484ee61b53d8447b6a52081222d2d5257757ab374c657f",
+   "url": "https://github.com/ros-infrastructure/rospkg/archive/1.6.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -174,7 +174,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/rospkg.json"
  },
- "raw_meta_yaml": "{% set name = \"rospkg\" %}\n{% set version = \"1.5.1\" %}\n{% set sha256 = \"2ad2065ce60dcbdf8c6bec4fc907d05c5a9ce194692ca348e7476dc5c9229270\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ros-infrastructure/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n  entry_points:\n    - rosversion = rospkg.rosversion:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - catkin_pkg\n    - pyyaml\n    - distro\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    - rosversion --help\n    - rosversion --distro\n  imports:\n    - rospkg\n\nabout:\n  home: http://wiki.ros.org/rospkg\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Standalone Python library for the ROS package system\n  dev_url: https://github.com/ros-infrastructure/rospkg\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n    - wolfv\n    - seanyen\n",
+ "raw_meta_yaml": "{% set name = \"rospkg\" %}\n{% set version = \"1.6.0\" %}\n{% set sha256 = \"9341c8af5f547888ab484ee61b53d8447b6a52081222d2d5257757ab374c657f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ros-infrastructure/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n  entry_points:\n    - rosversion = rospkg.rosversion:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - catkin_pkg\n    - pyyaml\n    - distro\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    - rosversion --help\n    - rosversion --distro\n  imports:\n    - rospkg\n\nabout:\n  home: http://wiki.ros.org/rospkg\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Standalone Python library for the ROS package system\n  dev_url: https://github.com/ros-infrastructure/rospkg\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n    - wolfv\n    - seanyen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -246,8 +246,8 @@
    ]
   }
  },
- "url": "https://github.com/ros-infrastructure/rospkg/archive/1.5.1.tar.gz",
- "version": "1.5.1",
+ "url": "https://github.com/ros-infrastructure/rospkg/archive/1.6.0.tar.gz",
+ "version": "1.6.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/rospkg.json"
  }
