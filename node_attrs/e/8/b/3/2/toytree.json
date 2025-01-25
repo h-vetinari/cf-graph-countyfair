@@ -26,8 +26,8 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
-   "script": "python -m pip install . -vv"
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -36,16 +36,16 @@
   },
   "package": {
    "name": "toytree",
-   "version": "3.0.7"
+   "version": "3.0.6"
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "numpy",
     "scipy",
     "pandas",
@@ -57,12 +57,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8d6568307465bcfe53b0f03d333a796965a9132ed25d77d6b4de54db8698777e",
-   "url": "https://github.com/eaton-lab/toytree/archive/3.0.7.tar.gz"
+   "sha256": "4f504e0ac57a6d3c7da414454a86e2398bd22a0aeaf29c39f247d621cc99cdf3",
+   "url": "https://github.com/eaton-lab/toytree/archive/3.0.6.tar.gz"
   },
   "test": {
    "imports": [
     "toytree"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -94,7 +97,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -110,8 +115,8 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
-   "script": "python -m pip install . -vv"
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -120,16 +125,16 @@
   },
   "package": {
    "name": "toytree",
-   "version": "3.0.7"
+   "version": "3.0.6"
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "numpy",
     "scipy",
     "pandas",
@@ -141,12 +146,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8d6568307465bcfe53b0f03d333a796965a9132ed25d77d6b4de54db8698777e",
-   "url": "https://github.com/eaton-lab/toytree/archive/3.0.7.tar.gz"
+   "sha256": "4f504e0ac57a6d3c7da414454a86e2398bd22a0aeaf29c39f247d621cc99cdf3",
+   "url": "https://github.com/eaton-lab/toytree/archive/3.0.6.tar.gz"
   },
   "test": {
    "imports": [
     "toytree"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -164,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/toytree.json"
  },
- "raw_meta_yaml": "{% set name = \"toytree\" %}\n{% set version = \"3.0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/toytree/archive/{{ version }}.tar.gz\n  sha256: 8d6568307465bcfe53b0f03d333a796965a9132ed25d77d6b4de54db8698777e\n\nbuild:\n  noarch: python\n  script: python -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - setuptools\n  run:\n    - python >=3.7\n    - numpy\n    - scipy\n    - pandas\n    - toyplot\n    - requests\n    - loguru\n    - ghostscript\n\ntest:\n  imports:\n    - toytree\n\nabout:\n  home: https://github.com/eaton-lab/toytree\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Tree visualization, manipulation, and evolutionary analysis library.\n  description: |\n    A simple library for tree visualization, manipulation, and evolutionary analysis in Python.\n  doc_url: https://eaton-lab.org/toytree\n  dev_url: https://github.com/eaton-lab/toytree\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n",
+ "raw_meta_yaml": "{% set name = \"toytree\" %}\n{% set version = \"3.0.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/toytree/archive/{{ version }}.tar.gz\n  sha256: 4f504e0ac57a6d3c7da414454a86e2398bd22a0aeaf29c39f247d621cc99cdf3\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - pandas\n    - toyplot\n    - requests\n    - loguru\n    - ghostscript\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - toytree\n\nabout:\n  home: https://github.com/eaton-lab/toytree\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Tree visualization, manipulation, and evolutionary analysis library.\n  description: |\n    A simple library for tree visualization, manipulation, and evolutionary analysis in Python.\n  doc_url: https://eaton-lab.org/toytree\n  dev_url: https://github.com/eaton-lab/toytree\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -208,7 +216,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -221,7 +231,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -232,7 +242,7 @@
     "loguru",
     "numpy",
     "pandas",
-    "python >=3.7",
+    "python >=3.9",
     "requests",
     "scipy",
     "toyplot"
@@ -240,11 +250,13 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://github.com/eaton-lab/toytree/archive/3.0.7.tar.gz",
- "version": "3.0.7",
+ "url": "https://github.com/eaton-lab/toytree/archive/3.0.6.tar.gz",
+ "version": "3.0.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/toytree.json"
  }
