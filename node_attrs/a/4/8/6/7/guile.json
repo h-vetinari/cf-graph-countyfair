@@ -2,6 +2,14 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
+   "osx_arm64": "osx_64"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -9,7 +17,12 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
-  }
+  },
+  "provider": {
+   "linux_aarch64": "azure",
+   "linux_ppc64le": "azure"
+  },
+  "test": "native"
  },
  "feedstock_name": "guile",
  "hash_type": "sha256",
@@ -18,56 +31,50 @@
    "doc_url": "https://www.gnu.org/software/guile/manual/",
    "home": "https://www.gnu.org/software/guile",
    "license": "LGPL-3.0-or-later",
-   "license_family": "LGPL",
    "license_file": "LICENSE",
    "summary": "The GNU C implementation of the Scheme programming language"
   },
   "build": {
-   "number": "3"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "ChristopherHogan"
    ]
   },
   "package": {
    "name": "guile",
-   "version": "2.2.4"
+   "version": "3.0.10"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "make"
+    "c_stdlib_stub",
+    "autoconf",
+    "automake",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
    ],
    "host": [
-    "libunistring",
-    "libffi",
     "bdw-gc",
     "gmp",
-    "libiconv",
-    "readline",
-    "libtool",
-    "pkg-config",
-    "gettext"
-   ],
-   "run": [
-    "libunistring",
-    "libtool",
+    "libatomic_ops",
     "libffi",
-    "bdw-gc",
-    "gmp",
     "libiconv",
-    "readline",
-    "gettext"
+    "libtool",
+    "libunistring",
+    "libxcrypt",
+    "ncurses",
+    "readline"
    ]
   },
   "schema_version": 0,
   "source": {
-   "patches": [
-    "skip_posix_crypt_test.patch"
-   ],
-   "sha256": "33b904c0bf4e48e156f3fb1d0e6b0392033bd610c6c9d9a0410c6e0ea96a3e5c",
-   "url": "https://ftp.gnu.org/gnu/guile/guile-2.2.4.tar.gz"
+   "sha256": "2dbdbc97598b2faf31013564efb48e4fed44131d28e996c26abe8a5b23b56c2a",
+   "url": "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.gz"
   },
   "test": {
    "commands": [
@@ -79,36 +86,222 @@
   "build": {
    "__set__": true,
    "elements": [
+    "autoconf",
+    "automake",
     "c_compiler_stub",
-    "make"
+    "c_stdlib_stub",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "bdw-gc",
-    "gettext",
     "gmp",
+    "libatomic_ops",
     "libffi",
     "libiconv",
     "libtool",
     "libunistring",
-    "pkg-config",
+    "libxcrypt",
+    "ncurses",
     "readline"
    ]
   },
   "run": {
    "__set__": true,
-   "elements": [
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "doc_url": "https://www.gnu.org/software/guile/manual/",
+   "home": "https://www.gnu.org/software/guile",
+   "license": "LGPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "The GNU C implementation of the Scheme programming language"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielnachun",
+    "ChristopherHogan"
+   ]
+  },
+  "package": {
+   "name": "guile",
+   "version": "3.0.10"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "autoconf",
+    "automake",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
+   ],
+   "host": [
     "bdw-gc",
-    "gettext",
     "gmp",
+    "libatomic_ops",
     "libffi",
     "libiconv",
     "libtool",
     "libunistring",
+    "libxcrypt",
+    "ncurses",
     "readline"
    ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2dbdbc97598b2faf31013564efb48e4fed44131d28e996c26abe8a5b23b56c2a",
+   "url": "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "guile -v"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "bdw-gc",
+    "gmp",
+    "libatomic_ops",
+    "libffi",
+    "libiconv",
+    "libtool",
+    "libunistring",
+    "libxcrypt",
+    "ncurses",
+    "readline"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "doc_url": "https://www.gnu.org/software/guile/manual/",
+   "home": "https://www.gnu.org/software/guile",
+   "license": "LGPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "The GNU C implementation of the Scheme programming language"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielnachun",
+    "ChristopherHogan"
+   ]
+  },
+  "package": {
+   "name": "guile",
+   "version": "3.0.10"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "autoconf",
+    "automake",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
+   ],
+   "host": [
+    "bdw-gc",
+    "gmp",
+    "libatomic_ops",
+    "libffi",
+    "libiconv",
+    "libtool",
+    "libunistring",
+    "libxcrypt",
+    "ncurses",
+    "readline"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2dbdbc97598b2faf31013564efb48e4fed44131d28e996c26abe8a5b23b56c2a",
+   "url": "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "guile -v"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "bdw-gc",
+    "gmp",
+    "libatomic_ops",
+    "libffi",
+    "libiconv",
+    "libtool",
+    "libunistring",
+    "libxcrypt",
+    "ncurses",
+    "readline"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
   },
   "test": {
    "__set__": true,
@@ -120,55 +313,51 @@
    "doc_url": "https://www.gnu.org/software/guile/manual/",
    "home": "https://www.gnu.org/software/guile",
    "license": "LGPL-3.0-or-later",
-   "license_family": "LGPL",
    "license_file": "LICENSE",
    "summary": "The GNU C implementation of the Scheme programming language"
   },
   "build": {
-   "number": "3"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "ChristopherHogan"
    ]
   },
   "package": {
    "name": "guile",
-   "version": "2.2.4"
+   "version": "3.0.10"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "make"
-   ],
-   "host": [
-    "libunistring",
-    "libffi",
-    "bdw-gc",
-    "gmp",
-    "libiconv",
-    "readline",
-    "libtool",
+    "c_stdlib_stub",
+    "autoconf",
+    "automake",
+    "gettext-tools",
+    "make",
     "pkg-config",
-    "gettext",
     "sed"
    ],
-   "run": [
-    "libunistring",
-    "libtool",
-    "libffi",
+   "host": [
     "bdw-gc",
     "gmp",
+    "libatomic_ops",
+    "libffi",
     "libiconv",
+    "libtool",
+    "libunistring",
+    "libxcrypt",
+    "ncurses",
     "readline",
-    "gettext"
+    "libintl-devel"
    ]
   },
   "schema_version": 0,
   "source": {
-   "patches": null,
-   "sha256": "33b904c0bf4e48e156f3fb1d0e6b0392033bd610c6c9d9a0410c6e0ea96a3e5c",
-   "url": "https://ftp.gnu.org/gnu/guile/guile-2.2.4.tar.gz"
+   "sha256": "2dbdbc97598b2faf31013564efb48e4fed44131d28e996c26abe8a5b23b56c2a",
+   "url": "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.gz"
   },
   "test": {
    "commands": [
@@ -182,55 +371,50 @@
    "doc_url": "https://www.gnu.org/software/guile/manual/",
    "home": "https://www.gnu.org/software/guile",
    "license": "LGPL-3.0-or-later",
-   "license_family": "LGPL",
    "license_file": "LICENSE",
    "summary": "The GNU C implementation of the Scheme programming language"
   },
   "build": {
-   "number": "3"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "ChristopherHogan"
    ]
   },
   "package": {
    "name": "guile",
-   "version": "2.2.4"
+   "version": "3.0.10"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "make"
+    "c_stdlib_stub",
+    "autoconf",
+    "automake",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
    ],
    "host": [
-    "sed",
-    "libunistring",
-    "libffi",
     "bdw-gc",
     "gmp",
-    "libiconv",
-    "readline",
-    "libtool",
-    "pkg-config",
-    "gettext"
-   ],
-   "run": [
-    "libunistring",
-    "libtool",
+    "libatomic_ops",
     "libffi",
-    "bdw-gc",
-    "gmp",
     "libiconv",
-    "readline",
-    "gettext"
+    "libintl-devel",
+    "libtool",
+    "libunistring",
+    "ncurses",
+    "readline"
    ]
   },
   "schema_version": 0,
   "source": {
-   "patches": null,
-   "sha256": "33b904c0bf4e48e156f3fb1d0e6b0392033bd610c6c9d9a0410c6e0ea96a3e5c",
-   "url": "https://ftp.gnu.org/gnu/guile/guile-2.2.4.tar.gz"
+   "sha256": "2dbdbc97598b2faf31013564efb48e4fed44131d28e996c26abe8a5b23b56c2a",
+   "url": "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.gz"
   },
   "test": {
    "commands": [
@@ -242,37 +426,128 @@
   "build": {
    "__set__": true,
    "elements": [
+    "autoconf",
+    "automake",
     "c_compiler_stub",
-    "make"
+    "c_stdlib_stub",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "bdw-gc",
-    "gettext",
     "gmp",
+    "libatomic_ops",
     "libffi",
     "libiconv",
+    "libintl-devel",
     "libtool",
     "libunistring",
-    "pkg-config",
-    "readline",
-    "sed"
+    "ncurses",
+    "readline"
    ]
   },
   "run": {
    "__set__": true,
-   "elements": [
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "doc_url": "https://www.gnu.org/software/guile/manual/",
+   "home": "https://www.gnu.org/software/guile",
+   "license": "LGPL-3.0-or-later",
+   "license_file": "LICENSE",
+   "summary": "The GNU C implementation of the Scheme programming language"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielnachun",
+    "ChristopherHogan"
+   ]
+  },
+  "package": {
+   "name": "guile",
+   "version": "3.0.10"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "autoconf",
+    "automake",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
+   ],
+   "host": [
     "bdw-gc",
-    "gettext",
     "gmp",
+    "libatomic_ops",
     "libffi",
     "libiconv",
+    "libintl-devel",
     "libtool",
     "libunistring",
+    "ncurses",
     "readline"
    ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2dbdbc97598b2faf31013564efb48e4fed44131d28e996c26abe8a5b23b56c2a",
+   "url": "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "guile -v"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "bdw-gc",
+    "gmp",
+    "libatomic_ops",
+    "libffi",
+    "libiconv",
+    "libintl-devel",
+    "libtool",
+    "libunistring",
+    "ncurses",
+    "readline"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
   },
   "test": {
    "__set__": true,
@@ -288,24 +563,34 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
-  "osx_64"
+  "linux_aarch64",
+  "linux_ppc64le",
+  "osx_64",
+  "osx_arm64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/guile.json"
  },
- "raw_meta_yaml": "{% set name = \"guile\" %}\n{% set version = \"2.2.4\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 33b904c0bf4e48e156f3fb1d0e6b0392033bd610c6c9d9a0410c6e0ea96a3e5c\n  patches:\n    - skip_posix_crypt_test.patch  # [linux]\n\nbuild:\n  number: 3\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make                # [unix]\n  host:\n    - sed  # [osx]\n    - libunistring\n    - libffi\n    - bdw-gc\n    - gmp\n    - libiconv\n    - readline\n    - libtool\n    - pkg-config\n    - gettext\n  run:\n    - libunistring\n    - libtool\n    - libffi\n    - bdw-gc\n    - gmp\n    - libiconv\n    - readline\n    - gettext\n\ntest:\n  commands:\n    - guile -v\n\nabout:\n  home: https://www.gnu.org/software/guile\n  license: LGPL-3.0-or-later\n  license_file: LICENSE\n  license_family: LGPL\n  summary: 'The GNU C implementation of the Scheme programming language'\n  doc_url: https://www.gnu.org/software/guile/manual/ \n\nextra:\n  recipe-maintainers:\n    - ChristopherHogan\n",
+ "raw_meta_yaml": "{% set name = \"guile\" %}\n{% set version = \"3.0.10\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2dbdbc97598b2faf31013564efb48e4fed44131d28e996c26abe8a5b23b56c2a\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n    - autoconf\n    - automake\n    - bdw-gc               # [build_platform != target_platform]\n    - gettext-tools\n    - gmp                  # [build_platform != target_platform]\n    - libffi               # [build_platform != target_platform]\n    - libiconv             # [build_platform != target_platform]\n    - libintl-devel        # [build_platform != target_platform and not linux]\n    - libunistring         # [build_platform != target_platform]\n    - make\n    - pkg-config\n    - readline             # [build_platform != target_platform]\n    - sed\n  host:\n    - bdw-gc\n    - gmp\n    - libatomic_ops\n    - libffi\n    - libiconv\n    - libintl-devel        # [osx]\n    - libtool\n    - libunistring\n    - libxcrypt            # [linux]\n    - ncurses\n    - readline\n\ntest:\n  commands:\n    - guile -v\n\nabout:\n  home: https://www.gnu.org/software/guile\n  license: LGPL-3.0-or-later\n  license_file: LICENSE\n  summary: 'The GNU C implementation of the Scheme programming language'\n  doc_url: https://www.gnu.org/software/guile/manual/\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n    - ChristopherHogan\n",
  "req": {
   "__set__": true,
   "elements": [
+   "autoconf",
+   "automake",
    "bdw-gc",
    "c_compiler_stub",
-   "gettext",
+   "c_stdlib_stub",
+   "gettext-tools",
    "gmp",
+   "libatomic_ops",
    "libffi",
    "libiconv",
+   "libintl-devel",
    "libtool",
    "libunistring",
+   "libxcrypt",
    "make",
+   "ncurses",
    "pkg-config",
    "readline",
    "sed"
@@ -315,8 +600,14 @@
   "build": {
    "__set__": true,
    "elements": [
+    "autoconf",
+    "automake",
     "c_compiler_stub",
-    "make"
+    "c_stdlib_stub",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
    ]
   },
   "host": {
@@ -324,29 +615,24 @@
    "elements": [
     "bdw-gc",
     "c_compiler_stub",
-    "gettext",
+    "c_stdlib_stub",
     "gmp",
+    "libatomic_ops",
     "libffi",
     "libiconv",
+    "libintl-devel",
     "libtool",
     "libunistring",
-    "pkg-config",
-    "readline",
-    "sed"
+    "libxcrypt",
+    "ncurses",
+    "readline"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "bdw-gc",
     "c_compiler_stub",
-    "gettext",
-    "gmp",
-    "libffi",
-    "libiconv",
-    "libtool",
-    "libunistring",
-    "readline"
+    "c_stdlib_stub"
    ]
   },
   "test": {
@@ -359,45 +645,43 @@
   "build": {
    "__set__": true,
    "elements": [
+    "autoconf",
+    "automake",
     "c_compiler_stub",
-    "make"
+    "c_stdlib_stub",
+    "gettext-tools",
+    "make",
+    "pkg-config",
+    "sed"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "bdw-gc",
-    "gettext",
     "gmp",
+    "libatomic_ops",
     "libffi",
     "libiconv",
+    "libintl-devel",
     "libtool",
     "libunistring",
-    "pkg-config",
-    "readline",
-    "sed"
+    "libxcrypt",
+    "ncurses",
+    "readline"
    ]
   },
   "run": {
    "__set__": true,
-   "elements": [
-    "bdw-gc",
-    "gettext",
-    "gmp",
-    "libffi",
-    "libiconv",
-    "libtool",
-    "libunistring",
-    "readline"
-   ]
+   "elements": []
   },
   "test": {
    "__set__": true,
    "elements": []
   }
  },
- "url": "https://ftp.gnu.org/gnu/guile/guile-2.2.4.tar.gz",
- "version": "2.2.4",
+ "url": "https://ftp.gnu.org/gnu/guile/guile-3.0.10.tar.gz",
+ "version": "3.0.10",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/guile.json"
  }
