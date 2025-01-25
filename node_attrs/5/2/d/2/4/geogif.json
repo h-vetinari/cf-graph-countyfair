@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "geogif",
-   "version": "0.2"
+   "version": "0.3"
   },
   "requirements": {
    "host": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "91c08b3a2cfa73ac7be5d8523d645e9d05d7a2a131667f771758fa3feee3f4f3",
-   "url": "https://pypi.org/packages/source/g/geogif/geogif-0.2.tar.gz"
+   "sha256": "559ad993d8cb9d4c86347a75aae9c38ec920a273abf9b29cba14ed1264dc143d",
+   "url": "https://pypi.org/packages/source/g/geogif/geogif-0.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -113,7 +113,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -123,7 +123,7 @@
   },
   "package": {
    "name": "geogif",
-   "version": "0.2"
+   "version": "0.3"
   },
   "requirements": {
    "host": [
@@ -143,8 +143,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "91c08b3a2cfa73ac7be5d8523d645e9d05d7a2a131667f771758fa3feee3f4f3",
-   "url": "https://pypi.org/packages/source/g/geogif/geogif-0.2.tar.gz"
+   "sha256": "559ad993d8cb9d4c86347a75aae9c38ec920a273abf9b29cba14ed1264dc143d",
+   "url": "https://pypi.org/packages/source/g/geogif/geogif-0.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -173,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/geogif.json"
  },
- "raw_meta_yaml": "{% set name = \"geogif\" %}\n{% set version = \"0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geogif-{{ version }}.tar.gz\n  sha256: 91c08b3a2cfa73ac7be5d8523d645e9d05d7a2a131667f771758fa3feee3f4f3\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n    - dask-core >=2021.4.1\n    - numpy >=1.20.2,<2.0.0\n    - pillow >=10.1.0,<11.0.0\n    - matplotlib-base >=3.4.1,<4.0.0\n    - xarray >=0.18\n    - typing_extensions\n\ntest:\n  imports:\n    - geogif\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://geogif.readthedocs.io/en/latest/index.html\n  summary: Render xarray timestacks into GIFs\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml": "{% set name = \"geogif\" %}\n{% set version = \"0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geogif-{{ version }}.tar.gz\n  sha256: 559ad993d8cb9d4c86347a75aae9c38ec920a273abf9b29cba14ed1264dc143d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n    - dask-core >=2021.4.1\n    - numpy >=1.20.2,<2.0.0\n    - pillow >=10.1.0,<11.0.0\n    - matplotlib-base >=3.4.1,<4.0.0\n    - xarray >=0.18\n    - typing_extensions\n\ntest:\n  imports:\n    - geogif\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://geogif.readthedocs.io/en/latest/index.html\n  summary: Render xarray timestacks into GIFs\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -255,8 +255,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/geogif/geogif-0.2.tar.gz",
- "version": "0.2",
+ "url": "https://pypi.org/packages/source/g/geogif/geogif-0.3.tar.gz",
+ "version": "0.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/geogif.json"
  }
