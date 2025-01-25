@@ -28,7 +28,7 @@
    "summary": "A fast AEDAT4 decoder with an underlying Rust implementation"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -108,7 +108,7 @@
    "summary": "A fast AEDAT4 decoder with an underlying Rust implementation"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -159,7 +159,7 @@
    "summary": "A fast AEDAT4 decoder with an underlying Rust implementation"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -239,7 +239,7 @@
    "summary": "A fast AEDAT4 decoder with an underlying Rust implementation"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -324,7 +324,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/aedat.json"
  },
- "raw_meta_yaml": "{% set name = \"aedat\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aedat-{{ version }}.tar.gz\n  sha256: a2e2d36745863c85ef6723f6a7ab90ed972808f07f3dd7cd7f66d9d54cb527a0\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - maturin\n    - cargo-bundle-licenses\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - aedat\n\nabout:\n  home: https://github.com/neuromorphicsystems/aedat/\n  summary: A fast AEDAT4 decoder with an underlying Rust implementation\n  license: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n",
+ "raw_meta_yaml": "{% set name = \"aedat\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aedat-{{ version }}.tar.gz\n  sha256: a2e2d36745863c85ef6723f6a7ab90ed972808f07f3dd7cd7f66d9d54cb527a0\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - maturin\n    - cargo-bundle-licenses\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - aedat\n\nabout:\n  home: https://github.com/neuromorphicsystems/aedat/\n  summary: A fast AEDAT4 decoder with an underlying Rust implementation\n  license: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -419,7 +419,7 @@
    "summary": "A fast AEDAT4 decoder with an underlying Rust implementation"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
