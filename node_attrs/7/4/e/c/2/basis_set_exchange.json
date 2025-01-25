@@ -29,7 +29,7 @@
     "bsecurate=basis_set_exchange.cli:run_bsecurate_cli"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,17 +40,17 @@
   },
   "package": {
    "name": "basis_set_exchange",
-   "version": "0.10"
+   "version": "0.11"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.9",
     "pip",
     "setuptools >=61.0",
     "setuptools-scm >=8.0"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "jsonschema",
     "argcomplete",
     "regex",
@@ -59,8 +59,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8cf7f624f2b2d6f531f34d546ad18944f38d0838d04730da80e3ef6b21c3319f",
-   "url": "https://pypi.io/packages/source/b/basis_set_exchange/basis_set_exchange-0.10.tar.gz"
+   "sha256": "80f89348e4cc52b12f89391f923564eb5f877e316e2f8fe1e4f28df769d2c852",
+   "url": "https://pypi.org/packages/source/b/basis_set_exchange/basis_set_exchange-0.11.tar.gz"
   },
   "test": {
    "commands": [
@@ -68,12 +68,13 @@
     "bsecurate -h",
     "test -f $SP_DIR/basis_set_exchange/__init__.py",
     "pip check",
-    "python -c \"import basis_set_exchange as qc;print(qc.__version__);assert qc.__version__ == '0.10', f'{qc.__version__=} differs from recipe=\\'0.10\\''\""
+    "python -c \"import basis_set_exchange as qc;print(qc.__version__);assert qc.__version__ == '0.11', f'{qc.__version__=} differs from recipe=\\'0.11\\''\""
    ],
    "imports": [
     "basis_set_exchange"
    ],
    "requires": [
+    "python 3.9",
     "pip"
    ]
   }
@@ -105,7 +106,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -125,7 +127,7 @@
     "bsecurate=basis_set_exchange.cli:run_bsecurate_cli"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -136,17 +138,17 @@
   },
   "package": {
    "name": "basis_set_exchange",
-   "version": "0.10"
+   "version": "0.11"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.9",
     "pip",
     "setuptools >=61.0",
     "setuptools-scm >=8.0"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "jsonschema",
     "argcomplete",
     "regex",
@@ -155,8 +157,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8cf7f624f2b2d6f531f34d546ad18944f38d0838d04730da80e3ef6b21c3319f",
-   "url": "https://pypi.io/packages/source/b/basis_set_exchange/basis_set_exchange-0.10.tar.gz"
+   "sha256": "80f89348e4cc52b12f89391f923564eb5f877e316e2f8fe1e4f28df769d2c852",
+   "url": "https://pypi.org/packages/source/b/basis_set_exchange/basis_set_exchange-0.11.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,12 +166,13 @@
     "bsecurate -h",
     "test -f $SP_DIR/basis_set_exchange/__init__.py",
     "pip check",
-    "python -c \"import basis_set_exchange as qc;print(qc.__version__);assert qc.__version__ == '0.10', f'{qc.__version__=} differs from recipe=\\'0.10\\''\""
+    "python -c \"import basis_set_exchange as qc;print(qc.__version__);assert qc.__version__ == '0.11', f'{qc.__version__=} differs from recipe=\\'0.11\\''\""
    ],
    "imports": [
     "basis_set_exchange"
    ],
    "requires": [
+    "python 3.9",
     "pip"
    ]
   }
@@ -188,7 +191,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/basis_set_exchange.json"
  },
- "raw_meta_yaml": "{% set name = \"basis_set_exchange\" %}\n{% set version = \"0.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8cf7f624f2b2d6f531f34d546ad18944f38d0838d04730da80e3ef6b21c3319f\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - bse=basis_set_exchange.cli:run_bse_cli\n    - bsecurate=basis_set_exchange.cli:run_bsecurate_cli\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - setuptools >=61.0\n    - setuptools-scm >=8.0\n  run:\n    - python >=3.8\n    - jsonschema\n    - argcomplete\n    - regex\n    - unidecode\n\ntest:\n  imports:\n    - basis_set_exchange\n  requires:\n    - pip\n  commands:\n    - bse -h\n    - bsecurate -h\n    - test -f $SP_DIR/basis_set_exchange/__init__.py\n    - pip check\n    - python -c \"import basis_set_exchange as qc;print(qc.__version__);assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n\nabout:\n  home: https://github.com/MolSSI-BSE/basis_set_exchange\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A repository for quantum chemistry basis sets\n  doc_url: https://molssi-bse.github.io/basis_set_exchange/\n  dev_url: https://github.com/MolSSI-BSE/basis_set_exchange\n\nextra:\n  recipe-maintainers:\n    - mattwthompson\n    - bennybp\n",
+ "raw_meta_yaml": "{% set name = \"basis_set_exchange\" %}\n{% set version = \"0.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 80f89348e4cc52b12f89391f923564eb5f877e316e2f8fe1e4f28df769d2c852\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - bse=basis_set_exchange.cli:run_bse_cli\n    - bsecurate=basis_set_exchange.cli:run_bsecurate_cli\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools >=61.0\n    - setuptools-scm >=8.0\n  run:\n    - python >={{ python_min }}\n    - jsonschema\n    - argcomplete\n    - regex\n    - unidecode\n\ntest:\n  imports:\n    - basis_set_exchange\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - bse -h\n    - bsecurate -h\n    - test -f $SP_DIR/basis_set_exchange/__init__.py\n    - pip check\n    - python -c \"import basis_set_exchange as qc;print(qc.__version__);assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n\nabout:\n  home: https://github.com/MolSSI-BSE/basis_set_exchange\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A repository for quantum chemistry basis sets\n  doc_url: https://molssi-bse.github.io/basis_set_exchange/\n  dev_url: https://github.com/MolSSI-BSE/basis_set_exchange\n\nextra:\n  recipe-maintainers:\n    - mattwthompson\n    - bennybp\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -229,7 +232,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -243,7 +247,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8",
+    "python 3.9",
     "setuptools >=61.0",
     "setuptools-scm >=8.0"
    ]
@@ -253,7 +257,7 @@
    "elements": [
     "argcomplete",
     "jsonschema",
-    "python >=3.8",
+    "python >=3.9",
     "regex",
     "unidecode"
    ]
@@ -261,12 +265,13 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/b/basis_set_exchange/basis_set_exchange-0.10.tar.gz",
- "version": "0.10",
+ "url": "https://pypi.org/packages/source/b/basis_set_exchange/basis_set_exchange-0.11.tar.gz",
+ "version": "0.11",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/basis_set_exchange.json"
  }
