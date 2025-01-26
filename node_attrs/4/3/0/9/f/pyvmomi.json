@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "pyvmomi",
-   "version": "8.0.1.0.2"
+   "version": "8.0.3.0.1"
   },
   "requirements": {
    "host": [
@@ -49,8 +49,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8aeccd9e4adbbecba2512d7a94488edec44ce481d7072000f5fc524e29c395f3",
-   "url": "https://pypi.org/packages/source/p/pyvmomi/pyvmomi-8.0.1.0.2.tar.gz"
+   "sha256": "db795c960159cfa3c81e6af4cf1f46618e61cf0349db1666de75df98a4f29c69",
+   "url": "https://pypi.org/packages/source/p/pyvmomi/pyvmomi-8.0.3.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -115,7 +115,7 @@
   },
   "package": {
    "name": "pyvmomi",
-   "version": "8.0.1.0.2"
+   "version": "8.0.3.0.1"
   },
   "requirements": {
    "host": [
@@ -130,8 +130,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8aeccd9e4adbbecba2512d7a94488edec44ce481d7072000f5fc524e29c395f3",
-   "url": "https://pypi.org/packages/source/p/pyvmomi/pyvmomi-8.0.1.0.2.tar.gz"
+   "sha256": "db795c960159cfa3c81e6af4cf1f46618e61cf0349db1666de75df98a4f29c69",
+   "url": "https://pypi.org/packages/source/p/pyvmomi/pyvmomi-8.0.3.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyvmomi.json"
  },
- "raw_meta_yaml": "{% set name = \"pyvmomi\" %}\n{% set version = \"8.0.1.0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8aeccd9e4adbbecba2512d7a94488edec44ce481d7072000f5fc524e29c395f3\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . -vv '\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - six >=1.7.3\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - pyVim\n    - pyVmomi\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/vmware/pyvmomi\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: VMware vSphere Python SDK\n\nextra:\n  recipe-maintainers:\n    - pg-hbk\n    - sy-hbk\n    - maresb \n",
+ "raw_meta_yaml": "{% set name = \"pyvmomi\" %}\n{% set version = \"8.0.3.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: db795c960159cfa3c81e6af4cf1f46618e61cf0349db1666de75df98a4f29c69\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . -vv '\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - six >=1.7.3\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - pyVim\n    - pyVmomi\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/vmware/pyvmomi\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: VMware vSphere Python SDK\n\nextra:\n  recipe-maintainers:\n    - pg-hbk\n    - sy-hbk\n    - maresb\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -229,8 +229,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pyvmomi/pyvmomi-8.0.1.0.2.tar.gz",
- "version": "8.0.1.0.2",
+ "url": "https://pypi.org/packages/source/p/pyvmomi/pyvmomi-8.0.3.0.1.tar.gz",
+ "version": "8.0.3.0.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyvmomi.json"
  }
