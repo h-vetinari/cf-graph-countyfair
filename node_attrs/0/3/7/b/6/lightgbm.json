@@ -39,11 +39,11 @@
    "summary": "LightGBM is a gradient boosting framework that uses tree based learning algorithms."
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "run_exports": [
     "liblightgbm"
    ],
-   "string": "cpu_h1234567_3"
+   "string": "cuda_h1234567_4"
   },
   "extra": {
    "feedstock-name": "lightgbm",
@@ -61,18 +61,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -108,7 +108,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -118,18 +119,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -165,7 +166,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -175,18 +177,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -222,7 +224,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    }
@@ -249,8 +252,8 @@
     "__cuda"
    ],
    "run_constrained": [
-    "lightgbm 4.5.0 cuda_*_3",
-    "lightgbm 4.5.0 cpu_*_3"
+    "lightgbm 4.5.0 cuda_*_4",
+    "lightgbm 4.5.0 cpu_*_4"
    ]
   },
   "schema_version": 0,
@@ -260,7 +263,7 @@
     "use_precompiled.diff"
    ],
    "sha256": "e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba",
-   "url": "https://pypi.io/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -305,6 +308,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "python",
     "scikit-learn"
    ]
   }
@@ -321,11 +325,11 @@
    "summary": "LightGBM is a gradient boosting framework that uses tree based learning algorithms."
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "run_exports": [
     "liblightgbm"
    ],
-   "string": "cpu_h1234567_3"
+   "string": "cuda_h1234567_4"
   },
   "extra": {
    "feedstock-name": "lightgbm",
@@ -343,18 +347,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -390,7 +394,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -400,18 +405,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -447,7 +452,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -457,18 +463,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -504,7 +510,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    }
@@ -531,8 +538,8 @@
     "__cuda"
    ],
    "run_constrained": [
-    "lightgbm 4.5.0 cuda_*_3",
-    "lightgbm 4.5.0 cpu_*_3"
+    "lightgbm 4.5.0 cuda_*_4",
+    "lightgbm 4.5.0 cpu_*_4"
    ]
   },
   "schema_version": 0,
@@ -542,7 +549,7 @@
     "use_precompiled.diff"
    ],
    "sha256": "e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba",
-   "url": "https://pypi.io/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -587,6 +594,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "python",
     "scikit-learn"
    ]
   }
@@ -603,11 +611,11 @@
    "summary": "LightGBM is a gradient boosting framework that uses tree based learning algorithms."
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "run_exports": [
     "liblightgbm"
    ],
-   "string": "cpu_h1234567_3"
+   "string": "cpu_h1234567_4"
   },
   "extra": {
    "feedstock-name": "lightgbm",
@@ -625,18 +633,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -672,7 +680,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -682,18 +691,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -729,7 +738,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -739,18 +749,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -786,7 +796,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    }
@@ -813,8 +824,8 @@
     "__cuda"
    ],
    "run_constrained": [
-    "lightgbm 4.5.0 cuda_*_3",
-    "lightgbm 4.5.0 cpu_*_3"
+    "lightgbm 4.5.0 cuda_*_4",
+    "lightgbm 4.5.0 cpu_*_4"
    ]
   },
   "schema_version": 0,
@@ -824,7 +835,7 @@
     "use_precompiled.diff"
    ],
    "sha256": "e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba",
-   "url": "https://pypi.io/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -869,6 +880,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "python",
     "scikit-learn"
    ]
   }
@@ -885,11 +897,11 @@
    "summary": "LightGBM is a gradient boosting framework that uses tree based learning algorithms."
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "run_exports": [
     "liblightgbm"
    ],
-   "string": "cpu_h1234567_3"
+   "string": "cpu_h1234567_4"
   },
   "extra": {
    "feedstock-name": "lightgbm",
@@ -907,18 +919,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -954,7 +966,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -964,18 +977,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1011,7 +1024,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1021,18 +1035,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1068,7 +1082,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1078,18 +1093,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1125,7 +1140,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1135,18 +1151,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1182,7 +1198,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1192,18 +1209,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1239,7 +1256,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1249,18 +1267,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1296,7 +1314,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1306,18 +1325,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cuda_py_3"
+     "string": "cuda_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1353,7 +1372,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1363,18 +1383,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1410,7 +1430,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1420,18 +1441,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1467,7 +1488,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1477,18 +1499,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1524,7 +1546,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    },
@@ -1534,18 +1557,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1581,7 +1604,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    }
@@ -1611,8 +1635,8 @@
     "__cuda"
    ],
    "run_constrained": [
-    "lightgbm 4.5.0 cuda_*_3",
-    "lightgbm 4.5.0 cpu_*_3"
+    "lightgbm 4.5.0 cuda_*_4",
+    "lightgbm 4.5.0 cpu_*_4"
    ]
   },
   "schema_version": 0,
@@ -1622,7 +1646,7 @@
     "use_precompiled.diff"
    ],
    "sha256": "e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba",
-   "url": "https://pypi.io/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
   },
   "test": {
    "commands": null
@@ -1641,11 +1665,11 @@
    "summary": "LightGBM is a gradient boosting framework that uses tree based learning algorithms."
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "run_exports": [
     "liblightgbm"
    ],
-   "string": "cpu_h1234567_3"
+   "string": "cpu_h1234567_4"
   },
   "extra": {
    "feedstock-name": "lightgbm",
@@ -1663,18 +1687,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1710,7 +1734,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    }
@@ -1734,7 +1759,7 @@
    ],
    "run": [],
    "run_constrained": [
-    "lightgbm 4.5.0 cpu_*_3"
+    "lightgbm 4.5.0 cpu_*_4"
    ]
   },
   "schema_version": 0,
@@ -1744,7 +1769,7 @@
     "use_precompiled.diff"
    ],
    "sha256": "e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba",
-   "url": "https://pypi.io/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -1787,6 +1812,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "python",
     "scikit-learn"
    ]
   }
@@ -1803,11 +1829,11 @@
    "summary": "LightGBM is a gradient boosting framework that uses tree based learning algorithms."
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "run_exports": [
     "liblightgbm"
    ],
-   "string": "cpu_h1234567_3"
+   "string": "cpu_h1234567_4"
   },
   "extra": {
    "feedstock-name": "lightgbm",
@@ -1825,18 +1851,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -1872,7 +1898,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    }
@@ -1896,7 +1923,7 @@
    ],
    "run": [],
    "run_constrained": [
-    "lightgbm 4.5.0 cpu_*_3"
+    "lightgbm 4.5.0 cpu_*_4"
    ]
   },
   "schema_version": 0,
@@ -1906,7 +1933,7 @@
     "use_precompiled.diff"
    ],
    "sha256": "e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba",
-   "url": "https://pypi.io/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -1949,6 +1976,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "python",
     "scikit-learn"
    ]
   }
@@ -1972,7 +2000,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lightgbm.json"
  },
- "raw_meta_yaml": "{% set version = \"4.5.0\" %}\n\npackage:\n  name: liblightgbm\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/l/lightgbm/lightgbm-{{ version }}.tar.gz\n  sha256: e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba\n  patches:\n    - boost_shared.diff\n    # Taken from https://github.com/microsoft/LightGBM/blob/v4.5.0/build-python.sh#L308-L316\n    # except that we don't copy lib_lightgbm.so to SP_DIR\n    - use_precompiled.diff\n\nbuild:\n  number: 3\n  string: cuda_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != \"None\"]\n  string: cpu_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version == \"None\"]\n  # CUDA is not supported in windows\n  skip: true  # [cuda_compiler_version != \"None\" and win]\n  run_exports:\n    # Pin conservatively as we don't know ABI guarantees\n    - {{ pin_subpackage(\"liblightgbm\", max_pin=\"x.x.x\") }}\n\nrequirements:\n  build:\n    - cmake >=3.28\n    - make    # [not win]\n    - ninja   # [win]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}                 # [cuda_compiler_version != \"None\"]\n  host:\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - libboost-devel              # [cuda_compiler_version == \"None\"]\n    - ocl-icd                     # [cuda_compiler_version == \"None\" and linux]\n    - khronos-opencl-icd-loader   # [cuda_compiler_version == \"None\" and not linux]\n  run:\n    - __cuda                      # [cuda_compiler_version != \"None\"]\n  run_constrained:\n    - lightgbm {{ version }} cuda_*_{{ PKG_BUILDNUM }}   # [cuda_compiler_version != \"None\"]\n    - lightgbm {{ version }} cpu_*_{{ PKG_BUILDNUM }}    # [cuda_compiler_version == \"None\"]\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/lib_lightgbm${SHLIB_EXT}  # [unix]\n\noutputs:\n  - name: liblightgbm\n\n  - name: lightgbm\n    script: install-python.sh\n    build:\n      noarch: python\n      string: cuda_py_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != \"None\"]\n      string: cpu_py_{{ PKG_BUILDNUM }}   # [cuda_compiler_version == \"None\"]\n      # TODO: remove this when conda-build bug is fixed where `noarch` subpackages\n      # when tested does not find dependencies from target_platform.\n      skip: True  # [build_platform != target_platform]\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n      host:\n        - python\n        - pip\n        - setuptools\n      run:\n        - python\n        - {{ pin_subpackage(\"liblightgbm\", max_pin=\"x.x.x\") }}\n        - numpy >=1.17.0\n        - scipy\n      # optional dependencies from [project.optional-dependencies]\n      # at https://github.com/microsoft/LightGBM/blob/master/python-package/pyproject.toml\n      run_constrained:\n        - cffi >=1.15.1\n        - dask >=2.0.0\n        - pandas >=0.24.0\n        - pyarrow >=6.0.1\n        - scikit-learn !=0.22.0\n    test:\n      files:\n        - python_run_test.py\n      imports:\n        - lightgbm\n        - lightgbm.basic\n        - lightgbm.callback\n        - lightgbm.compat\n        - lightgbm.dask\n        - lightgbm.engine\n        - lightgbm.libpath\n        - lightgbm.plotting\n        - lightgbm.sklearn\n      requires:\n        - pip\n        - scikit-learn\n      commands:\n        - pip check\n        - python python_run_test.py\n        - python -c \"from lightgbm import __version__\"\n\nabout:\n  home: https://github.com/microsoft/LightGBM\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: LightGBM is a gradient boosting framework that uses tree based learning algorithms.\n\n  description: |\n    A fast, distributed, high performance gradient boosting (GBDT, GBRT, GBM or MART) framework based on decision tree algorithms, used for ranking, classification and many other machine learning tasks.\n  doc_url: https://lightgbm.readthedocs.io/en/v{{ version }}/\n  dev_url: https://github.com/microsoft/LightGBM\n\nextra:\n  feedstock-name: lightgbm\n  recipe-maintainers:\n    - synapticarbors\n    - aldanor\n    - xhochy\n    - jameslamb\n",
+ "raw_meta_yaml": "{% set version = \"4.5.0\" %}\n\npackage:\n  name: liblightgbm\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/l/lightgbm/lightgbm-{{ version }}.tar.gz\n  sha256: e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba\n  patches:\n    - boost_shared.diff\n    # Taken from https://github.com/microsoft/LightGBM/blob/v4.5.0/build-python.sh#L308-L316\n    # except that we don't copy lib_lightgbm.so to SP_DIR\n    - use_precompiled.diff\n\nbuild:\n  number: 4\n  string: cuda_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != \"None\"]\n  string: cpu_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version == \"None\"]\n  # CUDA is not supported in windows\n  skip: true  # [cuda_compiler_version != \"None\" and win]\n  run_exports:\n    # Pin conservatively as we don't know ABI guarantees\n    - {{ pin_subpackage(\"liblightgbm\", max_pin=\"x.x.x\") }}\n\nrequirements:\n  build:\n    - cmake >=3.28\n    - make    # [not win]\n    - ninja   # [win]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}                 # [cuda_compiler_version != \"None\"]\n  host:\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - libboost-devel              # [cuda_compiler_version == \"None\"]\n    - ocl-icd                     # [cuda_compiler_version == \"None\" and linux]\n    - khronos-opencl-icd-loader   # [cuda_compiler_version == \"None\" and not linux]\n  run:\n    - __cuda                      # [cuda_compiler_version != \"None\"]\n  run_constrained:\n    - lightgbm {{ version }} cuda_*_{{ PKG_BUILDNUM }}   # [cuda_compiler_version != \"None\"]\n    - lightgbm {{ version }} cpu_*_{{ PKG_BUILDNUM }}    # [cuda_compiler_version == \"None\"]\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/lib_lightgbm${SHLIB_EXT}  # [unix]\n\noutputs:\n  - name: liblightgbm\n\n  - name: lightgbm\n    script: install-python.sh\n    build:\n      noarch: python\n      string: cuda_py_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != \"None\"]\n      string: cpu_py_{{ PKG_BUILDNUM }}   # [cuda_compiler_version == \"None\"]\n      # TODO: remove this when conda-build bug is fixed where `noarch` subpackages\n      # when tested does not find dependencies from target_platform.\n      skip: True  # [build_platform != target_platform]\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"liblightgbm\", max_pin=\"x.x.x\") }}\n        - numpy >=1.17.0\n        - scipy\n      # optional dependencies from [project.optional-dependencies]\n      # at https://github.com/microsoft/LightGBM/blob/master/python-package/pyproject.toml\n      run_constrained:\n        - cffi >=1.15.1\n        - dask >=2.0.0\n        - pandas >=0.24.0\n        - pyarrow >=6.0.1\n        - scikit-learn !=0.22.0\n    test:\n      files:\n        - python_run_test.py\n      imports:\n        - lightgbm\n        - lightgbm.basic\n        - lightgbm.callback\n        - lightgbm.compat\n        - lightgbm.dask\n        - lightgbm.engine\n        - lightgbm.libpath\n        - lightgbm.plotting\n        - lightgbm.sklearn\n      requires:\n        - pip\n        - scikit-learn\n        - python {{ python_min }}\n      commands:\n        - pip check\n        - python python_run_test.py\n        - python -c \"from lightgbm import __version__\"\n\nabout:\n  home: https://github.com/microsoft/LightGBM\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: LightGBM is a gradient boosting framework that uses tree based learning algorithms.\n\n  description: |\n    A fast, distributed, high performance gradient boosting (GBDT, GBRT, GBM or MART) framework based on decision tree algorithms, used for ranking, classification and many other machine learning tasks.\n  doc_url: https://lightgbm.readthedocs.io/en/v{{ version }}/\n  dev_url: https://github.com/microsoft/LightGBM\n\nextra:\n  feedstock-name: lightgbm\n  recipe-maintainers:\n    - synapticarbors\n    - aldanor\n    - xhochy\n    - jameslamb\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -2049,6 +2077,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "python",
     "scikit-learn"
    ]
   }
@@ -2076,7 +2105,7 @@
     "llvm-openmp",
     "ocl-icd",
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -2086,7 +2115,7 @@
     "__cuda",
     "liblightgbm",
     "numpy >=1.17.0",
-    "python",
+    "python >=3.9",
     "scipy"
    ]
   },
@@ -2094,11 +2123,12 @@
    "__set__": true,
    "elements": [
     "pip",
+    "python 3.9",
     "scikit-learn"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz",
+ "url": "https://pypi.org/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz",
  "version": "4.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/lightgbm.json"
@@ -2115,11 +2145,11 @@
    "summary": "LightGBM is a gradient boosting framework that uses tree based learning algorithms."
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "run_exports": [
     "liblightgbm"
    ],
-   "string": "cpu_h1234567_3"
+   "string": "cpu_h1234567_4"
   },
   "extra": {
    "feedstock-name": "lightgbm",
@@ -2137,18 +2167,18 @@
    {
     "build": {
      "noarch": "python",
-     "string": "cpu_py_3"
+     "string": "cpu_py_4"
     },
     "name": "lightgbm",
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.9",
       "pip",
       "setuptools"
      ],
      "run": [
-      "python",
+      "python >=3.9",
       "liblightgbm",
       "numpy >=1.17.0",
       "scipy"
@@ -2184,7 +2214,8 @@
      ],
      "requires": [
       "pip",
-      "scikit-learn"
+      "scikit-learn",
+      "python 3.9"
      ]
     }
    }
@@ -2207,7 +2238,7 @@
    ],
    "run": [],
    "run_constrained": [
-    "lightgbm 4.5.0 cpu_*_3"
+    "lightgbm 4.5.0 cpu_*_4"
    ]
   },
   "schema_version": 0,
@@ -2217,7 +2248,7 @@
     "use_precompiled.diff"
    ],
    "sha256": "e1cd7baf0318d4e308a26575a63a4635f08df866ad3622a9d8e3d71d9637a1ba",
-   "url": "https://pypi.io/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lightgbm/lightgbm-4.5.0.tar.gz"
   },
   "test": {
    "commands": null
@@ -2257,6 +2288,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "python",
     "scikit-learn"
    ]
   }
