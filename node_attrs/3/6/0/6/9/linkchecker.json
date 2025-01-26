@@ -25,7 +25,7 @@
     "linkchecker = linkcheck.command.linkchecker:linkchecker"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,13 +39,13 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "hatchling",
     "hatch-vcs"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "beautifulsoup4 >=4.8.1",
     "dnspython >=2.0",
     "requests >=2.4"
@@ -54,7 +54,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "6250dd29261ddd6df4be9e979bd47a759a6cfafbcaf0f7926afbe2a230aa761a",
-   "url": "https://pypi.io/packages/source/l/linkchecker/LinkChecker-10.4.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/linkchecker/LinkChecker-10.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -65,7 +65,8 @@
     "linkcheck"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -95,7 +96,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -111,7 +113,7 @@
     "linkchecker = linkcheck.command.linkchecker:linkchecker"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -125,13 +127,13 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "hatchling",
     "hatch-vcs"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "beautifulsoup4 >=4.8.1",
     "dnspython >=2.0",
     "requests >=2.4"
@@ -140,7 +142,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "6250dd29261ddd6df4be9e979bd47a759a6cfafbcaf0f7926afbe2a230aa761a",
-   "url": "https://pypi.io/packages/source/l/linkchecker/LinkChecker-10.4.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/linkchecker/LinkChecker-10.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -151,7 +153,8 @@
     "linkcheck"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -169,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/linkchecker.json"
  },
- "raw_meta_yaml": "{% set name = \"linkchecker\" %}\n{% set version = \"10.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LinkChecker-{{ version }}.tar.gz\n  sha256: 6250dd29261ddd6df4be9e979bd47a759a6cfafbcaf0f7926afbe2a230aa761a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  entry_points:\n    - linkchecker = linkcheck.command.linkchecker:linkchecker\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    # Linkchecker uses hatchling and the hatch-vcs plugin to build\n    - hatchling\n    - hatch-vcs\n  run:\n    - python >=3.7\n    - beautifulsoup4 >=4.8.1\n    - dnspython >=2.0\n    - requests >=2.4\n\ntest:\n  imports:\n    - linkcheck\n  commands:\n    - pip check\n    - linkchecker --version\n  requires:\n    - pip\n\nabout:\n  home: https://linkchecker.github.io/linkchecker/\n  summary: Check websites for broken links\n  license: GPL-2.0-or-later\n  license_file: COPYING\n\nextra:\n  recipe-maintainers:\n    - saraedum\n",
+ "raw_meta_yaml": "{% set name = \"linkchecker\" %}\n{% set version = \"10.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/LinkChecker-{{ version }}.tar.gz\n  sha256: 6250dd29261ddd6df4be9e979bd47a759a6cfafbcaf0f7926afbe2a230aa761a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n  entry_points:\n    - linkchecker = linkcheck.command.linkchecker:linkchecker\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    # Linkchecker uses hatchling and the hatch-vcs plugin to build\n    - hatchling\n    - hatch-vcs\n  run:\n    - python >={{ python_min }}\n    - beautifulsoup4 >=4.8.1\n    - dnspython >=2.0\n    - requests >=2.4\n\ntest:\n  imports:\n    - linkcheck\n  commands:\n    - pip check\n    - linkchecker --version\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://linkchecker.github.io/linkchecker/\n  summary: Check websites for broken links\n  license: GPL-2.0-or-later\n  license_file: COPYING\n\nextra:\n  recipe-maintainers:\n    - saraedum\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -208,7 +211,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -224,7 +228,7 @@
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python >=3.7"
+    "python 3.9"
    ]
   },
   "run": {
@@ -232,18 +236,19 @@
    "elements": [
     "beautifulsoup4 >=4.8.1",
     "dnspython >=2.0",
-    "python >=3.7",
+    "python >=3.9",
     "requests >=2.4"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/l/linkchecker/LinkChecker-10.4.0.tar.gz",
+ "url": "https://pypi.org/packages/source/l/linkchecker/LinkChecker-10.4.0.tar.gz",
  "version": "10.4.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/linkchecker.json"
