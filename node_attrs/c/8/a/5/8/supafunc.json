@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "supafunc",
-   "version": "0.8.0"
+   "version": "0.9.2"
   },
   "requirements": {
    "host": [
@@ -50,13 +50,14 @@
    ],
    "run": [
     "python >=3.9",
-    "httpx >=0.26.0,<0.28"
+    "httpx >=0.26.0,<0.28",
+    "strenum >=0.4.15,<0.5"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9e57d605ccb739ace5e801e1172fb83d15179d0cbe9859298e4bb6704be32aae",
-   "url": "https://pypi.org/packages/source/s/supafunc/supafunc-0.8.0.tar.gz"
+   "sha256": "f5164114a3e65e7e552539f3f1050aa3d4970885abdd7405555c17fd216e2da1",
+   "url": "https://pypi.org/packages/source/s/supafunc/supafunc-0.9.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -89,7 +90,8 @@
    "__set__": true,
    "elements": [
     "httpx",
-    "python"
+    "python",
+    "strenum"
    ]
   },
   "test": {
@@ -123,7 +125,7 @@
   },
   "package": {
    "name": "supafunc",
-   "version": "0.8.0"
+   "version": "0.9.2"
   },
   "requirements": {
    "host": [
@@ -134,13 +136,14 @@
    ],
    "run": [
     "python >=3.9",
-    "httpx >=0.26.0,<0.28"
+    "httpx >=0.26.0,<0.28",
+    "strenum >=0.4.15,<0.5"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9e57d605ccb739ace5e801e1172fb83d15179d0cbe9859298e4bb6704be32aae",
-   "url": "https://pypi.org/packages/source/s/supafunc/supafunc-0.8.0.tar.gz"
+   "sha256": "f5164114a3e65e7e552539f3f1050aa3d4970885abdd7405555c17fd216e2da1",
+   "url": "https://pypi.org/packages/source/s/supafunc/supafunc-0.9.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -169,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/supafunc.json"
  },
- "raw_meta_yaml": "{% set name = \"supafunc\" %}\n{% set version = \"0.8.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9e57d605ccb739ace5e801e1172fb83d15179d0cbe9859298e4bb6704be32aae\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - poetry\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - httpx >=0.26.0,<0.28\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - supafunc\n\nabout:\n  home: https://github.com/supabase-community/functions-py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Library for Supabase Functions\n  description: |\n    Python Library for Supabase Functions\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n    - J0\n    - anand2312\n",
+ "raw_meta_yaml": "{% set name = \"supafunc\" %}\n{% set version = \"0.9.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f5164114a3e65e7e552539f3f1050aa3d4970885abdd7405555c17fd216e2da1\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - poetry\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - httpx >=0.26.0,<0.28\n    - strenum >=0.4.15,<0.5\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - supafunc\n\nabout:\n  home: https://github.com/supabase-community/functions-py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Library for Supabase Functions\n  description: |\n    Python Library for Supabase Functions\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n    - J0\n    - anand2312\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -177,7 +180,8 @@
    "pip",
    "poetry",
    "python",
-   "setuptools"
+   "setuptools",
+   "strenum"
   ]
  },
  "requirements": {
@@ -198,7 +202,8 @@
    "__set__": true,
    "elements": [
     "httpx",
-    "python"
+    "python",
+    "strenum"
    ]
   },
   "test": {
@@ -228,7 +233,8 @@
    "__set__": true,
    "elements": [
     "httpx >=0.26.0,<0.28",
-    "python >=3.9"
+    "python >=3.9",
+    "strenum >=0.4.15,<0.5"
    ]
   },
   "test": {
@@ -239,8 +245,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/supafunc/supafunc-0.8.0.tar.gz",
- "version": "0.8.0",
+ "url": "https://pypi.org/packages/source/s/supafunc/supafunc-0.9.2.tar.gz",
+ "version": "0.9.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/supafunc.json"
  }
