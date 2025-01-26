@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -37,8 +37,9 @@
   },
   "requirements": {
    "host": [
-    "python >=3.8",
-    "pip"
+    "python 3.8",
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.8"
@@ -55,7 +56,8 @@
    ],
    "requires": [
     "stackvana =0.2021.6",
-    "deprecated <=1.2.10"
+    "deprecated <=1.2.10",
+    "python 3.8"
    ]
   }
  },
@@ -68,7 +70,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -81,6 +84,7 @@
    "__set__": true,
    "elements": [
     "deprecated",
+    "python",
     "stackvana"
    ]
   }
@@ -95,7 +99,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -109,8 +113,9 @@
   },
   "requirements": {
    "host": [
-    "python >=3.8",
-    "pip"
+    "python 3.8",
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.8"
@@ -127,7 +132,8 @@
    ],
    "requires": [
     "stackvana =0.2021.6",
-    "deprecated <=1.2.10"
+    "deprecated <=1.2.10",
+    "python 3.8"
    ]
   }
  },
@@ -145,12 +151,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lsstdesc-dc2-dm-data.json"
  },
- "raw_meta_yaml": "{% set name = \"lsstdesc-dc2-dm-data\" %}\n{% set version = \"0.9.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/LSSTDESC/desc-dc2-dm-data/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 99f2589129afa30eb982d6aef4bd1d4c119c1de93a18bbda6a48c7c75ba19e3f\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n  run:\n    - python >=3.8\n\ntest:\n  imports:\n    - desc_dc2_dm_data\n  requires:\n    - stackvana =0.2021.6\n    - deprecated <=1.2.10\n  # no pip check since it fails\n\nabout:\n  home: https://github.com/LSSTDESC/desc-dc2-dm-data\n  summary: 'Providing consistent access to DC2 DM data products in DESC Python environments.'\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
+ "raw_meta_yaml": "{% set name = \"lsstdesc-dc2-dm-data\" %}\n{% set version = \"0.9.1\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/LSSTDESC/desc-dc2-dm-data/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 99f2589129afa30eb982d6aef4bd1d4c119c1de93a18bbda6a48c7c75ba19e3f\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  # no pip check since it fails\n  imports:\n    - desc_dc2_dm_data\n  requires:\n    - stackvana =0.2021.6\n    - deprecated <=1.2.10\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/LSSTDESC/desc-dc2-dm-data\n  summary: 'Providing consistent access to DC2 DM data products in DESC Python environments.'\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -162,7 +169,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -175,6 +183,7 @@
    "__set__": true,
    "elements": [
     "deprecated",
+    "python",
     "stackvana"
    ]
   }
@@ -189,7 +198,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8"
+    "python 3.8",
+    "setuptools"
    ]
   },
   "run": {
@@ -202,6 +212,7 @@
    "__set__": true,
    "elements": [
     "deprecated <=1.2.10",
+    "python 3.8",
     "stackvana =0.2021.6"
    ]
   }
