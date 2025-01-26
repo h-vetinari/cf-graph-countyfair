@@ -25,12 +25,13 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "dskarls"
+    "dskarls",
+    "ilia-nikiforov-umn"
    ]
   },
   "package": {
@@ -99,12 +100,13 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "dskarls"
+    "dskarls",
+    "ilia-nikiforov-umn"
    ]
   },
   "package": {
@@ -149,7 +151,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/kim-query.json"
  },
- "raw_meta_yaml": "{% set name = \"kim-query\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f02031dab5e1c872ade93f5b52257d7f6ce3de8107dd52ac73661b00d26297af\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - requests\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - kim_query\n\nabout:\n  home: https://github.com/openkim/kim-query\n  license: CDDL-1.0\n  license_family: OTHER\n  license_file: LICENSE.CDDL\n  summary: Helper routines for querying the OpenKIM database hosted at https://query.openkim.org\n  description: |\n    The Open Knowledgebase of Interatomic Models (OpenKIM) project is a\n    framework designed to facilitate access to standardized implementations of\n    empirical interatomic potentials (\"Models\") and simulation codes that use\n    them to compute material properties (\"Tests\").  Models and Tests archived\n    at openkim.org are automatically run together to generate the predictions\n    of the models for a host of material properties.  These predictions are\n    inserted into a public database hosted at query.openkim.org; this package\n    provides python convenience routines for querying this database.\n  dev_url: https://github.com/openkim/kim-query\n\nextra:\n  recipe-maintainers:\n    - dskarls\n",
+ "raw_meta_yaml": "{% set name = \"kim-query\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f02031dab5e1c872ade93f5b52257d7f6ce3de8107dd52ac73661b00d26297af\n\nbuild:\n  noarch: python\n  number: 2 \n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - requests\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - kim_query\n\nabout:\n  home: https://github.com/openkim/kim-query\n  license: CDDL-1.0\n  license_family: OTHER\n  license_file: LICENSE.CDDL\n  summary: Helper routines for querying the OpenKIM database hosted at https://query.openkim.org\n  description: |\n    The Open Knowledgebase of Interatomic Models (OpenKIM) project is a\n    framework designed to facilitate access to standardized implementations of\n    empirical interatomic potentials (\"Models\") and simulation codes that use\n    them to compute material properties (\"Tests\").  Models and Tests archived\n    at openkim.org are automatically run together to generate the predictions\n    of the models for a host of material properties.  These predictions are\n    inserted into a public database hosted at query.openkim.org; this package\n    provides python convenience routines for querying this database.\n  dev_url: https://github.com/openkim/kim-query\n\nextra:\n  recipe-maintainers:\n    - dskarls\n    - ilia-nikiforov-umn\n",
  "req": {
   "__set__": true,
   "elements": [
