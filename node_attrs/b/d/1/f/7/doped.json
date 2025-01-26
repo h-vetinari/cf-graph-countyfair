@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,37 +38,40 @@
   },
   "package": {
    "name": "doped",
-   "version": "2.4.7"
+   "version": "3.0.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9"
+    "python 3.10",
+    "setuptools"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10",
     "tabulate",
     "matplotlib-base >=3.5.2",
     "numpy >=1.21.0",
-    "pymatgen >=2023.11.12",
-    "spglib >=2.4.0",
+    "pymatgen >=2024.9.10",
     "pymatgen-analysis-defects >=2023.8.22",
-    "shakenbreak >=3.3.1",
+    "shakenbreak >=3.3.4",
     "pandas",
-    "filelock"
+    "filelock",
+    "cmcrameri >=1.4",
+    "matplotlib-label-lines",
+    "dscribe"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "45ee57874017afd04841b896ceb6d3004eb1e05ee6dd617343cc057dba6f0891",
-   "url": "https://github.com/SMTG-UCL/doped/archive/2.4.7.tar.gz"
+   "sha256": "eed72a4887dd63f1155efc650f6745a767a3603e81b07f5d3125f69534bf48d5",
+   "url": "https://github.com/SMTG-UCL/doped/archive/3.0.0.tar.gz"
   },
   "test": {
    "imports": [
     "doped"
    ],
    "requires": [
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -81,21 +84,24 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "cmcrameri",
+    "dscribe",
     "filelock",
     "matplotlib-base",
+    "matplotlib-label-lines",
     "numpy",
     "pandas",
     "pymatgen",
     "pymatgen-analysis-defects",
     "python",
     "shakenbreak",
-    "spglib",
     "tabulate"
    ]
   },
@@ -118,7 +124,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -128,37 +134,40 @@
   },
   "package": {
    "name": "doped",
-   "version": "2.4.7"
+   "version": "3.0.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9"
+    "python 3.10",
+    "setuptools"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10",
     "tabulate",
     "matplotlib-base >=3.5.2",
     "numpy >=1.21.0",
-    "pymatgen >=2023.11.12",
-    "spglib >=2.4.0",
+    "pymatgen >=2024.9.10",
     "pymatgen-analysis-defects >=2023.8.22",
-    "shakenbreak >=3.3.1",
+    "shakenbreak >=3.3.4",
     "pandas",
-    "filelock"
+    "filelock",
+    "cmcrameri >=1.4",
+    "matplotlib-label-lines",
+    "dscribe"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "45ee57874017afd04841b896ceb6d3004eb1e05ee6dd617343cc057dba6f0891",
-   "url": "https://github.com/SMTG-UCL/doped/archive/2.4.7.tar.gz"
+   "sha256": "eed72a4887dd63f1155efc650f6745a767a3603e81b07f5d3125f69534bf48d5",
+   "url": "https://github.com/SMTG-UCL/doped/archive/3.0.0.tar.gz"
   },
   "test": {
    "imports": [
     "doped"
    ],
    "requires": [
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -176,20 +185,23 @@
  "pr_info": {
   "__lazy_json__": "pr_info/doped.json"
  },
- "raw_meta_yaml": "{% set name = \"doped\" %}\n{% set version = \"2.4.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SMTG-UCL/doped/archive/{{ version }}.tar.gz\n  sha256: 45ee57874017afd04841b896ceb6d3004eb1e05ee6dd617343cc057dba6f0891\n\n\n# PyPI (no test files...)\n#  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n#  sha256: a1eca51ccdc1fdc9e71e39d1f864c4cf472c7452fa86c717ab192688afa9a933\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - tabulate\n    - matplotlib-base >=3.5.2\n    - numpy >=1.21.0\n    - pymatgen >=2023.11.12  # limiting factor: POTCAR_STATS_PATH available from pymatgen.io.vasp.inputs\n    - spglib >=2.4.0  # previously explicitly set to <=2.0.2 to avoid unnecessary warnings\n    # (https://github.com/spglib/spglib/issues/338) but causing dependency issues\n    # (https://github.com/SMTG-Bham/doped/issues/73), being worked on in\n    # https://github.com/spglib/spglib/issues/462 -- update Troubleshooting.rst and spglib warning in\n    # doped.utils.symmetry when finally resolved\n    - pymatgen-analysis-defects >=2023.8.22\n    - shakenbreak >=3.3.1\n    - pandas\n    - filelock\n    # - pydefect  # not available on conda-forge currently, will update in future if it is. User installation instructions say to install afterwards with pip\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - doped\n\nabout:\n  home: https://github.com/SMTG-Bham/doped\n  license: MIT\n  license_file: LICENSE\n  summary: Python package to setup, process and analyse solid-state defect calculations with VASP\n  description: |\n    doped is a Python software for the generation, pre-/post-processing and analysis of defect supercell calculations, implementing the defect simulation workflow in an efficient, reproducible, user-friendly yet powerful and fully-customisable manner.\n  doc_url: https://doped.readthedocs.io/en/latest/\n  dev_url: https://github.com/SMTG-Bham/doped\n\nextra:\n  recipe-maintainers:\n    - kavanase\n",
+ "raw_meta_yaml": "{% set name = \"doped\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SMTG-UCL/doped/archive/{{ version }}.tar.gz\n  sha256: eed72a4887dd63f1155efc650f6745a767a3603e81b07f5d3125f69534bf48d5\n\n# PyPI (no test files...)\n#  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n#  sha256: a1eca51ccdc1fdc9e71e39d1f864c4cf472c7452fa86c717ab192688afa9a933\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - tabulate\n    - matplotlib-base >=3.5.2\n    - numpy >=1.21.0\n    - pymatgen >=2024.9.10  # needs SymmetryUndeterminedError class\n    - pymatgen-analysis-defects >=2023.8.22\n    - shakenbreak >=3.3.4  # oxi-state functions renaming\n    - pandas\n    - filelock\n    - cmcrameri >=1.4  # for colour-maps; >=1.4 required for cmcrameri.cm.cmaps definition\n    - matplotlib-label-lines  # for labelling lines in matplotlib plots\n    - dscribe  # for defect site guessing using SOAP analysis\n    # - pydefect  # not available on conda-forge currently, will update in future if it is. User installation instructions say to install afterwards with pip\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - doped\n\nabout:\n  home: https://github.com/SMTG-Bham/doped\n  license: MIT\n  license_file: LICENSE\n  summary: Python package to setup, process and analyse solid-state defect calculations with VASP\n  description: |\n    doped is a Python software for the generation, pre-/post-processing and analysis of defect supercell calculations, implementing the defect simulation workflow in an efficient, reproducible, user-friendly yet powerful and fully-customisable manner.\n  doc_url: https://doped.readthedocs.io/en/latest/\n  dev_url: https://github.com/SMTG-Bham/doped\n\nextra:\n  recipe-maintainers:\n    - kavanase\n",
  "req": {
   "__set__": true,
   "elements": [
+   "cmcrameri",
+   "dscribe",
    "filelock",
    "matplotlib-base",
+   "matplotlib-label-lines",
    "numpy",
    "pandas",
    "pip",
    "pymatgen",
    "pymatgen-analysis-defects",
    "python",
+   "setuptools",
    "shakenbreak",
-   "spglib",
    "tabulate"
   ]
  },
@@ -202,21 +214,24 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "cmcrameri",
+    "dscribe",
     "filelock",
     "matplotlib-base",
+    "matplotlib-label-lines",
     "numpy",
     "pandas",
     "pymatgen",
     "pymatgen-analysis-defects",
     "python",
     "shakenbreak",
-    "spglib",
     "tabulate"
    ]
   },
@@ -237,33 +252,36 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.10",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "cmcrameri >=1.4",
+    "dscribe",
     "filelock",
     "matplotlib-base >=3.5.2",
+    "matplotlib-label-lines",
     "numpy >=1.21.0",
     "pandas",
-    "pymatgen >=2023.11.12",
+    "pymatgen >=2024.9.10",
     "pymatgen-analysis-defects >=2023.8.22",
-    "python >=3.9",
-    "shakenbreak >=3.3.1",
-    "spglib >=2.4.0",
+    "python >=3.10",
+    "shakenbreak >=3.3.4",
     "tabulate"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
- "url": "https://github.com/SMTG-UCL/doped/archive/2.4.7.tar.gz",
- "version": "2.4.7",
+ "url": "https://github.com/SMTG-UCL/doped/archive/3.0.0.tar.gz",
+ "version": "3.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/doped.json"
  }
