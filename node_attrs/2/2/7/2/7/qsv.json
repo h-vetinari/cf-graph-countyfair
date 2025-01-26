@@ -183,7 +183,7 @@
   ],
   "package": {
    "name": "qsv",
-   "version": "1.0.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -207,8 +207,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "92ca4fef2c0f58aa5d322a01a70a7e9dd689f8055cdf64aaf1422cb28fe5357b",
-   "url": "https://github.com/jqnatividad/qsv/archive/1.0.0.tar.gz"
+   "sha256": "1b2f6eaef2269815516ea8abc95292881877f19fb6007eac1e42f187d8ab350a",
+   "url": "https://github.com/jqnatividad/qsv/archive/2.2.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -565,7 +565,7 @@
   ],
   "package": {
    "name": "qsv",
-   "version": "1.0.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -591,8 +591,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "92ca4fef2c0f58aa5d322a01a70a7e9dd689f8055cdf64aaf1422cb28fe5357b",
-   "url": "https://github.com/jqnatividad/qsv/archive/1.0.0.tar.gz"
+   "sha256": "1b2f6eaef2269815516ea8abc95292881877f19fb6007eac1e42f187d8ab350a",
+   "url": "https://github.com/jqnatividad/qsv/archive/2.2.0.tar.gz"
   }
  },
  "name": "qsv",
@@ -772,7 +772,7 @@
   ],
   "package": {
    "name": "qsv",
-   "version": "1.0.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -798,8 +798,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "92ca4fef2c0f58aa5d322a01a70a7e9dd689f8055cdf64aaf1422cb28fe5357b",
-   "url": "https://github.com/jqnatividad/qsv/archive/1.0.0.tar.gz"
+   "sha256": "1b2f6eaef2269815516ea8abc95292881877f19fb6007eac1e42f187d8ab350a",
+   "url": "https://github.com/jqnatividad/qsv/archive/2.2.0.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -851,7 +851,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/qsv.json"
  },
- "raw_meta_yaml": "context:\n  version: 1.0.0\n\npackage:\n  name: qsv\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/jqnatividad/qsv/archive/${{ version }}.tar.gz\n  sha256: 92ca4fef2c0f58aa5d322a01a70a7e9dd689f8055cdf64aaf1422cb28fe5357b\n\nbuild:\n  number: 0\n  skip: win\n\nrequirements:\n  build:\n    - ${{ compiler('c') }}\n    - ${{ compiler('cxx') }}\n    - ${{ compiler('rust') }}\n    - ${{ stdlib('c') }}\n    - cargo-bundle-licenses\n    - cmake\n    - make\n    - if: build_platform != target_platform\n      then:\n        - cross-python_${{ target_platform }}\n        - python\n    - pkg-config\n  host:\n    - libclang\n    - if: osx\n      then: libiconv\n    - python\n    - if: linux\n      then: wayland\n  run:\n    - python\n  ignore_run_exports:\n    from_package:\n      - libclang\n\ntests:\n  - script:\n      - qsv --help\n\nabout:\n  license: MIT\n  license_file:\n    - LICENSE-MIT\n    - THIRDPARTY.yml\n  summary: Ultra-fast CSV data-wrangling toolkit\n  homepage: https://github.com/jqnatividad/qsv\n  repository: https://github.com/jqnatividad/qsv\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
+ "raw_meta_yaml": "context:\n  version: \"2.2.0\"\n\npackage:\n  name: qsv\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/jqnatividad/qsv/archive/${{ version }}.tar.gz\n  sha256: 1b2f6eaef2269815516ea8abc95292881877f19fb6007eac1e42f187d8ab350a\n\nbuild:\n  number: 0\n  skip: win\n\nrequirements:\n  build:\n    - ${{ compiler('c') }}\n    - ${{ compiler('cxx') }}\n    - ${{ compiler('rust') }}\n    - ${{ stdlib('c') }}\n    - cargo-bundle-licenses\n    - cmake\n    - make\n    - if: build_platform != target_platform\n      then:\n        - cross-python_${{ target_platform }}\n        - python\n    - pkg-config\n  host:\n    - libclang\n    - if: osx\n      then: libiconv\n    - python\n    - if: linux\n      then: wayland\n  run:\n    - python\n  ignore_run_exports:\n    from_package:\n      - libclang\n\ntests:\n  - script:\n      - qsv --help\n\nabout:\n  license: MIT\n  license_file:\n    - LICENSE-MIT\n    - THIRDPARTY.yml\n  summary: Ultra-fast CSV data-wrangling toolkit\n  homepage: https://github.com/jqnatividad/qsv\n  repository: https://github.com/jqnatividad/qsv\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -946,8 +946,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/jqnatividad/qsv/archive/1.0.0.tar.gz",
- "version": "1.0.0",
+ "url": "https://github.com/jqnatividad/qsv/archive/2.2.0.tar.gz",
+ "version": "2.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/qsv.json"
  }
