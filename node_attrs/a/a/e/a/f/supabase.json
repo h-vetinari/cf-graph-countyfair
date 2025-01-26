@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -40,7 +40,7 @@
   },
   "package": {
    "name": "supabase",
-   "version": "2.10.0"
+   "version": "2.12.0"
   },
   "requirements": {
    "host": [
@@ -52,18 +52,18 @@
     "typing_extensions >=4.12.2,<5.0.0",
     "typing-extensions >=4.12.2,<5.0.0",
     "python >=3.9,<4.0.0",
-    "postgrest >=0.18.0,<0.19.0",
+    "postgrest >=0.19.0,<0.20.0",
     "realtime >=2.0.0,<3.0.0",
-    "gotrue >=2.10.0,<3.0.0",
-    "httpx >=0.26,<0.28",
-    "storage3 >=0.9.0,<0.10.0",
-    "supafunc >=0.7.0,<0.8.0"
+    "gotrue >=2.11.0,<3.0.0",
+    "httpx >=0.26,<0.29",
+    "storage3 >=0.10,<0.12",
+    "supafunc >=0.9.0,<0.10.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9ac095f8947bf60780e67c0edcbab53e2db3f6f3f022329397b093500bf2607c",
-   "url": "https://pypi.org/packages/source/s/supabase/supabase-2.10.0.tar.gz"
+   "sha256": "284612c3e94ff4ed2f18c985f5eba4d6e17b5e2bf16a9a24290bb83c9c217078",
+   "url": "https://pypi.org/packages/source/s/supabase/supabase-2.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -124,7 +124,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -136,7 +136,7 @@
   },
   "package": {
    "name": "supabase",
-   "version": "2.10.0"
+   "version": "2.12.0"
   },
   "requirements": {
    "host": [
@@ -148,18 +148,18 @@
     "typing_extensions >=4.12.2,<5.0.0",
     "typing-extensions >=4.12.2,<5.0.0",
     "python >=3.9,<4.0.0",
-    "postgrest >=0.18.0,<0.19.0",
+    "postgrest >=0.19.0,<0.20.0",
     "realtime >=2.0.0,<3.0.0",
-    "gotrue >=2.10.0,<3.0.0",
-    "httpx >=0.26,<0.28",
-    "storage3 >=0.9.0,<0.10.0",
-    "supafunc >=0.7.0,<0.8.0"
+    "gotrue >=2.11.0,<3.0.0",
+    "httpx >=0.26,<0.29",
+    "storage3 >=0.10,<0.12",
+    "supafunc >=0.9.0,<0.10.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9ac095f8947bf60780e67c0edcbab53e2db3f6f3f022329397b093500bf2607c",
-   "url": "https://pypi.org/packages/source/s/supabase/supabase-2.10.0.tar.gz"
+   "sha256": "284612c3e94ff4ed2f18c985f5eba4d6e17b5e2bf16a9a24290bb83c9c217078",
+   "url": "https://pypi.org/packages/source/s/supabase/supabase-2.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -188,7 +188,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/supabase.json"
  },
- "raw_meta_yaml": "{% set name = \"supabase\" %}\n{% set version = \"2.10.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9ac095f8947bf60780e67c0edcbab53e2db3f6f3f022329397b093500bf2607c\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - typing_extensions >=4.12.2,<5.0.0\n    - typing-extensions >=4.12.2,<5.0.0\n    - python >={{ python_min }},<4.0.0\n    - postgrest >=0.18.0,<0.19.0\n    - realtime >=2.0.0,<3.0.0\n    - gotrue >=2.10.0,<3.0.0\n    - httpx >=0.26,<0.28\n    - storage3 >=0.9.0,<0.10.0\n    - supafunc >=0.7.0,<0.8.0\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - supabase\n\nabout:\n  home: https://github.com/supabase/supabase-py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Client for Supabase\n  description: |\n    Python Client for Supabase\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n    - J0\n    - anand2312\n",
+ "raw_meta_yaml": "{% set name = \"supabase\" %}\n{% set version = \"2.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 284612c3e94ff4ed2f18c985f5eba4d6e17b5e2bf16a9a24290bb83c9c217078\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - typing_extensions >=4.12.2,<5.0.0\n    - typing-extensions >=4.12.2,<5.0.0\n    - python >={{ python_min }},<4.0.0\n    - postgrest >=0.19.0,<0.20.0\n    - realtime >=2.0.0,<3.0.0\n    - gotrue >=2.11.0,<3.0.0\n    - httpx >=0.26,<0.29\n    - storage3 >=0.10,<0.12\n    - supafunc >=0.9.0,<0.10.0\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - supabase\n\nabout:\n  home: https://github.com/supabase/supabase-py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Client for Supabase\n  description: |\n    Python Client for Supabase\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n    - J0\n    - anand2312\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -257,13 +257,13 @@
   "run": {
    "__set__": true,
    "elements": [
-    "gotrue >=2.10.0,<3.0.0",
-    "httpx >=0.26,<0.28",
-    "postgrest >=0.18.0,<0.19.0",
+    "gotrue >=2.11.0,<3.0.0",
+    "httpx >=0.26,<0.29",
+    "postgrest >=0.19.0,<0.20.0",
     "python >=3.9,<4.0.0",
     "realtime >=2.0.0,<3.0.0",
-    "storage3 >=0.9.0,<0.10.0",
-    "supafunc >=0.7.0,<0.8.0",
+    "storage3 >=0.10,<0.12",
+    "supafunc >=0.9.0,<0.10.0",
     "typing-extensions >=4.12.2,<5.0.0",
     "typing_extensions >=4.12.2,<5.0.0"
    ]
@@ -276,8 +276,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/supabase/supabase-2.10.0.tar.gz",
- "version": "2.10.0",
+ "url": "https://pypi.org/packages/source/s/supabase/supabase-2.12.0.tar.gz",
+ "version": "2.12.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/supabase.json"
  }
