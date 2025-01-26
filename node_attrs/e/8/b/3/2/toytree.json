@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "3",
+   "number": "4",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -57,7 +57,7 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b5c15087abec3b358ead3e3bc16e76717b9e86e003646e327f86b45c0a0717cf",
+   "sha256": "5b276be9decc980a8c4f9056c461d55fb5161d6c07c8e6877695b69cdcedc767",
    "url": "https://github.com/eaton-lab/toytree/archive/3.0.7.tar.gz"
   },
   "test": {
@@ -115,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "3",
+   "number": "4",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -146,7 +146,7 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b5c15087abec3b358ead3e3bc16e76717b9e86e003646e327f86b45c0a0717cf",
+   "sha256": "5b276be9decc980a8c4f9056c461d55fb5161d6c07c8e6877695b69cdcedc767",
    "url": "https://github.com/eaton-lab/toytree/archive/3.0.7.tar.gz"
   },
   "test": {
@@ -172,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/toytree.json"
  },
- "raw_meta_yaml": "{% set name = \"toytree\" %}\n{% set version = \"3.0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/toytree/archive/{{ version }}.tar.gz\n  sha256: b5c15087abec3b358ead3e3bc16e76717b9e86e003646e327f86b45c0a0717cf\n\nbuild:\n  noarch: python\n  number: 3\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - pandas\n    - toyplot\n    - requests\n    - loguru\n    - ghostscript\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - toytree\n\nabout:\n  home: https://github.com/eaton-lab/toytree\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Tree visualization, manipulation, and evolutionary analysis library.\n  description: |\n    A simple library for tree visualization, manipulation, and evolutionary analysis in Python.\n  doc_url: https://eaton-lab.org/toytree\n  dev_url: https://github.com/eaton-lab/toytree\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n",
+ "raw_meta_yaml": "{% set name = \"toytree\" %}\n{% set version = \"3.0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/toytree/archive/{{ version }}.tar.gz\n  sha256: 5b276be9decc980a8c4f9056c461d55fb5161d6c07c8e6877695b69cdcedc767\n\nbuild:\n  noarch: python\n  number: 4\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - pandas\n    - toyplot\n    - requests\n    - loguru\n    - ghostscript\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - toytree\n\nabout:\n  home: https://github.com/eaton-lab/toytree\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Tree visualization, manipulation, and evolutionary analysis library.\n  description: |\n    A simple library for tree visualization, manipulation, and evolutionary analysis in Python.\n  doc_url: https://eaton-lab.org/toytree\n  dev_url: https://github.com/eaton-lab/toytree\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n",
  "req": {
   "__set__": true,
   "elements": [
