@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "distoptica",
-   "version": "0.3.1"
+   "version": "0.3.2"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4ac3ae27696d51794605a76e5f7c418e1a833e643386735ef8ed446ffdd31455",
-   "url": "https://pypi.org/packages/source/d/distoptica/distoptica-0.3.1.tar.gz"
+   "sha256": "1c71f49655e533595c0efa3d41ff5d700c0a903e2190d5a293e3d9b5e65cda4a",
+   "url": "https://pypi.org/packages/source/d/distoptica/distoptica-0.3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "distoptica",
-   "version": "0.3.1"
+   "version": "0.3.2"
   },
   "requirements": {
    "host": [
@@ -134,8 +134,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4ac3ae27696d51794605a76e5f7c418e1a833e643386735ef8ed446ffdd31455",
-   "url": "https://pypi.org/packages/source/d/distoptica/distoptica-0.3.1.tar.gz"
+   "sha256": "1c71f49655e533595c0efa3d41ff5d700c0a903e2190d5a293e3d9b5e65cda4a",
+   "url": "https://pypi.org/packages/source/d/distoptica/distoptica-0.3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -163,7 +163,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/distoptica.json"
  },
- "raw_meta_yaml": "{% set name = \"distoptica\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/distoptica-{{ version }}.tar.gz\n  sha256: 4ac3ae27696d51794605a76e5f7c418e1a833e643386735ef8ed446ffdd31455\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8\n    - setuptools\n    - wheel\n    - setuptools-scm\n    - pip\n  run:\n    - python >=3.8\n    - fancytypes >=1.0.0\n    - pytorch\n\ntest:\n  imports:\n    - distoptica\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/distoptica/\n  summary: Python library for modelling optical distortions.\n  dev_url: https://github.com/mrfitzpa/distoptica\n  license: GPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mrfitzpa\n",
+ "raw_meta_yaml": "{% set name = \"distoptica\" %}\n{% set version = \"0.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/distoptica-{{ version }}.tar.gz\n  sha256: 1c71f49655e533595c0efa3d41ff5d700c0a903e2190d5a293e3d9b5e65cda4a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8\n    - setuptools\n    - wheel\n    - setuptools-scm\n    - pip\n  run:\n    - python >=3.8\n    - fancytypes >=1.0.0\n    - pytorch\n\ntest:\n  imports:\n    - distoptica\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/distoptica/\n  summary: Python library for modelling optical distortions.\n  dev_url: https://github.com/mrfitzpa/distoptica\n  license: GPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mrfitzpa\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -237,8 +237,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/distoptica/distoptica-0.3.1.tar.gz",
- "version": "0.3.1",
+ "url": "https://pypi.org/packages/source/d/distoptica/distoptica-0.3.2.tar.gz",
+ "version": "0.3.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/distoptica.json"
  }
