@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "3",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -60,7 +60,7 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "03a6947321ecbb9b9c55bcb2608d207a109c8f9cf66e171e7bfad19f49e3c016",
+   "sha256": "f36f707aa2d7b76943ffd08223ed91e9f7f26521154bc906eabb36dcf965b734",
    "url": "https://github.com/eaton-lab/ipcoal/archive/0.5.0.tar.gz"
   },
   "test": {
@@ -120,7 +120,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "3",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -154,7 +154,7 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "03a6947321ecbb9b9c55bcb2608d207a109c8f9cf66e171e7bfad19f49e3c016",
+   "sha256": "f36f707aa2d7b76943ffd08223ed91e9f7f26521154bc906eabb36dcf965b734",
    "url": "https://github.com/eaton-lab/ipcoal/archive/0.5.0.tar.gz"
   },
   "test": {
@@ -180,7 +180,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ipcoal.json"
  },
- "raw_meta_yaml": "{% set name = \"ipcoal\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/ipcoal/archive/{{ version }}.tar.gz\n  sha256: 03a6947321ecbb9b9c55bcb2608d207a109c8f9cf66e171e7bfad19f49e3c016\n\nbuild:\n  noarch: python\n  number: 2\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - pandas\n    - numba\n    - toytree\n    - toyplot\n    - requests\n    - future\n    - msprime\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - ipcoal\n\nabout:\n  home: https://github.com/eaton-lab/ipcoal\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Multispecies coalescent simulation, visualization, and analysis in Python\n  description: |\n    A minimalist library for simulating and analyzing genealogies\n    and sequences across genomes in a phylogenetic context.\n  doc_url: https://eaton-lab.org/ipcoal\n  dev_url: https://github.com/eaton-lab/ipcoal\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n    - pmckenz1\n",
+ "raw_meta_yaml": "{% set name = \"ipcoal\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/eaton-lab/ipcoal/archive/{{ version }}.tar.gz\n  sha256: f36f707aa2d7b76943ffd08223ed91e9f7f26521154bc906eabb36dcf965b734\n\nbuild:\n  noarch: python\n  number: 3\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - pandas\n    - numba\n    - toytree\n    - toyplot\n    - requests\n    - future\n    - msprime\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - ipcoal\n\nabout:\n  home: https://github.com/eaton-lab/ipcoal\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Multispecies coalescent simulation, visualization, and analysis in Python\n  description: |\n    A minimalist library for simulating and analyzing genealogies\n    and sequences across genomes in a phylogenetic context.\n  doc_url: https://eaton-lab.org/ipcoal\n  dev_url: https://github.com/eaton-lab/ipcoal\n\nextra:\n  recipe-maintainers:\n    - eaton-lab\n    - pmckenz1\n",
  "req": {
   "__set__": true,
   "elements": [
