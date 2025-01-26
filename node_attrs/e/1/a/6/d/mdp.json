@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -37,11 +37,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.8,<3.12",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python >=3.8,<3.12",
+    "python >=3.9,<3.12",
     "numpy",
     "future",
     "__unix"
@@ -54,7 +55,7 @@
     "gh100.patch"
    ],
    "sha256": "ac52a652ccbaed1857ff1209862f03bf9b06d093b12606fb410787da3aa65a0e",
-   "url": "https://pypi.io/packages/source/m/mdp/MDP-3.6.tar.gz"
+   "url": "https://pypi.org/packages/source/m/mdp/MDP-3.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -65,7 +66,8 @@
     "mdp"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -78,7 +80,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -93,7 +96,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -106,7 +110,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -121,11 +125,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.8,<3.12",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python >=3.8,<3.12",
+    "python >=3.9,<3.12",
     "numpy",
     "future",
     "__unix"
@@ -138,7 +143,7 @@
     "gh100.patch"
    ],
    "sha256": "ac52a652ccbaed1857ff1209862f03bf9b06d093b12606fb410787da3aa65a0e",
-   "url": "https://pypi.io/packages/source/m/mdp/MDP-3.6.tar.gz"
+   "url": "https://pypi.org/packages/source/m/mdp/MDP-3.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -149,7 +154,8 @@
     "mdp"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -167,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/mdp.json"
  },
- "raw_meta_yaml": "{% set name = \"mdp\" %}\n{% set version = \"3.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/MDP-{{ version }}.tar.gz\n  sha256: ac52a652ccbaed1857ff1209862f03bf9b06d093b12606fb410787da3aa65a0e\n  patches:\n    - gh94.patch\n    - gh100.patch\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8,<3.12\n    - pip\n  run:\n    - python >=3.8,<3.12\n    - numpy\n    - future\n    - __unix\n\ntest:\n  imports:\n    - bimdp\n    - mdp\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://mdpdocs.readthedocs.io\n  summary: MDP is a Python library for building complex data processing software by combining widely used machine learning algorithms into pipelines and networks.\n  license: BSD-3-Clause\n  license_file: COPYRIGHT\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - timkpaine\n",
+ "raw_meta_yaml": "{% set name = \"mdp\" %}\n{% set version = \"3.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/MDP-{{ version }}.tar.gz\n  sha256: ac52a652ccbaed1857ff1209862f03bf9b06d093b12606fb410787da3aa65a0e\n  patches:\n    - gh94.patch\n    - gh100.patch\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }},<3.12\n    - numpy\n    - future\n    - __unix\n\ntest:\n  imports:\n    - bimdp\n    - mdp\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://mdpdocs.readthedocs.io\n  summary: MDP is a Python library for building complex data processing software by combining widely used machine learning algorithms into pipelines and networks.\n  license: BSD-3-Clause\n  license_file: COPYRIGHT\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - timkpaine\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -175,7 +181,8 @@
    "future",
    "numpy",
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -187,7 +194,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -202,7 +210,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -216,7 +225,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8,<3.12"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -225,17 +235,18 @@
     "__unix",
     "future",
     "numpy",
-    "python >=3.8,<3.12"
+    "python >=3.9,<3.12"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/m/mdp/MDP-3.6.tar.gz",
+ "url": "https://pypi.org/packages/source/m/mdp/MDP-3.6.tar.gz",
  "version": "3.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/mdp.json"
