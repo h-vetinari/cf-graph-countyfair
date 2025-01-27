@@ -15,7 +15,7 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "RiverREM is a Python package for automatically generating river relative elevation model (REM) visualizations\nfrom nothing but an input digital elevation model (DEM). The package uses the OpenStreetMap API to retrieve\nriver centerline geometries over the DEM extent. Interpolation of river elevations is automatically handled\nusing a sampling scheme based on raster resolution and river sinuosity to create striking high-resolution\nvisualizations without interpolation artefacts straight out of the box and without additional manual steps.\nThe package also contains a helper class for creating DEM raster visualizations.\n",
+   "description": "RiverREM is a Python package for automatically generating river relative elevation model (REM) visualizations\nfrom nothing but an input digital elevation model (DEM). The package uses the OpenStreetMap API to retrieve\nriver centerline geometries over the DEM extent. Interpolation of river elevations is automatically handled\nusing a sampling scheme based on raster resolution and river sinuosity to create striking high-resolution\nvisualizations out of the box and without additional manual steps.\nThe package also contains a helper class for creating DEM raster visualizations.\n",
    "dev_url": "https://github.com/OpenTopography/RiverREM/",
    "doc_url": "https://opentopography.github.io/RiverREM/",
    "home": "https://github.com/OpenTopography/RiverREM",
@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "riverrem",
-   "version": "1.0.4"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -61,8 +61,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7d42022209398dcec499e6ab21099dae84fb2d84fc06eafedfd3c63cfb40885e",
-   "url": "https://github.com/OpenTopography/RiverREM/archive/refs/tags/v1.0.4.tar.gz"
+   "sha256": "3e46759c2a79b7348cc2d7bb7c05e16ee7cf2c7f527a534ded82e5066b14bad9",
+   "url": "https://github.com/OpenTopography/RiverREM/archive/refs/tags/v1.1.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -119,7 +119,7 @@
  },
  "meta_yaml": {
   "about": {
-   "description": "RiverREM is a Python package for automatically generating river relative elevation model (REM) visualizations\nfrom nothing but an input digital elevation model (DEM). The package uses the OpenStreetMap API to retrieve\nriver centerline geometries over the DEM extent. Interpolation of river elevations is automatically handled\nusing a sampling scheme based on raster resolution and river sinuosity to create striking high-resolution\nvisualizations without interpolation artefacts straight out of the box and without additional manual steps.\nThe package also contains a helper class for creating DEM raster visualizations.\n",
+   "description": "RiverREM is a Python package for automatically generating river relative elevation model (REM) visualizations\nfrom nothing but an input digital elevation model (DEM). The package uses the OpenStreetMap API to retrieve\nriver centerline geometries over the DEM extent. Interpolation of river elevations is automatically handled\nusing a sampling scheme based on raster resolution and river sinuosity to create striking high-resolution\nvisualizations out of the box and without additional manual steps.\nThe package also contains a helper class for creating DEM raster visualizations.\n",
    "dev_url": "https://github.com/OpenTopography/RiverREM/",
    "doc_url": "https://opentopography.github.io/RiverREM/",
    "home": "https://github.com/OpenTopography/RiverREM",
@@ -130,7 +130,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -140,7 +140,7 @@
   },
   "package": {
    "name": "riverrem",
-   "version": "1.0.4"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -165,8 +165,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7d42022209398dcec499e6ab21099dae84fb2d84fc06eafedfd3c63cfb40885e",
-   "url": "https://github.com/OpenTopography/RiverREM/archive/refs/tags/v1.0.4.tar.gz"
+   "sha256": "3e46759c2a79b7348cc2d7bb7c05e16ee7cf2c7f527a534ded82e5066b14bad9",
+   "url": "https://github.com/OpenTopography/RiverREM/archive/refs/tags/v1.1.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -198,7 +198,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/riverrem.json"
  },
- "raw_meta_yaml": "{% set name = \"riverrem\" %}\n{% set version = \"1.0.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/OpenTopography/RiverREM/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 7d42022209398dcec499e6ab21099dae84fb2d84fc06eafedfd3c63cfb40885e\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - gdal >=3.1.4,<3.9\n    - osmnx >=1.3,<2.0\n    - dataclasses\n    - seaborn\n    - scipy >=1.6.0\n    - shapely >=2.0\n    - pandas\n    - requests\n    - geopandas\n    - bottleneck\n    - numexpr\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - riverrem\n    - riverrem.RasterViz\n    - riverrem.REMMaker\n  source_files:\n    - tests/smith_SRTM.tif\n    - tests/test_local.py\n    - tests/test_url.py\n\nabout:\n  home: https://github.com/OpenTopography/RiverREM\n  summary: 'Make river relative elevation models (REM) and REM visualizations from an input digital elevation model (DEM).'\n  description: |\n    RiverREM is a Python package for automatically generating river relative elevation model (REM) visualizations \n    from nothing but an input digital elevation model (DEM). The package uses the OpenStreetMap API to retrieve \n    river centerline geometries over the DEM extent. Interpolation of river elevations is automatically handled \n    using a sampling scheme based on raster resolution and river sinuosity to create striking high-resolution \n    visualizations without interpolation artefacts straight out of the box and without additional manual steps. \n    The package also contains a helper class for creating DEM raster visualizations.\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n  doc_url: https://opentopography.github.io/RiverREM/\n  dev_url: https://github.com/OpenTopography/RiverREM/\n\nextra:\n  recipe-maintainers:\n    - klarrieu\n",
+ "raw_meta_yaml": "{% set name = \"riverrem\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/OpenTopography/RiverREM/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 3e46759c2a79b7348cc2d7bb7c05e16ee7cf2c7f527a534ded82e5066b14bad9\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - gdal >=3.1.4,<3.9\n    - osmnx >=1.3,<2.0\n    - dataclasses\n    - seaborn\n    - scipy >=1.6.0\n    - shapely >=2.0\n    - pandas\n    - requests\n    - geopandas\n    - bottleneck\n    - numexpr\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - riverrem\n    - riverrem.RasterViz\n    - riverrem.REMMaker\n  source_files:\n    - tests/smith_SRTM.tif\n    - tests/test_local.py\n    - tests/test_url.py\n\nabout:\n  home: https://github.com/OpenTopography/RiverREM\n  summary: 'Make river relative elevation models (REM) and REM visualizations from an input digital elevation model (DEM).'\n  description: |\n    RiverREM is a Python package for automatically generating river relative elevation model (REM) visualizations \n    from nothing but an input digital elevation model (DEM). The package uses the OpenStreetMap API to retrieve \n    river centerline geometries over the DEM extent. Interpolation of river elevations is automatically handled \n    using a sampling scheme based on raster resolution and river sinuosity to create striking high-resolution \n    visualizations out of the box and without additional manual steps. \n    The package also contains a helper class for creating DEM raster visualizations.\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n  doc_url: https://opentopography.github.io/RiverREM/\n  dev_url: https://github.com/OpenTopography/RiverREM/\n\nextra:\n  recipe-maintainers:\n    - klarrieu\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -293,8 +293,8 @@
    ]
   }
  },
- "url": "https://github.com/OpenTopography/RiverREM/archive/refs/tags/v1.0.4.tar.gz",
- "version": "1.0.4",
+ "url": "https://github.com/OpenTopography/RiverREM/archive/refs/tags/v1.1.0.tar.gz",
+ "version": "1.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/riverrem.json"
  }
