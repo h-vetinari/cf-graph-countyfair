@@ -34,12 +34,13 @@
   },
   "package": {
    "name": "pubmed-parser",
-   "version": "0.5"
+   "version": "0.5.1"
   },
   "requirements": {
    "host": [
     "python >=3.6",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.6",
@@ -54,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1d8f8c4080c1a65ca94f862edb9d0b9796366f658163bce0c268c33011d35ca0",
-   "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.tar.gz"
+   "sha256": "62db11ea0397db2c0aa7981972db03dc83ad79a76d3ee72704876240f69b67b5",
+   "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -78,7 +79,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -122,12 +124,13 @@
   },
   "package": {
    "name": "pubmed-parser",
-   "version": "0.5"
+   "version": "0.5.1"
   },
   "requirements": {
    "host": [
     "python >=3.6",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.6",
@@ -142,8 +145,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1d8f8c4080c1a65ca94f862edb9d0b9796366f658163bce0c268c33011d35ca0",
-   "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.tar.gz"
+   "sha256": "62db11ea0397db2c0aa7981972db03dc83ad79a76d3ee72704876240f69b67b5",
+   "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -171,7 +174,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pubmed-parser.json"
  },
- "raw_meta_yaml": "{% set name = \"pubmed-parser\" %}\n{% set version = \"0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pubmed_parser-{{ version }}.tar.gz\n  sha256: 1d8f8c4080c1a65ca94f862edb9d0b9796366f658163bce0c268c33011d35ca0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - lxml\n    - unidecode\n    - requests\n    - six\n    - numpy\n    - pytest\n    - pytest-cov\n\ntest:\n  imports:\n    - pubmed_parser\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/titipata/pubmed_parser\n  summary: A python parser for Pubmed Open-Access Subset and MEDLINE XML repository\n  dev_url: https://github.com/titipata/pubmed_parser\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - mbestipa\n",
+ "raw_meta_yaml": "{% set name = \"pubmed-parser\" %}\n{% set version = \"0.5.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pubmed_parser-{{ version }}.tar.gz\n  sha256: 62db11ea0397db2c0aa7981972db03dc83ad79a76d3ee72704876240f69b67b5\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - setuptools\n  run:\n    - python >=3.6\n    - lxml\n    - unidecode\n    - requests\n    - six\n    - numpy\n    - pytest\n    - pytest-cov\n\ntest:\n  imports:\n    - pubmed_parser\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/titipata/pubmed_parser\n  summary: A python parser for Pubmed Open-Access Subset and MEDLINE XML repository\n  dev_url: https://github.com/titipata/pubmed_parser\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - mbestipa\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -182,6 +185,7 @@
    "pytest-cov",
    "python",
    "requests",
+   "setuptools",
    "six",
    "unidecode"
   ]
@@ -195,7 +199,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -228,7 +233,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6"
+    "python >=3.6",
+    "setuptools"
    ]
   },
   "run": {
@@ -251,8 +257,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.tar.gz",
- "version": "0.5",
+ "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.1.tar.gz",
+ "version": "0.5.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pubmed-parser.json"
  }
