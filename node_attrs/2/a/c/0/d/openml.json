@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "inspection": "update-grayskull"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -27,7 +30,7 @@
     "openml=openml.cli:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,7 +41,7 @@
   },
   "package": {
    "name": "openml",
-   "version": "0.14.2"
+   "version": "0.15.1"
   },
   "requirements": {
    "host": [
@@ -56,13 +59,15 @@
     "requests",
     "scikit-learn >=0.18",
     "scipy >=0.13.3",
-    "xmltodict"
+    "xmltodict",
+    "tqdm",
+    "packaging"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "cf954bd7918f687c46034f9ca097f9bc9ee5d1cdea0df5a8d627efc96abe127d",
-   "url": "https://pypi.org/packages/source/o/openml/openml-0.14.2.tar.gz"
+   "sha256": "58ae3840b6ea736bb6c69bcbb30d587b817f64db070dc691adb9e09b99018816",
+   "url": "https://pypi.org/packages/source/o/openml/openml-0.15.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -97,6 +102,7 @@
     "liac-arff",
     "minio",
     "numpy",
+    "packaging",
     "pandas",
     "pyarrow",
     "python",
@@ -104,6 +110,7 @@
     "requests",
     "scikit-learn",
     "scipy",
+    "tqdm",
     "xmltodict"
    ]
   },
@@ -129,7 +136,7 @@
     "openml=openml.cli:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -140,7 +147,7 @@
   },
   "package": {
    "name": "openml",
-   "version": "0.14.2"
+   "version": "0.15.1"
   },
   "requirements": {
    "host": [
@@ -158,13 +165,15 @@
     "requests",
     "scikit-learn >=0.18",
     "scipy >=0.13.3",
-    "xmltodict"
+    "xmltodict",
+    "tqdm",
+    "packaging"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "cf954bd7918f687c46034f9ca097f9bc9ee5d1cdea0df5a8d627efc96abe127d",
-   "url": "https://pypi.org/packages/source/o/openml/openml-0.14.2.tar.gz"
+   "sha256": "58ae3840b6ea736bb6c69bcbb30d587b817f64db070dc691adb9e09b99018816",
+   "url": "https://pypi.org/packages/source/o/openml/openml-0.15.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -195,13 +204,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/openml.json"
  },
- "raw_meta_yaml": "{% set name = \"openml\" %}\n{% set version = \"0.14.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/openml-{{ version }}.tar.gz\n  sha256: cf954bd7918f687c46034f9ca097f9bc9ee5d1cdea0df5a8d627efc96abe127d\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - openml=openml.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - liac-arff >=2.4.0\n    - minio\n    - numpy >=1.6.2,<2\n    - pandas >=1.0.0\n    - pyarrow\n    - python >={{ python_min }}\n    - python-dateutil\n    - requests\n    - scikit-learn >=0.18\n    - scipy >=0.13.3\n    - xmltodict\n\ntest:\n  imports:\n    - openml\n    - openml.datasets\n  commands:\n    - pip check\n    - openml --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://openml.org/\n  summary: Python API for OpenML\n  license: BSD-3-Clause\n  license_file: LICENSE\n  dev_url: https://github.com/openml/openml-python\n  doc_url: https://openml.github.io/openml-python/\n\nextra:\n  recipe-maintainers:\n    - BastianZim\n    - mfeurer\n",
+ "raw_meta_yaml": "{% set name = \"openml\" %}\n{% set version = \"0.15.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/openml-{{ version }}.tar.gz\n  sha256: 58ae3840b6ea736bb6c69bcbb30d587b817f64db070dc691adb9e09b99018816\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - openml=openml.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - liac-arff >=2.4.0\n    - minio\n    - numpy >=1.6.2,<2\n    - pandas >=1.0.0\n    - pyarrow\n    - python >={{ python_min }}\n    - python-dateutil\n    - requests\n    - scikit-learn >=0.18\n    - scipy >=0.13.3\n    - xmltodict\n    - tqdm\n    - packaging\n\ntest:\n  imports:\n    - openml\n    - openml.datasets\n  commands:\n    - pip check\n    - openml --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://openml.org/\n  summary: Python API for OpenML\n  license: BSD-3-Clause\n  license_file: LICENSE\n  dev_url: https://github.com/openml/openml-python\n  doc_url: https://openml.github.io/openml-python/\n\nextra:\n  recipe-maintainers:\n    - BastianZim\n    - mfeurer\n",
  "req": {
   "__set__": true,
   "elements": [
    "liac-arff",
    "minio",
    "numpy",
+   "packaging",
    "pandas",
    "pip",
    "pyarrow",
@@ -210,6 +220,7 @@
    "requests",
    "scikit-learn",
    "scipy",
+   "tqdm",
    "xmltodict"
   ]
  },
@@ -231,6 +242,7 @@
     "liac-arff",
     "minio",
     "numpy",
+    "packaging",
     "pandas",
     "pyarrow",
     "python",
@@ -238,6 +250,7 @@
     "requests",
     "scikit-learn",
     "scipy",
+    "tqdm",
     "xmltodict"
    ]
   },
@@ -268,6 +281,7 @@
     "liac-arff >=2.4.0",
     "minio",
     "numpy >=1.6.2,<2",
+    "packaging",
     "pandas >=1.0.0",
     "pyarrow",
     "python >=3.9",
@@ -275,6 +289,7 @@
     "requests",
     "scikit-learn >=0.18",
     "scipy >=0.13.3",
+    "tqdm",
     "xmltodict"
    ]
   },
@@ -286,8 +301,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/o/openml/openml-0.14.2.tar.gz",
- "version": "0.14.2",
+ "url": "https://pypi.org/packages/source/o/openml/openml-0.15.1.tar.gz",
+ "version": "0.15.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/openml.json"
  }
