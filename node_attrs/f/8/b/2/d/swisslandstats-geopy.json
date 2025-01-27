@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "swisslandstats-geopy",
-   "version": "0.11.0"
+   "version": "0.12.0"
   },
   "requirements": {
    "host": [
@@ -46,9 +46,9 @@
     "matplotlib-base >=3.0.0",
     "numpy >=1.15",
     "pandas >=0.17.0",
+    "pooch",
     "python >=3.9",
     "rasterio >=1.0.0",
-    "requests-cache",
     "geopandas >=0.10.0",
     "osmnx >=1.0.0",
     "xarray"
@@ -56,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bd8a4a9e85ffea53d27584a05cc4328cca2e96aa4c6d5c4b3c7940bde42fa0b9",
-   "url": "https://pypi.org/packages/source/s/swisslandstats-geopy/swisslandstats_geopy-0.11.0.tar.gz"
+   "sha256": "4be5ab1fed9485c2e5918766e2fe487d18b0738cc7aeb538c52b3ac333eeba18",
+   "url": "https://pypi.org/packages/source/s/swisslandstats-geopy/swisslandstats_geopy-0.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -93,9 +93,9 @@
     "numpy",
     "osmnx",
     "pandas",
+    "pooch",
     "python",
     "rasterio",
-    "requests-cache",
     "xarray"
    ]
   },
@@ -118,7 +118,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -128,7 +128,7 @@
   },
   "package": {
    "name": "swisslandstats-geopy",
-   "version": "0.11.0"
+   "version": "0.12.0"
   },
   "requirements": {
    "host": [
@@ -140,9 +140,9 @@
     "matplotlib-base >=3.0.0",
     "numpy >=1.15",
     "pandas >=0.17.0",
+    "pooch",
     "python >=3.9",
     "rasterio >=1.0.0",
-    "requests-cache",
     "geopandas >=0.10.0",
     "osmnx >=1.0.0",
     "xarray"
@@ -150,8 +150,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bd8a4a9e85ffea53d27584a05cc4328cca2e96aa4c6d5c4b3c7940bde42fa0b9",
-   "url": "https://pypi.org/packages/source/s/swisslandstats-geopy/swisslandstats_geopy-0.11.0.tar.gz"
+   "sha256": "4be5ab1fed9485c2e5918766e2fe487d18b0738cc7aeb538c52b3ac333eeba18",
+   "url": "https://pypi.org/packages/source/s/swisslandstats-geopy/swisslandstats_geopy-0.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -180,7 +180,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/swisslandstats-geopy.json"
  },
- "raw_meta_yaml": "{% set name = \"swisslandstats-geopy\" %}\n{% set version = \"0.11.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: bd8a4a9e85ffea53d27584a05cc4328cca2e96aa4c6d5c4b3c7940bde42fa0b9\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools >=61.0\n  run:\n    - matplotlib-base >=3.0.0\n    - numpy >=1.15\n    - pandas >=0.17.0\n    - python >={{ python_min }}\n    - rasterio >=1.0.0\n    - requests-cache\n    - geopandas >=0.10.0\n    - osmnx >=1.0.0\n    - xarray\n\ntest:\n  imports:\n    - swisslandstats\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/martibosch/swisslandstats-geopy\n  summary: Python for the Swiss Federal Statistics Geodata (GEOSTAT)\n  license: GPL-3.0-or-later\n  license_file: LICENSE.txt\n  doc_url: https://swisslandstats-geopy.readthedocs.io/\n  dev_url: https://github.com/martibosch/swisslandstats-geopy\n\nextra:\n  recipe-maintainers:\n    - martibosch\n",
+ "raw_meta_yaml": "{% set name = \"swisslandstats-geopy\" %}\n{% set version = \"0.12.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 4be5ab1fed9485c2e5918766e2fe487d18b0738cc7aeb538c52b3ac333eeba18\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools >=61.0\n  run:\n    - matplotlib-base >=3.0.0\n    - numpy >=1.15\n    - pandas >=0.17.0\n    - pooch\n    - python >={{ python_min }}\n    - rasterio >=1.0.0\n    - geopandas >=0.10.0\n    - osmnx >=1.0.0\n    - xarray\n\ntest:\n  imports:\n    - swisslandstats\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/martibosch/swisslandstats-geopy\n  summary: Python for the Swiss Federal Statistics Geodata (GEOSTAT)\n  license: GPL-3.0-or-later\n  license_file: LICENSE.txt\n  doc_url: https://swisslandstats-geopy.readthedocs.io/\n  dev_url: https://github.com/martibosch/swisslandstats-geopy\n\nextra:\n  recipe-maintainers:\n    - martibosch\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -190,9 +190,9 @@
    "osmnx",
    "pandas",
    "pip",
+   "pooch",
    "python",
    "rasterio",
-   "requests-cache",
    "setuptools",
    "xarray"
   ]
@@ -218,9 +218,9 @@
     "numpy",
     "osmnx",
     "pandas",
+    "pooch",
     "python",
     "rasterio",
-    "requests-cache",
     "xarray"
    ]
   },
@@ -254,9 +254,9 @@
     "numpy >=1.15",
     "osmnx >=1.0.0",
     "pandas >=0.17.0",
+    "pooch",
     "python >=3.9",
     "rasterio >=1.0.0",
-    "requests-cache",
     "xarray"
    ]
   },
@@ -268,8 +268,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/swisslandstats-geopy/swisslandstats_geopy-0.11.0.tar.gz",
- "version": "0.11.0",
+ "url": "https://pypi.org/packages/source/s/swisslandstats-geopy/swisslandstats_geopy-0.12.0.tar.gz",
+ "version": "0.12.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/swisslandstats-geopy.json"
  }
