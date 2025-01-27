@@ -31,7 +31,7 @@
    "summary": "Utility library for converting data+materials to/from VulkanSceneGraph"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "vsgxchange"
    ]
@@ -54,6 +54,7 @@
     "pkgconfig"
    ],
    "host": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -104,6 +105,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -138,7 +140,7 @@
    "summary": "Utility library for converting data+materials to/from VulkanSceneGraph"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "vsgxchange"
    ]
@@ -161,6 +163,7 @@
     "pkgconfig"
    ],
    "host": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -211,6 +214,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -245,7 +249,7 @@
    "summary": "Utility library for converting data+materials to/from VulkanSceneGraph"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "vsgxchange"
    ]
@@ -268,6 +272,7 @@
     "pkgconfig"
    ],
    "host": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -318,6 +323,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -352,7 +358,7 @@
    "summary": "Utility library for converting data+materials to/from VulkanSceneGraph"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "vsgxchange"
    ]
@@ -375,6 +381,7 @@
     "pkgconfig"
    ],
    "host": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -446,7 +453,7 @@
    "summary": "Utility library for converting data+materials to/from VulkanSceneGraph"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "vsgxchange"
    ]
@@ -468,6 +475,7 @@
     "ninja"
    ],
    "host": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -516,6 +524,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -549,7 +558,7 @@
    "summary": "Utility library for converting data+materials to/from VulkanSceneGraph"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "vsgxchange"
    ]
@@ -571,6 +580,7 @@
     "ninja"
    ],
    "host": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -619,6 +629,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -661,10 +672,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/vsgxchange.json"
  },
- "raw_meta_yaml": "{% set name = \"vsgXchange\" %}\n{% set version = \"1.1.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/vsg-dev/vsgXchange/archive/v{{ version }}.tar.gz\n    sha256: 8a9e2fe56e047dd462eb0597b53169b6ffc2852d5ce0b7b728d800bdb50d3955\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('vsgxchange', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n    - cmake\n    - ninja  # [not win]\n    - pkgconfig  # [linux]\n  host:\n    - freetype\n    - libcurl\n    - libvulkan-headers\n    - libvulkan-loader\n    - vulkanscenegraph\n  run:\n    - libvulkan-loader\n    - vulkanscenegraph\n\ntest:\n  commands:\n    - test -f $PREFIX/include/vsgXchange/all.h  # [not win]\n    - test -f $PREFIX/lib/libvsgXchange${SHLIB_EXT}  # [not win]\n    - test -f $PREFIX/lib/cmake/vsgXchange/vsgXchangeConfig.cmake  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\vsgXchange\\\\all.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\vsgXchange.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\vsgXchange.dll exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\vsgconv.exe exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\cmake\\\\vsgXchange\\\\vsgXchangeConfig.cmake exit 1  # [win]\n  requires:\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - cmake\n    - ninja  # [not win]\n    - pkgconfig  # [linux]\n  files:\n    - tests/\n\nabout:\n  home: https://vsg-dev.github.io/vsg-dev.io/\n  summary: Utility library for converting data+materials to/from VulkanSceneGraph\n  license: MIT\n  license_file: LICENSE.md\n  dev_url: https://github.com/vsg-dev/vsgXchange\n\nextra:\n  recipe-maintainers:\n    - jeongseok-meta\n",
+ "raw_meta_yaml": "{% set name = \"vsgXchange\" %}\n{% set version = \"1.1.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/vsg-dev/vsgXchange/archive/v{{ version }}.tar.gz\n    sha256: 8a9e2fe56e047dd462eb0597b53169b6ffc2852d5ce0b7b728d800bdb50d3955\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage('vsgxchange', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n    - cmake\n    - ninja  # [not win]\n    - pkgconfig  # [linux]\n  host:\n    - assimp\n    - freetype\n    - libcurl\n    - libvulkan-headers\n    - libvulkan-loader\n    - vulkanscenegraph\n  run:\n    - libvulkan-loader\n    - vulkanscenegraph\n\ntest:\n  commands:\n    - test -f $PREFIX/include/vsgXchange/all.h  # [not win]\n    - test -f $PREFIX/lib/libvsgXchange${SHLIB_EXT}  # [not win]\n    - test -f $PREFIX/lib/cmake/vsgXchange/vsgXchangeConfig.cmake  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\vsgXchange\\\\all.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\vsgXchange.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\vsgXchange.dll exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\vsgconv.exe exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\cmake\\\\vsgXchange\\\\vsgXchangeConfig.cmake exit 1  # [win]\n  requires:\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - cmake\n    - ninja  # [not win]\n    - pkgconfig  # [linux]\n  files:\n    - tests/\n\nabout:\n  home: https://vsg-dev.github.io/vsg-dev.io/\n  summary: Utility library for converting data+materials to/from VulkanSceneGraph\n  license: MIT\n  license_file: LICENSE.md\n  dev_url: https://github.com/vsg-dev/vsgXchange\n\nextra:\n  recipe-maintainers:\n    - jeongseok-meta\n",
  "req": {
   "__set__": true,
   "elements": [
+   "assimp",
    "c_stdlib_stub",
    "cmake",
    "cxx_compiler_stub",
@@ -691,6 +703,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "assimp",
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
@@ -737,6 +750,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -776,7 +790,7 @@
    "summary": "Utility library for converting data+materials to/from VulkanSceneGraph"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "vsgxchange"
    ]
@@ -797,6 +811,7 @@
     "cmake"
    ],
    "host": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
@@ -845,6 +860,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "assimp",
     "freetype",
     "libcurl",
     "libvulkan-headers",
