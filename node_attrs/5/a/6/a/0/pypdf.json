@@ -5,35 +5,32 @@
   "bot": {
    "inspection": "hint-all"
   },
-  "build_platform": {
-   "osx_arm64": "osx_64"
-  },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
-  },
-  "provider": {
-   "linux_aarch64": "default",
-   "linux_ppc64le": "default"
-  },
-  "test": "native_and_emulated"
+  }
  },
  "feedstock_name": "pypdf",
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
    "dev_url": "https://github.com/py-pdf/pypdf",
-   "doc_url": "https://pypdf.readthedocs.io",
+   "doc_url": "https://pypdf.readthedocs.io/",
    "home": "https://pypi.org/project/pypdf",
    "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
    "license_file": "dist/LICENSE",
    "summary": "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "cd dist && PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   "number": "0",
+   "script": [
+    "cd dist",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
   },
   "extra": {
    "feedstock-name": "pypdf",
@@ -44,84 +41,104 @@
   },
   "outputs": [
    {
-    "name": "pypdf"
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "pypdf-with-crypto",
+    "build": null,
+    "name": "pypdf",
     "requirements": {
+     "build": [],
+     "host": [
+      "flit-core >=3.9,<4",
+      "pip",
+      "python 3.9.*"
+     ],
      "run": [
-      "pypdf",
-      "cryptography"
+      "python >=3.9",
+      "typing_extensions >=4.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "pypdf"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "pypdf-with-image",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "pypdf",
       "pillow >=8.0.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "pypdf"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "pypdf-with-crypto",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "pypdf",
+      "cryptography"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "pypdf-with-full",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "pypdf-with-crypto",
       "pypdf-with-image",
       "pypdf"
-     ],
-     "test": {
-      "commands": [
-       "pip check"
-      ],
-      "imports": [
-       "pypdf"
-      ],
-      "requires": [
-       "pip"
-      ]
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
      }
-    }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "_pypdf-with-full-tests",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "pypdf-with-crypto",
       "pypdf-with-full",
@@ -129,74 +146,61 @@
       "pypdf"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "python test_all.py"
-     ],
-     "files": [
-      "test_all.py"
-     ],
-     "imports": [
-      "pypdf"
-     ],
-     "requires": [
-      "fpdf",
-      "pip",
-      "pytest-cov",
-      "pytest-socket",
-      "pytest-timeout",
-      "pyyaml",
-      "types-pillow"
-     ],
-     "source_files": [
-      "src/pyproject.toml",
-      "src/tests",
-      "src/resources"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "test_all.py"
+       ],
+       "source": [
+        "src/pyproject.toml",
+        "src/tests/**",
+        "src/resources/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "fpdf",
+        "pytest-cov",
+        "pytest-socket",
+        "pytest-timeout",
+        "pyyaml",
+        "types-pillow",
+        "python 3.9.*"
+       ]
+      },
+      "script": "python test_all.py"
+     }
+    ]
    }
   ],
   "package": {
    "name": "pypdf",
-   "version": "5.1.0"
+   "version": "5.2.0"
   },
   "requirements": {
-   "build": [],
    "host": [
     "flit-core >=3.9,<4",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ],
    "run": [
     "python >=3.9",
     "typing_extensions >=4.0"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "dist",
-    "sha256": "425a129abb1614183fd1aca6982f650b47f8026867c0ce7c4b9f281c443d2740",
-    "url": "https://pypi.org/packages/source/p/pypdf/pypdf-5.1.0.tar.gz"
-   },
-   {
-    "folder": "src",
-    "sha256": "a4d6e70aba5789eb8d68a762067d81d604fc0940c3dbc1704f103d8de5d6ab87",
-    "url": "https://github.com/py-pdf/pypdf/archive/refs/tags/5.1.0.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "pypdf"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "7c38e68420f038f2c4998fd9d6717b6db4f6cef1642e9cf384d519c9cf094663",
+   "url": "https://pypi.org/packages/source/p/pypdf/pypdf-5.2.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -242,16 +246,20 @@
  "meta_yaml": {
   "about": {
    "dev_url": "https://github.com/py-pdf/pypdf",
-   "doc_url": "https://pypdf.readthedocs.io",
+   "doc_url": "https://pypdf.readthedocs.io/",
    "home": "https://pypi.org/project/pypdf",
    "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
    "license_file": "dist/LICENSE",
    "summary": "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "cd dist && PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   "number": "0",
+   "script": [
+    "cd dist",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
   },
   "extra": {
    "feedstock-name": "pypdf",
@@ -262,84 +270,104 @@
   },
   "outputs": [
    {
-    "name": "pypdf"
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "pypdf-with-crypto",
+    "build": null,
+    "name": "pypdf",
     "requirements": {
+     "build": [],
+     "host": [
+      "flit-core >=3.9,<4",
+      "pip",
+      "python 3.9.*"
+     ],
      "run": [
-      "pypdf",
-      "cryptography"
+      "python >=3.9",
+      "typing_extensions >=4.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "pypdf"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "pypdf-with-image",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "pypdf",
       "pillow >=8.0.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "pypdf"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "pypdf-with-crypto",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "pypdf",
+      "cryptography"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "pypdf-with-full",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "pypdf-with-crypto",
       "pypdf-with-image",
       "pypdf"
-     ],
-     "test": {
-      "commands": [
-       "pip check"
-      ],
-      "imports": [
-       "pypdf"
-      ],
-      "requires": [
-       "pip"
-      ]
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
      }
-    }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "_pypdf-with-full-tests",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "pypdf-with-crypto",
       "pypdf-with-full",
@@ -347,74 +375,61 @@
       "pypdf"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "python test_all.py"
-     ],
-     "files": [
-      "test_all.py"
-     ],
-     "imports": [
-      "pypdf"
-     ],
-     "requires": [
-      "fpdf",
-      "pip",
-      "pytest-cov",
-      "pytest-socket",
-      "pytest-timeout",
-      "pyyaml",
-      "types-pillow"
-     ],
-     "source_files": [
-      "src/pyproject.toml",
-      "src/tests",
-      "src/resources"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pypdf"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "test_all.py"
+       ],
+       "source": [
+        "src/pyproject.toml",
+        "src/tests/**",
+        "src/resources/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "fpdf",
+        "pytest-cov",
+        "pytest-socket",
+        "pytest-timeout",
+        "pyyaml",
+        "types-pillow",
+        "python 3.9.*"
+       ]
+      },
+      "script": "python test_all.py"
+     }
+    ]
    }
   ],
   "package": {
    "name": "pypdf",
-   "version": "5.1.0"
+   "version": "5.2.0"
   },
   "requirements": {
-   "build": [],
    "host": [
     "flit-core >=3.9,<4",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ],
    "run": [
     "python >=3.9",
     "typing_extensions >=4.0"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "dist",
-    "sha256": "425a129abb1614183fd1aca6982f650b47f8026867c0ce7c4b9f281c443d2740",
-    "url": "https://pypi.org/packages/source/p/pypdf/pypdf-5.1.0.tar.gz"
-   },
-   {
-    "folder": "src",
-    "sha256": "a4d6e70aba5789eb8d68a762067d81d604fc0940c3dbc1704f103d8de5d6ab87",
-    "url": "https://github.com/py-pdf/pypdf/archive/refs/tags/5.1.0.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "pypdf"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "7c38e68420f038f2c4998fd9d6717b6db4f6cef1642e9cf384d519c9cf094663",
+   "url": "https://pypi.org/packages/source/p/pypdf/pypdf-5.2.0.tar.gz"
   }
  },
  "name": "pypdf",
@@ -435,7 +450,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pypdf.json"
  },
- "raw_meta_yaml": "{% set version = \"5.1.0\" %}\n\n# handle undefined PYTHON in `noarch: generic` outputs\n{% if PYTHON is not defined %}{% set PYTHON = \"$PYTHON\" %}{% endif %}\n\npackage:\n  name: pypdf\n  version: {{ version }}\n\nsource:\n  - folder: dist\n    url: https://pypi.org/packages/source/p/pypdf/pypdf-{{ version }}.tar.gz\n    sha256: 425a129abb1614183fd1aca6982f650b47f8026867c0ce7c4b9f281c443d2740\n  - folder: src\n    url: https://github.com/py-pdf/pypdf/archive/refs/tags/{{ version }}.tar.gz\n    sha256: a4d6e70aba5789eb8d68a762067d81d604fc0940c3dbc1704f103d8de5d6ab87\n\nbuild:\n  number: 1\n  noarch: python\n  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - flit-core >=3.9,<4\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - typing_extensions >=4.0\n\ntest:\n  imports:\n    - pypdf\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\noutputs:\n  - name: pypdf\n\n  - name: pypdf-with-crypto\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"pypdf\", max_pin=\"x.x.x\") }}\n        - cryptography\n    test:\n      imports:\n        - pypdf\n      commands:\n        - pip check\n      requires:\n        - pip\n\n\n  - name: pypdf-with-image\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"pypdf\", max_pin=\"x.x.x\") }}\n        - pillow >=8.0.0\n    test:\n      imports:\n        - pypdf\n      commands:\n        - pip check\n      requires:\n        - pip\n\n\n  - name: pypdf-with-full\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"pypdf-with-crypto\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"pypdf-with-image\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"pypdf\", max_pin=\"x.x.x\") }}\n      test:\n        imports:\n          - pypdf\n        commands:\n          - pip check\n        requires:\n          - pip\n\n  - name: _pypdf-with-full-tests\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"pypdf-with-crypto\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"pypdf-with-full\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"pypdf-with-image\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"pypdf\", max_pin=\"x.x.x\") }}\n    test:\n      files:\n        - test_all.py\n      source_files:\n        - src/pyproject.toml\n        - src/tests\n        - src/resources\n      imports:\n        - pypdf\n      commands:\n        - pip check\n        - python test_all.py\n      requires:\n        - fpdf\n        - pip\n        - pytest-cov\n        - pytest-socket\n        - pytest-timeout\n        - pyyaml\n        - types-pillow\n\nabout:\n  home: https://pypi.org/project/pypdf\n  summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files\n  license: BSD-3-Clause\n  license_file: dist/LICENSE\n  dev_url: https://github.com/py-pdf/pypdf\n  doc_url: https://pypdf.readthedocs.io\n\nextra:\n  feedstock-name: pypdf\n  recipe-maintainers:\n    - MartinThoma\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 5.2.0\n  PYTHON: ${{ PYTHON | default(\"$PYTHON\") }}\n\nrecipe:\n  name: pypdf\n  version: ${{ version }}\n\nsource:\n  - url: https://pypi.org/packages/source/p/pypdf/pypdf-${{ version }}.tar.gz\n    sha256: 7c38e68420f038f2c4998fd9d6717b6db4f6cef1642e9cf384d519c9cf094663\n    target_directory: dist\n  - url: https://github.com/py-pdf/pypdf/archive/refs/tags/${{ version }}.tar.gz\n    sha256: 90b115e45cf384f067729f349cfaac90be542a01d3d40b49957de2ddc2784a44\n    target_directory: src\n\nbuild:\n  number: 0\n  noarch: python\n\noutputs:\n  - package:\n      name: pypdf\n    build:\n      noarch: python\n      script:\n        - cd dist\n        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n    requirements:\n      host:\n        - flit-core >=3.9,<4\n        - pip\n        - python ${{ python_min }}.*\n      run:\n        - python >=${{ python_min }}\n        - typing_extensions >=4.0\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: pypdf\n\n  - package:\n      name: pypdf-with-crypto\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"pypdf\", upper_bound=\"x.x.x\") }}\n        - cryptography\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: pypdf\n\n  - package:\n      name: pypdf-with-image\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"pypdf\", upper_bound=\"x.x.x\") }}\n        - pillow >=8.0.0\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: pypdf\n\n  - package:\n      name: pypdf-with-full\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"pypdf-with-crypto\", upper_bound=\"x.x.x\") }}\n        - ${{ pin_subpackage(\"pypdf-with-image\", upper_bound=\"x.x.x\") }}\n        - ${{ pin_subpackage(\"pypdf\", upper_bound=\"x.x.x\") }}\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: pypdf\n\n  - package:\n      name: _pypdf-with-full-tests\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"pypdf-with-crypto\", upper_bound=\"x.x.x\") }}\n        - ${{ pin_subpackage(\"pypdf-with-full\", upper_bound=\"x.x.x\") }}\n        - ${{ pin_subpackage(\"pypdf-with-image\", upper_bound=\"x.x.x\") }}\n        - ${{ pin_subpackage(\"pypdf\", upper_bound=\"x.x.x\") }}\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: pypdf\n      - files:\n          recipe:\n            - test_all.py\n          source:\n            - src/pyproject.toml\n            - src/tests/\n            - src/resources/\n        requirements:\n          run:\n            - fpdf\n            - pytest-cov\n            - pytest-socket\n            - pytest-timeout\n            - pyyaml\n            - types-pillow\n            - python ${{ python_min }}.*\n        script:\n          - python test_all.py\n\nabout:\n  summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files\n  license: BSD-3-Clause\n  license_file: dist/LICENSE\n  homepage: https://pypi.org/project/pypdf\n  repository: https://github.com/py-pdf/pypdf\n  documentation: https://pypdf.readthedocs.io\n\nextra:\n  feedstock-name: pypdf\n  recipe-maintainers:\n    - MartinThoma\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -502,7 +517,7 @@
    "elements": [
     "flit-core >=3.9,<4",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ]
   },
   "run": {
@@ -526,14 +541,14 @@
     "pytest-cov",
     "pytest-socket",
     "pytest-timeout",
-    "python 3.9",
+    "python 3.9.*",
     "pyyaml",
     "types-pillow"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pypdf/pypdf-5.1.0.tar.gz",
- "version": "5.1.0",
+ "url": "https://pypi.org/packages/source/p/pypdf/pypdf-5.2.0.tar.gz",
+ "version": "5.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pypdf.json"
  }
