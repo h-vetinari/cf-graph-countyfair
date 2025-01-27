@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "translators",
-   "version": "5.9.3"
+   "version": "5.9.4"
   },
   "requirements": {
    "host": [
@@ -52,8 +52,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e219708d419f9b2b502c8ad61b7f6fd9771cd1ff80632df069c027a69da0c72d",
-   "url": "https://pypi.org/packages/source/t/translators/translators-5.9.3.tar.gz"
+   "sha256": "1661d5e70aa0e48e43cb344e396a90e43b8fa3257bfafdd393ee1cee9832cb59",
+   "url": "https://pypi.org/packages/source/t/translators/translators-5.9.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -110,7 +110,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -120,7 +120,7 @@
   },
   "package": {
    "name": "translators",
-   "version": "5.9.3"
+   "version": "5.9.4"
   },
   "requirements": {
    "host": [
@@ -139,8 +139,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e219708d419f9b2b502c8ad61b7f6fd9771cd1ff80632df069c027a69da0c72d",
-   "url": "https://pypi.org/packages/source/t/translators/translators-5.9.3.tar.gz"
+   "sha256": "1661d5e70aa0e48e43cb344e396a90e43b8fa3257bfafdd393ee1cee9832cb59",
+   "url": "https://pypi.org/packages/source/t/translators/translators-5.9.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -169,7 +169,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/translators.json"
  },
- "raw_meta_yaml": "{% set name = \"translators\" %}\n{% set version = \"5.9.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/translators-{{ version }}.tar.gz\n  sha256: e219708d419f9b2b502c8ad61b7f6fd9771cd1ff80632df069c027a69da0c72d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - requests >=2.29.0\n    - pyexecjs >=1.5.1\n    - lxml >=4.9.1\n    - tqdm >=4.65.0\n    - pathos >=0.2.9\n    - cryptography >=38.0.1\n\ntest:\n  imports:\n    - translators\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/UlionTse/translators\n  summary: Translators is a library which aims to bring free, multiple, enjoyable translation to individuals and students in Python.\n  dev_url: https://github.com/UlionTse/translators\n  license: GPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - UlionTse\n",
+ "raw_meta_yaml": "{% set name = \"translators\" %}\n{% set version = \"5.9.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/translators-{{ version }}.tar.gz\n  sha256: 1661d5e70aa0e48e43cb344e396a90e43b8fa3257bfafdd393ee1cee9832cb59\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - requests >=2.29.0\n    - pyexecjs >=1.5.1\n    - lxml >=4.9.1\n    - tqdm >=4.65.0\n    - pathos >=0.2.9\n    - cryptography >=38.0.1\n\ntest:\n  imports:\n    - translators\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/UlionTse/translators\n  summary: Translators is a library which aims to bring free, multiple, enjoyable translation to individuals and students in Python.\n  dev_url: https://github.com/UlionTse/translators\n  license: GPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - UlionTse\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -248,8 +248,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/translators/translators-5.9.3.tar.gz",
- "version": "5.9.3",
+ "url": "https://pypi.org/packages/source/t/translators/translators-5.9.4.tar.gz",
+ "version": "5.9.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/translators.json"
  }
