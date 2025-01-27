@@ -38,8 +38,8 @@
   "requirements": {
    "host": [
     "python 3.10",
-    "setuptools",
-    "setuptools-scm",
+    "hatchling",
+    "hatch-vcs",
     "pip"
    ],
    "run": [
@@ -73,10 +73,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-vcs",
+    "hatchling",
     "pip",
-    "python",
-    "setuptools",
-    "setuptools-scm"
+    "python"
    ]
   },
   "run": {
@@ -119,8 +119,8 @@
   "requirements": {
    "host": [
     "python 3.10",
-    "setuptools",
-    "setuptools-scm",
+    "hatchling",
+    "hatch-vcs",
     "pip"
    ],
    "run": [
@@ -160,14 +160,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/symbolite.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"symbolite\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/symbolite-{{ version }}.tar.gz\n  sha256: b7a576eb61131feac9e74a9da6fae0f110beaa537667575b143f50eac424b7f4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - setuptools-scm\n    - pip\n  run:\n    - python >={{ python_min }}\n    - typing-extensions\n\ntest:\n  imports:\n    - symbolite\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/hgrecco/symbolite\n  summary: A minimalistic symbolic package.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maurosilber\n    - hgrecco\n",
+ "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"symbolite\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/symbolite-{{ version }}.tar.gz\n  sha256: b7a576eb61131feac9e74a9da6fae0f110beaa537667575b143f50eac424b7f4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - hatch-vcs\n    - pip\n  run:\n    - python >={{ python_min }}\n    - typing-extensions\n\ntest:\n  imports:\n    - symbolite\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/hgrecco/symbolite\n  summary: A minimalistic symbolic package.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maurosilber\n    - hgrecco\n",
  "req": {
   "__set__": true,
   "elements": [
+   "hatch-vcs",
+   "hatchling",
    "pip",
    "python",
-   "setuptools",
-   "setuptools-scm",
    "typing-extensions"
   ]
  },
@@ -179,10 +179,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-vcs",
+    "hatchling",
     "pip",
-    "python",
-    "setuptools",
-    "setuptools-scm"
+    "python"
    ]
   },
   "run": {
@@ -209,10 +209,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-vcs",
+    "hatchling",
     "pip",
-    "python 3.10",
-    "setuptools",
-    "setuptools-scm"
+    "python 3.10"
    ]
   },
   "run": {
