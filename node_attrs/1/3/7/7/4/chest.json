@@ -16,15 +16,15 @@
  "linux_64_meta_yaml": {
   "about": {
    "home": "https://github.com/ContinuumIO/chest",
-   "license": "BSD 3-Clause",
+   "license": "BSD-3-Clause",
    "license_family": "BSD",
    "license_file": "LICENSE.txt",
    "summary": "Simple on-disk dictionary"
   },
   "build": {
    "noarch": "python",
-   "number": "2",
-   "script": "python -m pip install --no-deps --ignore-installed ."
+   "number": "3",
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -39,23 +39,29 @@
   "requirements": {
    "host": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ],
    "run": [
-    "python",
+    "python >=3.9",
     "heapdict"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "chest-0.2.3.tar.gz",
    "sha256": "f2d1030d4720fd4c0cb258c3383d4bab764cfe441bab1366a0d186b0baf4f4d6",
-   "url": "https://pypi.io/packages/source/c/chest/chest-0.2.3.tar.gz"
+   "url": "https://pypi.org/packages/source/c/chest/chest-0.2.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "chest"
+   ],
+   "requires": [
+    "python 3.9",
+    "pip"
    ]
   }
  },
@@ -81,21 +87,24 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "meta_yaml": {
   "about": {
    "home": "https://github.com/ContinuumIO/chest",
-   "license": "BSD 3-Clause",
+   "license": "BSD-3-Clause",
    "license_family": "BSD",
    "license_file": "LICENSE.txt",
    "summary": "Simple on-disk dictionary"
   },
   "build": {
    "noarch": "python",
-   "number": "2",
-   "script": "python -m pip install --no-deps --ignore-installed ."
+   "number": "3",
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -110,23 +119,29 @@
   "requirements": {
    "host": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ],
    "run": [
-    "python",
+    "python >=3.9",
     "heapdict"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "chest-0.2.3.tar.gz",
    "sha256": "f2d1030d4720fd4c0cb258c3383d4bab764cfe441bab1366a0d186b0baf4f4d6",
-   "url": "https://pypi.io/packages/source/c/chest/chest-0.2.3.tar.gz"
+   "url": "https://pypi.org/packages/source/c/chest/chest-0.2.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "chest"
+   ],
+   "requires": [
+    "python 3.9",
+    "pip"
    ]
   }
  },
@@ -144,7 +159,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/chest.json"
  },
- "raw_meta_yaml": "{% set name = \"chest\" %}\n{% set version = \"0.2.3\" %}\n{% set sha256 = \"f2d1030d4720fd4c0cb258c3383d4bab764cfe441bab1366a0d186b0baf4f4d6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 2\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n    - heapdict\n\ntest:\n  imports:\n    - chest\n\nabout:\n  home: https://github.com/ContinuumIO/chest\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Simple on-disk dictionary'\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - synapticarbors\n",
+ "raw_meta_yaml": "{% set name = \"chest\" %}\n{% set version = \"0.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f2d1030d4720fd4c0cb258c3383d4bab764cfe441bab1366a0d186b0baf4f4d6\n\nbuild:\n  noarch: python\n  number: 3\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - heapdict\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - chest\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/ContinuumIO/chest\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Simple on-disk dictionary'\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - synapticarbors\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -176,7 +191,10 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -189,7 +207,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -197,15 +215,18 @@
    "__set__": true,
    "elements": [
     "heapdict",
-    "python"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/c/chest/chest-0.2.3.tar.gz",
+ "url": "https://pypi.org/packages/source/c/chest/chest-0.2.3.tar.gz",
  "version": "0.2.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/chest.json"
