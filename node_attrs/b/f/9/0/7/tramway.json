@@ -23,41 +23,41 @@
    "summary": "The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install --no-deps ."
+   "noarch": "python",
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "francoislaurent",
     "DecBayComp"
    ]
   },
   "package": {
    "name": "tramway",
-   "version": "0.6.8"
+   "version": "0.6.9"
   },
   "requirements": {
    "host": [
     "pip",
-    "poetry",
-    "python"
+    "python 3.8",
+    "setuptools"
    ],
    "run": [
-    "setuptools",
     "hdf5",
-    "python",
-    "rwa-python =0.9.3",
+    "python >=3.8",
+    "rwa-python =0.9.5",
     "matplotlib-base",
     "cvxopt",
     "polytope",
     "tqdm",
     "scikit-image",
-    "stopit"
+    "setuptools"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac",
-   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz"
+   "sha256": "420bacf86c55ad740e3d0348092e064c7797bbde749ac00ddc99a910131060a8",
+   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -67,7 +67,8 @@
     "tramway"
    ],
    "requires": [
-    "pytest"
+    "pytest",
+    "python 3.8"
    ],
    "source_files": [
     "tests/test_core.py",
@@ -85,8 +86,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "poetry",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -100,14 +101,14 @@
     "rwa-python",
     "scikit-image",
     "setuptools",
-    "stopit",
     "tqdm"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python"
    ]
   }
  },
@@ -121,41 +122,41 @@
    "summary": "The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install --no-deps ."
+   "noarch": "python",
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "francoislaurent",
     "DecBayComp"
    ]
   },
   "package": {
    "name": "tramway",
-   "version": "0.6.8"
+   "version": "0.6.9"
   },
   "requirements": {
    "host": [
     "pip",
-    "poetry",
-    "python"
+    "python 3.8",
+    "setuptools"
    ],
    "run": [
-    "setuptools",
     "hdf5",
-    "python",
-    "rwa-python =0.9.3",
+    "python >=3.8",
+    "rwa-python =0.9.5",
     "matplotlib-base",
     "cvxopt",
     "polytope",
     "tqdm",
     "scikit-image",
-    "stopit"
+    "setuptools"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac",
-   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz"
+   "sha256": "420bacf86c55ad740e3d0348092e064c7797bbde749ac00ddc99a910131060a8",
+   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -165,7 +166,8 @@
     "tramway"
    ],
    "requires": [
-    "pytest"
+    "pytest",
+    "python 3.8"
    ],
    "source_files": [
     "tests/test_core.py",
@@ -185,41 +187,41 @@
    "summary": "The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install --no-deps ."
+   "noarch": "python",
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "francoislaurent",
     "DecBayComp"
    ]
   },
   "package": {
    "name": "tramway",
-   "version": "0.6.8"
+   "version": "0.6.9"
   },
   "requirements": {
    "host": [
     "pip",
-    "poetry",
-    "python"
+    "python 3.8",
+    "setuptools"
    ],
    "run": [
-    "setuptools",
     "hdf5",
-    "python",
-    "rwa-python =0.9.3",
+    "python >=3.8",
+    "rwa-python =0.9.5",
     "matplotlib-base",
     "cvxopt",
     "polytope",
     "tqdm",
     "scikit-image",
-    "stopit"
+    "setuptools"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac",
-   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz"
+   "sha256": "420bacf86c55ad740e3d0348092e064c7797bbde749ac00ddc99a910131060a8",
+   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -229,7 +231,8 @@
     "tramway"
    ],
    "requires": [
-    "pytest"
+    "pytest",
+    "python 3.8"
    ],
    "source_files": [
     "tests/test_core.py",
@@ -247,8 +250,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "poetry",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -262,14 +265,14 @@
     "rwa-python",
     "scikit-image",
     "setuptools",
-    "stopit",
     "tqdm"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python"
    ]
   }
  },
@@ -288,7 +291,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tramway.json"
  },
- "raw_meta_yaml": "{% set name = \"tramway\" %}\n{% set version = \"0.6.8\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DecBayComp/TRamWAy/archive/v{{ version }}.tar.gz\n  sha256: ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac\n\nbuild:\n  skip: true  # [py<38]\n  number: 0\n  script: {{ PYTHON }} -m pip install --no-deps .\n\nrequirements:\n  host:\n    - pip\n    - poetry\n    - python\n  run:\n    - setuptools\n    - hdf5\n    - python\n    - rwa-python =0.9.3\n    - matplotlib-base\n    - cvxopt\n    - polytope\n    - tqdm\n    - scikit-image\n    - stopit  # [not win]\n\ntest:\n  imports:\n    - tramway\n  source_files:\n    - tests/test_core.py\n    - tests/test_analyzer.py\n    - tests/test_analyzer_pipeline.py\n  requires:\n    - pytest\n  commands:\n    - pytest tests/test_core.py tests/test_analyzer.py::TestSptDataAccess tests/test_analyzer.py::TestTesseller tests/test_analyzer.py::TestIndexer tests/test_analyzer.py::TestAssignment tests/test_analyzer.py::TestSideEffects\n\nabout:\n  home: https://github.com/DecBayComp/TRamWAy\n  license: CECILL-2.1\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data'\n  doc_url: https://tramway.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - DecBayComp\n",
+ "raw_meta_yaml": "{% set name = \"tramway\" %}\n{% set version = \"0.6.9\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DecBayComp/TRamWAy/archive/v{{ version }}.tar.gz\n  sha256: 420bacf86c55ad740e3d0348092e064c7797bbde749ac00ddc99a910131060a8\n\nbuild:\n  noarch: python\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - hdf5\n    - python >={{ python_min }}\n    - rwa-python =0.9.5\n    - matplotlib-base\n    - cvxopt\n    - polytope\n    - tqdm\n    - scikit-image\n    - setuptools\n\ntest:\n  imports:\n    - tramway\n  source_files:\n    - tests/test_core.py\n    - tests/test_analyzer.py\n    - tests/test_analyzer_pipeline.py\n  requires:\n    - pytest\n    - python {{ python_min }}\n  commands:\n    - pytest tests/test_core.py tests/test_analyzer.py::TestSptDataAccess tests/test_analyzer.py::TestTesseller tests/test_analyzer.py::TestIndexer tests/test_analyzer.py::TestAssignment tests/test_analyzer.py::TestSideEffects\n\nabout:\n  home: https://github.com/DecBayComp/TRamWAy\n  license: CECILL-2.1\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data'\n  doc_url: https://tramway.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - francoislaurent\n    - DecBayComp\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -296,13 +299,11 @@
    "hdf5",
    "matplotlib-base",
    "pip",
-   "poetry",
    "polytope",
    "python",
    "rwa-python",
    "scikit-image",
    "setuptools",
-   "stopit",
    "tqdm"
   ]
  },
@@ -315,8 +316,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "poetry",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -330,14 +331,14 @@
     "rwa-python",
     "scikit-image",
     "setuptools",
-    "stopit",
     "tqdm"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python"
    ]
   }
  },
@@ -351,8 +352,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "poetry",
-    "python"
+    "python 3.8",
+    "setuptools"
    ]
   },
   "run": {
@@ -362,23 +363,23 @@
     "hdf5",
     "matplotlib-base",
     "polytope",
-    "python",
-    "rwa-python =0.9.3",
+    "python >=3.8",
+    "rwa-python =0.9.5",
     "scikit-image",
     "setuptools",
-    "stopit",
     "tqdm"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python 3.8"
    ]
   }
  },
- "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz",
- "version": "0.6.8",
+ "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.9.tar.gz",
+ "version": "0.6.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/tramway.json"
  },
@@ -392,40 +393,41 @@
    "summary": "The RAndom Walk AnalYzer: analysis toolbox for localization microscopy data"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install --no-deps ."
+   "noarch": "python",
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "francoislaurent",
     "DecBayComp"
    ]
   },
   "package": {
    "name": "tramway",
-   "version": "0.6.8"
+   "version": "0.6.9"
   },
   "requirements": {
    "host": [
     "pip",
-    "poetry",
-    "python"
+    "python 3.8",
+    "setuptools"
    ],
    "run": [
-    "setuptools",
     "hdf5",
-    "python",
-    "rwa-python =0.9.3",
+    "python >=3.8",
+    "rwa-python =0.9.5",
     "matplotlib-base",
     "cvxopt",
     "polytope",
     "tqdm",
-    "scikit-image"
+    "scikit-image",
+    "setuptools"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ebd9bb9905eb135dd7ef0ceddd84b1e7dd6a6cb8601bd34df296dcc0246851ac",
-   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.8.tar.gz"
+   "sha256": "420bacf86c55ad740e3d0348092e064c7797bbde749ac00ddc99a910131060a8",
+   "url": "https://github.com/DecBayComp/TRamWAy/archive/v0.6.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -435,7 +437,8 @@
     "tramway"
    ],
    "requires": [
-    "pytest"
+    "pytest",
+    "python 3.8"
    ],
    "source_files": [
     "tests/test_core.py",
@@ -453,8 +456,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "poetry",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -474,7 +477,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python"
    ]
   }
  }
