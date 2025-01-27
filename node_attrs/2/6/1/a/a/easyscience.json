@@ -23,7 +23,8 @@
    "summary": "Generic logic for easyScience libraries"
   },
   "build": {
-   "number": "0",
+   "noarch": "python",
+   "number": "1",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -38,13 +39,13 @@
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.11.*",
       "hatchling <=1.21.0",
       "setuptools-git-versioning",
       "pip"
      ],
      "run": [
-      "python",
+      "python >=3.11,<3.13",
       "asteval",
       "bumps",
       "dfo-ls",
@@ -60,42 +61,7 @@
      {
       "requirements": {
        "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
+        "python 3.11.*"
        ]
       },
       "script": "python -c \"import easyscience\""
@@ -109,13 +75,13 @@
   },
   "requirements": {
    "host": [
-    "python",
+    "python 3.11.*",
     "hatchling <=1.21.0",
     "setuptools-git-versioning",
     "pip"
    ],
    "run": [
-    "python",
+    "python >=3.11,<3.13",
     "asteval",
     "bumps",
     "dfo-ls",
@@ -178,7 +144,8 @@
    "summary": "Generic logic for easyScience libraries"
   },
   "build": {
-   "number": "0",
+   "noarch": "python",
+   "number": "1",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -193,13 +160,13 @@
     "requirements": {
      "build": [],
      "host": [
-      "python",
+      "python 3.11.*",
       "hatchling <=1.21.0",
       "setuptools-git-versioning",
       "pip"
      ],
      "run": [
-      "python",
+      "python >=3.11,<3.13",
       "asteval",
       "bumps",
       "dfo-ls",
@@ -215,182 +182,7 @@
      {
       "requirements": {
        "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
+        "python 3.11.*"
        ]
       },
       "script": "python -c \"import easyscience\""
@@ -404,13 +196,13 @@
   },
   "requirements": {
    "host": [
-    "python",
+    "python 3.11.*",
     "hatchling <=1.21.0",
     "setuptools-git-versioning",
     "pip"
    ],
    "run": [
-    "python",
+    "python >=3.11,<3.13",
     "asteval",
     "bumps",
     "dfo-ls",
@@ -429,161 +221,6 @@
   }
  },
  "name": "easyscience",
- "osx_64_meta_yaml": {
-  "about": {
-   "home": "https://easyscience.github.io/EasyScience/",
-   "license": "BSD-3-Clause",
-   "license_family": "BSD-3-Clause",
-   "license_file": "LICENSE",
-   "summary": "Generic logic for easyScience libraries"
-  },
-  "build": {
-   "number": "0",
-   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "MridulS"
-   ]
-  },
-  "outputs": [
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   }
-  ],
-  "package": {
-   "name": "easyscience",
-   "version": "1.2.1"
-  },
-  "requirements": {
-   "host": [
-    "python",
-    "hatchling <=1.21.0",
-    "setuptools-git-versioning",
-    "pip"
-   ],
-   "run": [
-    "python",
-    "asteval",
-    "bumps",
-    "dfo-ls",
-    "lmfit",
-    "numpy <2",
-    "uncertainties",
-    "xarray",
-    "pint ==0.23",
-    "scipp"
-   ]
-  },
-  "schema_version": 1,
-  "source": {
-   "sha256": "6a802d45f6599bb11579f16031663ada82ff54756a1ca78667a64105f22ad739",
-   "url": "https://pypi.org/packages/source/e/easyscience/easyscience-1.2.1.tar.gz"
-  }
- },
- "osx_64_requirements": {
-  "build": {
-   "__set__": true,
-   "elements": []
-  },
-  "host": {
-   "__set__": true,
-   "elements": [
-    "hatchling",
-    "pip",
-    "python",
-    "setuptools-git-versioning"
-   ]
-  },
-  "run": {
-   "__set__": true,
-   "elements": [
-    "asteval",
-    "bumps",
-    "dfo-ls",
-    "lmfit",
-    "numpy",
-    "pint",
-    "python",
-    "scipp",
-    "uncertainties",
-    "xarray"
-   ]
-  },
-  "test": {
-   "__set__": true,
-   "elements": [
-    "python"
-   ]
-  }
- },
  "outputs_names": {
   "__set__": true,
   "elements": [
@@ -592,14 +229,12 @@
  },
  "parsing_error": false,
  "platforms": [
-  "linux_64",
-  "osx_64",
-  "win_64"
+  "linux_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/easyscience.json"
  },
- "raw_meta_yaml": "context:\n  name: easyscience\n  version: 1.2.1\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/easyscience-${{ version }}.tar.gz\n  sha256: 6a802d45f6599bb11579f16031663ada82ff54756a1ca78667a64105f22ad739\n\nbuild:\n  number: 0\n  skip:\n    - match(python, \"<3.11\")\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python\n    - hatchling <=1.21.0\n    - setuptools-git-versioning\n    - pip\n  run:\n    - python\n    - asteval\n    - bumps\n    - dfo-ls\n    - lmfit\n    - numpy <2\n    - uncertainties\n    - xarray\n    - pint ==0.23\n    - scipp\n\ntests:\n  - script: python -c \"import easyscience\"\n    requirements:\n      run:\n        - python\n\nabout:\n  homepage: https://easyscience.github.io/EasyScience/\n  summary: Generic logic for easyScience libraries\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MridulS\n",
+ "raw_meta_yaml": "context:\n  name: easyscience\n  version: 1.2.1\n  python_min: \"3.11\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/easyscience-${{ version }}.tar.gz\n  sha256: 6a802d45f6599bb11579f16031663ada82ff54756a1ca78667a64105f22ad739\n\nbuild:\n  number: 1\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - hatchling <=1.21.0\n    - setuptools-git-versioning\n    - pip\n  run:\n    - python >=${{ python_min }},<3.13\n    - asteval\n    - bumps\n    - dfo-ls\n    - lmfit\n    - numpy <2\n    - uncertainties\n    - xarray\n    - pint ==0.23\n    - scipp\n\ntests:\n  - script: python -c \"import easyscience\"\n    requirements:\n      run:\n        - python ${{ python_min }}.*\n\nabout:\n  homepage: https://easyscience.github.io/EasyScience/\n  summary: Generic logic for easyScience libraries\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MridulS\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -665,7 +300,7 @@
    "elements": [
     "hatchling <=1.21.0",
     "pip",
-    "python",
+    "python 3.11.*",
     "setuptools-git-versioning"
    ]
   },
@@ -678,7 +313,7 @@
     "lmfit",
     "numpy <2",
     "pint ==0.23",
-    "python",
+    "python >=3.11,<3.13",
     "scipp",
     "uncertainties",
     "xarray"
@@ -687,7 +322,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "python"
+    "python 3.11.*"
    ]
   }
  },
@@ -695,160 +330,5 @@
  "version": "1.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/easyscience.json"
- },
- "win_64_meta_yaml": {
-  "about": {
-   "home": "https://easyscience.github.io/EasyScience/",
-   "license": "BSD-3-Clause",
-   "license_family": "BSD-3-Clause",
-   "license_file": "LICENSE",
-   "summary": "Generic logic for easyScience libraries"
-  },
-  "build": {
-   "number": "0",
-   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "MridulS"
-   ]
-  },
-  "outputs": [
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "easyscience",
-    "requirements": {
-     "build": [],
-     "host": [
-      "python",
-      "hatchling <=1.21.0",
-      "setuptools-git-versioning",
-      "pip"
-     ],
-     "run": [
-      "python",
-      "asteval",
-      "bumps",
-      "dfo-ls",
-      "lmfit",
-      "numpy <2",
-      "uncertainties",
-      "xarray",
-      "pint ==0.23",
-      "scipp"
-     ]
-    },
-    "tests": [
-     {
-      "requirements": {
-       "run": [
-        "python"
-       ]
-      },
-      "script": "python -c \"import easyscience\""
-     }
-    ]
-   }
-  ],
-  "package": {
-   "name": "easyscience",
-   "version": "1.2.1"
-  },
-  "requirements": {
-   "host": [
-    "python",
-    "hatchling <=1.21.0",
-    "setuptools-git-versioning",
-    "pip"
-   ],
-   "run": [
-    "python",
-    "asteval",
-    "bumps",
-    "dfo-ls",
-    "lmfit",
-    "numpy <2",
-    "uncertainties",
-    "xarray",
-    "pint ==0.23",
-    "scipp"
-   ]
-  },
-  "schema_version": 1,
-  "source": {
-   "sha256": "6a802d45f6599bb11579f16031663ada82ff54756a1ca78667a64105f22ad739",
-   "url": "https://pypi.org/packages/source/e/easyscience/easyscience-1.2.1.tar.gz"
-  }
- },
- "win_64_requirements": {
-  "build": {
-   "__set__": true,
-   "elements": []
-  },
-  "host": {
-   "__set__": true,
-   "elements": [
-    "hatchling",
-    "pip",
-    "python",
-    "setuptools-git-versioning"
-   ]
-  },
-  "run": {
-   "__set__": true,
-   "elements": [
-    "asteval",
-    "bumps",
-    "dfo-ls",
-    "lmfit",
-    "numpy",
-    "pint",
-    "python",
-    "scipp",
-    "uncertainties",
-    "xarray"
-   ]
-  },
-  "test": {
-   "__set__": true,
-   "elements": [
-    "python"
-   ]
-  }
  }
 }
