@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -42,14 +42,14 @@
   "requirements": {
    "build": [],
    "host": [
-    "python >=3.8",
+    "python 3.9",
     "pip",
     "hatchling",
     "hatch-vcs",
     "setuptools_scm"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "numpy",
     "scipy",
     "vtk",
@@ -70,6 +70,9 @@
   "test": {
    "imports": [
     "fury"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -106,7 +109,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -122,7 +127,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -138,14 +143,14 @@
   "requirements": {
    "build": [],
    "host": [
-    "python >=3.8",
+    "python 3.9",
     "pip",
     "hatchling",
     "hatch-vcs",
     "setuptools_scm"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "numpy",
     "scipy",
     "vtk",
@@ -166,6 +171,9 @@
   "test": {
    "imports": [
     "fury"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -183,7 +191,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fury.json"
  },
- "raw_meta_yaml": "{% set name = \"fury\" %}\n{% set version = \"0.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 105ff11e07974d9149f22e565c3cbb60d5d2c67ee98e66d04753e6f5a746d167\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python >=3.8\n    - pip\n    - hatchling\n    - hatch-vcs\n    - setuptools_scm\n\n  run:\n    - python >=3.8\n    - numpy\n    - scipy\n    - vtk\n    - matplotlib-base\n    - six\n    - pillow\n    - packaging\n    - pygltflib\n    - aiohttp\n    - lazy_loader\n\ntest:\n  imports:\n    - fury\n\nabout:\n  home: http://github.com/fury-gl/fury\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Free Unified Rendering for Python - Scientific Visualization\n  description: |\n    Free Unified Rendering for Python (FURY) is a library that offers\n    a collection of new widgets, functionnality to vtk. It works under\n    Python 2.7 and Python 3.4+\n  doc_url: http://fury.gl/\n  dev_url: https://github.com/fury-gl/fury\n\nextra:\n  recipe-maintainers:\n    - skoudoro\n    - garyfallidis\n",
+ "raw_meta_yaml": "{% set name = \"fury\" %}\n{% set version = \"0.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 105ff11e07974d9149f22e565c3cbb60d5d2c67ee98e66d04753e6f5a746d167\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n    - hatch-vcs\n    - setuptools_scm\n\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - vtk\n    - matplotlib-base\n    - six\n    - pillow\n    - packaging\n    - pygltflib\n    - aiohttp\n    - lazy_loader\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fury\n\nabout:\n  home: http://github.com/fury-gl/fury\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Free Unified Rendering for Python - Scientific Visualization\n  description: |\n    Free Unified Rendering for Python (FURY) is a library that offers\n    a collection of new widgets, functionnality to vtk. It works under\n    Python 2.7 and Python 3.4+\n  doc_url: http://fury.gl/\n  dev_url: https://github.com/fury-gl/fury\n\nextra:\n  recipe-maintainers:\n    - skoudoro\n    - garyfallidis\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -237,7 +245,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -252,7 +262,7 @@
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python >=3.8",
+    "python 3.9",
     "setuptools_scm"
    ]
   },
@@ -266,7 +276,7 @@
     "packaging",
     "pillow",
     "pygltflib",
-    "python >=3.8",
+    "python >=3.9",
     "scipy",
     "six",
     "vtk"
@@ -274,7 +284,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
  "url": "https://pypi.org/packages/source/f/fury/fury-0.12.0.tar.gz",
