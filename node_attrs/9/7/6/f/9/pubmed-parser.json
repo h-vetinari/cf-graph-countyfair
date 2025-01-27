@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "pubmed-parser",
-   "version": "0.4.0"
+   "version": "0.5"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9d12d8510a65338d33bcc1f8781855e903a438a846fcd9c3e6ff53cfedb09fd0",
-   "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.4.0.tar.gz"
+   "sha256": "1d8f8c4080c1a65ca94f862edb9d0b9796366f658163bce0c268c33011d35ca0",
+   "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -122,7 +122,7 @@
   },
   "package": {
    "name": "pubmed-parser",
-   "version": "0.4.0"
+   "version": "0.5"
   },
   "requirements": {
    "host": [
@@ -142,8 +142,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9d12d8510a65338d33bcc1f8781855e903a438a846fcd9c3e6ff53cfedb09fd0",
-   "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.4.0.tar.gz"
+   "sha256": "1d8f8c4080c1a65ca94f862edb9d0b9796366f658163bce0c268c33011d35ca0",
+   "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -171,7 +171,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pubmed-parser.json"
  },
- "raw_meta_yaml": "{% set name = \"pubmed-parser\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pubmed_parser-{{ version }}.tar.gz\n  sha256: 9d12d8510a65338d33bcc1f8781855e903a438a846fcd9c3e6ff53cfedb09fd0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - lxml\n    - unidecode\n    - requests\n    - six\n    - numpy\n    - pytest\n    - pytest-cov\n\ntest:\n  imports:\n    - pubmed_parser\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/titipata/pubmed_parser\n  summary: A python parser for Pubmed Open-Access Subset and MEDLINE XML repository\n  dev_url: https://github.com/titipata/pubmed_parser\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - mbestipa\n",
+ "raw_meta_yaml": "{% set name = \"pubmed-parser\" %}\n{% set version = \"0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pubmed_parser-{{ version }}.tar.gz\n  sha256: 1d8f8c4080c1a65ca94f862edb9d0b9796366f658163bce0c268c33011d35ca0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - lxml\n    - unidecode\n    - requests\n    - six\n    - numpy\n    - pytest\n    - pytest-cov\n\ntest:\n  imports:\n    - pubmed_parser\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/titipata/pubmed_parser\n  summary: A python parser for Pubmed Open-Access Subset and MEDLINE XML repository\n  dev_url: https://github.com/titipata/pubmed_parser\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - mbestipa\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -251,8 +251,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.4.0.tar.gz",
- "version": "0.4.0",
+ "url": "https://pypi.io/packages/source/p/pubmed-parser/pubmed_parser-0.5.tar.gz",
+ "version": "0.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pubmed-parser.json"
  }
