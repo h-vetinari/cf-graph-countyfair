@@ -28,7 +28,10 @@
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "SETUPTOOLS_SCM_PRETEND_VERSION=0.1.26"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
@@ -37,26 +40,31 @@
   },
   "package": {
    "name": "xmle",
-   "version": "0.1.24"
+   "version": "0.1.26"
   },
   "requirements": {
    "host": [
-    "python >=3.6",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools",
+    "setuptools_scm >=8"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "pandas"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b557c041afef38060de6dcd90f2f5fb205572be51a28df7bde82dce0fd101fc4",
-   "url": "https://github.com/jpn--/xmle/archive/v0.1.24.tar.gz"
+   "sha256": "776442d84777b6fd793a699a588b721a664404812d81dd3bfcdf67276c24d0eb",
+   "url": "https://github.com/jpn--/xmle/archive/v0.1.26.tar.gz"
   },
   "test": {
    "imports": [
     "xmle"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -69,7 +77,9 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools",
+    "setuptools_scm"
    ]
   },
   "run": {
@@ -81,7 +91,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -96,7 +108,10 @@
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv",
+   "script_env": [
+    "SETUPTOOLS_SCM_PRETEND_VERSION=0.1.26"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
@@ -105,26 +120,31 @@
   },
   "package": {
    "name": "xmle",
-   "version": "0.1.24"
+   "version": "0.1.26"
   },
   "requirements": {
    "host": [
-    "python >=3.6",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools",
+    "setuptools_scm >=8"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "pandas"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b557c041afef38060de6dcd90f2f5fb205572be51a28df7bde82dce0fd101fc4",
-   "url": "https://github.com/jpn--/xmle/archive/v0.1.24.tar.gz"
+   "sha256": "776442d84777b6fd793a699a588b721a664404812d81dd3bfcdf67276c24d0eb",
+   "url": "https://github.com/jpn--/xmle/archive/v0.1.26.tar.gz"
   },
   "test": {
    "imports": [
     "xmle"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -142,13 +162,15 @@
  "pr_info": {
   "__lazy_json__": "pr_info/xmle.json"
  },
- "raw_meta_yaml": "{% set name = \"xmle\" %}\n{% set version = \"0.1.24\" %}\n{% set checksum = \"b557c041afef38060de6dcd90f2f5fb205572be51a28df7bde82dce0fd101fc4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jpn--/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - pandas\n\ntest:\n  imports:\n    - xmle\n\nabout:\n  home: https://github.com/jpn--/xmle\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: xml extension for generating neatly formatted HTML output from a variety of object types\n  dev_url: https://github.com/jpn--/xmle\n\nextra:\n  recipe-maintainers:\n    - jpn--\n",
+ "raw_meta_yaml": "{% set name = \"xmle\" %}\n{% set version = \"0.1.26\" %}\n{% set checksum = \"776442d84777b6fd793a699a588b721a664404812d81dd3bfcdf67276c24d0eb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jpn--/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  script_env:\n    - SETUPTOOLS_SCM_PRETEND_VERSION={{version}}\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools_scm >=8\n  run:\n    - python >={{ python_min }}\n    - pandas\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - xmle\n\nabout:\n  home: https://github.com/jpn--/xmle\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: xml extension for generating neatly formatted HTML output from a variety of object types\n  dev_url: https://github.com/jpn--/xmle\n\nextra:\n  recipe-maintainers:\n    - jpn--\n",
  "req": {
   "__set__": true,
   "elements": [
    "pandas",
    "pip",
-   "python"
+   "python",
+   "setuptools",
+   "setuptools_scm"
   ]
  },
  "requirements": {
@@ -160,7 +182,9 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools",
+    "setuptools_scm"
    ]
   },
   "run": {
@@ -172,7 +196,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -185,23 +211,27 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6"
+    "python 3.9",
+    "setuptools",
+    "setuptools_scm >=8"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "pandas",
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://github.com/jpn--/xmle/archive/v0.1.24.tar.gz",
- "version": "0.1.24",
+ "url": "https://github.com/jpn--/xmle/archive/v0.1.26.tar.gz",
+ "version": "0.1.26",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/xmle.json"
  }
