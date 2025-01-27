@@ -42,7 +42,7 @@
   },
   "package": {
    "name": "cpp-argparse",
-   "version": "3.1"
+   "version": "3.2"
   },
   "requirements": {
    "build": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d01733552ca4a18ab501ae8b8be878131baa32e89090fafdeef018ebfa4c6e46",
-   "url": "https://github.com/p-ranav/argparse/archive/v3.1.tar.gz"
+   "sha256": "9dcb3d8ce0a41b2a48ac8baa54b51a9f1b6a2c52dd374e28cc713bab0568ec98",
+   "url": "https://github.com/p-ranav/argparse/archive/v3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -108,7 +108,7 @@
   },
   "package": {
    "name": "cpp-argparse",
-   "version": "3.1"
+   "version": "3.2"
   },
   "requirements": {
    "build": [
@@ -120,8 +120,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d01733552ca4a18ab501ae8b8be878131baa32e89090fafdeef018ebfa4c6e46",
-   "url": "https://github.com/p-ranav/argparse/archive/v3.1.tar.gz"
+   "sha256": "9dcb3d8ce0a41b2a48ac8baa54b51a9f1b6a2c52dd374e28cc713bab0568ec98",
+   "url": "https://github.com/p-ranav/argparse/archive/v3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -174,7 +174,7 @@
   },
   "package": {
    "name": "cpp-argparse",
-   "version": "3.1"
+   "version": "3.2"
   },
   "requirements": {
    "build": [
@@ -186,8 +186,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d01733552ca4a18ab501ae8b8be878131baa32e89090fafdeef018ebfa4c6e46",
-   "url": "https://github.com/p-ranav/argparse/archive/v3.1.tar.gz"
+   "sha256": "9dcb3d8ce0a41b2a48ac8baa54b51a9f1b6a2c52dd374e28cc713bab0568ec98",
+   "url": "https://github.com/p-ranav/argparse/archive/v3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -219,7 +219,7 @@
   },
   "package": {
    "name": "cpp-argparse",
-   "version": "3.1"
+   "version": "3.2"
   },
   "requirements": {
    "build": [
@@ -231,8 +231,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d01733552ca4a18ab501ae8b8be878131baa32e89090fafdeef018ebfa4c6e46",
-   "url": "https://github.com/p-ranav/argparse/archive/v3.1.tar.gz"
+   "sha256": "9dcb3d8ce0a41b2a48ac8baa54b51a9f1b6a2c52dd374e28cc713bab0568ec98",
+   "url": "https://github.com/p-ranav/argparse/archive/v3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -285,7 +285,7 @@
   },
   "package": {
    "name": "cpp-argparse",
-   "version": "3.1"
+   "version": "3.2"
   },
   "requirements": {
    "build": [
@@ -297,8 +297,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d01733552ca4a18ab501ae8b8be878131baa32e89090fafdeef018ebfa4c6e46",
-   "url": "https://github.com/p-ranav/argparse/archive/v3.1.tar.gz"
+   "sha256": "9dcb3d8ce0a41b2a48ac8baa54b51a9f1b6a2c52dd374e28cc713bab0568ec98",
+   "url": "https://github.com/p-ranav/argparse/archive/v3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -347,7 +347,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cpp-argparse.json"
  },
- "raw_meta_yaml": "{% set name = \"cpp-argparse\" %}\n{% set version = \"3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/p-ranav/argparse/archive/v{{ version }}.tar.gz\n  sha256: d01733552ca4a18ab501ae8b8be878131baa32e89090fafdeef018ebfa4c6e46\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - make  # [unix]\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/argparse  # [unix]\n    - test -f ${PREFIX}/include/argparse/argparse.hpp  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\argparse\\argparse.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/p-ranav/argparse\n  summary: 'Argument Parser for Modern C++ '\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/p-ranav/argparse\n\nextra:\n  recipe-maintainers:\n    - p-ranav\n    - SylvainCorlay\n    - JohanMabille\n    - Hind-M\n",
+ "raw_meta_yaml": "{% set name = \"cpp-argparse\" %}\n{% set version = \"3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/p-ranav/argparse/archive/v{{ version }}.tar.gz\n  sha256: 9dcb3d8ce0a41b2a48ac8baa54b51a9f1b6a2c52dd374e28cc713bab0568ec98\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - make  # [unix]\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/argparse  # [unix]\n    - test -f ${PREFIX}/include/argparse/argparse.hpp  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\argparse\\argparse.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/p-ranav/argparse\n  summary: 'Argument Parser for Modern C++ '\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/p-ranav/argparse\n\nextra:\n  recipe-maintainers:\n    - p-ranav\n    - SylvainCorlay\n    - JohanMabille\n    - Hind-M\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -410,8 +410,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/p-ranav/argparse/archive/v3.1.tar.gz",
- "version": "3.1",
+ "url": "https://github.com/p-ranav/argparse/archive/v3.2.tar.gz",
+ "version": "3.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cpp-argparse.json"
  },
@@ -436,7 +436,7 @@
   },
   "package": {
    "name": "cpp-argparse",
-   "version": "3.1"
+   "version": "3.2"
   },
   "requirements": {
    "build": [
@@ -447,8 +447,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d01733552ca4a18ab501ae8b8be878131baa32e89090fafdeef018ebfa4c6e46",
-   "url": "https://github.com/p-ranav/argparse/archive/v3.1.tar.gz"
+   "sha256": "9dcb3d8ce0a41b2a48ac8baa54b51a9f1b6a2c52dd374e28cc713bab0568ec98",
+   "url": "https://github.com/p-ranav/argparse/archive/v3.2.tar.gz"
   },
   "test": {
    "commands": [
