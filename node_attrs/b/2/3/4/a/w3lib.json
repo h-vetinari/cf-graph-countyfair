@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "w3lib",
-   "version": "2.2.1"
+   "version": "2.3.1"
   },
   "requirements": {
    "host": [
@@ -53,8 +53,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "756ff2d94c64e41c8d7c0c59fea12a5d0bc55e33a531c7988b4a163deb9b07dd",
-   "url": "https://pypi.org/packages/source/w/w3lib/w3lib-2.2.1.tar.gz"
+   "sha256": "5c8ac02a3027576174c2b61eb9a2170ba1b197cae767080771b6f1febda249a4",
+   "url": "https://pypi.org/packages/source/w/w3lib/w3lib-2.3.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -107,7 +107,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -117,7 +117,7 @@
   },
   "package": {
    "name": "w3lib",
-   "version": "2.2.1"
+   "version": "2.3.1"
   },
   "requirements": {
    "host": [
@@ -132,8 +132,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "756ff2d94c64e41c8d7c0c59fea12a5d0bc55e33a531c7988b4a163deb9b07dd",
-   "url": "https://pypi.org/packages/source/w/w3lib/w3lib-2.2.1.tar.gz"
+   "sha256": "5c8ac02a3027576174c2b61eb9a2170ba1b197cae767080771b6f1febda249a4",
+   "url": "https://pypi.org/packages/source/w/w3lib/w3lib-2.3.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/w3lib.json"
  },
- "raw_meta_yaml": "{% set name = \"w3lib\" %}\n{% set version = \"2.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 756ff2d94c64e41c8d7c0c59fea12a5d0bc55e33a531c7988b4a163deb9b07dd\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - six\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - w3lib\n\n    - w3lib.html\n    - w3lib.http\n    - w3lib.url\n\nabout:\n  home: https://github.com/scrapy/w3lib/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: This is a Python library of web-related functions\n\n  description: |\n    This is a Python library of web-related functions, such as\n    remove comments, or tags from HTML snippets,\n    extract base url from HTML snippets,\n    translate entites on HTML strings,\n    convert raw HTTP headers to dicts and vice-versa,\n    construct HTTP auth header,\n    converting HTML pages to unicode,\n    sanitize urls (like browsers do),\n    extract arguments from urls.\n  dev_url: https://github.com/scrapy/w3lib\n\nextra:\n  recipe-maintainers:\n    - astrojuanlu\n",
+ "raw_meta_yaml": "{% set name = \"w3lib\" %}\n{% set version = \"2.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5c8ac02a3027576174c2b61eb9a2170ba1b197cae767080771b6f1febda249a4\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - six\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - w3lib\n\n    - w3lib.html\n    - w3lib.http\n    - w3lib.url\n\nabout:\n  home: https://github.com/scrapy/w3lib/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: This is a Python library of web-related functions\n\n  description: |\n    This is a Python library of web-related functions, such as\n    remove comments, or tags from HTML snippets,\n    extract base url from HTML snippets,\n    translate entites on HTML strings,\n    convert raw HTTP headers to dicts and vice-versa,\n    construct HTTP auth header,\n    converting HTML pages to unicode,\n    sanitize urls (like browsers do),\n    extract arguments from urls.\n  dev_url: https://github.com/scrapy/w3lib\n\nextra:\n  recipe-maintainers:\n    - astrojuanlu\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -226,8 +226,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/w/w3lib/w3lib-2.2.1.tar.gz",
- "version": "2.2.1",
+ "url": "https://pypi.org/packages/source/w/w3lib/w3lib-2.3.1.tar.gz",
+ "version": "2.3.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/w3lib.json"
  }
