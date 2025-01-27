@@ -35,18 +35,19 @@
   },
   "package": {
    "name": "kineticstoolkit",
-   "version": "0.15.0"
+   "version": "0.16.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.10"
+    "python 3.10",
+    "setuptools"
    ],
    "run": [
+    "python >=3.10",
     "matplotlib-base",
     "pandas",
     "pyqt",
-    "python >=3.10",
     "scikit-learn",
     "scipy",
     "tqdm",
@@ -59,18 +60,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ec5236755d26d28ac78a42aa278796914fc601eb04a24efe96a8da87f6ea4149",
-   "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.15.0.tar.gz"
+   "sha256": "a22adba9d4421c499f75e27473494e14d3f13aa8dc523dee3aacdd87e2e96a37",
+   "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.16.0.tar.gz"
   },
   "test": {
-   "commands": [
-    "pip check"
-   ],
    "imports": [
     "kineticstoolkit"
    ],
    "requires": [
-    "pip"
+    "python 3.10"
    ]
   }
  },
@@ -83,7 +81,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -106,7 +105,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "python"
    ]
   }
  },
@@ -129,18 +128,19 @@
   },
   "package": {
    "name": "kineticstoolkit",
-   "version": "0.15.0"
+   "version": "0.16.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.10"
+    "python 3.10",
+    "setuptools"
    ],
    "run": [
+    "python >=3.10",
     "matplotlib-base",
     "pandas",
     "pyqt",
-    "python >=3.10",
     "scikit-learn",
     "scipy",
     "tqdm",
@@ -153,18 +153,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ec5236755d26d28ac78a42aa278796914fc601eb04a24efe96a8da87f6ea4149",
-   "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.15.0.tar.gz"
+   "sha256": "a22adba9d4421c499f75e27473494e14d3f13aa8dc523dee3aacdd87e2e96a37",
+   "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.16.0.tar.gz"
   },
   "test": {
-   "commands": [
-    "pip check"
-   ],
    "imports": [
     "kineticstoolkit"
    ],
    "requires": [
-    "pip"
+    "python 3.10"
    ]
   }
  },
@@ -182,7 +179,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/kineticstoolkit.json"
  },
- "raw_meta_yaml": "{% set name = \"kineticstoolkit\" %}\n{% set version = \"0.15.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kineticstoolkit-{{ version }}.tar.gz\n  sha256: ec5236755d26d28ac78a42aa278796914fc601eb04a24efe96a8da87f6ea4149\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.10\n  run:\n    - matplotlib-base\n    - pandas\n    - pyqt\n    - python >=3.10\n    - scikit-learn\n    - scipy\n    - tqdm\n    - limitedinteraction\n    - ezc3d >=1.5.2\n    - requests\n    - requests-cache\n    - ffmpeg\n\ntest:\n  imports:\n    - kineticstoolkit\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://kineticstoolkit.uqam.ca\n  summary: An open-source python library to facilitate research in biomechanics.\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - felixchenier\n",
+ "raw_meta_yaml": "{% set name = \"kineticstoolkit\" %}\n{% set version = \"0.16.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kineticstoolkit-{{ version }}.tar.gz\n  sha256: a22adba9d4421c499f75e27473494e14d3f13aa8dc523dee3aacdd87e2e96a37\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - matplotlib-base\n    - pandas\n    - pyqt\n    - scikit-learn\n    - scipy\n    - tqdm\n    - limitedinteraction\n    - ezc3d >=1.5.2\n    - requests\n    - requests-cache\n    - ffmpeg\n\ntest:\n  imports:\n    - kineticstoolkit\n  requires:\n    - python {{ python_min }}\n\nabout:\n  home: https://kineticstoolkit.uqam.ca\n  summary: An open-source python library to facilitate research in biomechanics.\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - felixchenier\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -198,6 +195,7 @@
    "requests-cache",
    "scikit-learn",
    "scipy",
+   "setuptools",
    "tqdm"
   ]
  },
@@ -210,7 +208,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -233,7 +232,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "python"
    ]
   }
  },
@@ -247,7 +246,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.10"
+    "python 3.10",
+    "setuptools"
    ]
   },
   "run": {
@@ -270,12 +270,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "python 3.10"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.15.0.tar.gz",
- "version": "0.15.0",
+ "url": "https://pypi.io/packages/source/k/kineticstoolkit/kineticstoolkit-0.16.0.tar.gz",
+ "version": "0.16.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/kineticstoolkit.json"
  }
