@@ -2,6 +2,11 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
+   "osx_arm64": "osx_64"
+  },
   "conda_build": {
    "error_overlinking": true
   },
@@ -9,7 +14,12 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
-  }
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
+  },
+  "test": "native_and_emulated"
  },
  "feedstock_name": "ndcurves",
  "hash_type": "sha256",
@@ -23,7 +33,7 @@
    "summary": "A template-based Library for creating curves of arbitrary order and dimension,\neventually subject to derivative constraints.\nThe main use of the library is the creation of end-effector trajectories for legged robots.\n"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "feedstock-name": "ndcurves",
@@ -50,7 +60,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -75,7 +86,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -125,7 +137,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -150,7 +163,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -200,7 +214,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -225,7 +240,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -275,7 +291,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -300,7 +317,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -350,7 +368,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -375,7 +394,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -440,6 +460,917 @@
     "eigenpy",
     "libboost-devel",
     "libboost-python-devel",
+    "numpy",
+    "pinocchio",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "libndcurves",
+    "ndcurves-python",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/loco-3d/ndcurves",
+   "home": "https://github.com/loco-3d/ndcurves",
+   "license": "BSD-2-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A template-based Library for creating curves of arbitrary order and dimension,\neventually subject to derivative constraints.\nThe main use of the library is the creation of end-effector trajectories for legged robots.\n"
+  },
+  "build": {
+   "number": "3"
+  },
+  "extra": {
+   "feedstock-name": "ndcurves",
+   "recipe-maintainers": [
+    "ManifoldFR",
+    "jorisv"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "ndcurves-split",
+   "version": "2.0.0"
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-cmake-Fix-Windows-build.patch",
+    "patches/0002-cmake-Don-t-link-with-all-pinocchio.patch"
+   ],
+   "sha256": "814f7f4551c042794fe5bccbe6eb737825574d8c6b90b2274aa9dcd6430b7ebd",
+   "url": "https://github.com/loco-3d/ndcurves/releases/download/v2.0.0/ndcurves-2.0.0.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "eigen",
+    "eigenpy",
+    "libboost-devel",
+    "libboost-python-devel",
+    "numpy",
+    "pinocchio",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "libndcurves",
+    "ndcurves-python",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/loco-3d/ndcurves",
+   "home": "https://github.com/loco-3d/ndcurves",
+   "license": "BSD-2-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A template-based Library for creating curves of arbitrary order and dimension,\neventually subject to derivative constraints.\nThe main use of the library is the creation of end-effector trajectories for legged robots.\n"
+  },
+  "build": {
+   "number": "3"
+  },
+  "extra": {
+   "feedstock-name": "ndcurves",
+   "recipe-maintainers": [
+    "ManifoldFR",
+    "jorisv"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "ndcurves-split",
+   "version": "2.0.0"
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-cmake-Fix-Windows-build.patch",
+    "patches/0002-cmake-Don-t-link-with-all-pinocchio.patch"
+   ],
+   "sha256": "814f7f4551c042794fe5bccbe6eb737825574d8c6b90b2274aa9dcd6430b7ebd",
+   "url": "https://github.com/loco-3d/ndcurves/releases/download/v2.0.0/ndcurves-2.0.0.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "eigen",
+    "eigenpy",
+    "libboost-devel",
+    "libboost-python-devel",
+    "numpy",
     "pinocchio",
     "python"
    ]
@@ -467,7 +1398,7 @@
    "summary": "A template-based Library for creating curves of arbitrary order and dimension,\neventually subject to derivative constraints.\nThe main use of the library is the creation of end-effector trajectories for legged robots.\n"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "feedstock-name": "ndcurves",
@@ -494,7 +1425,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -519,7 +1451,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -569,7 +1502,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -594,7 +1528,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -644,7 +1579,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -669,7 +1605,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -719,7 +1656,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -744,7 +1682,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -794,7 +1733,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -819,7 +1759,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -869,7 +1810,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -894,7 +1836,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -944,7 +1887,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -969,7 +1913,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -1019,7 +1964,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -1044,7 +1990,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -1094,7 +2041,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -1119,7 +2067,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -1169,7 +2118,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -1194,7 +2144,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -1244,7 +2195,1163 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -1269,10 +3376,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -1319,7 +3428,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -1344,10 +3454,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -1394,7 +3506,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -1419,10 +3532,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -1469,7 +3584,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -1494,10 +3610,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -1544,7 +3662,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -1569,10 +3688,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -1628,7 +3749,7 @@
    "summary": "A template-based Library for creating curves of arbitrary order and dimension,\neventually subject to derivative constraints.\nThe main use of the library is the creation of end-effector trajectories for legged robots.\n"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "feedstock-name": "ndcurves",
@@ -1655,7 +3776,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -1680,7 +3802,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -1730,7 +3853,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -1755,7 +3879,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -1805,7 +3930,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -1830,7 +3956,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -1880,7 +4007,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -1905,7 +4033,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -1955,7 +4084,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy"
      ]
     },
     "script": "build_ndcurves.sh",
@@ -1980,7 +4110,8 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy"
      ],
      "run": [
       "python"
@@ -2045,6 +4176,462 @@
     "eigenpy",
     "libboost-devel",
     "libboost-python-devel",
+    "numpy",
+    "pinocchio",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "libndcurves",
+    "ndcurves-python",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/loco-3d/ndcurves",
+   "home": "https://github.com/loco-3d/ndcurves",
+   "license": "BSD-2-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A template-based Library for creating curves of arbitrary order and dimension,\neventually subject to derivative constraints.\nThe main use of the library is the creation of end-effector trajectories for legged robots.\n"
+  },
+  "build": {
+   "number": "3"
+  },
+  "extra": {
+   "feedstock-name": "ndcurves",
+   "recipe-maintainers": [
+    "ManifoldFR",
+    "jorisv"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "run_exports": [
+      "libndcurves"
+     ]
+    },
+    "name": "libndcurves",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "eigen",
+      "pinocchio",
+      "numpy"
+     ]
+    },
+    "script": "build_ndcurves.sh",
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ]
+    }
+   },
+   {
+    "name": "ndcurves-python",
+    "requirements": {
+     "build": [
+      "cmake",
+      "ninja",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "libboost-devel",
+      "libboost-python-devel",
+      "eigen",
+      "eigenpy",
+      "pinocchio",
+      "python",
+      "numpy"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "script": "build_ndcurves_python.sh",
+    "test": {
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "generic"
+    },
+    "name": "ndcurves",
+    "requirements": {
+     "run": [
+      "libndcurves",
+      "ndcurves-python"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/include/ndcurves/fwd.h"
+     ],
+     "imports": [
+      "ndcurves"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "ndcurves-split",
+   "version": "2.0.0"
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "patches/0001-cmake-Fix-Windows-build.patch",
+    "patches/0002-cmake-Don-t-link-with-all-pinocchio.patch"
+   ],
+   "sha256": "814f7f4551c042794fe5bccbe6eb737825574d8c6b90b2274aa9dcd6430b7ebd",
+   "url": "https://github.com/loco-3d/ndcurves/releases/download/v2.0.0/ndcurves-2.0.0.tar.gz"
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "eigen",
+    "eigenpy",
+    "libboost-devel",
+    "libboost-python-devel",
+    "numpy",
     "pinocchio",
     "python"
    ]
@@ -2073,13 +4660,16 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
+  "osx_arm64",
   "win_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/ndcurves.json"
  },
- "raw_meta_yaml": "{% set name = \"ndcurves\" %}\n{% set cppname = \"lib\" ~ name %}\n{% set pythonname = name ~ \"-python\" %}\n{% set version = \"2.0.0\" %}\n\n\npackage:\n  name:  {{ name }}-split\n  version: {{ version }}\n\nsource:\n  url: https://github.com/loco-3d/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 814f7f4551c042794fe5bccbe6eb737825574d8c6b90b2274aa9dcd6430b7ebd\n  patches:\n    - patches/0001-cmake-Fix-Windows-build.patch\n    - patches/0002-cmake-Don-t-link-with-all-pinocchio.patch\n\nbuild:\n  number: 2\n\noutputs:\n  - name: {{ cppname }}\n    build:\n      run_exports:\n        - {{ pin_subpackage(cppname, max_pin='x.x.x') }}\n    script: build_ndcurves.sh   # [not win]\n    script: build_ndcurves.bat  # [win]\n    requirements:\n      build:\n        - cmake\n        - ninja\n        - {{ compiler('cxx') }}\n        - {{ stdlib(\"c\") }}\n      host:\n        - libboost-devel\n        - eigen\n        - pinocchio\n    test:\n      commands:\n        - test -f $PREFIX/include/ndcurves/fwd.h                       # [not win]\n        - if not exist %PREFIX%\\Library\\include\\ndcurves\\fwd.h exit 1  # [win]\n  - name: {{ pythonname }}\n    script: build_ndcurves_python.sh   # [not win]\n    script: build_ndcurves_python.bat  # [win]\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - cmake\n        - ninja\n        - {{ compiler('cxx') }}\n        - {{ stdlib(\"c\") }}\n      host:\n        - libboost-devel\n        - libboost-python-devel\n        - eigen\n        - eigenpy\n        - pinocchio\n        - python\n      run:\n        - python\n    test:\n      imports:\n        - ndcurves\n  - name: {{ name }}\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(cppname, max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(pythonname, max_pin=\"x.x.x\") }}\n    test:\n      imports:\n        - ndcurves\n      commands:\n        - test -f $PREFIX/include/ndcurves/fwd.h                       # [not win]\n        - if not exist %PREFIX%\\Library\\include\\ndcurves\\fwd.h exit 1  # [win]\n\nabout:\n  home: https://github.com/loco-3d/ndcurves\n  summary: |\n    A template-based Library for creating curves of arbitrary order and dimension,\n    eventually subject to derivative constraints.\n    The main use of the library is the creation of end-effector trajectories for legged robots.\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  dev_url: https://github.com/loco-3d/ndcurves\n\nextra:\n  feedstock-name: {{ name }}\n  recipe-maintainers:\n    - ManifoldFR\n    - jorisv\n",
+ "raw_meta_yaml": "{% set name = \"ndcurves\" %}\n{% set cppname = \"lib\" ~ name %}\n{% set pythonname = name ~ \"-python\" %}\n{% set version = \"2.0.0\" %}\n\n\npackage:\n  name:  {{ name }}-split\n  version: {{ version }}\n\nsource:\n  url: https://github.com/loco-3d/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 814f7f4551c042794fe5bccbe6eb737825574d8c6b90b2274aa9dcd6430b7ebd\n  patches:\n    - patches/0001-cmake-Fix-Windows-build.patch\n    - patches/0002-cmake-Don-t-link-with-all-pinocchio.patch\n\nbuild:\n  number: 3\n\noutputs:\n  - name: {{ cppname }}\n    build:\n      run_exports:\n        - {{ pin_subpackage(cppname, max_pin='x.x.x') }}\n    script: build_ndcurves.sh   # [not win]\n    script: build_ndcurves.bat  # [win]\n    requirements:\n      build:\n        # Because pinocchio CMake module needs Python\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - numpy                                  # [build_platform != target_platform]\n        - cmake\n        - ninja\n        - {{ compiler('cxx') }}\n        - {{ stdlib(\"c\") }}\n      host:\n        - libboost-devel\n        - eigen\n        - pinocchio\n        # Because pinocchio CMake module needs Python\n        # On Windows, Numpy 2.0 don't allow to export the PY_ARRAY_UNIQUE_SYMBOL.\n        # This has been fixed in Numpy 2.1.\n        - numpy >=2.1      # [win and py>=310]\n        # Unfortunatly, Numpy 2.1 is not distributed with Python 3.9.\n        # We are forced to use Numpy 1 in this case.\n        - numpy >=1.19,<2  # [win and py<310]\n        - numpy            # [not win]\n    test:\n      commands:\n        - test -f $PREFIX/include/ndcurves/fwd.h                       # [not win]\n        - if not exist %PREFIX%\\Library\\include\\ndcurves\\fwd.h exit 1  # [win]\n  - name: {{ pythonname }}\n    script: build_ndcurves_python.sh   # [not win]\n    script: build_ndcurves_python.bat  # [win]\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - numpy                                  # [build_platform != target_platform]\n        - cmake\n        - ninja\n        - {{ compiler('cxx') }}\n        - {{ stdlib(\"c\") }}\n      host:\n        - libboost-devel\n        - libboost-python-devel\n        - eigen\n        - eigenpy\n        - pinocchio\n        - python\n        # On Windows, Numpy 2.0 don't allow to export the PY_ARRAY_UNIQUE_SYMBOL.\n        # This has been fixed in Numpy 2.1.\n        - numpy >=2.1      # [win and py>=310]\n        # Unfortunatly, Numpy 2.1 is not distributed with Python 3.9.\n        # We are forced to use Numpy 1 in this case.\n        - numpy >=1.19,<2  # [win and py<310]\n        - numpy            # [not win]\n      run:\n        - python\n        - numpy >=2.1      # [win and py>=310]\n        - numpy >=1.19,<2  # [win and py<310]\n    test:\n      imports:\n        - ndcurves\n  - name: {{ name }}\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(cppname, max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(pythonname, max_pin=\"x.x.x\") }}\n    test:\n      imports:\n        - ndcurves\n      commands:\n        - test -f $PREFIX/include/ndcurves/fwd.h                       # [not win]\n        - if not exist %PREFIX%\\Library\\include\\ndcurves\\fwd.h exit 1  # [win]\n\nabout:\n  home: https://github.com/loco-3d/ndcurves\n  summary: |\n    A template-based Library for creating curves of arbitrary order and dimension,\n    eventually subject to derivative constraints.\n    The main use of the library is the creation of end-effector trajectories for legged robots.\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  dev_url: https://github.com/loco-3d/ndcurves\n\nextra:\n  feedstock-name: {{ name }}\n  recipe-maintainers:\n    - ManifoldFR\n    - jorisv\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -2093,6 +4683,7 @@
    "libndcurves",
    "ndcurves-python",
    "ninja",
+   "numpy",
    "pinocchio",
    "python"
   ]
@@ -2116,6 +4707,7 @@
     "eigenpy",
     "libboost-devel",
     "libboost-python-devel",
+    "numpy",
     "pinocchio",
     "python"
    ]
@@ -2127,6 +4719,7 @@
     "cxx_compiler_stub",
     "libndcurves",
     "ndcurves-python",
+    "numpy",
     "python"
    ]
   },
@@ -2153,6 +4746,8 @@
     "eigenpy",
     "libboost-devel",
     "libboost-python-devel",
+    "numpy",
+    "numpy >=2.1",
     "pinocchio",
     "python"
    ]
@@ -2162,6 +4757,7 @@
    "elements": [
     "libndcurves",
     "ndcurves-python",
+    "numpy >=2.1",
     "python"
    ]
   },
@@ -2185,7 +4781,7 @@
    "summary": "A template-based Library for creating curves of arbitrary order and dimension,\neventually subject to derivative constraints.\nThe main use of the library is the creation of end-effector trajectories for legged robots.\n"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "feedstock-name": "ndcurves",
@@ -2212,7 +4808,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -2237,10 +4834,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -2287,7 +4886,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -2312,10 +4912,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -2362,7 +4964,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -2387,10 +4990,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -2437,7 +5042,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -2462,10 +5068,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -2512,7 +5120,8 @@
      "host": [
       "libboost-devel",
       "eigen",
-      "pinocchio"
+      "pinocchio",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves.bat",
@@ -2537,10 +5146,12 @@
       "eigen",
       "eigenpy",
       "pinocchio",
-      "python"
+      "python",
+      "numpy >=2.1"
      ],
      "run": [
-      "python"
+      "python",
+      "numpy >=2.1"
      ]
     },
     "script": "build_ndcurves_python.bat",
@@ -2602,6 +5213,7 @@
     "eigenpy",
     "libboost-devel",
     "libboost-python-devel",
+    "numpy",
     "pinocchio",
     "python"
    ]
@@ -2611,6 +5223,7 @@
    "elements": [
     "libndcurves",
     "ndcurves-python",
+    "numpy",
     "python"
    ]
   },
