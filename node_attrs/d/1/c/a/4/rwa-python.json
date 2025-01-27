@@ -35,12 +35,13 @@
   },
   "package": {
    "name": "rwa-python",
-   "version": "0.9.4"
+   "version": "0.9.5"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.8"
+    "python 3.8",
+    "setuptools"
    ],
    "run": [
     "hdf5",
@@ -49,14 +50,13 @@
     "pandas",
     "python >=3.8",
     "scipy",
-    "setuptools",
     "six"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4932db397b7db5185ade8bc54674963b5c29d7ab2d55af477c99ec2e84396a51",
-   "url": "https://github.com/DecBayComp/RWA-python/archive/v0.9.4.tar.gz"
+   "sha256": "02b01cd39b773385fc6e744d82840274b35b21f71497e219ae7d2ba03b6cde84",
+   "url": "https://github.com/DecBayComp/RWA-python/archive/v0.9.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -66,7 +66,8 @@
     "rwa"
    ],
    "requires": [
-    "pytest"
+    "pytest",
+    "python 3.8"
    ],
    "source_files": [
     "tests/test_*.py"
@@ -82,7 +83,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -94,14 +96,14 @@
     "pandas",
     "python",
     "scipy",
-    "setuptools",
     "six"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python"
    ]
   }
  },
@@ -127,12 +129,13 @@
   },
   "package": {
    "name": "rwa-python",
-   "version": "0.9.4"
+   "version": "0.9.5"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.8"
+    "python 3.8",
+    "setuptools"
    ],
    "run": [
     "hdf5",
@@ -141,14 +144,13 @@
     "pandas",
     "python >=3.8",
     "scipy",
-    "setuptools",
     "six"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4932db397b7db5185ade8bc54674963b5c29d7ab2d55af477c99ec2e84396a51",
-   "url": "https://github.com/DecBayComp/RWA-python/archive/v0.9.4.tar.gz"
+   "sha256": "02b01cd39b773385fc6e744d82840274b35b21f71497e219ae7d2ba03b6cde84",
+   "url": "https://github.com/DecBayComp/RWA-python/archive/v0.9.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -158,7 +160,8 @@
     "rwa"
    ],
    "requires": [
-    "pytest"
+    "pytest",
+    "python 3.8"
    ],
    "source_files": [
     "tests/test_*.py"
@@ -179,7 +182,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/rwa-python.json"
  },
- "raw_meta_yaml": "{% set version = \"0.9.4\" %}\n\npackage:\n  name: rwa-python\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DecBayComp/RWA-python/archive/v{{ version }}.tar.gz\n  sha256: 4932db397b7db5185ade8bc54674963b5c29d7ab2d55af477c99ec2e84396a51\n\nbuild:\n  noarch: python\n  number: 0\n  script: rm -f pyproject.toml; {{ PYTHON }} -m pip install --no-deps .\n\nrequirements:\n  host:\n    - pip\n    - python >=3.8\n  run:\n    - hdf5\n    - h5py\n    - numpy\n    - pandas\n    - python >=3.8\n    - scipy\n    - setuptools\n    - six\n\ntest:\n  imports:\n    - rwa\n  requires:\n    - pytest\n  commands:\n    - pytest tests/\n  source_files:\n    - tests/test_*.py\n\nabout:\n  home: https://github.com/DecBayComp/RWA-python\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: HDF5-based serialization library for Python datatypes\n  doc_url: https://rwa-python.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - francoislaurent\n    - DecBayComp\n",
+ "raw_meta_yaml": "{% set version = \"0.9.5\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: rwa-python\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DecBayComp/RWA-python/archive/v{{ version }}.tar.gz\n  sha256: 02b01cd39b773385fc6e744d82840274b35b21f71497e219ae7d2ba03b6cde84\n\nbuild:\n  noarch: python\n  number: 0\n  script: rm -f pyproject.toml; {{ PYTHON }} -m pip install --no-deps .\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - hdf5\n    - h5py\n    - {{ pin_compatible('numpy') }}\n    - pandas\n    - python >={{ python_min }}\n    - scipy\n    - six\n\ntest:\n  imports:\n    - rwa\n  requires:\n    - pytest\n    - python {{ python_min }}\n  commands:\n    - pytest tests/\n  source_files:\n    - tests/test_*.py\n\nabout:\n  home: https://github.com/DecBayComp/RWA-python\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: HDF5-based serialization library for Python datatypes\n  doc_url: https://rwa-python.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - francoislaurent\n    - DecBayComp\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -203,7 +206,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -215,14 +219,14 @@
     "pandas",
     "python",
     "scipy",
-    "setuptools",
     "six"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python"
    ]
   }
  },
@@ -236,7 +240,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8"
+    "python 3.8",
+    "setuptools"
    ]
   },
   "run": {
@@ -248,19 +253,19 @@
     "pandas",
     "python >=3.8",
     "scipy",
-    "setuptools",
     "six"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python 3.8"
    ]
   }
  },
- "url": "https://github.com/DecBayComp/RWA-python/archive/v0.9.4.tar.gz",
- "version": "0.9.4",
+ "url": "https://github.com/DecBayComp/RWA-python/archive/v0.9.5.tar.gz",
+ "version": "0.9.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/rwa-python.json"
  }
