@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "polaris",
-   "version": "0.11.4"
+   "version": "0.11.5"
   },
   "requirements": {
    "host": [
@@ -52,9 +52,7 @@
     "datamol >=0.12.1",
     "fastpdb",
     "fsspec",
-    "halo",
     "httpx",
-    "loguru",
     "numcodecs >=0.13.1",
     "numpy <2",
     "pandas",
@@ -63,6 +61,7 @@
     "pydantic-settings >=2",
     "pyroaring",
     "pyyaml",
+    "rich >=13.9.4",
     "scikit-learn",
     "scipy",
     "seaborn",
@@ -74,13 +73,13 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "03dd9068c2be7a5c2413f09b05b5ee528bce46ac6d1a87a007e9672e6f5b9b38",
-   "url": "https://pypi.org/packages/source/p/polaris-lib/polaris_lib-0.11.4.tar.gz"
+   "sha256": "b5e8b714057e775a2b6bbde050b9e66de02c959475db7e83874212c35d10c4d5",
+   "url": "https://pypi.org/packages/source/p/polaris-lib/polaris_lib-0.11.5.tar.gz"
   },
   "test": {
    "commands": [
     "polaris --help",
-    "python -c \"import polaris; assert polaris.__version__ == '0.11.4'\""
+    "python -c \"import polaris; assert polaris.__version__ == '0.11.5'\""
    ],
    "requires": [
     "python 3.10"
@@ -109,9 +108,7 @@
     "datamol",
     "fastpdb",
     "fsspec",
-    "halo",
     "httpx",
-    "loguru",
     "numcodecs",
     "numpy",
     "pandas",
@@ -121,6 +118,7 @@
     "pyroaring",
     "python",
     "pyyaml",
+    "rich",
     "scikit-learn",
     "scipy",
     "seaborn",
@@ -160,7 +158,7 @@
   },
   "package": {
    "name": "polaris",
-   "version": "0.11.4"
+   "version": "0.11.5"
   },
   "requirements": {
    "host": [
@@ -176,9 +174,7 @@
     "datamol >=0.12.1",
     "fastpdb",
     "fsspec",
-    "halo",
     "httpx",
-    "loguru",
     "numcodecs >=0.13.1",
     "numpy <2",
     "pandas",
@@ -187,6 +183,7 @@
     "pydantic-settings >=2",
     "pyroaring",
     "pyyaml",
+    "rich >=13.9.4",
     "scikit-learn",
     "scipy",
     "seaborn",
@@ -198,13 +195,13 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "03dd9068c2be7a5c2413f09b05b5ee528bce46ac6d1a87a007e9672e6f5b9b38",
-   "url": "https://pypi.org/packages/source/p/polaris-lib/polaris_lib-0.11.4.tar.gz"
+   "sha256": "b5e8b714057e775a2b6bbde050b9e66de02c959475db7e83874212c35d10c4d5",
+   "url": "https://pypi.org/packages/source/p/polaris-lib/polaris_lib-0.11.5.tar.gz"
   },
   "test": {
    "commands": [
     "polaris --help",
-    "python -c \"import polaris; assert polaris.__version__ == '0.11.4'\""
+    "python -c \"import polaris; assert polaris.__version__ == '0.11.5'\""
    ],
    "requires": [
     "python 3.10"
@@ -225,7 +222,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/polaris.json"
  },
- "raw_meta_yaml": "{% set name = \"polaris\" %}\n{% set version = \"0.11.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/polaris-lib/polaris_lib-{{ version }}.tar.gz\n  sha256: 03dd9068c2be7a5c2413f09b05b5ee528bce46ac6d1a87a007e9672e6f5b9b38\n\nbuild:\n  entry_points:\n    - polaris = polaris.cli:app\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - setuptools-scm\n    - pip\n  run:\n    - python >={{ python_min }}\n    - authlib\n    - boto3 <1.36.0\n    - datamol >=0.12.1\n    - fastpdb\n    - fsspec\n    - halo\n    - httpx\n    - loguru\n    - numcodecs >=0.13.1\n    - numpy <2\n    - pandas\n    - pyarrow <18\n    - pydantic >=2\n    - pydantic-settings >=2\n    - pyroaring\n    - pyyaml\n    - scikit-learn\n    - scipy\n    - seaborn\n    - tqdm\n    - typer\n    - typing-extensions >=4.12.0\n    - zarr >=2,<3\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    - polaris --help\n    - python -c \"import polaris; assert polaris.__version__ == '{{ version }}'\"\n\nabout:\n  summary: Client for the Polaris Hub.\n  license: Apache-2.0\n  license_file: LICENSE\n  home: https://github.com/polaris-hub/polaris\n\nextra:\n  recipe-maintainers:\n    - Andrewq11\n    - cwognum\n",
+ "raw_meta_yaml": "{% set name = \"polaris\" %}\n{% set version = \"0.11.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/polaris-lib/polaris_lib-{{ version }}.tar.gz\n  sha256: b5e8b714057e775a2b6bbde050b9e66de02c959475db7e83874212c35d10c4d5\n\nbuild:\n  entry_points:\n    - polaris = polaris.cli:app\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - setuptools-scm\n    - pip\n  run:\n    - python >={{ python_min }}\n    - authlib\n    - boto3 <1.36.0\n    - datamol >=0.12.1\n    - fastpdb\n    - fsspec\n    - httpx\n    - numcodecs >=0.13.1\n    - numpy <2\n    - pandas\n    - pyarrow <18\n    - pydantic >=2\n    - pydantic-settings >=2\n    - pyroaring\n    - pyyaml\n    - rich >=13.9.4\n    - scikit-learn\n    - scipy\n    - seaborn\n    - tqdm\n    - typer\n    - typing-extensions >=4.12.0\n    - zarr >=2,<3\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    - polaris --help\n    - python -c \"import polaris; assert polaris.__version__ == '{{ version }}'\"\n\nabout:\n  summary: Client for the Polaris Hub.\n  license: Apache-2.0\n  license_file: LICENSE\n  home: https://github.com/polaris-hub/polaris\n\nextra:\n  recipe-maintainers:\n    - Andrewq11\n    - cwognum\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -234,9 +231,7 @@
    "datamol",
    "fastpdb",
    "fsspec",
-   "halo",
    "httpx",
-   "loguru",
    "numcodecs",
    "numpy",
    "pandas",
@@ -247,6 +242,7 @@
    "pyroaring",
    "python",
    "pyyaml",
+   "rich",
    "scikit-learn",
    "scipy",
    "seaborn",
@@ -280,9 +276,7 @@
     "datamol",
     "fastpdb",
     "fsspec",
-    "halo",
     "httpx",
-    "loguru",
     "numcodecs",
     "numpy",
     "pandas",
@@ -292,6 +286,7 @@
     "pyroaring",
     "python",
     "pyyaml",
+    "rich",
     "scikit-learn",
     "scipy",
     "seaborn",
@@ -331,9 +326,7 @@
     "datamol >=0.12.1",
     "fastpdb",
     "fsspec",
-    "halo",
     "httpx",
-    "loguru",
     "numcodecs >=0.13.1",
     "numpy <2",
     "pandas",
@@ -343,6 +336,7 @@
     "pyroaring",
     "python >=3.10",
     "pyyaml",
+    "rich >=13.9.4",
     "scikit-learn",
     "scipy",
     "seaborn",
@@ -359,8 +353,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/polaris-lib/polaris_lib-0.11.4.tar.gz",
- "version": "0.11.4",
+ "url": "https://pypi.org/packages/source/p/polaris-lib/polaris_lib-0.11.5.tar.gz",
+ "version": "0.11.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/polaris.json"
  }
