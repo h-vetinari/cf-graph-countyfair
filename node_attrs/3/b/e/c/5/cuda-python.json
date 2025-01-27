@@ -25,6 +25,11 @@
    "branch_name": "main",
    "tooling_branch_name": "main"
   },
+  "noarch_platforms": [
+   "linux_64",
+   "linux_aarch64",
+   "win_64"
+  ],
   "os_version": {
    "linux_64": "cos7",
    "linux_aarch64": "cos7",
@@ -66,6 +71,48 @@
   "outputs": [
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -81,7 +128,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -90,7 +137,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -110,16 +157,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -161,7 +209,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -196,6 +244,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -211,7 +301,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -220,7 +310,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -240,16 +330,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -291,7 +382,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -326,6 +417,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -341,7 +474,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -350,7 +483,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -370,16 +503,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -421,7 +555,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -456,6 +590,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -471,7 +647,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -480,7 +656,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -500,16 +676,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -551,7 +728,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -586,6 +763,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -601,7 +820,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -610,7 +829,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -630,16 +849,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -681,7 +901,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -732,8 +952,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e6b510a0b2f326d834ac9bf7b0c8b93aff8ed5f9fd276453b40375c6314b7060",
-   "url": "https://github.com/NVIDIA/cuda-python/archive/refs/tags/None.tar.gz"
+   "sha256": "6cc8db1e65a1f995e289b64f9b9bff4362321d36ecf9b54eb192d0781475fbca",
+   "url": "https://github.com/NVIDIA/cuda-python/releases/download/None/cuda-python-None.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -760,16 +980,18 @@
     "pip",
     "pyclibrary",
     "python",
-    "setuptools",
-    "versioneer"
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "__linux",
+    "cuda-bindings",
     "cuda-nvrtc",
     "cuda-python",
     "cuda-version",
+    "libnvjitlink",
     "numpy",
     "python"
    ]
@@ -781,6 +1003,7 @@
     "cuda-nvrtc-dev",
     "cuda-profiler-api",
     "cython",
+    "python",
     "setuptools"
    ]
   }
@@ -814,6 +1037,48 @@
   "outputs": [
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -829,7 +1094,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -838,7 +1103,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -858,16 +1123,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -909,7 +1175,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -944,6 +1210,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -959,7 +1267,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -968,7 +1276,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -988,16 +1296,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -1039,7 +1348,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -1074,6 +1383,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -1089,7 +1440,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -1098,7 +1449,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -1118,16 +1469,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -1169,7 +1521,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -1204,6 +1556,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -1219,7 +1613,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -1228,7 +1622,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -1248,16 +1642,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -1299,7 +1694,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -1334,6 +1729,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -1349,7 +1786,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -1358,7 +1795,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -1378,16 +1815,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -1429,7 +1867,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -1480,8 +1918,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e6b510a0b2f326d834ac9bf7b0c8b93aff8ed5f9fd276453b40375c6314b7060",
-   "url": "https://github.com/NVIDIA/cuda-python/archive/refs/tags/None.tar.gz"
+   "sha256": "6cc8db1e65a1f995e289b64f9b9bff4362321d36ecf9b54eb192d0781475fbca",
+   "url": "https://github.com/NVIDIA/cuda-python/releases/download/None/cuda-python-None.tar.gz"
   }
  },
  "linux_aarch64_requirements": {
@@ -1508,16 +1946,18 @@
     "pip",
     "pyclibrary",
     "python",
-    "setuptools",
-    "versioneer"
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "__linux",
+    "cuda-bindings",
     "cuda-nvrtc",
     "cuda-python",
     "cuda-version",
+    "libnvjitlink",
     "numpy",
     "python"
    ]
@@ -1529,6 +1969,7 @@
     "cuda-nvrtc-dev",
     "cuda-profiler-api",
     "cython",
+    "python",
     "setuptools"
    ]
   }
@@ -1562,6 +2003,48 @@
   "outputs": [
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -1577,7 +2060,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -1586,7 +2069,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -1606,16 +2089,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -1657,7 +2141,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -1692,6 +2176,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -1707,7 +2233,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -1716,7 +2242,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -1736,16 +2262,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -1787,7 +2314,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -1822,6 +2349,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -1837,7 +2406,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -1846,7 +2415,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -1866,16 +2435,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -1917,7 +2487,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -1952,6 +2522,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -1967,7 +2579,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -1976,7 +2588,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -1996,16 +2608,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -2047,7 +2660,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -2082,6 +2695,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -2097,7 +2752,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -2106,7 +2761,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -2126,16 +2781,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -2177,7 +2833,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -2212,6 +2868,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -2227,7 +2925,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -2236,7 +2934,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -2256,16 +2954,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -2307,7 +3006,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -2342,6 +3041,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -2357,7 +3098,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -2366,7 +3107,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -2386,16 +3127,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -2437,7 +3179,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -2472,6 +3214,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -2487,7 +3271,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -2496,7 +3280,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -2516,16 +3300,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -2567,7 +3352,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -2602,6 +3387,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -2617,7 +3444,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -2626,7 +3453,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -2646,16 +3473,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -2697,7 +3525,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -2732,6 +3560,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__linux",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -2747,7 +3617,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -2756,7 +3626,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -2776,16 +3646,17 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
-      "cuda-nvrtc"
+      "cuda-nvrtc",
+      "libnvjitlink >=12.3"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.sh",
@@ -2827,7 +3698,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -2862,6 +3733,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -2877,7 +3790,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -2886,7 +3799,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -2906,17 +3819,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -2958,7 +3872,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -2993,6 +3907,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -3008,7 +3964,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -3017,7 +3973,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -3037,17 +3993,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -3089,7 +4046,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -3124,6 +4081,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -3139,7 +4138,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -3148,7 +4147,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -3168,17 +4167,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -3220,7 +4220,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -3255,6 +4255,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -3270,7 +4312,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -3279,7 +4321,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -3299,17 +4341,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -3351,7 +4394,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -3386,6 +4429,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -3401,7 +4486,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -3410,7 +4495,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -3430,17 +4515,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -3482,7 +4568,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -3533,14 +4619,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e6b510a0b2f326d834ac9bf7b0c8b93aff8ed5f9fd276453b40375c6314b7060",
-   "url": "https://github.com/NVIDIA/cuda-python/archive/refs/tags/None.tar.gz"
+   "sha256": "6cc8db1e65a1f995e289b64f9b9bff4362321d36ecf9b54eb192d0781475fbca",
+   "url": "https://github.com/NVIDIA/cuda-python/releases/download/None/cuda-python-None.tar.gz"
   }
  },
  "name": "cuda-python-split",
  "outputs_names": {
   "__set__": true,
   "elements": [
+   "cuda-bindings",
    "cuda-core",
    "cuda-python"
   ]
@@ -3554,12 +4641,15 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cuda-python.json"
  },
- "raw_meta_yaml": "# Note: For each release please update the variables in conda_build_config.yaml.\n{% set number = 3 %}\n{% set git_tag = environ.get(\"git_tag\") %}\n{% set core_version = environ.get(\"core_version\", \"0.0.0\") %}\n{% set bindings_version = environ.get(\"bindings_version\", \"0.0.0\") %}\n{% set build_bindings = environ.get(\"build_bindings\", False) %}\n{% set build_core = environ.get(\"build_core\", False) %}\n\n{% set core_major_version = core_version.split(\".\")[0]|int %}\n{% set core_minor_version = core_version.split(\".\")[1]|int %}\n{% set core_patch_version = core_version.split(\".\")[2]|int %}\n{% set core_ver = core_major_version ~ \".\" ~ core_minor_version ~ \".\" ~ core_patch_version %}\n{% set bindings_major_version = bindings_version.split(\".\")[0]|int %}\n{% set bindings_minor_version = bindings_version.split(\".\")[1]|int %}\n{% set bindings_patch_version = bindings_version.split(\".\")[2]|int %}\n{% set bindings_ver = bindings_major_version ~ \".\" ~ bindings_minor_version ~ \".\" ~ bindings_patch_version %}\n{% set target_name = \"x86_64-linux\" %}  # [linux64]\n{% set target_name = \"sbsa-linux\" %}  # [aarch64]\n{% set target_name = \"x64\" %}  # [win64]\n{% set subdir = \"\" %}\n{% set subdir = os.sep.join([\"\", \"targets\", target_name]) %}  # [linux64 or aarch64]\n{% set subdir = os.sep.join([\"\", \"Library\"]) %}               # [win64]\n\npackage:\n  name: cuda-python-split\n  version: 1\n\nsource:\n  url: https://github.com/NVIDIA/cuda-python/archive/refs/tags/{{ git_tag }}.tar.gz\n  sha256: e6b510a0b2f326d834ac9bf7b0c8b93aff8ed5f9fd276453b40375c6314b7060\n\nbuild:\n  number: 0\n  skip: true  # [py < 39 or ppc64le or osx]\n\n# Have certain top-level requirements so conda-smithy can render the correct variants\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cuda') }}  # [cuda_compiler_version != \"None\"]\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n  host:\n    - python\n\n\noutputs:\n\n  - name: cuda-python\n    version: {{ bindings_ver }}\n    script: build_bindings.sh   # [linux]\n    script: build_bindings.bat  # [win]\n    build:\n      number: {{ number }}\n      # cuda.bindings needs to be built with the matching major.minor headers\n      {% if not (environ.get(\"cuda_compiler_version\")|string()) == (bindings_major_version ~ \".\" ~ bindings_minor_version) %}\n      skip: true\n      {% else %}\n      skip: true  # [not build_bindings]\n      {% endif %}\n      script_env:\n        # Ensure that CUDA includes can be found by the host compiler\n        - CUDA_HOME={{ PREFIX ~ subdir ~ os.pathsep ~ BUILD_PREFIX ~ subdir }}\n      run_exports:\n        - {{ pin_subpackage('cuda-python', min_pin='x', max_pin='x') }}\n      ignore_run_exports_from:\n        - {{ compiler('cuda') }}\n        # The run-exports from these dev packages are too tight, so we ignore them.\n        # The cuda-python package supports CUDA Enhanced Compatibility through its\n        # use of dlopen, so it is compatible with other CUDA minor versions.\n        - cuda-cudart-dev\n        - cuda-nvrtc-dev\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}\n        - {{ stdlib('c') }}\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n        - python                              # [build_platform != target_platform]\n        - cython                              # [build_platform != target_platform]\n        - cuda-version {{ bindings_major_version }}.{{ bindings_minor_version }}\n      host:\n        - cuda-version {{ bindings_major_version }}.{{ bindings_minor_version }}\n        - cuda-cudart-dev\n        - cuda-cudart\n        - cuda-nvrtc-dev\n        - cuda-nvrtc\n        - cuda-profiler-api\n        - cython\n        - pip\n        - pyclibrary\n        - python\n        - setuptools\n        # TODO: remove these in the next release\n        - tomli           # [py<311]\n        - versioneer\n      run:\n        - python\n        - {{ pin_compatible('cuda-version', min_pin='x', max_pin='x') }}\n        # cuda-python requires cuda-nvrtc from the same major version. We ignored\n        # run-exports of cuda-nvrtc-dev and instead allow a looser pinning here.\n        - {{ pin_compatible('cuda-nvrtc', min_pin='x', max_pin='x') }}\n        # TODO: add this in the next release \n        #- libnvjitlink\n        - pywin32  # [win64]\n      run_constrained:\n        # cuda-cudart is not a hard dependency because cuda-python re-implements\n        # cudart. This package is optionally dlopen'd for getting the local cudart\n        # version with cuda.cudart.getLocalRuntimeVersion(). We ignored run-exports\n        # of cuda-cudart-dev and instead allow a looser pinning here.\n        - {{ pin_compatible('cuda-cudart', min_pin='x', max_pin='x') }}\n    test:\n      requires:\n        - cuda-nvcc\n        - cuda-nvrtc-dev\n        - cuda-profiler-api\n        - cython\n        - setuptools\n      files:\n        - test_cimport.pyx\n      commands:\n        - export C_INCLUDE_PATH=\"$CONDA_PREFIX/{{ subdir }}/include\"  # [linux]\n        - set \"CL=%CL% /I%CONDA_PREFIX%\\{{ subdir }}\\include\"         # [win]\n        - cythonize -i -3 test_cimport.pyx\n        - python -c \"import test_cimport; test_cimport.test()\"\n        - python -c \"import cuda.bindings; print(cuda.bindings.__version__)\"\n        - python -c \"import cuda; print(cuda.__version__)\"  # TODO: Remove this\n      imports:\n        - cuda\n        - cuda.cuda\n        - cuda.cudart\n    about:\n      home: https://nvidia.github.io/cuda-python/cuda-bindings\n      license: LicenseRef-NVIDIA-SOFTWARE-LICENSE\n      license_file: LICENSE\n      license_url: https://github.com/NVIDIA/cuda-python/blob/main/LICENSE\n      summary: CUDA Python Low-level Bindings\n      description: |\n        CUDA Python provides a standard set of low-level interfaces,\n        providing full coverage of and access to the CUDA host APIs from Python.\n      doc_url: https://nvidia.github.io/cuda-python/cuda-bindings\n      dev_url: https://github.com/NVIDIA/cuda-python\n\n  - name: cuda-core\n    version: {{ core_ver }}\n    script: build_core.sh   # [linux]\n    script: build_core.bat  # [win]\n    build:\n      number: {{ number }}\n      # Whiile building cuda-core does not require CUDA/NVCC, we use the same skip condition here\n      # so that all packages can be built in the same CI pipelines.\n      {% if not (environ.get(\"cuda_compiler_version\")|string()) == (bindings_major_version ~ \".\" ~ bindings_minor_version) %}\n      skip: true\n      {% else %}\n      skip: true  # [not build_core]\n      {% endif %}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}\n        - {{ stdlib('c') }}\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n        - python                              # [build_platform != target_platform]\n        - cython                              # [build_platform != target_platform]\n      host:\n        - cython\n        - pip\n        - python\n        - setuptools\n      run:\n        - python\n        - cuda-version >=11.2,<13\n        - numpy\n        # TODO: replace by cuda-bindings once it's ready\n        - cuda-python\n    test:\n      commands:\n        - python -c \"from cuda.core.experimental import Device\"\n        - python -c \"from cuda.core.experimental import utils\"\n    about:\n      home: https://nvidia.github.io/cuda-python/cuda-core\n      license: LicenseRef-NVIDIA-SOFTWARE-LICENSE\n      license_file: LICENSE\n      license_url: https://github.com/NVIDIA/cuda-python/blob/main/LICENSE\n      summary: \"cuda.core: (experimental) pythonic CUDA module\"\n      description: |\n        cuda.core bridges Python's productivity with CUDA's performance through intuitive and pythonic APIs.\n        The mission is to provide users full access to all of the core CUDA features in Python, such as\n        runtime control, compiler and linker.\n      doc_url: https://nvidia.github.io/cuda-python/cuda-core\n      dev_url: https://github.com/NVIDIA/cuda-python\n\nabout:\n  home: https://nvidia.github.io/cuda-python/\n  license: LicenseRef-NVIDIA-SOFTWARE-LICENSE\n  license_file: LICENSE\n  license_url: https://github.com/NVIDIA/cuda-python/blob/main/LICENSE\n  summary: CUDA Python\n  description: |\n    CUDA Python is the home for accessing NVIDIA's CUDA platform from Python.\n  doc_url: https://nvidia.github.io/cuda-python/\n  dev_url: https://github.com/NVIDIA/cuda-python\n\nextra:\n  feedstock-name: cuda-python\n  recipe-maintainers:\n    - bdice\n    - jakirkham\n    - leofang\n    - m3vaz\n    - mmccarty\n    - vyasr\n    - vzhurba01\n",
+ "raw_meta_yaml": "# Note: For each release please update the variables in conda_build_config.yaml.\n{% set number = 0 %}\n{% set git_tag = environ.get(\"git_tag\") %}\n{% set core_version = environ.get(\"core_version\", \"0.0.0\") %}\n{% set bindings_version = environ.get(\"bindings_version\", \"0.0.0\") %}\n{% set build_bindings = environ.get(\"build_bindings\", False) %}\n{% set build_core = environ.get(\"build_core\", False) %}\n\n{% set core_major_version = core_version.split(\".\")[0]|int %}\n{% set core_minor_version = core_version.split(\".\")[1]|int %}\n{% set core_patch_version = core_version.split(\".\")[2]|int %}\n{% set core_ver = core_major_version ~ \".\" ~ core_minor_version ~ \".\" ~ core_patch_version %}\n{% set bindings_major_version = bindings_version.split(\".\")[0]|int %}\n{% set bindings_minor_version = bindings_version.split(\".\")[1]|int %}\n{% set bindings_patch_version = bindings_version.split(\".\")[2]|int %}\n{% set bindings_ver = bindings_major_version ~ \".\" ~ bindings_minor_version ~ \".\" ~ bindings_patch_version %}\n{% set target_name = \"x86_64-linux\" %}  # [linux64]\n{% set target_name = \"sbsa-linux\" %}  # [aarch64]\n{% set target_name = \"x64\" %}  # [win64]\n{% set subdir = \"\" %}\n{% set subdir = os.sep.join([\"\", \"targets\", target_name]) %}  # [linux64 or aarch64]\n{% set subdir = os.sep.join([\"\", \"Library\"]) %}               # [win64]\n\npackage:\n  name: cuda-python-split\n  version: 1\n\nsource:\n  url: https://github.com/NVIDIA/cuda-python/releases/download/{{ git_tag }}/cuda-python-{{ git_tag }}.tar.gz\n  sha256: 6cc8db1e65a1f995e289b64f9b9bff4362321d36ecf9b54eb192d0781475fbca\n\nbuild:\n  number: 0\n  skip: true  # [py < 39 or ppc64le or osx]\n\n# Have certain top-level requirements so conda-smithy can render the correct variants\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cuda') }}  # [cuda_compiler_version != \"None\"]\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n  host:\n    - python\n\n\noutputs:\n\n  - name: cuda-python\n    version: {{ bindings_ver }}\n    build:\n      noarch: python\n      number: {{ number }}\n      {% if not (environ.get(\"cuda_compiler_version\")|string()) == (bindings_major_version ~ \".\" ~ bindings_minor_version) %}\n      skip: true\n      {% else %}\n      skip: true  # [not build_bindings or aarch64]\n      {% endif %}\n    requirements:\n      host:\n        - python {{ python_min }}.*\n      run:\n        - python >={{ python_min }}\n        - __linux  # [linux]\n        - __win    # [win]\n        - {{ pin_subpackage('cuda-bindings', max_pin='x.x') }}\n        - cuda-version >=12.0,<13.0a0\n    test:\n      requires:\n        - python >={{ python_min }}\n      imports:\n        - cuda.bindings\n        - cuda.bindings.driver\n        - cuda.bindings.runtime\n        - cuda.bindings.nvrtc\n        - cuda.bindings.nvjitlink\n    about:\n      home: https://nvidia.github.io/cuda-python/\n      license: LicenseRef-NVIDIA-SOFTWARE-LICENSE\n      license_file: LICENSE\n      license_url: https://github.com/NVIDIA/cuda-python/blob/main/LICENSE\n      summary: CUDA Python\n      description: |\n        CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n      doc_url: https://nvidia.github.io/cuda-python/\n      dev_url: https://github.com/NVIDIA/cuda-python\n\n  - name: cuda-bindings\n    version: {{ bindings_ver }}\n    script: build_bindings.sh   # [linux]\n    script: build_bindings.bat  # [win]\n    build:\n      number: {{ number }}\n      # cuda.bindings needs to be built with the matching major.minor headers\n      {% if not (environ.get(\"cuda_compiler_version\")|string()) == (bindings_major_version ~ \".\" ~ bindings_minor_version) %}\n      skip: true\n      {% else %}\n      skip: true  # [not build_bindings]\n      {% endif %}\n      script_env:\n        # Ensure that CUDA includes can be found by the host compiler\n        - CUDA_HOME={{ PREFIX ~ subdir ~ os.pathsep ~ BUILD_PREFIX ~ subdir }}\n      run_exports:\n        - {{ pin_subpackage('cuda-python', min_pin='x', max_pin='x') }}\n      ignore_run_exports_from:\n        - {{ compiler('cuda') }}\n        # The run-exports from these dev packages are too tight, so we ignore them.\n        # The cuda-python package supports CUDA Enhanced Compatibility through its\n        # use of dlopen, so it is compatible with other CUDA minor versions.\n        - cuda-cudart-dev\n        - cuda-nvrtc-dev\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}\n        - {{ stdlib('c') }}\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n        - python                              # [build_platform != target_platform]\n        - cython                              # [build_platform != target_platform]\n        - cuda-version {{ bindings_major_version }}.{{ bindings_minor_version }}\n      host:\n        - cuda-version {{ bindings_major_version }}.{{ bindings_minor_version }}\n        - cuda-cudart-dev\n        - cuda-cudart\n        - cuda-nvrtc-dev\n        - cuda-nvrtc\n        - cuda-profiler-api\n        - cython\n        - pip\n        - pyclibrary\n        - python\n        - setuptools\n      run:\n        - python\n        - {{ pin_compatible('cuda-version', min_pin='x', max_pin='x') }}\n        # cuda-python requires cuda-nvrtc from the same major version. We ignored\n        # run-exports of cuda-nvrtc-dev and instead allow a looser pinning here.\n        - {{ pin_compatible('cuda-nvrtc', min_pin='x', max_pin='x') }}\n        - libnvjitlink >=12.3\n        - pywin32  # [win64]\n      run_constrained:\n        # cuda-cudart is not a hard dependency because cuda-python re-implements\n        # cudart. This package is optionally dlopen'd for getting the local cudart\n        # version with cuda.cudart.getLocalRuntimeVersion(). We ignored run-exports\n        # of cuda-cudart-dev and instead allow a looser pinning here.\n        - {{ pin_compatible('cuda-cudart', min_pin='x', max_pin='x') }}\n        - {{ pin_subpackage('cuda-python', max_pin='x.x') }}\n    test:\n      requires:\n        - cuda-nvcc\n        - cuda-nvrtc-dev\n        - cuda-profiler-api\n        - cython\n        - setuptools\n      files:\n        - test_cimport.pyx\n      commands:\n        - export C_INCLUDE_PATH=\"$CONDA_PREFIX/{{ subdir }}/include\"  # [linux]\n        - set \"CL=%CL% /I%CONDA_PREFIX%\\{{ subdir }}\\include\"         # [win]\n        - cythonize -i -3 test_cimport.pyx\n        - python -c \"import test_cimport; test_cimport.test()\"\n        - python -c \"import cuda.bindings; print(cuda.bindings.__version__)\"\n        - python -c \"import cuda; print(cuda.__version__)\"  # TODO: Remove this\n      imports:\n        - cuda\n        - cuda.cuda\n        - cuda.cudart\n    about:\n      home: https://nvidia.github.io/cuda-python/cuda-bindings\n      license: LicenseRef-NVIDIA-SOFTWARE-LICENSE\n      license_file: LICENSE\n      license_url: https://github.com/NVIDIA/cuda-python/blob/main/LICENSE\n      summary: CUDA Python Low-level Bindings\n      description: |\n        CUDA Python provides a standard set of low-level interfaces,\n        providing full coverage of and access to the CUDA host APIs from Python.\n      doc_url: https://nvidia.github.io/cuda-python/cuda-bindings\n      dev_url: https://github.com/NVIDIA/cuda-python\n\n  - name: cuda-core\n    version: {{ core_ver }}\n    script: build_core.sh   # [linux]\n    script: build_core.bat  # [win]\n    build:\n      number: {{ number }}\n      # While building cuda-core does not require CUDA/NVCC, we use the same skip condition here\n      # so that all packages can be built in the same CI pipelines.\n      {% if not (environ.get(\"cuda_compiler_version\")|string()) == (bindings_major_version ~ \".\" ~ bindings_minor_version) %}\n      skip: true\n      {% else %}\n      skip: true  # [not build_core]\n      {% endif %}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}\n        - {{ stdlib('c') }}\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n        - python                              # [build_platform != target_platform]\n        - cython                              # [build_platform != target_platform]\n      host:\n        - cython\n        - pip\n        - python\n        - setuptools\n      run:\n        - python\n        - cuda-version >=11.2,<13\n        - numpy\n        # TODO: replace by cuda-bindings once it's ready\n        - cuda-python\n    test:\n      commands:\n        - python -c \"from cuda.core.experimental import Device\"\n        - python -c \"from cuda.core.experimental import utils\"\n    about:\n      home: https://nvidia.github.io/cuda-python/cuda-core\n      license: LicenseRef-NVIDIA-SOFTWARE-LICENSE\n      license_file: LICENSE\n      license_url: https://github.com/NVIDIA/cuda-python/blob/main/LICENSE\n      summary: \"cuda.core: (experimental) pythonic CUDA module\"\n      description: |\n        cuda.core bridges Python's productivity with CUDA's performance through intuitive and pythonic APIs.\n        The mission is to provide users full access to all of the core CUDA features in Python, such as\n        runtime control, compiler and linker.\n      doc_url: https://nvidia.github.io/cuda-python/cuda-core\n      dev_url: https://github.com/NVIDIA/cuda-python\n\nabout:\n  home: https://nvidia.github.io/cuda-python/\n  license: LicenseRef-NVIDIA-SOFTWARE-LICENSE\n  license_file: LICENSE\n  license_url: https://github.com/NVIDIA/cuda-python/blob/main/LICENSE\n  summary: CUDA Python\n  description: |\n    CUDA Python is the home for accessing NVIDIA's CUDA platform from Python.\n  doc_url: https://nvidia.github.io/cuda-python/\n  dev_url: https://github.com/NVIDIA/cuda-python\n\nextra:\n  feedstock-name: cuda-python\n  recipe-maintainers:\n    - bdice\n    - jakirkham\n    - leofang\n    - m3vaz\n    - mmccarty\n    - vyasr\n    - vzhurba01\n",
  "req": {
   "__set__": true,
   "elements": [
+   "__linux",
+   "__win",
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cuda-bindings",
    "cuda-cudart",
    "cuda-cudart-dev",
    "cuda-nvrtc",
@@ -3570,13 +4660,13 @@
    "cuda_compiler_stub",
    "cxx_compiler_stub",
    "cython",
+   "libnvjitlink",
    "numpy",
    "pip",
    "pyclibrary",
    "python",
    "pywin32",
-   "setuptools",
-   "versioneer"
+   "setuptools"
   ]
  },
  "requirements": {
@@ -3607,20 +4697,23 @@
     "pip",
     "pyclibrary",
     "python",
-    "setuptools",
-    "versioneer"
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "__linux",
+    "__win",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cuda-bindings",
     "cuda-nvrtc",
     "cuda-python",
     "cuda-version",
     "cuda_compiler_stub",
     "cxx_compiler_stub",
+    "libnvjitlink",
     "numpy",
     "python",
     "pywin32"
@@ -3633,6 +4726,7 @@
     "cuda-nvrtc-dev",
     "cuda-profiler-api",
     "cython",
+    "python",
     "setuptools"
    ]
   }
@@ -3662,19 +4756,25 @@
     "pip",
     "pyclibrary",
     "python",
-    "setuptools",
-    "versioneer"
+    "python 3.9.*",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "__linux",
+    "__win",
+    "cuda-bindings",
     "cuda-nvrtc",
     "cuda-python",
     "cuda-version",
     "cuda-version >=11.2,<13",
+    "cuda-version >=12.0,<13.0a0",
+    "libnvjitlink >=12.3",
     "numpy",
     "python",
+    "python >=3.9",
     "pywin32"
    ]
   },
@@ -3685,11 +4785,12 @@
     "cuda-nvrtc-dev",
     "cuda-profiler-api",
     "cython",
+    "python >=3.9",
     "setuptools"
    ]
   }
  },
- "url": "https://github.com/NVIDIA/cuda-python/archive/refs/tags/None.tar.gz",
+ "url": "https://github.com/NVIDIA/cuda-python/releases/download/None/cuda-python-None.tar.gz",
  "version": "1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cuda-python.json"
@@ -3723,6 +4824,48 @@
   "outputs": [
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -3738,7 +4881,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -3747,7 +4890,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -3767,17 +4910,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -3819,7 +4963,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -3854,6 +4998,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -3869,7 +5055,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -3878,7 +5064,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -3898,17 +5084,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -3950,7 +5137,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -3985,6 +5172,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -4000,7 +5229,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -4009,7 +5238,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -4029,17 +5258,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -4081,7 +5311,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -4116,6 +5346,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -4131,7 +5403,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -4140,7 +5412,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -4160,17 +5432,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -4212,7 +5485,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -4247,6 +5520,48 @@
    },
    {
     "about": {
+     "description": "CUDA Python is the home for accessing NVIDIA\u2019s CUDA platform from Python.\n",
+     "dev_url": "https://github.com/NVIDIA/cuda-python",
+     "doc_url": "https://nvidia.github.io/cuda-python/",
+     "home": "https://nvidia.github.io/cuda-python/",
+     "license": "LicenseRef-NVIDIA-SOFTWARE-LICENSE",
+     "license_file": "LICENSE",
+     "license_url": "https://github.com/NVIDIA/cuda-python/blob/main/LICENSE",
+     "summary": "CUDA Python"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "0",
+     "skip": true
+    },
+    "name": "cuda-python",
+    "requirements": {
+     "host": [
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "__win",
+      "cuda-bindings",
+      "cuda-version >=12.0,<13.0a0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "cuda.bindings",
+      "cuda.bindings.driver",
+      "cuda.bindings.runtime",
+      "cuda.bindings.nvrtc",
+      "cuda.bindings.nvjitlink"
+     ],
+     "requires": [
+      "python >=3.9"
+     ]
+    },
+    "version": "0.0.0"
+   },
+   {
+    "about": {
      "description": "CUDA Python provides a standard set of low-level interfaces,\nproviding full coverage of and access to the CUDA host APIs from Python.\n",
      "dev_url": "https://github.com/NVIDIA/cuda-python",
      "doc_url": "https://nvidia.github.io/cuda-python/cuda-bindings",
@@ -4262,7 +5577,7 @@
       "cuda-cudart-dev",
       "cuda-nvrtc-dev"
      ],
-     "number": "3",
+     "number": "0",
      "run_exports": [
       "cuda-python"
      ],
@@ -4271,7 +5586,7 @@
      ],
      "skip": true
     },
-    "name": "cuda-python",
+    "name": "cuda-bindings",
     "requirements": {
      "build": [
       "c_compiler_stub",
@@ -4291,17 +5606,18 @@
       "pip",
       "pyclibrary",
       "python",
-      "setuptools",
-      "versioneer"
+      "setuptools"
      ],
      "run": [
       "python",
       "cuda-version",
       "cuda-nvrtc",
+      "libnvjitlink >=12.3",
       "pywin32"
      ],
      "run_constrained": [
-      "cuda-cudart"
+      "cuda-cudart",
+      "cuda-python"
      ]
     },
     "script": "build_bindings.bat",
@@ -4343,7 +5659,7 @@
      "summary": "cuda.core: (experimental) pythonic CUDA module"
     },
     "build": {
-     "number": "3",
+     "number": "0",
      "skip": true
     },
     "name": "cuda-core",
@@ -4394,8 +5710,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e6b510a0b2f326d834ac9bf7b0c8b93aff8ed5f9fd276453b40375c6314b7060",
-   "url": "https://github.com/NVIDIA/cuda-python/archive/refs/tags/None.tar.gz"
+   "sha256": "6cc8db1e65a1f995e289b64f9b9bff4362321d36ecf9b54eb192d0781475fbca",
+   "url": "https://github.com/NVIDIA/cuda-python/releases/download/None/cuda-python-None.tar.gz"
   }
  },
  "win_64_requirements": {
@@ -4422,16 +5738,18 @@
     "pip",
     "pyclibrary",
     "python",
-    "setuptools",
-    "versioneer"
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "__win",
+    "cuda-bindings",
     "cuda-nvrtc",
     "cuda-python",
     "cuda-version",
+    "libnvjitlink",
     "numpy",
     "python",
     "pywin32"
@@ -4444,6 +5762,7 @@
     "cuda-nvrtc-dev",
     "cuda-profiler-api",
     "cython",
+    "python",
     "setuptools"
    ]
   }
