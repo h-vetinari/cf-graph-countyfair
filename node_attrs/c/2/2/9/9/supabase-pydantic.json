@@ -15,9 +15,10 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
+   "dev_url": "https://github.com/kmbhm1/supabase-pydantic",
+   "doc_url": "https://kmbhm1.github.io/supabase-pydantic",
    "home": "https://github.com/kmbhm1/supabase-pydantic",
    "license": "MIT",
-   "license_family": "MIT",
    "license_file": "LICENSE",
    "summary": "A Pydantic(+) model generator for Supabase"
   },
@@ -37,7 +38,7 @@
   },
   "package": {
    "name": "supabase-pydantic",
-   "version": "0.14.0"
+   "version": "0.15.6"
   },
   "requirements": {
    "host": [
@@ -46,7 +47,7 @@
     "pip"
    ],
    "run": [
-    "python >=3.10.0,<4.0.0",
+    "python >=3.10,<4.0",
     "psycopg2-binary >=2.9.9,<3.0.0",
     "pydantic >=2.6.3,<3.0.0",
     "types-psycopg2 >=2.9.21,<3.0.0",
@@ -55,14 +56,14 @@
     "python-dotenv >=1.0.1,<2.0.0",
     "click >=8.1.7,<9.0.0",
     "toml >=0.10.2,<0.11.0",
-    "ruff >=0.4.1,<0.5.0",
+    "jinja2 >=3.1.5,<3.2.0",
     "click-option-group >=0.5.6,<0.6.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8fa21e2041537c9a997812a0b885999c0b2c6571055e0ca2c95706a1674077b3",
-   "url": "https://pypi.io/packages/source/s/supabase-pydantic/supabase_pydantic-0.14.0.tar.gz"
+   "sha256": "6ae5e938028653898da8afe27f537264e3054a8444ae5bf52f8ae6be312a8bf7",
+   "url": "https://pypi.io/packages/source/s/supabase-pydantic/supabase_pydantic-0.15.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -98,11 +99,11 @@
     "click-option-group",
     "faker",
     "isort",
+    "jinja2",
     "psycopg2-binary",
     "pydantic",
     "python",
     "python-dotenv",
-    "ruff",
     "toml",
     "types-psycopg2"
    ]
@@ -116,9 +117,10 @@
  },
  "meta_yaml": {
   "about": {
+   "dev_url": "https://github.com/kmbhm1/supabase-pydantic",
+   "doc_url": "https://kmbhm1.github.io/supabase-pydantic",
    "home": "https://github.com/kmbhm1/supabase-pydantic",
    "license": "MIT",
-   "license_family": "MIT",
    "license_file": "LICENSE",
    "summary": "A Pydantic(+) model generator for Supabase"
   },
@@ -138,7 +140,7 @@
   },
   "package": {
    "name": "supabase-pydantic",
-   "version": "0.14.0"
+   "version": "0.15.6"
   },
   "requirements": {
    "host": [
@@ -147,7 +149,7 @@
     "pip"
    ],
    "run": [
-    "python >=3.10.0,<4.0.0",
+    "python >=3.10,<4.0",
     "psycopg2-binary >=2.9.9,<3.0.0",
     "pydantic >=2.6.3,<3.0.0",
     "types-psycopg2 >=2.9.21,<3.0.0",
@@ -156,14 +158,14 @@
     "python-dotenv >=1.0.1,<2.0.0",
     "click >=8.1.7,<9.0.0",
     "toml >=0.10.2,<0.11.0",
-    "ruff >=0.4.1,<0.5.0",
+    "jinja2 >=3.1.5,<3.2.0",
     "click-option-group >=0.5.6,<0.6.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8fa21e2041537c9a997812a0b885999c0b2c6571055e0ca2c95706a1674077b3",
-   "url": "https://pypi.io/packages/source/s/supabase-pydantic/supabase_pydantic-0.14.0.tar.gz"
+   "sha256": "6ae5e938028653898da8afe27f537264e3054a8444ae5bf52f8ae6be312a8bf7",
+   "url": "https://pypi.io/packages/source/s/supabase-pydantic/supabase_pydantic-0.15.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -193,7 +195,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/supabase-pydantic.json"
  },
- "raw_meta_yaml": "{% set name = \"supabase-pydantic\" %}\n{% set version = \"0.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/supabase_pydantic-{{ version }}.tar.gz\n  sha256: 8fa21e2041537c9a997812a0b885999c0b2c6571055e0ca2c95706a1674077b3\n\nbuild:\n  entry_points:\n    - sb-pydantic = supabase_pydantic.cli:cli\n    - supabase-pydantic = supabase_pydantic.cli:cli\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.10,<4.0\n    - poetry-core\n    - pip\n  run:\n    - python >=3.10.0,<4.0.0\n    - psycopg2-binary >=2.9.9,<3.0.0\n    - pydantic >=2.6.3,<3.0.0\n    - types-psycopg2 >=2.9.21,<3.0.0\n    - faker >=24.11.0,<25.0.0\n    - isort >=5.13.2,<6.0.0\n    - python-dotenv >=1.0.1,<2.0.0\n    - click >=8.1.7,<9.0.0\n    - toml >=0.10.2,<0.11.0\n    - ruff >=0.4.1,<0.5.0\n    - click-option-group >=0.5.6,<0.6.0\n\ntest:\n  imports:\n    - supabase_pydantic\n  commands:\n    - pip check\n    - sb-pydantic --help\n    - supabase-pydantic --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/kmbhm1/supabase-pydantic\n  summary: A Pydantic(+) model generator for Supabase\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kmbhm1\n",
+ "raw_meta_yaml": "{% set name = \"supabase-pydantic\" %}\n{% set version = \"0.15.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/supabase_pydantic-{{ version }}.tar.gz\n  sha256: 6ae5e938028653898da8afe27f537264e3054a8444ae5bf52f8ae6be312a8bf7\n\nbuild:\n  entry_points:\n    - sb-pydantic = supabase_pydantic.cli:cli\n    - supabase-pydantic = supabase_pydantic.cli:cli\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.10,<4.0\n    - poetry-core\n    - pip\n  run:\n    - python >=3.10,<4.0\n    - psycopg2-binary >=2.9.9,<3.0.0\n    - pydantic >=2.6.3,<3.0.0\n    - types-psycopg2 >=2.9.21,<3.0.0\n    - faker >=24.11.0,<25.0.0\n    - isort >=5.13.2,<6.0.0\n    - python-dotenv >=1.0.1,<2.0.0\n    - click >=8.1.7,<9.0.0\n    - toml >=0.10.2,<0.11.0\n    - jinja2 >=3.1.5,<3.2.0\n    - click-option-group >=0.5.6,<0.6.0\n\ntest:\n  imports:\n    - supabase_pydantic\n  commands:\n    - pip check\n    - sb-pydantic --help\n    - supabase-pydantic --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/kmbhm1/supabase-pydantic\n  summary: A Pydantic(+) model generator for Supabase\n  license: MIT\n  license_file: LICENSE\n  doc_url: https://kmbhm1.github.io/supabase-pydantic\n  dev_url: https://github.com/kmbhm1/supabase-pydantic\n\nextra:\n  recipe-maintainers:\n    - kmbhm1\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -201,13 +203,13 @@
    "click-option-group",
    "faker",
    "isort",
+   "jinja2",
    "pip",
    "poetry-core",
    "psycopg2-binary",
    "pydantic",
    "python",
    "python-dotenv",
-   "ruff",
    "toml",
    "types-psycopg2"
   ]
@@ -232,11 +234,11 @@
     "click-option-group",
     "faker",
     "isort",
+    "jinja2",
     "psycopg2-binary",
     "pydantic",
     "python",
     "python-dotenv",
-    "ruff",
     "toml",
     "types-psycopg2"
    ]
@@ -269,11 +271,11 @@
     "click-option-group >=0.5.6,<0.6.0",
     "faker >=24.11.0,<25.0.0",
     "isort >=5.13.2,<6.0.0",
+    "jinja2 >=3.1.5,<3.2.0",
     "psycopg2-binary >=2.9.9,<3.0.0",
     "pydantic >=2.6.3,<3.0.0",
-    "python >=3.10.0,<4.0.0",
+    "python >=3.10,<4.0",
     "python-dotenv >=1.0.1,<2.0.0",
-    "ruff >=0.4.1,<0.5.0",
     "toml >=0.10.2,<0.11.0",
     "types-psycopg2 >=2.9.21,<3.0.0"
    ]
@@ -285,8 +287,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/s/supabase-pydantic/supabase_pydantic-0.14.0.tar.gz",
- "version": "0.14.0",
+ "url": "https://pypi.io/packages/source/s/supabase-pydantic/supabase_pydantic-0.15.6.tar.gz",
+ "version": "0.15.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/supabase-pydantic.json"
  }
