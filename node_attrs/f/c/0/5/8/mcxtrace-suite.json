@@ -35,7 +35,7 @@
    "summary": "McXtrace is a general tool for simulating x-ray scattering instruments and experiments."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -54,21 +54,16 @@
       "c_compiler_stub",
       "c_stdlib_stub",
       "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
+      "bison"
      ],
      "host": [],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "bash",
       "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
+      "numpy"
      ]
     },
     "script": "install-files-core.sh",
@@ -134,136 +129,13 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "openmpi=4",
-      "ucx",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy",
-      "mcpl"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "make",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "flex",
-      "bison",
       "nodejs",
-      "openmpi=4"
-     ],
-     "host": [],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "bash",
-      "pyaml",
       "ply",
       "rsync",
+      "jinja2",
       "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -324,9 +196,7 @@
     "c_stdlib_stub",
     "cmake",
     "flex",
-    "make",
-    "nodejs",
-    "openmpi"
+    "make"
    ]
   },
   "host": {
@@ -337,11 +207,13 @@
    "__set__": true,
    "elements": [
     "bash",
-    "c_compiler_stub",
+    "c-compiler",
     "c_stdlib_stub",
     "cif2hkl",
     "gsl",
     "jinja2",
+    "jupyterlab",
+    "jupytext",
     "libnexus",
     "matplotlib-base",
     "mcpl",
@@ -388,7 +260,7 @@
    "summary": "McXtrace is a general tool for simulating x-ray scattering instruments and experiments."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -407,21 +279,16 @@
       "c_compiler_stub",
       "c_stdlib_stub",
       "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
+      "bison"
      ],
      "host": [],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "bash",
       "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
+      "numpy"
      ]
     },
     "script": "install-files-core.sh",
@@ -487,136 +354,13 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "openmpi=4",
-      "ucx",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy",
-      "mcpl"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "make",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "flex",
-      "bison",
       "nodejs",
-      "openmpi=4"
-     ],
-     "host": [],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "bash",
-      "pyaml",
       "ply",
       "rsync",
+      "jinja2",
       "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -677,9 +421,7 @@
     "c_stdlib_stub",
     "cmake",
     "flex",
-    "make",
-    "nodejs",
-    "openmpi"
+    "make"
    ]
   },
   "host": {
@@ -690,11 +432,13 @@
    "__set__": true,
    "elements": [
     "bash",
-    "c_compiler_stub",
+    "c-compiler",
     "c_stdlib_stub",
     "cif2hkl",
     "gsl",
     "jinja2",
+    "jupyterlab",
+    "jupytext",
     "libnexus",
     "matplotlib-base",
     "mcpl",
@@ -741,7 +485,7 @@
    "summary": "McXtrace is a general tool for simulating x-ray scattering instruments and experiments."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -760,21 +504,16 @@
       "c_compiler_stub",
       "c_stdlib_stub",
       "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
+      "bison"
      ],
      "host": [],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "bash",
       "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
+      "numpy"
      ]
     },
     "script": "install-files-core.sh",
@@ -840,7 +579,13 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
+      "nodejs",
+      "ply",
+      "rsync",
+      "jinja2",
+      "mcstasscript",
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -889,21 +634,16 @@
       "c_compiler_stub",
       "c_stdlib_stub",
       "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
+      "bison"
      ],
      "host": [],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "bash",
       "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
+      "numpy"
      ]
     },
     "script": "install-files-core.sh",
@@ -969,7 +709,13 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
+      "nodejs",
+      "ply",
+      "rsync",
+      "jinja2",
+      "mcstasscript",
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -1018,21 +764,16 @@
       "c_compiler_stub",
       "c_stdlib_stub",
       "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
+      "bison"
      ],
      "host": [],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "bash",
       "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
+      "numpy"
      ]
     },
     "script": "install-files-core.sh",
@@ -1098,265 +839,13 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "openmpi=4",
-      "ucx",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy",
-      "mcpl"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "make",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "flex",
-      "bison",
       "nodejs",
-      "openmpi=4"
-     ],
-     "host": [],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "bash",
-      "pyaml",
       "ply",
       "rsync",
+      "jinja2",
       "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "openmpi=4",
-      "ucx",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy",
-      "mcpl"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "make",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
-     ],
-     "host": [],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "bash",
-      "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -1404,21 +893,16 @@
       "c_compiler_stub",
       "c_stdlib_stub",
       "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
+      "bison"
      ],
      "host": [],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "bash",
       "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
+      "numpy"
      ]
     },
     "script": "install-files-core.sh",
@@ -1484,263 +968,13 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "openmpi=4",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy",
-      "mcpl"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "make",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "flex",
-      "bison",
       "nodejs",
-      "openmpi=4"
-     ],
-     "host": [],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "bash",
-      "pyaml",
       "ply",
       "rsync",
+      "jinja2",
       "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "openmpi=4",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy",
-      "mcpl"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "make",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
-     ],
-     "host": [],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "bash",
-      "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -1786,23 +1020,18 @@
       "cmake",
       "c_compiler_stub",
       "c_stdlib_stub",
-      "winflexbison",
-      "mslex",
-      "nodejs",
-      "msmpi"
+      "winflexbison"
      ],
      "host": [
       "dirent"
      ],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "pyaml",
-      "ply",
-      "mslex",
-      "mcstasscript",
-      "jinja2"
+      "numpy",
+      "mslex"
      ]
     },
     "script": "install-files-core.bat",
@@ -1868,134 +1097,12 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "msmpi",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "winflexbison",
-      "mslex",
       "nodejs",
-      "msmpi"
-     ],
-     "host": [
-      "dirent"
-     ],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "pyaml",
       "ply",
-      "mslex",
+      "jinja2",
       "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.bat",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.bat",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -2058,7 +1165,7 @@
    "summary": "McXtrace is a general tool for simulating x-ray scattering instruments and experiments."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -2077,21 +1184,16 @@
       "c_compiler_stub",
       "c_stdlib_stub",
       "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
+      "bison"
      ],
      "host": [],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "bash",
       "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
+      "numpy"
      ]
     },
     "script": "install-files-core.sh",
@@ -2157,135 +1259,13 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "openmpi=4",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy",
-      "mcpl"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "make",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "flex",
-      "bison",
       "nodejs",
-      "openmpi=4"
-     ],
-     "host": [],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "bash",
-      "pyaml",
       "ply",
       "rsync",
+      "jinja2",
       "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -2345,9 +1325,7 @@
     "c_stdlib_stub",
     "cmake",
     "flex",
-    "make",
-    "nodejs",
-    "openmpi"
+    "make"
    ]
   },
   "host": {
@@ -2358,11 +1336,13 @@
    "__set__": true,
    "elements": [
     "bash",
-    "c_compiler_stub",
+    "c-compiler",
     "c_stdlib_stub",
     "cif2hkl",
     "gsl",
     "jinja2",
+    "jupyterlab",
+    "jupytext",
     "libnexus",
     "matplotlib-base",
     "mcpl",
@@ -2408,7 +1388,7 @@
    "summary": "McXtrace is a general tool for simulating x-ray scattering instruments and experiments."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -2427,21 +1407,16 @@
       "c_compiler_stub",
       "c_stdlib_stub",
       "flex",
-      "bison",
-      "nodejs",
-      "openmpi=4"
+      "bison"
      ],
      "host": [],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "bash",
       "pyaml",
-      "ply",
-      "rsync",
-      "mcstasscript",
-      "jinja2"
+      "numpy"
      ]
     },
     "script": "install-files-core.sh",
@@ -2507,135 +1482,13 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "openmpi=4",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy",
-      "mcpl"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "make",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "flex",
-      "bison",
       "nodejs",
-      "openmpi=4"
-     ],
-     "host": [],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "bash",
-      "pyaml",
       "ply",
       "rsync",
+      "jinja2",
       "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.sh",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -2695,9 +1548,7 @@
     "c_stdlib_stub",
     "cmake",
     "flex",
-    "make",
-    "nodejs",
-    "openmpi"
+    "make"
    ]
   },
   "host": {
@@ -2708,11 +1559,13 @@
    "__set__": true,
    "elements": [
     "bash",
-    "c_compiler_stub",
+    "c-compiler",
     "c_stdlib_stub",
     "cif2hkl",
     "gsl",
     "jinja2",
+    "jupyterlab",
+    "jupytext",
     "libnexus",
     "matplotlib-base",
     "mcpl",
@@ -2767,12 +1620,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/mcxtrace-suite.json"
  },
- "raw_meta_yaml": "{% set version = \"3.5.19\" %}\n\npackage:\n  name: mcxtrace-suite\n  version: {{ version }}\n\n# sha256 value manually found by\n# curl -sL url | openssl sha256\nsource:\n  url: https://github.com/McStasMcXtrace/McCode/archive/v{{ version }}.tar.gz\n  sha256: 79fa57535f504a23326538e41aad2d26e078e57486c52fefd741ae545f97366e\n  folder: src\n\nbuild:\n  number: 0\n\noutputs:\n\n  - name: mcxtrace-core\n    script: install-files-core.sh  # [unix]\n    script: install-files-core.bat  # [win]\n    requirements:\n      build:\n        - cmake\n        - make  # [unix]\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - flex  # [unix]\n        - bison  # [unix]\n        - winflexbison  # [win]\n        - mslex  # [win]\n        - nodejs\n        - msmpi  # [win]\n        - openmpi=4  # [unix]\n      host:\n        - dirent  # [win]\n      run:\n        - python\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - bash  # [unix]\n        # for mxrun\n        - pyaml\n        # for traces from mxrun\n        - ply\n        - mslex  # [win]\n        # for sync of 3D / js files\n        - rsync  # [unix]\n        - mcstasscript\n        # for visualisation of test output\n        - jinja2\n    test:\n      files:\n        - test_pkg.py\n      commands:\n        - python test_pkg.py core\n      source_files:\n        - src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr\n        - src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr\n\n  - name: mcxtrace-data\n    build:\n      noarch: generic\n    script: install-files-data.sh  # [unix]\n    script: install-files-data.bat  # [win]\n    test:\n      files:\n        - test_pkg.py\n      requires:\n        - python\n      commands:\n        - python test_pkg.py data\n\n  - name: mcxtrace-mxgui\n    requirements:\n      run:\n        - mcxtrace-core\n        - pyqt\n        - qscintilla2\n    test:\n      files:\n        - test_pkg.py\n      commands:\n        - python test_pkg.py mxgui\n\n  - name: mcxtrace-vis\n    requirements:\n      run:\n        - mcxtrace-core\n        #  Note: conda-forge linter wants matplotlib-base and not matplotlib. It\n        #  actually makes no difference (as per October 2023) since we anyway\n        #  install tornado+pyqt.\n        - matplotlib-base\n        - numpy\n        - tornado >=5\n        - scipy\n        - pillow\n        - pyqtgraph\n        - pyqt >=5.10\n        - qtpy\n        - nodejs\n    test:\n      files:\n        - test_pkg.py\n      commands:\n        - python test_pkg.py vis\n\n  - name: mcxtrace\n    test:\n      files:\n        - test_pkg.py\n      requires:\n      commands:\n        - python test_pkg.py mcxtrace\n    requirements:\n      run:\n        - {{ pin_subpackage('mcxtrace-core', max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage('mcxtrace-data', max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage('mcxtrace-mxgui', max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage('mcxtrace-vis', max_pin=\"x.x.x\") }}\n        - msmpi  # [win]\n        - openmpi=4  # [unix]\n        - ucx  # [linux]\n        - gsl\n        - xraylib\n        - cif2hkl\n        - libnexus\n        - nexpy\n        - mcpl  # [unix]\n\nabout:\n  home: https://mcxtrace.org/\n  summary: McXtrace is a general tool for simulating x-ray scattering instruments and experiments.\n  description: |\n    McXtrace is a general tool for simulating x-ray scattering instruments and\n    experiments.\n  license: GPL-3.0-only\n  license_family: GPL3\n  license_file: src/COPYING\n  doc_url: https://mcxtrace.org/\n  dev_url: https://github.com/McStasMcXtrace/McCode\n\nextra:\n  recipe-maintainers:\n    - willend\n    - tkittel\n    - ebknudsen\n",
+ "raw_meta_yaml": "{% set version = \"3.5.19\" %}\n\npackage:\n  name: mcxtrace-suite\n  version: {{ version }}\n\n# sha256 value manually found by\n# curl -sL url | openssl sha256\nsource:\n  url: https://github.com/McStasMcXtrace/McCode/archive/v{{ version }}.tar.gz\n  sha256: 79fa57535f504a23326538e41aad2d26e078e57486c52fefd741ae545f97366e\n  folder: src\n\nbuild:\n  number: 1\n\noutputs:\n\n  - name: mcxtrace-core\n    script: install-files-core.sh  # [unix]\n    script: install-files-core.bat  # [win]\n    requirements:\n      build:\n        - cmake\n        - make  # [unix]\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - flex  # [unix]\n        - bison  # [unix]\n        - winflexbison  # [win]\n      host:\n        - dirent  # [win]\n      run:\n        - python\n        - c-compiler\n        - {{ stdlib(\"c\") }}\n        - bash  # [unix]\n        # for mxrun\n        - pyaml\n        - numpy\n        - mslex  # [win]\n    test:\n      files:\n        - test_pkg.py\n      commands:\n        - python test_pkg.py core\n      source_files:\n        - src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr\n        - src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr\n\n  - name: mcxtrace-data\n    build:\n      noarch: generic\n    script: install-files-data.sh  # [unix]\n    script: install-files-data.bat  # [win]\n    test:\n      files:\n        - test_pkg.py\n      requires:\n        - python\n      commands:\n        - python test_pkg.py data\n\n  - name: mcxtrace-mxgui\n    requirements:\n      run:\n        - mcxtrace-core\n        - pyqt\n        - qscintilla2\n    test:\n      files:\n        - test_pkg.py\n      commands:\n        - python test_pkg.py mxgui\n\n  - name: mcxtrace-vis\n    requirements:\n      run:\n        - mcxtrace-core\n        #  Note: conda-forge linter wants matplotlib-base and not matplotlib. It\n        #  actually makes no difference (as per October 2023) since we anyway\n        #  install tornado+pyqt.\n        - matplotlib-base\n        - numpy\n        - tornado >=5\n        - scipy\n        - pillow\n        - pyqtgraph\n        - pyqt >=5.10\n        - qtpy\n        - nodejs\n        # for traces from mxdisplay\n        - ply\n        # for sync of 3D / js files\n        - rsync  # [unix]\n        # for visualisation of test output\n        - jinja2\n        # McStasscript and jupyter support\n        - mcstasscript\n        - jupytext\n        - jupyterlab\n\n    test:\n      files:\n        - test_pkg.py\n      commands:\n        - python test_pkg.py vis\n\n  - name: mcxtrace\n    test:\n      files:\n        - test_pkg.py\n      requires:\n      commands:\n        - python test_pkg.py mcxtrace\n    requirements:\n      run:\n        - {{ pin_subpackage('mcxtrace-core', max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage('mcxtrace-data', max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage('mcxtrace-mxgui', max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage('mcxtrace-vis', max_pin=\"x.x.x\") }}\n        - msmpi  # [win]\n        - openmpi=4  # [unix]\n        - ucx  # [linux]\n        - gsl\n        - xraylib\n        - cif2hkl\n        - libnexus\n        - nexpy\n        - mcpl  # [unix]\n\nabout:\n  home: https://mcxtrace.org/\n  summary: McXtrace is a general tool for simulating x-ray scattering instruments and experiments.\n  description: |\n    McXtrace is a general tool for simulating x-ray scattering instruments and\n    experiments.\n  license: GPL-3.0-only\n  license_family: GPL3\n  license_file: src/COPYING\n  doc_url: https://mcxtrace.org/\n  dev_url: https://github.com/McStasMcXtrace/McCode\n\nextra:\n  recipe-maintainers:\n    - willend\n    - tkittel\n    - ebknudsen\n",
  "req": {
   "__set__": true,
   "elements": [
    "bash",
    "bison",
+   "c-compiler",
    "c_compiler_stub",
    "c_stdlib_stub",
    "cif2hkl",
@@ -2781,6 +1635,8 @@
    "flex",
    "gsl",
    "jinja2",
+   "jupyterlab",
+   "jupytext",
    "libnexus",
    "make",
    "matplotlib-base",
@@ -2822,10 +1678,6 @@
     "cmake",
     "flex",
     "make",
-    "mslex",
-    "msmpi",
-    "nodejs",
-    "openmpi",
     "winflexbison"
    ]
   },
@@ -2841,11 +1693,14 @@
    "__set__": true,
    "elements": [
     "bash",
+    "c-compiler",
     "c_compiler_stub",
     "c_stdlib_stub",
     "cif2hkl",
     "gsl",
     "jinja2",
+    "jupyterlab",
+    "jupytext",
     "libnexus",
     "matplotlib-base",
     "mcpl",
@@ -2893,10 +1748,6 @@
     "cmake",
     "flex",
     "make",
-    "mslex",
-    "msmpi",
-    "nodejs",
-    "openmpi=4",
     "winflexbison"
    ]
   },
@@ -2910,11 +1761,13 @@
    "__set__": true,
    "elements": [
     "bash",
-    "c_compiler_stub",
+    "c-compiler",
     "c_stdlib_stub",
     "cif2hkl",
     "gsl",
     "jinja2",
+    "jupyterlab",
+    "jupytext",
     "libnexus",
     "matplotlib-base",
     "mcpl",
@@ -2969,7 +1822,7 @@
    "summary": "McXtrace is a general tool for simulating x-ray scattering instruments and experiments."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -2986,23 +1839,18 @@
       "cmake",
       "c_compiler_stub",
       "c_stdlib_stub",
-      "winflexbison",
-      "mslex",
-      "nodejs",
-      "msmpi"
+      "winflexbison"
      ],
      "host": [
       "dirent"
      ],
      "run": [
       "python",
-      "c_compiler_stub",
+      "c-compiler",
       "c_stdlib_stub",
       "pyaml",
-      "ply",
-      "mslex",
-      "mcstasscript",
-      "jinja2"
+      "numpy",
+      "mslex"
      ]
     },
     "script": "install-files-core.bat",
@@ -3068,134 +1916,12 @@
       "pyqtgraph",
       "pyqt >=5.10",
       "qtpy",
-      "nodejs"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py vis"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "mcxtrace-data",
-      "mcxtrace-mxgui",
-      "mcxtrace-vis",
-      "msmpi",
-      "gsl",
-      "xraylib",
-      "cif2hkl",
-      "libnexus",
-      "nexpy"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mcxtrace"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": null
-    }
-   },
-   {
-    "name": "mcxtrace-core",
-    "requirements": {
-     "build": [
-      "cmake",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "winflexbison",
-      "mslex",
       "nodejs",
-      "msmpi"
-     ],
-     "host": [
-      "dirent"
-     ],
-     "run": [
-      "python",
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "pyaml",
       "ply",
-      "mslex",
+      "jinja2",
       "mcstasscript",
-      "jinja2"
-     ]
-    },
-    "script": "install-files-core.bat",
-    "test": {
-     "commands": [
-      "python test_pkg.py core"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "source_files": [
-      "src/mcxtrace-comps/examples/ESRF/ESRF_BM29/ESRF_BM29.instr",
-      "src/mcxtrace-comps/examples/AstroX_ESA/NuSTAR_1shell_con/NuSTAR_1shell_con.instr"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "mcxtrace-data",
-    "script": "install-files-data.bat",
-    "test": {
-     "commands": [
-      "python test_pkg.py data"
-     ],
-     "files": [
-      "test_pkg.py"
-     ],
-     "requires": [
-      "python"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-mxgui",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "pyqt",
-      "qscintilla2"
-     ]
-    },
-    "test": {
-     "commands": [
-      "python test_pkg.py mxgui"
-     ],
-     "files": [
-      "test_pkg.py"
-     ]
-    }
-   },
-   {
-    "name": "mcxtrace-vis",
-    "requirements": {
-     "run": [
-      "mcxtrace-core",
-      "matplotlib-base",
-      "numpy",
-      "tornado >=5",
-      "scipy",
-      "pillow",
-      "pyqtgraph",
-      "pyqt >=5.10",
-      "qtpy",
-      "nodejs"
+      "jupytext",
+      "jupyterlab"
      ]
     },
     "test": {
@@ -3252,9 +1978,6 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "mslex",
-    "msmpi",
-    "nodejs",
     "winflexbison"
    ]
   },
@@ -3267,11 +1990,13 @@
   "run": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub",
+    "c-compiler",
     "c_stdlib_stub",
     "cif2hkl",
     "gsl",
     "jinja2",
+    "jupyterlab",
+    "jupytext",
     "libnexus",
     "matplotlib-base",
     "mcstasscript",
