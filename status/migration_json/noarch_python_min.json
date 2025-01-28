@@ -3509,7 +3509,7 @@
     "appmar": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pr_status": "unknown",
+      "pr_status": "unstable",
       "pr_url": "https://github.com/conda-forge/appmar-feedstock/pull/2",
       "pre_pr_migrator_status": ""
     },
@@ -10407,13 +10407,6 @@
       "pr_url": "https://github.com/conda-forge/cffconvert-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "cfflib": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/cfflib-feedstock/pull/2",
-      "pre_pr_migrator_status": ""
-    },
     "cfg-cli": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -10844,7 +10837,7 @@
     "cherab-inversion": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "feedstock parsing error: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error CalledProcessError raised:\n1, ['rattler-build', 'build', '--render-only', '--variant-config', PosixPath('/tmp/tmpuzrnney5/cherab-inversion-feedstock-main/.ci_support/linux_64_.yaml'), '--build-platform', 'linux-64']\nTraceback (most recent call last):\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/make_graph.py\", line 102, in try_load_feedstock\n    data = load_feedstock(name, attrs.data, mark_not_archived=mark_not_archived)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 705, in load_feedstock\n    return load_feedstock_containerized(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 657, in load_feedstock_containerized\n    data = run_container_operation(\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/micromamba/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/container_utils.py\", line 264, in run_container_operation\n    raise ContainerRuntimeError(\nconda_forge_feedstock_ops.container_utils.ContainerRuntimeError: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error CalledProcessError raised:\n1, ['rattler-build', 'build', '--render-only', '--variant-config', PosixPath('/tmp/tmpuzrnney5/cherab-inversion-feedstock-main/.ci_support/linux_64_.yaml'), '--build-platform', 'linux-64']\n"
+      "pre_pr_migrator_status": "feedstock parsing error: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error CalledProcessError raised:\n1, ['rattler-build', 'build', '--render-only', '--variant-config', PosixPath('/tmp/tmphbbiwd9_/cherab-inversion-feedstock-main/.ci_support/linux_64_.yaml'), '--build-platform', 'linux-64']\nTraceback (most recent call last):\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/make_graph.py\", line 102, in try_load_feedstock\n    data = load_feedstock(name, attrs.data, mark_not_archived=mark_not_archived)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 705, in load_feedstock\n    return load_feedstock_containerized(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 657, in load_feedstock_containerized\n    data = run_container_operation(\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/micromamba/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/container_utils.py\", line 264, in run_container_operation\n    raise ContainerRuntimeError(\nconda_forge_feedstock_ops.container_utils.ContainerRuntimeError: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error CalledProcessError raised:\n1, ['rattler-build', 'build', '--render-only', '--variant-config', PosixPath('/tmp/tmphbbiwd9_/cherab-inversion-feedstock-main/.ci_support/linux_64_.yaml'), '--build-platform', 'linux-64']\n"
     },
     "cheroot": {
       "immediate_children": [],
@@ -11549,7 +11542,7 @@
     "climada-petals": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pr_status": "unknown",
+      "pr_status": "unstable",
       "pr_url": "https://github.com/conda-forge/climada-petals-feedstock/pull/15",
       "pre_pr_migrator_status": ""
     },
@@ -19977,7 +19970,9 @@
     "django-versatileimagefield": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "not solvable (<a href='https://github.com/regro/cf-scripts/actions/runs/12983321845'>bot CI job</a>) @ main\n        <details>\n        <div align=\"left\">\n        <pre>\n        linux_64_: Cannot solve the request because of: pillow >=2.4.0,<6.0.0 cannot be installed because there are no viable options:\n\u2514\u2500 pillow 3.2.0 | 3.2.0 | 3.2.0 | 3.2.0 | 3.2.0 | 3.2.0 would require\n   \u2514\u2500 freetype 2.5.*, for which no candidates were found.\npython >=3.9 cannot be installed because there are no viable options:\n\u2514\u2500 python 3.12.0rc3 | 3.13.0rc1 | 3.13.0rc1 | 3.13.0rc1 | 3.13.0rc1 | 3.13.0rc1 | 3.13.0rc1 | 3.13.0rc2 | 3.13.0rc2 | 3.13.0rc2 | 3.13.0rc2 | 3.13.0rc2 | 3.13.0rc2 | 3.13.0rc2 | 3.13.0rc2 | 3.13.0rc3 | 3.13.0rc3 would require\n   \u2514\u2500 _python_rc *, for which no candidates were found.\nThe following packages are incompatible\n\u251C\u2500 python >=3.9 can be installed with any of the following options:\n\u2502  \u251C\u2500 python 3.13.0 | 3.13.0 | 3.13.1 | 3.13.1 | 3.13.1 | 3.13.1 | 3.13.1 would require\n\u2502  \u2502  \u2514\u2500 python_abi 3.13.* *_cp313, which can be installed with any of the following options:\n\u2502  \u2502     \u2514\u2500 python_abi 3.13\n\u2502  \u251C\u2500 python 3.9.0 | 3.9.0 | 3.9.0 | 3.9.0 | 3.9.0 | 3.9.1 | 3.9.1 | 3.9.1 | 3.9.1 | 3.9.1 | 3.9.1 | 3.9.2 | 3.9.4 | 3.9.5 | 3.9.6 | 3.9.6 | 3.9.7 | 3.9.7 | 3.9.7 | 3.9.7 | 3.9.7 | 3.9.9 | 3.9.9 | 3.9.10 | 3.9.10 | 3.9.10 | 3.9.10 | 3.9.10 | 3.9.10 | 3.9.12 | 3.9.12 | 3.9.12 | 3.9.12 | 3.9.13 | 3.9.13 | 3.9.14 | 3.9.14 | 3.9.15 | 3.9.15 | 3.9.16 | 3.9.17 | 3.9.18 | 3.9.18 | 3.9.19 | 3.9.20 | 3.9.20 | 3.9.21 | 3.10.0 | 3.10.0 | 3.10.0 | 3.10.0 | 3.10.0 | 3.10.0 | 3.10.1 | 3.10.1 | 3.10.1 | 3.10.1 | 3.10.1 | 3.10.1 | 3.10.2 | 3.10.2 | 3.10.2 | 3.10.2 | 3.10.2 | 3.10.2 | 3.10.2 | 3.10.2 | 3.10.2 | 3.10.2 | 3.10.4 | 3.10.4 | 3.10.5 | 3.10.5 | 3.10.6 | 3.10.6 | 3.10.7 | 3.10.7 | 3.10.8 | 3.10.8 | 3.10.9 | 3.10.10 | 3.10.11 | 3.10.12 | 3.10.13 | 3.10.13 | 3.10.14 | 3.10.15 | 3.10.15 | 3.10.15 | 3.10.16 | 3.11.0 | 3.11.0 | 3.11.0 | 3.11.0 | 3.11.1 | 3.11.2 | 3.11.3 | 3.11.4 | 3.11.5 | 3.11.6 | 3.11.7 | 3.11.7 | 3.11.8 | 3.11.9 | 3.11.10 | 3.11.10 | 3.11.10 | 3.11.10 | 3.11.11 | 3.12.0 | 3.12.1 | 3.12.1 | 3.12.2 | 3.12.3 | 3.12.4 | 3.12.5 | 3.12.6 | 3.12.6 | 3.12.6 | 3.12.7 | 3.12.8\n\u2502  \u251C\u2500 python 3.13.0 | 3.13.0 | 3.13.1 | 3.13.1 | 3.13.1 | 3.13.1 | 3.13.1 would require\n\u2502  \u2502  \u2514\u2500 python_abi 3.13.* *_cp313t, which can be installed with any of the following options:\n\u2502  \u2502     \u2514\u2500 python_abi 3.13\n\u2502  \u251C\u2500 python 3.10.8 would require\n\u2502  \u2502  \u2514\u2500 python_abi 3.10.* *_graalpy230_310_native, which can be installed with any of the following options:\n\u2502  \u2502     \u2514\u2500 python_abi 3.10 | 3.10 | 3.10\n\u2502  \u2514\u2500 python 3.9.10 | 3.9.12 | 3.9.16 | 3.9.17 | 3.9.18 | 3.9.18 would require\n\u2502     \u2514\u2500 python_abi ==3.9 *_pypy39_pp73, which can be installed with any of the following options:\n\u2502        \u2514\u2500 python_abi 3.9 | 3.9 | 3.9 | 3.9\n\u2514\u2500 pillow >=2.4.0,<6.0.0 cannot be installed because there are no viable options:\n   \u251C\u2500 pillow 5.4.1 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp36m, which conflicts with any installable versions previously reported\n   \u251C\u2500 pillow 5.4.1 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp37m, which conflicts with any installable versions previously reported\n   \u251C\u2500 pillow 5.4.1 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp36m, which conflicts with any installable versions previously reported\n   \u251C\u2500 pillow 5.4.1 | 5.4.1 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp27mu, which conflicts with any installable versions previously reported\n   \u251C\u2500 pillow 5.2.0 | 5.2.0 | 5.3.0 | 5.3.0 | 5.4.0 | 5.4.0 | 5.4.1 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp37m, which conflicts with any installable versions previously reported\n   \u251C\u2500 pillow 5.2.0 | 5.2.0 | 5.2.0 | 5.3.0 | 5.3.0 | 5.4.0 | 5.4.0 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp36m, which conflicts with any installable versions previously reported\n   \u251C\u2500 pillow 3.2.0 | 3.3.0 | 3.3.1 | 3.4.0 | 3.4.1 | 3.4.1 | 3.4.2 | 4.0.0 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp34m, which conflicts with any installable versions previously reported\n   \u251C\u2500 pillow 3.0.0 | 3.4.2 | 4.0.0 | 4.0.0 | 4.0.0 | 4.1.0 | 4.1.1 | 4.2.0 | 4.2.1 | 4.2.1 | 4.3.0 | 4.3.0 | 4.3.0 | 5.0.0 | 5.1.0 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp36m, which conflicts with any installable versions previously reported\n   \u251C\u2500 pillow 3.0.0 | 3.2.0 | 3.3.0 | 3.3.1 | 3.4.0 | 3.4.1 | 3.4.1 | 3.4.2 | 4.0.0 | 4.0.0 | 4.0.0 | 4.1.0 | 4.1.1 | 4.2.0 | 4.2.1 | 4.2.1 | 4.3.0 | 4.3.0 | 4.3.0 | 5.0.0 | 5.1.0 | 5.2.0 | 5.2.0 | 5.2.0 | 5.3.0 would constrain\n   \u2502  \u2514\u2500 python_abi * *_cp35m, which conflicts with any installable versions previously reported\n   \u2514\u2500 pillow 3.0.0 | 3.2.0 | 3.3.0 | 3.3.1 | 3.4.0 | 3.4.1 | 3.4.1 | 3.4.2 | 4.0.0 | 4.0.0 | 4.0.0 | 4.1.0 | 4.1.1 | 4.2.0 | 4.2.1 | 4.2.1 | 4.3.0 | 4.3.0 | 4.3.0 | 5.0.0 | 5.1.0 | 5.2.0 | 5.2.0 | 5.2.0 | 5.3.0 | 5.3.0 | 5.4.0 | 5.4.0 would constrain\n      \u2514\u2500 python_abi * *_cp27mu, which conflicts with any installable versions previously reported\n\n        </pre>\n        </div>\n        </details>"
+      "pr_status": "unknown",
+      "pr_url": "https://github.com/conda-forge/django-versatileimagefield-feedstock/pull/10",
+      "pre_pr_migrator_status": ""
     },
     "django-viewflow": {
       "immediate_children": [],
@@ -22112,13 +22107,6 @@
       "pr_url": "https://github.com/conda-forge/earthpy-feedstock/pull/19",
       "pre_pr_migrator_status": ""
     },
-    "earthsim": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/earthsim-feedstock/pull/2",
-      "pre_pr_migrator_status": ""
-    },
     "earthstat": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -22430,7 +22418,7 @@
     "edfio": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/12999627197\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 251, in run_migration_local\n    data[\"migrate_return_value\"] = migrator.migrate(\n                                   ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 473, in migrate\n    _apply_noarch_python_min(\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 363, in _apply_noarch_python_min\n    _new_lines, _python_min_override = _process_section(\n                                       ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 326, in _process_section\n    found_it, section, python_min_override = _process_req_list(\n                                             ^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 240, in _process_req_list\n    py_lower_bound, py_upper_bound = _extract_bounds(req)\n                                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 119, in _extract_bounds\n    raise RuntimeError(\nRuntimeError: Encountered a python requirement `{req}` that cannot easily be handled by the bot for setting the runtime python version range. The bot will not be able to issue the `noarch: python` min migration PR!\n"
+      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/13002690945\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 251, in run_migration_local\n    data[\"migrate_return_value\"] = migrator.migrate(\n                                   ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 473, in migrate\n    _apply_noarch_python_min(\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 363, in _apply_noarch_python_min\n    _new_lines, _python_min_override = _process_section(\n                                       ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 326, in _process_section\n    found_it, section, python_min_override = _process_req_list(\n                                             ^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 240, in _process_req_list\n    py_lower_bound, py_upper_bound = _extract_bounds(req)\n                                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 119, in _extract_bounds\n    raise RuntimeError(\nRuntimeError: Encountered a python requirement `{req}` that cannot easily be handled by the bot for setting the runtime python version range. The bot will not be able to issue the `noarch: python` min migration PR!\n"
     },
     "edflib-python": {
       "immediate_children": [],
@@ -26497,13 +26485,6 @@
       "pr_url": "https://github.com/conda-forge/flask-babel-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "flask-babelex": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/flask-babelex-feedstock/pull/6",
-      "pre_pr_migrator_status": ""
-    },
     "flask-basicauth": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -27203,7 +27184,7 @@
     "flo": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pr_status": "unknown",
+      "pr_status": "unstable",
       "pr_url": "https://github.com/conda-forge/flo-feedstock/pull/7",
       "pre_pr_migrator_status": ""
     },
@@ -28443,13 +28424,6 @@
       "num_descendants": 0,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/functionali-feedstock",
-      "pre_pr_migrator_status": ""
-    },
-    "functools32": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/functools32-feedstock/pull/11",
       "pre_pr_migrator_status": ""
     },
     "functorch": {
@@ -30131,7 +30105,7 @@
     "glacier_lengths": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/13002068929\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 251, in run_migration_local\n    data[\"migrate_return_value\"] = migrator.migrate(\n                                   ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 473, in migrate\n    _apply_noarch_python_min(\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 363, in _apply_noarch_python_min\n    _new_lines, _python_min_override = _process_section(\n                                       ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 322, in _process_section\n    found_it, section, _ = _process_req_list(\n                           ^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 208, in _process_req_list\n    indent_to_keep, spec_and_comment = line.split(\"-\", maxsplit=1)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: not enough values to unpack (expected 2, got 1)\n"
+      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/13002690945\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 251, in run_migration_local\n    data[\"migrate_return_value\"] = migrator.migrate(\n                                   ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 473, in migrate\n    _apply_noarch_python_min(\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 363, in _apply_noarch_python_min\n    _new_lines, _python_min_override = _process_section(\n                                       ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 322, in _process_section\n    found_it, section, _ = _process_req_list(\n                           ^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 208, in _process_req_list\n    indent_to_keep, spec_and_comment = line.split(\"-\", maxsplit=1)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: not enough values to unpack (expected 2, got 1)\n"
     },
     "glad": {
       "immediate_children": [],
@@ -31705,7 +31679,7 @@
     "graspologic": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/12999915246\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 251, in run_migration_local\n    data[\"migrate_return_value\"] = migrator.migrate(\n                                   ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 473, in migrate\n    _apply_noarch_python_min(\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 363, in _apply_noarch_python_min\n    _new_lines, _python_min_override = _process_section(\n                                       ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 326, in _process_section\n    found_it, section, python_min_override = _process_req_list(\n                                             ^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 240, in _process_req_list\n    py_lower_bound, py_upper_bound = _extract_bounds(req)\n                                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 119, in _extract_bounds\n    raise RuntimeError(\nRuntimeError: Encountered a python requirement `{req}` that cannot easily be handled by the bot for setting the runtime python version range. The bot will not be able to issue the `noarch: python` min migration PR!\n"
+      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/13002690945\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 251, in run_migration_local\n    data[\"migrate_return_value\"] = migrator.migrate(\n                                   ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 473, in migrate\n    _apply_noarch_python_min(\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 363, in _apply_noarch_python_min\n    _new_lines, _python_min_override = _process_section(\n                                       ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 326, in _process_section\n    found_it, section, python_min_override = _process_req_list(\n                                             ^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 240, in _process_req_list\n    py_lower_bound, py_upper_bound = _extract_bounds(req)\n                                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 119, in _extract_bounds\n    raise RuntimeError(\nRuntimeError: Encountered a python requirement `{req}` that cannot easily be handled by the bot for setting the runtime python version range. The bot will not be able to issue the `noarch: python` min migration PR!\n"
     },
     "graspy": {
       "immediate_children": [],
@@ -32589,25 +32563,11 @@
       "pr_url": "https://github.com/conda-forge/habanero-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "hachoir-core": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/hachoir-core-feedstock/pull/7",
-      "pre_pr_migrator_status": ""
-    },
     "hachoir-parser": {
       "immediate_children": [],
       "num_descendants": 0,
       "pr_status": "unstable",
       "pr_url": "https://github.com/conda-forge/hachoir-parser-feedstock/pull/7",
-      "pre_pr_migrator_status": ""
-    },
-    "hachoir-regex": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/hachoir-regex-feedstock/pull/7",
       "pre_pr_migrator_status": ""
     },
     "hackernote": {
@@ -36345,13 +36305,6 @@
       "pr_url": "https://github.com/conda-forge/iowait-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "ipaddr": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/ipaddr-feedstock/pull/2",
-      "pre_pr_migrator_status": ""
-    },
     "ipaddress": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -36441,13 +36394,6 @@
       "num_descendants": 0,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/ipsurv-feedstock",
-      "pre_pr_migrator_status": ""
-    },
-    "iptcinfo": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/iptcinfo-feedstock/pull/1",
       "pre_pr_migrator_status": ""
     },
     "iptcinfo3": {
@@ -47013,7 +46959,7 @@
     "mmvec": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pr_status": "unknown",
+      "pr_status": "unstable",
       "pr_url": "https://github.com/conda-forge/mmvec-feedstock/pull/11",
       "pre_pr_migrator_status": ""
     },
@@ -60975,13 +60921,6 @@
       "pr_url": "https://github.com/conda-forge/privacy-meter-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "privy": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "blocked",
-      "pr_url": "https://github.com/conda-forge/privy-feedstock/pull/1",
-      "pre_pr_migrator_status": ""
-    },
     "probableparsing": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -67893,13 +67832,6 @@
       "pr_url": "https://github.com/conda-forge/pyseaweed-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "pyseidon": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/pyseidon-feedstock/pull/8",
-      "pre_pr_migrator_status": ""
-    },
     "pysentiment2": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -67940,13 +67872,6 @@
       "num_descendants": 0,
       "pr_status": "clean",
       "pr_url": "https://github.com/conda-forge/pysftp-feedstock/pull/2",
-      "pre_pr_migrator_status": ""
-    },
-    "pysgrid": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/pysgrid-feedstock/pull/10",
       "pre_pr_migrator_status": ""
     },
     "pyshark": {
@@ -69548,13 +69473,6 @@
       "num_descendants": 0,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/pytest-skip-slow-feedstock",
-      "pre_pr_migrator_status": ""
-    },
-    "pytest-smartcov": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/pytest-smartcov-feedstock/pull/1",
       "pre_pr_migrator_status": ""
     },
     "pytest-snapshot": {
@@ -73395,7 +73313,7 @@
     "rastervision-core": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pr_status": "unknown",
+      "pr_status": "unstable",
       "pr_url": "https://github.com/conda-forge/rastervision-core-feedstock/pull/11",
       "pre_pr_migrator_status": ""
     },
@@ -74345,7 +74263,7 @@
     "reprounzip": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/12999915246\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 251, in run_migration_local\n    data[\"migrate_return_value\"] = migrator.migrate(\n                                   ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 473, in migrate\n    _apply_noarch_python_min(\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 363, in _apply_noarch_python_min\n    _new_lines, _python_min_override = _process_section(\n                                       ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 326, in _process_section\n    found_it, section, python_min_override = _process_req_list(\n                                             ^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 240, in _process_req_list\n    py_lower_bound, py_upper_bound = _extract_bounds(req)\n                                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 142, in _extract_bounds\n    raise RuntimeError(\nRuntimeError: Encountered a python requirement `{req}` that cannot easily be handled by the bot for setting the runtime python version range. The bot will not be able to issue the `noarch: python` min migration PR!\n"
+      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/13002690945\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 251, in run_migration_local\n    data[\"migrate_return_value\"] = migrator.migrate(\n                                   ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 473, in migrate\n    _apply_noarch_python_min(\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 363, in _apply_noarch_python_min\n    _new_lines, _python_min_override = _process_section(\n                                       ^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 326, in _process_section\n    found_it, section, python_min_override = _process_req_list(\n                                             ^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 240, in _process_req_list\n    py_lower_bound, py_upper_bound = _extract_bounds(req)\n                                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/noarch_python_min.py\", line 142, in _extract_bounds\n    raise RuntimeError(\nRuntimeError: Encountered a python requirement `{req}` that cannot easily be handled by the bot for setting the runtime python version range. The bot will not be able to issue the `noarch: python` min migration PR!\n"
     },
     "reprounzip-docker": {
       "immediate_children": [],
@@ -81979,13 +81897,6 @@
       "pr_url": "https://github.com/conda-forge/sphinxcontrib-devhelp-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "sphinxcontrib-dotnetdomain": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/sphinxcontrib-dotnetdomain-feedstock/pull/3",
-      "pre_pr_migrator_status": ""
-    },
     "sphinxcontrib-doxylink": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -86720,13 +86631,6 @@
       "pr_url": "https://github.com/conda-forge/tinysegmenter-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "tinytimer": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/tinytimer-feedstock/pull/1",
-      "pre_pr_migrator_status": ""
-    },
     "tiobeindexpy": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -89989,13 +89893,6 @@
       "pr_url": "https://github.com/conda-forge/ukpopulation-feedstock/pull/6",
       "pre_pr_migrator_status": ""
     },
-    "ukpostcodeparser": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "unstable",
-      "pr_url": "https://github.com/conda-forge/ukpostcodeparser-feedstock/pull/1",
-      "pre_pr_migrator_status": ""
-    },
     "ulmo": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -90319,7 +90216,9 @@
     "unittest2": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "not solvable (<a href='https://github.com/regro/cf-scripts/actions/runs/13002501230'>bot CI job</a>) @ main\n<details>\n<div align=\"left\">\n<pre>\nlinux_64_: Cannot solve the request because of: No candidates were found for python >=3.9,<3.\n\n</pre>\n</div>\n</details>"
+      "pr_status": "unknown",
+      "pr_url": "https://github.com/conda-forge/unittest2-feedstock/pull/1",
+      "pre_pr_migrator_status": ""
     },
     "unittest2pytest": {
       "immediate_children": [],
@@ -92469,17 +92368,10 @@
       "pr_url": "https://github.com/conda-forge/wapordl-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "warc": {
-      "immediate_children": [],
-      "num_descendants": 0,
-      "pr_status": "blocked",
-      "pr_url": "https://github.com/conda-forge/warc-feedstock/pull/5",
-      "pre_pr_migrator_status": ""
-    },
     "warctools": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pr_status": "unknown",
+      "pr_status": "unstable",
       "pr_url": "https://github.com/conda-forge/warctools-feedstock/pull/5",
       "pre_pr_migrator_status": ""
     },
@@ -104826,7 +104718,6 @@
     "warrant-lite",
     "warrant",
     "warctools",
-    "warc",
     "wagtail-treemodeladmin",
     "wagtail-linkchecker",
     "wagtail-autocomplete",
@@ -104928,6 +104819,7 @@
     "unpaddedbase64",
     "unlzw3",
     "universions",
+    "unittest2",
     "unittest-xml-reporting",
     "unionml",
     "unimport",
@@ -104949,7 +104841,6 @@
     "umongo",
     "umetrix",
     "umami",
-    "ukpostcodeparser",
     "ukpopulation",
     "ukcensusapi",
     "ukbparse",
@@ -105070,7 +104961,6 @@
     "tjpcov",
     "titrate",
     "titiler-core",
-    "tinytimer",
     "tinyrpc",
     "tinynetrc",
     "tintx",
@@ -105321,7 +105211,6 @@
     "sphinxcontrib-matlabdomain",
     "sphinxcontrib-httpexample",
     "sphinxcontrib-googleanalytics",
-    "sphinxcontrib-dotnetdomain",
     "sphinxcontrib-contentui",
     "sphinxcontrib-autoprogram",
     "sphinxcontrib-autodoc_doxygen",
@@ -105995,7 +105884,6 @@
     "pytest-subprocess",
     "pytest-spec",
     "pytest-snapshot",
-    "pytest-smartcov",
     "pytest-sftpserver",
     "pytest-reverse",
     "pytest-reportlog",
@@ -106072,10 +105960,8 @@
     "pysignal",
     "pyshqg",
     "pyshark",
-    "pysgrid",
     "pysftp",
     "pyserver",
-    "pyseidon",
     "pyscicat",
     "pyscal-rdf",
     "pysbol3",
@@ -106434,7 +106320,6 @@
     "profimp",
     "prody",
     "probableparsing",
-    "privy",
     "print-on-steroids",
     "prince-factor-analysis",
     "price-parser",
@@ -107810,12 +107695,10 @@
     "ipycache",
     "ipyaladin",
     "ipyaggrid",
-    "iptcinfo",
     "iprogress",
     "ipfsspec",
     "ipart",
     "ipaddress",
-    "ipaddr",
     "iosbackup",
     "iosacal",
     "ioproc",
@@ -108018,9 +107901,7 @@
     "handout",
     "hamilflow",
     "hagerstrand",
-    "hachoir-regex",
     "hachoir-parser",
-    "hachoir-core",
     "h5pywrappers",
     "h5pulsar",
     "h5pickle",
@@ -108225,7 +108106,6 @@
     "funlib.geometry",
     "fundamentals",
     "functorch",
-    "functools32",
     "functional_algorithms",
     "funcargparse",
     "full-fred",
@@ -108325,7 +108205,6 @@
     "flask-couchdb",
     "flask-bower",
     "flask-bootstrap",
-    "flask-babelex",
     "flask-autoindex",
     "flask-authorize",
     "flask-allows",
@@ -108557,7 +108436,6 @@
     "easydev",
     "easybuild-framework",
     "earthstat",
-    "earthsim",
     "earthpy",
     "earthformer",
     "earth2observe",
@@ -108651,6 +108529,7 @@
     "django-wagtail-feeds",
     "django-waffle",
     "django-viewflow",
+    "django-versatileimagefield",
     "django-unique-upload",
     "django-taggit",
     "django-tables2",
@@ -109137,7 +109016,6 @@
     "cget",
     "cfn-flip",
     "cfg-cli",
-    "cfflib",
     "cfenv",
     "cfanalytics",
     "cf_pandas",
@@ -109647,7 +109525,6 @@
   "not-solvable": [
     "vsc-install",
     "vipaccess",
-    "unittest2",
     "unicorn-binance-websocket-api",
     "textattack",
     "teachopencadd",
@@ -109682,7 +109559,6 @@
     "flask-rest-jsonapi",
     "flask-celery-helper",
     "fastds",
-    "django-versatileimagefield",
     "dit",
     "conda-gitenv",
     "clyngor",
