@@ -31,7 +31,7 @@
    "summary": "Generate JSON diffs between pixi lockfiles"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -111,7 +111,7 @@
    "summary": "Generate JSON diffs between pixi lockfiles"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -191,7 +191,7 @@
    "summary": "Generate JSON diffs between pixi lockfiles"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -271,7 +271,7 @@
    "summary": "Generate JSON diffs between pixi lockfiles"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -279,6 +279,25 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "pixi-diff",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "rust_compiler_stub",
+      "cargo-bundle-licenses"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": "pixi-diff --version"
+     }
+    ]
+   },
    {
     "build": null,
     "name": "pixi-diff",
@@ -405,7 +424,7 @@
    "summary": "Generate JSON diffs between pixi lockfiles"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -485,7 +504,7 @@
    "summary": "Generate JSON diffs between pixi lockfiles"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -566,12 +585,13 @@
   "linux_aarch64",
   "linux_ppc64le",
   "osx_64",
-  "osx_arm64"
+  "osx_arm64",
+  "win_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/pixi-diff.json"
  },
- "raw_meta_yaml": "context:\n  name: pixi-diff\n  version: \"0.0.2\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/pavelzw/${{ name }}/archive/v${{ version }}.tar.gz\n  sha256: f93b41ae75bfcc4001840a3d10ade082a1b4fa8e58437e6610c071ad7292c223\n\nbuild:\n  number: 1\n  # https://github.com/conda-forge/staged-recipes/pull/28929#issuecomment-2613880733\n  skip: win\n\nrequirements:\n  build:\n    - ${{ compiler('c') }}\n    - ${{ stdlib('c') }}\n    - ${{ compiler('rust') }}\n    - cargo-bundle-licenses\n\ntests:\n  - script:\n      - pixi-diff --version\n\nabout:\n  homepage: https://github.com/pavelzw/pixi-diff\n  summary: Generate JSON diffs between pixi lockfiles\n  description: |\n    A simple executable to generate a JSON diff (similar to `pixi update --json`) between two pixi lockfiles.\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  repository: https://github.com/pavelzw/pixi-diff\n\nextra:\n  recipe-maintainers:\n    - pavelzw\n",
+ "raw_meta_yaml": "context:\n  name: pixi-diff\n  version: \"0.0.2\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/pavelzw/${{ name }}/archive/v${{ version }}.tar.gz\n  sha256: f93b41ae75bfcc4001840a3d10ade082a1b4fa8e58437e6610c071ad7292c223\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - ${{ compiler('c') }}\n    - ${{ stdlib('c') }}\n    - ${{ compiler('rust') }}\n    - cargo-bundle-licenses\n\ntests:\n  - script:\n      - pixi-diff --version\n\nabout:\n  homepage: https://github.com/pavelzw/pixi-diff\n  summary: Generate JSON diffs between pixi lockfiles\n  description: |\n    A simple executable to generate a JSON diff (similar to `pixi update --json`) between two pixi lockfiles.\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  repository: https://github.com/pavelzw/pixi-diff\n\nextra:\n  recipe-maintainers:\n    - pavelzw\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -638,5 +658,85 @@
  "version": "0.0.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pixi-diff.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "description": "A simple executable to generate a JSON diff (similar to `pixi update --json`) between two pixi lockfiles.",
+   "dev_url": "https://github.com/pavelzw/pixi-diff",
+   "home": "https://github.com/pavelzw/pixi-diff",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Generate JSON diffs between pixi lockfiles"
+  },
+  "build": {
+   "number": "2"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pavelzw"
+   ]
+  },
+  "outputs": [
+   {
+    "build": null,
+    "name": "pixi-diff",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "rust_compiler_stub",
+      "cargo-bundle-licenses"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": "pixi-diff --version"
+     }
+    ]
+   }
+  ],
+  "package": {
+   "name": "pixi-diff",
+   "version": "0.0.2"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
+   ]
+  },
+  "schema_version": 1,
+  "source": {
+   "sha256": "f93b41ae75bfcc4001840a3d10ade082a1b4fa8e58437e6610c071ad7292c223",
+   "url": "https://github.com/pavelzw/pixi-diff/archive/v0.0.2.tar.gz"
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
  }
 }
