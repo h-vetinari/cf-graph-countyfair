@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "python -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -35,24 +35,24 @@
   },
   "package": {
    "name": "ultraplot",
-   "version": "0.99.3"
+   "version": "1.0.3"
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python 3.10",
     "pip",
     "setuptools"
    ],
    "run": [
     "importlib-metadata",
-    "python >=3.9",
+    "python >=3.10",
     "matplotlib-base >=3.9.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "51ebff676b110b7a2018db0202b625557afceea66e61fa0a09fd41b48cd24c20",
-   "url": "https://pypi.org/packages/source/u/ultraplot/ultraplot-0.99.3.tar.gz"
+   "sha256": "79e12167f99205280cf3f3ada4c93e8836b4cd4b9d4a6046bf3d49afe403d92f",
+   "url": "https://pypi.org/packages/source/u/ultraplot/ultraplot-1.0.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -63,7 +63,7 @@
    ],
    "requires": [
     "pip",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -107,7 +107,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "python -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -118,24 +118,24 @@
   },
   "package": {
    "name": "ultraplot",
-   "version": "0.99.3"
+   "version": "1.0.3"
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python 3.10",
     "pip",
     "setuptools"
    ],
    "run": [
     "importlib-metadata",
-    "python >=3.9",
+    "python >=3.10",
     "matplotlib-base >=3.9.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "51ebff676b110b7a2018db0202b625557afceea66e61fa0a09fd41b48cd24c20",
-   "url": "https://pypi.org/packages/source/u/ultraplot/ultraplot-0.99.3.tar.gz"
+   "sha256": "79e12167f99205280cf3f3ada4c93e8836b4cd4b9d4a6046bf3d49afe403d92f",
+   "url": "https://pypi.org/packages/source/u/ultraplot/ultraplot-1.0.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -146,7 +146,7 @@
    ],
    "requires": [
     "pip",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -164,7 +164,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ultraplot.json"
  },
- "raw_meta_yaml": "package:\n  name: ultraplot\n  version: \"0.99.3\"\n\nsource:\n  url: https://pypi.org/packages/source/u/ultraplot/ultraplot-0.99.3.tar.gz\n  sha256: 51ebff676b110b7a2018db0202b625557afceea66e61fa0a09fd41b48cd24c20\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - importlib-metadata\n    - python >={{ python_min }}\n    - matplotlib-base >=3.9.2\n\ntest:\n  imports:\n    - ultraplot\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ultraplot/ultraplot\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Elegant and flexible high-level plotting with matplotlib\n  description: |\n    Ultraplot is a Python library that provides a high-level interface for creating\n    publication-quality plots using matplotlib. It focuses on making common plotting\n    tasks simple while maintaining full flexibility for customization.\n  dev_url: https://github.com/ultraplot/ultraplot/issues\n\nextra:\n  recipe-maintainers:\n    - cvanelteren\n    - beckermr\n",
+ "raw_meta_yaml": "{% set version = \"1.0.3\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: ultraplot\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/u/ultraplot/ultraplot-{{ version }}.tar.gz\n  sha256: 79e12167f99205280cf3f3ada4c93e8836b4cd4b9d4a6046bf3d49afe403d92f\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - importlib-metadata\n    - python >={{ python_min }}\n    - matplotlib-base >=3.9.2\n\ntest:\n  imports:\n    - ultraplot\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ultraplot/ultraplot\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Elegant and flexible high-level plotting with matplotlib\n  description: |\n    Ultraplot is a Python library that provides a high-level interface for creating\n    publication-quality plots using matplotlib. It focuses on making common plotting\n    tasks simple while maintaining full flexibility for customization.\n  dev_url: https://github.com/ultraplot/ultraplot/issues\n\nextra:\n  recipe-maintainers:\n    - cvanelteren\n    - beckermr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -214,7 +214,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9",
+    "python 3.10",
     "setuptools"
    ]
   },
@@ -223,19 +223,19 @@
    "elements": [
     "importlib-metadata",
     "matplotlib-base >=3.9.2",
-    "python >=3.9"
+    "python >=3.10"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/u/ultraplot/ultraplot-0.99.3.tar.gz",
- "version": "0.99.3",
+ "url": "https://pypi.org/packages/source/u/ultraplot/ultraplot-1.0.3.tar.gz",
+ "version": "1.0.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ultraplot.json"
  }
