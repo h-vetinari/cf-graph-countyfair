@@ -35,13 +35,14 @@
    "summary": "Split feedstock for basemap"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
     "molinav",
     "ocefpaf",
-    "ReimarBauer"
+    "ReimarBauer",
+    "beckermr"
    ]
   },
   "outputs": [
@@ -60,11 +61,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -74,7 +76,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -83,23 +85,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -117,17 +121,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -146,489 +152,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
-      "basemap-data"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data/COPYING.LESSER",
-     "summary": "Data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
-     "summary": "High-resolution data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data-hires",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python",
-      "basemap-data"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data/COPYING.LESSER",
-     "summary": "Data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
-     "summary": "High-resolution data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data-hires",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python",
-      "basemap-data"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data/COPYING.LESSER",
-     "summary": "Data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
-     "summary": "High-resolution data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data-hires",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python",
-      "basemap-data"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data/COPYING.LESSER",
-     "summary": "Data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
-     "summary": "High-resolution data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data-hires",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -659,6 +195,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "patch"
    ]
@@ -683,6 +220,7 @@
     "geos",
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pyproj",
     "pyshp",
     "python"
@@ -692,6 +230,7 @@
    "__set__": true,
    "elements": [
     "basemap-data",
+    "matplotlib-base",
     "pip"
    ]
   }
@@ -707,13 +246,14 @@
    "summary": "Split feedstock for basemap"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
     "molinav",
     "ocefpaf",
-    "ReimarBauer"
+    "ReimarBauer",
+    "beckermr"
    ]
   },
   "outputs": [
@@ -732,11 +272,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -746,7 +287,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -755,23 +296,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -789,17 +332,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -818,17 +363,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -850,11 +397,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -864,7 +412,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -873,23 +421,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -907,17 +457,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -936,17 +488,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -968,11 +522,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -982,7 +537,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -991,23 +546,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -1025,17 +582,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -1054,17 +613,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -1086,11 +647,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -1100,7 +662,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -1109,23 +671,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -1143,17 +707,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -1172,135 +738,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
-      "basemap-data"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data/COPYING.LESSER",
-     "summary": "Data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
-     "summary": "High-resolution data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data-hires",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -1331,6 +781,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "patch"
    ]
@@ -1355,6 +806,7 @@
     "geos",
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pyproj",
     "pyshp",
     "python"
@@ -1364,6 +816,7 @@
    "__set__": true,
    "elements": [
     "basemap-data",
+    "matplotlib-base",
     "pip"
    ]
   }
@@ -1379,13 +832,14 @@
    "summary": "Split feedstock for basemap"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
     "molinav",
     "ocefpaf",
-    "ReimarBauer"
+    "ReimarBauer",
+    "beckermr"
    ]
   },
   "outputs": [
@@ -1404,11 +858,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -1418,7 +873,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -1427,23 +882,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -1461,17 +918,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -1490,17 +949,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -1522,11 +983,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -1536,7 +998,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -1545,23 +1007,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -1579,17 +1043,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -1608,17 +1074,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -1640,11 +1108,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -1654,7 +1123,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -1663,23 +1132,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -1697,17 +1168,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -1726,17 +1199,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -1758,11 +1233,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -1772,7 +1248,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -1781,23 +1257,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -1815,17 +1293,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -1844,135 +1324,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
-      "basemap-data"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data/COPYING.LESSER",
-     "summary": "Data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "version": "1.3.2"
-   },
-   {
-    "about": {
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "LGPL-3.0-or-later",
-     "license_family": "LGPL",
-     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
-     "summary": "High-resolution data assets for matplotlib basemap"
-    },
-    "build": {
-     "noarch": "python",
-     "number": "0"
-    },
-    "name": "basemap-data-hires",
-    "requirements": {
-     "host": [
-      "pip",
-      "setuptools",
-      "wheel"
-     ],
-     "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -2003,6 +1367,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "patch"
    ]
@@ -2027,6 +1392,7 @@
     "geos",
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pyproj",
     "pyshp",
     "python"
@@ -2036,6 +1402,7 @@
    "__set__": true,
    "elements": [
     "basemap-data",
+    "matplotlib-base",
     "pip"
    ]
   }
@@ -2051,13 +1418,14 @@
    "summary": "Split feedstock for basemap"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
     "molinav",
     "ocefpaf",
-    "ReimarBauer"
+    "ReimarBauer",
+    "beckermr"
    ]
   },
   "outputs": [
@@ -2076,11 +1444,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -2090,7 +1459,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -2099,23 +1468,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -2133,17 +1504,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -2162,17 +1535,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -2194,11 +1569,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -2208,7 +1584,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -2217,23 +1593,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -2251,17 +1629,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -2280,17 +1660,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -2312,11 +1694,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -2326,7 +1709,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -2335,23 +1718,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -2369,17 +1754,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -2398,17 +1785,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -2430,11 +1819,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -2444,7 +1834,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -2453,23 +1843,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -2487,17 +1879,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -2516,17 +1910,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -2548,11 +1944,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -2562,7 +1959,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -2571,23 +1968,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -2605,17 +2004,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -2634,17 +2035,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -2666,11 +2069,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -2680,7 +2084,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -2689,23 +2093,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -2723,17 +2129,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -2752,17 +2160,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -2784,11 +2194,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -2798,7 +2209,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -2807,23 +2218,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -2841,17 +2254,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -2870,17 +2285,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -2902,11 +2319,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -2916,7 +2334,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -2925,23 +2343,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -2959,17 +2379,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -2988,17 +2410,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -3020,11 +2444,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3034,7 +2459,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3043,23 +2468,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -3077,17 +2504,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -3106,17 +2535,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -3138,11 +2569,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3152,7 +2584,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3161,23 +2593,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -3195,17 +2629,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -3224,17 +2660,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -3256,11 +2694,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3270,7 +2709,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3279,23 +2718,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -3313,17 +2754,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -3342,17 +2785,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -3374,11 +2819,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3388,7 +2834,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3397,23 +2843,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -3431,17 +2879,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -3460,17 +2910,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -3492,11 +2944,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3506,7 +2959,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3515,23 +2968,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -3549,17 +3004,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -3578,17 +3035,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -3610,11 +3069,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3624,7 +3084,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3633,23 +3093,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -3667,17 +3129,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -3696,17 +3160,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -3728,11 +3194,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3742,7 +3209,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3751,23 +3218,25 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
@@ -3785,17 +3254,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
@@ -3814,17 +3285,19 @@
     },
     "build": {
      "noarch": "python",
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap-data-hires",
     "requirements": {
+     "build": [],
      "host": [
+      "python 3.10",
       "pip",
       "setuptools",
       "wheel"
      ],
      "run": [
-      "python",
+      "python >=3.10",
       "basemap-data"
      ]
     },
@@ -3846,11 +3319,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3860,7 +3334,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3869,26 +3343,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -3905,11 +3444,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3919,7 +3459,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3928,26 +3468,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -3964,11 +3569,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -3978,7 +3584,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -3987,498 +3593,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
-     ]
-    },
-    "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
-      "pip",
-      "basemap-data"
-     ]
-    },
-    "version": "1.4.1"
-   },
-   {
-    "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
-     "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
-     "doc_url": "https://matplotlib.org/basemap/",
-     "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
-    },
-    "build": {
-     "number": "0"
-    },
-    "name": "basemap",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
-     ],
-     "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "bld-basemap.bat",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -4495,11 +3694,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -4509,7 +3709,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -4518,26 +3718,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "bld-basemap.bat",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -4554,11 +3819,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -4568,7 +3834,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -4577,26 +3843,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "bld-basemap.bat",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -4613,11 +3944,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -4627,7 +3959,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -4636,85 +3968,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "bld-basemap.bat",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
    },
    {
     "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
      "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
      "doc_url": "https://matplotlib.org/basemap/",
      "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
     },
     "build": {
-     "number": "0"
+     "noarch": "python",
+     "number": "1"
     },
-    "name": "basemap",
+    "name": "basemap-data",
     "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
+     "build": [],
      "host": [
-      "python",
+      "python 3.10",
       "pip",
       "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
+      "wheel"
      ],
      "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "python >=3.10"
      ]
     },
     "script": "bld-basemap.bat",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
       "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
       "basemap-data"
      ]
     },
-    "version": "1.4.1"
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
    }
   ],
   "package": {
@@ -4748,13 +4086,14 @@
    "summary": "Split feedstock for basemap"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
     "molinav",
     "ocefpaf",
-    "ReimarBauer"
+    "ReimarBauer",
+    "beckermr"
    ]
   },
   "outputs": [
@@ -4773,11 +4112,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -4787,7 +4127,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -4796,26 +4136,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -4832,11 +4237,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -4846,7 +4252,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -4855,26 +4261,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -4891,11 +4362,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -4905,7 +4377,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -4914,26 +4386,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -4950,11 +4487,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -4964,7 +4502,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -4973,85 +4511,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
    },
    {
     "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
      "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
      "doc_url": "https://matplotlib.org/basemap/",
      "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
     },
     "build": {
-     "number": "0"
+     "noarch": "python",
+     "number": "1"
     },
-    "name": "basemap",
+    "name": "basemap-data",
     "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
+     "build": [],
      "host": [
-      "python",
+      "python 3.10",
       "pip",
       "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
+      "wheel"
      ],
      "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
       "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
       "basemap-data"
      ]
     },
-    "version": "1.4.1"
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    }
   ],
   "package": {
@@ -5077,6 +4621,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "patch"
    ]
@@ -5101,6 +4646,7 @@
     "geos",
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pyproj",
     "pyshp",
     "python"
@@ -5110,6 +4656,7 @@
    "__set__": true,
    "elements": [
     "basemap-data",
+    "matplotlib-base",
     "pip"
    ]
   }
@@ -5125,13 +4672,14 @@
    "summary": "Split feedstock for basemap"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
     "molinav",
     "ocefpaf",
-    "ReimarBauer"
+    "ReimarBauer",
+    "beckermr"
    ]
   },
   "outputs": [
@@ -5150,11 +4698,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -5164,7 +4713,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -5173,26 +4722,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -5209,11 +4823,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -5223,7 +4838,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -5232,26 +4847,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -5268,11 +4948,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -5282,7 +4963,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -5291,26 +4972,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -5327,11 +5073,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -5341,7 +5088,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -5350,85 +5097,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "build-basemap.sh",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
    },
    {
     "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
      "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
      "doc_url": "https://matplotlib.org/basemap/",
      "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
     },
     "build": {
-     "number": "0"
+     "noarch": "python",
+     "number": "1"
     },
-    "name": "basemap",
+    "name": "basemap-data",
     "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
+     "build": [],
      "host": [
-      "python",
+      "python 3.10",
       "pip",
       "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
+      "wheel"
      ],
      "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "python >=3.10"
      ]
     },
     "script": "build-basemap.sh",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
       "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
       "basemap-data"
      ]
     },
-    "version": "1.4.1"
+    "script": "build-basemap.sh",
+    "version": "1.3.2"
    }
   ],
   "package": {
@@ -5454,6 +5207,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "patch"
    ]
@@ -5478,6 +5232,7 @@
     "geos",
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pyproj",
     "pyshp",
     "python"
@@ -5487,6 +5242,7 @@
    "__set__": true,
    "elements": [
     "basemap-data",
+    "matplotlib-base",
     "pip"
    ]
   }
@@ -5511,18 +5267,20 @@
  "pr_info": {
   "__lazy_json__": "pr_info/basemap.json"
  },
- "raw_meta_yaml": "{% set version = \"1.4.1\" %}\n{% set build_number = 0 %}\n\n{% set data_version = \"1.3.2\" %}\n{% set data_build_number = 0 %}\n\npackage:\n  name: basemap-split\n  version: {{ version }}\n\nsource:\n  url: https://github.com/matplotlib/basemap/archive/v{{ version }}.tar.gz\n  sha256: 730b1e2ff5eb31c73680bd8ebabc6b11adfc587cfa6832c528a8a82822e5a490\n  patches:\n    - patches/fix_install_hires_instructions.patch\n\nbuild:\n  number: {{ build_number }}\n  skip: true  # [python_impl == 'pypy']\n  # Missing dependencies in s390x.\n  skip: true  # [s390x]\n  # Missing dependencies in win32 and not expecting they will be updated.\n  skip: true  # [win32]\n\nrequirements:\n  build:\n    - m2-patch  # [win]\n    - patch     # [not win]\n\noutputs:\n\n  - name: basemap\n    version: {{ version }}\n    # These scripts will delete `pyproject.toml`. Remove ASAP.\n    script: build-basemap.sh  # [not win]\n    script: bld-basemap.bat  # [win]\n    build:\n      number: {{ build_number }}\n    requirements:\n      build:\n        - python                              # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n        - cython >=0.29,<3.1                  # [build_platform != target_platform]\n        - numpy >=1.21                        # [build_platform != target_platform]\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n      host:\n        - python\n        - pip\n        - setuptools\n        - wheel\n        - cython >=0.29,<3.1\n        - numpy >=1.21\n        - geos\n        - pyproj\n      run:\n        - python\n        - {{ pin_compatible('basemap-data', min_pin='x.x', max_pin='x.x') }}\n        - {{ pin_compatible('numpy', min_pin='x.x', max_pin='x.x') }}\n        - {{ pin_compatible('geos', min_pin='x.x.x', max_pin='x.x.x') }}\n        - matplotlib-base >=1.5,<3.9\n        - pyproj >=1.9.3,<3.7.0\n        - pyshp >=1.2.0,<2.4.0\n    test:\n      imports:\n        - mpl_toolkits.basemap\n      requires:\n        - pip\n        - {{ pin_compatible('basemap-data', min_pin='x.x', max_pin='x.x') }}\n      commands:\n        - pip check\n        - python -c \"from mpl_toolkits.basemap import Basemap\"\n    about:\n      home: https://matplotlib.org/basemap\n      license: MIT\n      license_family: MIT\n      license_file:\n        - packages/basemap/LICENSE\n      summary: Plot data on map projections with matplotlib\n      description: |\n        Basemap toolkit is a library for plotting 2D data on maps in Python.\n        It is similar in functionality to the matlab mapping toolbox,\n        the IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n      dev_url: https://github.com/matplotlib/basemap\n      doc_url: https://matplotlib.org/basemap/\n      doc_source_url: https://github.com/matplotlib/basemap/blob/v{{ version }}/packages/basemap/doc/index.rst\n\n{% if build_platform == target_platform and target_platform.startswith(\"linux-\") %}\n  - name: basemap-data\n    version: {{ data_version }}\n    script: build-basemap.sh  # [not win]\n    script: bld-basemap.bat  # [win]\n    build:\n      number: {{ data_build_number }}\n      noarch: python\n    requirements:\n      host:\n        - pip\n        - setuptools\n        - wheel\n      run:\n        - python\n    about:\n      home: https://matplotlib.org/basemap\n      license: LGPL-3.0-or-later\n      license_family: LGPL\n      license_file: packages/basemap_data/COPYING.LESSER\n      summary: Data assets for matplotlib basemap\n      dev_url: https://github.com/matplotlib/basemap\n      doc_url: https://matplotlib.org/basemap/\n      doc_source_url: https://github.com/matplotlib/basemap/blob/v{{ data_version }}/packages/basemap/doc/index.rst\n\n  - name: basemap-data-hires\n    version: {{ data_version }}\n    script: build-basemap.sh  # [not win]\n    script: bld-basemap.bat  # [win]\n    build:\n      number: {{ data_build_number }}\n      noarch: python\n    requirements:\n      host:\n        - pip\n        - setuptools\n        - wheel\n      run:\n        - python\n        - {{ pin_subpackage('basemap-data', min_pin='x.x', max_pin='x.x') }}\n    about:\n      home: https://matplotlib.org/basemap\n      license: LGPL-3.0-or-later\n      license_family: LGPL\n      license_file: packages/basemap_data_hires/COPYING.LESSER\n      summary: High-resolution data assets for matplotlib basemap\n      dev_url: https://github.com/matplotlib/basemap\n      doc_url: https://matplotlib.org/basemap/\n      doc_source_url: https://github.com/matplotlib/basemap/blob/v{{ data_version }}/packages/basemap/doc/index.rst\n{% endif %}\n\nabout:\n  home: https://matplotlib.org/basemap\n  license: MIT\n  license_family: MIT\n  summary: Split feedstock for basemap\n  license_file:\n    - packages/basemap/LICENSE\n\nextra:\n  recipe-maintainers:\n    - molinav\n    - ocefpaf\n    - ReimarBauer\n",
+ "raw_meta_yaml": "{% set version = \"1.4.1\" %}\n{% set build_number = 1 %}\n\n{% set data_version = \"1.3.2\" %}\n{% set data_build_number = 1 %}\n\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: basemap-split\n  version: {{ version }}\n\nsource:\n  url: https://github.com/matplotlib/basemap/archive/v{{ version }}.tar.gz\n  sha256: 730b1e2ff5eb31c73680bd8ebabc6b11adfc587cfa6832c528a8a82822e5a490\n  patches:\n    - patches/fix_install_hires_instructions.patch\n\nbuild:\n  number: {{ build_number }}\n\nrequirements:\n  build:\n    - m2-patch  # [win]\n    - patch     # [not win]\n\noutputs:\n\n  - name: basemap\n    version: {{ version }}\n    # These scripts will delete `pyproject.toml`. Remove ASAP.\n    script: build-basemap.sh  # [not win]\n    script: bld-basemap.bat  # [win]\n    build:\n      number: {{ build_number }}\n      skip: true  # [python_impl == 'pypy' or py<310 or win32 or s390x]\n\n    requirements:\n      build:\n        - python                              # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n        - cython >=0.29,<3.1                  # [build_platform != target_platform]\n        - numpy                               # [build_platform != target_platform]\n        - {{ stdlib(\"c\") }}\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n      host:\n        - python\n        - pip\n        - setuptools\n        - wheel\n        - cython >=0.29,<3.1\n        - numpy\n        - geos\n        - pyproj\n      run:\n        - python\n        - {{ pin_subpackage('basemap-data', min_pin='x.x', max_pin='x.x') }}\n        - {{ pin_compatible('numpy') }}\n        - {{ pin_compatible('geos', min_pin='x.x.x', max_pin='x.x.x') }}\n        - matplotlib-base >=1.5,<3.10a0\n        - pyproj >=1.9.3,<3.7.0\n        - pyshp >=1.2.0,<2.4.0\n        - packaging <24.0a0\n    test:\n      imports:\n        - mpl_toolkits.basemap\n      requires:\n        - pip\n        - {{ pin_subpackage('basemap-data', min_pin='x.x', max_pin='x.x') }}\n        - matplotlib-base >=3.9\n      commands:\n        # removed for now until upstream moves to 3.10\n        # - pip check\n        - python -c \"from mpl_toolkits.basemap import Basemap\"\n        - python {{ RECIPE_DIR }}/run_test.py\n    about:\n      home: https://matplotlib.org/basemap\n      license: MIT\n      license_family: MIT\n      license_file:\n        - packages/basemap/LICENSE\n      summary: Plot data on map projections with matplotlib\n      description: |\n        Basemap toolkit is a library for plotting 2D data on maps in Python.\n        It is similar in functionality to the matlab mapping toolbox,\n        the IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n      dev_url: https://github.com/matplotlib/basemap\n      doc_url: https://matplotlib.org/basemap/\n      doc_source_url: https://github.com/matplotlib/basemap/blob/v{{ version }}/packages/basemap/doc/index.rst\n\n  - name: basemap-data\n    version: {{ data_version }}\n    script: build-basemap.sh  # [not win]\n    script: bld-basemap.bat  # [win]\n    build:\n      number: {{ data_build_number }}\n      noarch: python\n      skip: true  # [py<310]\n    requirements:\n      build:\n        - python {{ python_min }}             # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools\n        - wheel\n      run:\n        - python >={{ python_min }}\n    about:\n      home: https://matplotlib.org/basemap\n      license: LGPL-3.0-or-later\n      license_family: LGPL\n      license_file: packages/basemap_data/COPYING.LESSER\n      summary: Data assets for matplotlib basemap\n      dev_url: https://github.com/matplotlib/basemap\n      doc_url: https://matplotlib.org/basemap/\n      doc_source_url: https://github.com/matplotlib/basemap/blob/v{{ data_version }}/packages/basemap/doc/index.rst\n\n  - name: basemap-data-hires\n    version: {{ data_version }}\n    script: build-basemap.sh  # [not win]\n    script: bld-basemap.bat  # [win]\n    build:\n      number: {{ data_build_number }}\n      noarch: python\n      skip: true  # [py<310]\n    requirements:\n      build:\n        - python {{ python_min }}             # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools\n        - wheel\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage('basemap-data', min_pin='x.x', max_pin='x.x') }}\n    about:\n      home: https://matplotlib.org/basemap\n      license: LGPL-3.0-or-later\n      license_family: LGPL\n      license_file: packages/basemap_data_hires/COPYING.LESSER\n      summary: High-resolution data assets for matplotlib basemap\n      dev_url: https://github.com/matplotlib/basemap\n      doc_url: https://matplotlib.org/basemap/\n      doc_source_url: https://github.com/matplotlib/basemap/blob/v{{ data_version }}/packages/basemap/doc/index.rst\n\nabout:\n  home: https://matplotlib.org/basemap\n  license: MIT\n  license_family: MIT\n  summary: Split feedstock for basemap\n  license_file:\n    - packages/basemap/LICENSE\n\nextra:\n  recipe-maintainers:\n    - molinav\n    - ocefpaf\n    - ReimarBauer\n    - beckermr\n",
  "req": {
   "__set__": true,
   "elements": [
    "basemap-data",
    "c_compiler_stub",
+   "c_stdlib_stub",
    "cxx_compiler_stub",
    "cython",
    "geos",
    "m2-patch",
    "matplotlib-base",
    "numpy",
+   "packaging",
    "patch",
    "pip",
    "pyproj",
@@ -5537,6 +5295,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "m2-patch",
     "patch"
@@ -5546,6 +5305,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "cython",
     "geos",
@@ -5562,10 +5322,12 @@
    "elements": [
     "basemap-data",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "geos",
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pyproj",
     "pyshp",
     "python"
@@ -5575,6 +5337,7 @@
    "__set__": true,
    "elements": [
     "basemap-data",
+    "matplotlib-base",
     "pip"
    ]
   }
@@ -5585,6 +5348,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "m2-patch",
     "patch"
@@ -5595,10 +5359,11 @@
    "elements": [
     "cython >=0.29,<3.1",
     "geos",
-    "numpy >=1.21",
+    "numpy",
     "pip",
     "pyproj",
     "python",
+    "python 3.10",
     "setuptools",
     "wheel"
    ]
@@ -5608,17 +5373,20 @@
    "elements": [
     "basemap-data",
     "geos",
-    "matplotlib-base >=1.5,<3.9",
+    "matplotlib-base >=1.5,<3.10a0",
     "numpy",
+    "packaging <24.0a0",
     "pyproj >=1.9.3,<3.7.0",
     "pyshp >=1.2.0,<2.4.0",
-    "python"
+    "python",
+    "python >=3.10"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
     "basemap-data",
+    "matplotlib-base >=3.9",
     "pip"
    ]
   }
@@ -5639,13 +5407,14 @@
    "summary": "Split feedstock for basemap"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
     "molinav",
     "ocefpaf",
-    "ReimarBauer"
+    "ReimarBauer",
+    "beckermr"
    ]
   },
   "outputs": [
@@ -5664,11 +5433,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -5678,7 +5448,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -5687,26 +5457,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "bld-basemap.bat",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -5723,11 +5558,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -5737,7 +5573,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -5746,26 +5582,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "bld-basemap.bat",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -5782,11 +5683,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -5796,7 +5698,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -5805,26 +5707,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "bld-basemap.bat",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
+      "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
+      "basemap-data"
+     ]
+    },
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
    },
    {
     "about": {
@@ -5841,11 +5808,12 @@
      "summary": "Plot data on map projections with matplotlib"
     },
     "build": {
-     "number": "0"
+     "number": "1"
     },
     "name": "basemap",
     "requirements": {
      "build": [
+      "c_stdlib_stub",
       "c_compiler_stub",
       "cxx_compiler_stub"
      ],
@@ -5855,7 +5823,7 @@
       "setuptools",
       "wheel",
       "cython >=0.29,<3.1",
-      "numpy >=1.21",
+      "numpy",
       "geos",
       "pyproj"
      ],
@@ -5864,85 +5832,91 @@
       "basemap-data",
       "numpy",
       "geos",
-      "matplotlib-base >=1.5,<3.9",
+      "matplotlib-base >=1.5,<3.10a0",
       "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "pyshp >=1.2.0,<2.4.0",
+      "packaging <24.0a0"
      ]
     },
     "script": "bld-basemap.bat",
     "test": {
      "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
+      "python -c \"from mpl_toolkits.basemap import Basemap\"",
+      "python RECIPE_DIR/run_test.py"
      ],
      "imports": [
       "mpl_toolkits.basemap"
      ],
      "requires": [
       "pip",
-      "basemap-data"
+      "basemap-data",
+      "matplotlib-base >=3.9"
      ]
     },
     "version": "1.4.1"
    },
    {
     "about": {
-     "description": "Basemap toolkit is a library for plotting 2D data on maps in Python.\nIt is similar in functionality to the matlab mapping toolbox,\nthe IDL mapping facilities, GrADS, or the Generic Mapping Tools.\n",
      "dev_url": "https://github.com/matplotlib/basemap",
-     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.4.1/packages/basemap/doc/index.rst",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
      "doc_url": "https://matplotlib.org/basemap/",
      "home": "https://matplotlib.org/basemap",
-     "license": "MIT",
-     "license_family": "MIT",
-     "license_file": [
-      "packages/basemap/LICENSE"
-     ],
-     "summary": "Plot data on map projections with matplotlib"
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data/COPYING.LESSER",
+     "summary": "Data assets for matplotlib basemap"
     },
     "build": {
-     "number": "0"
+     "noarch": "python",
+     "number": "1"
     },
-    "name": "basemap",
+    "name": "basemap-data",
     "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "cxx_compiler_stub"
-     ],
+     "build": [],
      "host": [
-      "python",
+      "python 3.10",
       "pip",
       "setuptools",
-      "wheel",
-      "cython >=0.29,<3.1",
-      "numpy >=1.21",
-      "geos",
-      "pyproj"
+      "wheel"
      ],
      "run": [
-      "python",
-      "basemap-data",
-      "numpy",
-      "geos",
-      "matplotlib-base >=1.5,<3.9",
-      "pyproj >=1.9.3,<3.7.0",
-      "pyshp >=1.2.0,<2.4.0"
+      "python >=3.10"
      ]
     },
     "script": "bld-basemap.bat",
-    "test": {
-     "commands": [
-      "pip check",
-      "python -c \"from mpl_toolkits.basemap import Basemap\""
-     ],
-     "imports": [
-      "mpl_toolkits.basemap"
-     ],
-     "requires": [
+    "version": "1.3.2"
+   },
+   {
+    "about": {
+     "dev_url": "https://github.com/matplotlib/basemap",
+     "doc_source_url": "https://github.com/matplotlib/basemap/blob/v1.3.2/packages/basemap/doc/index.rst",
+     "doc_url": "https://matplotlib.org/basemap/",
+     "home": "https://matplotlib.org/basemap",
+     "license": "LGPL-3.0-or-later",
+     "license_family": "LGPL",
+     "license_file": "packages/basemap_data_hires/COPYING.LESSER",
+     "summary": "High-resolution data assets for matplotlib basemap"
+    },
+    "build": {
+     "noarch": "python",
+     "number": "1"
+    },
+    "name": "basemap-data-hires",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.10",
       "pip",
+      "setuptools",
+      "wheel"
+     ],
+     "run": [
+      "python >=3.10",
       "basemap-data"
      ]
     },
-    "version": "1.4.1"
+    "script": "bld-basemap.bat",
+    "version": "1.3.2"
    }
   ],
   "package": {
@@ -5968,6 +5942,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "m2-patch"
    ]
@@ -5992,6 +5967,7 @@
     "geos",
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pyproj",
     "pyshp",
     "python"
@@ -6001,6 +5977,7 @@
    "__set__": true,
    "elements": [
     "basemap-data",
+    "matplotlib-base",
     "pip"
    ]
   }
