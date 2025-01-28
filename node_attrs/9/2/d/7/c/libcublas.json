@@ -14,11 +14,6 @@
    "branch_name": "main",
    "tooling_branch_name": "main"
   },
-  "os_version": {
-   "linux_64": "cos7",
-   "linux_aarch64": "cos7",
-   "linux_ppc64le": "cos7"
-  },
   "provider": {
    "linux_aarch64": "default",
    "linux_ppc64le": "default"
@@ -37,10 +32,13 @@
    "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
   },
   "build": {
-   "binary_relocation": false,
-   "number": "0"
+   "number": "1",
+   "script_env": [
+    "component_name=libcublas"
+   ]
   },
   "extra": {
+   "feedstock-name": "libcublas",
    "recipe-maintainers": [
     "conda-forge/cuda"
    ]
@@ -56,6 +54,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "lib/lib*blas*.so.*",
      "targets/x64/lib/lib*blas*.so.*"
@@ -65,8 +66,7 @@
      "build": [
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "c_stdlib_stub",
-      "patchelf <0.18.0"
+      "c_stdlib_stub"
      ],
      "host": [
       "cuda-version 12.6"
@@ -76,6 +76,21 @@
       "cuda-nvrtc"
      ],
      "run_constrained": null
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcublas.so.12.6.4.1",
+      "test -L $PREFIX/lib/libcublas.so.12",
+      "test -L $PREFIX/targets/x64/lib/libcublas.so.12",
+      "test -f $PREFIX/targets/x64/lib/libcublas.so.12.6.4.1",
+      "bash test-rpath.sh"
+     ],
+     "files": [
+      "test-rpath.sh"
+     ],
+     "requires": [
+      "patchelf"
+     ]
     }
    },
    {
@@ -89,6 +104,7 @@
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
     "build": {
+     "binary_relocation": false,
      "run_exports": [
       "libcublas"
      ]
@@ -148,6 +164,7 @@
      ],
      "requires": [
       "c_compiler_stub",
+      "c_stdlib_stub",
       "gxx",
       "gcc"
      ]
@@ -163,7 +180,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
-    "build": null,
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "targets/x64/lib/lib*blas*_static.a"
     ],
@@ -192,28 +211,20 @@
    }
   ],
   "package": {
-   "name": "libcublas",
+   "name": "libcublas-split",
    "version": "12.6.4.1"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "patchelf <0.18.0",
+    "cf-nvidia-tools"
+   ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "ec682bac6387f9cdfd0c20b25a16cd6ed0b8b3b7ff42be9eaeb41828e3a72572",
    "url": "https://developer.download.nvidia.com/compute/cuda/redist/libcublas/windows-x86_64/libcublas-windows-x86_64-12.6.4.1-archive.zip"
-  },
-  "test": {
-   "commands": [
-    "test -L $PREFIX/lib/libcublas.so.12.6.4.1",
-    "test -L $PREFIX/lib/libcublas.so.12",
-    "test -L $PREFIX/targets/x64/lib/libcublas.so.12",
-    "test -f $PREFIX/targets/x64/lib/libcublas.so.12.6.4.1",
-    "bash test-rpath.sh"
-   ],
-   "files": [
-    "test-rpath.sh"
-   ],
-   "requires": [
-    "patchelf"
-   ]
   }
  },
  "linux_64_requirements": {
@@ -222,6 +233,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cxx_compiler_stub",
     "patchelf"
    ]
@@ -246,6 +258,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "gcc",
     "gxx",
     "patchelf"
@@ -263,10 +276,13 @@
    "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
   },
   "build": {
-   "binary_relocation": false,
-   "number": "0"
+   "number": "1",
+   "script_env": [
+    "component_name=libcublas"
+   ]
   },
   "extra": {
+   "feedstock-name": "libcublas",
    "recipe-maintainers": [
     "conda-forge/cuda"
    ]
@@ -282,6 +298,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "lib/lib*blas*.so.*",
      "targets/x64/lib/lib*blas*.so.*"
@@ -292,8 +311,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "arm-variant * sbsa",
-      "c_stdlib_stub",
-      "patchelf <0.18.0"
+      "c_stdlib_stub"
      ],
      "host": [
       "cuda-version 12.6"
@@ -304,6 +322,21 @@
      ],
      "run_constrained": [
       "arm-variant * sbsa"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcublas.so.12.6.4.1",
+      "test -L $PREFIX/lib/libcublas.so.12",
+      "test -L $PREFIX/targets/x64/lib/libcublas.so.12",
+      "test -f $PREFIX/targets/x64/lib/libcublas.so.12.6.4.1",
+      "bash test-rpath.sh"
+     ],
+     "files": [
+      "test-rpath.sh"
+     ],
+     "requires": [
+      "patchelf"
      ]
     }
    },
@@ -318,6 +351,7 @@
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
     "build": {
+     "binary_relocation": false,
      "run_exports": [
       "libcublas"
      ]
@@ -376,9 +410,9 @@
      ],
      "requires": [
       "c_compiler_stub",
+      "c_stdlib_stub",
       "gxx",
-      "gcc",
-      "sysroot_linux-aarch64 2.28"
+      "gcc"
      ]
     }
    },
@@ -392,7 +426,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
-    "build": null,
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "targets/x64/lib/lib*blas*_static.a"
     ],
@@ -424,28 +460,21 @@
    }
   ],
   "package": {
-   "name": "libcublas",
+   "name": "libcublas-split",
    "version": "12.6.4.1"
+  },
+  "requirements": {
+   "build": [
+    "arm-variant * sbsa",
+    "c_stdlib_stub",
+    "patchelf <0.18.0",
+    "cf-nvidia-tools"
+   ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "84668dcb2159f9efd912a66ed5afe5d6533b72a81bbabc98b26ac7ac7a36105a",
    "url": "https://developer.download.nvidia.com/compute/cuda/redist/libcublas/windows-x86_64/libcublas-windows-x86_64-12.6.4.1-archive.zip"
-  },
-  "test": {
-   "commands": [
-    "test -L $PREFIX/lib/libcublas.so.12.6.4.1",
-    "test -L $PREFIX/lib/libcublas.so.12",
-    "test -L $PREFIX/targets/x64/lib/libcublas.so.12",
-    "test -f $PREFIX/targets/x64/lib/libcublas.so.12.6.4.1",
-    "bash test-rpath.sh"
-   ],
-   "files": [
-    "test-rpath.sh"
-   ],
-   "requires": [
-    "patchelf"
-   ]
   }
  },
  "linux_aarch64_requirements": {
@@ -455,6 +484,7 @@
     "arm-variant",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cxx_compiler_stub",
     "patchelf"
    ]
@@ -479,10 +509,10 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "gcc",
     "gxx",
-    "patchelf",
-    "sysroot_linux-aarch64"
+    "patchelf"
    ]
   }
  },
@@ -497,10 +527,13 @@
    "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
   },
   "build": {
-   "binary_relocation": false,
-   "number": "0"
+   "number": "1",
+   "script_env": [
+    "component_name=libcublas"
+   ]
   },
   "extra": {
+   "feedstock-name": "libcublas",
    "recipe-maintainers": [
     "conda-forge/cuda"
    ]
@@ -516,6 +549,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "lib/lib*blas*.so.*",
      "targets/x64/lib/lib*blas*.so.*"
@@ -525,8 +561,7 @@
      "build": [
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "c_stdlib_stub",
-      "patchelf <0.18.0"
+      "c_stdlib_stub"
      ],
      "host": [
       "cuda-version 12.6"
@@ -536,6 +571,21 @@
       "cuda-nvrtc"
      ],
      "run_constrained": null
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcublas.so.12.6.4.1",
+      "test -L $PREFIX/lib/libcublas.so.12",
+      "test -L $PREFIX/targets/x64/lib/libcublas.so.12",
+      "test -f $PREFIX/targets/x64/lib/libcublas.so.12.6.4.1",
+      "bash test-rpath.sh"
+     ],
+     "files": [
+      "test-rpath.sh"
+     ],
+     "requires": [
+      "patchelf"
+     ]
     }
    },
    {
@@ -549,6 +599,7 @@
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
     "build": {
+     "binary_relocation": false,
      "run_exports": [
       "libcublas"
      ]
@@ -608,6 +659,7 @@
      ],
      "requires": [
       "c_compiler_stub",
+      "c_stdlib_stub",
       "gxx",
       "gcc"
      ]
@@ -623,7 +675,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
-    "build": null,
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "targets/x64/lib/lib*blas*_static.a"
     ],
@@ -660,6 +714,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "lib/lib*blas*.so.*",
      "targets/x64/lib/lib*blas*.so.*"
@@ -670,8 +727,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "arm-variant * sbsa",
-      "c_stdlib_stub",
-      "patchelf <0.18.0"
+      "c_stdlib_stub"
      ],
      "host": [
       "cuda-version 12.6"
@@ -682,6 +738,21 @@
      ],
      "run_constrained": [
       "arm-variant * sbsa"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcublas.so.12.6.4.1",
+      "test -L $PREFIX/lib/libcublas.so.12",
+      "test -L $PREFIX/targets/x64/lib/libcublas.so.12",
+      "test -f $PREFIX/targets/x64/lib/libcublas.so.12.6.4.1",
+      "bash test-rpath.sh"
+     ],
+     "files": [
+      "test-rpath.sh"
+     ],
+     "requires": [
+      "patchelf"
      ]
     }
    },
@@ -696,6 +767,7 @@
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
     "build": {
+     "binary_relocation": false,
      "run_exports": [
       "libcublas"
      ]
@@ -754,9 +826,9 @@
      ],
      "requires": [
       "c_compiler_stub",
+      "c_stdlib_stub",
       "gxx",
-      "gcc",
-      "sysroot_linux-aarch64 2.28"
+      "gcc"
      ]
     }
    },
@@ -770,7 +842,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
-    "build": null,
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "targets/x64/lib/lib*blas*_static.a"
     ],
@@ -810,6 +884,9 @@
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
+    "build": {
+     "binary_relocation": false
+    },
     "files": [
      "Library\\bin\\cublas*.dll",
      "Library\\bin\\nvblas*.dll"
@@ -829,6 +906,17 @@
       "cuda-nvrtc"
      ],
      "run_constrained": null
+    },
+    "test": {
+     "commands": [
+      "if not exist %LIBRARY_BIN%\\cublas64_12.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\cublasLt64_12.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\nvblas64_12.dll exit 1"
+     ],
+     "files": [
+      "test-rpath.sh"
+     ],
+     "requires": null
     }
    },
    {
@@ -842,6 +930,7 @@
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
     "build": {
+     "binary_relocation": false,
      "run_exports": [
       "libcublas"
      ]
@@ -887,6 +976,7 @@
      ],
      "requires": [
       "c_compiler_stub",
+      "c_stdlib_stub",
       "vs2019_win-64"
      ]
     }
@@ -902,6 +992,7 @@
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
     "build": {
+     "binary_relocation": false,
      "skip": true
     },
     "files": [
@@ -932,32 +1023,24 @@
    }
   ],
   "package": {
-   "name": "libcublas",
+   "name": "libcublas-split",
    "version": "12.6.4.1"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "patchelf <0.18.0",
+    "cf-nvidia-tools",
+    "arm-variant * sbsa"
+   ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "1a87ec80f8c0e5a39badc87010d479930c5b63abd788b3a05bd688a5980a3d07",
    "url": "https://developer.download.nvidia.com/compute/cuda/redist/libcublas/windows-x86_64/libcublas-windows-x86_64-12.6.4.1-archive.zip"
-  },
-  "test": {
-   "commands": [
-    "test -L $PREFIX/lib/libcublas.so.12.6.4.1",
-    "test -L $PREFIX/lib/libcublas.so.12",
-    "test -L $PREFIX/targets/x64/lib/libcublas.so.12",
-    "test -f $PREFIX/targets/x64/lib/libcublas.so.12.6.4.1",
-    "bash test-rpath.sh",
-    "if not exist %LIBRARY_BIN%\\cublas64_12.dll exit 1",
-    "if not exist %LIBRARY_BIN%\\cublasLt64_12.dll exit 1",
-    "if not exist %LIBRARY_BIN%\\nvblas64_12.dll exit 1"
-   ],
-   "files": [
-    "test-rpath.sh"
-   ],
-   "requires": null
   }
  },
- "name": "libcublas",
+ "name": "libcublas-split",
  "outputs_names": {
   "__set__": true,
   "elements": [
@@ -975,13 +1058,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/libcublas.json"
  },
- "raw_meta_yaml": "{% set name = \"libcublas\" %}\n{% set version = \"12.6.4.1\" %}\n{% set cuda_version = \"12.6\" %}\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-ppc64le\" %}  # [ppc64le]\n{% set platform = \"linux-sbsa\" %}  # [aarch64]\n{% set platform = \"windows-x86_64\" %}  # [win]\n{% set target_name = \"x86_64-linux\" %}  # [linux64]\n{% set target_name = \"ppc64le-linux\" %}  # [ppc64le]\n{% set target_name = \"sbsa-linux\" %}  # [aarch64]\n{% set target_name = \"x64\" %}  # [win]\n{% set extension = \"tar.xz\" %}  # [not win]\n{% set extension = \"zip\" %}  # [win]\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/cuda/redist/{{ name }}/{{ platform }}/{{ name }}-{{ platform }}-{{ version }}-archive.{{ extension }}\n  sha256: ec682bac6387f9cdfd0c20b25a16cd6ed0b8b3b7ff42be9eaeb41828e3a72572  # [linux64]\n  sha256: 84668dcb2159f9efd912a66ed5afe5d6533b72a81bbabc98b26ac7ac7a36105a  # [aarch64]\n  sha256: 1a87ec80f8c0e5a39badc87010d479930c5b63abd788b3a05bd688a5980a3d07  # [win]\n\nbuild:\n  number: 0\n  binary_relocation: false\n  skip: true  # [osx or ppc64le]\n\ntest:\n  requires:\n    - patchelf  # [linux]\n  files:\n    - test-rpath.sh\n  commands:\n    - test -L $PREFIX/lib/libcublas.so.{{ version }}                                          # [linux]\n    - test -L $PREFIX/lib/libcublas.so.{{ version.split(\".\")[0] }}                            # [linux]\n    - test -L $PREFIX/targets/{{ target_name }}/lib/libcublas.so.{{ version.split(\".\")[0] }}  # [linux]\n    - test -f $PREFIX/targets/{{ target_name }}/lib/libcublas.so.{{ version }}                # [linux]\n    - bash test-rpath.sh                                                                      # [linux]\n    - if not exist %LIBRARY_BIN%\\cublas64_{{ version.split(\".\")[0] }}.dll exit 1              # [win]\n    - if not exist %LIBRARY_BIN%\\cublasLt64_{{ version.split(\".\")[0] }}.dll exit 1            # [win]\n    - if not exist %LIBRARY_BIN%\\nvblas64_{{ version.split(\".\")[0] }}.dll exit 1              # [win]\n\noutputs:\n  - name: libcublas\n    files:\n      - lib/lib*blas*.so.*                            # [linux]\n      - targets/{{ target_name }}/lib/lib*blas*.so.*  # [linux]\n      - Library\\bin\\cublas*.dll                       # [win]\n      - Library\\bin\\nvblas*.dll                       # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n        - patchelf <0.18.0                      # [linux]\n      host:\n         - cuda-version {{ cuda_version }}\n      run:\n         - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n         # In 12.0/12.1 libcublas runtime will try to dlopen nvrtc due to a bug\n         # so it must be listed as a runtime dependency.\n         # See https://github.com/conda-forge/libcublas-feedstock/issues/9\n         - cuda-nvrtc\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    # Tests are defined at the top level, due to package/output name conflicts.\n    about:\n      home: https://developer.nvidia.com/cublas\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_file: LICENSE\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime.\n      description: |\n        The cuBLAS Library provides a GPU-accelerated implementation of the basic linear algebra subroutines (BLAS).\n      doc_url: https://docs.nvidia.com/cuda/cublas/\n\n  - name: libcublas-dev\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"libcublas\", max_pin=\"x\") }}\n    files:\n      - lib/lib*blas*.so                            # [linux]\n      - lib/pkgconfig                               # [linux]\n      - targets/{{ target_name }}/include           # [linux]\n      - targets/{{ target_name }}/lib/lib*blas*.so  # [linux]\n      - targets/{{ target_name }}/lib/stubs         # [linux]\n      # Not shipping Fortran bindings (in src) on Windows for now\n      - targets/{{ target_name }}/libcublas/src     # [linux and not aarch64]\n      - Library\\include                             # [win]\n      - Library\\lib                                 # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - {{ pin_subpackage(\"libcublas\", exact=True) }}\n        - cuda-cudart-dev_{{ target_platform }}\n        - cuda-crt-dev_{{ target_platform }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - libcublas-static >={{ version }}      # [linux]\n    test:\n      requires:\n        - {{ compiler(\"c\") }}\n        - gxx                         # [linux]\n        - gcc                         # [linux]\n        - sysroot_linux-aarch64 2.28  # [aarch64] # needed to compile test.c for aarch64 as some symbols are introduced in glibc 2.27\n        - vs2019_win-64               # [win]\n      files:\n        - compile_sample_code.bat  # [win]\n        - compile_sample_code.sh   # [linux]\n        - test.c\n      commands:\n        - test -L $PREFIX/lib/libcublas.so                                    # [linux]\n        - test -L $PREFIX/lib/libcublasLt.so                                  # [linux]\n        - test -L $PREFIX/lib/libnvblas.so                                    # [linux]\n        - test -f $PREFIX/lib/pkgconfig/cublas*.pc                            # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cublas.h          # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cublasLt.h        # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/nvblas.h          # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcublas.so          # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcublasLt.so        # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libnvblas.so          # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/stubs/libcublas.so    # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/stubs/libcublasLt.so  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cuda_runtime.h    # [linux] # cuda-cudart-dev\n        - test -f $PREFIX/targets/{{ target_name }}/include/host_defines.h    # [linux] # cuda-crt-dev\n        - test -f $PREFIX/targets/{{ target_name }}/include/nv/target         # [linux] # cuda-cccl\n        - test -f $PREFIX/targets/{{ target_name }}/libcublas/src/fortran.c   # [linux and not aarch64]\n        - test -f $PREFIX/targets/{{ target_name }}/libcublas/src/fortran.h   # [linux and not aarch64]\n        - ./compile_sample_code.sh                                            # [linux]\n        - if not exist %LIBRARY_INC%\\cublas.h exit 1                          # [win]\n        - if not exist %LIBRARY_INC%\\cublasLt.h exit 1                        # [win]\n        - if not exist %LIBRARY_INC%\\nvblas.h exit 1                          # [win]\n        - if not exist %LIBRARY_INC%\\cuda_runtime.h exit 1                    # [win] # cuda-cudart-dev\n        - if not exist %LIBRARY_INC%\\host_defines.h exit 1                    # [win] # cuda-crt-dev\n        - if not exist %LIBRARY_INC%\\targets\\x64\\nv\\target exit 1             # [win] # cuda-cccl\n        - if not exist %LIBRARY_LIB%\\cublas.lib exit 1                        # [win]\n        - if not exist %LIBRARY_LIB%\\cublasLt.lib exit 1                      # [win]\n        - if not exist %LIBRARY_LIB%\\nvblas.lib exit 1                        # [win]\n        - .\\compile_sample_code.bat                                           # [win]\n    about:\n      home: https://developer.nvidia.com/cublas\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_file: LICENSE\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime.\n      description: |\n        The cuBLAS Library provides a GPU-accelerated implementation of the basic linear algebra subroutines (BLAS).\n      doc_url: https://docs.nvidia.com/cuda/cublas/\n\n  - name: libcublas-static\n    build:\n      skip: True  # [not linux]\n    files:\n      - targets/{{ target_name }}/lib/lib*blas*_static.a\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        # In 12.0/12.1 libcublas runtime will try to dlopen nvrtc due to a bug\n        # so it must be listed as a runtime dependency.\n        # See https://github.com/conda-forge/libcublas-feedstock/issues/9\n        - cuda-nvrtc\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcublas_static.a\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcublasLt_static.a\n    about:\n      home: https://developer.nvidia.com/cublas\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_file: LICENSE\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime.\n      description: |\n        The cuBLAS Library provides a GPU-accelerated implementation of the basic linear algebra subroutines (BLAS).\n      doc_url: https://docs.nvidia.com/cuda/cublas/\n\nabout:\n  home: https://developer.nvidia.com/cublas\n  license: LicenseRef-NVIDIA-End-User-License-Agreement\n  license_file: LICENSE\n  license_url: https://docs.nvidia.com/cuda/eula/index.html\n  summary: An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime.\n  description: |\n    The cuBLAS Library provides a GPU-accelerated implementation of the basic linear algebra subroutines (BLAS).\n  doc_url: https://docs.nvidia.com/cuda/cublas/\n\nextra:\n  recipe-maintainers:\n    - conda-forge/cuda\n",
+ "raw_meta_yaml": "{% set name = \"libcublas\" %}\n{% set version = \"12.6.4.1\" %}\n{% set cuda_version = \"12.6\" %}\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-ppc64le\" %}  # [ppc64le]\n{% set platform = \"linux-sbsa\" %}  # [aarch64]\n{% set platform = \"windows-x86_64\" %}  # [win]\n{% set target_name = \"x86_64-linux\" %}  # [linux64]\n{% set target_name = \"ppc64le-linux\" %}  # [ppc64le]\n{% set target_name = \"sbsa-linux\" %}  # [aarch64]\n{% set target_name = \"x64\" %}  # [win]\n{% set extension = \"tar.xz\" %}  # [not win]\n{% set extension = \"zip\" %}  # [win]\n\npackage:\n  name: {{ name }}-split\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/cuda/redist/{{ name }}/{{ platform }}/{{ name }}-{{ platform }}-{{ version }}-archive.{{ extension }}\n  sha256: ec682bac6387f9cdfd0c20b25a16cd6ed0b8b3b7ff42be9eaeb41828e3a72572  # [linux64]\n  sha256: 84668dcb2159f9efd912a66ed5afe5d6533b72a81bbabc98b26ac7ac7a36105a  # [aarch64]\n  sha256: 1a87ec80f8c0e5a39badc87010d479930c5b63abd788b3a05bd688a5980a3d07  # [win]\n\nbuild:\n  number: 1\n  skip: true  # [osx or ppc64le]\n  script_env:\n    - component_name={{ name }}\n\nrequirements:\n  build:\n    - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    - {{ stdlib(\"c\") }}\n    - patchelf <0.18.0                      # [linux]\n    - cf-nvidia-tools                       # [linux]\n\noutputs:\n  - name: libcublas\n    build:\n      binary_relocation: false\n    files:\n      - lib/lib*blas*.so.*                            # [linux]\n      - targets/{{ target_name }}/lib/lib*blas*.so.*  # [linux]\n      - Library\\bin\\cublas*.dll                       # [win]\n      - Library\\bin\\nvblas*.dll                       # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n         - cuda-version {{ cuda_version }}\n      run:\n         - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n         # In 12.0/12.1 libcublas runtime will try to dlopen nvrtc due to a bug\n         # so it must be listed as a runtime dependency.\n         # See https://github.com/conda-forge/libcublas-feedstock/issues/9\n         - cuda-nvrtc\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      requires:\n        - patchelf  # [linux]\n      files:\n        - test-rpath.sh\n      commands:\n        - test -L $PREFIX/lib/libcublas.so.{{ version }}                                          # [linux]\n        - test -L $PREFIX/lib/libcublas.so.{{ version.split(\".\")[0] }}                            # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcublas.so.{{ version.split(\".\")[0] }}  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcublas.so.{{ version }}                # [linux]\n        - bash test-rpath.sh                                                                      # [linux]\n        - if not exist %LIBRARY_BIN%\\cublas64_{{ version.split(\".\")[0] }}.dll exit 1              # [win]\n        - if not exist %LIBRARY_BIN%\\cublasLt64_{{ version.split(\".\")[0] }}.dll exit 1            # [win]\n        - if not exist %LIBRARY_BIN%\\nvblas64_{{ version.split(\".\")[0] }}.dll exit 1              # [win]\n    about:\n      home: https://developer.nvidia.com/cublas\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_file: LICENSE\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime.\n      description: |\n        The cuBLAS Library provides a GPU-accelerated implementation of the basic linear algebra subroutines (BLAS).\n      doc_url: https://docs.nvidia.com/cuda/cublas/\n\n  - name: libcublas-dev\n    build:\n      binary_relocation: false\n      run_exports:\n        - {{ pin_subpackage(\"libcublas\", max_pin=\"x\") }}\n    files:\n      - lib/lib*blas*.so                            # [linux]\n      - lib/pkgconfig                               # [linux]\n      - targets/{{ target_name }}/include           # [linux]\n      - targets/{{ target_name }}/lib/lib*blas*.so  # [linux]\n      - targets/{{ target_name }}/lib/stubs         # [linux]\n      # Not shipping Fortran bindings (in src) on Windows for now\n      - targets/{{ target_name }}/libcublas/src     # [linux and not aarch64]\n      - Library\\include                             # [win]\n      - Library\\lib                                 # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - {{ pin_subpackage(\"libcublas\", exact=true) }}\n        - cuda-cudart-dev_{{ target_platform }}\n        - cuda-crt-dev_{{ target_platform }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - libcublas-static >={{ version }}      # [linux]\n    test:\n      requires:\n        - {{ compiler(\"c\") }}\n        - {{ stdlib(\"c\") }}\n        - gxx                         # [linux]\n        - gcc                         # [linux]\n        - vs2019_win-64               # [win]\n      files:\n        - compile_sample_code.bat  # [win]\n        - compile_sample_code.sh   # [linux]\n        - test.c\n      commands:\n        - test -L $PREFIX/lib/libcublas.so                                    # [linux]\n        - test -L $PREFIX/lib/libcublasLt.so                                  # [linux]\n        - test -L $PREFIX/lib/libnvblas.so                                    # [linux]\n        - test -f $PREFIX/lib/pkgconfig/cublas*.pc                            # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cublas.h          # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cublasLt.h        # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/nvblas.h          # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcublas.so          # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcublasLt.so        # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libnvblas.so          # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/stubs/libcublas.so    # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/stubs/libcublasLt.so  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cuda_runtime.h    # [linux] # cuda-cudart-dev\n        - test -f $PREFIX/targets/{{ target_name }}/include/host_defines.h    # [linux] # cuda-crt-dev\n        - test -f $PREFIX/targets/{{ target_name }}/include/nv/target         # [linux] # cuda-cccl\n        - test -f $PREFIX/targets/{{ target_name }}/libcublas/src/fortran.c   # [linux and not aarch64]\n        - test -f $PREFIX/targets/{{ target_name }}/libcublas/src/fortran.h   # [linux and not aarch64]\n        - ./compile_sample_code.sh                                            # [linux]\n        - if not exist %LIBRARY_INC%\\cublas.h exit 1                          # [win]\n        - if not exist %LIBRARY_INC%\\cublasLt.h exit 1                        # [win]\n        - if not exist %LIBRARY_INC%\\nvblas.h exit 1                          # [win]\n        - if not exist %LIBRARY_INC%\\cuda_runtime.h exit 1                    # [win] # cuda-cudart-dev\n        - if not exist %LIBRARY_INC%\\host_defines.h exit 1                    # [win] # cuda-crt-dev\n        - if not exist %LIBRARY_INC%\\targets\\x64\\nv\\target exit 1             # [win] # cuda-cccl\n        - if not exist %LIBRARY_LIB%\\cublas.lib exit 1                        # [win]\n        - if not exist %LIBRARY_LIB%\\cublasLt.lib exit 1                      # [win]\n        - if not exist %LIBRARY_LIB%\\nvblas.lib exit 1                        # [win]\n        - .\\compile_sample_code.bat                                           # [win]\n    about:\n      home: https://developer.nvidia.com/cublas\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_file: LICENSE\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime.\n      description: |\n        The cuBLAS Library provides a GPU-accelerated implementation of the basic linear algebra subroutines (BLAS).\n      doc_url: https://docs.nvidia.com/cuda/cublas/\n\n  - name: libcublas-static\n    build:\n      skip: true                # [not linux]\n      binary_relocation: false\n    files:\n      - targets/{{ target_name }}/lib/lib*blas*_static.a\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        # In 12.0/12.1 libcublas runtime will try to dlopen nvrtc due to a bug\n        # so it must be listed as a runtime dependency.\n        # See https://github.com/conda-forge/libcublas-feedstock/issues/9\n        - cuda-nvrtc\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcublas_static.a\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcublasLt_static.a\n    about:\n      home: https://developer.nvidia.com/cublas\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_file: LICENSE\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime.\n      description: |\n        The cuBLAS Library provides a GPU-accelerated implementation of the basic linear algebra subroutines (BLAS).\n      doc_url: https://docs.nvidia.com/cuda/cublas/\n\nabout:\n  home: https://developer.nvidia.com/cublas\n  license: LicenseRef-NVIDIA-End-User-License-Agreement\n  license_file: LICENSE\n  license_url: https://docs.nvidia.com/cuda/eula/index.html\n  summary: An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime.\n  description: |\n    The cuBLAS Library provides a GPU-accelerated implementation of the basic linear algebra subroutines (BLAS).\n  doc_url: https://docs.nvidia.com/cuda/cublas/\n\nextra:\n  feedstock-name: {{ name }}\n  recipe-maintainers:\n    - conda-forge/cuda\n",
  "req": {
   "__set__": true,
   "elements": [
    "arm-variant",
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cf-nvidia-tools",
    "cuda-crt-dev_linux-64",
    "cuda-crt-dev_linux-aarch64",
    "cuda-crt-dev_win-64",
@@ -1002,6 +1086,7 @@
     "arm-variant",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cxx_compiler_stub",
     "patchelf"
    ]
@@ -1014,7 +1099,6 @@
     "ctng-compilers",
     "cuda-version",
     "cxx_compiler_stub",
-    "linux-sysroot",
     "vc"
    ]
   },
@@ -1034,7 +1118,6 @@
     "cuda-version",
     "cxx_compiler_stub",
     "libcublas",
-    "linux-sysroot",
     "vc"
    ]
   },
@@ -1042,9 +1125,10 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "gcc",
     "gxx",
-    "sysroot_linux-aarch64",
+    "patchelf",
     "vs2019_win-64"
    ]
   }
@@ -1057,6 +1141,7 @@
     "arm-variant * sbsa",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cxx_compiler_stub",
     "patchelf <0.18.0"
    ]
@@ -1085,9 +1170,10 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "gcc",
     "gxx",
-    "sysroot_linux-aarch64 2.28",
+    "patchelf",
     "vs2019_win-64"
    ]
   }
@@ -1108,10 +1194,13 @@
    "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
   },
   "build": {
-   "binary_relocation": false,
-   "number": "0"
+   "number": "1",
+   "script_env": [
+    "component_name=libcublas"
+   ]
   },
   "extra": {
+   "feedstock-name": "libcublas",
    "recipe-maintainers": [
     "conda-forge/cuda"
    ]
@@ -1126,6 +1215,9 @@
      "license_file": "LICENSE",
      "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
+    },
+    "build": {
+     "binary_relocation": false
     },
     "files": [
      "Library\\bin\\cublas*.dll",
@@ -1146,6 +1238,17 @@
       "cuda-nvrtc"
      ],
      "run_constrained": null
+    },
+    "test": {
+     "commands": [
+      "if not exist %LIBRARY_BIN%\\cublas64_12.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\cublasLt64_12.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\nvblas64_12.dll exit 1"
+     ],
+     "files": [
+      "test-rpath.sh"
+     ],
+     "requires": null
     }
    },
    {
@@ -1159,6 +1262,7 @@
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
     "build": {
+     "binary_relocation": false,
      "run_exports": [
       "libcublas"
      ]
@@ -1204,6 +1308,7 @@
      ],
      "requires": [
       "c_compiler_stub",
+      "c_stdlib_stub",
       "vs2019_win-64"
      ]
     }
@@ -1219,6 +1324,7 @@
      "summary": "An implementation of BLAS (Basic Linear Algebra Subprograms) on top of the NVIDIA CUDA runtime."
     },
     "build": {
+     "binary_relocation": false,
      "skip": true
     },
     "files": [
@@ -1249,24 +1355,18 @@
    }
   ],
   "package": {
-   "name": "libcublas",
+   "name": "libcublas-split",
    "version": "12.6.4.1"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub"
+   ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "1a87ec80f8c0e5a39badc87010d479930c5b63abd788b3a05bd688a5980a3d07",
    "url": "https://developer.download.nvidia.com/compute/cuda/redist/libcublas/windows-x86_64/libcublas-windows-x86_64-12.6.4.1-archive.zip"
-  },
-  "test": {
-   "commands": [
-    "if not exist %LIBRARY_BIN%\\cublas64_12.dll exit 1",
-    "if not exist %LIBRARY_BIN%\\cublasLt64_12.dll exit 1",
-    "if not exist %LIBRARY_BIN%\\nvblas64_12.dll exit 1"
-   ],
-   "files": [
-    "test-rpath.sh"
-   ],
-   "requires": null
   }
  },
  "win_64_requirements": {
@@ -1298,6 +1398,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "vs2019_win-64"
    ]
   }
