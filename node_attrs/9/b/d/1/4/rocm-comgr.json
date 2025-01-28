@@ -15,9 +15,9 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "home": "https://github.com/ROCm/ROCm-CompilerSupport",
+   "home": "https://github.com/ROCm/llvm-project/tree/amd-staging/amd/comgr",
    "license": "NCSA",
-   "license_file": "LICENSE.txt",
+   "license_file": "amd/comgr/LICENSE.txt",
    "summary": "ROCm Code Object Manager"
   },
   "build": {
@@ -31,13 +31,13 @@
   },
   "package": {
    "name": "rocm-comgr",
-   "version": "6.0.2"
+   "version": "6.1.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "sysroot_linux-64 2.17",
+    "c_stdlib_stub",
     "cmake",
     "make"
    ],
@@ -47,22 +47,18 @@
     "llvm",
     "lld",
     "zlib",
+    "zstd",
     "rocm-device-libs",
-    "rocm-cmake  6.0.2"
+    "rocm-cmake  6.1.0"
    ]
   },
   "schema_version": 0,
   "source": {
    "patches": [
-    "patches/5f10322be56320b185cda2ef1765e051b3c9c370.patch",
-    "patches/b4a5e883c7f1045c0a8257934f98915b48dea545.patch",
-    "patches/6e2b1bd74dc7aa8e08add392f69d37ba3071576e.patch",
-    "patches/f6b2c101730025e48b1734678316ef1c42aefcb4.patch",
-    "patches/8276083301409001ec7643e68f5ad58b057c21fd.patch",
-    "patches/missing_include.diff"
+    "patches/deactivate-flaky-tests.patch"
    ],
-   "sha256": "737b110d9402509db200ee413fb139a78369cf517453395b96bda52d0aa362b9",
-   "url": "https://github.com/ROCm/ROCm-CompilerSupport/archive/refs/tags/rocm-6.0.2.tar.gz"
+   "sha256": "6bd9912441de6caf6b26d1323e1c899ecd14ff2431874a2f5883d3bc5212db34",
+   "url": "https://github.com/ROCm/llvm-project/archive/refs/tags/rocm-6.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -76,10 +72,10 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make",
-    "sysroot_linux-64"
+    "make"
    ]
   },
   "host": {
@@ -91,7 +87,8 @@
     "llvmdev",
     "rocm-cmake",
     "rocm-device-libs",
-    "zlib"
+    "zlib",
+    "zstd"
    ]
   },
   "run": {
@@ -105,9 +102,9 @@
  },
  "meta_yaml": {
   "about": {
-   "home": "https://github.com/ROCm/ROCm-CompilerSupport",
+   "home": "https://github.com/ROCm/llvm-project/tree/amd-staging/amd/comgr",
    "license": "NCSA",
-   "license_file": "LICENSE.txt",
+   "license_file": "amd/comgr/LICENSE.txt",
    "summary": "ROCm Code Object Manager"
   },
   "build": {
@@ -121,13 +118,13 @@
   },
   "package": {
    "name": "rocm-comgr",
-   "version": "6.0.2"
+   "version": "6.1.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "sysroot_linux-64 2.17",
+    "c_stdlib_stub",
     "cmake",
     "make"
    ],
@@ -137,22 +134,18 @@
     "llvm",
     "lld",
     "zlib",
+    "zstd",
     "rocm-device-libs",
-    "rocm-cmake  6.0.2"
+    "rocm-cmake  6.1.0"
    ]
   },
   "schema_version": 0,
   "source": {
    "patches": [
-    "patches/5f10322be56320b185cda2ef1765e051b3c9c370.patch",
-    "patches/b4a5e883c7f1045c0a8257934f98915b48dea545.patch",
-    "patches/6e2b1bd74dc7aa8e08add392f69d37ba3071576e.patch",
-    "patches/f6b2c101730025e48b1734678316ef1c42aefcb4.patch",
-    "patches/8276083301409001ec7643e68f5ad58b057c21fd.patch",
-    "patches/missing_include.diff"
+    "patches/deactivate-flaky-tests.patch"
    ],
-   "sha256": "737b110d9402509db200ee413fb139a78369cf517453395b96bda52d0aa362b9",
-   "url": "https://github.com/ROCm/ROCm-CompilerSupport/archive/refs/tags/rocm-6.0.2.tar.gz"
+   "sha256": "6bd9912441de6caf6b26d1323e1c899ecd14ff2431874a2f5883d3bc5212db34",
+   "url": "https://github.com/ROCm/llvm-project/archive/refs/tags/rocm-6.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -175,11 +168,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/rocm-comgr.json"
  },
- "raw_meta_yaml": "{% set name = \"rocm-comgr\" %}\n{% set version = \"6.0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ROCm/ROCm-CompilerSupport/archive/refs/tags/rocm-{{ version }}.tar.gz\n  sha256: 737b110d9402509db200ee413fb139a78369cf517453395b96bda52d0aa362b9\n  patches:\n    - patches/5f10322be56320b185cda2ef1765e051b3c9c370.patch\n    - patches/b4a5e883c7f1045c0a8257934f98915b48dea545.patch\n    - patches/6e2b1bd74dc7aa8e08add392f69d37ba3071576e.patch\n    - patches/f6b2c101730025e48b1734678316ef1c42aefcb4.patch\n    - patches/8276083301409001ec7643e68f5ad58b057c21fd.patch\n    - patches/missing_include.diff\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - sysroot_linux-64 2.17  # [linux64]\n    - cmake\n    - make\n  host:\n    - clangdev 17.*\n    - llvmdev 17.*\n    - llvm\n    - lld\n    - zlib\n    - rocm-device-libs\n    - rocm-cmake  {{ version }}\n\ntest:\n  commands:\n    - test -f $PREFIX/include/amd_comgr/amd_comgr.h\n    - test -f $PREFIX/lib/libamd_comgr.so\n\nabout:\n  home: https://github.com/ROCm/ROCm-CompilerSupport\n  license: NCSA\n  license_file: LICENSE.txt\n  summary: 'ROCm Code Object Manager'\n\nextra:\n  recipe-maintainers:\n    - zklaus\n    - isuruf\n",
+ "raw_meta_yaml": "{% set name = \"rocm-comgr\" %}\n{% set version = \"6.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ROCm/llvm-project/archive/refs/tags/rocm-{{ version }}.tar.gz\n  sha256: 6bd9912441de6caf6b26d1323e1c899ecd14ff2431874a2f5883d3bc5212db34\n  patches:\n    - patches/deactivate-flaky-tests.patch\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n    - cmake\n    - make\n  host:\n    - clangdev 17.*\n    - llvmdev 17.*\n    - llvm\n    - lld\n    - zlib\n    - zstd\n    - rocm-device-libs\n    - rocm-cmake  {{ version }}\n\ntest:\n  commands:\n    - test -f $PREFIX/include/amd_comgr/amd_comgr.h\n    - test -f $PREFIX/lib/libamd_comgr.so\n\nabout:\n  home: https://github.com/ROCm/llvm-project/tree/amd-staging/amd/comgr\n  license: NCSA\n  license_file: amd/comgr/LICENSE.txt\n  summary: 'ROCm Code Object Manager'\n\nextra:\n  recipe-maintainers:\n    - zklaus\n    - isuruf\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "clangdev",
    "cmake",
    "cxx_compiler_stub",
@@ -189,8 +183,8 @@
    "make",
    "rocm-cmake",
    "rocm-device-libs",
-   "sysroot_linux-64",
-   "zlib"
+   "zlib",
+   "zstd"
   ]
  },
  "requirements": {
@@ -198,33 +192,34 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make",
-    "sysroot_linux-64"
+    "make"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "clangdev",
     "cxx_compiler_stub",
-    "linux-sysroot",
     "lld",
     "llvm",
     "llvmdev",
     "rocm-cmake",
     "rocm-device-libs",
-    "zlib"
+    "zlib",
+    "zstd"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "cxx_compiler_stub",
-    "linux-sysroot"
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
    ]
   },
   "test": {
@@ -238,10 +233,10 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make",
-    "sysroot_linux-64 2.17"
+    "make"
    ]
   },
   "host": {
@@ -251,9 +246,10 @@
     "lld",
     "llvm",
     "llvmdev 17.*",
-    "rocm-cmake  6.0.2",
+    "rocm-cmake  6.1.0",
     "rocm-device-libs",
-    "zlib"
+    "zlib",
+    "zstd"
    ]
   },
   "run": {
@@ -265,8 +261,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/ROCm/ROCm-CompilerSupport/archive/refs/tags/rocm-6.0.2.tar.gz",
- "version": "6.0.2",
+ "url": "https://github.com/ROCm/llvm-project/archive/refs/tags/rocm-6.1.0.tar.gz",
+ "version": "6.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/rocm-comgr.json"
  }
