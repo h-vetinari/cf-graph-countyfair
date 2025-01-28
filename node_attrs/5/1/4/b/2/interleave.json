@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "interleave",
-   "version": "0.2.2"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -49,8 +49,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0cdc1462acad1f5d5643aa4e9c5fffa7ea874c0777f40c95cfc2a750a5065ad2",
-   "url": "https://pypi.org/packages/source/i/interleave/interleave-0.2.2.tar.gz"
+   "sha256": "4c4595e05c5c3286d306db7459972bada9a38088fb8649c1199782c8e4a60a32",
+   "url": "https://pypi.org/packages/source/i/interleave/interleave-0.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -122,7 +122,7 @@
   },
   "package": {
    "name": "interleave",
-   "version": "0.2.2"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -136,8 +136,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0cdc1462acad1f5d5643aa4e9c5fffa7ea874c0777f40c95cfc2a750a5065ad2",
-   "url": "https://pypi.org/packages/source/i/interleave/interleave-0.2.2.tar.gz"
+   "sha256": "4c4595e05c5c3286d306db7459972bada9a38088fb8649c1199782c8e4a60a32",
+   "url": "https://pypi.org/packages/source/i/interleave/interleave-0.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -172,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/interleave.json"
  },
- "raw_meta_yaml": "{% set name = \"interleave\" %}\n{% set version = \"0.2.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0cdc1462acad1f5d5643aa4e9c5fffa7ea874c0777f40c95cfc2a750a5065ad2\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - hatchling\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - pytest\n    - pytest-cov\n    - pytest-rerunfailures >=10\n    - python {{ python_min }}\n  source_files:\n    - test\n    - tox.ini\n  imports:\n    - interleave\n  commands:\n    - python -m pytest -vv -k \"not test_ctrl_c\" test\n\nabout:\n  home: https://github.com/jwodder/interleave\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Yield from multiple iterators as values become available\n  description: |\n    The `interleave` package provides a function of the same name that takes a\n    number of iterators, runs them in separate threads, and yields the values\n    produced as soon as each one is available.\n  dev_url: https://github.com/jwodder/interleave\n\nextra:\n  recipe-maintainers:\n    - jwodder\n",
+ "raw_meta_yaml": "{% set name = \"interleave\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4c4595e05c5c3286d306db7459972bada9a38088fb8649c1199782c8e4a60a32\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - hatchling\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - pytest\n    - pytest-cov\n    - pytest-rerunfailures >=10\n    - python {{ python_min }}\n  source_files:\n    - test\n    - tox.ini\n  imports:\n    - interleave\n  commands:\n    - python -m pytest -vv -k \"not test_ctrl_c\" test\n\nabout:\n  home: https://github.com/jwodder/interleave\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Yield from multiple iterators as values become available\n  description: |\n    The `interleave` package provides a function of the same name that takes a\n    number of iterators, runs them in separate threads, and yields the values\n    produced as soon as each one is available.\n  dev_url: https://github.com/jwodder/interleave\n\nextra:\n  recipe-maintainers:\n    - jwodder\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -240,8 +240,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/i/interleave/interleave-0.2.2.tar.gz",
- "version": "0.2.2",
+ "url": "https://pypi.org/packages/source/i/interleave/interleave-0.3.0.tar.gz",
+ "version": "0.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/interleave.json"
  }
