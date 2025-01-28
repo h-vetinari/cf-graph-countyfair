@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "olas",
-   "version": "0.3.1"
+   "version": "0.3.2"
   },
   "requirements": {
    "host": [
@@ -56,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f7cd2fa10ef2a09b6bd59309dceaca4f78a897af7fec5c9ea3b02d569d2ea126",
-   "url": "https://pypi.org/packages/source/o/olas/olas-0.3.1.tar.gz"
+   "sha256": "e0251277845aacb26d911e34d47cc7c5099dce6aecbc514b9973c0e72a695e60",
+   "url": "https://pypi.org/packages/source/o/olas/olas-0.3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -125,7 +125,7 @@
   },
   "package": {
    "name": "olas",
-   "version": "0.3.1"
+   "version": "0.3.2"
   },
   "requirements": {
    "host": [
@@ -146,8 +146,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f7cd2fa10ef2a09b6bd59309dceaca4f78a897af7fec5c9ea3b02d569d2ea126",
-   "url": "https://pypi.org/packages/source/o/olas/olas-0.3.1.tar.gz"
+   "sha256": "e0251277845aacb26d911e34d47cc7c5099dce6aecbc514b9973c0e72a695e60",
+   "url": "https://pypi.org/packages/source/o/olas/olas-0.3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -176,7 +176,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/olas.json"
  },
- "raw_meta_yaml": "{% set name = \"olas\" %}\n{% set version = \"0.3.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/olas-{{ version }}.tar.gz\n  sha256: f7cd2fa10ef2a09b6bd59309dceaca4f78a897af7fec5c9ea3b02d569d2ea126\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - hatchling\n  run:\n    - cartopy >=0.21.1\n    - dask >=2023.3.1\n    - matplotlib-base >=3.7.1\n    - netcdf4 >=1.6.3\n    - numpy >=1.24.2\n    - python >=3.9,<3.14\n    - scipy >=1.10.1\n    - xarray >=2023.1.0\n\ntest:\n  imports:\n    - olas\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/jorgeperezg/olas\n  summary: Library with wave tools like ESTELA\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jorgeperezg\n",
+ "raw_meta_yaml": "{% set name = \"olas\" %}\n{% set version = \"0.3.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/olas-{{ version }}.tar.gz\n  sha256: e0251277845aacb26d911e34d47cc7c5099dce6aecbc514b9973c0e72a695e60\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - hatchling\n  run:\n    - cartopy >=0.21.1\n    - dask >=2023.3.1\n    - matplotlib-base >=3.7.1\n    - netcdf4 >=1.6.3\n    - numpy >=1.24.2\n    - python >=3.9,<3.14\n    - scipy >=1.10.1\n    - xarray >=2023.1.0\n\ntest:\n  imports:\n    - olas\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/jorgeperezg/olas\n  summary: Library with wave tools like ESTELA\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jorgeperezg\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -261,8 +261,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/o/olas/olas-0.3.1.tar.gz",
- "version": "0.3.1",
+ "url": "https://pypi.org/packages/source/o/olas/olas-0.3.2.tar.gz",
+ "version": "0.3.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/olas.json"
  }
