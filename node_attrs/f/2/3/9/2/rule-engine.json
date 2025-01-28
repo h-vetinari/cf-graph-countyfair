@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,18 +38,18 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.4"
+    "python 3.9"
    ],
    "run": [
     "ply >=3.9",
-    "python >=3.4",
+    "python >=3.9",
     "python-dateutil >=2.7,<3"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "0aee91bccaf2f336a0b931b4a2c299efec56357c03cd7cba151de064221c3d6b",
-   "url": "https://pypi.io/packages/source/r/rule-engine/rule_engine-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -59,7 +59,8 @@
     "rule_engine"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -86,7 +87,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -99,7 +101,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -115,18 +117,18 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.4"
+    "python 3.9"
    ],
    "run": [
     "ply >=3.9",
-    "python >=3.4",
+    "python >=3.9",
     "python-dateutil >=2.7,<3"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "0aee91bccaf2f336a0b931b4a2c299efec56357c03cd7cba151de064221c3d6b",
-   "url": "https://pypi.io/packages/source/r/rule-engine/rule_engine-4.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -136,7 +138,8 @@
     "rule_engine"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -154,7 +157,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/rule-engine.json"
  },
- "raw_meta_yaml": "{% set name = \"rule-engine\" %}\n{% set version = \"4.5.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 0aee91bccaf2f336a0b931b4a2c299efec56357c03cd7cba151de064221c3d6b\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.4\n  run:\n    - ply >=3.9\n    - python >=3.4\n    - python-dateutil >=2.7,<3\n\ntest:\n  imports:\n    - rule_engine\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/zeroSteiner/rule-engine\n  summary: A lightweight, optionally typed expression language with a custom grammar for matching arbitrary Python objects.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - drbixx\n    - teake\n",
+ "raw_meta_yaml": "{% set name = \"rule-engine\" %}\n{% set version = \"4.5.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 0aee91bccaf2f336a0b931b4a2c299efec56357c03cd7cba151de064221c3d6b\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - ply >=3.9\n    - python >={{ python_min }}\n    - python-dateutil >=2.7,<3\n\ntest:\n  imports:\n    - rule_engine\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zeroSteiner/rule-engine\n  summary: A lightweight, optionally typed expression language with a custom grammar for matching arbitrary Python objects.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - drbixx\n    - teake\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -187,7 +190,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -201,25 +205,26 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.4"
+    "python 3.9"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "ply >=3.9",
-    "python >=3.4",
+    "python >=3.9",
     "python-dateutil >=2.7,<3"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/r/rule-engine/rule_engine-4.5.0.tar.gz",
+ "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.0.tar.gz",
  "version": "4.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/rule-engine.json"
