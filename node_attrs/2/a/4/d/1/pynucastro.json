@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -37,7 +37,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.10",
+    "python 3.10",
     "setuptools >=64",
     "setuptools-scm >=8",
     "pip"
@@ -68,7 +68,8 @@
     "pynucastro"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -101,7 +102,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -114,7 +116,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -129,7 +131,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.10",
+    "python 3.10",
     "setuptools >=64",
     "setuptools-scm >=8",
     "pip"
@@ -160,7 +162,8 @@
     "pynucastro"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -178,7 +181,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pynucastro.json"
  },
- "raw_meta_yaml": "{% set name = \"pynucastro\" %}\n{% set version = \"2.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pynucastro-{{ version }}.tar.gz\n  sha256: 9810d1af5840e0df550f7ae61a02fb743fb6f8edf94bbc0225dc1598d4c43709\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.10\n    - setuptools >=64\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python >=3.10\n    - ipywidgets >=7.1.2\n    - matplotlib-base >=2.1.0\n    - networkx >=2.1\n    - numpy >=1.13.3,<3.0\n    - scipy >=1.0.0\n    - sympy >=1.1.1\n  run_constrained:\n    - numba >=0.52\n\ntest:\n  imports:\n    - pynucastro\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/pynucastro/pynucastro\n  summary: A python library for nuclear astrophysics\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - zingale\n    - yut23\n",
+ "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"pynucastro\" %}\n{% set version = \"2.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pynucastro-{{ version }}.tar.gz\n  sha256: 9810d1af5840e0df550f7ae61a02fb743fb6f8edf94bbc0225dc1598d4c43709\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python >={{ python_min }}\n    - ipywidgets >=7.1.2\n    - matplotlib-base >=2.1.0\n    - networkx >=2.1\n    - numpy >=1.13.3,<3.0\n    - scipy >=1.0.0\n    - sympy >=1.1.1\n  run_constrained:\n    - numba >=0.52\n\ntest:\n  imports:\n    - pynucastro\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/pynucastro/pynucastro\n  summary: A python library for nuclear astrophysics\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - zingale\n    - yut23\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -223,7 +226,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -237,7 +241,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.10",
+    "python 3.10",
     "setuptools >=64",
     "setuptools-scm >=8"
    ]
@@ -257,7 +261,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
