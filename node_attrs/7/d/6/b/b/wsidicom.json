@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,14 +40,14 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6,<4.0",
+    "python 3.10",
     "poetry"
    ],
    "run": [
     "numpy >=1.22.0,<2.0.0",
     "pillow >=9.1.1,<10.0.0",
     "pydicom >=3.0.0",
-    "python >=3.6,<4.0",
+    "python >=3.10,<3.12",
     "poetry",
     "dicomweb-client >=0.59.1",
     "six",
@@ -58,7 +58,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "576b352369171a535faff957cbaa8aa58368ddc1f564dddba175df2fd44085df",
-   "url": "https://pypi.io/packages/source/w/wsidicom/wsidicom-0.22.0.tar.gz"
+   "url": "https://pypi.org/packages/source/w/wsidicom/wsidicom-0.22.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -68,7 +68,8 @@
     "wsidicom"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10,<3.12"
    ]
   }
  },
@@ -102,7 +103,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -115,7 +117,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -130,14 +132,14 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6,<4.0",
+    "python 3.10",
     "poetry"
    ],
    "run": [
     "numpy >=1.22.0,<2.0.0",
     "pillow >=9.1.1,<10.0.0",
     "pydicom >=3.0.0",
-    "python >=3.6,<4.0",
+    "python >=3.10,<3.12",
     "poetry",
     "dicomweb-client >=0.59.1",
     "six",
@@ -148,7 +150,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "576b352369171a535faff957cbaa8aa58368ddc1f564dddba175df2fd44085df",
-   "url": "https://pypi.io/packages/source/w/wsidicom/wsidicom-0.22.0.tar.gz"
+   "url": "https://pypi.org/packages/source/w/wsidicom/wsidicom-0.22.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -158,7 +160,8 @@
     "wsidicom"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10,<3.12"
    ]
   }
  },
@@ -176,7 +179,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/wsidicom.json"
  },
- "raw_meta_yaml": "{% set name = \"wsidicom\" %}\n{% set version = \"0.22.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wsidicom-{{ version }}.tar.gz\n  sha256: 576b352369171a535faff957cbaa8aa58368ddc1f564dddba175df2fd44085df\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6,<4.0\n    - poetry\n  run:\n    - numpy >=1.22.0,<2.0.0\n    - pillow >=9.1.1,<10.0.0\n    - pydicom >=3.0.0\n    - python >=3.6,<4.0\n    - poetry\n    - dicomweb-client >=0.59.1\n    - six\n    - marshmallow >=3.20.1\n    - universal_pathlib >=0.2.1\n\ntest:\n  imports:\n    - wsidicom\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/imi-bigpicture/wsidicom\n  summary: Tools for handling DICOM based whole scan images\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - sarthakpati\n",
+ "raw_meta_yaml": "{% set name = \"wsidicom\" %}\n{% set version = \"0.22.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wsidicom-{{ version }}.tar.gz\n  sha256: 576b352369171a535faff957cbaa8aa58368ddc1f564dddba175df2fd44085df\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - poetry\n  run:\n    - numpy >=1.22.0,<2.0.0\n    - pillow >=9.1.1,<10.0.0\n    - pydicom >=3.0.0\n    - python >={{ python_min }},<3.12\n    - poetry\n    - dicomweb-client >=0.59.1\n    - six\n    - marshmallow >=3.20.1\n    - universal_pathlib >=0.2.1\n\ntest:\n  imports:\n    - wsidicom\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }},<3.12\n\nabout:\n  home: https://github.com/imi-bigpicture/wsidicom\n  summary: Tools for handling DICOM based whole scan images\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - sarthakpati\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -222,7 +225,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -237,7 +241,7 @@
    "elements": [
     "pip",
     "poetry",
-    "python >=3.6,<4.0"
+    "python 3.10"
    ]
   },
   "run": {
@@ -249,7 +253,7 @@
     "pillow >=9.1.1,<10.0.0",
     "poetry",
     "pydicom >=3.0.0",
-    "python >=3.6,<4.0",
+    "python >=3.10,<3.12",
     "six",
     "universal_pathlib >=0.2.1"
    ]
@@ -257,11 +261,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.10,<3.12"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/w/wsidicom/wsidicom-0.22.0.tar.gz",
+ "url": "https://pypi.org/packages/source/w/wsidicom/wsidicom-0.22.0.tar.gz",
  "version": "0.22.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/wsidicom.json"
