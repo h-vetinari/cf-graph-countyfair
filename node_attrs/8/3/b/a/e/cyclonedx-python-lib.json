@@ -8,6 +8,7 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -20,15 +21,17 @@
   "about": {
    "home": "https://github.com/CycloneDX/cyclonedx-python-lib",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "NOTICE"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "Python library for CycloneDX"
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "0",
+   "script": [
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation",
+    "${{ PYTHON }} -c \"assert not (__import__('pathlib').Path(__import__('site').getsitepackages()[0]) / 'LICENSE').exists()\""
+   ]
   },
   "extra": {
    "feedstock-name": "cyclonedx-python-lib",
@@ -38,19 +41,14 @@
   },
   "outputs": [
    {
-    "build": {
-     "noarch": "python",
-     "script": [
-      "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-      "PYTHON -c \"assert not (__import__('pathlib').Path(__import__('site').getsitepackages()[0]) / 'LICENSE').exists()\""
-     ]
-    },
+    "build": null,
     "name": "cyclonedx-python-lib",
     "requirements": {
+     "build": [],
      "host": [
       "pip",
       "poetry-core >=1.8.1",
-      "python 3.9"
+      "python 3.9.*"
      ],
      "run": [
       "license-expression >=30.0.0,<31.0.0",
@@ -60,117 +58,124 @@
       "sortedcontainers >=2.4.0,<3.0.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "cyclonedx"
-     ],
-     "requires": [
-      "pip",
-      "python 3.9"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "cyclonedx"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "cyclonedx-python-lib-with-json-validation",
-    "requirements": {
-     "run": [
-      "cyclonedx-python-lib",
-      "jsonschema-with-format >=4.18,<5.0"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "cyclonedx"
-     ],
-     "requires": [
-      "pip",
-      "python 3.9"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "cyclonedx-python-lib-with-xml-validation",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "cyclonedx-python-lib",
       "lxml >=4,<6"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "cyclonedx"
-     ],
-     "requires": [
-      "pip",
-      "python 3.9"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "cyclonedx"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "cyclonedx-python-lib-with-json-validation",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "cyclonedx-python-lib",
+      "jsonschema-with-format >=4.18,<5.0"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "cyclonedx"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "cyclonedx-python-lib-with-validation",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "cyclonedx-python-lib",
       "cyclonedx-python-lib-with-json-validation",
       "cyclonedx-python-lib-with-xml-validation"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "pytest -vv --color=yes --tb=long --cov=cyclonedx --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90"
-     ],
-     "imports": [
-      "cyclonedx"
-     ],
-     "requires": [
-      "ddt >=1.7.1,<2.0.0",
-      "pip",
-      "pytest-cov",
-      "tox",
-      "xmldiff"
-     ],
-     "source_files": [
-      "tests",
-      "pyproject.toml"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "cyclonedx"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "pyproject.toml",
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "ddt >=1.7.1,<2.0.0",
+        "pytest-cov",
+        "tox",
+        "xmldiff"
+       ]
+      },
+      "script": "pytest -vv --color=yes --tb=long --cov=cyclonedx --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90"
+     }
+    ]
    }
   ],
   "package": {
    "name": "cyclonedx-python-lib",
-   "version": "8.5.0"
+   "version": "8.5.1"
   },
   "requirements": {
    "host": [
-    "python 3.9"
+    "pip",
+    "poetry-core >=1.8.1",
+    "python 3.9.*"
    ],
    "run": [
-    "python >=3.9"
+    "license-expression >=30.0.0,<31.0.0",
+    "packageurl-python >=0.11,<2",
+    "py-serializable >=1.1.1,<2",
+    "python >=3.9",
+    "sortedcontainers >=2.4.0,<3.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "35f7a139042e4df17ff414fa228cec83c7e4e493bdec990847357791ca72f3a5",
-   "url": "https://pypi.org/packages/source/c/cyclonedx-python-lib/cyclonedx_python_lib-8.5.0.tar.gz"
+   "sha256": "2b419c6c5e422fd937aebebde4d3776c797b69c4eac80e515243dad8ebfcddcb",
+   "url": "https://pypi.org/packages/source/c/cyclonedx-python-lib/cyclonedx_python_lib-8.5.1.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -207,7 +212,6 @@
     "ddt",
     "pip",
     "pytest-cov",
-    "python",
     "tox",
     "xmldiff"
    ]
@@ -217,15 +221,17 @@
   "about": {
    "home": "https://github.com/CycloneDX/cyclonedx-python-lib",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "NOTICE"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "Python library for CycloneDX"
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "0",
+   "script": [
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation",
+    "${{ PYTHON }} -c \"assert not (__import__('pathlib').Path(__import__('site').getsitepackages()[0]) / 'LICENSE').exists()\""
+   ]
   },
   "extra": {
    "feedstock-name": "cyclonedx-python-lib",
@@ -235,19 +241,14 @@
   },
   "outputs": [
    {
-    "build": {
-     "noarch": "python",
-     "script": [
-      "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-      "PYTHON -c \"assert not (__import__('pathlib').Path(__import__('site').getsitepackages()[0]) / 'LICENSE').exists()\""
-     ]
-    },
+    "build": null,
     "name": "cyclonedx-python-lib",
     "requirements": {
+     "build": [],
      "host": [
       "pip",
       "poetry-core >=1.8.1",
-      "python 3.9"
+      "python 3.9.*"
      ],
      "run": [
       "license-expression >=30.0.0,<31.0.0",
@@ -257,117 +258,124 @@
       "sortedcontainers >=2.4.0,<3.0.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "cyclonedx"
-     ],
-     "requires": [
-      "pip",
-      "python 3.9"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "cyclonedx"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "cyclonedx-python-lib-with-json-validation",
-    "requirements": {
-     "run": [
-      "cyclonedx-python-lib",
-      "jsonschema-with-format >=4.18,<5.0"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "cyclonedx"
-     ],
-     "requires": [
-      "pip",
-      "python 3.9"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "cyclonedx-python-lib-with-xml-validation",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "cyclonedx-python-lib",
       "lxml >=4,<6"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "cyclonedx"
-     ],
-     "requires": [
-      "pip",
-      "python 3.9"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "cyclonedx"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "cyclonedx-python-lib-with-json-validation",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "cyclonedx-python-lib",
+      "jsonschema-with-format >=4.18,<5.0"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "cyclonedx"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "cyclonedx-python-lib-with-validation",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "cyclonedx-python-lib",
       "cyclonedx-python-lib-with-json-validation",
       "cyclonedx-python-lib-with-xml-validation"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "pytest -vv --color=yes --tb=long --cov=cyclonedx --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90"
-     ],
-     "imports": [
-      "cyclonedx"
-     ],
-     "requires": [
-      "ddt >=1.7.1,<2.0.0",
-      "pip",
-      "pytest-cov",
-      "tox",
-      "xmldiff"
-     ],
-     "source_files": [
-      "tests",
-      "pyproject.toml"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "cyclonedx"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "pyproject.toml",
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "ddt >=1.7.1,<2.0.0",
+        "pytest-cov",
+        "tox",
+        "xmldiff"
+       ]
+      },
+      "script": "pytest -vv --color=yes --tb=long --cov=cyclonedx --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90"
+     }
+    ]
    }
   ],
   "package": {
    "name": "cyclonedx-python-lib",
-   "version": "8.5.0"
+   "version": "8.5.1"
   },
   "requirements": {
    "host": [
-    "python 3.9"
+    "pip",
+    "poetry-core >=1.8.1",
+    "python 3.9.*"
    ],
    "run": [
-    "python >=3.9"
+    "license-expression >=30.0.0,<31.0.0",
+    "packageurl-python >=0.11,<2",
+    "py-serializable >=1.1.1,<2",
+    "python >=3.9",
+    "sortedcontainers >=2.4.0,<3.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "35f7a139042e4df17ff414fa228cec83c7e4e493bdec990847357791ca72f3a5",
-   "url": "https://pypi.org/packages/source/c/cyclonedx-python-lib/cyclonedx_python_lib-8.5.0.tar.gz"
+   "sha256": "2b419c6c5e422fd937aebebde4d3776c797b69c4eac80e515243dad8ebfcddcb",
+   "url": "https://pypi.org/packages/source/c/cyclonedx-python-lib/cyclonedx_python_lib-8.5.1.tar.gz"
   }
  },
  "name": "cyclonedx-python-lib",
@@ -387,7 +395,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cyclonedx-python-lib.json"
  },
- "raw_meta_yaml": "{% set version = \"8.5.0\" %}\n\n{% set python_min = python_min | default(\"3.9\") %}\n{% set PYTHON = PYTHON | default(\"$PYTHON\") %}\n\npackage:\n  name: cyclonedx-python-lib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/c/cyclonedx-python-lib/cyclonedx_python_lib-{{ version }}.tar.gz\n  sha256: 35f7a139042e4df17ff414fa228cec83c7e4e493bdec990847357791ca72f3a5\n\nbuild:\n  noarch: python\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\noutputs:\n  - name: cyclonedx-python-lib\n    build:\n      noarch: python\n      script:\n        - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n        # avoid regressing on https://github.com/CycloneDX/cyclonedx-python-lib/issues/435\n        - |-\n          {{ PYTHON }} -c \"assert not (__import__('pathlib').Path(__import__('site').getsitepackages()[0]) / 'LICENSE').exists()\"\n    requirements:\n      host:\n        - pip\n        - poetry-core >=1.8.1\n        - python {{ python_min }}\n      run:\n        # from poetry-generated setup.py\n        - license-expression >=30.0.0,<31.0.0\n        - packageurl-python >=0.11,<2\n        - py-serializable >=1.1.1,<2\n        - python >={{ python_min }}\n        - sortedcontainers >=2.4.0,<3.0.0\n    test: &simple_test\n      imports:\n        - cyclonedx\n      commands:\n        - pip check\n      requires:\n        - pip\n        - python {{ python_min }}\n\n  - name: cyclonedx-python-lib-with-json-validation\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"cyclonedx-python-lib\", exact=True) }}\n        - jsonschema-with-format >=4.18,<5.0\n    test: *simple_test\n\n  - name: cyclonedx-python-lib-with-xml-validation\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"cyclonedx-python-lib\", exact=True) }}\n        - lxml >=4,<6\n    test: *simple_test\n\n  - name: cyclonedx-python-lib-with-validation\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"cyclonedx-python-lib\", exact=True) }}\n        - {{ pin_subpackage(\"cyclonedx-python-lib-with-json-validation\", exact=True) }}\n        - {{ pin_subpackage(\"cyclonedx-python-lib-with-xml-validation\", exact=True) }}\n    test:\n      imports:\n        - cyclonedx\n      source_files:\n        - tests\n        - pyproject.toml\n      commands:\n        - pip check\n        - pytest -vv --color=yes --tb=long --cov=cyclonedx --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90\n      requires:\n        - ddt >=1.7.1,<2.0.0\n        - pip\n        - pytest-cov\n        - tox\n        - xmldiff\n\nabout:\n  home: https://github.com/CycloneDX/cyclonedx-python-lib\n  summary: Python library for CycloneDX\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - NOTICE\n\nextra:\n  feedstock-name: cyclonedx-python-lib\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: \"8.5.1\"\n\nrecipe:\n  name: cyclonedx-python-lib\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/c/cyclonedx-python-lib/cyclonedx_python_lib-${{ version }}.tar.gz\n  sha256: 2b419c6c5e422fd937aebebde4d3776c797b69c4eac80e515243dad8ebfcddcb\n\nbuild:\n  number: 0\n  noarch: python\n\noutputs:\n  - package:\n      name: cyclonedx-python-lib\n    build:\n      noarch: python\n      script:\n        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n        # avoid regressing on https://github.com/CycloneDX/cyclonedx-python-lib/issues/435\n        - |-\n          ${{ PYTHON }} -c \"assert not (__import__('pathlib').Path(__import__('site').getsitepackages()[0]) / 'LICENSE').exists()\"\n    requirements:\n      host:\n        - pip\n        - poetry-core >=1.8.1\n        - python ${{ python_min }}.*\n      run:\n        # from poetry-generated setup.py\n        - license-expression >=30.0.0,<31.0.0\n        - packageurl-python >=0.11,<2\n        - py-serializable >=1.1.1,<2\n        - python >=${{ python_min }}\n        - sortedcontainers >=2.4.0,<3.0.0\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: cyclonedx\n\n  - package:\n      name: cyclonedx-python-lib-with-json-validation\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"cyclonedx-python-lib\", exact=True) }}\n        - jsonschema-with-format >=4.18,<5.0\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: cyclonedx\n\n  - package:\n      name: cyclonedx-python-lib-with-xml-validation\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"cyclonedx-python-lib\", exact=True) }}\n        - lxml >=4,<6\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: cyclonedx\n\n  - package:\n      name: cyclonedx-python-lib-with-validation\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"cyclonedx-python-lib\", exact=True) }}\n        - ${{ pin_subpackage(\"cyclonedx-python-lib-with-json-validation\", exact=True) }}\n        - ${{ pin_subpackage(\"cyclonedx-python-lib-with-xml-validation\", exact=True) }}\n    tests:\n      - python:\n          pip_check: true\n          python_version: ${{ python_min }}.*\n          imports: cyclonedx\n      - files:\n          source:\n          - pyproject.toml\n          - tests/\n        requirements:\n          run:\n            - ddt >=1.7.1,<2.0.0\n            - pytest-cov\n            - tox\n            - xmldiff\n        script:\n          - pytest -vv --color=yes --tb=long --cov=cyclonedx --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90\n\nabout:\n  homepage: https://github.com/CycloneDX/cyclonedx-python-lib\n  summary: Python library for CycloneDX\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - NOTICE\n\nextra:\n  feedstock-name: cyclonedx-python-lib\n  recipe-maintainers:\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -439,7 +447,6 @@
     "ddt",
     "pip",
     "pytest-cov",
-    "python",
     "tox",
     "xmldiff"
    ]
@@ -456,7 +463,7 @@
    "elements": [
     "pip",
     "poetry-core >=1.8.1",
-    "python 3.9"
+    "python 3.9.*"
    ]
   },
   "run": {
@@ -480,14 +487,13 @@
     "ddt >=1.7.1,<2.0.0",
     "pip",
     "pytest-cov",
-    "python 3.9",
     "tox",
     "xmldiff"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/cyclonedx-python-lib/cyclonedx_python_lib-8.5.0.tar.gz",
- "version": "8.5.0",
+ "url": "https://pypi.org/packages/source/c/cyclonedx-python-lib/cyclonedx_python_lib-8.5.1.tar.gz",
+ "version": "8.5.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cyclonedx-python-lib.json"
  }
