@@ -32,27 +32,33 @@
   "extra": {
    "recipe-maintainers": [
     "forman",
-    "b-yogesh"
+    "b-yogesh",
+    "konstntokas",
+    "AliceBalfanz",
+    "TejasMorbagal",
+    "pont-us",
+    "thomasstorm",
+    "TonioF"
    ]
   },
   "package": {
    "name": "chartlets",
-   "version": "0.0.29"
+   "version": "0.1.3"
   },
   "requirements": {
    "host": [
-    "python 3.10",
+    "python 3.10,<3.13",
     "setuptools >=61.2.0",
     "pip"
    ],
    "run": [
-    "python >=3.10"
+    "python >=3.10,<3.13"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d3fb3d5c68d3af5fd93ecab5cc5a033ef4bec88a5b0d9c8630cdc0827021f09c",
-   "url": "https://github.com/bcdev/chartlets/archive/0.0.29.tar.gz"
+   "sha256": "0048d4f70ab9d9f09c3880df6376ae99182e4600678c278797b871fab0aca7e4",
+   "url": "https://github.com/bcdev/chartlets/archive/v0.1.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -62,7 +68,7 @@
     "chartlets"
    ],
    "requires": [
-    "python 3.10",
+    "python 3.10,<3.13",
     "pip",
     "altair"
    ]
@@ -115,27 +121,33 @@
   "extra": {
    "recipe-maintainers": [
     "forman",
-    "b-yogesh"
+    "b-yogesh",
+    "konstntokas",
+    "AliceBalfanz",
+    "TejasMorbagal",
+    "pont-us",
+    "thomasstorm",
+    "TonioF"
    ]
   },
   "package": {
    "name": "chartlets",
-   "version": "0.0.29"
+   "version": "0.1.3"
   },
   "requirements": {
    "host": [
-    "python 3.10",
+    "python 3.10,<3.13",
     "setuptools >=61.2.0",
     "pip"
    ],
    "run": [
-    "python >=3.10"
+    "python >=3.10,<3.13"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d3fb3d5c68d3af5fd93ecab5cc5a033ef4bec88a5b0d9c8630cdc0827021f09c",
-   "url": "https://github.com/bcdev/chartlets/archive/0.0.29.tar.gz"
+   "sha256": "0048d4f70ab9d9f09c3880df6376ae99182e4600678c278797b871fab0aca7e4",
+   "url": "https://github.com/bcdev/chartlets/archive/v0.1.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -145,7 +157,7 @@
     "chartlets"
    ],
    "requires": [
-    "python 3.10",
+    "python 3.10,<3.13",
     "pip",
     "altair"
    ]
@@ -165,7 +177,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/chartlets.json"
  },
- "raw_meta_yaml": "{% set name = \"chartlets\" %}\n{% set version = \"0.0.29\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/bcdev/chartlets/archive/{{ version }}.tar.gz\n  sha256: d3fb3d5c68d3af5fd93ecab5cc5a033ef4bec88a5b0d9c8630cdc0827021f09c\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install ./chartlets.py -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.2.0\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n    - altair\n  imports:\n    - chartlets\n  commands:\n    - pip check\n\nabout:\n  summary: Backend for server-configured charts library `Chartlets` powered by Vega Altair.\n  home: https://github.com/bcdev/chartlets\n  dev_url: https://github.com/bcdev/chartlets\n  license: MIT\n  license_file:\n    - LICENSE\n    - chartlets.py/LICENSE\n\nextra:\n  recipe-maintainers:\n    - forman\n    - b-yogesh\n",
+ "raw_meta_yaml": "{% set name = \"chartlets\" %}\n{% set version = \"0.1.3\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/bcdev/chartlets/archive/v{{ version }}.tar.gz\n  sha256: 0048d4f70ab9d9f09c3880df6376ae99182e4600678c278797b871fab0aca7e4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install ./chartlets.py -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }},<3.13\n    - setuptools >=61.2.0\n    - pip\n  run:\n    - python >={{ python_min }},<3.13\n\ntest:\n  requires:\n    - python {{ python_min }},<3.13\n    - pip\n    - altair\n  imports:\n    - chartlets\n  commands:\n    - pip check\n\nabout:\n  summary: Backend for server-configured charts library `Chartlets` powered by Vega Altair.\n  home: https://github.com/bcdev/chartlets\n  dev_url: https://github.com/bcdev/chartlets\n  license: MIT\n  license_file:\n    - LICENSE\n    - chartlets.py/LICENSE\n\nextra:\n  recipe-maintainers:\n    - forman\n    - b-yogesh\n    - konstntokas\n    - AliceBalfanz\n    - TejasMorbagal\n    - pont-us\n    - thomasstorm\n    - TonioF\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -212,14 +224,14 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.10",
+    "python 3.10,<3.13",
     "setuptools >=61.2.0"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.10"
+    "python >=3.10,<3.13"
    ]
   },
   "test": {
@@ -227,12 +239,12 @@
    "elements": [
     "altair",
     "pip",
-    "python 3.10"
+    "python 3.10,<3.13"
    ]
   }
  },
- "url": "https://github.com/bcdev/chartlets/archive/0.0.29.tar.gz",
- "version": "0.0.29",
+ "url": "https://github.com/bcdev/chartlets/archive/v0.1.3.tar.gz",
+ "version": "0.1.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/chartlets.json"
  }
