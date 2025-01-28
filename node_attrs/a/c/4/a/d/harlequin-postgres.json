@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "harlequin-postgres",
-   "version": "1.0.0"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -48,14 +48,14 @@
     "psycopg >=3.2.0,<4.0.0",
     "psycopg-pool >=3.2.2,<4.0.0",
     "python >=3.9,<4.0",
-    "harlequin >=1.20,<3",
+    "harlequin >=1.25,<3",
     "psycopg2-binary >=2.9.9,<3.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d7fb402e4639c33f6539673642c66411afeac740f18ca22255f5d37cebb8c101",
-   "url": "https://pypi.org/packages/source/h/harlequin-postgres/harlequin_postgres-1.0.0.tar.gz"
+   "sha256": "5e9e863170dcf4a8c7f194a30ae7e3c791226371fd08a9779c5bcff432d1d69d",
+   "url": "https://pypi.org/packages/source/h/harlequin-postgres/harlequin_postgres-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -110,7 +110,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -120,7 +120,7 @@
   },
   "package": {
    "name": "harlequin-postgres",
-   "version": "1.0.0"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -132,14 +132,14 @@
     "psycopg >=3.2.0,<4.0.0",
     "psycopg-pool >=3.2.2,<4.0.0",
     "python >=3.9,<4.0",
-    "harlequin >=1.20,<3",
+    "harlequin >=1.25,<3",
     "psycopg2-binary >=2.9.9,<3.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d7fb402e4639c33f6539673642c66411afeac740f18ca22255f5d37cebb8c101",
-   "url": "https://pypi.org/packages/source/h/harlequin-postgres/harlequin_postgres-1.0.0.tar.gz"
+   "sha256": "5e9e863170dcf4a8c7f194a30ae7e3c791226371fd08a9779c5bcff432d1d69d",
+   "url": "https://pypi.org/packages/source/h/harlequin-postgres/harlequin_postgres-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -168,7 +168,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/harlequin-postgres.json"
  },
- "raw_meta_yaml": "{% set name = \"harlequin-postgres\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/harlequin_postgres-{{ version }}.tar.gz\n  sha256: d7fb402e4639c33f6539673642c66411afeac740f18ca22255f5d37cebb8c101\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - psycopg >=3.2.0,<4.0.0\n    - psycopg-pool >=3.2.2,<4.0.0\n    - python >={{ python_min }},<4.0\n    - harlequin >=1.20,<3\n    - psycopg2-binary >=2.9.9,<3.0.0\n\ntest:\n  imports:\n    - harlequin_postgres\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tconbeer/harlequin-postgres\n  summary: A Harlequin adapter for Postgres.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/harlequin\n",
+ "raw_meta_yaml": "{% set name = \"harlequin-postgres\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/harlequin_postgres-{{ version }}.tar.gz\n  sha256: 5e9e863170dcf4a8c7f194a30ae7e3c791226371fd08a9779c5bcff432d1d69d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - psycopg >=3.2.0,<4.0.0\n    - psycopg-pool >=3.2.2,<4.0.0\n    - python >={{ python_min }},<4.0\n    - harlequin >=1.25,<3\n    - psycopg2-binary >=2.9.9,<3.0.0\n\ntest:\n  imports:\n    - harlequin_postgres\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tconbeer/harlequin-postgres\n  summary: A Harlequin adapter for Postgres.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/harlequin\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -229,7 +229,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "harlequin >=1.20,<3",
+    "harlequin >=1.25,<3",
     "psycopg >=3.2.0,<4.0.0",
     "psycopg-pool >=3.2.2,<4.0.0",
     "psycopg2-binary >=2.9.9,<3.0.0",
@@ -244,8 +244,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/h/harlequin-postgres/harlequin_postgres-1.0.0.tar.gz",
- "version": "1.0.0",
+ "url": "https://pypi.org/packages/source/h/harlequin-postgres/harlequin_postgres-1.1.0.tar.gz",
+ "version": "1.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/harlequin-postgres.json"
  }
