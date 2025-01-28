@@ -13,6 +13,7 @@
   "conda_build": {
    "error_overlinking": true
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -24,19 +25,17 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.\n",
+   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.",
    "dev_url": "https://github.com/conda/rattler",
    "home": "https://github.com/conda/rattler",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": [
-    "py-rattler/LICENSE",
-    "py-rattler/THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "py-rattler/LICENSE",
    "summary": "A blazing fast library to work with the conda ecosystem"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "script": "build_base"
   },
   "extra": {
    "feedstock-name": "py-rattler",
@@ -47,6 +46,7 @@
   },
   "outputs": [
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
@@ -57,6 +57,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -65,233 +66,61 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    }
   ],
   "package": {
-   "name": "py-rattler-split",
+   "name": "py-rattler",
    "version": "0.9.0"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
+   ],
+   "host": [
+    "python",
+    "python-abi3",
+    "maturin >=1.2.2,<2",
+    "pip",
+    "openssl"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 1,
   "source": {
    "sha256": "488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25",
    "url": "https://pypi.org/packages/source/p/py-rattler/py_rattler-0.9.0.tar.gz"
@@ -313,7 +142,8 @@
     "maturin",
     "openssl",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -332,19 +162,17 @@
  },
  "linux_aarch64_meta_yaml": {
   "about": {
-   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.\n",
+   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.",
    "dev_url": "https://github.com/conda/rattler",
    "home": "https://github.com/conda/rattler",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": [
-    "py-rattler/LICENSE",
-    "py-rattler/THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "py-rattler/LICENSE",
    "summary": "A blazing fast library to work with the conda ecosystem"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "script": "build_base"
   },
   "extra": {
    "feedstock-name": "py-rattler",
@@ -355,9 +183,13 @@
   },
   "outputs": [
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -365,6 +197,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -373,238 +206,64 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    }
   ],
   "package": {
-   "name": "py-rattler-split",
+   "name": "py-rattler",
    "version": "0.9.0"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.2.2,<2",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
+   ],
+   "host": [
+    "python",
+    "python-abi3",
+    "maturin >=1.2.2,<2",
+    "pip",
+    "openssl"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 1,
   "source": {
    "sha256": "488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25",
    "url": "https://pypi.org/packages/source/p/py-rattler/py_rattler-0.9.0.tar.gz"
@@ -617,6 +276,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -626,7 +288,8 @@
     "maturin",
     "openssl",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -645,19 +308,17 @@
  },
  "linux_ppc64le_meta_yaml": {
   "about": {
-   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.\n",
+   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.",
    "dev_url": "https://github.com/conda/rattler",
    "home": "https://github.com/conda/rattler",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": [
-    "py-rattler/LICENSE",
-    "py-rattler/THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "py-rattler/LICENSE",
    "summary": "A blazing fast library to work with the conda ecosystem"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "script": "build_base"
   },
   "extra": {
    "feedstock-name": "py-rattler",
@@ -668,9 +329,13 @@
   },
   "outputs": [
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -678,6 +343,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -686,238 +352,64 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    }
   ],
   "package": {
-   "name": "py-rattler-split",
+   "name": "py-rattler",
    "version": "0.9.0"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.2.2,<2",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
+   ],
+   "host": [
+    "python",
+    "python-abi3",
+    "maturin >=1.2.2,<2",
+    "pip",
+    "openssl"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 1,
   "source": {
    "sha256": "488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25",
    "url": "https://pypi.org/packages/source/p/py-rattler/py_rattler-0.9.0.tar.gz"
@@ -930,6 +422,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -939,7 +434,8 @@
     "maturin",
     "openssl",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -958,19 +454,17 @@
  },
  "meta_yaml": {
   "about": {
-   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.\n",
+   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.",
    "dev_url": "https://github.com/conda/rattler",
    "home": "https://github.com/conda/rattler",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": [
-    "py-rattler/LICENSE",
-    "py-rattler/THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "py-rattler/LICENSE",
    "summary": "A blazing fast library to work with the conda ecosystem"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "script": "build_base"
   },
   "extra": {
    "feedstock-name": "py-rattler",
@@ -981,6 +475,7 @@
   },
   "outputs": [
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
@@ -991,6 +486,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -999,39 +495,45 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    },
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -1039,6 +541,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -1047,39 +550,45 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    },
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -1087,6 +596,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -1095,39 +605,45 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    },
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -1135,6 +651,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -1143,39 +660,45 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    },
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -1183,6 +706,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -1191,39 +715,45 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    },
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -1231,6 +761,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -1239,1234 +770,83 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    }
   ],
   "package": {
-   "name": "py-rattler-split",
+   "name": "py-rattler",
    "version": "0.9.0"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.2.2,<2"
+   ],
+   "host": [
+    "python",
+    "python-abi3",
+    "maturin >=1.2.2,<2",
+    "pip",
+    "openssl"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 1,
   "source": {
    "sha256": "488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25",
    "url": "https://pypi.org/packages/source/p/py-rattler/py_rattler-0.9.0.tar.gz"
   }
  },
- "name": "py-rattler-split",
+ "name": "py-rattler",
  "osx_64_meta_yaml": {
   "about": {
-   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.\n",
+   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.",
    "dev_url": "https://github.com/conda/rattler",
    "home": "https://github.com/conda/rattler",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": [
-    "py-rattler/LICENSE",
-    "py-rattler/THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "py-rattler/LICENSE",
    "summary": "A blazing fast library to work with the conda ecosystem"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "script": "build_base"
   },
   "extra": {
    "feedstock-name": "py-rattler",
@@ -2477,9 +857,13 @@
   },
   "outputs": [
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -2487,6 +871,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -2495,238 +880,64 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    }
   ],
   "package": {
-   "name": "py-rattler-split",
+   "name": "py-rattler",
    "version": "0.9.0"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.2.2,<2",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
+   ],
+   "host": [
+    "python",
+    "python-abi3",
+    "maturin >=1.2.2,<2",
+    "pip",
+    "openssl"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 1,
   "source": {
    "sha256": "488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25",
    "url": "https://pypi.org/packages/source/p/py-rattler/py_rattler-0.9.0.tar.gz"
@@ -2739,6 +950,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -2748,7 +962,8 @@
     "maturin",
     "openssl",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -2767,19 +982,17 @@
  },
  "osx_arm64_meta_yaml": {
   "about": {
-   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.\n",
+   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.",
    "dev_url": "https://github.com/conda/rattler",
    "home": "https://github.com/conda/rattler",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": [
-    "py-rattler/LICENSE",
-    "py-rattler/THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "py-rattler/LICENSE",
    "summary": "A blazing fast library to work with the conda ecosystem"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "script": "build_base"
   },
   "extra": {
    "feedstock-name": "py-rattler",
@@ -2790,9 +1003,13 @@
   },
   "outputs": [
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -2800,6 +1017,7 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
       "pip",
       "openssl"
@@ -2808,238 +1026,64 @@
       "python"
      ]
     },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.sh",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    }
   ],
   "package": {
-   "name": "py-rattler-split",
+   "name": "py-rattler",
    "version": "0.9.0"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.2.2,<2",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
+   ],
+   "host": [
+    "python",
+    "python-abi3",
+    "maturin >=1.2.2,<2",
+    "pip",
+    "openssl"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 1,
   "source": {
    "sha256": "488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25",
    "url": "https://pypi.org/packages/source/p/py-rattler/py_rattler-0.9.0.tar.gz"
@@ -3052,6 +1096,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -3061,7 +1108,8 @@
     "maturin",
     "openssl",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -3097,18 +1145,20 @@
  "pr_info": {
   "__lazy_json__": "pr_info/py-rattler.json"
  },
- "raw_meta_yaml": "{% set name = \"py-rattler\" %}\n{% set python_name = \"py_rattler\" %}\n{% set version = \"0.9.0\" %}\n\npackage:\n  name: {{ name|lower }}-split\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ python_name }}-{{ version }}.tar.gz\n  sha256: 488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25\n\nbuild:\n  number: 0\n\noutputs:\n  - name: py-rattler\n    script: build_base.sh  # [unix]\n    script: build_base.bat  # [win]\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - maturin >=1.2.2,<2                     # [build_platform != target_platform]\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - {{ compiler('rust') }}\n        - cargo-bundle-licenses\n      host:\n        - python\n        - maturin >=1.2.2,<2\n        - pip\n        - openssl  # [unix]\n      run:\n        - python\n    test:\n      imports:\n        - rattler\n      commands:\n        - pip check\n      requires:\n        - pip\n\n  - name: py_rattler\n    build:\n      noarch: generic\n      skip: true  # [not linux64]\n    requirements:\n      run:\n        - {{ pin_subpackage('py-rattler', max_pin=\"x.x.x\") }}\n    test:\n      imports:\n        - rattler\n\n\nabout:\n  home: https://github.com/conda/rattler\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - py-rattler/LICENSE\n    - py-rattler/THIRDPARTY.yml\n  summary: A blazing fast library to work with the conda ecosystem\n\n  # The remaining entries in this section are optional, but recommended.\n  description: |\n    Rattler is a library that provides common functionality used within the conda\n    ecosystem. The goal of the library is to enable programs and other libraries to\n    easily interact with the conda ecosystem without being dependent on Python. Its\n    primary use case is as a library that you can use to provide conda related\n    workflows in your own tools.\n  dev_url: https://github.com/conda/rattler\n\nextra:\n  feedstock-name: py-rattler\n  recipe-maintainers:\n    - baszalmstra\n    - pavelzw\n",
+ "raw_meta_yaml": "context:\n  name: py-rattler\n  python_name: py_rattler\n  version: \"0.9.0\"\n  python_min: ${{ python_min }}.*\n\nrecipe:\n  name: py-rattler\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ python_name }}-${{ version }}.tar.gz\n  sha256: 488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25\n\nbuild:\n  number: 1\n\noutputs:\n  - package:\n      name: py-rattler\n    build:\n      # only build for the minimal python version\n      skip: not (match(python, python_min) and is_abi3 == 'true')\n      script: build_base\n      python:\n        version_independent: true\n    requirements:\n      build:\n        - if: build_platform != target_platform\n          then:\n            - python\n            - cross-python_${{ target_platform }}\n            - maturin >=1.2.2,<2\n        - ${{ compiler('c') }}\n        - ${{ stdlib(\"c\") }}\n        - ${{ compiler('rust') }}\n        - cargo-bundle-licenses\n      host:\n        - python\n        - python-abi3\n        - maturin >=1.2.2,<2\n        - pip\n        - if: unix\n          then:\n            - openssl\n      run:\n        - python\n    tests:\n      - python:\n          imports:\n            - rattler\n          python_version: ${{ python_min }}\n\n  - package:\n      name: py_rattler\n    build:\n      noarch: generic\n      skip: not (linux and x86_64 and match(python, python_min))\n    requirements:\n      run:\n        - ${{ pin_subpackage('py-rattler', upper_bound=\"x.x.x\") }}\n    tests:\n      - python:\n          imports:\n            - rattler\n\nabout:\n  homepage: https://github.com/conda/rattler\n  license: BSD-3-Clause\n  license_file:\n    - py-rattler/LICENSE\n    - py-rattler/THIRDPARTY.yml\n  summary: A blazing fast library to work with the conda ecosystem\n  description: |\n    Rattler is a library that provides common functionality used within the conda\n    ecosystem. The goal of the library is to enable programs and other libraries to\n    easily interact with the conda ecosystem without being dependent on Python. Its\n    primary use case is as a library that you can use to provide conda related\n    workflows in your own tools.\n  repository: https://github.com/conda/rattler\n\nextra:\n  feedstock-name: py-rattler\n  recipe-maintainers:\n    - baszalmstra\n    - pavelzw\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
    "c_stdlib_stub",
    "cargo-bundle-licenses",
+   "cross-python_linux-64",
    "maturin",
    "openssl",
    "pip",
    "py-rattler",
    "python",
+   "python-abi3",
    "rust_compiler_stub"
   ]
  },
@@ -3119,6 +1169,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -3130,7 +1183,8 @@
     "maturin",
     "openssl",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -3157,6 +1211,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin >=1.2.2,<2",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -3166,7 +1223,8 @@
     "maturin >=1.2.2,<2",
     "openssl",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -3190,19 +1248,17 @@
  },
  "win_64_meta_yaml": {
   "about": {
-   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.\n",
+   "description": "Rattler is a library that provides common functionality used within the conda\necosystem. The goal of the library is to enable programs and other libraries to\neasily interact with the conda ecosystem without being dependent on Python. Its\nprimary use case is as a library that you can use to provide conda related\nworkflows in your own tools.",
    "dev_url": "https://github.com/conda/rattler",
    "home": "https://github.com/conda/rattler",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": [
-    "py-rattler/LICENSE",
-    "py-rattler/THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "py-rattler/LICENSE",
    "summary": "A blazing fast library to work with the conda ecosystem"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "script": "build_base"
   },
   "extra": {
    "feedstock-name": "py-rattler",
@@ -3213,9 +1269,13 @@
   },
   "outputs": [
    {
+    "build": null,
     "name": "py-rattler",
     "requirements": {
      "build": [
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.2.2,<2",
       "c_compiler_stub",
       "c_stdlib_stub",
       "rust_compiler_stub",
@@ -3223,241 +1283,73 @@
      ],
      "host": [
       "python",
+      "python-abi3",
       "maturin >=1.2.2,<2",
-      "pip"
+      "pip",
+      "openssl"
      ],
      "run": [
       "python"
      ]
     },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ],
+       "python_version": "3.9.*"
+      }
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
+    "build": null,
     "name": "py_rattler",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "py-rattler"
      ]
     },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
-   },
-   {
-    "name": "py-rattler",
-    "requirements": {
-     "build": [
-      "c_compiler_stub",
-      "c_stdlib_stub",
-      "rust_compiler_stub",
-      "cargo-bundle-licenses"
-     ],
-     "host": [
-      "python",
-      "maturin >=1.2.2,<2",
-      "pip"
-     ],
-     "run": [
-      "python"
-     ]
-    },
-    "script": "build_base.bat",
-    "test": {
-     "commands": [
-      "pip check"
-     ],
-     "imports": [
-      "rattler"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic",
-     "skip": true
-    },
-    "name": "py_rattler",
-    "requirements": {
-     "run": [
-      "py-rattler"
-     ]
-    },
-    "test": {
-     "imports": [
-      "rattler"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "rattler"
+       ]
+      }
+     }
+    ]
    }
   ],
   "package": {
-   "name": "py-rattler-split",
+   "name": "py-rattler",
    "version": "0.9.0"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.2.2,<2",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
+   ],
+   "host": [
+    "python",
+    "python-abi3",
+    "maturin >=1.2.2,<2",
+    "pip",
+    "openssl"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 1,
   "source": {
    "sha256": "488922a45ed3276732f9c413617b6ed6587eb0583af28e9c5ab48e946e8b1a25",
    "url": "https://pypi.org/packages/source/p/py-rattler/py_rattler-0.9.0.tar.gz"
@@ -3470,6 +1362,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -3477,8 +1372,10 @@
    "__set__": true,
    "elements": [
     "maturin",
+    "openssl",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
