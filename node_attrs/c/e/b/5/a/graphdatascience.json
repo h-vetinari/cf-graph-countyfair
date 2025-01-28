@@ -24,12 +24,13 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
-    "mbestipa"
+    "mbestipa",
+    "FlorentinD"
    ]
   },
   "outputs": [
@@ -75,31 +76,33 @@
   ],
   "package": {
    "name": "graphdatascience",
-   "version": "1.10"
+   "version": "1.13"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python >=3.9",
     "setuptools >=42",
     "wheel",
     "pip"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "multimethod >=1.0,<2.0",
-    "neo4j-python-driver >=4.4.2,<6.0",
+    "neo4j-python-driver >=4.4.12,<6.0",
     "pandas >=1.0,<3.0",
-    "pyarrow >=11.0,<16.0",
+    "pyarrow-all >=15.0.2, < 19.0",
     "textdistance >=4.0,<5.0",
     "tqdm >=4.0,<5.0",
     "typing-extensions >=4.0,<5.0",
-    "requests"
+    "requests",
+    "tenacity >=9.0",
+    "numpy <2.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7699b15417a923c89c5b7f07ffb4e073141f6cf711b0082cb82341fcee968101",
-   "url": "https://pypi.io/packages/source/g/graphdatascience/graphdatascience-1.10.tar.gz"
+   "sha256": "ba8166632b12307140f6fbef2dcafd862fa7e0383babb89a27b0239af84c8ba8",
+   "url": "https://pypi.org/packages/source/g/graphdatascience/graphdatascience-1.13.tar.gz"
   },
   "test": {
    "commands": [
@@ -134,11 +137,13 @@
     "multimethod",
     "neo4j-python-driver",
     "networkx",
+    "numpy",
     "ogb",
     "pandas",
-    "pyarrow",
+    "pyarrow-all",
     "python",
     "requests",
+    "tenacity",
     "textdistance",
     "tqdm",
     "typing-extensions"
@@ -162,12 +167,13 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
-    "mbestipa"
+    "mbestipa",
+    "FlorentinD"
    ]
   },
   "outputs": [
@@ -291,31 +297,33 @@
   ],
   "package": {
    "name": "graphdatascience",
-   "version": "1.10"
+   "version": "1.13"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python >=3.9",
     "setuptools >=42",
     "wheel",
     "pip"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "multimethod >=1.0,<2.0",
-    "neo4j-python-driver >=4.4.2,<6.0",
+    "neo4j-python-driver >=4.4.12,<6.0",
     "pandas >=1.0,<3.0",
-    "pyarrow >=11.0,<16.0",
+    "pyarrow-all >=15.0.2, < 19.0",
     "textdistance >=4.0,<5.0",
     "tqdm >=4.0,<5.0",
     "typing-extensions >=4.0,<5.0",
-    "requests"
+    "requests",
+    "tenacity >=9.0",
+    "numpy <2.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7699b15417a923c89c5b7f07ffb4e073141f6cf711b0082cb82341fcee968101",
-   "url": "https://pypi.io/packages/source/g/graphdatascience/graphdatascience-1.10.tar.gz"
+   "sha256": "ba8166632b12307140f6fbef2dcafd862fa7e0383babb89a27b0239af84c8ba8",
+   "url": "https://pypi.org/packages/source/g/graphdatascience/graphdatascience-1.13.tar.gz"
   },
   "test": {
    "commands": [
@@ -341,12 +349,13 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
-    "mbestipa"
+    "mbestipa",
+    "FlorentinD"
    ]
   },
   "outputs": [
@@ -392,31 +401,33 @@
   ],
   "package": {
    "name": "graphdatascience",
-   "version": "1.10"
+   "version": "1.13"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python >=3.9",
     "setuptools >=42",
     "wheel",
     "pip"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "multimethod >=1.0,<2.0",
-    "neo4j-python-driver >=4.4.2,<6.0",
+    "neo4j-python-driver >=4.4.12,<6.0",
     "pandas >=1.0,<3.0",
-    "pyarrow >=11.0,<16.0",
+    "pyarrow-all >=15.0.2, < 19.0",
     "textdistance >=4.0,<5.0",
     "tqdm >=4.0,<5.0",
     "typing-extensions >=4.0,<5.0",
-    "requests"
+    "requests",
+    "tenacity >=9.0",
+    "numpy <2.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7699b15417a923c89c5b7f07ffb4e073141f6cf711b0082cb82341fcee968101",
-   "url": "https://pypi.io/packages/source/g/graphdatascience/graphdatascience-1.10.tar.gz"
+   "sha256": "ba8166632b12307140f6fbef2dcafd862fa7e0383babb89a27b0239af84c8ba8",
+   "url": "https://pypi.org/packages/source/g/graphdatascience/graphdatascience-1.13.tar.gz"
   },
   "test": {
    "commands": [
@@ -451,11 +462,13 @@
     "multimethod",
     "neo4j-python-driver",
     "networkx",
+    "numpy",
     "ogb",
     "pandas",
-    "pyarrow",
+    "pyarrow-all",
     "python",
     "requests",
+    "tenacity",
     "textdistance",
     "tqdm",
     "typing-extensions"
@@ -485,7 +498,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/graphdatascience.json"
  },
- "raw_meta_yaml": "{% set name = \"graphdatascience\" %}\n{% set version = \"1.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/graphdatascience-{{ version }}.tar.gz\n  sha256: 7699b15417a923c89c5b7f07ffb4e073141f6cf711b0082cb82341fcee968101\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python >=3.8\n    - setuptools >=42\n    - wheel\n    - pip\n  run:\n    - python >=3.8\n    - multimethod >=1.0,<2.0\n    - neo4j-python-driver >=4.4.2,<6.0\n    - pandas >=1.0,<3.0\n    - pyarrow >=11.0,<16.0\n    - textdistance >=4.0,<5.0\n    - tqdm >=4.0,<5.0\n    - typing-extensions >=4.0,<5.0\n    - requests\n\ntest:\n  imports:\n    - graphdatascience\n  commands:\n    - pip check\n  requires:\n    - pip\n\noutputs:\n  - name: graphdatascience\n\n  - name: graphdatascience.ogb\n    requirements:\n      host:\n        - python\n      run:\n        - python\n        - ogb >=1.0,<2.0\n        - {{ pin_subpackage('graphdatascience', exact=True) }}\n      test:\n        imports:\n          - graphdatascience.ogb\n\n  - name: graphdatascience.networkx\n    requirements:\n      host:\n        - python\n      run:\n        - python\n        - networkx >=2.0,<4.0\n        - {{ pin_subpackage('graphdatascience', exact=True) }}\n      test:\n        imports:\n          - graphdatascience.networkx\n\nabout:\n  home: https://neo4j.com/product/graph-data-science/\n  summary: A Python client for the Neo4j Graph Data Science (GDS) library\n  dev_url: https://github.com/neo4j/graph-data-science-client\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n\nextra:\n  recipe-maintainers:\n    - mbestipa\n",
+ "raw_meta_yaml": "{% set name = \"graphdatascience\" %}\n{% set version = \"1.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/graphdatascience-{{ version }}.tar.gz\n  sha256: ba8166632b12307140f6fbef2dcafd862fa7e0383babb89a27b0239af84c8ba8\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=42\n    - wheel\n    - pip\n  run:\n    - python >=3.9\n    - multimethod >=1.0,<2.0\n    - neo4j-python-driver >=4.4.12,<6.0\n    - pandas >=1.0,<3.0\n    - pyarrow-all >=15.0.2, < 19.0\n    - textdistance >=4.0,<5.0\n    - tqdm >=4.0,<5.0\n    - typing-extensions >=4.0,<5.0\n    - requests\n    - tenacity >=9.0\n    - numpy <2.0\n\ntest:\n  imports:\n    - graphdatascience\n  commands:\n    - pip check\n  requires:\n    - pip\n\noutputs:\n  - name: graphdatascience\n\n  - name: graphdatascience.ogb\n    requirements:\n      host:\n        - python\n      run:\n        - python\n        - ogb >=1.0,<2.0\n        - {{ pin_subpackage('graphdatascience', exact=True) }}\n      test:\n        imports:\n          - graphdatascience.ogb\n\n  - name: graphdatascience.networkx\n    requirements:\n      host:\n        - python\n      run:\n        - python\n        - networkx >=2.0,<4.0\n        - {{ pin_subpackage('graphdatascience', exact=True) }}\n      test:\n        imports:\n          - graphdatascience.networkx\n\nabout:\n  home: https://neo4j.com/product/graph-data-science/\n  summary: A Python client for the Neo4j Graph Data Science (GDS) library\n  dev_url: https://github.com/neo4j/graph-data-science-client\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n\nextra:\n  recipe-maintainers:\n    - mbestipa\n    - FlorentinD\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -493,13 +506,15 @@
    "multimethod",
    "neo4j-python-driver",
    "networkx",
+   "numpy",
    "ogb",
    "pandas",
    "pip",
-   "pyarrow",
+   "pyarrow-all",
    "python",
    "requests",
    "setuptools",
+   "tenacity",
    "textdistance",
    "tqdm",
    "typing-extensions",
@@ -527,11 +542,13 @@
     "multimethod",
     "neo4j-python-driver",
     "networkx",
+    "numpy",
     "ogb",
     "pandas",
-    "pyarrow",
+    "pyarrow-all",
     "python",
     "requests",
+    "tenacity",
     "textdistance",
     "tqdm",
     "typing-extensions"
@@ -555,7 +572,7 @@
    "elements": [
     "pip",
     "python",
-    "python >=3.8",
+    "python >=3.9",
     "setuptools >=42",
     "wheel"
    ]
@@ -565,14 +582,16 @@
    "elements": [
     "graphdatascience",
     "multimethod >=1.0,<2.0",
-    "neo4j-python-driver >=4.4.2,<6.0",
+    "neo4j-python-driver >=4.4.12,<6.0",
     "networkx >=2.0,<4.0",
+    "numpy <2.0",
     "ogb >=1.0,<2.0",
     "pandas >=1.0,<3.0",
-    "pyarrow >=11.0,<16.0",
+    "pyarrow-all >=15.0.2, < 19.0",
     "python",
-    "python >=3.8",
+    "python >=3.9",
     "requests",
+    "tenacity >=9.0",
     "textdistance >=4.0,<5.0",
     "tqdm >=4.0,<5.0",
     "typing-extensions >=4.0,<5.0"
@@ -585,8 +604,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/g/graphdatascience/graphdatascience-1.10.tar.gz",
- "version": "1.10",
+ "url": "https://pypi.org/packages/source/g/graphdatascience/graphdatascience-1.13.tar.gz",
+ "version": "1.13",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/graphdatascience.json"
  },
@@ -601,12 +620,13 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
-    "mbestipa"
+    "mbestipa",
+    "FlorentinD"
    ]
   },
   "outputs": [
@@ -652,31 +672,33 @@
   ],
   "package": {
    "name": "graphdatascience",
-   "version": "1.10"
+   "version": "1.13"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python >=3.9",
     "setuptools >=42",
     "wheel",
     "pip"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "multimethod >=1.0,<2.0",
-    "neo4j-python-driver >=4.4.2,<6.0",
+    "neo4j-python-driver >=4.4.12,<6.0",
     "pandas >=1.0,<3.0",
-    "pyarrow >=11.0,<16.0",
+    "pyarrow-all >=15.0.2, < 19.0",
     "textdistance >=4.0,<5.0",
     "tqdm >=4.0,<5.0",
     "typing-extensions >=4.0,<5.0",
-    "requests"
+    "requests",
+    "tenacity >=9.0",
+    "numpy <2.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7699b15417a923c89c5b7f07ffb4e073141f6cf711b0082cb82341fcee968101",
-   "url": "https://pypi.io/packages/source/g/graphdatascience/graphdatascience-1.10.tar.gz"
+   "sha256": "ba8166632b12307140f6fbef2dcafd862fa7e0383babb89a27b0239af84c8ba8",
+   "url": "https://pypi.org/packages/source/g/graphdatascience/graphdatascience-1.13.tar.gz"
   },
   "test": {
    "commands": [
@@ -711,11 +733,13 @@
     "multimethod",
     "neo4j-python-driver",
     "networkx",
+    "numpy",
     "ogb",
     "pandas",
-    "pyarrow",
+    "pyarrow-all",
     "python",
     "requests",
+    "tenacity",
     "textdistance",
     "tqdm",
     "typing-extensions"
