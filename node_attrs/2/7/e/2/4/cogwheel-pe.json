@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -37,7 +37,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "setuptools-scm >=8",
     "pip"
@@ -64,7 +64,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "709f7a1df3c8dafcb6b4cb11da2632d7ed1272fa9a4cfffa8a95f207ed75a312",
-   "url": "https://pypi.io/packages/source/c/cogwheel-pe/cogwheel_pe-1.2.4.tar.gz"
+   "url": "https://pypi.org/packages/source/c/cogwheel-pe/cogwheel_pe-1.2.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -75,7 +75,8 @@
     "cogwheel.sampling"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -117,7 +118,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -131,7 +133,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -145,7 +147,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "setuptools-scm >=8",
     "pip"
@@ -172,7 +174,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "709f7a1df3c8dafcb6b4cb11da2632d7ed1272fa9a4cfffa8a95f207ed75a312",
-   "url": "https://pypi.io/packages/source/c/cogwheel-pe/cogwheel_pe-1.2.4.tar.gz"
+   "url": "https://pypi.org/packages/source/c/cogwheel-pe/cogwheel_pe-1.2.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -183,7 +185,8 @@
     "cogwheel.sampling"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -201,7 +204,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cogwheel-pe.json"
  },
- "raw_meta_yaml": "{% set name = \"cogwheel-pe\" %}\n{% set version = \"1.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cogwheel_pe-{{ version }}.tar.gz\n  sha256: 709f7a1df3c8dafcb6b4cb11da2632d7ed1272fa9a4cfffa8a95f207ed75a312\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=61.0\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python-lalsimulation\n    - python >=3.9\n    - ipykernel\n    - ipympl\n    - ipywidgets\n    - matplotlib-base\n    - notebook\n    - numba\n    - pandas\n    - pyarrow\n    - scipy\n    - setuptools-scm\n    - gwpy\n    - dynesty\n    - nautilus-sampler\n    - zeus-mcmc\n\ntest:\n  imports:\n    - cogwheel\n    - cogwheel.sampling\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/jroulet/cogwheel\n  summary: Parameter estimation of gravitational wave sources\n  dev_url: https://github.com/jroulet/cogwheel\n  license: GPL-3.0-or-later\n  license_file: license\n\nextra:\n  recipe-maintainers:\n    - jroulet\n",
+ "raw_meta_yaml": "{% set name = \"cogwheel-pe\" %}\n{% set version = \"1.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cogwheel_pe-{{ version }}.tar.gz\n  sha256: 709f7a1df3c8dafcb6b4cb11da2632d7ed1272fa9a4cfffa8a95f207ed75a312\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python-lalsimulation\n    - python >={{ python_min }}\n    - ipykernel\n    - ipympl\n    - ipywidgets\n    - matplotlib-base\n    - notebook\n    - numba\n    - pandas\n    - pyarrow\n    - scipy\n    - setuptools-scm\n    - gwpy\n    - dynesty\n    - nautilus-sampler\n    - zeus-mcmc\n\ntest:\n  imports:\n    - cogwheel\n    - cogwheel.sampling\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/jroulet/cogwheel\n  summary: Parameter estimation of gravitational wave sources\n  dev_url: https://github.com/jroulet/cogwheel\n  license: GPL-3.0-or-later\n  license_file: license\n\nextra:\n  recipe-maintainers:\n    - jroulet\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -263,7 +266,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -277,7 +281,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "setuptools-scm >=8"
    ]
@@ -306,11 +310,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/c/cogwheel-pe/cogwheel_pe-1.2.4.tar.gz",
+ "url": "https://pypi.org/packages/source/c/cogwheel-pe/cogwheel_pe-1.2.4.tar.gz",
  "version": "1.2.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cogwheel-pe.json"
