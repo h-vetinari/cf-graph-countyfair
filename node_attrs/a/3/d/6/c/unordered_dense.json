@@ -13,6 +13,10 @@
    "branch_name": "main",
    "tooling_branch_name": "main"
   },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
+  },
   "test": "native_and_emulated"
  },
  "feedstock_name": "unordered_dense",
@@ -64,6 +68,148 @@
   }
  },
  "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "gnuconfig",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "description": "A fast & densely stored hashmap and hashset based on robin-hood backward shift deletion for C++17 and later.\n\nThe classes `ankerl::unordered_dense::map` and `ankerl::unordered_dense::set` are (almost) drop-in replacements\nof `std::unordered_map` and `std::unordered_set`.\n\nWhile they don't have as strong iterator / reference stability guaranties, they are typically much faster.\n\nAdditionally, there are `ankerl::unordered_dense::segmented_map` and `ankerl::unordered_dense::segmented_set`\nwith lower peak memory usage. and stable iterator/references on insert.\n",
+   "dev_url": "https://github.com/martinus/unordered_dense",
+   "home": "https://github.com/martinus/unordered_dense",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A fast & densely stored hashmap and hashset based on robin-hood backward shift deletion"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jjerphan"
+   ]
+  },
+  "package": {
+   "name": "unordered_dense",
+   "version": "4.5.0"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "pkg-config",
+    "gnuconfig",
+    "make"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2364ce4bc4c23bd02549bbb3a7572d881684cd46057f3737fd53be53669743aa",
+   "url": "https://github.com/martinus/unordered_dense/archive/v4.5.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/ankerl/unordered_dense.h",
+    "test -f ${PREFIX}/lib/cmake/unordered_dense/unordered_denseTargets.cmake",
+    "test -f ${PREFIX}/lib/cmake/unordered_dense/unordered_denseConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/unordered_dense/unordered_denseConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "gnuconfig",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": []
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "description": "A fast & densely stored hashmap and hashset based on robin-hood backward shift deletion for C++17 and later.\n\nThe classes `ankerl::unordered_dense::map` and `ankerl::unordered_dense::set` are (almost) drop-in replacements\nof `std::unordered_map` and `std::unordered_set`.\n\nWhile they don't have as strong iterator / reference stability guaranties, they are typically much faster.\n\nAdditionally, there are `ankerl::unordered_dense::segmented_map` and `ankerl::unordered_dense::segmented_set`\nwith lower peak memory usage. and stable iterator/references on insert.\n",
+   "dev_url": "https://github.com/martinus/unordered_dense",
+   "home": "https://github.com/martinus/unordered_dense",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A fast & densely stored hashmap and hashset based on robin-hood backward shift deletion"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jjerphan"
+   ]
+  },
+  "package": {
+   "name": "unordered_dense",
+   "version": "4.5.0"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "pkg-config",
+    "gnuconfig",
+    "make"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "2364ce4bc4c23bd02549bbb3a7572d881684cd46057f3737fd53be53669743aa",
+   "url": "https://github.com/martinus/unordered_dense/archive/v4.5.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/ankerl/unordered_dense.h",
+    "test -f ${PREFIX}/lib/cmake/unordered_dense/unordered_denseTargets.cmake",
+    "test -f ${PREFIX}/lib/cmake/unordered_dense/unordered_denseConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/unordered_dense/unordered_denseConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
    "elements": [
@@ -290,6 +436,8 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
   "osx_arm64",
   "win_64"
