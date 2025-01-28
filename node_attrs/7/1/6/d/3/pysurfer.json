@@ -26,7 +26,10 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1"
+   "number": "2",
+   "script": [
+    "python setup.py install --single-version-externally-managed --record record.txt"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
@@ -61,7 +64,9 @@
    "url": "https://pypi.org/packages/source/p/pysurfer/pysurfer-0.11.2.tar.gz"
   },
   "test": {
-   "commands": null,
+   "commands": [
+    "xvfb-run -a python -c \"import surfer; assert surfer.__version__ == '0.11.2', surfer.__version__\""
+   ],
    "requires": [
     "python 3.9"
    ]
@@ -112,7 +117,10 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1"
+   "number": "2",
+   "script": [
+    "python setup.py install --single-version-externally-managed --record record.txt"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
@@ -147,7 +155,9 @@
    "url": "https://pypi.org/packages/source/p/pysurfer/pysurfer-0.11.2.tar.gz"
   },
   "test": {
-   "commands": null,
+   "commands": [
+    "xvfb-run -a python -c \"import surfer; assert surfer.__version__ == '0.11.2', surfer.__version__\""
+   ],
    "requires": [
     "python 3.9"
    ]
@@ -167,7 +177,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pysurfer.json"
  },
- "raw_meta_yaml": "{% set version = \"0.11.2\" %}\n{% set sha256 = \"277a72b0f8ae60c00f4d2702f33917cc6b225a36313fcead1aa119b45197d248\" %}\n\npackage:\n  name: pysurfer\n  version: {{ version }}\n\nsource:\n  fn: pysurfer-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/p/pysurfer/pysurfer-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - imageio\n    - matplotlib-base\n    - mayavi\n    - nibabel\n    - numpy\n    - scipy\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    # - DISPLAY=localhost:1.0 xvfb-run -a python -c \"import surfer\"  # [linux]\n    - \"python -c \\\"import surfer\\\"\"  # [not linux]\n\nabout:\n  home: http://pysurfer.github.com\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: Cortical surface visualization using Python\n  description: |\n    PySurfer is a Python library for visualizing cortical surface\n    representations of neuroimaging data. The package is primarily intended for\n    use with Freesurfer, but it can plot data that are drawn from a variety of\n    sources. PySurfer extends Mayavi\u2019s powerful rendering engine with a\n    high-level interface for working with MRI and MEG data.\n  doc_url: http://pysurfer.github.io\n  dev_url: https://github.com/nipy/PySurfer/\n\nextra:\n  recipe-maintainers:\n    - christianbrodbeck\n    - larsoner\n",
+ "raw_meta_yaml": "{% set version = \"0.11.2\" %}\n{% set sha256 = \"277a72b0f8ae60c00f4d2702f33917cc6b225a36313fcead1aa119b45197d248\" %}\n\npackage:\n  name: pysurfer\n  version: {{ version }}\n\nsource:\n  fn: pysurfer-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/p/pysurfer/pysurfer-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  noarch: python\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - imageio\n    - matplotlib-base\n    - mayavi\n    - nibabel\n    - numpy\n    - scipy\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    - \"xvfb-run -a python -c \\\"import surfer; assert surfer.__version__ == '{{ version }}', surfer.__version__\\\"\"  # [linux]\n    - \"python -c \\\"import surfer; assert surfer.__version__ == '{{ version }}', surfer.__version__\\\"\"  # [not linux]\n\nabout:\n  home: http://pysurfer.github.com\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: Cortical surface visualization using Python\n  description: |\n    PySurfer is a Python library for visualizing cortical surface\n    representations of neuroimaging data. The package is primarily intended for\n    use with Freesurfer, but it can plot data that are drawn from a variety of\n    sources. PySurfer extends Mayavi\u2019s powerful rendering engine with a\n    high-level interface for working with MRI and MEG data.\n  doc_url: http://pysurfer.github.io\n  dev_url: https://github.com/nipy/PySurfer/\n\nextra:\n  recipe-maintainers:\n    - christianbrodbeck\n    - larsoner\n",
  "req": {
   "__set__": true,
   "elements": [
