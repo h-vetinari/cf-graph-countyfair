@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -40,7 +40,8 @@
   "requirements": {
    "host": [
     "python 3.9",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.9"
@@ -69,7 +70,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -97,7 +99,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -112,7 +114,8 @@
   "requirements": {
    "host": [
     "python 3.9",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.9"
@@ -146,12 +149,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/git_root.json"
  },
- "raw_meta_yaml": "{% set name = \"git_root\" %}\n{% set version = \"0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jtilly/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 34d7edee2413d8c80700b2273ea75bb58162e65343e07e5b974742be5681003a\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - git_root\n\nabout:\n  home: https://github.com/jtilly/git_root\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Find the root of a git repo'\n  description: 'Find the root of a git repo'\n  dev_url: https://github.com/jtilly/git_root\n\nextra:\n  recipe-maintainers:\n    - jtilly\n",
+ "raw_meta_yaml": "{% set name = \"git_root\" %}\n{% set version = \"0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jtilly/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 34d7edee2413d8c80700b2273ea75bb58162e65343e07e5b974742be5681003a\n\nbuild:\n  noarch: python\n  number: 2\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - git_root\n\nabout:\n  home: https://github.com/jtilly/git_root\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Find the root of a git repo'\n  description: 'Find the root of a git repo'\n  dev_url: https://github.com/jtilly/git_root\n\nextra:\n  recipe-maintainers:\n    - jtilly\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -163,7 +167,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -189,7 +194,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
