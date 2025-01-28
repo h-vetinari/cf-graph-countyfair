@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -24,7 +27,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -37,7 +40,7 @@
   },
   "package": {
    "name": "empack",
-   "version": "5.0.3"
+   "version": "5.0.5"
   },
   "requirements": {
    "host": [
@@ -49,15 +52,15 @@
     "python >=3.9",
     "typer",
     "requests",
-    "appdirs",
+    "platformdirs",
     "pyyaml",
     "networkx"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "fe1f26f291d51b8d1eaa51d2b7f3a258f6c876c02349338edd40fb4c31ed6eb8",
-   "url": "https://pypi.org/packages/source/e/empack/empack-5.0.3.tar.gz"
+   "sha256": "869fab428a79aee9ae9fc1bc0abd3ba08f77c7a61d3e9de49d3acca87c1081a0",
+   "url": "https://pypi.org/packages/source/e/empack/empack-5.0.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -87,8 +90,8 @@
   "run": {
    "__set__": true,
    "elements": [
-    "appdirs",
     "networkx",
+    "platformdirs",
     "python",
     "pyyaml",
     "requests",
@@ -113,7 +116,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -126,7 +129,7 @@
   },
   "package": {
    "name": "empack",
-   "version": "5.0.3"
+   "version": "5.0.5"
   },
   "requirements": {
    "host": [
@@ -138,15 +141,15 @@
     "python >=3.9",
     "typer",
     "requests",
-    "appdirs",
+    "platformdirs",
     "pyyaml",
     "networkx"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "fe1f26f291d51b8d1eaa51d2b7f3a258f6c876c02349338edd40fb4c31ed6eb8",
-   "url": "https://pypi.org/packages/source/e/empack/empack-5.0.3.tar.gz"
+   "sha256": "869fab428a79aee9ae9fc1bc0abd3ba08f77c7a61d3e9de49d3acca87c1081a0",
+   "url": "https://pypi.org/packages/source/e/empack/empack-5.0.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -174,14 +177,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/empack.json"
  },
- "raw_meta_yaml": "{% set name = \"empack\" %}\n{% set version = \"5.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fe1f26f291d51b8d1eaa51d2b7f3a258f6c876c02349338edd40fb4c31ed6eb8\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatch\n  run:\n    - python >={{ python_min }}\n    - typer\n    - requests\n    - appdirs\n    - pyyaml\n    - networkx\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - empack\n  commands:\n    - empack --help\n\nabout:\n  home: https://github.com/emscripten-forge/empack\n  summary: CLI for packing a mamba environment with emsdk\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/emscripten-forge/empack\n\nextra:\n  recipe-maintainers:\n    - JohanMabille\n    - DerThorsten\n    - wolfv\n    - martinRenou\n",
+ "raw_meta_yaml": "{% set name = \"empack\" %}\n{% set version = \"5.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 869fab428a79aee9ae9fc1bc0abd3ba08f77c7a61d3e9de49d3acca87c1081a0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatch\n  run:\n    - python >={{ python_min }}\n    - typer\n    - requests\n    - platformdirs\n    - pyyaml\n    - networkx\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - empack\n  commands:\n    - empack --help\n\nabout:\n  home: https://github.com/emscripten-forge/empack\n  summary: CLI for packing a mamba environment with emsdk\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/emscripten-forge/empack\n\nextra:\n  recipe-maintainers:\n    - JohanMabille\n    - DerThorsten\n    - wolfv\n    - martinRenou\n",
  "req": {
   "__set__": true,
   "elements": [
-   "appdirs",
    "hatch",
    "networkx",
    "pip",
+   "platformdirs",
    "python",
    "pyyaml",
    "requests",
@@ -204,8 +207,8 @@
   "run": {
    "__set__": true,
    "elements": [
-    "appdirs",
     "networkx",
+    "platformdirs",
     "python",
     "pyyaml",
     "requests",
@@ -236,8 +239,8 @@
   "run": {
    "__set__": true,
    "elements": [
-    "appdirs",
     "networkx",
+    "platformdirs",
     "python >=3.9",
     "pyyaml",
     "requests",
@@ -251,8 +254,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/e/empack/empack-5.0.3.tar.gz",
- "version": "5.0.3",
+ "url": "https://pypi.org/packages/source/e/empack/empack-5.0.5.tar.gz",
+ "version": "5.0.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/empack.json"
  }
