@@ -34,17 +34,18 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "benjaminrwilson"
+    "benjaminrwilson",
+    "krande"
    ]
   },
   "package": {
    "name": "tinygltf",
-   "version": "2.8.21"
+   "version": "2.9.1"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e567257d7addde58b0a483832cbaa5dd8f15e5bcaee6f023831e215d1a2c0502",
-   "url": "https://github.com/syoyo/tinygltf/archive/v2.8.21.tar.gz"
+   "sha256": "b3193ed8de48246420734e1ea719a4fe79ebc8e5bd465e57c05753a6e24716bb",
+   "url": "https://github.com/syoyo/tinygltf/archive/v2.9.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -91,17 +92,18 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "benjaminrwilson"
+    "benjaminrwilson",
+    "krande"
    ]
   },
   "package": {
    "name": "tinygltf",
-   "version": "2.8.21"
+   "version": "2.9.1"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e567257d7addde58b0a483832cbaa5dd8f15e5bcaee6f023831e215d1a2c0502",
-   "url": "https://github.com/syoyo/tinygltf/archive/v2.8.21.tar.gz"
+   "sha256": "b3193ed8de48246420734e1ea719a4fe79ebc8e5bd465e57c05753a6e24716bb",
+   "url": "https://github.com/syoyo/tinygltf/archive/v2.9.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -123,7 +125,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tinygltf.json"
  },
- "raw_meta_yaml": "{% set name = \"tinygltf\" %}\n{% set version = \"2.8.21\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/syoyo/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: e567257d7addde58b0a483832cbaa5dd8f15e5bcaee6f023831e215d1a2c0502\n\nbuild:\n  number: 0\n  noarch: generic\n  script:\n    - mkdir $PREFIX/include                          # [unix]\n    - cp $SRC_DIR/*.h $PREFIX/include                # [unix]\n    - cp $SRC_DIR/*.hpp $PREFIX/include              # [unix]\n    - mkdir $PREFIX\\include                          # [win]\n    - xcopy /S %SRC_DIR%\\*.h %LIBRARY_INC%           # [win]\n    - xcopy /S %SRC_DIR%\\*.hpp %LIBRARY_INC%         # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/tiny_gltf.h          # [unix]\n    - if not exist %LIBRARY_INC%\\tiny_gltf.h exit 1  # [win]\n\nabout:\n  home: https://github.com/syoyo/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Header only C++11 tiny glTF 2.0 library.\n  description: |\n    TinyGLTF is a header only C++11 glTF 2.0 https://github.com/KhronosGroup/glTF library.\n  dev_url: https://github.com/syoyo/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - benjaminrwilson\n",
+ "raw_meta_yaml": "{% set name = \"tinygltf\" %}\n{% set version = \"2.9.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/syoyo/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: b3193ed8de48246420734e1ea719a4fe79ebc8e5bd465e57c05753a6e24716bb\n\nbuild:\n  number: 0\n  noarch: generic\n  script:\n    - mkdir $PREFIX/include                          # [unix]\n    - cp $SRC_DIR/*.h $PREFIX/include                # [unix]\n    - cp $SRC_DIR/*.hpp $PREFIX/include              # [unix]\n    - mkdir $PREFIX\\include                          # [win]\n    - xcopy /S %SRC_DIR%\\*.h %LIBRARY_INC%           # [win]\n    - xcopy /S %SRC_DIR%\\*.hpp %LIBRARY_INC%         # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/tiny_gltf.h          # [unix]\n    - if not exist %LIBRARY_INC%\\tiny_gltf.h exit 1  # [win]\n\nabout:\n  home: https://github.com/syoyo/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Header only C++11 tiny glTF 2.0 library.\n  description: |\n    TinyGLTF is a header only C++11 glTF 2.0 https://github.com/KhronosGroup/glTF library.\n  dev_url: https://github.com/syoyo/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - benjaminrwilson\n    - krande\n",
  "req": {
   "__set__": true,
   "elements": []
@@ -165,8 +167,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/syoyo/tinygltf/archive/v2.8.21.tar.gz",
- "version": "2.8.21",
+ "url": "https://github.com/syoyo/tinygltf/archive/v2.9.1.tar.gz",
+ "version": "2.9.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/tinygltf.json"
  }
