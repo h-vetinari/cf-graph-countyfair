@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "ctapipe-io-magic",
-   "version": "0.5.5"
+   "version": "0.5.6"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e7bf24bde74e27499f9ebcce8e008bfb345a9f5756d7aabb221b7b88a532b3b3",
-   "url": "https://pypi.org/packages/source/c/ctapipe-io-magic/ctapipe_io_magic-0.5.5.tar.gz"
+   "sha256": "daa1e392c3e25f8d2e7bd39e9b4553344d4332c1455c8d4abde3c682843d7387",
+   "url": "https://pypi.org/packages/source/c/ctapipe-io-magic/ctapipe_io_magic-0.5.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -115,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -125,7 +125,7 @@
   },
   "package": {
    "name": "ctapipe-io-magic",
-   "version": "0.5.5"
+   "version": "0.5.6"
   },
   "requirements": {
    "host": [
@@ -146,8 +146,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e7bf24bde74e27499f9ebcce8e008bfb345a9f5756d7aabb221b7b88a532b3b3",
-   "url": "https://pypi.org/packages/source/c/ctapipe-io-magic/ctapipe_io_magic-0.5.5.tar.gz"
+   "sha256": "daa1e392c3e25f8d2e7bd39e9b4553344d4332c1455c8d4abde3c682843d7387",
+   "url": "https://pypi.org/packages/source/c/ctapipe-io-magic/ctapipe_io_magic-0.5.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -177,7 +177,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ctapipe-io-magic.json"
  },
- "raw_meta_yaml": "{% set name = \"ctapipe-io-magic\" %}\n{% set version = \"0.5.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ctapipe_io_magic-{{ version }}.tar.gz\n  sha256: e7bf24bde74e27499f9ebcce8e008bfb345a9f5756d7aabb221b7b88a532b3b3\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64.0.3\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - astropy-base >=5.0,<6.dev0\n    - ctapipe >=0.19.0,<0.20.dev0\n    - numpy >=1.22\n    - uproot >=5.0,<6.dev0\n    - scipy <1.14\n\ntest:\n  imports:\n    - ctapipe_io_magic\n  commands:\n    - pip check\n    - python -c \"from ctapipe_io_magic import __version__; print(__version__)\"\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/cta-observatory/ctapipe_io_magic\n  summary: ctapipe plugin for reading calibrated MAGIC files\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - aleberti\n",
+ "raw_meta_yaml": "{% set name = \"ctapipe-io-magic\" %}\n{% set version = \"0.5.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ctapipe_io_magic-{{ version }}.tar.gz\n  sha256: daa1e392c3e25f8d2e7bd39e9b4553344d4332c1455c8d4abde3c682843d7387\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64.0.3\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - astropy-base >=5.0,<6.dev0\n    - ctapipe >=0.19.0,<0.20.dev0\n    - numpy >=1.22\n    - uproot >=5.0,<6.dev0\n    - scipy <1.14\n\ntest:\n  imports:\n    - ctapipe_io_magic\n  commands:\n    - pip check\n    - python -c \"from ctapipe_io_magic import __version__; print(__version__)\"\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/cta-observatory/ctapipe_io_magic\n  summary: ctapipe plugin for reading calibrated MAGIC files\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - aleberti\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -262,8 +262,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/ctapipe-io-magic/ctapipe_io_magic-0.5.5.tar.gz",
- "version": "0.5.5",
+ "url": "https://pypi.org/packages/source/c/ctapipe-io-magic/ctapipe_io_magic-0.5.6.tar.gz",
+ "version": "0.5.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ctapipe-io-magic.json"
  }
