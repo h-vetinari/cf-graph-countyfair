@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "sudachidict-core",
-   "version": "20241021"
+   "version": "20250129"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a9d84946f15e040ebf3943ef2b8f0e169c92fb8cf3ce00395bed2698a892069d",
-   "url": "https://pypi.org/packages/source/s/sudachidict-core/SudachiDict-core-20241021.tar.gz"
+   "sha256": "5a8f21e516de0f66e9ef9a5a217398b14ab5d02ecf5dd4cb113b4ee85a0f3ce6",
+   "url": "https://pypi.org/packages/source/s/sudachidict-core/SudachiDict-core-20250129.tar.gz"
   },
   "test": {
    "commands": [
@@ -106,7 +106,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "sudachidict-core",
-   "version": "20241021"
+   "version": "20250129"
   },
   "requirements": {
    "host": [
@@ -131,8 +131,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a9d84946f15e040ebf3943ef2b8f0e169c92fb8cf3ce00395bed2698a892069d",
-   "url": "https://pypi.org/packages/source/s/sudachidict-core/SudachiDict-core-20241021.tar.gz"
+   "sha256": "5a8f21e516de0f66e9ef9a5a217398b14ab5d02ecf5dd4cb113b4ee85a0f3ce6",
+   "url": "https://pypi.org/packages/source/s/sudachidict-core/SudachiDict-core-20250129.tar.gz"
   },
   "test": {
    "commands": [
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sudachidict-core.json"
  },
- "raw_meta_yaml": "{% set name = \"sudachidict-core\" %}\n{% set version = \"20241021\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/SudachiDict-core-{{ version }}.tar.gz\n  sha256: a9d84946f15e040ebf3943ef2b8f0e169c92fb8cf3ce00395bed2698a892069d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - sudachipy >=0.5,<0.7\n\ntest:\n  imports:\n    - sudachidict_core\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/WorksApplications/SudachiDict\n  summary: Sudachi Dictionary for SudachiPy - Core Edition\n  license: Apache-2.0\n  license_file:\n    - LICENSE-2.0.txt\n    - sudachidict_core/resources/LICENSE-2.0.txt\n\nextra:\n  recipe-maintainers:\n    - apmorton\n",
+ "raw_meta_yaml": "{% set name = \"sudachidict-core\" %}\n{% set version = \"20250129\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/SudachiDict-core-{{ version }}.tar.gz\n  sha256: 5a8f21e516de0f66e9ef9a5a217398b14ab5d02ecf5dd4cb113b4ee85a0f3ce6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - sudachipy >=0.5,<0.7\n\ntest:\n  imports:\n    - sudachidict_core\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/WorksApplications/SudachiDict\n  summary: Sudachi Dictionary for SudachiPy - Core Edition\n  license: Apache-2.0\n  license_file:\n    - LICENSE-2.0.txt\n    - sudachidict_core/resources/LICENSE-2.0.txt\n\nextra:\n  recipe-maintainers:\n    - apmorton\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -228,8 +228,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/sudachidict-core/SudachiDict-core-20241021.tar.gz",
- "version": "20241021",
+ "url": "https://pypi.org/packages/source/s/sudachidict-core/SudachiDict-core-20250129.tar.gz",
+ "version": "20250129",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sudachidict-core.json"
  }
