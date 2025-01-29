@@ -66,7 +66,7 @@
    ],
    "error_overlinking": true,
    "missing_dso_whitelist": null,
-   "number": "2",
+   "number": "0",
    "script": [
     "CFLAGS=\"${CFLAGS} -O3 -flto\" CPPFLAGS=\"${CPPFLAGS} -O3\" LIGO_SKYMAP_USE_SYSTEM_CHEALPIX=1 PYTHON -m pip install . -vv"
    ]
@@ -79,7 +79,7 @@
   },
   "package": {
    "name": "ligo.skymap",
-   "version": "2.1.2"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -111,7 +111,7 @@
     "libcblas",
     "ligo-gracedb >=2.0.1",
     "ligo-segments >=1.2.0",
-    "matplotlib-base >=3.5.0",
+    "matplotlib-base >=3.9.1",
     "networkx",
     "numpy >=1.23.0",
     "pillow >=2.5.0",
@@ -135,8 +135,8 @@
     "pyproject.toml-no-lalsuite.patch",
     "openmp-flags.patch"
    ],
-   "sha256": "b1472528dd1046615569c20a96dc142c67df188c4768b25a7281f333db31923d",
-   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.1.2.tar.gz"
+   "sha256": "7cf8f71c8cf52c320c2234f7cca18d9a746cca7301f873a353c8566063c2c4d0",
+   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -167,7 +167,10 @@
    "requires": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -232,7 +235,10 @@
    "elements": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -278,7 +284,7 @@
    ],
    "error_overlinking": true,
    "missing_dso_whitelist": null,
-   "number": "2",
+   "number": "0",
    "script": [
     "CFLAGS=\"${CFLAGS} -O3 -flto\" CPPFLAGS=\"${CPPFLAGS} -O3\" LIGO_SKYMAP_USE_SYSTEM_CHEALPIX=1 PYTHON -m pip install . -vv"
    ]
@@ -291,7 +297,7 @@
   },
   "package": {
    "name": "ligo.skymap",
-   "version": "2.1.2"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -323,7 +329,7 @@
     "libcblas",
     "ligo-gracedb >=2.0.1",
     "ligo-segments >=1.2.0",
-    "matplotlib-base >=3.5.0",
+    "matplotlib-base >=3.9.1",
     "networkx",
     "numpy >=1.23.0",
     "pillow >=2.5.0",
@@ -347,8 +353,8 @@
     "pyproject.toml-no-lalsuite.patch",
     "openmp-flags.patch"
    ],
-   "sha256": "b1472528dd1046615569c20a96dc142c67df188c4768b25a7281f333db31923d",
-   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.1.2.tar.gz"
+   "sha256": "7cf8f71c8cf52c320c2234f7cca18d9a746cca7301f873a353c8566063c2c4d0",
+   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -379,7 +385,10 @@
    "requires": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -444,7 +453,10 @@
    "elements": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -492,7 +504,7 @@
    "missing_dso_whitelist": [
     "$RPATH/ld64.so.2"
    ],
-   "number": "2",
+   "number": "0",
    "script": [
     "CFLAGS=\"${CFLAGS} -O3 -flto\" CPPFLAGS=\"${CPPFLAGS} -O3\" LIGO_SKYMAP_USE_SYSTEM_CHEALPIX=1 PYTHON -m pip install . -vv"
    ]
@@ -505,7 +517,7 @@
   },
   "package": {
    "name": "ligo.skymap",
-   "version": "2.1.2"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -537,7 +549,7 @@
     "libcblas",
     "ligo-gracedb >=2.0.1",
     "ligo-segments >=1.2.0",
-    "matplotlib-base >=3.5.0",
+    "matplotlib-base >=3.9.1",
     "networkx",
     "numpy >=1.23.0",
     "pillow >=2.5.0",
@@ -561,8 +573,8 @@
     "pyproject.toml-no-lalsuite.patch",
     "openmp-flags.patch"
    ],
-   "sha256": "b1472528dd1046615569c20a96dc142c67df188c4768b25a7281f333db31923d",
-   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.1.2.tar.gz"
+   "sha256": "7cf8f71c8cf52c320c2234f7cca18d9a746cca7301f873a353c8566063c2c4d0",
+   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -593,7 +605,10 @@
    "requires": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -658,7 +673,10 @@
    "elements": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -704,7 +722,7 @@
    ],
    "error_overlinking": true,
    "missing_dso_whitelist": null,
-   "number": "2",
+   "number": "0",
    "script": [
     "CFLAGS=\"${CFLAGS} -O3 -flto\" CPPFLAGS=\"${CPPFLAGS} -O3\" LIGO_SKYMAP_USE_SYSTEM_CHEALPIX=1 PYTHON -m pip install . -vv"
    ]
@@ -717,7 +735,7 @@
   },
   "package": {
    "name": "ligo.skymap",
-   "version": "2.1.2"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -751,7 +769,7 @@
     "libcblas",
     "ligo-gracedb >=2.0.1",
     "ligo-segments >=1.2.0",
-    "matplotlib-base >=3.5.0",
+    "matplotlib-base >=3.9.1",
     "networkx",
     "numpy >=1.23.0",
     "pillow >=2.5.0",
@@ -777,8 +795,8 @@
     "openmp-flags.patch",
     "posix_memalign.patch"
    ],
-   "sha256": "b1472528dd1046615569c20a96dc142c67df188c4768b25a7281f333db31923d",
-   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.1.2.tar.gz"
+   "sha256": "7cf8f71c8cf52c320c2234f7cca18d9a746cca7301f873a353c8566063c2c4d0",
+   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -809,7 +827,10 @@
    "requires": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -856,7 +877,7 @@
    ],
    "error_overlinking": true,
    "missing_dso_whitelist": null,
-   "number": "2",
+   "number": "0",
    "script": [
     "CFLAGS=\"${CFLAGS} -O3 -flto\" CPPFLAGS=\"${CPPFLAGS} -O3\" LIGO_SKYMAP_USE_SYSTEM_CHEALPIX=1 PYTHON -m pip install . -vv"
    ]
@@ -869,7 +890,7 @@
   },
   "package": {
    "name": "ligo.skymap",
-   "version": "2.1.2"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -902,7 +923,7 @@
     "ligo-gracedb >=2.0.1",
     "ligo-segments >=1.2.0",
     "llvm-openmp",
-    "matplotlib-base >=3.5.0",
+    "matplotlib-base >=3.9.1",
     "networkx",
     "numpy >=1.23.0",
     "pillow >=2.5.0",
@@ -927,8 +948,8 @@
     "openmp-flags.patch",
     "posix_memalign.patch"
    ],
-   "sha256": "b1472528dd1046615569c20a96dc142c67df188c4768b25a7281f333db31923d",
-   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.1.2.tar.gz"
+   "sha256": "7cf8f71c8cf52c320c2234f7cca18d9a746cca7301f873a353c8566063c2c4d0",
+   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -959,7 +980,10 @@
    "requires": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -1025,7 +1049,10 @@
    "elements": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -1071,7 +1098,7 @@
    ],
    "error_overlinking": true,
    "missing_dso_whitelist": null,
-   "number": "2",
+   "number": "0",
    "script": [
     "CFLAGS=\"${CFLAGS} -O3 -flto\" CPPFLAGS=\"${CPPFLAGS} -O3\" LIGO_SKYMAP_USE_SYSTEM_CHEALPIX=1 PYTHON -m pip install . -vv"
    ]
@@ -1084,7 +1111,7 @@
   },
   "package": {
    "name": "ligo.skymap",
-   "version": "2.1.2"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -1117,7 +1144,7 @@
     "ligo-gracedb >=2.0.1",
     "ligo-segments >=1.2.0",
     "llvm-openmp",
-    "matplotlib-base >=3.5.0",
+    "matplotlib-base >=3.9.1",
     "networkx",
     "numpy >=1.23.0",
     "pillow >=2.5.0",
@@ -1142,8 +1169,8 @@
     "openmp-flags.patch",
     "posix_memalign.patch"
    ],
-   "sha256": "b1472528dd1046615569c20a96dc142c67df188c4768b25a7281f333db31923d",
-   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.1.2.tar.gz"
+   "sha256": "7cf8f71c8cf52c320c2234f7cca18d9a746cca7301f873a353c8566063c2c4d0",
+   "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -1174,7 +1201,10 @@
    "requires": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -1240,7 +1270,10 @@
    "elements": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -1261,7 +1294,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ligo.skymap.json"
  },
- "raw_meta_yaml": "{% set name = \"ligo.skymap\" %}\n{% set version = \"2.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace('.', '_') }}-{{ version }}.tar.gz\n  sha256: b1472528dd1046615569c20a96dc142c67df188c4768b25a7281f333db31923d\n  patches:\n    # remove lalsuite requirement, since we can list dependencies explicitly here\n    - pyproject.toml-no-lalsuite.patch\n    # don't use extension_helpers to detect openmp\n    # see https://git.ligo.org/lscsoft/ligo.skymap/-/issues/32\n    - openmp-flags.patch\n    # Use posix_memalign instead of aligned_alloc on macOS because aligned_alloc\n    # requires macOS >= 10.15 and Conda currently supports macOS >= 10.13\n    - posix_memalign.patch  # [osx]\n\nbuild:\n  entry_points:\n    - bayestar-inject = ligo.skymap.tool.bayestar_inject:main\n    - bayestar-localize-coincs = ligo.skymap.tool.bayestar_localize_coincs:main\n    - bayestar-localize-lvalert = ligo.skymap.tool.bayestar_localize_lvalert:main\n    - bayestar-mcmc = ligo.skymap.tool.bayestar_mcmc:main\n    - bayestar-realize-coincs = ligo.skymap.tool.bayestar_realize_coincs:main\n    - bayestar-sample-model-psd = ligo.skymap.tool.bayestar_sample_model_psd:main\n    - ligo-skymap-combine = ligo.skymap.tool.ligo_skymap_combine:main\n    - ligo-skymap-contour = ligo.skymap.tool.ligo_skymap_contour:main\n    - ligo-skymap-contour-moc = ligo.skymap.tool.ligo_skymap_contour_moc:main\n    - ligo-skymap-flatten = ligo.skymap.tool.ligo_skymap_flatten:main\n    - ligo-skymap-unflatten = ligo.skymap.tool.ligo_skymap_unflatten:main\n    - ligo-skymap-from-samples = ligo.skymap.tool.ligo_skymap_from_samples:main\n    - ligo-skymap-constellations = ligo.skymap.tool.ligo_skymap_constellations:main\n    - ligo-skymap-plot = ligo.skymap.tool.ligo_skymap_plot:main\n    - ligo-skymap-plot-airmass = ligo.skymap.tool.ligo_skymap_plot_airmass:main\n    - ligo-skymap-plot-coherence = ligo.skymap.tool.ligo_skymap_plot_coherence:main\n    - ligo-skymap-plot-observability = ligo.skymap.tool.ligo_skymap_plot_observability:main\n    - ligo-skymap-plot-pp-samples = ligo.skymap.tool.ligo_skymap_plot_pp_samples:main\n    - ligo-skymap-plot-stats = ligo.skymap.tool.ligo_skymap_plot_stats:main\n    - ligo-skymap-plot-volume = ligo.skymap.tool.ligo_skymap_plot_volume:main\n    - ligo-skymap-stats = ligo.skymap.tool.ligo_skymap_stats:main\n  error_overlinking: true\n  missing_dso_whitelist:\n    # https://github.com/conda/conda-build/issues/5403\n    - $RPATH/ld64.so.2  # [ppc64le]\n  number: 2\n  script:\n    - CFLAGS=\"${CFLAGS} -O3 -flto\" CPPFLAGS=\"${CPPFLAGS} -O3\" LIGO_SKYMAP_USE_SYSTEM_CHEALPIX=1 {{ PYTHON }} -m pip install . -vv\n  skip: true  # [win or py<310]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n    - pkg-config\n    # cross-compiling:\n    - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n    - numpy                               # [build_platform != target_platform]\n    - python                              # [build_platform != target_platform]\n  host:\n    - chealpix\n    - extension-helpers\n    - gsl\n    - libcblas\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n    - numpy\n    - pip\n    - python\n    - setuptools >=64\n    - setuptools-scm >=8\n  run:\n    - astroplan >=0.7\n    - astropy-base >=6.0\n    - astropy-healpix >=0.3\n    - chealpix\n    - gsl\n    - healpy\n    - h5py\n    - libcblas\n    - ligo-gracedb >=2.0.1\n    - ligo-segments >=1.2.0\n    - llvm-openmp  # [osx]\n    - matplotlib-base >=3.5.0\n    - networkx\n    - numpy >=1.23.0\n    - pillow >=2.5.0\n    - ptemcee\n    - python\n    - python-lal >=7.6.0\n    - python-lalinspiral >=5.0.1\n    - python-lalmetaio >=4.0.5\n    - python-lalsimulation >=6.0.0\n    - python-ligo-lw >=1.8.0\n    - pytz\n    - reproject >=0.3.2\n    - scipy >=0.14,!=1.10.0\n    - shapely >=2.0.0\n    - tqdm >=4.27.0\n\ntest:\n  requires:\n    - lalapps\n    - pip\n    - pytest\n  commands:\n    # check dependencies\n    - python -m pip check\n    # run unit tests\n    - export OMP_NUM_THREADS={{ CPU_COUNT }}  # [unix]\n    - set OMP_NUM_THREADS=\"{{ CPU_COUNT }}\"  # [win]\n    - python -m pytest -ra --pyargs \"ligo.skymap\" --omp-get-num-threads  # [build_platform == target_platform]\n    # sanity check entry points\n    - bayestar-inject --help\n    - bayestar-localize-coincs --help\n    - bayestar-localize-lvalert --help\n    - bayestar-mcmc --help\n    - bayestar-realize-coincs --help\n    - bayestar-sample-model-psd --help\n    - ligo-skymap-combine --help\n    - ligo-skymap-contour --help\n    - ligo-skymap-contour-moc --help\n    - ligo-skymap-flatten --help\n    - ligo-skymap-unflatten --help\n    - ligo-skymap-from-samples --help\n    - ligo-skymap-constellations --help\n    - ligo-skymap-plot --help\n    - ligo-skymap-plot-airmass --help\n    - ligo-skymap-plot-observability --help\n    - ligo-skymap-plot-pp-samples --help\n    - ligo-skymap-plot-stats --help\n    - ligo-skymap-plot-volume --help\n    - ligo-skymap-stats --help\n\nabout:\n  home: https://lscsoft.docs.ligo.org/ligo.skymap/\n  doc_url: https://lscsoft.docs.ligo.org/ligo.skymap/\n  dev_url: https://git.ligo.org/lscsoft/ligo.skymap\n  license: GPL-3.0-or-later\n  license_file:\n    - licenses/LICENSE.rst\n    - licenses/CHEALPIX_LICENSE.rst\n    - licenses/NUMPY_LICENSE.rst\n    - licenses/TEMPLATE_LICENCE.rst\n  license_family: GPL\n  summary: Tools for reading, writing, manipulating, and making LIGO and Virgo sky maps\n  description: |\n    The `ligo.skymap` package provides tools for reading, writing, generating,\n    and visualizing gravitational-wave probability maps from LIGO and Virgo.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - lpsinger\n",
+ "raw_meta_yaml": "{% set name = \"ligo.skymap\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace('.', '_') }}-{{ version }}.tar.gz\n  sha256: 7cf8f71c8cf52c320c2234f7cca18d9a746cca7301f873a353c8566063c2c4d0\n  patches:\n    # remove lalsuite requirement, since we can list dependencies explicitly here\n    - pyproject.toml-no-lalsuite.patch\n    # don't use extension_helpers to detect openmp\n    # see https://git.ligo.org/lscsoft/ligo.skymap/-/issues/32\n    - openmp-flags.patch\n    # Use posix_memalign instead of aligned_alloc on macOS because aligned_alloc\n    # requires macOS >= 10.15 and Conda currently supports macOS >= 10.13\n    - posix_memalign.patch  # [osx]\n\nbuild:\n  entry_points:\n    - bayestar-inject = ligo.skymap.tool.bayestar_inject:main\n    - bayestar-localize-coincs = ligo.skymap.tool.bayestar_localize_coincs:main\n    - bayestar-localize-lvalert = ligo.skymap.tool.bayestar_localize_lvalert:main\n    - bayestar-mcmc = ligo.skymap.tool.bayestar_mcmc:main\n    - bayestar-realize-coincs = ligo.skymap.tool.bayestar_realize_coincs:main\n    - bayestar-sample-model-psd = ligo.skymap.tool.bayestar_sample_model_psd:main\n    - ligo-skymap-combine = ligo.skymap.tool.ligo_skymap_combine:main\n    - ligo-skymap-contour = ligo.skymap.tool.ligo_skymap_contour:main\n    - ligo-skymap-contour-moc = ligo.skymap.tool.ligo_skymap_contour_moc:main\n    - ligo-skymap-flatten = ligo.skymap.tool.ligo_skymap_flatten:main\n    - ligo-skymap-unflatten = ligo.skymap.tool.ligo_skymap_unflatten:main\n    - ligo-skymap-from-samples = ligo.skymap.tool.ligo_skymap_from_samples:main\n    - ligo-skymap-constellations = ligo.skymap.tool.ligo_skymap_constellations:main\n    - ligo-skymap-plot = ligo.skymap.tool.ligo_skymap_plot:main\n    - ligo-skymap-plot-airmass = ligo.skymap.tool.ligo_skymap_plot_airmass:main\n    - ligo-skymap-plot-coherence = ligo.skymap.tool.ligo_skymap_plot_coherence:main\n    - ligo-skymap-plot-observability = ligo.skymap.tool.ligo_skymap_plot_observability:main\n    - ligo-skymap-plot-pp-samples = ligo.skymap.tool.ligo_skymap_plot_pp_samples:main\n    - ligo-skymap-plot-stats = ligo.skymap.tool.ligo_skymap_plot_stats:main\n    - ligo-skymap-plot-volume = ligo.skymap.tool.ligo_skymap_plot_volume:main\n    - ligo-skymap-stats = ligo.skymap.tool.ligo_skymap_stats:main\n  error_overlinking: true\n  missing_dso_whitelist:\n    # https://github.com/conda/conda-build/issues/5403\n    - $RPATH/ld64.so.2  # [ppc64le]\n  number: 0\n  script:\n    - CFLAGS=\"${CFLAGS} -O3 -flto\" CPPFLAGS=\"${CPPFLAGS} -O3\" LIGO_SKYMAP_USE_SYSTEM_CHEALPIX=1 {{ PYTHON }} -m pip install . -vv\n  skip: true  # [win or py<310]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n    - pkg-config\n    # cross-compiling:\n    - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n    - numpy                               # [build_platform != target_platform]\n    - python                              # [build_platform != target_platform]\n  host:\n    - chealpix\n    - extension-helpers\n    - gsl\n    - libcblas\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n    - numpy\n    - pip\n    - python\n    - setuptools >=64\n    - setuptools-scm >=8\n  run:\n    - astroplan >=0.7\n    - astropy-base >=6.0\n    - astropy-healpix >=0.3\n    - chealpix\n    - gsl\n    - healpy\n    - h5py\n    - libcblas\n    - ligo-gracedb >=2.0.1\n    - ligo-segments >=1.2.0\n    - llvm-openmp  # [osx]\n    - matplotlib-base >=3.9.1\n    - networkx\n    - numpy >=1.23.0\n    - pillow >=2.5.0\n    - ptemcee\n    - python\n    - python-lal >=7.6.0\n    - python-lalinspiral >=5.0.1\n    - python-lalmetaio >=4.0.5\n    - python-lalsimulation >=6.0.0\n    - python-ligo-lw >=1.8.0\n    - pytz\n    - reproject >=0.3.2\n    - scipy >=0.14,!=1.10.0\n    - shapely >=2.0.0\n    - tqdm >=4.27.0\n\ntest:\n  requires:\n    - lalapps\n    - pip\n    - pytest\n    - pytest-astropy\n    - pytest-benchmark\n    - pytest-mpl\n  commands:\n    # check dependencies\n    - python -m pip check\n    # run unit tests\n    - export OMP_NUM_THREADS={{ CPU_COUNT }}  # [unix]\n    - set OMP_NUM_THREADS=\"{{ CPU_COUNT }}\"  # [win]\n    - python -m pytest -ra --pyargs \"ligo.skymap\" --omp-get-num-threads  # [build_platform == target_platform]\n    # sanity check entry points\n    - bayestar-inject --help\n    - bayestar-localize-coincs --help\n    - bayestar-localize-lvalert --help\n    - bayestar-mcmc --help\n    - bayestar-realize-coincs --help\n    - bayestar-sample-model-psd --help\n    - ligo-skymap-combine --help\n    - ligo-skymap-contour --help\n    - ligo-skymap-contour-moc --help\n    - ligo-skymap-flatten --help\n    - ligo-skymap-unflatten --help\n    - ligo-skymap-from-samples --help\n    - ligo-skymap-constellations --help\n    - ligo-skymap-plot --help\n    - ligo-skymap-plot-airmass --help\n    - ligo-skymap-plot-observability --help\n    - ligo-skymap-plot-pp-samples --help\n    - ligo-skymap-plot-stats --help\n    - ligo-skymap-plot-volume --help\n    - ligo-skymap-stats --help\n\nabout:\n  home: https://lscsoft.docs.ligo.org/ligo.skymap/\n  doc_url: https://lscsoft.docs.ligo.org/ligo.skymap/\n  dev_url: https://git.ligo.org/lscsoft/ligo.skymap\n  license: GPL-3.0-or-later\n  license_file:\n    - licenses/LICENSE.rst\n    - licenses/CHEALPIX_LICENSE.rst\n    - licenses/NUMPY_LICENSE.rst\n    - licenses/TEMPLATE_LICENCE.rst\n  license_family: GPL\n  summary: Tools for reading, writing, manipulating, and making LIGO and Virgo sky maps\n  description: |\n    The `ligo.skymap` package provides tools for reading, writing, generating,\n    and visualizing gravitational-wave probability maps from LIGO and Virgo.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - lpsinger\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -1374,7 +1407,10 @@
    "elements": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
@@ -1420,7 +1456,7 @@
     "ligo-gracedb >=2.0.1",
     "ligo-segments >=1.2.0",
     "llvm-openmp",
-    "matplotlib-base >=3.5.0",
+    "matplotlib-base >=3.9.1",
     "networkx",
     "numpy >=1.23.0",
     "pillow >=2.5.0",
@@ -1443,12 +1479,15 @@
    "elements": [
     "lalapps",
     "pip",
-    "pytest"
+    "pytest",
+    "pytest-astropy",
+    "pytest-benchmark",
+    "pytest-mpl"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.1.2.tar.gz",
- "version": "2.1.2",
+ "url": "https://pypi.org/packages/source/l/ligo.skymap/ligo_skymap-2.2.0.tar.gz",
+ "version": "2.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ligo.skymap.json"
  }
