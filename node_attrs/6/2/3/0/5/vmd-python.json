@@ -28,7 +28,7 @@
    "summary": "Visual Molecular Dynamics (VMD) Python bindings"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -38,14 +38,17 @@
   },
   "package": {
    "name": "vmd-python",
-   "version": "3.1.4"
+   "version": "3.1.6"
   },
   "requirements": {
    "build": [
     "perl",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "make",
+    "setuptools",
+    "swig",
     "numpy"
    ],
    "host": [
@@ -55,6 +58,7 @@
     "expat",
     "numpy",
     "tk",
+    "setuptools",
     "sqlite"
    ],
    "run": [
@@ -63,15 +67,17 @@
     "expat",
     "numpy",
     "tk",
-    "sqlite",
-    "importlib-resources"
+    "sqlite"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "vmd-python-v3.1.4.tar.gz",
-   "sha256": "4fbf1140ed5b3897e988fbd9a43746e40e10dffc1b1b51a3bf94841fdd3b3700",
-   "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.4.tar.gz"
+   "fn": "vmd-python-v3.1.6.tar.gz",
+   "patches": [
+    "0001-Don-t-use-AddObjectRef-to-keep-3.9-compatibility.patch"
+   ],
+   "sha256": "0cbf0ce74193bfc837b1552bc1bc5c320ef1f32004e18418679884a62740aad7",
+   "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -87,10 +93,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "make",
     "numpy",
-    "perl"
+    "perl",
+    "setuptools",
+    "swig"
    ]
   },
   "host": {
@@ -101,6 +110,7 @@
     "numpy",
     "pip",
     "python",
+    "setuptools",
     "sqlite",
     "tk"
    ]
@@ -109,7 +119,6 @@
    "__set__": true,
    "elements": [
     "expat",
-    "importlib-resources",
     "libnetcdf",
     "numpy",
     "python",
@@ -135,7 +144,7 @@
    "summary": "Visual Molecular Dynamics (VMD) Python bindings"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -145,14 +154,17 @@
   },
   "package": {
    "name": "vmd-python",
-   "version": "3.1.4"
+   "version": "3.1.6"
   },
   "requirements": {
    "build": [
     "perl",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "make",
+    "setuptools",
+    "swig",
     "numpy"
    ],
    "host": [
@@ -162,6 +174,7 @@
     "expat",
     "numpy",
     "tk",
+    "setuptools",
     "sqlite"
    ],
    "run": [
@@ -170,15 +183,17 @@
     "expat",
     "numpy",
     "tk",
-    "sqlite",
-    "importlib-resources"
+    "sqlite"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "vmd-python-v3.1.4.tar.gz",
-   "sha256": "4fbf1140ed5b3897e988fbd9a43746e40e10dffc1b1b51a3bf94841fdd3b3700",
-   "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.4.tar.gz"
+   "fn": "vmd-python-v3.1.6.tar.gz",
+   "patches": [
+    "0001-Don-t-use-AddObjectRef-to-keep-3.9-compatibility.patch"
+   ],
+   "sha256": "0cbf0ce74193bfc837b1552bc1bc5c320ef1f32004e18418679884a62740aad7",
+   "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -201,7 +216,7 @@
    "summary": "Visual Molecular Dynamics (VMD) Python bindings"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -211,14 +226,17 @@
   },
   "package": {
    "name": "vmd-python",
-   "version": "3.1.4"
+   "version": "3.1.6"
   },
   "requirements": {
    "build": [
     "perl",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "make",
+    "setuptools",
+    "swig",
     "numpy"
    ],
    "host": [
@@ -228,6 +246,7 @@
     "expat",
     "numpy",
     "tk",
+    "setuptools",
     "sqlite"
    ],
    "run": [
@@ -236,15 +255,17 @@
     "expat",
     "numpy",
     "tk",
-    "sqlite",
-    "importlib-resources"
+    "sqlite"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "vmd-python-v3.1.4.tar.gz",
-   "sha256": "4fbf1140ed5b3897e988fbd9a43746e40e10dffc1b1b51a3bf94841fdd3b3700",
-   "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.4.tar.gz"
+   "fn": "vmd-python-v3.1.6.tar.gz",
+   "patches": [
+    "0001-Don-t-use-AddObjectRef-to-keep-3.9-compatibility.patch"
+   ],
+   "sha256": "0cbf0ce74193bfc837b1552bc1bc5c320ef1f32004e18418679884a62740aad7",
+   "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -260,10 +281,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "make",
     "numpy",
-    "perl"
+    "perl",
+    "setuptools",
+    "swig"
    ]
   },
   "host": {
@@ -274,6 +298,7 @@
     "numpy",
     "pip",
     "python",
+    "setuptools",
     "sqlite",
     "tk"
    ]
@@ -282,7 +307,6 @@
    "__set__": true,
    "elements": [
     "expat",
-    "importlib-resources",
     "libnetcdf",
     "numpy",
     "python",
@@ -308,7 +332,7 @@
    "summary": "Visual Molecular Dynamics (VMD) Python bindings"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -318,14 +342,17 @@
   },
   "package": {
    "name": "vmd-python",
-   "version": "3.1.4"
+   "version": "3.1.6"
   },
   "requirements": {
    "build": [
     "perl",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "make",
+    "setuptools",
+    "swig",
     "numpy"
    ],
    "host": [
@@ -335,6 +362,7 @@
     "expat",
     "numpy",
     "tk",
+    "setuptools",
     "sqlite"
    ],
    "run": [
@@ -343,15 +371,17 @@
     "expat",
     "numpy",
     "tk",
-    "sqlite",
-    "importlib-resources"
+    "sqlite"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "vmd-python-v3.1.4.tar.gz",
-   "sha256": "4fbf1140ed5b3897e988fbd9a43746e40e10dffc1b1b51a3bf94841fdd3b3700",
-   "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.4.tar.gz"
+   "fn": "vmd-python-v3.1.6.tar.gz",
+   "patches": [
+    "0001-Don-t-use-AddObjectRef-to-keep-3.9-compatibility.patch"
+   ],
+   "sha256": "0cbf0ce74193bfc837b1552bc1bc5c320ef1f32004e18418679884a62740aad7",
+   "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -367,10 +397,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "make",
     "numpy",
-    "perl"
+    "perl",
+    "setuptools",
+    "swig"
    ]
   },
   "host": {
@@ -381,6 +414,7 @@
     "numpy",
     "pip",
     "python",
+    "setuptools",
     "sqlite",
     "tk"
    ]
@@ -389,7 +423,6 @@
    "__set__": true,
    "elements": [
     "expat",
-    "importlib-resources",
     "libnetcdf",
     "numpy",
     "python",
@@ -419,21 +452,23 @@
  "pr_info": {
   "__lazy_json__": "pr_info/vmd-python.json"
  },
- "raw_meta_yaml": "{% set name = \"vmd-python\" %}\n{% set version = \"3.1.4\" %}\n{% set sha256 = \"4fbf1140ed5b3897e988fbd9a43746e40e10dffc1b1b51a3bf94841fdd3b3700\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-v{{ version }}.tar.gz\n  url: https://github.com/Eigenstate/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - perl\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - numpy\n  host:\n    - python\n    - pip\n    - libnetcdf\n    - expat\n    - numpy\n    - tk\n    - sqlite\n\n  run:\n    - python\n    - libnetcdf\n    - expat\n    - {{ pin_compatible('numpy') }}\n    - tk\n    - sqlite\n    - importlib-resources\n\ntest:\n  requires:\n    - pytest\n  commands:\n    - py.test --pyargs vmd\n\nabout:\n  home: http://github.com/Eigenstate/vmd-python\n  license: VMD\n  license_file: LICENSE\n  summary: \"Visual Molecular Dynamics (VMD) Python bindings\"\n  description: |\n    vmd-python is Visual Molecular Dynamics (VMD) built as a Python extension\n    module, with a few usability improvements. It includes functionality for\n    loading and manipulating a variety of molecule file formats, working\n    with trajectories, and many assorted plugins.\n  doc_url: http://vmd.robinbetz.com\n  dev_url: https://github.com/Eigenstate/vmd-python\n\nextra:\n  recipe-maintainers:\n    - Eigenstate\n",
+ "raw_meta_yaml": "{% set name = \"vmd-python\" %}\n{% set version = \"3.1.6\" %}\n{% set sha256 = \"0cbf0ce74193bfc837b1552bc1bc5c320ef1f32004e18418679884a62740aad7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-v{{ version }}.tar.gz\n  url: https://github.com/Eigenstate/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 0001-Don-t-use-AddObjectRef-to-keep-3.9-compatibility.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - perl\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - make\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - setuptools\n    - swig\n    - numpy\n  host:\n    - python\n    - pip\n    - libnetcdf\n    - expat\n    - numpy\n    - tk\n    - setuptools\n    - sqlite\n\n  run:\n    - python\n    - libnetcdf\n    - expat\n    - {{ pin_compatible('numpy') }}\n    - tk\n    - sqlite\n\ntest:\n  requires:\n    - pytest\n  commands:\n    - py.test --pyargs vmd\n\nabout:\n  home: http://github.com/Eigenstate/vmd-python\n  license: VMD\n  license_file: LICENSE\n  summary: \"Visual Molecular Dynamics (VMD) Python bindings\"\n  description: |\n    vmd-python is Visual Molecular Dynamics (VMD) built as a Python extension\n    module, with a few usability improvements. It includes functionality for\n    loading and manipulating a variety of molecule file formats, working\n    with trajectories, and many assorted plugins.\n  doc_url: http://vmd.robinbetz.com\n  dev_url: https://github.com/Eigenstate/vmd-python\n\nextra:\n  recipe-maintainers:\n    - Eigenstate\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "cxx_compiler_stub",
    "expat",
-   "importlib-resources",
    "libnetcdf",
    "make",
    "numpy",
    "perl",
    "pip",
    "python",
+   "setuptools",
    "sqlite",
+   "swig",
    "tk"
   ]
  },
@@ -442,22 +477,27 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "make",
     "numpy",
-    "perl"
+    "perl",
+    "setuptools",
+    "swig"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "expat",
     "libnetcdf",
     "numpy",
     "pip",
     "python",
+    "setuptools",
     "sqlite",
     "tk"
    ]
@@ -466,9 +506,9 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "expat",
-    "importlib-resources",
     "libnetcdf",
     "numpy",
     "python",
@@ -489,10 +529,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "make",
     "numpy",
-    "perl"
+    "perl",
+    "setuptools",
+    "swig"
    ]
   },
   "host": {
@@ -503,6 +546,7 @@
     "numpy",
     "pip",
     "python",
+    "setuptools",
     "sqlite",
     "tk"
    ]
@@ -511,7 +555,6 @@
    "__set__": true,
    "elements": [
     "expat",
-    "importlib-resources",
     "libnetcdf",
     "numpy",
     "python",
@@ -526,8 +569,8 @@
    ]
   }
  },
- "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.4.tar.gz",
- "version": "3.1.4",
+ "url": "https://github.com/Eigenstate/vmd-python/archive/v3.1.6.tar.gz",
+ "version": "3.1.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/vmd-python.json"
  }
