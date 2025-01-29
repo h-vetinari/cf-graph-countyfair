@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "airflow-ha",
-   "version": "1.0.0"
+   "version": "1.0.1"
   },
   "requirements": {
    "host": [
@@ -46,14 +46,16 @@
     "hatchling"
    ],
    "run": [
-    "python >=3.9",
-    "apache-airflow >=2,<3"
+    "python >=3.9"
+   ],
+   "run_constrained": [
+    "apache-airflow >=2.8,<3"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9f08236f47007b2815fab4289bc4ce69ddc97ce6eeb62247631e0d9f0b397150",
-   "url": "https://pypi.org/packages/source/a/airflow-ha/airflow_ha-1.0.0.tar.gz"
+   "sha256": "c5f7c7035524fdb48d00087f26277fdc9efe1c109b5d0d7f9706ea55f5216d68",
+   "url": "https://pypi.org/packages/source/a/airflow-ha/airflow_ha-1.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -84,7 +86,6 @@
   "run": {
    "__set__": true,
    "elements": [
-    "apache-airflow",
     "python"
    ]
   },
@@ -120,7 +121,7 @@
   },
   "package": {
    "name": "airflow-ha",
-   "version": "1.0.0"
+   "version": "1.0.1"
   },
   "requirements": {
    "host": [
@@ -129,14 +130,16 @@
     "hatchling"
    ],
    "run": [
-    "python >=3.9",
-    "apache-airflow >=2,<3"
+    "python >=3.9"
+   ],
+   "run_constrained": [
+    "apache-airflow >=2.8,<3"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9f08236f47007b2815fab4289bc4ce69ddc97ce6eeb62247631e0d9f0b397150",
-   "url": "https://pypi.org/packages/source/a/airflow-ha/airflow_ha-1.0.0.tar.gz"
+   "sha256": "c5f7c7035524fdb48d00087f26277fdc9efe1c109b5d0d7f9706ea55f5216d68",
+   "url": "https://pypi.org/packages/source/a/airflow-ha/airflow_ha-1.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -165,11 +168,10 @@
  "pr_info": {
   "__lazy_json__": "pr_info/airflow-ha.json"
  },
- "raw_meta_yaml": "{% set name = \"airflow-ha\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/airflow-ha/airflow_ha-{{ version }}.tar.gz\n  sha256: 9f08236f47007b2815fab4289bc4ce69ddc97ce6eeb62247631e0d9f0b397150\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - apache-airflow >=2,<3\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - airflow_ha\n\nabout:\n  home: https://github.com/airflow-laminar/airflow-ha\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: High Availability (HA) DAG Utility\n  description: High Availability (HA) DAG Utility\n  dev_url: https://github.com/airflow-laminar/airflow-ha\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
+ "raw_meta_yaml": "{% set name = \"airflow-ha\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/airflow-ha/airflow_ha-{{ version }}.tar.gz\n  sha256: c5f7c7035524fdb48d00087f26277fdc9efe1c109b5d0d7f9706ea55f5216d68\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n  run_constrained:\n    - apache-airflow >=2.8,<3\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - airflow_ha\n\nabout:\n  home: https://github.com/airflow-laminar/airflow-ha\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: High Availability (HA) DAG Utility\n  description: High Availability (HA) DAG Utility\n  dev_url: https://github.com/airflow-laminar/airflow-ha\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
  "req": {
   "__set__": true,
   "elements": [
-   "apache-airflow",
    "hatchling",
    "pip",
    "python"
@@ -191,7 +193,6 @@
   "run": {
    "__set__": true,
    "elements": [
-    "apache-airflow",
     "python"
    ]
   },
@@ -220,7 +221,6 @@
   "run": {
    "__set__": true,
    "elements": [
-    "apache-airflow >=2,<3",
     "python >=3.9"
    ]
   },
@@ -232,8 +232,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/airflow-ha/airflow_ha-1.0.0.tar.gz",
- "version": "1.0.0",
+ "url": "https://pypi.org/packages/source/a/airflow-ha/airflow_ha-1.0.1.tar.gz",
+ "version": "1.0.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/airflow-ha.json"
  }
