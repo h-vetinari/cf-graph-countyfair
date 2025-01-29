@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "azure": {
+   "free_disk_space": true
+  },
   "build_platform": {
    "linux_aarch64": "linux_64",
    "linux_ppc64le": "linux_64",
@@ -32,7 +35,8 @@
    "summary": "Gradient boosting on decision trees library"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "string": "cuda118_py39h1234567_1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -40,7 +44,8 @@
     "kizill",
     "nikitxskv",
     "dbakshee",
-    "andrey-khropov"
+    "andrey-khropov",
+    "isuruf"
    ]
   },
   "package": {
@@ -48,10 +53,27 @@
    "version": "1.2.7"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "ragel >=6.10",
+    "yasm >=1.3.0",
+    "swig >=4.0.2",
+    "cmake >=3.18",
+    "make",
+    "cxx_compiler_stub",
+    "clangxx >=15,<16",
+    "c_stdlib_stub",
+    "lld >=7",
+    "yarn",
+    "cuda_compiler_stub"
+   ],
    "host": [
+    "openssl",
+    "jupyterlab 3.0.6.*",
     "python",
-    "pip"
+    "pip",
+    "setuptools",
+    "cuda-version 12.0",
+    "cuda-version 11.8"
    ],
    "run": [
     "python",
@@ -62,10 +84,17 @@
     "plotly",
     "matplotlib-base",
     "python-graphviz"
+   ],
+   "run_constrained": [
+    "__cuda <0.0a0",
+    "jupyterlab"
    ]
   },
   "schema_version": 0,
   "source": {
+   "patches": [
+    "conda.diff"
+   ],
    "sha256": "099ff437993621b86565f3b25150071bdc20623ff77b75ed4d0cf6a37263e1fd",
    "url": "https://github.com/catboost/catboost/archive/refs/tags/v1.2.7.tar.gz"
   },
@@ -93,13 +122,29 @@
  "linux_64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_stdlib_stub",
+    "clangxx",
+    "cmake",
+    "cuda_compiler_stub",
+    "cxx_compiler_stub",
+    "lld",
+    "make",
+    "ragel",
+    "swig",
+    "yarn",
+    "yasm"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "cuda-version",
+    "jupyterlab",
+    "openssl",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -140,7 +185,8 @@
    "summary": "Gradient boosting on decision trees library"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "string": "cuda118_py39h1234567_1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -148,7 +194,8 @@
     "kizill",
     "nikitxskv",
     "dbakshee",
-    "andrey-khropov"
+    "andrey-khropov",
+    "isuruf"
    ]
   },
   "package": {
@@ -156,10 +203,27 @@
    "version": "1.2.7"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "ragel >=6.10",
+    "yasm >=1.3.0",
+    "swig >=4.0.2",
+    "cmake >=3.18",
+    "make",
+    "cxx_compiler_stub",
+    "clangxx >=15,<16",
+    "c_stdlib_stub",
+    "lld >=7",
+    "yarn",
+    "cuda_compiler_stub"
+   ],
    "host": [
+    "openssl",
+    "jupyterlab 3.0.6.*",
     "python",
-    "pip"
+    "pip",
+    "setuptools",
+    "cuda-version 12.0",
+    "cuda-version 11.8"
    ],
    "run": [
     "python",
@@ -170,10 +234,17 @@
     "plotly",
     "matplotlib-base",
     "python-graphviz"
+   ],
+   "run_constrained": [
+    "__cuda <0.0a0",
+    "jupyterlab"
    ]
   },
   "schema_version": 0,
   "source": {
+   "patches": [
+    "conda.diff"
+   ],
    "sha256": "099ff437993621b86565f3b25150071bdc20623ff77b75ed4d0cf6a37263e1fd",
    "url": "https://github.com/catboost/catboost/archive/refs/tags/v1.2.7.tar.gz"
   },
@@ -201,13 +272,29 @@
  "linux_aarch64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_stdlib_stub",
+    "clangxx",
+    "cmake",
+    "cuda_compiler_stub",
+    "cxx_compiler_stub",
+    "lld",
+    "make",
+    "ragel",
+    "swig",
+    "yarn",
+    "yasm"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "cuda-version",
+    "jupyterlab",
+    "openssl",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -248,7 +335,8 @@
    "summary": "Gradient boosting on decision trees library"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "string": "cpu_py39h1234567_1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -256,7 +344,8 @@
     "kizill",
     "nikitxskv",
     "dbakshee",
-    "andrey-khropov"
+    "andrey-khropov",
+    "isuruf"
    ]
   },
   "package": {
@@ -264,10 +353,27 @@
    "version": "1.2.7"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "ragel >=6.10",
+    "yasm >=1.3.0",
+    "swig >=4.0.2",
+    "cmake >=3.18",
+    "make",
+    "cxx_compiler_stub",
+    "clangxx >=15,<16",
+    "c_stdlib_stub",
+    "lld >=7",
+    "yarn",
+    "cuda_compiler_stub"
+   ],
    "host": [
+    "openssl",
+    "jupyterlab 3.0.6.*",
     "python",
-    "pip"
+    "pip",
+    "setuptools",
+    "cuda-version 12.0",
+    "cuda-version 11.8"
    ],
    "run": [
     "python",
@@ -278,10 +384,14 @@
     "plotly",
     "matplotlib-base",
     "python-graphviz"
-   ]
+   ],
+   "run_constrained": null
   },
   "schema_version": 0,
   "source": {
+   "patches": [
+    "conda.diff"
+   ],
    "sha256": "099ff437993621b86565f3b25150071bdc20623ff77b75ed4d0cf6a37263e1fd",
    "url": "https://github.com/catboost/catboost/archive/refs/tags/v1.2.7.tar.gz"
   },
@@ -320,7 +430,8 @@
    "summary": "Gradient boosting on decision trees library"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "string": "cpu_py39h1234567_1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -328,7 +439,8 @@
     "kizill",
     "nikitxskv",
     "dbakshee",
-    "andrey-khropov"
+    "andrey-khropov",
+    "isuruf"
    ]
   },
   "package": {
@@ -336,10 +448,23 @@
    "version": "1.2.7"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "ragel >=6.10",
+    "yasm >=1.3.0",
+    "swig >=4.0.2",
+    "cmake >=3.18",
+    "make",
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "lld >=7",
+    "yarn"
+   ],
    "host": [
+    "openssl",
+    "jupyterlab 3.0.6.*",
     "python",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python",
@@ -350,10 +475,17 @@
     "plotly",
     "matplotlib-base",
     "python-graphviz"
+   ],
+   "run_constrained": [
+    "__cuda <0.0a0",
+    "jupyterlab"
    ]
   },
   "schema_version": 0,
   "source": {
+   "patches": [
+    "conda.diff"
+   ],
    "sha256": "099ff437993621b86565f3b25150071bdc20623ff77b75ed4d0cf6a37263e1fd",
    "url": "https://github.com/catboost/catboost/archive/refs/tags/v1.2.7.tar.gz"
   },
@@ -381,13 +513,26 @@
  "osx_64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "lld",
+    "make",
+    "ragel",
+    "swig",
+    "yarn",
+    "yasm"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "jupyterlab",
+    "openssl",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -428,7 +573,8 @@
    "summary": "Gradient boosting on decision trees library"
   },
   "build": {
-   "number": "0"
+   "number": "1",
+   "string": "cpu_py39h1234567_1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -436,7 +582,8 @@
     "kizill",
     "nikitxskv",
     "dbakshee",
-    "andrey-khropov"
+    "andrey-khropov",
+    "isuruf"
    ]
   },
   "package": {
@@ -444,10 +591,23 @@
    "version": "1.2.7"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "ragel >=6.10",
+    "yasm >=1.3.0",
+    "swig >=4.0.2",
+    "cmake >=3.18",
+    "make",
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "lld >=7",
+    "yarn"
+   ],
    "host": [
+    "openssl",
+    "jupyterlab 3.0.6.*",
     "python",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python",
@@ -458,10 +618,17 @@
     "plotly",
     "matplotlib-base",
     "python-graphviz"
+   ],
+   "run_constrained": [
+    "__cuda <0.0a0",
+    "jupyterlab"
    ]
   },
   "schema_version": 0,
   "source": {
+   "patches": [
+    "conda.diff"
+   ],
    "sha256": "099ff437993621b86565f3b25150071bdc20623ff77b75ed4d0cf6a37263e1fd",
    "url": "https://github.com/catboost/catboost/archive/refs/tags/v1.2.7.tar.gz"
   },
@@ -489,13 +656,26 @@
  "osx_arm64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "lld",
+    "make",
+    "ragel",
+    "swig",
+    "yarn",
+    "yasm"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "jupyterlab",
+    "openssl",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -540,36 +720,73 @@
  "pr_info": {
   "__lazy_json__": "pr_info/catboost.json"
  },
- "raw_meta_yaml": "{% set version = \"1.2.7\" %}\n\npackage:\n  name: catboost\n  version: {{ version }}\n\nsource:\n  url: https://github.com/catboost/catboost/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 099ff437993621b86565f3b25150071bdc20623ff77b75ed4d0cf6a37263e1fd\n\nbuild:\n  number: 0\n  #  Yandex supplies whl files on PyPI for:\n  # - Linux: Python 3.7, 3.8, 3.9, 3.10, 3.11, 3.12\n  # - OS X: Python 3.7, 3.8, 3.9, 3.10, 3.11, 3.12\n  # - Win-64: Python 3.7, 3.8, 3.9, 3.10, 3.11, 3.12\n  skip: True  # [win32]\n  skip: True  # [python_impl == 'pypy']\n  # There are issues with python 3.8 on macOS 11.x: https://github.com/conda-forge/python-feedstock/issues/445\n  #  so Conda has issues with tags compatibility with platform tags 'macosx_11_0_...'\n  #  so disable this configuration for now\n  skip: True  # [osx and x86_64 and (py == 38)]\n  # TODO: support Linux on ppc64le: https://github.com/catboost/catboost/issues/2145\n  skip: True  # [ppc64le]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - numpy  >=1.16.0,<2                     # [build_platform != target_platform]\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy >=1.16.0,<2\n    - pandas >=0.24.0\n    - scipy\n    - six\n    - plotly\n    - matplotlib-base\n    - python-graphviz\n    #python-graphviz avoids the pip check error\n\n\ntest:\n  imports:\n    - catboost\n  commands:\n    - pip check\n    - python catboost/pytest/smoke_tests/classification_tutorial_cpu.py\n  requires:\n    - pip\n    - scikit-learn\n    - shap\n    - traitlets\n    - ipython\n    - ipywidgets >=7.0,<9.0\n  source_files:\n    - catboost/pytest/smoke_tests/classification_tutorial_cpu.py\n\nabout:\n  home: http://catboost.ai\n  license: Apache-2.0\n  license_family: MIT\n  license_file: LICENSE\n  license_url: https://github.com/catboost/catboost/blob/master/LICENSE\n  summary: 'Gradient boosting on decision trees library'\n\n  description: |\n    General purpose gradient boosting on decision trees library with categorical features support out of the box.\n    It is easy to install, contains fast inference implementation and supports CPU and GPU (even multi-GPU) computation.\n  doc_url: https://catboost.ai/docs/\n  dev_url: https://github.com/catboost/catboost\n\nextra:\n  recipe-maintainers:\n    - sab\n    - kizill\n    - nikitxskv\n    - dbakshee\n    - andrey-khropov\n",
+ "raw_meta_yaml": "{% set version = \"1.2.7\" %}\n\n{% if cuda_compiler_version == \"None\" %}\n{% set cuda_major = 0 %}\n{% else %}\n{% set cuda_major = environ.get(\"cuda_compiler_version\", \"11.8\").split(\".\")[0] | int %}\n{% endif %}\n\npackage:\n  name: catboost\n  version: {{ version }}\n\nsource:\n  url: https://github.com/catboost/catboost/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 099ff437993621b86565f3b25150071bdc20623ff77b75ed4d0cf6a37263e1fd\n  patches:\n    - conda.diff\n\nbuild:\n  number: 1\n  # We build from source on Unix and re-package binaries on windows\n  #  Yandex supplies whl files on PyPI for:\n  # - Win-64: Python 3.7, 3.8, 3.9, 3.10, 3.11, 3.12\n  skip: True  # [win32]\n  skip: True  # [python_impl == 'pypy']\n  # There are issues with python 3.8 on macOS 11.x: https://github.com/conda-forge/python-feedstock/issues/445\n  #  so Conda has issues with tags compatibility with platform tags 'macosx_11_0_...'\n  #  so disable this configuration for now\n  skip: True  # [osx and x86_64 and (py == 38)]\n  # TODO: support Linux on ppc64le: https://github.com/catboost/catboost/issues/2145\n  skip: True  # [ppc64le]\n  # Wheels from PyPI have a single version that already contains CUDA support so do not do separate builds on Windows,\n  # just have a single version for now\n  # TODO: build from source on Windows\n  skip: True  # [win and cuda_compiler_version != \"None\"]\n  string: cuda{{ cuda_compiler_version | replace('.', '') }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [unix and cuda_compiler_version != \"None\"]\n  string: cpu_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}                                                 # [unix and cuda_compiler_version == \"None\"]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - jupyterlab 3.0.6.*                     # [unix and build_platform != target_platform]\n    - ragel >=6.10                # [unix]\n    - yasm >=1.3.0                # [unix]\n    - swig >=4.0.2                # [unix]\n    - cmake >=3.18                # [unix]\n    - make                        # [unix]\n    - {{ compiler('cxx') }}       # [linux or osx]\n    # clang 14 on conda-forge is non-functional\n    - clangxx >=15,<16            # [linux]\n    - {{ stdlib('c') }}           # [unix]\n    - {{ compiler('cuda') }}      # [unix and cuda_compiler_version != \"None\"]\n    - lld >=7                     # [unix]\n    - yarn                        # [unix]\n  host:\n    - openssl                     # [unix]\n    - jupyterlab 3.0.6.*          # [unix]\n    - python\n    - pip\n    - setuptools\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version != \"None\"]\n    {% if cuda_major >= 12 %}\n    - cuda-driver-dev\n    - cuda-cudart-dev\n    {% endif %}\n  run:\n    - python\n    - numpy >=1.16.0,<2\n    - pandas >=0.24.0\n    - scipy\n    - six\n    - plotly\n    - matplotlib-base\n    - python-graphviz\n    #python-graphviz avoids the pip check error\n  run_constrained:\n    # make sure the non CUDA build does not get installed when the user has CUDA enabled\n    - __cuda <0.0a0  # [unix and cuda_compiler_version == \"None\"]\n    # relax jupyterlab version constraints from those used in the build\n    # catboost only works properly with jupyterlab 3.x for now\n    # but we don't want to constrain users to these versions as it only affects catboost visualization\n    # and other versions might be preferable for other packages\n    - {{ pin_compatible(\"jupyterlab\", max_pin=None) }}   # [unix]\n\ntest:\n  imports:\n    - catboost\n  commands:\n    - pip check\n    - python catboost/pytest/smoke_tests/classification_tutorial_cpu.py\n  requires:\n    - pip\n    - scikit-learn\n    - shap\n    - traitlets\n    - ipython\n    - ipywidgets >=7.0,<9.0\n  source_files:\n    - catboost/pytest/smoke_tests/classification_tutorial_cpu.py\n\nabout:\n  home: http://catboost.ai\n  license: Apache-2.0\n  license_family: MIT\n  license_file: LICENSE\n  license_url: https://github.com/catboost/catboost/blob/master/LICENSE\n  summary: 'Gradient boosting on decision trees library'\n\n  description: |\n    General purpose gradient boosting on decision trees library with categorical features support out of the box.\n    It is easy to install, contains fast inference implementation and supports CPU and GPU (even multi-GPU) computation.\n  doc_url: https://catboost.ai/docs/\n  dev_url: https://github.com/catboost/catboost\n\nextra:\n  recipe-maintainers:\n    - sab\n    - kizill\n    - nikitxskv\n    - dbakshee\n    - andrey-khropov\n    - isuruf\n",
  "req": {
   "__set__": true,
   "elements": [
+   "c_stdlib_stub",
+   "clangxx",
+   "cmake",
+   "cuda-version",
+   "cuda_compiler_stub",
+   "cxx_compiler_stub",
+   "jupyterlab",
+   "lld",
+   "make",
    "matplotlib-base",
    "numpy",
+   "openssl",
    "pandas",
    "pip",
    "plotly",
    "python",
    "python-graphviz",
+   "ragel",
    "scipy",
-   "six"
+   "setuptools",
+   "six",
+   "swig",
+   "yarn",
+   "yasm"
   ]
  },
  "requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_stdlib_stub",
+    "clangxx",
+    "cmake",
+    "cuda_compiler_stub",
+    "cxx_compiler_stub",
+    "lld",
+    "make",
+    "ragel",
+    "swig",
+    "yarn",
+    "yasm"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
+    "cuda-version",
+    "cuda_compiler_stub",
+    "cxx_compiler_stub",
+    "jupyterlab",
+    "openssl",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
+    "cuda_compiler_stub",
+    "cxx_compiler_stub",
     "matplotlib-base",
     "numpy",
     "pandas",
@@ -597,13 +814,30 @@
  "total_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_stdlib_stub",
+    "clangxx >=15,<16",
+    "cmake >=3.18",
+    "cuda_compiler_stub",
+    "cxx_compiler_stub",
+    "lld >=7",
+    "make",
+    "ragel >=6.10",
+    "swig >=4.0.2",
+    "yarn",
+    "yasm >=1.3.0"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "cuda-version 11.8",
+    "cuda-version 12.0",
+    "jupyterlab 3.0.6.*",
+    "openssl",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -649,7 +883,7 @@
    "summary": "Gradient boosting on decision trees library"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -657,7 +891,8 @@
     "kizill",
     "nikitxskv",
     "dbakshee",
-    "andrey-khropov"
+    "andrey-khropov",
+    "isuruf"
    ]
   },
   "package": {
@@ -668,7 +903,8 @@
    "build": [],
    "host": [
     "python",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python",
@@ -679,10 +915,14 @@
     "plotly",
     "matplotlib-base",
     "python-graphviz"
-   ]
+   ],
+   "run_constrained": null
   },
   "schema_version": 0,
   "source": {
+   "patches": [
+    "conda.diff"
+   ],
    "sha256": "099ff437993621b86565f3b25150071bdc20623ff77b75ed4d0cf6a37263e1fd",
    "url": "https://github.com/catboost/catboost/archive/refs/tags/v1.2.7.tar.gz"
   },
@@ -716,7 +956,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
