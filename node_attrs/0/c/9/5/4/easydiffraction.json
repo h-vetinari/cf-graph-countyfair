@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -39,13 +39,13 @@
     "requirements": {
      "build": [],
      "host": [
-      "python 3.11.*",
+      "python 3.10.*",
       "hatchling",
       "versioningit",
       "pip"
      ],
      "run": [
-      "python >=3.11,<3.13",
+      "python >=3.10,<3.13",
       "cryspy",
       "easycrystallography",
       "easyscience",
@@ -59,7 +59,7 @@
         "easydiffraction"
        ],
        "pip_check": false,
-       "python_version": "3.11.*"
+       "python_version": "3.10.*"
       }
      }
     ]
@@ -71,13 +71,13 @@
   },
   "requirements": {
    "host": [
-    "python 3.11.*",
+    "python 3.10.*",
     "hatchling",
     "versioningit",
     "pip"
    ],
    "run": [
-    "python >=3.11,<3.13",
+    "python >=3.10,<3.13",
     "cryspy",
     "easycrystallography",
     "easyscience",
@@ -131,7 +131,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -146,13 +146,13 @@
     "requirements": {
      "build": [],
      "host": [
-      "python 3.11.*",
+      "python 3.10.*",
       "hatchling",
       "versioningit",
       "pip"
      ],
      "run": [
-      "python >=3.11,<3.13",
+      "python >=3.10,<3.13",
       "cryspy",
       "easycrystallography",
       "easyscience",
@@ -166,7 +166,7 @@
         "easydiffraction"
        ],
        "pip_check": false,
-       "python_version": "3.11.*"
+       "python_version": "3.10.*"
       }
      }
     ]
@@ -178,13 +178,13 @@
   },
   "requirements": {
    "host": [
-    "python 3.11.*",
+    "python 3.10.*",
     "hatchling",
     "versioningit",
     "pip"
    ],
    "run": [
-    "python >=3.11,<3.13",
+    "python >=3.10,<3.13",
     "cryspy",
     "easycrystallography",
     "easyscience",
@@ -211,7 +211,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/easydiffraction.json"
  },
- "raw_meta_yaml": "context:\n  name: easydiffraction\n  version: 0.3.0\n  python_min: \"3.11\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/easydiffraction-${{ version }}.tar.gz\n  sha256: ef534e319668f8c757ca88dd09b46578dd3c8716a14be2d82ac80a8e41141a1d\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - hatchling\n    - versioningit\n    - pip\n  run:\n    - python >=${{ python_min }},<3.13\n    - cryspy\n    - easycrystallography\n    - easyscience\n    - pooch\n\ntests:\n  - python:\n      imports:\n        - easydiffraction\n      pip_check: false\n      python_version: ${{ python_min }}.*\n\nabout:\n  homepage: https://easydiffraction.org/\n  summary: Making diffraction data analysis and modelling easy\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MridulS\n",
+ "raw_meta_yaml": "context:\n  name: easydiffraction\n  version: 0.3.0\n  python_min: \"3.10\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/easydiffraction-${{ version }}.tar.gz\n  sha256: ef534e319668f8c757ca88dd09b46578dd3c8716a14be2d82ac80a8e41141a1d\n\nbuild:\n  number: 1\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - hatchling\n    - versioningit\n    - pip\n  run:\n    - python >=${{ python_min }},<3.13\n    - cryspy\n    - easycrystallography\n    - easyscience\n    - pooch\n\ntests:\n  - python:\n      imports:\n        - easydiffraction\n      pip_check: false\n      python_version: ${{ python_min }}.*\n\nabout:\n  homepage: https://easydiffraction.org/\n  summary: Making diffraction data analysis and modelling easy\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MridulS\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -267,7 +267,7 @@
    "elements": [
     "hatchling",
     "pip",
-    "python 3.11.*",
+    "python 3.10.*",
     "versioningit"
    ]
   },
@@ -278,7 +278,7 @@
     "easycrystallography",
     "easyscience",
     "pooch",
-    "python >=3.11,<3.13"
+    "python >=3.10,<3.13"
    ]
   },
   "test": {
