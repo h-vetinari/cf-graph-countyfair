@@ -29,7 +29,7 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -46,7 +46,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
-    "ninja"
+    "ninja",
+    "libgomp"
    ],
    "host": [
     "eigen",
@@ -64,13 +65,8 @@
     "zlib"
    ],
    "run": [
-    "_openmp_mutex",
-    "hdf5",
-    "libtiff",
-    "libxml2",
-    "python",
     "tetgen",
-    "vtk >=9.3.0"
+    "python"
    ]
   },
   "schema_version": 0,
@@ -92,6 +88,7 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
+    "libgomp",
     "ninja"
    ]
   },
@@ -116,13 +113,8 @@
   "run": {
    "__set__": true,
    "elements": [
-    "_openmp_mutex",
-    "hdf5",
-    "libtiff",
-    "libxml2",
     "python",
-    "tetgen",
-    "vtk"
+    "tetgen"
    ]
   },
   "test": {
@@ -146,7 +138,7 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -163,7 +155,9 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
-    "ninja"
+    "ninja",
+    "libgomp",
+    "llvm-openmp"
    ],
    "host": [
     "eigen",
@@ -181,14 +175,8 @@
     "zlib"
    ],
    "run": [
-    "_openmp_mutex",
-    "hdf5",
-    "libtiff",
-    "libxml2",
-    "python",
     "tetgen",
-    "vtk >=9.3.0",
-    "llvm-openmp"
+    "python"
    ]
   },
   "schema_version": 0,
@@ -219,7 +207,7 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -236,7 +224,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
-    "ninja"
+    "ninja",
+    "llvm-openmp"
    ],
    "host": [
     "eigen",
@@ -254,13 +243,8 @@
     "zlib"
    ],
    "run": [
-    "hdf5",
-    "libtiff",
-    "libxml2",
-    "llvm-openmp",
-    "python",
     "tetgen",
-    "vtk >=9.3.0"
+    "python"
    ]
   },
   "schema_version": 0,
@@ -282,6 +266,7 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
+    "llvm-openmp",
     "ninja"
    ]
   },
@@ -306,13 +291,8 @@
   "run": {
    "__set__": true,
    "elements": [
-    "hdf5",
-    "libtiff",
-    "libxml2",
-    "llvm-openmp",
     "python",
-    "tetgen",
-    "vtk"
+    "tetgen"
    ]
   },
   "test": {
@@ -334,11 +314,10 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ogs.json"
  },
- "raw_meta_yaml": "{% set version = \"6.5.3\" %}\n\npackage:\n  name: ogs\n  version: {{ version }}\n\nsource:\n  # url: https://github.com/ufz/ogs/archive/refs/tags/{{ version }}.tar.gz\n  # 6.5.3 with patch for conda build:\n  url: https://gitlab.opengeosys.org/ogs/ogs/-/archive/01b17f73a58ddb6f1c177897f3f12252032f3458/ogs-01b17f73a58ddb6f1c177897f3f12252032f3458.tar.gz\n  sha256: 25ec102dd11b307b743c36053b3df5f12eaf7cb43a15f307c3c04a30b9472b67\n\nbuild:\n  number: 2\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n\n  host:\n    - eigen\n    - exprtk\n    - hdf5\n    - libboost-python-devel\n    - libxml2\n    - metis\n    - nlohmann_json\n    - pybind11\n    - python {{ python }}\n    - range-v3\n    - tclap\n    - vtk >=9.3.0\n    - zlib\n\n  run:\n    - _openmp_mutex  # [linux]\n    - hdf5\n    - libtiff\n    - libxml2\n    - llvm-openmp  # [osx]\n    - python {{ python }}\n    - tetgen\n    - vtk >=9.3.0\n\ntest:\n  commands:\n    - ogs --version\n\nabout:\n  home: http://www.opengeosys.org/\n  summary: OpenGeoSys (OGS) THMC simulator.\n  description: |\n    OpenGeoSys (OGS) is a scientific open source project for the development\n    of numerical methods for the simulation of thermo-hydro-mechanical-\n    chemical (THMC) processes in porous and fractured media. \n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - LICENSE.txt\n    - scripts/cmake/json-cmake/LICENSE\n    - build/third_party_licenses.txt\n  doc_url: https://www.opengeosys.org/docs\n  dev_url: https://gitlab.opengeosys.org/ogs/ogs\n\nextra:\n  recipe-maintainers:\n    - bilke\n",
+ "raw_meta_yaml": "{% set version = \"6.5.3\" %}\n\npackage:\n  name: ogs\n  version: {{ version }}\n\nsource:\n  # url: https://github.com/ufz/ogs/archive/refs/tags/{{ version }}.tar.gz\n  # 6.5.3 with patch for conda build:\n  url: https://gitlab.opengeosys.org/ogs/ogs/-/archive/01b17f73a58ddb6f1c177897f3f12252032f3458/ogs-01b17f73a58ddb6f1c177897f3f12252032f3458.tar.gz\n  sha256: 25ec102dd11b307b743c36053b3df5f12eaf7cb43a15f307c3c04a30b9472b67\n\nbuild:\n  number: 3\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - libgomp                                # [linux]\n    - llvm-openmp                            # [osx]\n  host:\n    - eigen\n    - exprtk\n    - hdf5\n    - libboost-python-devel\n    - libxml2\n    - metis\n    - nlohmann_json\n    - pybind11\n    - python\n    - range-v3\n    - tclap\n    - vtk >=9.3.0\n    - zlib\n  run:\n    - tetgen\n    - python\n\ntest:\n  commands:\n    - ogs --version\n\nabout:\n  home: http://www.opengeosys.org/\n  summary: OpenGeoSys (OGS) THMC simulator.\n  description: |\n    OpenGeoSys (OGS) is a scientific open source project for the development\n    of numerical methods for the simulation of thermo-hydro-mechanical-\n    chemical (THMC) processes in porous and fractured media. \n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - LICENSE.txt\n    - scripts/cmake/json-cmake/LICENSE\n    - build/third_party_licenses.txt\n  doc_url: https://www.opengeosys.org/docs\n  dev_url: https://gitlab.opengeosys.org/ogs/ogs\n\nextra:\n  recipe-maintainers:\n    - bilke\n",
  "req": {
   "__set__": true,
   "elements": [
-   "_openmp_mutex",
    "c_compiler_stub",
    "c_stdlib_stub",
    "cmake",
@@ -347,7 +326,7 @@
    "exprtk",
    "hdf5",
    "libboost-python-devel",
-   "libtiff",
+   "libgomp",
    "libxml2",
    "llvm-openmp",
    "metis",
@@ -370,6 +349,8 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
+    "libgomp",
+    "llvm-openmp",
     "ninja"
    ]
   },
@@ -399,19 +380,13 @@
   "run": {
    "__set__": true,
    "elements": [
-    "_openmp_mutex",
     "c_compiler_stub",
     "c_stdlib_stub",
     "ctng-compilers",
     "cxx_compiler_stub",
-    "hdf5",
-    "libtiff",
-    "libxml2",
-    "llvm-openmp",
     "openmp",
     "python",
-    "tetgen",
-    "vtk"
+    "tetgen"
    ]
   },
   "test": {
@@ -428,6 +403,8 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
+    "libgomp",
+    "llvm-openmp",
     "ninja"
    ]
   },
@@ -452,14 +429,8 @@
   "run": {
    "__set__": true,
    "elements": [
-    "_openmp_mutex",
-    "hdf5",
-    "libtiff",
-    "libxml2",
-    "llvm-openmp",
     "python",
-    "tetgen",
-    "vtk >=9.3.0"
+    "tetgen"
    ]
   },
   "test": {
