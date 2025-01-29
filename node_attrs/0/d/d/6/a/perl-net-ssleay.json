@@ -2,6 +2,10 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -9,6 +13,10 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
   }
  },
  "feedstock_name": "perl-net-ssleay",
@@ -23,21 +31,23 @@
    "summary": "Perl extension for using OpenSSL"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "dslarm",
     "cbrueffer"
    ]
   },
   "package": {
    "name": "perl-net-ssleay",
-   "version": "1.92"
+   "version": "1.94"
   },
   "requirements": {
    "build": [
     "make",
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "perl",
@@ -55,8 +65,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9",
-   "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz"
+   "patches": [
+    "email-test-format-change.patch"
+   ],
+   "sha256": "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d",
+   "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
   },
   "test": {
    "imports": [
@@ -69,6 +82,185 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "openssl",
+    "perl",
+    "perl-extutils-makemaker",
+    "perl-mime-base64",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "openssl",
+    "perl",
+    "perl-mime-base64",
+    "zlib"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "home": "https://metacpan.org/dist/Net-SSLeay",
+   "license": "Artistic-2.0",
+   "license_file": [
+    "LICENSE"
+   ],
+   "summary": "Perl extension for using OpenSSL"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "dslarm",
+    "cbrueffer"
+   ]
+  },
+  "package": {
+   "name": "perl-net-ssleay",
+   "version": "1.94"
+  },
+  "requirements": {
+   "build": [
+    "make",
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "perl",
+    "perl-extutils-makemaker",
+    "perl-mime-base64",
+    "openssl",
+    "zlib"
+   ],
+   "run": [
+    "perl",
+    "perl-mime-base64",
+    "openssl",
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "email-test-format-change.patch"
+   ],
+   "sha256": "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d",
+   "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "Net::SSLeay"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "openssl",
+    "perl",
+    "perl-extutils-makemaker",
+    "perl-mime-base64",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "openssl",
+    "perl",
+    "perl-mime-base64",
+    "zlib"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "home": "https://metacpan.org/dist/Net-SSLeay",
+   "license": "Artistic-2.0",
+   "license_file": [
+    "LICENSE"
+   ],
+   "summary": "Perl extension for using OpenSSL"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "dslarm",
+    "cbrueffer"
+   ]
+  },
+  "package": {
+   "name": "perl-net-ssleay",
+   "version": "1.94"
+  },
+  "requirements": {
+   "build": [
+    "make",
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "perl",
+    "perl-extutils-makemaker",
+    "perl-mime-base64",
+    "openssl",
+    "zlib"
+   ],
+   "run": [
+    "perl",
+    "perl-mime-base64",
+    "openssl",
+    "zlib"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "patches": [
+    "email-test-format-change.patch"
+   ],
+   "sha256": "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d",
+   "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "Net::SSLeay"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -106,21 +298,23 @@
    "summary": "Perl extension for using OpenSSL"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "dslarm",
     "cbrueffer"
    ]
   },
   "package": {
    "name": "perl-net-ssleay",
-   "version": "1.92"
+   "version": "1.94"
   },
   "requirements": {
    "build": [
     "make",
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "perl",
@@ -138,8 +332,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9",
-   "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz"
+   "patches": [
+    "email-test-format-change.patch"
+   ],
+   "sha256": "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d",
+   "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
   },
   "test": {
    "imports": [
@@ -158,21 +355,23 @@
    "summary": "Perl extension for using OpenSSL"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
+    "dslarm",
     "cbrueffer"
    ]
   },
   "package": {
    "name": "perl-net-ssleay",
-   "version": "1.92"
+   "version": "1.94"
   },
   "requirements": {
    "build": [
     "make",
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "perl",
@@ -190,8 +389,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9",
-   "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz"
+   "patches": [
+    "email-test-format-change.patch"
+   ],
+   "sha256": "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d",
+   "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
   },
   "test": {
    "imports": [
@@ -204,6 +406,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -240,16 +443,19 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/perl-net-ssleay.json"
  },
- "raw_meta_yaml": "{% set name = \"perl-net-ssleay\" %}\n{% set version = \"1.92\" %}\n{% set sha256 = \"47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9\" %}\n\npackage:\n  name: perl-net-ssleay\n  version: {{ version }}\n\nsource:\n   url: https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-{{ version }}.tar.gz\n   sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - make\n    - {{ compiler('c') }}\n  host:\n    - perl\n    - perl-extutils-makemaker\n    - perl-mime-base64\n    - openssl\n    - zlib\n\n  run:\n    - perl\n    - perl-mime-base64\n    - openssl\n    - zlib\n\ntest:\n  imports:\n    - Net::SSLeay\n\nabout:\n  home: https://metacpan.org/dist/Net-SSLeay\n  license: Artistic-2.0\n  summary: 'Perl extension for using OpenSSL'\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - cbrueffer\n",
+ "raw_meta_yaml": "{% set name = \"perl-net-ssleay\" %}\n{% set version = \"1.94\" %}\n{% set sha256 = \"9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d\" %}\n\npackage:\n  name: perl-net-ssleay\n  version: {{ version }}\n\nsource:\n   url: https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-{{ version }}.tar.gz\n   sha256: {{ sha256 }}\n   patches:\n    - email-test-format-change.patch  # see: https://github.com/radiator-software/p5-net-ssleay/pull/487\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - make\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n  host:\n    - perl\n    - perl-extutils-makemaker\n    - perl-mime-base64\n    - openssl\n    - zlib\n\n  run:\n    - perl\n    - perl-mime-base64\n    - openssl\n    - zlib\n\ntest:\n  imports:\n    - Net::SSLeay\n\nabout:\n  home: https://metacpan.org/dist/Net-SSLeay\n  license: Artistic-2.0\n  summary: 'Perl extension for using OpenSSL'\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - dslarm\n    - cbrueffer\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "make",
    "openssl",
    "perl",
@@ -263,6 +469,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -270,6 +477,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "openssl",
     "perl",
     "perl-extutils-makemaker",
@@ -281,6 +489,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "openssl",
     "perl",
     "perl-mime-base64",
@@ -298,6 +507,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -325,8 +535,8 @@
    "elements": []
   }
  },
- "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz",
- "version": "1.92",
+ "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz",
+ "version": "1.94",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/perl-net-ssleay.json"
  }
