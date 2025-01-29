@@ -29,7 +29,7 @@
     "pydm = pydm_launcher.main:main"
    ],
    "noarch": "python",
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -41,7 +41,7 @@
   },
   "package": {
    "name": "pydm",
-   "version": "1.25.1"
+   "version": "1.25.2"
   },
   "requirements": {
    "host": [
@@ -65,8 +65,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b8111b6ce0dabf2459e795bba5c5e3ff5c5df4fb6979ce10dda0085441e95873",
-   "url": "https://github.com/slaclab/pydm/archive/v1.25.1.tar.gz"
+   "sha256": "6bb8771d3c60ef1939788324e86d3758c613b3db349bef41ae76a28d4b5ee948",
+   "url": "https://github.com/slaclab/pydm/archive/v1.25.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -129,7 +129,7 @@
     "pydm = pydm_launcher.main:main"
    ],
    "noarch": "python",
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -141,7 +141,7 @@
   },
   "package": {
    "name": "pydm",
-   "version": "1.25.1"
+   "version": "1.25.2"
   },
   "requirements": {
    "host": [
@@ -165,8 +165,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b8111b6ce0dabf2459e795bba5c5e3ff5c5df4fb6979ce10dda0085441e95873",
-   "url": "https://github.com/slaclab/pydm/archive/v1.25.1.tar.gz"
+   "sha256": "6bb8771d3c60ef1939788324e86d3758c613b3db349bef41ae76a28d4b5ee948",
+   "url": "https://github.com/slaclab/pydm/archive/v1.25.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -191,7 +191,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pydm.json"
  },
- "raw_meta_yaml": "{% set name = \"pydm\" %}\n{% set version = \"1.25.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: b8111b6ce0dabf2459e795bba5c5e3ff5c5df4fb6979ce10dda0085441e95873\n\nbuild:\n  noarch: python\n  number: 1\n  entry_points:\n    - pydm = pydm_launcher.main:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - pyqt =5\n    - qtpy\n  run:\n    - python >={{ python_min }}\n    - six\n    - numpy\n    - scipy\n    - pyepics\n    - pyqt =5\n    - pyqtgraph\n    - qtpy\n    - entrypoints\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pydm\n\nabout:\n  home: https://github.com/slaclab/pydm\n  license: LicenseRef-BSD-3-Clause-SLAC\n  license_family: OTHER\n  license_file: LICENSE.md\n  summary: Python Display Manager\n\n  description: |\n    PyDM is a PyQt-based framework for building user interfaces for control systems.\n    The goal is to provide a no-code, drag-and-drop system to make simple screens,\n    as well as a straightforward Python framework to build complex applications.\n  doc_url: https://slaclab.github.io/pydm/\n  dev_url: https://github.com/slaclab/pydm\n\nextra:\n  recipe-maintainers:\n    - nstelter-slac\n    - zllentz\n    - yektay\n    - jbellister-slac\n",
+ "raw_meta_yaml": "{% set name = \"pydm\" %}\n{% set version = \"1.25.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 6bb8771d3c60ef1939788324e86d3758c613b3db349bef41ae76a28d4b5ee948\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - pydm = pydm_launcher.main:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - pyqt =5\n    - qtpy\n  run:\n    - python >={{ python_min }}\n    - six\n    - numpy\n    - scipy\n    - pyepics\n    - pyqt =5\n    - pyqtgraph\n    - qtpy\n    - entrypoints\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pydm\n\nabout:\n  home: https://github.com/slaclab/pydm\n  license: LicenseRef-BSD-3-Clause-SLAC\n  license_family: OTHER\n  license_file: LICENSE.md\n  summary: Python Display Manager\n\n  description: |\n    PyDM is a PyQt-based framework for building user interfaces for control systems.\n    The goal is to provide a no-code, drag-and-drop system to make simple screens,\n    as well as a straightforward Python framework to build complex applications.\n  doc_url: https://slaclab.github.io/pydm/\n  dev_url: https://github.com/slaclab/pydm\n\nextra:\n  recipe-maintainers:\n    - nstelter-slac\n    - zllentz\n    - yektay\n    - jbellister-slac\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -281,8 +281,8 @@
    ]
   }
  },
- "url": "https://github.com/slaclab/pydm/archive/v1.25.1.tar.gz",
- "version": "1.25.1",
+ "url": "https://github.com/slaclab/pydm/archive/v1.25.2.tar.gz",
+ "version": "1.25.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pydm.json"
  }
