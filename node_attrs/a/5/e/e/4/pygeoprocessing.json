@@ -30,7 +30,7 @@
    "summary": "Raster, vector, and hydrological operations for GIS processing"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -60,7 +60,7 @@
     "python",
     "rtree >=0.8.3",
     "scipy !=0.19.1,>=0.14.1",
-    "gdal >=3.0.4,<3.7.0",
+    "gdal >=3.0.4",
     "shapely >=1.6.4",
     "setuptools",
     "importlib-metadata"
@@ -136,7 +136,7 @@
    "summary": "Raster, vector, and hydrological operations for GIS processing"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -166,7 +166,7 @@
     "python",
     "rtree >=0.8.3",
     "scipy !=0.19.1,>=0.14.1",
-    "gdal >=3.0.4,<3.7.0",
+    "gdal >=3.0.4",
     "shapely >=1.6.4",
     "setuptools",
     "importlib-metadata"
@@ -205,7 +205,7 @@
    "summary": "Raster, vector, and hydrological operations for GIS processing"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -235,7 +235,7 @@
     "python",
     "rtree >=0.8.3",
     "scipy !=0.19.1,>=0.14.1",
-    "gdal >=3.0.4,<3.7.0",
+    "gdal >=3.0.4",
     "shapely >=1.6.4",
     "setuptools",
     "importlib-metadata"
@@ -311,7 +311,7 @@
    "summary": "Raster, vector, and hydrological operations for GIS processing"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -341,7 +341,7 @@
     "python",
     "rtree >=0.8.3",
     "scipy !=0.19.1,>=0.14.1",
-    "gdal >=3.0.4,<3.7.0",
+    "gdal >=3.0.4",
     "shapely >=1.6.4",
     "setuptools",
     "importlib-metadata"
@@ -423,7 +423,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pygeoprocessing.json"
  },
- "raw_meta_yaml": "{% set name = \"pygeoprocessing\" %}\n{% set version = \"2.4.7\" %}\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 889f4083ccdcc53e9cbc12745a09745635b4d9f158d6ea625c524139236be7fc\n\nbuild:\n  number: 0\n  # adding --no-deps to rely on conda-managed numpy, not what's in requirements.txt.\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython >=3                             # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - pip\n    - cython >=3\n    - numpy\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - rtree >=0.8.3\n    - scipy !=0.19.1,>=0.14.1\n    - gdal >=3.0.4,<3.7.0\n    - shapely >=1.6.4\n    - setuptools\n    - importlib-metadata\n\ntest:\n  requires:\n    - pytest\n  source_files:\n    - tests\n  imports:\n    - pygeoprocessing\n    - pygeoprocessing.routing\n    - pygeoprocessing.multiprocessing\n  commands:\n    - pytest tests\n\nabout:\n  home: https://github.com/natcap/pygeoprocessing\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Raster, vector, and hydrological operations for GIS processing\n  dev_url: https://github.com/natcap/pygeoprocessing\n\nextra:\n  recipe-maintainers:\n    - dcdenu4\n    - phargogh\n",
+ "raw_meta_yaml": "{% set name = \"pygeoprocessing\" %}\n{% set version = \"2.4.7\" %}\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 889f4083ccdcc53e9cbc12745a09745635b4d9f158d6ea625c524139236be7fc\n\nbuild:\n  number: 1\n  # adding --no-deps to rely on conda-managed numpy, not what's in requirements.txt.\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython >=3                             # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - pip\n    - cython >=3\n    - numpy\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - rtree >=0.8.3\n    - scipy !=0.19.1,>=0.14.1\n    - gdal >=3.0.4\n    - shapely >=1.6.4\n    - setuptools\n    - importlib-metadata\n\ntest:\n  requires:\n    - pytest\n  source_files:\n    - tests\n  imports:\n    - pygeoprocessing\n    - pygeoprocessing.routing\n    - pygeoprocessing.multiprocessing\n  commands:\n    - pytest tests\n\nabout:\n  home: https://github.com/natcap/pygeoprocessing\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Raster, vector, and hydrological operations for GIS processing\n  dev_url: https://github.com/natcap/pygeoprocessing\n\nextra:\n  recipe-maintainers:\n    - dcdenu4\n    - phargogh\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -507,7 +507,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "gdal >=3.0.4,<3.7.0",
+    "gdal >=3.0.4",
     "importlib-metadata",
     "python",
     "rtree >=0.8.3",
@@ -538,7 +538,7 @@
    "summary": "Raster, vector, and hydrological operations for GIS processing"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -568,7 +568,7 @@
     "python",
     "rtree >=0.8.3",
     "scipy !=0.19.1,>=0.14.1",
-    "gdal >=3.0.4,<3.7.0",
+    "gdal >=3.0.4",
     "shapely >=1.6.4",
     "setuptools",
     "importlib-metadata"
