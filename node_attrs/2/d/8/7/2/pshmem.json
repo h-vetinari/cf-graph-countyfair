@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "pshmem",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "host": [
@@ -53,8 +53,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "fe0b6250835c65be1459c69471296bf1a4a8ab510627b6a7e491e6122677ae05",
-   "url": "https://files.pythonhosted.org/packages/34/c6/bbe690ad4c48c80956fa7f8e5d27a9b1534cc0711695d95dcbb813ea7b77/pshmem-1.2.0.tar.gz"
+   "sha256": "7d424e11ec9d142e3b9dfd1285b43d21a396641cf32085e188e0e4f0498505a1",
+   "url": "https://files.pythonhosted.org/packages/b1/be/2af963d3d26aac42db4dc20be9301e468452605d202448e632583b3f6789/pshmem-1.2.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -117,7 +117,7 @@
   },
   "package": {
    "name": "pshmem",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "host": [
@@ -134,8 +134,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "fe0b6250835c65be1459c69471296bf1a4a8ab510627b6a7e491e6122677ae05",
-   "url": "https://files.pythonhosted.org/packages/34/c6/bbe690ad4c48c80956fa7f8e5d27a9b1534cc0711695d95dcbb813ea7b77/pshmem-1.2.0.tar.gz"
+   "sha256": "7d424e11ec9d142e3b9dfd1285b43d21a396641cf32085e188e0e4f0498505a1",
+   "url": "https://files.pythonhosted.org/packages/b1/be/2af963d3d26aac42db4dc20be9301e468452605d202448e632583b3f6789/pshmem-1.2.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -160,7 +160,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pshmem.json"
  },
- "raw_meta_yaml": "{% set name = \"pshmem\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://files.pythonhosted.org/packages/34/c6/bbe690ad4c48c80956fa7f8e5d27a9b1534cc0711695d95dcbb813ea7b77/{{ name }}-{{ version }}.tar.gz\n  sha256: fe0b6250835c65be1459c69471296bf1a4a8ab510627b6a7e491e6122677ae05\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - python-build\n    - versioneer ==0.29\n  run:\n    - python >={{ python_min }}\n    - numpy\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pshmem\n\nabout:\n  home: https://github.com/tskisner/pshmem\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Parallel shared memory and locking with MPI\n  description: |\n    This is a small package that implements parallel design patterns using MPI\n    one-sided and shared memory constructs.\n  doc_url: https://github.com/tskisner/pshmem/README.md\n  dev_url: https://github.com/tskisner/pshmem\n\nextra:\n  recipe-maintainers:\n    - tskisner\n",
+ "raw_meta_yaml": "{% set name = \"pshmem\" %}\n{% set version = \"1.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://files.pythonhosted.org/packages/b1/be/2af963d3d26aac42db4dc20be9301e468452605d202448e632583b3f6789/{{ name }}-{{ version }}.tar.gz\n  sha256: 7d424e11ec9d142e3b9dfd1285b43d21a396641cf32085e188e0e4f0498505a1\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - python-build\n    - versioneer ==0.29\n  run:\n    - python >={{ python_min }}\n    - numpy\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pshmem\n\nabout:\n  home: https://github.com/tskisner/pshmem\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Parallel shared memory and locking with MPI\n  description: |\n    This is a small package that implements parallel design patterns using MPI\n    one-sided and shared memory constructs.\n  doc_url: https://github.com/tskisner/pshmem/README.md\n  dev_url: https://github.com/tskisner/pshmem\n\nextra:\n  recipe-maintainers:\n    - tskisner\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -231,8 +231,8 @@
    ]
   }
  },
- "url": "https://files.pythonhosted.org/packages/34/c6/bbe690ad4c48c80956fa7f8e5d27a9b1534cc0711695d95dcbb813ea7b77/pshmem-1.2.0.tar.gz",
- "version": "1.2.0",
+ "url": "https://files.pythonhosted.org/packages/b1/be/2af963d3d26aac42db4dc20be9301e468452605d202448e632583b3f6789/pshmem-1.2.1.tar.gz",
+ "version": "1.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pshmem.json"
  }
