@@ -29,12 +29,12 @@
    "summary": "IMPACT-Z - Integrated Map and Particle ACcelerator Tracking Code"
   },
   "build": {
-   "number": "3",
+   "number": "0",
    "run_exports": [
     "impact-z * mpi_mpich_*",
     "impact-z * mpi_openmpi_*"
    ],
-   "string": "mpi_openmpi_h1234567_3"
+   "string": "mpi_openmpi_h1234567_0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -44,7 +44,7 @@
   },
   "package": {
    "name": "impact-z",
-   "version": "2.2"
+   "version": "2.3"
   },
   "requirements": {
    "build": [
@@ -65,8 +65,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "377d3203e966984c0463d6a00da42092fea0cb434a9c29094f168fdae1c4d11b",
-   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.2.tar.gz"
+   "sha256": "f54efa83ccf90b7e5730f4bbca1c54590652755449838bc4a777ef2c502cd81b",
+   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -117,12 +117,12 @@
    "summary": "IMPACT-Z - Integrated Map and Particle ACcelerator Tracking Code"
   },
   "build": {
-   "number": "103",
+   "number": "100",
    "run_exports": [
     "impact-z * mpi_mpich_*",
     "impact-z * mpi_openmpi_*"
    ],
-   "string": "nompi_h1234567_103"
+   "string": "nompi_h1234567_100"
   },
   "extra": {
    "recipe-maintainers": [
@@ -132,7 +132,7 @@
   },
   "package": {
    "name": "impact-z",
-   "version": "2.2"
+   "version": "2.3"
   },
   "requirements": {
    "build": [
@@ -156,8 +156,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "377d3203e966984c0463d6a00da42092fea0cb434a9c29094f168fdae1c4d11b",
-   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.2.tar.gz"
+   "sha256": "f54efa83ccf90b7e5730f4bbca1c54590652755449838bc4a777ef2c502cd81b",
+   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -180,12 +180,12 @@
    "summary": "IMPACT-Z - Integrated Map and Particle ACcelerator Tracking Code"
   },
   "build": {
-   "number": "3",
+   "number": "0",
    "run_exports": [
     "impact-z * mpi_mpich_*",
     "impact-z * mpi_openmpi_*"
    ],
-   "string": "mpi_openmpi_h1234567_3"
+   "string": "mpi_openmpi_h1234567_0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -195,7 +195,7 @@
   },
   "package": {
    "name": "impact-z",
-   "version": "2.2"
+   "version": "2.3"
   },
   "requirements": {
    "build": [
@@ -216,8 +216,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "377d3203e966984c0463d6a00da42092fea0cb434a9c29094f168fdae1c4d11b",
-   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.2.tar.gz"
+   "sha256": "f54efa83ccf90b7e5730f4bbca1c54590652755449838bc4a777ef2c502cd81b",
+   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -268,12 +268,12 @@
    "summary": "IMPACT-Z - Integrated Map and Particle ACcelerator Tracking Code"
   },
   "build": {
-   "number": "3",
+   "number": "0",
    "run_exports": [
     "impact-z * mpi_mpich_*",
     "impact-z * mpi_openmpi_*"
    ],
-   "string": "mpi_openmpi_h1234567_3"
+   "string": "mpi_openmpi_h1234567_0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -283,7 +283,7 @@
   },
   "package": {
    "name": "impact-z",
-   "version": "2.2"
+   "version": "2.3"
   },
   "requirements": {
    "build": [
@@ -304,8 +304,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "377d3203e966984c0463d6a00da42092fea0cb434a9c29094f168fdae1c4d11b",
-   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.2.tar.gz"
+   "sha256": "f54efa83ccf90b7e5730f4bbca1c54590652755449838bc4a777ef2c502cd81b",
+   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -360,7 +360,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/impact-z.json"
  },
- "raw_meta_yaml": "{% set name = \"impact-z\" %}\n{% set version = \"2.2\" %}\n\n{% set build = 3 %}\n# ensure mpi is defined (needed for conda-smithy recipe-lint)\n{% set mpi = mpi or 'nompi' %}\n\n{% if mpi == 'nompi' %}\n# prioritize nompi variant via build number\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V{{ version }}.tar.gz\n  sha256: 377d3203e966984c0463d6a00da42092fea0cb434a9c29094f168fdae1c4d11b\n\nbuild:\n  number: {{ build }}\n\n  # add build string so packages can depend on\n  # mpi or nompi variants explicitly:\n  # `pkg * mpi_mpich_*` for mpich\n  # `pkg * mpi_*` for any mpi\n  # `pkg * nompi_*` for no mpi\n\n  {% if mpi != 'nompi' %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}\n\n  {% if mpi != 'nompi' %}\n\n  run_exports:\n    - {{ name }} * {{ mpi_prefix }}_*\n  {% endif %}\n\nrequirements:\n  build:\n    - make\n    - {{ compiler('c') }}                    # [not win]\n    - {{ stdlib(\"c\") }}                      # [not win]\n    - {{ compiler('m2w64_c') }}              # [win]\n    - {{ stdlib(\"m2w64_c\") }}                # [win]\n    - {{ compiler('fortran') }}              # [not win]\n    - {{ compiler('m2w64_fortran') }}        # [win]\n    - cmake\n    - openmpi  # [mpi == \"openmpi\" and (build_platform != target_platform)]\n  host:\n    - {{ mpi }}  # [mpi != 'nompi']\n  run:\n    - {{ mpi }}  # [mpi != 'nompi']\n\ntest:\n  commands:\n    - which ImpactZexe  # [unix]\n    - which ImpactZexe-mpi  # [unix and mpi != 'nompi']\n    - where ImpactZexe  # [win]\n\nabout:\n  home: https://github.com/impact-lbl/IMPACT-Z\n  license: BSD-3-Clause-LBNL\n  license_family: BSD\n  license_file: license.txt\n  summary: IMPACT-Z - Integrated Map and Particle ACcelerator Tracking Code\n  description: |\n    IMPACT-Z is a parallel+serial particle-in-cell code whose primary purpose\n    is to model the dynamics of multiple charged particle beams in linear and\n    ring accelerators. The code uses longitudinal position (z) as independent\n    variable and includes the effects of externally applied fields from magnets\n    and accelerating cavities as well as the effect of self-fields (space \n    charge fields).\n  doc_url: https://amac.lbl.gov/~jiqiang/IMPACT/index.html\n  dev_url: https://github.com/impact-lbl/IMPACT-Z\n\nextra:\n  recipe-maintainers:\n    - hhslepicka\n    - ChristopherMayes\n",
+ "raw_meta_yaml": "{% set name = \"impact-z\" %}\n{% set version = \"2.3\" %}\n\n{% set build = 0 %}\n# ensure mpi is defined (needed for conda-smithy recipe-lint)\n{% set mpi = mpi or 'nompi' %}\n\n{% if mpi == 'nompi' %}\n# prioritize nompi variant via build number\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V{{ version }}.tar.gz\n  sha256: f54efa83ccf90b7e5730f4bbca1c54590652755449838bc4a777ef2c502cd81b\n\nbuild:\n  number: {{ build }}\n\n  # add build string so packages can depend on\n  # mpi or nompi variants explicitly:\n  # `pkg * mpi_mpich_*` for mpich\n  # `pkg * mpi_*` for any mpi\n  # `pkg * nompi_*` for no mpi\n\n  {% if mpi != 'nompi' %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}\n\n  {% if mpi != 'nompi' %}\n\n  run_exports:\n    - {{ name }} * {{ mpi_prefix }}_*\n  {% endif %}\n\nrequirements:\n  build:\n    - make\n    - {{ compiler('c') }}                    # [not win]\n    - {{ stdlib(\"c\") }}                      # [not win]\n    - {{ compiler('m2w64_c') }}              # [win]\n    - {{ stdlib(\"m2w64_c\") }}                # [win]\n    - {{ compiler('fortran') }}              # [not win]\n    - {{ compiler('m2w64_fortran') }}        # [win]\n    - cmake\n    - openmpi  # [mpi == \"openmpi\" and (build_platform != target_platform)]\n  host:\n    - {{ mpi }}  # [mpi != 'nompi']\n  run:\n    - {{ mpi }}  # [mpi != 'nompi']\n\ntest:\n  commands:\n    - which ImpactZexe  # [unix]\n    - which ImpactZexe-mpi  # [unix and mpi != 'nompi']\n    - where ImpactZexe  # [win]\n\nabout:\n  home: https://github.com/impact-lbl/IMPACT-Z\n  license: BSD-3-Clause-LBNL\n  license_family: BSD\n  license_file: license.txt\n  summary: IMPACT-Z - Integrated Map and Particle ACcelerator Tracking Code\n  description: |\n    IMPACT-Z is a parallel+serial particle-in-cell code whose primary purpose\n    is to model the dynamics of multiple charged particle beams in linear and\n    ring accelerators. The code uses longitudinal position (z) as independent\n    variable and includes the effects of externally applied fields from magnets\n    and accelerating cavities as well as the effect of self-fields (space \n    charge fields).\n  doc_url: https://amac.lbl.gov/~jiqiang/IMPACT/index.html\n  dev_url: https://github.com/impact-lbl/IMPACT-Z\n\nextra:\n  recipe-maintainers:\n    - hhslepicka\n    - ChristopherMayes\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -449,8 +449,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.2.tar.gz",
- "version": "2.2",
+ "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.3.tar.gz",
+ "version": "2.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/impact-z.json"
  },
@@ -466,8 +466,8 @@
    "summary": "IMPACT-Z - Integrated Map and Particle ACcelerator Tracking Code"
   },
   "build": {
-   "number": "103",
-   "string": "nompi_h1234567_103"
+   "number": "100",
+   "string": "nompi_h1234567_100"
   },
   "extra": {
    "recipe-maintainers": [
@@ -477,7 +477,7 @@
   },
   "package": {
    "name": "impact-z",
-   "version": "2.2"
+   "version": "2.3"
   },
   "requirements": {
    "build": [
@@ -492,8 +492,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "377d3203e966984c0463d6a00da42092fea0cb434a9c29094f168fdae1c4d11b",
-   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.2.tar.gz"
+   "sha256": "f54efa83ccf90b7e5730f4bbca1c54590652755449838bc4a777ef2c502cd81b",
+   "url": "https://github.com/impact-lbl/IMPACT-Z/archive/refs/tags/V2.3.tar.gz"
   },
   "test": {
    "commands": [
