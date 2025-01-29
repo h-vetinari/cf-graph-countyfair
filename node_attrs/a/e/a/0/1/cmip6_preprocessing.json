@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,13 +39,14 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "pytest-runner",
+    "setuptools",
     "setuptools_scm"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "xarray",
     "pandas",
     "numpy",
@@ -56,12 +57,15 @@
   "schema_version": 0,
   "source": {
    "sha256": "a145b084e48ce1a40c1727c95b4e251b0a1904266aecf0138f383ddacbbfb1c6",
-   "url": "https://pypi.io/packages/source/x/xmip/xmip-0.7.2.tar.gz"
+   "url": "https://pypi.org/packages/source/x/xmip/xmip-0.7.2.tar.gz"
   },
   "test": {
    "commands": "python -c \"import xmip; assert xmip.__version__ == '0.7.2', xmip.__version__\"",
    "imports": [
     "xmip"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -76,6 +80,7 @@
     "pip",
     "pytest-runner",
     "python",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -92,7 +97,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -107,7 +114,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -121,13 +128,14 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "pytest-runner",
+    "setuptools",
     "setuptools_scm"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "xarray",
     "pandas",
     "numpy",
@@ -138,12 +146,15 @@
   "schema_version": 0,
   "source": {
    "sha256": "a145b084e48ce1a40c1727c95b4e251b0a1904266aecf0138f383ddacbbfb1c6",
-   "url": "https://pypi.io/packages/source/x/xmip/xmip-0.7.2.tar.gz"
+   "url": "https://pypi.org/packages/source/x/xmip/xmip-0.7.2.tar.gz"
   },
   "test": {
    "commands": "python -c \"import xmip; assert xmip.__version__ == '0.7.2', xmip.__version__\"",
    "imports": [
     "xmip"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -161,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cmip6_preprocessing.json"
  },
- "raw_meta_yaml": "{% set name = \"xmip\" %}\n{% set version = \"0.7.2\" %}\n{% set hash = \"a145b084e48ce1a40c1727c95b4e251b0a1904266aecf0138f383ddacbbfb1c6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - pytest-runner\n    - setuptools_scm\n  run:\n    - python >=3.7\n    - xarray\n    - pandas\n    - numpy\n    - pint-xarray\n    - importlib-metadata  # Only need for Python < 3.8 (but doesn't hurt on other versions) I think so could be removed in future\n\ntest:\n  imports:\n    - xmip\n\n  commands: python -c \"import xmip; assert xmip.__version__ == '{{ version }}', xmip.__version__\"\n\nabout:\n  home: https://github.com/jbusecke/xMIP\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Some code to homogenize naming and parse variables in an xgcm compatible xarray dataset\n\n  description: |\n    Frustrated with how 'dirty' CMIP6 data still is? Do you just want to run a\n    simple (or complicated) analysis on various models and end up having to\n    write logic for each seperate case? Then this package is for you.\n\n    Developed during the cmip6-hackathon this package provides utility\n    functions that play nicely with intake-esm.\n  dev_url: https://github.com/jbusecke/cmip6_preprocessing\n\nextra:\n  recipe-maintainers:\n    - jbusecke\n",
+ "raw_meta_yaml": "{% set name = \"xmip\" %}\n{% set version = \"0.7.2\" %}\n{% set hash = \"a145b084e48ce1a40c1727c95b4e251b0a1904266aecf0138f383ddacbbfb1c6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - pytest-runner\n    - setuptools\n    - setuptools_scm\n  run:\n    - python >={{ python_min }}\n    - xarray\n    - pandas\n    - numpy\n    - pint-xarray\n    - importlib-metadata  # Only need for Python < 3.8 (but doesn't hurt on other versions) I think so could be removed in future\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - xmip\n\n  commands: python -c \"import xmip; assert xmip.__version__ == '{{ version }}', xmip.__version__\"\n\nabout:\n  home: https://github.com/jbusecke/xMIP\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Some code to homogenize naming and parse variables in an xgcm compatible xarray dataset\n\n  description: |\n    Frustrated with how 'dirty' CMIP6 data still is? Do you just want to run a\n    simple (or complicated) analysis on various models and end up having to\n    write logic for each seperate case? Then this package is for you.\n\n    Developed during the cmip6-hackathon this package provides utility\n    functions that play nicely with intake-esm.\n  dev_url: https://github.com/jbusecke/cmip6_preprocessing\n\nextra:\n  recipe-maintainers:\n    - jbusecke\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -172,6 +183,7 @@
    "pip",
    "pytest-runner",
    "python",
+   "setuptools",
    "setuptools_scm",
    "xarray"
   ]
@@ -187,6 +199,7 @@
     "pip",
     "pytest-runner",
     "python",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -203,7 +216,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -217,7 +232,8 @@
    "elements": [
     "pip",
     "pytest-runner",
-    "python >=3.7",
+    "python 3.9",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -228,16 +244,18 @@
     "numpy",
     "pandas",
     "pint-xarray",
-    "python >=3.7",
+    "python >=3.9",
     "xarray"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/x/xmip/xmip-0.7.2.tar.gz",
+ "url": "https://pypi.org/packages/source/x/xmip/xmip-0.7.2.tar.gz",
  "version": "0.7.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cmip6_preprocessing.json"
