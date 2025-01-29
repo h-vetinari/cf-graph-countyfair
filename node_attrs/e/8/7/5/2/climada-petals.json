@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "3",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9,<3.12",
+    "python 3.9",
     "setuptools-scm",
     "pip"
    ],
@@ -54,14 +54,14 @@
     "pymrio =0.5",
     "rioxarray =0.15",
     "ruamel.yaml =0.18",
-    "scikit-image =0.20",
+    "scikit-image >=0.20",
     "xesmf =0.8"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "d8d10ebe1bd1420422ed4a47d90169d05c74d36cecb9dce75a956df113f51b06",
-   "url": "https://pypi.io/packages/source/c/climada-petals/climada_petals-5.0.0.tar.gz"
+   "url": "https://pypi.org/packages/source/c/climada-petals/climada_petals-5.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -74,7 +74,8 @@
    "requires": [
     "pip =24.0",
     "pytest",
-    "pytest-json-report"
+    "pytest-json-report",
+    "python 3.9"
    ],
    "source_files": [
     "climada_petals"
@@ -116,7 +117,8 @@
    "elements": [
     "pip",
     "pytest",
-    "pytest-json-report"
+    "pytest-json-report",
+    "python"
    ]
   }
  },
@@ -131,7 +133,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "3",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -146,7 +148,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9,<3.12",
+    "python 3.9",
     "setuptools-scm",
     "pip"
    ],
@@ -161,14 +163,14 @@
     "pymrio =0.5",
     "rioxarray =0.15",
     "ruamel.yaml =0.18",
-    "scikit-image =0.20",
+    "scikit-image >=0.20",
     "xesmf =0.8"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "d8d10ebe1bd1420422ed4a47d90169d05c74d36cecb9dce75a956df113f51b06",
-   "url": "https://pypi.io/packages/source/c/climada-petals/climada_petals-5.0.0.tar.gz"
+   "url": "https://pypi.org/packages/source/c/climada-petals/climada_petals-5.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -181,7 +183,8 @@
    "requires": [
     "pip =24.0",
     "pytest",
-    "pytest-json-report"
+    "pytest-json-report",
+    "python 3.9"
    ],
    "source_files": [
     "climada_petals"
@@ -202,7 +205,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/climada-petals.json"
  },
- "raw_meta_yaml": "{% set name = \"climada-petals\" %}\n{% set version = \"5.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/climada_petals-{{ version }}.tar.gz\n  sha256: d8d10ebe1bd1420422ed4a47d90169d05c74d36cecb9dce75a956df113f51b06\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 2\n\nrequirements:\n  host:\n    - python >=3.9,<3.12\n    - setuptools-scm\n    - pip\n  run:\n    - python >=3.9,<3.12\n    - climada =5.0\n    - cdsapi =0.6\n    - importlib-metadata =7.2\n    - meson-python =0.15\n    - osm-flex =1.1\n    - overpy =0.7\n    - pymrio =0.5\n    - rioxarray =0.15\n    - ruamel.yaml =0.18\n    - scikit-image =0.20\n    - xesmf =0.8\n\ntest:\n  imports:\n    - climada_petals\n  source_files:\n    - climada_petals\n  commands:\n    - pip check\n    - pytest climada_petals/test/test_cropyield_integr.py\n  requires:\n    - pip =24.0\n    - pytest\n    - pytest-json-report\n\nabout:\n  home: https://github.com/CLIMADA-project/climada_petals\n  summary: \"CLIMADA-Petals: The extension module for CLIMADA (probabilistic natural catastrophe impact model in Python)\"\n  description: |\n    CLIMADA Petals generates different types of hazards and contains more specialized\n    applications than the CLIMADA Core module. CLIMADA stands for CLIMate ADAptation and\n    is a probabilistic natural catastrophe impact model, that also calculates averted\n    damage (benefit) thanks to adaptation measures of any kind.\n  license: GPL-3.0-only\n  license_file: LICENSE\n  doc_url: https://climada-petals.readthedocs.io/en/stable/\n\nextra:\n  recipe-maintainers:\n    - emanuel-schmid\n    - peanutfun\n",
+ "raw_meta_yaml": "{% set name = \"climada-petals\" %}\n{% set version = \"5.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/climada_petals-{{ version }}.tar.gz\n  sha256: d8d10ebe1bd1420422ed4a47d90169d05c74d36cecb9dce75a956df113f51b06\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 3\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools-scm\n    - pip\n  run:\n    - python >={{ python_min }},<3.12\n    - climada =5.0\n    - cdsapi =0.6\n    - importlib-metadata =7.2\n    - meson-python =0.15\n    - osm-flex =1.1\n    - overpy =0.7\n    - pymrio =0.5\n    - rioxarray =0.15\n    - ruamel.yaml =0.18\n    - scikit-image >=0.20\n    - xesmf =0.8\n\ntest:\n  imports:\n    - climada_petals\n  source_files:\n    - climada_petals\n  commands:\n    - pip check\n    - pytest climada_petals/test/test_cropyield_integr.py\n  requires:\n    - pip =24.0\n    - pytest\n    - pytest-json-report\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/CLIMADA-project/climada_petals\n  summary: \"CLIMADA-Petals: The extension module for CLIMADA (probabilistic natural catastrophe impact model in Python)\"\n  description: |\n    CLIMADA Petals generates different types of hazards and contains more specialized\n    applications than the CLIMADA Core module. CLIMADA stands for CLIMate ADAptation and\n    is a probabilistic natural catastrophe impact model, that also calculates averted\n    damage (benefit) thanks to adaptation measures of any kind.\n  license: GPL-3.0-only\n  license_file: LICENSE\n  doc_url: https://climada-petals.readthedocs.io/en/stable/\n\nextra:\n  recipe-maintainers:\n    - emanuel-schmid\n    - peanutfun\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -257,7 +260,8 @@
    "elements": [
     "pip",
     "pytest",
-    "pytest-json-report"
+    "pytest-json-report",
+    "python"
    ]
   }
  },
@@ -271,7 +275,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9,<3.12",
+    "python 3.9",
     "setuptools-scm"
    ]
   },
@@ -288,7 +292,7 @@
     "python >=3.9,<3.12",
     "rioxarray =0.15",
     "ruamel.yaml =0.18",
-    "scikit-image =0.20",
+    "scikit-image >=0.20",
     "xesmf =0.8"
    ]
   },
@@ -297,11 +301,12 @@
    "elements": [
     "pip =24.0",
     "pytest",
-    "pytest-json-report"
+    "pytest-json-report",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/c/climada-petals/climada_petals-5.0.0.tar.gz",
+ "url": "https://pypi.org/packages/source/c/climada-petals/climada_petals-5.0.0.tar.gz",
  "version": "5.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/climada-petals.json"
