@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "ultimate-sitemap-parser",
-   "version": "1.1.0"
+   "version": "1.1.1"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2efe8a8bf74478ef29351b480fb67f172676653d2cacc538bd6b1beb0a1e5a35",
-   "url": "https://pypi.org/packages/source/u/ultimate-sitemap-parser/ultimate_sitemap_parser-1.1.0.tar.gz"
+   "sha256": "9a3a0eb68274e8495361f6c0cedb76f0463bbffa7486040dc067e36d06a30866",
+   "url": "https://pypi.org/packages/source/u/ultimate-sitemap-parser/ultimate_sitemap_parser-1.1.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -124,7 +124,7 @@
   },
   "package": {
    "name": "ultimate-sitemap-parser",
-   "version": "1.1.0"
+   "version": "1.1.1"
   },
   "requirements": {
    "host": [
@@ -141,8 +141,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2efe8a8bf74478ef29351b480fb67f172676653d2cacc538bd6b1beb0a1e5a35",
-   "url": "https://pypi.org/packages/source/u/ultimate-sitemap-parser/ultimate_sitemap_parser-1.1.0.tar.gz"
+   "sha256": "9a3a0eb68274e8495361f6c0cedb76f0463bbffa7486040dc067e36d06a30866",
+   "url": "https://pypi.org/packages/source/u/ultimate-sitemap-parser/ultimate_sitemap_parser-1.1.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -171,7 +171,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ultimate-sitemap-parser.json"
  },
- "raw_meta_yaml": "{% set name = \"ultimate-sitemap-parser\" %}\n{% set version = \"1.1.0\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ultimate_sitemap_parser-{{ version }}.tar.gz\n  sha256: 2efe8a8bf74478ef29351b480fb67f172676653d2cacc538bd6b1beb0a1e5a35\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python 3.9\n    - poetry-core >=2.0.1\n    - pytest-runner >=4.2,<5.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - python-dateutil >=2.7,<3.0.0\n    - requests >=2.2.1\n\ntest:\n  imports:\n    - usp\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://ultimate-sitemap-parser.readthedocs.io\n  dev_url: https://github.com/GateNLP/ultimate-sitemap-parser\n  doc_url: https://ultimate-sitemap-parser.readthedocs.io\n  summary: A performant library for parsing and crawling sitemaps\n  license: GPL-3.0-or-later\n  license_file:\n    - NOTICE\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - freddyheppell\n",
+ "raw_meta_yaml": "{% set name = \"ultimate-sitemap-parser\" %}\n{% set version = \"1.1.1\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ultimate_sitemap_parser-{{ version }}.tar.gz\n  sha256: 9a3a0eb68274e8495361f6c0cedb76f0463bbffa7486040dc067e36d06a30866\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python 3.9\n    - poetry-core >=2.0.1\n    - pytest-runner >=4.2,<5.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - python-dateutil >=2.7,<3.0.0\n    - requests >=2.2.1\n\ntest:\n  imports:\n    - usp\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://ultimate-sitemap-parser.readthedocs.io\n  dev_url: https://github.com/GateNLP/ultimate-sitemap-parser\n  doc_url: https://ultimate-sitemap-parser.readthedocs.io\n  summary: A performant library for parsing and crawling sitemaps\n  license: GPL-3.0-or-later\n  license_file:\n    - NOTICE\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - freddyheppell\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -244,8 +244,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/u/ultimate-sitemap-parser/ultimate_sitemap_parser-1.1.0.tar.gz",
- "version": "1.1.0",
+ "url": "https://pypi.org/packages/source/u/ultimate-sitemap-parser/ultimate_sitemap_parser-1.1.1.tar.gz",
+ "version": "1.1.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ultimate-sitemap-parser.json"
  }
