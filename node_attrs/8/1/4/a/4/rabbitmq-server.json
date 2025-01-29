@@ -44,7 +44,7 @@
     "etc/rabbitmq",
     "var/*/rabbitmq"
    ],
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -133,7 +133,7 @@
     "etc/rabbitmq",
     "var/*/rabbitmq"
    ],
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -222,7 +222,7 @@
     "etc/rabbitmq",
     "var/*/rabbitmq"
    ],
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -311,7 +311,7 @@
     "etc/rabbitmq",
     "var/*/rabbitmq"
    ],
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -422,7 +422,7 @@
     "etc/rabbitmq",
     "var/*/rabbitmq"
    ],
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -511,7 +511,7 @@
     "etc/rabbitmq",
     "var/*/rabbitmq"
    ],
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -598,7 +598,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/rabbitmq-server.json"
  },
- "raw_meta_yaml": "{% set name = \"rabbitmq-server\" %}\n{% set version = \"4.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/rabbitmq/{{ name }}/releases/download/v{{ version }}/{{ name }}-generic-unix-{{ version }}.tar.xz\n    sha256: 2027f93b275454295d869e637e09f5cc690603d1a2e1c8273780a84bdaf57827\n    patches:\n      - f52bca4.patch  # SYS_PREFIX is set to Conda's PREFIX\n    folder: src\n  - path: rabbitmq-script-wrapper  # wrapper to fake RABBITMQ_HOME location\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  no_link:\n    - etc/rabbitmq\n    - var/*/rabbitmq\n\nrequirements:\n  build:\n    - gettext\n  run:\n    - erlang >=26.2,<=27.2\n    - socat\n\ntest:\n  files:\n    - test-rabbitmq.sh\n  commands:\n    - ./test-rabbitmq.sh\n\nabout:\n  home: https://www.rabbitmq.com\n  license: MPL-2.0\n  license_file: \n    - src/LICENSE\n    - src/LICENSE-APACHE2\n    - src/LICENSE-MPL-RabbitMQ\n  summary: Open source multi-protocol messaging broker\n  description: |\n    RabbitMQ is lightweight and easy to deploy on premise and in the cloud.\n    It supports multiple messaging protocols. RabbitMQ can be deployed in\n    distributed and federated configurations to meet high-scale,\n    high-availability requirements.\n  doc_url: https://www.rabbitmq.com/documentation.html\n  dev_url: https://github.com/rabbitmq/rabbitmq-server\n\nextra:\n  recipe-maintainers:\n    - danielhollas\n    - ndevenish\n    - rjgildea\n    - anthchirp\n    - sodre\n",
+ "raw_meta_yaml": "{% set name = \"rabbitmq-server\" %}\n{% set version = \"4.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/rabbitmq/{{ name }}/releases/download/v{{ version }}/{{ name }}-generic-unix-{{ version }}.tar.xz\n    sha256: 2027f93b275454295d869e637e09f5cc690603d1a2e1c8273780a84bdaf57827\n    patches:\n      - f52bca4.patch  # SYS_PREFIX is set to Conda's PREFIX\n    folder: src\n  - path: rabbitmq-script-wrapper  # wrapper to fake RABBITMQ_HOME location\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  no_link:\n    - etc/rabbitmq\n    - var/*/rabbitmq\n\nrequirements:\n  build:\n    - gettext\n  run:\n    - erlang >=26.2,<=27.2\n    - socat\n\ntest:\n  files:\n    - test-rabbitmq.sh\n  commands:\n    - ./test-rabbitmq.sh\n\nabout:\n  home: https://www.rabbitmq.com\n  license: MPL-2.0\n  license_file: \n    - src/LICENSE\n    - src/LICENSE-APACHE2\n    - src/LICENSE-MPL-RabbitMQ\n  summary: Open source multi-protocol messaging broker\n  description: |\n    RabbitMQ is lightweight and easy to deploy on premise and in the cloud.\n    It supports multiple messaging protocols. RabbitMQ can be deployed in\n    distributed and federated configurations to meet high-scale,\n    high-availability requirements.\n  doc_url: https://www.rabbitmq.com/documentation.html\n  dev_url: https://github.com/rabbitmq/rabbitmq-server\n\nextra:\n  recipe-maintainers:\n    - danielhollas\n    - ndevenish\n    - rjgildea\n    - anthchirp\n    - sodre\n",
  "req": {
   "__set__": true,
   "elements": [
