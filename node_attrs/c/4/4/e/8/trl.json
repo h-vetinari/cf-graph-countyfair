@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "trl",
-   "version": "0.13.0"
+   "version": "0.14.0"
   },
   "requirements": {
    "host": [
@@ -57,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4a9e2dbd32d3fd993cf77493cfceec35b9d31dc51d90116b0a225ef4852210c7",
-   "url": "https://github.com/huggingface/trl/archive/v0.13.0.tar.gz"
+   "sha256": "f00fcbd8d991ddcf9ab1a7526ecc2487fa5d928e465d2dbfc52b9589f241f53b",
+   "url": "https://github.com/huggingface/trl/archive/v0.14.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -126,7 +126,7 @@
   },
   "package": {
    "name": "trl",
-   "version": "0.13.0"
+   "version": "0.14.0"
   },
   "requirements": {
    "host": [
@@ -147,8 +147,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4a9e2dbd32d3fd993cf77493cfceec35b9d31dc51d90116b0a225ef4852210c7",
-   "url": "https://github.com/huggingface/trl/archive/v0.13.0.tar.gz"
+   "sha256": "f00fcbd8d991ddcf9ab1a7526ecc2487fa5d928e465d2dbfc52b9589f241f53b",
+   "url": "https://github.com/huggingface/trl/archive/v0.14.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -177,7 +177,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/trl.json"
  },
- "raw_meta_yaml": "{% set name = \"trl\" %}\n{% set version = \"0.13.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/huggingface/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 4a9e2dbd32d3fd993cf77493cfceec35b9d31dc51d90116b0a225ef4852210c7\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - rich\n    - python >={{ python_min }}\n    - pytorch >=1.4.0\n    - transformers >=4.46.0\n    - numpy >=1.18.2\n    - accelerate >=0.34.0\n    - datasets >=2.21.0\n    - tyro >=0.5.11\n\ntest:\n  imports:\n    - trl\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/huggingface/trl\n  summary: Train transformer language models with reinforcement learning.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"trl\" %}\n{% set version = \"0.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/huggingface/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: f00fcbd8d991ddcf9ab1a7526ecc2487fa5d928e465d2dbfc52b9589f241f53b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - rich\n    - python >={{ python_min }}\n    - pytorch >=1.4.0\n    - transformers >=4.46.0\n    - numpy >=1.18.2\n    - accelerate >=0.34.0\n    - datasets >=2.21.0\n    - tyro >=0.5.11\n\ntest:\n  imports:\n    - trl\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/huggingface/trl\n  summary: Train transformer language models with reinforcement learning.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -262,8 +262,8 @@
    ]
   }
  },
- "url": "https://github.com/huggingface/trl/archive/v0.13.0.tar.gz",
- "version": "0.13.0",
+ "url": "https://github.com/huggingface/trl/archive/v0.14.0.tar.gz",
+ "version": "0.14.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/trl.json"
  }
