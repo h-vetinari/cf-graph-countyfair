@@ -29,7 +29,7 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "4"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "ogs",
-   "version": "6.5.3"
+   "version": "6.5.4"
   },
   "requirements": {
    "build": [
@@ -71,8 +71,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "25ec102dd11b307b743c36053b3df5f12eaf7cb43a15f307c3c04a30b9472b67",
-   "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/01b17f73a58ddb6f1c177897f3f12252032f3458/ogs-01b17f73a58ddb6f1c177897f3f12252032f3458.tar.gz"
+   "sha256": "86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e",
+   "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -138,7 +138,7 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "4"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -147,7 +147,7 @@
   },
   "package": {
    "name": "ogs",
-   "version": "6.5.3"
+   "version": "6.5.4"
   },
   "requirements": {
    "build": [
@@ -181,8 +181,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "25ec102dd11b307b743c36053b3df5f12eaf7cb43a15f307c3c04a30b9472b67",
-   "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/01b17f73a58ddb6f1c177897f3f12252032f3458/ogs-01b17f73a58ddb6f1c177897f3f12252032f3458.tar.gz"
+   "sha256": "86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e",
+   "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -207,7 +207,7 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "4"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -216,7 +216,7 @@
   },
   "package": {
    "name": "ogs",
-   "version": "6.5.3"
+   "version": "6.5.4"
   },
   "requirements": {
    "build": [
@@ -249,8 +249,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "25ec102dd11b307b743c36053b3df5f12eaf7cb43a15f307c3c04a30b9472b67",
-   "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/01b17f73a58ddb6f1c177897f3f12252032f3458/ogs-01b17f73a58ddb6f1c177897f3f12252032f3458.tar.gz"
+   "sha256": "86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e",
+   "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -314,7 +314,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ogs.json"
  },
- "raw_meta_yaml": "{% set version = \"6.5.3\" %}\n\npackage:\n  name: ogs\n  version: {{ version }}\n\nsource:\n  # url: https://github.com/ufz/ogs/archive/refs/tags/{{ version }}.tar.gz\n  # 6.5.3 with patch for conda build:\n  url: https://gitlab.opengeosys.org/ogs/ogs/-/archive/01b17f73a58ddb6f1c177897f3f12252032f3458/ogs-01b17f73a58ddb6f1c177897f3f12252032f3458.tar.gz\n  sha256: 25ec102dd11b307b743c36053b3df5f12eaf7cb43a15f307c3c04a30b9472b67\n\nbuild:\n  number: 4\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - libgomp                                # [linux]\n    - llvm-openmp                            # [osx]\n  host:\n    - eigen\n    - exprtk\n    - hdf5\n    - libboost-python-devel\n    - libxml2\n    - metis\n    - nlohmann_json\n    - pybind11\n    - python\n    - range-v3\n    - tclap\n    - vtk >=9.3.0\n    - zlib\n  run:\n    - tetgen\n    - python\n\ntest:\n  commands:\n    - ogs --version\n\nabout:\n  home: http://www.opengeosys.org/\n  summary: OpenGeoSys (OGS) THMC simulator.\n  description: |\n    OpenGeoSys (OGS) is a scientific open source project for the development\n    of numerical methods for the simulation of thermo-hydro-mechanical-\n    chemical (THMC) processes in porous and fractured media. \n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - LICENSE.txt\n    - scripts/cmake/json-cmake/LICENSE\n    - build/third_party_licenses.txt\n  doc_url: https://www.opengeosys.org/docs\n  dev_url: https://gitlab.opengeosys.org/ogs/ogs\n\nextra:\n  recipe-maintainers:\n    - bilke\n",
+ "raw_meta_yaml": "{% set version = \"6.5.4\" %}\n\npackage:\n  name: ogs\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ufz/ogs/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - libgomp                                # [linux]\n    - llvm-openmp                            # [osx]\n  host:\n    - eigen\n    - exprtk\n    - hdf5\n    - libboost-python-devel\n    - libxml2\n    - metis\n    - nlohmann_json\n    - pybind11\n    - python\n    - range-v3\n    - tclap\n    - vtk >=9.3.0\n    - zlib\n  run:\n    - tetgen\n    - python\n\ntest:\n  commands:\n    - ogs --version\n\nabout:\n  home: http://www.opengeosys.org/\n  summary: OpenGeoSys (OGS) THMC simulator.\n  description: |\n    OpenGeoSys (OGS) is a scientific open source project for the development\n    of numerical methods for the simulation of thermo-hydro-mechanical-\n    chemical (THMC) processes in porous and fractured media. \n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - LICENSE.txt\n    - scripts/cmake/json-cmake/LICENSE\n    - build/third_party_licenses.txt\n  doc_url: https://www.opengeosys.org/docs\n  dev_url: https://gitlab.opengeosys.org/ogs/ogs\n\nextra:\n  recipe-maintainers:\n    - bilke\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -438,8 +438,8 @@
    "elements": []
   }
  },
- "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/01b17f73a58ddb6f1c177897f3f12252032f3458/ogs-01b17f73a58ddb6f1c177897f3f12252032f3458.tar.gz",
- "version": "6.5.3",
+ "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz",
+ "version": "6.5.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ogs.json"
  }
