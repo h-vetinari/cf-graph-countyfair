@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "airflow-balancer",
-   "version": "0.1.0"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d5645f350dc78c8785c59e60f868596aa057af5957f63fe877a77304c4656f4f",
-   "url": "https://pypi.org/packages/source/a/airflow-balancer/airflow_balancer-0.1.0.tar.gz"
+   "sha256": "2f89a02996cf14742178e359eb6f6e0678383f0dcda7d3edb7d44ddf8093d2b0",
+   "url": "https://pypi.org/packages/source/a/airflow-balancer/airflow_balancer-0.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -126,7 +126,7 @@
   },
   "package": {
    "name": "airflow-balancer",
-   "version": "0.1.0"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -144,8 +144,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d5645f350dc78c8785c59e60f868596aa057af5957f63fe877a77304c4656f4f",
-   "url": "https://pypi.org/packages/source/a/airflow-balancer/airflow_balancer-0.1.0.tar.gz"
+   "sha256": "2f89a02996cf14742178e359eb6f6e0678383f0dcda7d3edb7d44ddf8093d2b0",
+   "url": "https://pypi.org/packages/source/a/airflow-balancer/airflow_balancer-0.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -174,7 +174,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/airflow-balancer.json"
  },
- "raw_meta_yaml": "{% set name = \"airflow-balancer\" %}\n{% set version = \"0.1.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/airflow-balancer/airflow_balancer-{{ version }}.tar.gz\n  sha256: d5645f350dc78c8785c59e60f868596aa057af5957f63fe877a77304c4656f4f\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - apache-airflow >=2.8,<3\n    - apache-airflow-providers-ssh\n    - airflow-config\n    - pydantic >=2\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - airflow_balancer\n\nabout:\n  home: https://github.com/airflow-laminar/airflow-balancer\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Utilities for load balancing DAGs\n  description: Utilities for load balancing DAGs\n  dev_url: https://github.com/airflow-laminar/airflow-balancer\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
+ "raw_meta_yaml": "{% set name = \"airflow-balancer\" %}\n{% set version = \"0.3.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/airflow-balancer/airflow_balancer-{{ version }}.tar.gz\n  sha256: 2f89a02996cf14742178e359eb6f6e0678383f0dcda7d3edb7d44ddf8093d2b0\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - apache-airflow >=2.8,<3\n    - apache-airflow-providers-ssh\n    - airflow-config\n    - pydantic >=2\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - airflow_balancer\n\nabout:\n  home: https://github.com/airflow-laminar/airflow-balancer\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Utilities for load balancing DAGs\n  description: Utilities for load balancing DAGs\n  dev_url: https://github.com/airflow-laminar/airflow-balancer\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -250,8 +250,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/airflow-balancer/airflow_balancer-0.1.0.tar.gz",
- "version": "0.1.0",
+ "url": "https://pypi.org/packages/source/a/airflow-balancer/airflow_balancer-0.3.0.tar.gz",
+ "version": "0.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/airflow-balancer.json"
  }
