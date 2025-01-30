@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -63,7 +63,7 @@
   ],
   "package": {
    "name": "ioos_metrics",
-   "version": "0.5.0"
+   "version": "0.6.0"
   },
   "requirements": {
    "host": [
@@ -87,13 +87,14 @@
     "pdfminer.six",
     "pyarrow",
     "pyobis",
-    "requests"
+    "requests",
+    "tenacity"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ad89d2e2c4d3bdd6980b974049e80cc555b1ea923a01c8a2a0885bdccb0cda2d",
-   "url": "https://pypi.org/packages/source/i/ioos_metrics/ioos_metrics-0.5.0.tar.gz"
+   "sha256": "ac1ad740caee54e1be469666f4e4d3bf6a1b6a70d8ebd4589811cc5f6d332909",
+   "url": "https://pypi.org/packages/source/i/ioos_metrics/ioos_metrics-0.6.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -136,7 +137,8 @@
     "pyarrow",
     "pyobis",
     "python",
-    "requests"
+    "requests",
+    "tenacity"
    ]
   },
   "test": {
@@ -155,7 +157,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -193,7 +195,7 @@
   ],
   "package": {
    "name": "ioos_metrics",
-   "version": "0.5.0"
+   "version": "0.6.0"
   },
   "requirements": {
    "host": [
@@ -217,13 +219,14 @@
     "pdfminer.six",
     "pyarrow",
     "pyobis",
-    "requests"
+    "requests",
+    "tenacity"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ad89d2e2c4d3bdd6980b974049e80cc555b1ea923a01c8a2a0885bdccb0cda2d",
-   "url": "https://pypi.org/packages/source/i/ioos_metrics/ioos_metrics-0.5.0.tar.gz"
+   "sha256": "ac1ad740caee54e1be469666f4e4d3bf6a1b6a70d8ebd4589811cc5f6d332909",
+   "url": "https://pypi.org/packages/source/i/ioos_metrics/ioos_metrics-0.6.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -249,7 +252,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ioos_metrics.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"ioos_metrics\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ioos_metrics-{{ version }}.tar.gz\n  sha256: ad89d2e2c4d3bdd6980b974049e80cc555b1ea923a01c8a2a0885bdccb0cda2d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - setuptools-scm\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - bs4\n    - ckanapi\n    - fake-useragent\n    - geopandas >=0.13.2\n    - gliderpy\n    - html5lib\n    - joblib\n    - lxml\n    - pandas\n    - pdfminer.six\n    - pyarrow\n    - pyobis\n    - requests\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - ioos_metrics\n  # Cannot run pip-check when using beautifulsoup\n  # commands:\n  #  - pip check\n  # requires:\n  #   - pip\n\noutputs:\n  - name: ioos_metrics\n  - name: ioos-metrics\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - {{ pin_subpackage(\"ioos_metrics\", max_pin=\"x.x.x\") }}\n        - python >={{ python_min }}\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ioos_metrics\n\nabout:\n  summary: Package to fetch various metrics for IOOS by the numbers\n  home: https://github.com/ioos/ioos_metrics\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml": "{% set python_min = \"3.10\" %}\n{% set name = \"ioos_metrics\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ioos_metrics-{{ version }}.tar.gz\n  sha256: ac1ad740caee54e1be469666f4e4d3bf6a1b6a70d8ebd4589811cc5f6d332909\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - setuptools-scm\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - bs4\n    - ckanapi\n    - fake-useragent\n    - geopandas >=0.13.2\n    - gliderpy\n    - html5lib\n    - joblib\n    - lxml\n    - pandas\n    - pdfminer.six\n    - pyarrow\n    - pyobis\n    - requests\n    - tenacity\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - ioos_metrics\n  # Cannot run pip-check when using beautifulsoup\n  # commands:\n  #  - pip check\n  # requires:\n  #   - pip\n\noutputs:\n  - name: ioos_metrics\n  - name: ioos-metrics\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - {{ pin_subpackage(\"ioos_metrics\", max_pin=\"x.x.x\") }}\n        - python >={{ python_min }}\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ioos_metrics\n\nabout:\n  summary: Package to fetch various metrics for IOOS by the numbers\n  home: https://github.com/ioos/ioos_metrics\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -271,6 +274,7 @@
    "requests",
    "setuptools",
    "setuptools-scm",
+   "tenacity",
    "wheel"
   ]
  },
@@ -306,7 +310,8 @@
     "pyarrow",
     "pyobis",
     "python",
-    "requests"
+    "requests",
+    "tenacity"
    ]
   },
   "test": {
@@ -349,7 +354,8 @@
     "pyarrow",
     "pyobis",
     "python >=3.10",
-    "requests"
+    "requests",
+    "tenacity"
    ]
   },
   "test": {
@@ -359,8 +365,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/i/ioos_metrics/ioos_metrics-0.5.0.tar.gz",
- "version": "0.5.0",
+ "url": "https://pypi.org/packages/source/i/ioos_metrics/ioos_metrics-0.6.0.tar.gz",
+ "version": "0.6.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ioos_metrics.json"
  }
