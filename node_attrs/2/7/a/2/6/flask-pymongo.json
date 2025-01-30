@@ -20,12 +20,12 @@
   "about": {
    "home": "http://flask-pymongo.readthedocs.org/",
    "license": "BSD-3-Clause",
-   "license_file": "docs/_themes/LICENSE",
+   "license_file": "LICENSE",
    "summary": "PyMongo support for Flask applications"
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -35,14 +35,15 @@
   },
   "package": {
    "name": "flask-pymongo",
-   "version": "2.3.0"
+   "version": "3.0.1"
   },
   "requirements": {
    "host": [
     "pip",
     "python 3.9",
     "vcversioner",
-    "setuptools"
+    "setuptools",
+    "hatchling"
    ],
    "run": [
     "flask >=0.11",
@@ -52,16 +53,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "620eb02dc8808a5fcb90f26cab6cba9d6bf497b15032ae3ca99df80366e33314",
-   "url": "https://pypi.org/packages/source/f/flask-pymongo/Flask-PyMongo-2.3.0.tar.gz"
+   "sha256": "d225b51c21ceca2e670e6cca79b5c584ad17b96252b48e84e3b423ddb73304cc",
+   "url": "https://pypi.org/packages/source/f/flask-pymongo/flask_pymongo-3.0.1.tar.gz"
   },
   "test": {
    "commands": [
     "pip check"
    ],
    "imports": [
-    "flask_pymongo",
-    "flask_pymongo.tests"
+    "flask_pymongo"
    ],
    "requires": [
     "pip",
@@ -77,6 +77,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
     "python",
     "setuptools",
@@ -103,12 +104,12 @@
   "about": {
    "home": "http://flask-pymongo.readthedocs.org/",
    "license": "BSD-3-Clause",
-   "license_file": "docs/_themes/LICENSE",
+   "license_file": "LICENSE",
    "summary": "PyMongo support for Flask applications"
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -118,14 +119,15 @@
   },
   "package": {
    "name": "flask-pymongo",
-   "version": "2.3.0"
+   "version": "3.0.1"
   },
   "requirements": {
    "host": [
     "pip",
     "python 3.9",
     "vcversioner",
-    "setuptools"
+    "setuptools",
+    "hatchling"
    ],
    "run": [
     "flask >=0.11",
@@ -135,16 +137,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "620eb02dc8808a5fcb90f26cab6cba9d6bf497b15032ae3ca99df80366e33314",
-   "url": "https://pypi.org/packages/source/f/flask-pymongo/Flask-PyMongo-2.3.0.tar.gz"
+   "sha256": "d225b51c21ceca2e670e6cca79b5c584ad17b96252b48e84e3b423ddb73304cc",
+   "url": "https://pypi.org/packages/source/f/flask-pymongo/flask_pymongo-3.0.1.tar.gz"
   },
   "test": {
    "commands": [
     "pip check"
    ],
    "imports": [
-    "flask_pymongo",
-    "flask_pymongo.tests"
+    "flask_pymongo"
    ],
    "requires": [
     "pip",
@@ -166,11 +167,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/flask-pymongo.json"
  },
- "raw_meta_yaml": "{% set name = \"flask-pymongo\" %}\n{% set version = \"2.3.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/Flask-PyMongo-{{ version }}.tar.gz\n  sha256: 620eb02dc8808a5fcb90f26cab6cba9d6bf497b15032ae3ca99df80366e33314\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - vcversioner\n    - setuptools\n  run:\n    - flask >=0.11\n    - pymongo >=3.3\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - flask_pymongo\n    - flask_pymongo.tests\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://flask-pymongo.readthedocs.org/\n  summary: PyMongo support for Flask applications\n  license: BSD-3-Clause\n  license_file: docs/_themes/LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"flask-pymongo\" %}\n{% set version = \"3.0.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: d225b51c21ceca2e670e6cca79b5c584ad17b96252b48e84e3b423ddb73304cc\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - vcversioner\n    - setuptools\n    - hatchling\n  run:\n    - flask >=0.11\n    - pymongo >=3.3\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - flask_pymongo\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://flask-pymongo.readthedocs.org/\n  summary: PyMongo support for Flask applications\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
    "flask",
+   "hatchling",
    "pip",
    "pymongo",
    "python",
@@ -186,6 +188,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
     "python",
     "setuptools",
@@ -217,6 +220,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
     "python 3.9",
     "setuptools",
@@ -239,8 +243,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/f/flask-pymongo/Flask-PyMongo-2.3.0.tar.gz",
- "version": "2.3.0",
+ "url": "https://pypi.org/packages/source/f/flask-pymongo/flask_pymongo-3.0.1.tar.gz",
+ "version": "3.0.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/flask-pymongo.json"
  }
