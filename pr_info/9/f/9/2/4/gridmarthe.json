@@ -20,42 +20,7 @@
    ]
   }
  ],
- "bad": {
-  "exception": "Error running 'conda-forge-tick-container check-solvable --timeout 600 --verbosity 2 --log-level info' in container - error ValueError raised:\n\"variant config in /cf_feedstock_ops_dir/recipe/conda_build_config.yaml is ambiguous because it does not fully implement all zipped keys (missing ['python']) or specifies a subspace that is not fully implemented (we did not find ['1.26', '1.26', '1.26', '1.26'] from {'numpy': ['1.26', '1.26', '1.26', '1.26']} in numpy:['1.23']).\"",
-  "traceback": [
-   "Traceback (most recent call last):",
-   "  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 122, in _run_bot_task",
-   "    data = func(**kwargs)",
-   "           ^^^^^^^^^^^^^^",
-   "  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 389, in _check_solvable",
-   "    data[\"solvable\"], data[\"errors\"], data[\"solvable_by_variant\"] = is_recipe_solvable(",
-   "                                                                    ^^^^^^^^^^^^^^^^^^^",
-   "  File \"/opt/autotick-bot/conda_forge_tick/solver_checks.py\", line 91, in is_recipe_solvable",
-   "    return _is_recipe_solvable(",
-   "           ^^^^^^^^^^^^^^^^^^^^",
-   "  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_check_solvable/check_solvable.py\", line 83, in is_recipe_solvable",
-   "    res = _is_recipe_solvable(",
-   "          ^^^^^^^^^^^^^^^^^^^^",
-   "  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_check_solvable/check_solvable.py\", line 170, in _is_recipe_solvable",
-   "    _solvable, _errors = _is_recipe_solvable_on_platform(",
-   "                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
-   "  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_check_solvable/check_solvable.py\", line 262, in _is_recipe_solvable_on_platform",
-   "    raise e",
-   "  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_check_solvable/check_solvable.py\", line 254, in _is_recipe_solvable_on_platform",
-   "    cbc, _ = conda_build.variants.get_package_combined_spec(",
-   "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
-   "  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/variants.py\", line 666, in get_package_combined_spec",
-   "    combined_spec = combine_specs(specs, log_output=config.verbose)",
-   "                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
-   "  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/variants.py\", line 379, in combine_specs",
-   "    values = _combine_spec_dictionaries(",
-   "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^",
-   "  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/variants.py\", line 344, in _combine_spec_dictionaries",
-   "    raise ValueError(",
-   "ValueError: variant config in /cf_feedstock_ops_dir/recipe/conda_build_config.yaml is ambiguous because it does not fully implement all zipped keys (missing ['python']) or specifies a subspace that is not fully implemented (we did not find ['1.26', '1.26', '1.26', '1.26'] from {'numpy': ['1.26', '1.26', '1.26', '1.26']} in numpy:['1.23']).",
-   ""
-  ]
- },
+ "bad": false,
  "pinning_version": "2025.01.28.22.50.30",
  "pre_pr_migrator_attempts": {
   "python313": 1
