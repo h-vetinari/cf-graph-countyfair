@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "premai",
-   "version": "0.3.94"
+   "version": "0.3.95"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a117d2d337b77b733679c1e2b7d113d36063ab55e580b24af8ef54b0bc41f49b",
-   "url": "https://pypi.org/packages/source/p/premai/premai-0.3.94.tar.gz"
+   "sha256": "3f7926987e5ec887bd8c433b6c1a365a3113a99c22cd621d0ba688dd2ca61716",
+   "url": "https://pypi.org/packages/source/p/premai/premai-0.3.95.tar.gz"
   },
   "test": {
    "commands": [
@@ -120,7 +120,7 @@
   },
   "package": {
    "name": "premai",
-   "version": "0.3.94"
+   "version": "0.3.95"
   },
   "requirements": {
    "host": [
@@ -138,8 +138,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a117d2d337b77b733679c1e2b7d113d36063ab55e580b24af8ef54b0bc41f49b",
-   "url": "https://pypi.org/packages/source/p/premai/premai-0.3.94.tar.gz"
+   "sha256": "3f7926987e5ec887bd8c433b6c1a365a3113a99c22cd621d0ba688dd2ca61716",
+   "url": "https://pypi.org/packages/source/p/premai/premai-0.3.95.tar.gz"
   },
   "test": {
    "commands": [
@@ -168,7 +168,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/premai.json"
  },
- "raw_meta_yaml": "{% set name = \"premai\" %}\n{% set version = \"0.3.94\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/premai-{{ version }}.tar.gz\n  sha256: a117d2d337b77b733679c1e2b7d113d36063ab55e580b24af8ef54b0bc41f49b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n    - httpx >=0.20.0,<0.27.0\n    - attrs >=21.3.0\n    - python-dateutil >=2.8.0,<3.0.0\n    - typing_extensions >=4.9.0\n\ntest:\n  imports:\n    - premai\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: A client library for accessing Prem APIs\n  home: https://github.com/premAI-io/prem-python-sdk\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"premai\" %}\n{% set version = \"0.3.95\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/premai-{{ version }}.tar.gz\n  sha256: 3f7926987e5ec887bd8c433b6c1a365a3113a99c22cd621d0ba688dd2ca61716\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n    - httpx >=0.20.0,<0.27.0\n    - attrs >=21.3.0\n    - python-dateutil >=2.8.0,<3.0.0\n    - typing_extensions >=4.9.0\n\ntest:\n  imports:\n    - premai\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: A client library for accessing Prem APIs\n  home: https://github.com/premAI-io/prem-python-sdk\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -244,8 +244,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/premai/premai-0.3.94.tar.gz",
- "version": "0.3.94",
+ "url": "https://pypi.org/packages/source/p/premai/premai-0.3.95.tar.gz",
+ "version": "0.3.95",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/premai.json"
  }
