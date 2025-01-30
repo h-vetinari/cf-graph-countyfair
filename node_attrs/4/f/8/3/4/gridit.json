@@ -25,7 +25,7 @@
     "gridit = gridit.__main__:cli_main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "gridit",
-   "version": "0.6"
+   "version": "0.7"
   },
   "requirements": {
    "host": [
@@ -47,21 +47,17 @@
    "run": [
     "python >=3.9",
     "fiona",
-    "flopy",
-    "matplotlib-base",
-    "netCDF4",
+    "affine",
     "numpy",
     "geopandas",
     "rasterio >=1.2.2",
-    "scipy",
-    "shapely",
-    "xarray"
+    "shapely"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d8e264235aa953e9df4a9e3cec624cd6d32c9666db099e60a476c3d11909dc30",
-   "url": "https://pypi.org/packages/source/g/gridit/gridit-0.6.tar.gz"
+   "sha256": "3eec9ee5caee4f94551e4e9a6d6b91c4a934e43d5edac5212888ebeceea40700",
+   "url": "https://pypi.org/packages/source/g/gridit/gridit-0.7.tar.gz"
   },
   "test": {
    "commands": [
@@ -94,17 +90,13 @@
   "run": {
    "__set__": true,
    "elements": [
+    "affine",
     "fiona",
-    "flopy",
     "geopandas",
-    "matplotlib-base",
-    "netcdf4",
     "numpy",
     "python",
     "rasterio",
-    "scipy",
-    "shapely",
-    "xarray"
+    "shapely"
    ]
   },
   "test": {
@@ -127,7 +119,7 @@
     "gridit = gridit.__main__:cli_main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -137,7 +129,7 @@
   },
   "package": {
    "name": "gridit",
-   "version": "0.6"
+   "version": "0.7"
   },
   "requirements": {
    "host": [
@@ -149,21 +141,17 @@
    "run": [
     "python >=3.9",
     "fiona",
-    "flopy",
-    "matplotlib-base",
-    "netCDF4",
+    "affine",
     "numpy",
     "geopandas",
     "rasterio >=1.2.2",
-    "scipy",
-    "shapely",
-    "xarray"
+    "shapely"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d8e264235aa953e9df4a9e3cec624cd6d32c9666db099e60a476c3d11909dc30",
-   "url": "https://pypi.org/packages/source/g/gridit/gridit-0.6.tar.gz"
+   "sha256": "3eec9ee5caee4f94551e4e9a6d6b91c4a934e43d5edac5212888ebeceea40700",
+   "url": "https://pypi.org/packages/source/g/gridit/gridit-0.7.tar.gz"
   },
   "test": {
    "commands": [
@@ -193,24 +181,20 @@
  "pr_info": {
   "__lazy_json__": "pr_info/gridit.json"
  },
- "raw_meta_yaml": "{% set name = \"gridit\" %}\n{% set version = \"0.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gridit-{{ version }}.tar.gz\n  sha256: d8e264235aa953e9df4a9e3cec624cd6d32c9666db099e60a476c3d11909dc30\n\nbuild:\n  entry_points:\n    - gridit = gridit.__main__:cli_main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - hatch-vcs\n    - pip\n  run:\n    - python >={{ python_min }}\n    - fiona\n    - flopy\n    - matplotlib-base\n    - netCDF4\n    - numpy\n    - geopandas\n    - rasterio >=1.2.2\n    - scipy\n    - shapely\n    - xarray\n\ntest:\n  imports:\n    - gridit\n  commands:\n    - pip check\n    - gridit --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mwtoews/gridit\n  summary: Spatial tools to translate raster or vector geometry data to regular grids\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mwtoews\n",
+ "raw_meta_yaml": "{% set name = \"gridit\" %}\n{% set version = \"0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gridit-{{ version }}.tar.gz\n  sha256: 3eec9ee5caee4f94551e4e9a6d6b91c4a934e43d5edac5212888ebeceea40700\n\nbuild:\n  entry_points:\n    - gridit = gridit.__main__:cli_main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - hatch-vcs\n    - pip\n  run:\n    - python >={{ python_min }}\n    - fiona\n    - affine\n    - numpy\n    - geopandas\n    - rasterio >=1.2.2\n    - shapely\n\ntest:\n  imports:\n    - gridit\n  commands:\n    - pip check\n    - gridit --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mwtoews/gridit\n  summary: Spatial tools to translate raster or vector geometry data to regular grids\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mwtoews\n",
  "req": {
   "__set__": true,
   "elements": [
+   "affine",
    "fiona",
-   "flopy",
    "geopandas",
    "hatch-vcs",
    "hatchling",
-   "matplotlib-base",
-   "netcdf4",
    "numpy",
    "pip",
    "python",
    "rasterio",
-   "scipy",
-   "shapely",
-   "xarray"
+   "shapely"
   ]
  },
  "requirements": {
@@ -230,17 +214,13 @@
   "run": {
    "__set__": true,
    "elements": [
+    "affine",
     "fiona",
-    "flopy",
     "geopandas",
-    "matplotlib-base",
-    "netcdf4",
     "numpy",
     "python",
     "rasterio",
-    "scipy",
-    "shapely",
-    "xarray"
+    "shapely"
    ]
   },
   "test": {
@@ -269,17 +249,13 @@
   "run": {
    "__set__": true,
    "elements": [
+    "affine",
     "fiona",
-    "flopy",
     "geopandas",
-    "matplotlib-base",
-    "netCDF4",
     "numpy",
     "python >=3.9",
     "rasterio >=1.2.2",
-    "scipy",
-    "shapely",
-    "xarray"
+    "shapely"
    ]
   },
   "test": {
@@ -290,8 +266,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/gridit/gridit-0.6.tar.gz",
- "version": "0.6",
+ "url": "https://pypi.org/packages/source/g/gridit/gridit-0.7.tar.gz",
+ "version": "0.7",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/gridit.json"
  }
