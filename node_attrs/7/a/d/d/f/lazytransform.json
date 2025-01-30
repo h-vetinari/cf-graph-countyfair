@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "lazytransform",
-   "version": "1.17"
+   "version": "1.18"
   },
   "requirements": {
    "host": [
@@ -62,8 +62,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "49fe4c19148b8e86624852616579488349ae94af67d7dc030f20bb4bfdac500f",
-   "url": "https://pypi.org/packages/source/l/lazytransform/lazytransform-1.17.tar.gz"
+   "sha256": "f3ef534bfca70961674891221fa8aa0c344c5953b46ca6688f46f19c1e8bbf92",
+   "url": "https://pypi.org/packages/source/l/lazytransform/lazytransform-1.18.tar.gz"
   },
   "test": {
    "commands": [
@@ -125,7 +125,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -137,7 +137,7 @@
   },
   "package": {
    "name": "lazytransform",
-   "version": "1.17"
+   "version": "1.18"
   },
   "requirements": {
    "host": [
@@ -161,8 +161,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "49fe4c19148b8e86624852616579488349ae94af67d7dc030f20bb4bfdac500f",
-   "url": "https://pypi.org/packages/source/l/lazytransform/lazytransform-1.17.tar.gz"
+   "sha256": "f3ef534bfca70961674891221fa8aa0c344c5953b46ca6688f46f19c1e8bbf92",
+   "url": "https://pypi.org/packages/source/l/lazytransform/lazytransform-1.18.tar.gz"
   },
   "test": {
    "commands": [
@@ -191,7 +191,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lazytransform.json"
  },
- "raw_meta_yaml": "{% set name = \"lazytransform\" %}\n{% set version = \"1.17\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lazytransform-{{ version }}.tar.gz\n  sha256: 49fe4c19148b8e86624852616579488349ae94af67d7dc030f20bb4bfdac500f\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - category_encoders >=2.6.2\n    - lightgbm >=3.2.1\n    - matplotlib-base >=3.4.2\n    - numpy <2.0\n    - pandas >=1.2.4\n    - python-dateutil >=2.8.1\n    - scikit-learn >=1.2.2\n    - scipy\n    - tqdm >=4.61.1\n    - xgboost >=1.6\n\ntest:\n  imports:\n    - lazytransform\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/AutoViML/lazytransform\n  summary: Clean your data using a scikit-learn transformer in a single line of code\n  license: Apache-2.0\n  license_file: LICENSE\n  description: |\n    Automatically transform all categorical, date-time, NLP variables in your data set \n    to numeric in a single line of code for any data set any size.\n\nextra:\n  recipe-maintainers:\n    - sugatoray\n    - mfansler\n    - AutoViML\n",
+ "raw_meta_yaml": "{% set name = \"lazytransform\" %}\n{% set version = \"1.18\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lazytransform-{{ version }}.tar.gz\n  sha256: f3ef534bfca70961674891221fa8aa0c344c5953b46ca6688f46f19c1e8bbf92\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - category_encoders >=2.6.2\n    - lightgbm >=3.2.1\n    - matplotlib-base >=3.4.2\n    - numpy <2.0\n    - pandas >=1.2.4\n    - python-dateutil >=2.8.1\n    - scikit-learn >=1.2.2\n    - scipy\n    - tqdm >=4.61.1\n    - xgboost >=1.6\n\ntest:\n  imports:\n    - lazytransform\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/AutoViML/lazytransform\n  summary: Clean your data using a scikit-learn transformer in a single line of code\n  license: Apache-2.0\n  license_file: LICENSE\n  description: |\n    Automatically transform all categorical, date-time, NLP variables in your data set \n    to numeric in a single line of code for any data set any size.\n\nextra:\n  recipe-maintainers:\n    - sugatoray\n    - mfansler\n    - AutoViML\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -285,8 +285,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/l/lazytransform/lazytransform-1.17.tar.gz",
- "version": "1.17",
+ "url": "https://pypi.org/packages/source/l/lazytransform/lazytransform-1.18.tar.gz",
+ "version": "1.18",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/lazytransform.json"
  }
