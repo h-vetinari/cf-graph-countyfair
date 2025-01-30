@@ -30,7 +30,7 @@
     "perses-fah = perses.app.fah_generator:run"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -49,7 +49,8 @@
    "host": [
     "numpy",
     "pip",
-    "python >=3.6"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
     "ambertools >=19.11",
@@ -74,8 +75,8 @@
     "openmmtools >=0.23.0",
     "openmoltools >=0.8.4",
     "pandas",
-    "pymbar >=3.0.6,<4.0a0",
-    "python >=3.6",
+    "pymbar",
+    "python >=3.9",
     "pyyaml",
     "rich",
     "scipy",
@@ -85,7 +86,7 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a0ee50148f190adc5d01ea84cf37aa1e40dd34dfaabac36865f0b26c43b979d2",
+   "sha256": "830ef2708489558974f8027028f7dab67dd5aefb4c0b981245d81ad1310d6de6",
    "url": "https://github.com/choderalab/perses/archive/0.10.3.tar.gz"
   },
   "test": {
@@ -104,7 +105,8 @@
    "elements": [
     "numpy",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -163,7 +165,7 @@
     "perses-fah = perses.app.fah_generator:run"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -182,7 +184,8 @@
    "host": [
     "numpy",
     "pip",
-    "python >=3.6"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
     "ambertools >=19.11",
@@ -207,8 +210,8 @@
     "openmmtools >=0.23.0",
     "openmoltools >=0.8.4",
     "pandas",
-    "pymbar >=3.0.6,<4.0a0",
-    "python >=3.6",
+    "pymbar",
+    "python >=3.9",
     "pyyaml",
     "rich",
     "scipy",
@@ -218,7 +221,7 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a0ee50148f190adc5d01ea84cf37aa1e40dd34dfaabac36865f0b26c43b979d2",
+   "sha256": "830ef2708489558974f8027028f7dab67dd5aefb4c0b981245d81ad1310d6de6",
    "url": "https://github.com/choderalab/perses/archive/0.10.3.tar.gz"
   },
   "test": {
@@ -241,7 +244,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/perses.json"
  },
- "raw_meta_yaml": "{% set name = \"perses\" %}\n{% set version = \"0.10.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/choderalab/perses/archive/{{ version }}.tar.gz\n  sha256: a0ee50148f190adc5d01ea84cf37aa1e40dd34dfaabac36865f0b26c43b979d2\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n  entry_points:\n    - perses-relative = perses.app.setup_relative_calculation:run\n    - perses-fah = perses.app.fah_generator:run\n\nrequirements:\n  host:\n    - numpy\n    - pip\n    - python >=3.6\n  run:\n    - ambertools >=19.11\n    - click\n    - cloudpathlib-all\n    - dask\n    - dask-jobqueue\n    - dicttoxml\n    - distributed\n    - fire\n    - joblib\n    - matplotlib-base\n    - mdtraj\n    - netcdf4\n    - networkx >=2.0\n    - numba >=0.55.2\n    - numpy\n    - openff-toolkit >=0.11.0\n    - openff-units >=0.1.8\n    - openmm >=8.0\n    - openmmforcefields >=0.9.0\n    - openmmtools >=0.23.0\n    - openmoltools >=0.8.4\n    - pandas\n    - pymbar >=3.0.6,<4.0a0\n    - python >=3.6\n    - pyyaml\n    - rich\n    - scipy\n    - seaborn\n    - tqdm\n\ntest:\n  imports:\n    - perses\n\nabout:\n  home: https://github.com/choderalab/perses\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Experiments with expanded ensemble simulation to explore chemical and mutational space\n  description: |\n    Experiments with expanded ensemble simulation to explore chemical and mutational space\n  doc_url: http://perses.readthedocs.io/\n  dev_url: https://github.com/choderalab/perses\n\nextra:\n  recipe-maintainers:\n    - jaimergp\n    - jchodera\n    - mikemhenry\n    - ijpulidos\n",
+ "raw_meta_yaml": "{% set name = \"perses\" %}\n{% set version = \"0.10.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/choderalab/perses/archive/{{ version }}.tar.gz\n  sha256: 830ef2708489558974f8027028f7dab67dd5aefb4c0b981245d81ad1310d6de6\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n  entry_points:\n    - perses-relative = perses.app.setup_relative_calculation:run\n    - perses-fah = perses.app.fah_generator:run\n\nrequirements:\n  host:\n    - numpy\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - ambertools >=19.11\n    - click\n    - cloudpathlib-all\n    - dask\n    - dask-jobqueue\n    - dicttoxml\n    - distributed\n    - fire\n    - joblib\n    - matplotlib-base\n    - mdtraj\n    - netcdf4\n    - networkx >=2.0\n    - numba >=0.55.2\n    - numpy\n    - openff-toolkit >=0.11.0\n    - openff-units >=0.1.8\n    - openmm >=8.0\n    - openmmforcefields >=0.9.0\n    - openmmtools >=0.23.0\n    - openmoltools >=0.8.4\n    - pandas\n    - pymbar\n    - python >={{ python_min }}\n    - pyyaml\n    - rich\n    - scipy\n    - seaborn\n    - tqdm\n\ntest:\n  imports:\n    - perses\n\nabout:\n  home: https://github.com/choderalab/perses\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Experiments with expanded ensemble simulation to explore chemical and mutational space\n  description: |\n    Experiments with expanded ensemble simulation to explore chemical and mutational space\n  doc_url: http://perses.readthedocs.io/\n  dev_url: https://github.com/choderalab/perses\n\nextra:\n  recipe-maintainers:\n    - jaimergp\n    - jchodera\n    - mikemhenry\n    - ijpulidos\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -274,6 +277,7 @@
    "rich",
    "scipy",
    "seaborn",
+   "setuptools",
    "tqdm"
   ]
  },
@@ -287,7 +291,8 @@
    "elements": [
     "numpy",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -340,7 +345,8 @@
    "elements": [
     "numpy",
     "pip",
-    "python >=3.6"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -368,8 +374,8 @@
     "openmmtools >=0.23.0",
     "openmoltools >=0.8.4",
     "pandas",
-    "pymbar >=3.0.6,<4.0a0",
-    "python >=3.6",
+    "pymbar",
+    "python >=3.9",
     "pyyaml",
     "rich",
     "scipy",
