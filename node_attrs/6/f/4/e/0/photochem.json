@@ -26,7 +26,7 @@
    "summary": "A chemical model of planetary atmospheres"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "photochem",
-   "version": "0.6.2"
+   "version": "0.6.3"
   },
   "requirements": {
    "build": [
@@ -71,15 +71,15 @@
     "pyyaml",
     "numba",
     "h5py",
-    "astropy",
+    "astropy-base",
     "threadpoolctl",
     "blis"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5f2a7e6ec1562aaa81ae616cd5f2bbdf9839f8e575668c7d954b14f0a7da924b",
-   "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.2.tar.gz"
+   "sha256": "2b82c0355e01e9d5d790ca4387b6518431b94fd8aa940af693425a7dc1a62769",
+   "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.3.tar.gz"
   },
   "test": {
    "imports": [
@@ -125,7 +125,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "astropy",
+    "astropy-base",
     "blis",
     "h5py",
     "numba",
@@ -150,7 +150,7 @@
    "summary": "A chemical model of planetary atmospheres"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -159,7 +159,7 @@
   },
   "package": {
    "name": "photochem",
-   "version": "0.6.2"
+   "version": "0.6.3"
   },
   "requirements": {
    "build": [
@@ -196,15 +196,15 @@
     "pyyaml",
     "numba",
     "h5py",
-    "astropy",
+    "astropy-base",
     "threadpoolctl",
     "blis"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5f2a7e6ec1562aaa81ae616cd5f2bbdf9839f8e575668c7d954b14f0a7da924b",
-   "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.2.tar.gz"
+   "sha256": "2b82c0355e01e9d5d790ca4387b6518431b94fd8aa940af693425a7dc1a62769",
+   "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.3.tar.gz"
   },
   "test": {
    "imports": [
@@ -224,7 +224,7 @@
    "summary": "A chemical model of planetary atmospheres"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -233,7 +233,7 @@
   },
   "package": {
    "name": "photochem",
-   "version": "0.6.2"
+   "version": "0.6.3"
   },
   "requirements": {
    "build": [
@@ -269,14 +269,14 @@
     "pyyaml",
     "numba",
     "h5py",
-    "astropy",
+    "astropy-base",
     "threadpoolctl"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5f2a7e6ec1562aaa81ae616cd5f2bbdf9839f8e575668c7d954b14f0a7da924b",
-   "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.2.tar.gz"
+   "sha256": "2b82c0355e01e9d5d790ca4387b6518431b94fd8aa940af693425a7dc1a62769",
+   "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.3.tar.gz"
   },
   "test": {
    "imports": [
@@ -322,7 +322,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "astropy",
+    "astropy-base",
     "h5py",
     "numba",
     "photochem_clima_data",
@@ -346,7 +346,7 @@
    "summary": "A chemical model of planetary atmospheres"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -355,7 +355,7 @@
   },
   "package": {
    "name": "photochem",
-   "version": "0.6.2"
+   "version": "0.6.3"
   },
   "requirements": {
    "build": [
@@ -391,14 +391,14 @@
     "pyyaml",
     "numba",
     "h5py",
-    "astropy",
+    "astropy-base",
     "threadpoolctl"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5f2a7e6ec1562aaa81ae616cd5f2bbdf9839f8e575668c7d954b14f0a7da924b",
-   "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.2.tar.gz"
+   "sha256": "2b82c0355e01e9d5d790ca4387b6518431b94fd8aa940af693425a7dc1a62769",
+   "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.3.tar.gz"
   },
   "test": {
    "imports": [
@@ -444,7 +444,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "astropy",
+    "astropy-base",
     "h5py",
     "numba",
     "photochem_clima_data",
@@ -474,11 +474,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/photochem.json"
  },
- "raw_meta_yaml": "{% set name = \"photochem\" %}\n{% set version = \"0.6.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz\n  sha256: 5f2a7e6ec1562aaa81ae616cd5f2bbdf9839f8e575668c7d954b14f0a7da924b\n\nbuild:\n  skip: true  # [win]\n  number: 1\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - python                                 # [build_platform != target_platform]\n    - fypp                                   # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('fortran') }}\n    - make\n    - cmake\n    - llvm-openmp  # [osx]\n    - libgomp      # [linux]\n  host:\n    - python\n    - pip\n    - setuptools\n    - wheel\n    - scikit-build\n    - numpy\n    - cython\n    - ninja\n    - pkgconfig\n    - zlib\n    - hdf5 <=1.14.3\n    - fypp\n    - libblas\n    - libcblas\n    - liblapack\n  run:\n    - python\n    - photochem_clima_data ==0.2.0\n    - scipy\n    - pyyaml\n    - numba\n    - h5py\n    - astropy\n    - threadpoolctl\n    - blis      # [linux]\n\ntest:\n  imports:\n    - photochem\n    - photochem.clima\n    - photochem.equilibrate\n\nabout:\n  home: https://github.com/Nicholaswogan/photochem\n  license: GPL-2.0-or-later\n  license_family: GPL3\n  license_file: LICENSE\n  summary: A chemical model of planetary atmospheres\n\nextra:\n  recipe-maintainers:\n    - Nicholaswogan\n",
+ "raw_meta_yaml": "{% set name = \"photochem\" %}\n{% set version = \"0.6.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Nicholaswogan/photochem/archive/v{{ version }}.tar.gz\n  sha256: 2b82c0355e01e9d5d790ca4387b6518431b94fd8aa940af693425a7dc1a62769\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - python                                 # [build_platform != target_platform]\n    - fypp                                   # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('fortran') }}\n    - make\n    - cmake\n    - llvm-openmp  # [osx]\n    - libgomp      # [linux]\n  host:\n    - python\n    - pip\n    - setuptools\n    - wheel\n    - scikit-build\n    - numpy\n    - cython\n    - ninja\n    - pkgconfig\n    - zlib\n    - hdf5 <=1.14.3\n    - fypp\n    - libblas\n    - libcblas\n    - liblapack\n  run:\n    - python\n    - photochem_clima_data ==0.2.0\n    - scipy\n    - pyyaml\n    - numba\n    - h5py\n    - astropy-base\n    - threadpoolctl\n    - blis      # [linux]\n\ntest:\n  imports:\n    - photochem\n    - photochem.clima\n    - photochem.equilibrate\n\nabout:\n  home: https://github.com/Nicholaswogan/photochem\n  license: GPL-2.0-or-later\n  license_family: GPL3\n  license_file: LICENSE\n  summary: A chemical model of planetary atmospheres\n\nextra:\n  recipe-maintainers:\n    - Nicholaswogan\n",
  "req": {
   "__set__": true,
   "elements": [
-   "astropy",
+   "astropy-base",
    "blis",
    "c_compiler_stub",
    "c_stdlib_stub",
@@ -554,7 +554,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "astropy",
+    "astropy-base",
     "blis",
     "c_compiler_stub",
     "c_stdlib_stub",
@@ -614,7 +614,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "astropy",
+    "astropy-base",
     "blis",
     "h5py",
     "numba",
@@ -630,8 +630,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.2.tar.gz",
- "version": "0.6.2",
+ "url": "https://github.com/Nicholaswogan/photochem/archive/v0.6.3.tar.gz",
+ "version": "0.6.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/photochem.json"
  }
