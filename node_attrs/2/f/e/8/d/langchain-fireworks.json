@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "langchain-fireworks",
-   "version": "0.2.6"
+   "version": "0.2.7"
   },
   "requirements": {
    "host": [
@@ -46,7 +46,7 @@
    ],
    "run": [
     "python >=3.9,<4.0",
-    "langchain-core >=0.3.27,<0.4.0",
+    "langchain-core >=0.3.33,<0.4.0",
     "fireworks-ai >=0.13.0",
     "openai >=1.10.0,<2.0.0",
     "requests >=2.0.0,<3.0.0",
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b7a18fc2449aa7aeb44e4eee81d64c2d192e2fc4fc3075352400e59ba0c18495",
-   "url": "https://pypi.org/packages/source/l/langchain-fireworks/langchain_fireworks-0.2.6.tar.gz"
+   "sha256": "cc6a04d5d5735bdea642de524cb4bca544b8ed8ca867a1d64ec47ea14367210a",
+   "url": "https://pypi.org/packages/source/l/langchain-fireworks/langchain_fireworks-0.2.7.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +112,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -122,7 +122,7 @@
   },
   "package": {
    "name": "langchain-fireworks",
-   "version": "0.2.6"
+   "version": "0.2.7"
   },
   "requirements": {
    "host": [
@@ -132,7 +132,7 @@
    ],
    "run": [
     "python >=3.9,<4.0",
-    "langchain-core >=0.3.27,<0.4.0",
+    "langchain-core >=0.3.33,<0.4.0",
     "fireworks-ai >=0.13.0",
     "openai >=1.10.0,<2.0.0",
     "requests >=2.0.0,<3.0.0",
@@ -141,8 +141,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b7a18fc2449aa7aeb44e4eee81d64c2d192e2fc4fc3075352400e59ba0c18495",
-   "url": "https://pypi.org/packages/source/l/langchain-fireworks/langchain_fireworks-0.2.6.tar.gz"
+   "sha256": "cc6a04d5d5735bdea642de524cb4bca544b8ed8ca867a1d64ec47ea14367210a",
+   "url": "https://pypi.org/packages/source/l/langchain-fireworks/langchain_fireworks-0.2.7.tar.gz"
   },
   "test": {
    "commands": [
@@ -171,7 +171,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/langchain-fireworks.json"
  },
- "raw_meta_yaml": "{% set name = \"langchain-fireworks\" %}\n{% set version = \"0.2.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_fireworks-{{ version }}.tar.gz\n  sha256: b7a18fc2449aa7aeb44e4eee81d64c2d192e2fc4fc3075352400e59ba0c18495\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >={{ python_min }},<4.0\n    - langchain-core >=0.3.27,<0.4.0\n    - fireworks-ai >=0.13.0\n    - openai >=1.10.0,<2.0.0\n    - requests >=2.0.0,<3.0.0\n    - aiohttp >=3.9.1,<4.0.0\n\ntest:\n  imports:\n    - langchain_fireworks\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/langchain-ai/langchain\n  summary: An integration package connecting Fireworks and LangChain\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"langchain-fireworks\" %}\n{% set version = \"0.2.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_fireworks-{{ version }}.tar.gz\n  sha256: cc6a04d5d5735bdea642de524cb4bca544b8ed8ca867a1d64ec47ea14367210a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >={{ python_min }},<4.0\n    - langchain-core >=0.3.33,<0.4.0\n    - fireworks-ai >=0.13.0\n    - openai >=1.10.0,<2.0.0\n    - requests >=2.0.0,<3.0.0\n    - aiohttp >=3.9.1,<4.0.0\n\ntest:\n  imports:\n    - langchain_fireworks\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/langchain-ai/langchain\n  summary: An integration package connecting Fireworks and LangChain\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -236,7 +236,7 @@
    "elements": [
     "aiohttp >=3.9.1,<4.0.0",
     "fireworks-ai >=0.13.0",
-    "langchain-core >=0.3.27,<0.4.0",
+    "langchain-core >=0.3.33,<0.4.0",
     "openai >=1.10.0,<2.0.0",
     "python >=3.9,<4.0",
     "requests >=2.0.0,<3.0.0"
@@ -250,8 +250,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/l/langchain-fireworks/langchain_fireworks-0.2.6.tar.gz",
- "version": "0.2.6",
+ "url": "https://pypi.org/packages/source/l/langchain-fireworks/langchain_fireworks-0.2.7.tar.gz",
+ "version": "0.2.7",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/langchain-fireworks.json"
  }
