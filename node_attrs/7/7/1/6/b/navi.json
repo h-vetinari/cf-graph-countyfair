@@ -69,7 +69,7 @@
   ],
   "package": {
    "name": "navi",
-   "version": "2.23.0"
+   "version": "2.24.0"
   },
   "requirements": {
    "build": [
@@ -87,8 +87,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799",
-   "url": "https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz"
+   "sha256": "4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728",
+   "url": "https://github.com/denisidoro/navi/archive/v2.24.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -162,7 +162,7 @@
   ],
   "package": {
    "name": "navi",
-   "version": "2.23.0"
+   "version": "2.24.0"
   },
   "requirements": {
    "build": [
@@ -180,8 +180,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799",
-   "url": "https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz"
+   "sha256": "4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728",
+   "url": "https://github.com/denisidoro/navi/archive/v2.24.0.tar.gz"
   }
  },
  "linux_aarch64_requirements": {
@@ -255,7 +255,7 @@
   ],
   "package": {
    "name": "navi",
-   "version": "2.23.0"
+   "version": "2.24.0"
   },
   "requirements": {
    "build": [
@@ -273,8 +273,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799",
-   "url": "https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz"
+   "sha256": "4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728",
+   "url": "https://github.com/denisidoro/navi/archive/v2.24.0.tar.gz"
   }
  },
  "linux_ppc64le_requirements": {
@@ -463,7 +463,7 @@
   ],
   "package": {
    "name": "navi",
-   "version": "2.23.0"
+   "version": "2.24.0"
   },
   "requirements": {
    "build": [
@@ -481,8 +481,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799",
-   "url": "https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz"
+   "sha256": "4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728",
+   "url": "https://github.com/denisidoro/navi/archive/v2.24.0.tar.gz"
   }
  },
  "name": "navi",
@@ -530,7 +530,7 @@
   ],
   "package": {
    "name": "navi",
-   "version": "2.23.0"
+   "version": "2.24.0"
   },
   "requirements": {
    "build": [
@@ -548,8 +548,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799",
-   "url": "https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz"
+   "sha256": "4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728",
+   "url": "https://github.com/denisidoro/navi/archive/v2.24.0.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -623,7 +623,7 @@
   ],
   "package": {
    "name": "navi",
-   "version": "2.23.0"
+   "version": "2.24.0"
   },
   "requirements": {
    "build": [
@@ -641,8 +641,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799",
-   "url": "https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz"
+   "sha256": "4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728",
+   "url": "https://github.com/denisidoro/navi/archive/v2.24.0.tar.gz"
   }
  },
  "osx_arm64_requirements": {
@@ -690,7 +690,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/navi.json"
  },
- "raw_meta_yaml": "context:\n  version: 2.23.0\n\npackage:\n  name: navi\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/denisidoro/navi/archive/v${{ version }}.tar.gz\n  sha256: 579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - ${{ compiler('rust') }}\n    - ${{ compiler('c') }}\n    - ${{ stdlib('c') }}\n    - cargo-bundle-licenses\n  host:\n    - zlib\n  run:\n    - fzf\n\ntests:\n  - script:\n      - navi --help\n\nabout:\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  summary: Interactive cheatsheet tool for the command-line\n  homepage: https://github.com/denisidoro/navi\n  repository: https://github.com/denisidoro/navi\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
+ "raw_meta_yaml": "context:\n  version: \"2.24.0\"\n\npackage:\n  name: navi\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/denisidoro/navi/archive/v${{ version }}.tar.gz\n  sha256: 4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - ${{ compiler('rust') }}\n    - ${{ compiler('c') }}\n    - ${{ stdlib('c') }}\n    - cargo-bundle-licenses\n  host:\n    - zlib\n  run:\n    - fzf\n\ntests:\n  - script:\n      - navi --help\n\nabout:\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  summary: Interactive cheatsheet tool for the command-line\n  homepage: https://github.com/denisidoro/navi\n  repository: https://github.com/denisidoro/navi\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -761,8 +761,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz",
- "version": "2.23.0",
+ "url": "https://github.com/denisidoro/navi/archive/v2.24.0.tar.gz",
+ "version": "2.24.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/navi.json"
  },
@@ -810,7 +810,7 @@
   ],
   "package": {
    "name": "navi",
-   "version": "2.23.0"
+   "version": "2.24.0"
   },
   "requirements": {
    "build": [
@@ -828,8 +828,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "579a72814e7ba07dae697a58dc13b0f7d853532ec07229aff07a11e5828f3799",
-   "url": "https://github.com/denisidoro/navi/archive/v2.23.0.tar.gz"
+   "sha256": "4c10f47c306826255b07483b7e94eed8ffc1401555c52434a56246295d3f2728",
+   "url": "https://github.com/denisidoro/navi/archive/v2.24.0.tar.gz"
   }
  },
  "win_64_requirements": {
