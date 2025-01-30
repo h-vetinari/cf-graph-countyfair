@@ -3,6 +3,8 @@
  "branch": "main",
  "conda-forge.yml": {
   "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
    "osx_arm64": "osx_64"
   },
   "conda_build": {
@@ -12,6 +14,10 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
   },
   "test": "native_and_emulated"
  },
@@ -70,6 +76,160 @@
   ]
  },
  "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "zenoh-rust-abi"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/eclipse-zenoh/zenoh-plugin-webserver",
+   "license": "Apache-2.0 OR EPL-2.0",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
+   "summary": "A zenoh plug-in implementing an HTTP server mapping URLs to zenoh paths. This plugin can be used to set-up a Web server where the resources are retrieved from geo-distributed zenoh storages, each leveraging various backends (file system, database, memory...)."
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "traversaro"
+   ]
+  },
+  "outputs": [
+   {
+    "name": "zenoh-plugin-webserver",
+    "requirements": {
+     "build": [
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "c_compiler_stub"
+     ],
+     "host": [
+      "zenoh-rust-abi 1.1.1.1.75.0"
+     ]
+    },
+    "script": "build_plugin.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libzenoh_plugin_webserver${SHLIB_EXT}"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "zenoh-plugin-webserver-split",
+   "version": "1.1.1"
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "sha256": "cb222325eb3fcdd206652f50d18cf8ceede02eeda5c6a3b817547c06599ff55d",
+    "url": "https://github.com/eclipse-zenoh/zenoh-plugin-webserver/archive/refs/tags/1.1.1.tar.gz"
+   }
+  ]
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "rust_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "zenoh-rust-abi"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": []
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "home": "https://github.com/eclipse-zenoh/zenoh-plugin-webserver",
+   "license": "Apache-2.0 OR EPL-2.0",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
+   "summary": "A zenoh plug-in implementing an HTTP server mapping URLs to zenoh paths. This plugin can be used to set-up a Web server where the resources are retrieved from geo-distributed zenoh storages, each leveraging various backends (file system, database, memory...)."
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "traversaro"
+   ]
+  },
+  "outputs": [
+   {
+    "name": "zenoh-plugin-webserver",
+    "requirements": {
+     "build": [
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "c_compiler_stub"
+     ],
+     "host": [
+      "zenoh-rust-abi 1.1.1.1.75.0"
+     ]
+    },
+    "script": "build_plugin.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libzenoh_plugin_webserver${SHLIB_EXT}"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "zenoh-plugin-webserver-split",
+   "version": "1.1.1"
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "sha256": "cb222325eb3fcdd206652f50d18cf8ceede02eeda5c6a3b817547c06599ff55d",
+    "url": "https://github.com/eclipse-zenoh/zenoh-plugin-webserver/archive/refs/tags/1.1.1.tar.gz"
+   }
+  ]
+ },
+ "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
    "elements": [
@@ -186,6 +346,46 @@
       "zenoh-rust-abi 1.1.1.1.75.0"
      ]
     },
+    "script": "build_plugin.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libzenoh_plugin_webserver${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "zenoh-plugin-webserver",
+    "requirements": {
+     "build": [
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "c_compiler_stub"
+     ],
+     "host": [
+      "zenoh-rust-abi 1.1.1.1.75.0"
+     ]
+    },
+    "script": "build_plugin.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libzenoh_plugin_webserver${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "zenoh-plugin-webserver",
+    "requirements": {
+     "build": [
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "c_compiler_stub"
+     ],
+     "host": [
+      "zenoh-rust-abi 1.1.1.1.75.0"
+     ]
+    },
     "script": "bld_plugin.bat",
     "test": {
      "commands": [
@@ -200,6 +400,14 @@
   },
   "schema_version": 0,
   "source": [
+   {
+    "sha256": "cb222325eb3fcdd206652f50d18cf8ceede02eeda5c6a3b817547c06599ff55d",
+    "url": "https://github.com/eclipse-zenoh/zenoh-plugin-webserver/archive/refs/tags/1.1.1.tar.gz"
+   },
+   {
+    "sha256": "cb222325eb3fcdd206652f50d18cf8ceede02eeda5c6a3b817547c06599ff55d",
+    "url": "https://github.com/eclipse-zenoh/zenoh-plugin-webserver/archive/refs/tags/1.1.1.tar.gz"
+   },
    {
     "sha256": "cb222325eb3fcdd206652f50d18cf8ceede02eeda5c6a3b817547c06599ff55d",
     "url": "https://github.com/eclipse-zenoh/zenoh-plugin-webserver/archive/refs/tags/1.1.1.tar.gz"
@@ -382,6 +590,8 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
   "osx_arm64",
   "win_64"
