@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "geoschem-gcpy",
-   "version": "1.4.2"
+   "version": "1.6.0"
   },
   "requirements": {
    "host": [
@@ -74,8 +74,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "22d16f2379f8234eae249aaed0494c8924b7fca6415efebcf56d31f3850eb48a",
-   "url": "https://pypi.io/packages/source/g/geoschem-gcpy/geoschem-gcpy-1.4.2.tar.gz"
+   "sha256": "67240a50862e00295f939648aa85d8605b9b80cd20849c3325367f9597bcdf7d",
+   "url": "https://pypi.org/packages/source/g/geoschem-gcpy/geoschem_gcpy-1.6.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -154,7 +154,7 @@
   },
   "package": {
    "name": "geoschem-gcpy",
-   "version": "1.4.2"
+   "version": "1.6.0"
   },
   "requirements": {
    "host": [
@@ -189,8 +189,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "22d16f2379f8234eae249aaed0494c8924b7fca6415efebcf56d31f3850eb48a",
-   "url": "https://pypi.io/packages/source/g/geoschem-gcpy/geoschem-gcpy-1.4.2.tar.gz"
+   "sha256": "67240a50862e00295f939648aa85d8605b9b80cd20849c3325367f9597bcdf7d",
+   "url": "https://pypi.org/packages/source/g/geoschem-gcpy/geoschem_gcpy-1.6.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -225,7 +225,7 @@
   },
   "package": {
    "name": "geoschem-gcpy",
-   "version": "1.4.2"
+   "version": "1.6.0"
   },
   "requirements": {
    "host": [
@@ -260,8 +260,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "22d16f2379f8234eae249aaed0494c8924b7fca6415efebcf56d31f3850eb48a",
-   "url": "https://pypi.io/packages/source/g/geoschem-gcpy/geoschem-gcpy-1.4.2.tar.gz"
+   "sha256": "67240a50862e00295f939648aa85d8605b9b80cd20849c3325367f9597bcdf7d",
+   "url": "https://pypi.org/packages/source/g/geoschem-gcpy/geoschem_gcpy-1.6.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -328,7 +328,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/geoschem-gcpy.json"
  },
- "raw_meta_yaml": "{% set name = \"geoschem-gcpy\" %}\n{% set version = \"1.4.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/geoschem-gcpy-{{ version }}.tar.gz\n  sha256: 22d16f2379f8234eae249aaed0494c8924b7fca6415efebcf56d31f3850eb48a\n\nbuild:\n  number: 0\n  skip: true  # [win or py<36]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - numpy >=1.19.1\n    - cartopy >=0.17.0\n  run:\n    - cartopy >=0.17.0\n    - dask >=2.3.0\n    - esmpy >=7.1.0\n    - h5py >=2.9.0\n    - h5netcdf\n    - joblib >=0.17.0\n    - matplotlib-base >=3.1.1\n    - netcdf4 >=1.4.2\n    - {{ pin_compatible('numpy') }}\n    - pandas >=0.25.1\n    - pypdf2 >=1.26.0\n    - python\n    - scipy >=1.3.1\n    - sphinx\n    - sphinx_rtd_theme\n    - sphinx-autoapi\n    - tabulate >=0.8.3\n    - xarray >=0.15.0\n    - xbpch >=0.3.5\n    - xesmf >=0.2.1\n    - xesmf >=0.2.1\n    - sparselt >=0.1.3\n\ntest:\n  imports:\n    - gcpy\n\nabout:\n  home: https://github.com/geoschem/gcpy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Python toolkit for working with GEOS-Chem output and input\n  doc_url: https://gcpy.readthedocs.io/en/latest/\n  dev_url: https://github.com/geoschem/gcpy\n\nextra:\n  recipe-maintainers:\n    - laestrada\n    - WilliamDowns\n    - yantosca\n    - lizziel\n    - msulprizio\n    - LiamBindle\n",
+ "raw_meta_yaml": "{% set name = \"geoschem-gcpy\" %}\n{% set version = \"1.6.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 67240a50862e00295f939648aa85d8605b9b80cd20849c3325367f9597bcdf7d\n\nbuild:\n  number: 0\n  skip: true  # [win or py<36]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - numpy >=1.19.1\n    - cartopy >=0.17.0\n  run:\n    - cartopy >=0.17.0\n    - dask >=2.3.0\n    - esmpy >=7.1.0\n    - h5py >=2.9.0\n    - h5netcdf\n    - joblib >=0.17.0\n    - matplotlib-base >=3.1.1\n    - netcdf4 >=1.4.2\n    - {{ pin_compatible('numpy') }}\n    - pandas >=0.25.1\n    - pypdf2 >=1.26.0\n    - python\n    - scipy >=1.3.1\n    - sphinx\n    - sphinx_rtd_theme\n    - sphinx-autoapi\n    - tabulate >=0.8.3\n    - xarray >=0.15.0\n    - xbpch >=0.3.5\n    - xesmf >=0.2.1\n    - xesmf >=0.2.1\n    - sparselt >=0.1.3\n\ntest:\n  imports:\n    - gcpy\n\nabout:\n  home: https://github.com/geoschem/gcpy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Python toolkit for working with GEOS-Chem output and input\n  doc_url: https://gcpy.readthedocs.io/en/latest/\n  dev_url: https://github.com/geoschem/gcpy\n\nextra:\n  recipe-maintainers:\n    - laestrada\n    - WilliamDowns\n    - yantosca\n    - lizziel\n    - msulprizio\n    - LiamBindle\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -447,8 +447,8 @@
    "elements": []
   }
  },
- "url": "https://pypi.io/packages/source/g/geoschem-gcpy/geoschem-gcpy-1.4.2.tar.gz",
- "version": "1.4.2",
+ "url": "https://pypi.org/packages/source/g/geoschem-gcpy/geoschem_gcpy-1.6.0.tar.gz",
+ "version": "1.6.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/geoschem-gcpy.json"
  }
