@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -87,7 +87,7 @@
       "psutil",
       "rich",
       "xarray",
-      "zarr"
+      "zarr <3"
      ]
     },
     "test": {
@@ -164,7 +164,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -225,7 +225,7 @@
       "psutil",
       "rich",
       "xarray",
-      "zarr"
+      "zarr <3"
      ]
     },
     "test": {
@@ -264,7 +264,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pipefunc.json"
  },
- "raw_meta_yaml": "{% set name = \"pipefunc\" %}\n{% set version = \"0.52.0\" %}\n{% set python_min = \"3.10\" %}\n\n# handle undefined PYTHON in `noarch: generic` outputs\n{% set PYTHON = PYTHON | default(\"$PYTHON\") %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pipefunc-{{ version }}.tar.gz\n  sha256: 3c9bc008edaa5b7a2e1ff4d87a5b0a9efc05dcef5389b1ac8876addfb6487a0b\n\nbuild:\n  noarch: python\n  number: 0\n\noutputs:\n  - name: {{ name }}\n    build:\n      noarch: python\n      script: {{ PYTHON }} -m pip install . -vv\n    requirements:\n      host:\n        - python {{ python_min }}\n        - hatchling\n        - wheel\n        - versioningit\n        - pip\n      run:\n        - python >={{ python_min }}\n        - networkx\n        - psutil  # technically not a requirement\n        - cloudpickle\n        - numpy\n    test:\n      imports:\n        - pipefunc\n      commands:\n        - pip check\n      requires:\n        - pip\n        - python {{ python_min }}\n\n  - name: {{ name }}-extras\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(name, exact=True) }}\n        - adaptive\n        - graphviz\n        - graphviz-anywidget\n        - griffe\n        - ipywidgets\n        - matplotlib-base\n        - pandas\n        - psutil\n        - rich\n        - xarray\n        - zarr\n    test:\n      imports:\n        - pipefunc\n      requires:\n        - pip\n        - python {{ python_min }}\n\nabout:\n  home: https://github.com/pipefunc/pipefunc\n  summary: A Python library for defining, managing, and executing function pipelines.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
+ "raw_meta_yaml": "{% set name = \"pipefunc\" %}\n{% set version = \"0.52.0\" %}\n{% set python_min = \"3.10\" %}\n\n# handle undefined PYTHON in `noarch: generic` outputs\n{% set PYTHON = PYTHON | default(\"$PYTHON\") %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pipefunc-{{ version }}.tar.gz\n  sha256: 3c9bc008edaa5b7a2e1ff4d87a5b0a9efc05dcef5389b1ac8876addfb6487a0b\n\nbuild:\n  noarch: python\n  number: 1\n\noutputs:\n  - name: {{ name }}\n    build:\n      noarch: python\n      script: {{ PYTHON }} -m pip install . -vv\n    requirements:\n      host:\n        - python {{ python_min }}\n        - hatchling\n        - wheel\n        - versioningit\n        - pip\n      run:\n        - python >={{ python_min }}\n        - networkx\n        - psutil  # technically not a requirement\n        - cloudpickle\n        - numpy\n    test:\n      imports:\n        - pipefunc\n      commands:\n        - pip check\n      requires:\n        - pip\n        - python {{ python_min }}\n\n  - name: {{ name }}-extras\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(name, exact=True) }}\n        - adaptive\n        - graphviz\n        - graphviz-anywidget\n        - griffe\n        - ipywidgets\n        - matplotlib-base\n        - pandas\n        - psutil\n        - rich\n        - xarray\n        - zarr <3\n    test:\n      imports:\n        - pipefunc\n      requires:\n        - pip\n        - python {{ python_min }}\n\nabout:\n  home: https://github.com/pipefunc/pipefunc\n  summary: A Python library for defining, managing, and executing function pipelines.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -368,7 +368,7 @@
     "python >=3.10",
     "rich",
     "xarray",
-    "zarr"
+    "zarr <3"
    ]
   },
   "test": {
