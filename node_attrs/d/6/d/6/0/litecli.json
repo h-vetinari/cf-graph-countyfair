@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "litecli",
-   "version": "1.14.0"
+   "version": "1.14.3"
   },
   "requirements": {
    "host": [
@@ -57,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "44978803243f936492faf7dae9c2b237653c98d172670e3a1a30ba3b5da38b96",
-   "url": "https://pypi.org/packages/source/l/litecli/litecli-1.14.0.tar.gz"
+   "sha256": "9b5e8a251eef8587448205b092568497ad332a541e29527f15e16e03c39bc9e7",
+   "url": "https://pypi.org/packages/source/l/litecli/litecli-1.14.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -125,7 +125,7 @@
   },
   "package": {
    "name": "litecli",
-   "version": "1.14.0"
+   "version": "1.14.3"
   },
   "requirements": {
    "host": [
@@ -144,8 +144,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "44978803243f936492faf7dae9c2b237653c98d172670e3a1a30ba3b5da38b96",
-   "url": "https://pypi.org/packages/source/l/litecli/litecli-1.14.0.tar.gz"
+   "sha256": "9b5e8a251eef8587448205b092568497ad332a541e29527f15e16e03c39bc9e7",
+   "url": "https://pypi.org/packages/source/l/litecli/litecli-1.14.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -172,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/litecli.json"
  },
- "raw_meta_yaml": "{% set name = \"litecli\" %}\n{% set version = \"1.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 44978803243f936492faf7dae9c2b237653c98d172670e3a1a30ba3b5da38b96\n\nbuild:\n  number: 0\n  entry_points:\n    - litecli = litecli.main:cli\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n  run:\n    - click >=4.1\n    - pygments >=1.6\n    - prompt_toolkit >=3.0.3,<4.0.0\n    - sqlparse\n    - configobj >=5.0.5\n    - cli_helpers >=2.2.1\n    - python >=3.7\n\ntest:\n  imports:\n    - litecli\n    - litecli.packages\n    - litecli.packages.special\n  commands:\n    - litecli --version\n\nabout:\n  home: https://litecli.com/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: CLI for SQLite Databases with auto-completion and syntax highlighting.\n  doc_url: https://litecli.com/features/\n  dev_url: https://github.com/dbcli/litecli/\n\nextra:\n  recipe-maintainers:\n    - cofinoa\n",
+ "raw_meta_yaml": "{% set name = \"litecli\" %}\n{% set version = \"1.14.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9b5e8a251eef8587448205b092568497ad332a541e29527f15e16e03c39bc9e7\n\nbuild:\n  number: 0\n  entry_points:\n    - litecli = litecli.main:cli\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n  run:\n    - click >=4.1\n    - pygments >=1.6\n    - prompt_toolkit >=3.0.3,<4.0.0\n    - sqlparse\n    - configobj >=5.0.5\n    - cli_helpers >=2.2.1\n    - python >=3.7\n\ntest:\n  imports:\n    - litecli\n    - litecli.packages\n    - litecli.packages.special\n  commands:\n    - litecli --version\n\nabout:\n  home: https://litecli.com/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: CLI for SQLite Databases with auto-completion and syntax highlighting.\n  doc_url: https://litecli.com/features/\n  dev_url: https://github.com/dbcli/litecli/\n\nextra:\n  recipe-maintainers:\n    - cofinoa\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -245,8 +245,8 @@
    "elements": []
   }
  },
- "url": "https://pypi.org/packages/source/l/litecli/litecli-1.14.0.tar.gz",
- "version": "1.14.0",
+ "url": "https://pypi.org/packages/source/l/litecli/litecli-1.14.3.tar.gz",
+ "version": "1.14.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/litecli.json"
  }
