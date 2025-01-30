@@ -14,6 +14,7 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -36,40 +37,22 @@
    "doc_url": "https://petsc.org/release/docs/manual/",
    "home": "https://www.mcs.anl.gov/petsc/",
    "license": "BSD-2-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-2-Clause",
    "license_file": "LICENSE",
    "summary": "PETSc: Portable, Extensible Toolkit for Scientific Computation"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "cuda_compiler_stub",
-    "cudatoolkit",
-    "cuda-cudart-dev",
-    "cuda-nvtx-dev",
-    "libcublas-dev",
-    "libcufft-dev",
-    "libcurand-dev",
-    "libcusolver-dev",
-    "libcusparse-dev"
-   ],
-   "number": "100",
-   "run_exports": [
-    "petsc",
-    "petsc * cuda11_complex_*",
-    "petsc * cuda11_real_*",
-    "petsc * complex_*",
-    "petsc * real_*",
-    "petsc * cuda12_complex_*",
-    "petsc * cuda12_real_*"
-   ],
-   "script_env": [
-    "CUDA_CONDA_TARGET_NAME="
-   ],
-   "string": "cuda12_real_h1234567_100",
-   "track_features": [
-    "petsc_complex",
-    "petsc_cuda"
-   ]
+   "number": "101",
+   "run_exports": {
+    "weak": [
+     "petsc * cuda11_complex_*",
+     "petsc * cuda11_real_*",
+     "petsc * complex_*",
+     "petsc * real_*",
+     "petsc * cuda12_complex_*",
+     "petsc * cuda12_real_*"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -83,6 +66,1004 @@
     "stefanozampini"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "petsc",
    "version": "3.22.3"
@@ -96,7 +1077,7 @@
     "cuda_compiler_stub",
     "make",
     "pkg-config",
-    "python",
+    "python 3.12.*",
     "gnuconfig"
    ],
    "host": [
@@ -123,12 +1104,12 @@
     "hdf5 * mpi_mpich_*",
     "fftw",
     "fftw * mpi_mpich_*",
-    "cuda-version 11.8",
+    "cuda-version 11.8.*",
     "cudatoolkit",
     "openmpi",
     "hdf5 * mpi_openmpi_*",
     "fftw * mpi_openmpi_*",
-    "cuda-version 12.6",
+    "cuda-version 12.6.*",
     "cuda-cudart-dev",
     "cuda-nvtx-dev",
     "libcublas-dev",
@@ -138,12 +1119,11 @@
     "libcusparse-dev"
    ],
    "run": [
-    "superlu",
     "cuda-version >=11.2,<12",
     "cudatoolkit >=11.2,<12",
-    "cuda-version >=12.0,<13",
-    "cuda-cudart",
+    "cuda-version",
     "cuda-nvtx",
+    "cuda-cudart",
     "libcublas",
     "libcufft",
     "libcurand",
@@ -151,7 +1131,7 @@
     "libcusparse"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "ignore-not-invalid.patch",
@@ -160,26 +1140,6 @@
    ],
    "sha256": "88c0d465a3bd688cb17ebf06a17c06d6e9cc457fa6b9643d217389424e6bd795",
    "url": "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.22.3.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pkg-config --validate PETSc",
-    "pkg-config --cflags PETSc",
-    "pkg-config --libs PETSc"
-   ],
-   "files": [
-    "tests/ex1.c",
-    "tests/ex1f.F90",
-    "tests/testdlopen.c",
-    "tests/makefile"
-   ],
-   "requires": [
-    "pkg-config",
-    "make",
-    "c_compiler_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
-   ]
   }
  },
  "linux_64_requirements": {
@@ -244,8 +1204,7 @@
     "libcufft",
     "libcurand",
     "libcusolver",
-    "libcusparse",
-    "superlu"
+    "libcusparse"
    ]
   },
   "test": {
@@ -265,40 +1224,22 @@
    "doc_url": "https://petsc.org/release/docs/manual/",
    "home": "https://www.mcs.anl.gov/petsc/",
    "license": "BSD-2-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-2-Clause",
    "license_file": "LICENSE",
    "summary": "PETSc: Portable, Extensible Toolkit for Scientific Computation"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "cuda_compiler_stub",
-    "cudatoolkit",
-    "cuda-cudart-dev",
-    "cuda-nvtx-dev",
-    "libcublas-dev",
-    "libcufft-dev",
-    "libcurand-dev",
-    "libcusolver-dev",
-    "libcusparse-dev"
-   ],
-   "number": "100",
-   "run_exports": [
-    "petsc",
-    "petsc * cuda11_complex_*",
-    "petsc * cuda11_real_*",
-    "petsc * complex_*",
-    "petsc * real_*",
-    "petsc * cuda12_complex_*",
-    "petsc * cuda12_real_*"
-   ],
-   "script_env": [
-    "CUDA_CONDA_TARGET_NAME="
-   ],
-   "string": "cuda12_real_h1234567_100",
-   "track_features": [
-    "petsc_complex",
-    "petsc_cuda"
-   ]
+   "number": "101",
+   "run_exports": {
+    "weak": [
+     "petsc * cuda11_complex_*",
+     "petsc * cuda11_real_*",
+     "petsc * complex_*",
+     "petsc * real_*",
+     "petsc * cuda12_complex_*",
+     "petsc * cuda12_real_*"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -312,6 +1253,1010 @@
     "stefanozampini"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "petsc",
    "version": "3.22.3"
@@ -325,8 +2270,9 @@
     "cuda_compiler_stub",
     "make",
     "pkg-config",
-    "python",
-    "gnuconfig"
+    "python 3.12.*",
+    "gnuconfig",
+    "openmpi"
    ],
    "host": [
     "libblas",
@@ -352,12 +2298,12 @@
     "hdf5 * mpi_mpich_*",
     "fftw",
     "fftw * mpi_mpich_*",
-    "cuda-version 11.8",
+    "cuda-version 11.8.*",
     "cudatoolkit",
     "openmpi",
     "hdf5 * mpi_openmpi_*",
     "fftw * mpi_openmpi_*",
-    "cuda-version 12.6",
+    "cuda-version 12.6.*",
     "cuda-cudart-dev",
     "cuda-nvtx-dev",
     "libcublas-dev",
@@ -367,12 +2313,11 @@
     "libcusparse-dev"
    ],
    "run": [
-    "superlu",
     "cuda-version >=11.2,<12",
     "cudatoolkit >=11.2,<12",
-    "cuda-version >=12.0,<13",
-    "cuda-cudart",
+    "cuda-version",
     "cuda-nvtx",
+    "cuda-cudart",
     "libcublas",
     "libcufft",
     "libcurand",
@@ -380,7 +2325,7 @@
     "libcusparse"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "ignore-not-invalid.patch",
@@ -389,26 +2334,6 @@
    ],
    "sha256": "88c0d465a3bd688cb17ebf06a17c06d6e9cc457fa6b9643d217389424e6bd795",
    "url": "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.22.3.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pkg-config --validate PETSc",
-    "pkg-config --cflags PETSc",
-    "pkg-config --libs PETSc"
-   ],
-   "files": [
-    "tests/ex1.c",
-    "tests/ex1f.F90",
-    "tests/testdlopen.c",
-    "tests/makefile"
-   ],
-   "requires": [
-    "pkg-config",
-    "make",
-    "c_compiler_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
-   ]
   }
  },
  "linux_aarch64_requirements": {
@@ -422,6 +2347,7 @@
     "fortran_compiler_stub",
     "gnuconfig",
     "make",
+    "openmpi",
     "pkg-config",
     "python"
    ]
@@ -473,8 +2399,7 @@
     "libcufft",
     "libcurand",
     "libcusolver",
-    "libcusparse",
-    "superlu"
+    "libcusparse"
    ]
   },
   "test": {
@@ -494,37 +2419,22 @@
    "doc_url": "https://petsc.org/release/docs/manual/",
    "home": "https://www.mcs.anl.gov/petsc/",
    "license": "BSD-2-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-2-Clause",
    "license_file": "LICENSE",
    "summary": "PETSc: Portable, Extensible Toolkit for Scientific Computation"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "cuda_compiler_stub",
-    "cudatoolkit",
-    "cuda-cudart-dev",
-    "cuda-nvtx-dev",
-    "libcublas-dev",
-    "libcufft-dev",
-    "libcurand-dev",
-    "libcusolver-dev",
-    "libcusparse-dev"
-   ],
-   "number": "100",
-   "run_exports": [
-    "petsc",
-    "petsc * cuda11_complex_*",
-    "petsc * cuda11_real_*",
-    "petsc * cuda12_complex_*",
-    "petsc * cuda12_real_*",
-    "petsc * complex_*",
-    "petsc * real_*"
-   ],
-   "script_env": [
-    "CUDA_CONDA_TARGET_NAME="
-   ],
-   "string": "real_h1234567_100",
-   "track_features": null
+   "number": "101",
+   "run_exports": {
+    "weak": [
+     "petsc * cuda11_complex_*",
+     "petsc * cuda11_real_*",
+     "petsc * cuda12_complex_*",
+     "petsc * cuda12_real_*",
+     "petsc * complex_*",
+     "petsc * real_*"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -538,6 +2448,1010 @@
     "stefanozampini"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.4.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.4",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.4.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.4",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.4.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.4",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.4.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.4",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "petsc",
    "version": "3.22.3"
@@ -551,8 +3465,9 @@
     "cuda_compiler_stub",
     "make",
     "pkg-config",
-    "python",
-    "gnuconfig"
+    "python 3.12.*",
+    "gnuconfig",
+    "openmpi"
    ],
    "host": [
     "libblas",
@@ -578,12 +3493,12 @@
     "hdf5 * mpi_mpich_*",
     "fftw",
     "fftw * mpi_mpich_*",
-    "cuda-version 11.8",
+    "cuda-version 11.8.*",
     "cudatoolkit",
     "openmpi",
     "hdf5 * mpi_openmpi_*",
     "fftw * mpi_openmpi_*",
-    "cuda-version 12.4",
+    "cuda-version 12.4.*",
     "cuda-cudart-dev",
     "cuda-nvtx-dev",
     "libcublas-dev",
@@ -593,12 +3508,11 @@
     "libcusparse-dev"
    ],
    "run": [
-    "superlu",
     "cuda-version >=11.2,<12",
     "cudatoolkit >=11.2,<12",
-    "cuda-version >=12.0,<13",
-    "cuda-cudart",
+    "cuda-version",
     "cuda-nvtx",
+    "cuda-cudart",
     "libcublas",
     "libcufft",
     "libcurand",
@@ -606,7 +3520,7 @@
     "libcusparse"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "ignore-not-invalid.patch",
@@ -615,26 +3529,6 @@
    ],
    "sha256": "88c0d465a3bd688cb17ebf06a17c06d6e9cc457fa6b9643d217389424e6bd795",
    "url": "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.22.3.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pkg-config --validate PETSc",
-    "pkg-config --cflags PETSc",
-    "pkg-config --libs PETSc"
-   ],
-   "files": [
-    "tests/ex1.c",
-    "tests/ex1f.F90",
-    "tests/testdlopen.c",
-    "tests/makefile"
-   ],
-   "requires": [
-    "pkg-config",
-    "make",
-    "c_compiler_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
-   ]
   }
  },
  "linux_ppc64le_requirements": {
@@ -648,6 +3542,7 @@
     "fortran_compiler_stub",
     "gnuconfig",
     "make",
+    "openmpi",
     "pkg-config",
     "python"
    ]
@@ -699,8 +3594,7 @@
     "libcufft",
     "libcurand",
     "libcusolver",
-    "libcusparse",
-    "superlu"
+    "libcusparse"
    ]
   },
   "test": {
@@ -720,37 +3614,22 @@
    "doc_url": "https://petsc.org/release/docs/manual/",
    "home": "https://www.mcs.anl.gov/petsc/",
    "license": "BSD-2-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-2-Clause",
    "license_file": "LICENSE",
    "summary": "PETSc: Portable, Extensible Toolkit for Scientific Computation"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "cuda_compiler_stub",
-    "cudatoolkit",
-    "cuda-cudart-dev",
-    "cuda-nvtx-dev",
-    "libcublas-dev",
-    "libcufft-dev",
-    "libcurand-dev",
-    "libcusolver-dev",
-    "libcusparse-dev"
-   ],
-   "number": "100",
-   "run_exports": [
-    "petsc",
-    "petsc * cuda11_complex_*",
-    "petsc * cuda11_real_*",
-    "petsc * complex_*",
-    "petsc * real_*",
-    "petsc * cuda12_complex_*",
-    "petsc * cuda12_real_*"
-   ],
-   "script_env": [
-    "CUDA_CONDA_TARGET_NAME="
-   ],
-   "string": "real_h1234567_100",
-   "track_features": null
+   "number": "101",
+   "run_exports": {
+    "weak": [
+     "petsc * cuda11_complex_*",
+     "petsc * cuda11_real_*",
+     "petsc * complex_*",
+     "petsc * real_*",
+     "petsc * cuda12_complex_*",
+     "petsc * cuda12_real_*"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -764,6 +3643,3612 @@
     "stefanozampini"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.6.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.6",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda11_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 11.8.*",
+      "cudatoolkit"
+     ],
+     "run": [
+      "cuda-version >=11.2,<12",
+      "cudatoolkit >=11.2,<12"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "11.8",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.4.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.4",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*",
+      "cuda-version 12.4.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.4",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.4.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.4",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * cuda12_real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cuda_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*",
+      "cuda-version 12.4.*",
+      "cuda-cudart-dev",
+      "cuda-nvtx-dev",
+      "libcublas-dev",
+      "libcufft-dev",
+      "libcurand-dev",
+      "libcusolver-dev",
+      "libcusparse-dev"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-nvtx",
+      "cuda-cudart",
+      "libcublas",
+      "libcufft",
+      "libcurand",
+      "libcusolver",
+      "libcusparse"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "12.4",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "petsc",
    "version": "3.22.3"
@@ -777,8 +7262,9 @@
     "cuda_compiler_stub",
     "make",
     "pkg-config",
-    "python",
-    "gnuconfig"
+    "python 3.12.*",
+    "gnuconfig",
+    "openmpi"
    ],
    "host": [
     "libblas",
@@ -804,12 +7290,12 @@
     "hdf5 * mpi_mpich_*",
     "fftw",
     "fftw * mpi_mpich_*",
-    "cuda-version 11.8",
+    "cuda-version 11.8.*",
     "cudatoolkit",
     "openmpi",
     "hdf5 * mpi_openmpi_*",
     "fftw * mpi_openmpi_*",
-    "cuda-version 12.6",
+    "cuda-version 12.6.*",
     "cuda-cudart-dev",
     "cuda-nvtx-dev",
     "libcublas-dev",
@@ -817,15 +7303,14 @@
     "libcurand-dev",
     "libcusolver-dev",
     "libcusparse-dev",
-    "cuda-version 12.4"
+    "cuda-version 12.4.*"
    ],
    "run": [
-    "superlu",
     "cuda-version >=11.2,<12",
     "cudatoolkit >=11.2,<12",
-    "cuda-version >=12.0,<13",
-    "cuda-cudart",
+    "cuda-version",
     "cuda-nvtx",
+    "cuda-cudart",
     "libcublas",
     "libcufft",
     "libcurand",
@@ -833,7 +7318,7 @@
     "libcusparse"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "ignore-not-invalid.patch",
@@ -842,26 +7327,6 @@
    ],
    "sha256": "88c0d465a3bd688cb17ebf06a17c06d6e9cc457fa6b9643d217389424e6bd795",
    "url": "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.22.3.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pkg-config --validate PETSc",
-    "pkg-config --cflags PETSc",
-    "pkg-config --libs PETSc"
-   ],
-   "files": [
-    "tests/ex1.c",
-    "tests/ex1f.F90",
-    "tests/testdlopen.c",
-    "tests/makefile"
-   ],
-   "requires": [
-    "pkg-config",
-    "make",
-    "c_compiler_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
-   ]
   }
  },
  "name": "petsc",
@@ -871,32 +7336,18 @@
    "doc_url": "https://petsc.org/release/docs/manual/",
    "home": "https://www.mcs.anl.gov/petsc/",
    "license": "BSD-2-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-2-Clause",
    "license_file": "LICENSE",
    "summary": "PETSc: Portable, Extensible Toolkit for Scientific Computation"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "cudatoolkit",
-    "cuda-cudart-dev",
-    "cuda-nvtx-dev",
-    "libcublas-dev",
-    "libcufft-dev",
-    "libcurand-dev",
-    "libcusolver-dev",
-    "libcusparse-dev"
-   ],
-   "number": "100",
-   "run_exports": [
-    "petsc",
-    "petsc * complex_*",
-    "petsc * real_*"
-   ],
-   "script_env": [
-    "CUDA_CONDA_TARGET_NAME="
-   ],
-   "string": "real_h1234567_100",
-   "track_features": null
+   "number": "101",
+   "run_exports": {
+    "weak": [
+     "petsc * complex_*",
+     "petsc * real_*"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -910,6 +7361,310 @@
     "stefanozampini"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "petsc",
    "version": "3.22.3"
@@ -922,8 +7677,9 @@
     "fortran_compiler_stub",
     "make",
     "pkg-config",
-    "python",
-    "gnuconfig"
+    "python 3.12.*",
+    "gnuconfig",
+    "openmpi"
    ],
    "host": [
     "libblas",
@@ -952,12 +7708,9 @@
     "openmpi",
     "hdf5 * mpi_openmpi_*",
     "fftw * mpi_openmpi_*"
-   ],
-   "run": [
-    "superlu"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "ignore-not-invalid.patch",
@@ -966,26 +7719,6 @@
    ],
    "sha256": "88c0d465a3bd688cb17ebf06a17c06d6e9cc457fa6b9643d217389424e6bd795",
    "url": "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.22.3.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pkg-config --validate PETSc",
-    "pkg-config --cflags PETSc",
-    "pkg-config --libs PETSc"
-   ],
-   "files": [
-    "tests/ex1.c",
-    "tests/ex1f.F90",
-    "tests/testdlopen.c",
-    "tests/makefile"
-   ],
-   "requires": [
-    "pkg-config",
-    "make",
-    "c_compiler_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
-   ]
   }
  },
  "osx_64_requirements": {
@@ -998,6 +7731,7 @@
     "fortran_compiler_stub",
     "gnuconfig",
     "make",
+    "openmpi",
     "pkg-config",
     "python"
    ]
@@ -1031,9 +7765,7 @@
   },
   "run": {
    "__set__": true,
-   "elements": [
-    "superlu"
-   ]
+   "elements": []
   },
   "test": {
    "__set__": true,
@@ -1052,32 +7784,18 @@
    "doc_url": "https://petsc.org/release/docs/manual/",
    "home": "https://www.mcs.anl.gov/petsc/",
    "license": "BSD-2-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-2-Clause",
    "license_file": "LICENSE",
    "summary": "PETSc: Portable, Extensible Toolkit for Scientific Computation"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "cudatoolkit",
-    "cuda-cudart-dev",
-    "cuda-nvtx-dev",
-    "libcublas-dev",
-    "libcufft-dev",
-    "libcurand-dev",
-    "libcusolver-dev",
-    "libcusparse-dev"
-   ],
-   "number": "100",
-   "run_exports": [
-    "petsc",
-    "petsc * complex_*",
-    "petsc * real_*"
-   ],
-   "script_env": [
-    "CUDA_CONDA_TARGET_NAME="
-   ],
-   "string": "real_h1234567_100",
-   "track_features": null
+   "number": "101",
+   "run_exports": {
+    "weak": [
+     "petsc * complex_*",
+     "petsc * real_*"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -1091,6 +7809,310 @@
     "stefanozampini"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "mpich",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_mpich_*",
+      "fftw",
+      "fftw * mpi_mpich_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * complex_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "petsc * real_*"
+     ]
+    },
+    "name": "petsc",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "make",
+      "pkg-config",
+      "python 3.12.*",
+      "gnuconfig",
+      "openmpi"
+     ],
+     "host": [
+      "libblas",
+      "liblapack",
+      "cmake",
+      "openmpi",
+      "yaml",
+      "hypre",
+      "metis",
+      "parmetis",
+      "libptscotch",
+      "scalapack",
+      "superlu",
+      "superlu_dist",
+      "libscotch",
+      "mumps-mpi",
+      "libamd",
+      "libcholmod",
+      "libklu",
+      "libspqr",
+      "libumfpack",
+      "hdf5",
+      "hdf5 * mpi_openmpi_*",
+      "fftw",
+      "fftw * mpi_openmpi_*"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "recipe": [
+        "tests/ex1.c",
+        "tests/ex1f.F90",
+        "tests/testdlopen.c",
+        "tests/makefile"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pkg-config",
+        "make",
+        "c_compiler_stub",
+        "cxx_compiler_stub",
+        "fortran_compiler_stub"
+       ]
+      },
+      "script": {
+       "env": {
+        "cuda_compiler_version": "None",
+        "target_platform": "linux-64"
+       },
+       "file": "run_test.sh"
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "petsc",
    "version": "3.22.3"
@@ -1103,8 +8125,9 @@
     "fortran_compiler_stub",
     "make",
     "pkg-config",
-    "python",
-    "gnuconfig"
+    "python 3.12.*",
+    "gnuconfig",
+    "openmpi"
    ],
    "host": [
     "libblas",
@@ -1133,12 +8156,9 @@
     "openmpi",
     "hdf5 * mpi_openmpi_*",
     "fftw * mpi_openmpi_*"
-   ],
-   "run": [
-    "superlu"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "ignore-not-invalid.patch",
@@ -1147,26 +8167,6 @@
    ],
    "sha256": "88c0d465a3bd688cb17ebf06a17c06d6e9cc457fa6b9643d217389424e6bd795",
    "url": "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.22.3.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pkg-config --validate PETSc",
-    "pkg-config --cflags PETSc",
-    "pkg-config --libs PETSc"
-   ],
-   "files": [
-    "tests/ex1.c",
-    "tests/ex1f.F90",
-    "tests/testdlopen.c",
-    "tests/makefile"
-   ],
-   "requires": [
-    "pkg-config",
-    "make",
-    "c_compiler_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
-   ]
   }
  },
  "osx_arm64_requirements": {
@@ -1179,6 +8179,7 @@
     "fortran_compiler_stub",
     "gnuconfig",
     "make",
+    "openmpi",
     "pkg-config",
     "python"
    ]
@@ -1212,9 +8213,7 @@
   },
   "run": {
    "__set__": true,
-   "elements": [
-    "superlu"
-   ]
+   "elements": []
   },
   "test": {
    "__set__": true,
@@ -1244,7 +8243,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/petsc.json"
  },
- "raw_meta_yaml": "{% set version = \"3.22.3\" %}\n{% set build = 0 %}\n\n# make sure things are defined during conda-smithy operations\n# These will never be undefined during build\n{% if mpi is not defined %}\n{% set mpi = 'mpich' %}\n{% endif %}\n{% if scalar is not defined %}\n{% set scalar = 'real' %}\n{% endif %}\n{% if cuda_compiler_version is not defined %}\n{% set cuda_compiler_version = 'None' %}\n{% endif %}\n\n# prefer real to complex, all other things being equal\n{% if scalar == \"real\" %}\n{% set build = build + 100 %}\n{% endif %}\n\n{% set cuda_target_name = \"x86_64-linux\" %}  # [linux64]\n{% set cuda_target_name = \"ppc64le-linux\" %}  # [ppc64le]\n{% set cuda_target_name = \"sbsa-linux\" %}  # [aarch64]\n{% set cuda_target_name = \"\" %}  # [osx or win]\n\n{% set build_prefix = scalar %}\n{% if cuda_compiler_version == \"None\" %}\n{% set cuda_major = 0 %}\n{% else %}\n{% set cuda_major = cuda_compiler_version.split(\".\")[0] | int %}\n{% set build_prefix = \"cuda{}_{}\".format(cuda_major, build_prefix) %}\n{% endif %}\n\npackage:\n  name: petsc\n  version: {{ version }}\n\nsource:\n  url: https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-{{ version }}.tar.gz\n  sha256: 88c0d465a3bd688cb17ebf06a17c06d6e9cc457fa6b9643d217389424e6bd795\n  patches:\n    - ignore-not-invalid.patch\n    - no-cppflags-in-pkgconfig-cflags.patch\n    - target-cudadir.patch\n\nbuild:\n  skip: true  # [win]\n  number: {{ build }}\n  string: {{ build_prefix }}_h{{ PKG_HASH }}_{{ build }}\n  script_env:\n    - CUDA_CONDA_TARGET_NAME={{ cuda_target_name }}\n  run_exports:\n    - {{ pin_subpackage('petsc', max_pin='x.x') }}\n    - petsc * {{ build_prefix }}_*\n  track_features:\n    - petsc_complex  # [scalar == \"complex\"]\n    - petsc_cuda  # [cuda_compiler_version != \"None\"]\n  # Allow using 11.2 with 11.8 or 12.x with 12.4\n  ignore_run_exports_from:\n    - {{ compiler('cuda') }}  # [cuda_compiler_version != \"None\"]\n    - cudatoolkit\n    - cuda-cudart-dev\n    - cuda-nvtx-dev\n    - libcublas-dev\n    - libcufft-dev\n    - libcurand-dev\n    - libcusolver-dev\n    - libcusparse-dev\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - {{ compiler('cuda') }}  # [cuda_compiler_version != \"None\"]\n    - make\n    - pkg-config\n    - python\n    - gnuconfig   # [unix]\n    - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]\n  host:\n    - libblas\n    - liblapack\n    - cmake\n    - {{ mpi }}\n    - yaml\n    - hypre\n    - metis\n    - parmetis\n    - libptscotch\n    - scalapack\n    - superlu\n    - superlu_dist\n    - libscotch\n    - mumps-mpi\n\n    # suitesparse\n    - libamd\n    - libcholmod\n    - libklu\n    - libspqr\n    - libumfpack\n\n    - hdf5\n    - hdf5 * mpi_{{ mpi }}_*\n    - fftw\n    - fftw * mpi_{{ mpi }}_*\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version != \"None\"]\n    - cudatoolkit                               # [(cuda_compiler_version or \"\").startswith(\"11\")]\n{% if cuda_major >= 12 %}\n    - cuda-cudart-dev\n    - cuda-nvtx-dev\n    - libcublas-dev\n    - libcufft-dev\n    - libcurand-dev\n    - libcusolver-dev\n    - libcusparse-dev\n{% endif %}\n  run:\n    # superlu 5.2.2 is a static lib\n    # remove this when it's updated to a shared lib\n    - {{ pin_compatible(\"superlu\", max_pin=\"x.x.x\") }}\n    - cuda-version >={{ cuda_major }}.2,<{{ cuda_major+1 }}  # [(cuda_compiler_version or \"\").startswith(\"11\")]\n    - cudatoolkit >={{ cuda_major }}.2,<{{ cuda_major+1 }}   # [(cuda_compiler_version or \"\").startswith(\"11\")]\n{% if cuda_major >= 12 %}\n    - cuda-version >={{ cuda_major }}.0,<{{ cuda_major+1 }}\n    - cuda-cudart\n    - cuda-nvtx\n    - libcublas\n    - libcufft\n    - libcurand\n    - libcusolver\n    - libcusparse\n    - {{ pin_compatible('cuda-nvtx', min_pin='x', max_pin='x') }}\n    - {{ pin_compatible('cuda-cudart', min_pin='x', max_pin='x') }}\n    - {{ pin_compatible('libcublas', min_pin='x', max_pin='x') }}\n    - {{ pin_compatible('libcufft', min_pin='x', max_pin='x') }}\n    - {{ pin_compatible('libcurand', min_pin='x', max_pin='x') }}\n    - {{ pin_compatible('libcusolver', min_pin='x', max_pin='x') }}\n    - {{ pin_compatible('libcusparse', min_pin='x', max_pin='x') }}\n{% endif %}\n\ntest:\n  requires:\n    - pkg-config\n    - make\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n  files:\n    - tests/ex1.c\n    - tests/ex1f.F90\n    - tests/testdlopen.c\n    - tests/makefile\n  commands:\n    - pkg-config --validate PETSc\n    - pkg-config --cflags PETSc\n    - pkg-config --libs PETSc\n\nabout:\n  home: https://www.mcs.anl.gov/petsc/\n  summary: 'PETSc: Portable, Extensible Toolkit for Scientific Computation'\n  license: BSD-2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  dev_url: https://gitlab.com/petsc/petsc\n  doc_url: https://petsc.org/release/docs/manual/\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - dalcinl\n    - minrk\n    - davidbrochart\n    - SylvainCorlay\n    - martinRenou\n    - matthiasdiener\n    - stefanozampini\n",
+ "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  version: 3.22.3\n  build: 101\n  # these variables should all be overridden in variant files\n  # but default values are sometimes needed for conda-smithy rerender\n  mpi: ${{ mpi | default('mpich') }}\n  scalar: ${{ scalar | default('real') }}\n  cuda_compiler_version: ${{ cuda_compiler_version | default('None') }}\n  # construct some variables to use in the recipe\n  # with_cuda can be used as a bool for cuda or not conditions\n  with_cuda: ${{ 'true' if cuda_compiler_version != 'None' else '' }}\n  # cuda_major is always the major version of cuda as an integer string ('0' if not with_cuda)\n  cuda_major: >-\n    ${{\n      cuda_compiler_version | split('.') | first\n      if with_cuda\n      else \"0\"\n    }}\n  # construct the build prefix (e.g. 'cuda12_complex' or 'real')\n  cuda_prefix: ${{ \"cuda\" + cuda_major + \"_\" }}\n  build_prefix: ${{ cuda_prefix + scalar if with_cuda else scalar }}\n\npackage:\n  name: petsc\n  version: ${{ version }}\n\nsource:\n  url: https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-${{ version }}.tar.gz\n  sha256: 88c0d465a3bd688cb17ebf06a17c06d6e9cc457fa6b9643d217389424e6bd795\n  patches:\n    - ignore-not-invalid.patch\n    - no-cppflags-in-pkgconfig-cflags.patch\n    - target-cudadir.patch\n\nbuild:\n  number: ${{ build }}\n  string: ${{ build_prefix }}_h${{ hash }}_${{ build }}\n  skip: win\n  variant:\n    # deprioritize cuda and complex with track_features\n    down_prioritize_variant: >\n      ${{\n        (1 if with_cuda else 0)\n      + (1 if scalar == \"complex\" else 0)\n      }}\n\nrequirements:\n  build:\n    - ${{ compiler('c') }}\n    - ${{ stdlib('c') }}\n    - ${{ compiler('cxx') }}\n    - ${{ compiler('fortran') }}\n    - if: with_cuda\n      then: ${{ compiler('cuda') }}\n    - if: osx\n      then:\n        # has symlinks for 'otool', 'install_name_tool', etc.\n        # otherwise, we only have 'arm64-apple-darwin20.0.0-install_name_tool'\n        - cctools\n    - make\n    - pkg-config\n    - python 3.12.*\n    - gnuconfig\n    - if: mpi == 'openmpi' and build_platform != target_platform\n      then: ${{ mpi }}\n  host:\n    - libblas\n    - liblapack\n    - cmake\n    - ${{ mpi }}\n    - yaml\n    - hypre\n    - metis\n    - parmetis\n    - libptscotch\n    - scalapack\n    - superlu\n    - superlu_dist\n    - libscotch\n    - mumps-mpi\n    # suitesparse\n    - libamd\n    - libcholmod\n    - libklu\n    - libspqr\n    - libumfpack\n\n    - hdf5\n    - hdf5 * mpi_${{ mpi }}_*\n    - fftw\n    - fftw * mpi_${{ mpi }}_*\n\n    # cuda\n    - if: with_cuda\n      then:\n        - cuda-version ${{ cuda_compiler_version }}.*\n        - if: cuda_major == \"11\"\n          then:\n            - cudatoolkit\n          else:\n            - cuda-cudart-dev\n            - cuda-nvtx-dev\n            - libcublas-dev\n            - libcufft-dev\n            - libcurand-dev\n            - libcusolver-dev\n            - libcusparse-dev\n  run:\n    - if: with_cuda\n      then:\n      - if: cuda_major == \"11\"\n        then:\n          - cuda-version >=11.2,<12\n          - cudatoolkit >=11.2,<12\n        else:\n          - ${{ pin_compatible('cuda-version', lower_bound='x', upper_bound='x') }}\n          - ${{ pin_compatible('cuda-nvtx', lower_bound='x', upper_bound='x') }}\n          - ${{ pin_compatible('cuda-cudart', lower_bound='x', upper_bound='x') }}\n          - ${{ pin_compatible('libcublas', lower_bound='x', upper_bound='x') }}\n          - ${{ pin_compatible('libcufft', lower_bound='x', upper_bound='x') }}\n          - ${{ pin_compatible('libcurand', lower_bound='x', upper_bound='x') }}\n          - ${{ pin_compatible('libcusolver', lower_bound='x', upper_bound='x') }}\n          - ${{ pin_compatible('libcusparse', lower_bound='x', upper_bound='x') }}\n  run_exports:\n    - ${{ pin_subpackage('petsc', upper_bound='x.x') }}\n    - petsc * ${{ build_prefix }}_*\n  ignore_run_exports:\n    from_package:\n      - if: with_cuda\n        then:\n          - ${{ compiler(\"cuda\") | split | first }}\n      - cudatoolkit\n      - cuda-cudart-dev\n      - cuda-nvtx-dev\n      - libcublas-dev\n      - libcufft-dev\n      - libcurand-dev\n      - libcusolver-dev\n      - libcusparse-dev\n\ntests:\n  - files:\n      recipe:\n        - tests/ex1.c\n        - tests/ex1f.F90\n        - tests/testdlopen.c\n        - tests/makefile\n    requirements:\n      run:\n        - pkg-config\n        - make\n        - ${{ compiler('c') }}\n        - ${{ compiler('cxx') }}\n        - ${{ compiler('fortran') }}\n    script:\n      file: run_test.sh\n      env:\n        target_platform: ${{ target_platform }}\n        cuda_compiler_version: ${{ cuda_compiler_version }}\n\nabout:\n  summary: |\n    PETSc: Portable, Extensible Toolkit for Scientific Computation\n  license: BSD-2-Clause\n  license_file: LICENSE\n  homepage: https://www.mcs.anl.gov/petsc/\n  repository: https://gitlab.com/petsc/petsc\n  documentation: https://petsc.org/release/docs/manual/\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - dalcinl\n    - minrk\n    - davidbrochart\n    - SylvainCorlay\n    - martinRenou\n    - matthiasdiener\n    - stefanozampini\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -1308,6 +8307,7 @@
     "fortran_compiler_stub",
     "gnuconfig",
     "make",
+    "openmpi",
     "pkg-config",
     "python"
    ]
@@ -1369,8 +8369,7 @@
     "libcufft",
     "libcurand",
     "libcusolver",
-    "libcusparse",
-    "superlu"
+    "libcusparse"
    ]
   },
   "test": {
@@ -1396,8 +8395,9 @@
     "fortran_compiler_stub",
     "gnuconfig",
     "make",
+    "openmpi",
     "pkg-config",
-    "python"
+    "python 3.12.*"
    ]
   },
   "host": {
@@ -1406,9 +8406,9 @@
     "cmake",
     "cuda-cudart-dev",
     "cuda-nvtx-dev",
-    "cuda-version 11.8",
-    "cuda-version 12.4",
-    "cuda-version 12.6",
+    "cuda-version 11.8.*",
+    "cuda-version 12.4.*",
+    "cuda-version 12.6.*",
     "cudatoolkit",
     "fftw",
     "fftw * mpi_mpich_*",
@@ -1447,15 +8447,14 @@
    "elements": [
     "cuda-cudart",
     "cuda-nvtx",
+    "cuda-version",
     "cuda-version >=11.2,<12",
-    "cuda-version >=12.0,<13",
     "cudatoolkit >=11.2,<12",
     "libcublas",
     "libcufft",
     "libcurand",
     "libcusolver",
-    "libcusparse",
-    "superlu"
+    "libcusparse"
    ]
   },
   "test": {
