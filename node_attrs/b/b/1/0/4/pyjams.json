@@ -5,11 +5,7 @@
   "conda_build": {
    "pkg_format": "2"
   },
-  "conda_forge_output_validation": true,
-  "github": {
-   "branch_name": "main",
-   "tooling_branch_name": "main"
-  }
+  "conda_forge_output_validation": true
  },
  "feedstock_name": "pyjams",
  "hash_type": "sha256",
@@ -25,7 +21,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,13 +35,13 @@
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python >=3.8",
     "pip",
     "setuptools >=42",
     "setuptools_scm >=3.5"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.8",
     "numpy",
     "scipy",
     "matplotlib-base",
@@ -60,7 +56,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "ea97fbf5313decf123ca0afd62953c181768836d496c5c9bf1c06c020d08906f",
-   "url": "https://pypi.org/packages/source/p/pyjams/pyjams-2.2.tar.gz"
+   "url": "https://pypi.io/packages/source/p/pyjams/pyjams-2.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -70,8 +66,7 @@
     "pyjams"
    ],
    "requires": [
-    "pip",
-    "python 3.9"
+    "pip"
    ]
   }
  },
@@ -107,8 +102,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
@@ -124,7 +118,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -138,13 +132,13 @@
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python >=3.8",
     "pip",
     "setuptools >=42",
     "setuptools_scm >=3.5"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.8",
     "numpy",
     "scipy",
     "matplotlib-base",
@@ -159,7 +153,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "ea97fbf5313decf123ca0afd62953c181768836d496c5c9bf1c06c020d08906f",
-   "url": "https://pypi.org/packages/source/p/pyjams/pyjams-2.2.tar.gz"
+   "url": "https://pypi.io/packages/source/p/pyjams/pyjams-2.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -169,8 +163,7 @@
     "pyjams"
    ],
    "requires": [
-    "pip",
-    "python 3.9"
+    "pip"
    ]
   }
  },
@@ -188,7 +181,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyjams.json"
  },
- "raw_meta_yaml": "{% set name = \"pyjams\" %}\n{% set version = \"2.2\" %}\n{% set sha256 = \"ea97fbf5313decf123ca0afd62953c181768836d496c5c9bf1c06c020d08906f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyjams-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools >=42\n    - setuptools_scm >=3.5\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - matplotlib-base\n    - pandas\n    - schwimmbad\n    - cftime\n    - netcdf4\n    - xlrd\n    - openpyxl\n\ntest:\n  imports:\n    - pyjams\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mcuntz/pyjams\n  summary: 'General Python package with a wide variety of miscellaneous utility functions.'\n  dev_url: https://github.com/mcuntz/pyjams\n  license: MIT\n  license_file: LICENSE\n  description: |\n    pyjams is a general Python package offering a wide variety of miscellaneous\n    functions in different categories, such as reading different file formats,\n    date conversion routines, or calculating Elementary Effects. It has several\n    subpackages offering constants, special functions, or objective functions\n    to be used with scipy.optimize or similar.\n  doc_url: https://mcuntz.github.io/pyjams\n  dev_url: https://github.com/mcuntz/pyjams\n\nextra:\n  recipe-maintainers:\n    - mcuntz\n",
+ "raw_meta_yaml": "{% set name = \"pyjams\" %}\n{% set version = \"2.2\" %}\n{% set sha256 = \"ea97fbf5313decf123ca0afd62953c181768836d496c5c9bf1c06c020d08906f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyjams-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - setuptools >=42\n    - setuptools_scm >=3.5\n  run:\n    - python >=3.8\n    - numpy\n    - scipy\n    - matplotlib-base\n    - pandas\n    - schwimmbad\n    - cftime\n    - netcdf4\n    - xlrd\n    - openpyxl\n\ntest:\n  imports:\n    - pyjams\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/mcuntz/pyjams\n  summary: 'General Python package with a wide variety of miscellaneous utility functions.'\n  dev_url: https://github.com/mcuntz/pyjams\n  license: MIT\n  license_file: LICENSE\n  description: |\n    pyjams is a general Python package offering a wide variety of miscellaneous\n    functions in different categories, such as reading different file formats,\n    date conversion routines, or calculating Elementary Effects. It has several\n    subpackages offering constants, special functions, or objective functions\n    to be used with scipy.optimize or similar.\n  doc_url: https://mcuntz.github.io/pyjams\n  dev_url: https://github.com/mcuntz/pyjams\n\nextra:\n  recipe-maintainers:\n    - mcuntz\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -239,8 +232,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
@@ -254,7 +246,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9",
+    "python >=3.8",
     "setuptools >=42",
     "setuptools_scm >=3.5"
    ]
@@ -268,7 +260,7 @@
     "numpy",
     "openpyxl",
     "pandas",
-    "python >=3.9",
+    "python >=3.8",
     "schwimmbad",
     "scipy",
     "xlrd"
@@ -277,12 +269,11 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python 3.9"
+    "pip"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pyjams/pyjams-2.2.tar.gz",
+ "url": "https://pypi.io/packages/source/p/pyjams/pyjams-2.2.tar.gz",
  "version": "2.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyjams.json"
