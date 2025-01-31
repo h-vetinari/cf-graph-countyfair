@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "appium-python-client",
-   "version": "4.5.0"
+   "version": "3.2.1"
   },
   "requirements": {
    "host": [
@@ -43,13 +43,13 @@
    ],
    "run": [
     "python >=3.12",
-    "selenium ~=4.26,<5.0"
+    "selenium ~=4.12"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "79dc34119b1fe3ec0eae4fe31fb008184aed3e2837725fdbb1aadb7b64c62d39",
-   "url": "https://pypi.io/packages/source/a/appium-python-client/appium_python_client-4.5.0.tar.gz"
+   "sha256": "f48be85e66aa887fa5e1583785ecff4671dc5ce3dde54a5d550d816a87c9d635",
+   "url": "https://pypi.io/packages/source/a/appium-python-client/Appium-Python-Client-3.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -113,7 +113,7 @@
   },
   "package": {
    "name": "appium-python-client",
-   "version": "4.5.0"
+   "version": "3.2.1"
   },
   "requirements": {
    "host": [
@@ -123,13 +123,13 @@
    ],
    "run": [
     "python >=3.12",
-    "selenium ~=4.26,<5.0"
+    "selenium ~=4.12"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "79dc34119b1fe3ec0eae4fe31fb008184aed3e2837725fdbb1aadb7b64c62d39",
-   "url": "https://pypi.io/packages/source/a/appium-python-client/appium_python_client-4.5.0.tar.gz"
+   "sha256": "f48be85e66aa887fa5e1583785ecff4671dc5ce3dde54a5d550d816a87c9d635",
+   "url": "https://pypi.io/packages/source/a/appium-python-client/Appium-Python-Client-3.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,7 +159,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/appium-python-client.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.12' %}\n{% set name = \"appium-python-client\" %}\n{% set version = \"4.5.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/appium_python_client-{{ version }}.tar.gz\n  sha256: 79dc34119b1fe3ec0eae4fe31fb008184aed3e2837725fdbb1aadb7b64c62d39\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - selenium ~=4.26,<5.0\n\ntest:\n  imports:\n    - appium\n    - appium.common\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://appium.io/\n  summary: Python client for Appium\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - saibhargav1508\n    - nisharai1\n",
+ "raw_meta_yaml": "{% set python_min = '3.12' %}\n{% set name = \"appium-python-client\" %}\n{% set version = \"3.2.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Appium-Python-Client-{{ version }}.tar.gz\n  sha256: f48be85e66aa887fa5e1583785ecff4671dc5ce3dde54a5d550d816a87c9d635\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - selenium ~=4.12\n\ntest:\n  imports:\n    - appium\n    - appium.common\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://appium.io/\n  summary: Python client for Appium\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - saibhargav1508\n    - nisharai1\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -215,7 +215,7 @@
    "__set__": true,
    "elements": [
     "python >=3.12",
-    "selenium ~=4.26,<5.0"
+    "selenium ~=4.12"
    ]
   },
   "test": {
@@ -226,8 +226,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/a/appium-python-client/appium_python_client-4.5.0.tar.gz",
- "version": "4.5.0",
+ "url": "https://pypi.io/packages/source/a/appium-python-client/Appium-Python-Client-3.2.1.tar.gz",
+ "version": "3.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/appium-python-client.json"
  }
