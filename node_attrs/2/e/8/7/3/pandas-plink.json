@@ -2,6 +2,12 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -11,8 +17,11 @@
    "tooling_branch_name": "main"
   },
   "provider": {
+   "linux_aarch64": "azure",
+   "linux_ppc64le": "azure",
    "win": "azure"
-  }
+  },
+  "test": "native_and_emulated"
  },
  "feedstock_name": "pandas-plink",
  "hash_type": "sha256",
@@ -22,30 +31,32 @@
    "doc_url": "https://pandas-plink.readthedocs.io",
    "home": "https://github.com/limix/pandas-plink",
    "license": "MIT",
-   "license_family": "MIT",
    "license_file": "LICENSE.md",
    "summary": "Convert PLINK files to data array"
   },
   "build": {
-   "number": "1",
-   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "Horta"
    ]
   },
   "package": {
    "name": "pandas-plink",
-   "version": "2.2.9"
+   "version": "2.3.1"
   },
   "requirements": {
    "build": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
     "pip",
+    "poetry-core",
     "cffi >=1.14.3"
    ],
    "run": [
@@ -54,6 +65,7 @@
     "dask >=2.6.0",
     "numpy >=1.17.2",
     "pandas >=1.1.3",
+    "pandera-base",
     "pytest >=5.2.2",
     "python",
     "tqdm >=4.36.1",
@@ -63,14 +75,10 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "pandas-plink-2.2.9.tar.gz",
-   "sha256": "f5ecacc46c7b92d67968310d14000327333ec1720f35142b091e56da6ef80711",
-   "url": "https://pypi.io/packages/source/p/pandas-plink/pandas_plink-2.2.9.tar.gz"
+   "sha256": "f5e5a0ee588c65edea7ea44953523221eb3cf8367700fa5407ad6d72de0a85d9",
+   "url": "https://pypi.org/packages/source/p/pandas-plink/pandas_plink-2.3.1.tar.gz"
   },
   "test": {
-   "commands": [
-    "python -c \"import sys; import pandas; import pandas_plink; sys.exit(pandas_plink.test())\""
-   ],
    "imports": [
     "pandas",
     "pandas_plink"
@@ -81,7 +89,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -89,6 +98,7 @@
    "elements": [
     "cffi",
     "pip",
+    "poetry-core",
     "python"
    ]
   },
@@ -100,6 +110,203 @@
     "deprecated",
     "numpy",
     "pandas",
+    "pandera-base",
+    "pytest",
+    "python",
+    "tqdm",
+    "xarray",
+    "zstandard"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/limix/pandas-plink",
+   "doc_url": "https://pandas-plink.readthedocs.io",
+   "home": "https://github.com/limix/pandas-plink",
+   "license": "MIT",
+   "license_file": "LICENSE.md",
+   "summary": "Convert PLINK files to data array"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielnachun",
+    "Horta"
+   ]
+  },
+  "package": {
+   "name": "pandas-plink",
+   "version": "2.3.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "poetry-core",
+    "cffi >=1.14.3"
+   ],
+   "run": [
+    "Deprecated >=1.2.6",
+    "cffi >=1.14.3",
+    "dask >=2.6.0",
+    "numpy >=1.17.2",
+    "pandas >=1.1.3",
+    "pandera-base",
+    "pytest >=5.2.2",
+    "python",
+    "tqdm >=4.36.1",
+    "xarray >=0.18.2",
+    "zstandard >=0.13.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f5e5a0ee588c65edea7ea44953523221eb3cf8367700fa5407ad6d72de0a85d9",
+   "url": "https://pypi.org/packages/source/p/pandas-plink/pandas_plink-2.3.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pandas",
+    "pandas_plink"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cffi",
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cffi",
+    "dask",
+    "deprecated",
+    "numpy",
+    "pandas",
+    "pandera-base",
+    "pytest",
+    "python",
+    "tqdm",
+    "xarray",
+    "zstandard"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/limix/pandas-plink",
+   "doc_url": "https://pandas-plink.readthedocs.io",
+   "home": "https://github.com/limix/pandas-plink",
+   "license": "MIT",
+   "license_file": "LICENSE.md",
+   "summary": "Convert PLINK files to data array"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielnachun",
+    "Horta"
+   ]
+  },
+  "package": {
+   "name": "pandas-plink",
+   "version": "2.3.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "poetry-core",
+    "cffi >=1.14.3"
+   ],
+   "run": [
+    "Deprecated >=1.2.6",
+    "cffi >=1.14.3",
+    "dask >=2.6.0",
+    "numpy >=1.17.2",
+    "pandas >=1.1.3",
+    "pandera-base",
+    "pytest >=5.2.2",
+    "python",
+    "tqdm >=4.36.1",
+    "xarray >=0.18.2",
+    "zstandard >=0.13.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f5e5a0ee588c65edea7ea44953523221eb3cf8367700fa5407ad6d72de0a85d9",
+   "url": "https://pypi.org/packages/source/p/pandas-plink/pandas_plink-2.3.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pandas",
+    "pandas_plink"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cffi",
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cffi",
+    "dask",
+    "deprecated",
+    "numpy",
+    "pandas",
+    "pandera-base",
     "pytest",
     "python",
     "tqdm",
@@ -118,30 +325,32 @@
    "doc_url": "https://pandas-plink.readthedocs.io",
    "home": "https://github.com/limix/pandas-plink",
    "license": "MIT",
-   "license_family": "MIT",
    "license_file": "LICENSE.md",
    "summary": "Convert PLINK files to data array"
   },
   "build": {
-   "number": "1",
-   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "Horta"
    ]
   },
   "package": {
    "name": "pandas-plink",
-   "version": "2.2.9"
+   "version": "2.3.1"
   },
   "requirements": {
    "build": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
     "pip",
+    "poetry-core",
     "cffi >=1.14.3"
    ],
    "run": [
@@ -150,6 +359,7 @@
     "dask >=2.6.0",
     "numpy >=1.17.2",
     "pandas >=1.1.3",
+    "pandera-base",
     "pytest >=5.2.2",
     "python",
     "tqdm >=4.36.1",
@@ -159,14 +369,10 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "pandas-plink-2.2.9.tar.gz",
-   "sha256": "f5ecacc46c7b92d67968310d14000327333ec1720f35142b091e56da6ef80711",
-   "url": "https://pypi.io/packages/source/p/pandas-plink/pandas_plink-2.2.9.tar.gz"
+   "sha256": "f5e5a0ee588c65edea7ea44953523221eb3cf8367700fa5407ad6d72de0a85d9",
+   "url": "https://pypi.org/packages/source/p/pandas-plink/pandas_plink-2.3.1.tar.gz"
   },
   "test": {
-   "commands": [
-    "python -c \"import sys; import pandas; import pandas_plink; sys.exit(pandas_plink.test())\""
-   ],
    "imports": [
     "pandas",
     "pandas_plink"
@@ -180,30 +386,32 @@
    "doc_url": "https://pandas-plink.readthedocs.io",
    "home": "https://github.com/limix/pandas-plink",
    "license": "MIT",
-   "license_family": "MIT",
    "license_file": "LICENSE.md",
    "summary": "Convert PLINK files to data array"
   },
   "build": {
-   "number": "1",
-   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "Horta"
    ]
   },
   "package": {
    "name": "pandas-plink",
-   "version": "2.2.9"
+   "version": "2.3.1"
   },
   "requirements": {
    "build": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
     "pip",
+    "poetry-core",
     "cffi >=1.14.3"
    ],
    "run": [
@@ -212,6 +420,7 @@
     "dask >=2.6.0",
     "numpy >=1.17.2",
     "pandas >=1.1.3",
+    "pandera-base",
     "pytest >=5.2.2",
     "python",
     "tqdm >=4.36.1",
@@ -221,14 +430,10 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "pandas-plink-2.2.9.tar.gz",
-   "sha256": "f5ecacc46c7b92d67968310d14000327333ec1720f35142b091e56da6ef80711",
-   "url": "https://pypi.io/packages/source/p/pandas-plink/pandas_plink-2.2.9.tar.gz"
+   "sha256": "f5e5a0ee588c65edea7ea44953523221eb3cf8367700fa5407ad6d72de0a85d9",
+   "url": "https://pypi.org/packages/source/p/pandas-plink/pandas_plink-2.3.1.tar.gz"
   },
   "test": {
-   "commands": [
-    "python -c \"import sys; import pandas; import pandas_plink; sys.exit(pandas_plink.test())\""
-   ],
    "imports": [
     "pandas",
     "pandas_plink"
@@ -239,7 +444,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -247,6 +453,7 @@
    "elements": [
     "cffi",
     "pip",
+    "poetry-core",
     "python"
    ]
   },
@@ -258,6 +465,105 @@
     "deprecated",
     "numpy",
     "pandas",
+    "pandera-base",
+    "pytest",
+    "python",
+    "tqdm",
+    "xarray",
+    "zstandard"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/limix/pandas-plink",
+   "doc_url": "https://pandas-plink.readthedocs.io",
+   "home": "https://github.com/limix/pandas-plink",
+   "license": "MIT",
+   "license_file": "LICENSE.md",
+   "summary": "Convert PLINK files to data array"
+  },
+  "build": {
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielnachun",
+    "Horta"
+   ]
+  },
+  "package": {
+   "name": "pandas-plink",
+   "version": "2.3.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "pip",
+    "poetry-core",
+    "cffi >=1.14.3"
+   ],
+   "run": [
+    "Deprecated >=1.2.6",
+    "cffi >=1.14.3",
+    "dask >=2.6.0",
+    "numpy >=1.17.2",
+    "pandas >=1.1.3",
+    "pandera-base",
+    "pytest >=5.2.2",
+    "python",
+    "tqdm >=4.36.1",
+    "xarray >=0.18.2",
+    "zstandard >=0.13.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "f5e5a0ee588c65edea7ea44953523221eb3cf8367700fa5407ad6d72de0a85d9",
+   "url": "https://pypi.org/packages/source/p/pandas-plink/pandas_plink-2.3.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pandas",
+    "pandas_plink"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cffi",
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "cffi",
+    "dask",
+    "deprecated",
+    "numpy",
+    "pandas",
+    "pandera-base",
     "pytest",
     "python",
     "tqdm",
@@ -279,23 +585,29 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
+  "osx_arm64",
   "win_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/pandas-plink.json"
  },
- "raw_meta_yaml": "{% set name = \"pandas-plink\" %}\n{% set version = \"2.2.9\" %}\n{% set sha256 = \"f5ecacc46c7b92d67968310d14000327333ec1720f35142b091e56da6ef80711\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pandas_plink-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n  skip: true  # [py<37]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - cffi >=1.14.3\n  run:\n    - Deprecated >=1.2.6\n    - cffi >=1.14.3\n    - dask >=2.6.0\n    - numpy >=1.17.2\n    - pandas >=1.1.3\n    - pytest >=5.2.2\n    - python\n    - tqdm >=4.36.1\n    - xarray >=0.18.2\n    - zstandard >=0.13.0\n\ntest:\n  imports:\n    - pandas\n    - pandas_plink\n  commands:\n    - python -c \"import sys; import pandas; import pandas_plink; sys.exit(pandas_plink.test())\"\n\nabout:\n  home: https://github.com/limix/pandas-plink\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: Convert PLINK files to data array\n  doc_url: https://pandas-plink.readthedocs.io\n  dev_url: https://github.com/limix/pandas-plink\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
+ "raw_meta_yaml": "{% set name = \"pandas-plink\" %}\n{% set version = \"2.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pandas_plink-{{ version }}.tar.gz\n  sha256: f5e5a0ee588c65edea7ea44953523221eb3cf8367700fa5407ad6d72de0a85d9\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n  skip: True  # [py<310]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n    - cffi >=1.14.3                       # [build_platform != target_platform]\n    - python                              # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n  host:\n    - python\n    - pip\n    - poetry-core\n    - cffi >=1.14.3\n  run:\n    - Deprecated >=1.2.6\n    - cffi >=1.14.3\n    - dask >=2.6.0\n    - numpy >=1.17.2\n    - pandas >=1.1.3\n    - pandera-base\n    - pytest >=5.2.2\n    - python\n    - tqdm >=4.36.1\n    - xarray >=0.18.2\n    - zstandard >=0.13.0\n\ntest:\n  imports:\n    - pandas\n    - pandas_plink\n\nabout:\n  home: https://github.com/limix/pandas-plink\n  license: MIT\n  license_file: LICENSE.md\n  summary: Convert PLINK files to data array\n  doc_url: https://pandas-plink.readthedocs.io\n  dev_url: https://github.com/limix/pandas-plink\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n    - Horta\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "cffi",
    "dask",
    "deprecated",
    "numpy",
    "pandas",
+   "pandera-base",
    "pip",
+   "poetry-core",
    "pytest",
    "python",
    "tqdm",
@@ -307,15 +619,18 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cffi",
     "pip",
+    "poetry-core",
     "python"
    ]
   },
@@ -323,11 +638,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cffi",
     "dask",
     "deprecated",
     "numpy",
     "pandas",
+    "pandera-base",
     "pytest",
     "python",
     "tqdm",
@@ -345,7 +662,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -353,6 +671,7 @@
    "elements": [
     "cffi >=1.14.3",
     "pip",
+    "poetry-core",
     "python"
    ]
   },
@@ -364,6 +683,7 @@
     "dask >=2.6.0",
     "numpy >=1.17.2",
     "pandas >=1.1.3",
+    "pandera-base",
     "pytest >=5.2.2",
     "python",
     "tqdm >=4.36.1",
@@ -376,8 +696,8 @@
    "elements": []
   }
  },
- "url": "https://pypi.io/packages/source/p/pandas-plink/pandas_plink-2.2.9.tar.gz",
- "version": "2.2.9",
+ "url": "https://pypi.org/packages/source/p/pandas-plink/pandas_plink-2.3.1.tar.gz",
+ "version": "2.3.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pandas-plink.json"
  },
@@ -387,30 +707,32 @@
    "doc_url": "https://pandas-plink.readthedocs.io",
    "home": "https://github.com/limix/pandas-plink",
    "license": "MIT",
-   "license_family": "MIT",
    "license_file": "LICENSE.md",
    "summary": "Convert PLINK files to data array"
   },
   "build": {
-   "number": "1",
-   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "Horta"
    ]
   },
   "package": {
    "name": "pandas-plink",
-   "version": "2.2.9"
+   "version": "2.3.1"
   },
   "requirements": {
    "build": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
     "pip",
+    "poetry-core",
     "cffi >=1.14.3"
    ],
    "run": [
@@ -419,6 +741,7 @@
     "dask >=2.6.0",
     "numpy >=1.17.2",
     "pandas >=1.1.3",
+    "pandera-base",
     "pytest >=5.2.2",
     "python",
     "tqdm >=4.36.1",
@@ -428,14 +751,10 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "pandas-plink-2.2.9.tar.gz",
-   "sha256": "f5ecacc46c7b92d67968310d14000327333ec1720f35142b091e56da6ef80711",
-   "url": "https://pypi.io/packages/source/p/pandas-plink/pandas_plink-2.2.9.tar.gz"
+   "sha256": "f5e5a0ee588c65edea7ea44953523221eb3cf8367700fa5407ad6d72de0a85d9",
+   "url": "https://pypi.org/packages/source/p/pandas-plink/pandas_plink-2.3.1.tar.gz"
   },
   "test": {
-   "commands": [
-    "python -c \"import sys; import pandas; import pandas_plink; sys.exit(pandas_plink.test())\""
-   ],
    "imports": [
     "pandas",
     "pandas_plink"
@@ -446,7 +765,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -454,6 +774,7 @@
    "elements": [
     "cffi",
     "pip",
+    "poetry-core",
     "python"
    ]
   },
@@ -465,6 +786,7 @@
     "deprecated",
     "numpy",
     "pandas",
+    "pandera-base",
     "pytest",
     "python",
     "tqdm",
