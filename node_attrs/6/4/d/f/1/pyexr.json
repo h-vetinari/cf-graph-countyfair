@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "pyexr",
-   "version": "0.4.0"
+   "version": "0.5.0"
   },
   "requirements": {
    "host": [
@@ -53,8 +53,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c8e222439af5622c24f322fea548e051654796e152dcc9666ccbd1627822d126",
-   "url": "https://pypi.org/packages/source/p/pyexr/pyexr-0.4.0.tar.gz"
+   "sha256": "674610760808ca4ee088bfdeb6bd338deb9f4bcf5a9e8adc6567ed747e48f98d",
+   "url": "https://pypi.org/packages/source/p/pyexr/pyexr-0.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -109,7 +109,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -119,7 +119,7 @@
   },
   "package": {
    "name": "pyexr",
-   "version": "0.4.0"
+   "version": "0.5.0"
   },
   "requirements": {
    "host": [
@@ -136,8 +136,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c8e222439af5622c24f322fea548e051654796e152dcc9666ccbd1627822d126",
-   "url": "https://pypi.org/packages/source/p/pyexr/pyexr-0.4.0.tar.gz"
+   "sha256": "674610760808ca4ee088bfdeb6bd338deb9f4bcf5a9e8adc6567ed747e48f98d",
+   "url": "https://pypi.org/packages/source/p/pyexr/pyexr-0.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -166,7 +166,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyexr.json"
  },
- "raw_meta_yaml": "{% set name = \"pyexr\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyexr-{{ version }}.tar.gz\n  sha256: c8e222439af5622c24f322fea548e051654796e152dcc9666ccbd1627822d126\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n    - python {{ python_min }}\n  run:\n    - numpy\n    - openexr-python\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pyexr\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tvogels/pyexr\n  summary: A simple EXR IO-library for Python that simplifies the use of OpenEXR\n  dev_url: https://github.com/tvogels/pyexr\n  license: MIT\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - jeongseok-meta\n",
+ "raw_meta_yaml": "{% set name = \"pyexr\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyexr-{{ version }}.tar.gz\n  sha256: 674610760808ca4ee088bfdeb6bd338deb9f4bcf5a9e8adc6567ed747e48f98d\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n    - python {{ python_min }}\n  run:\n    - numpy\n    - openexr-python\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pyexr\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tvogels/pyexr\n  summary: A simple EXR IO-library for Python that simplifies the use of OpenEXR\n  dev_url: https://github.com/tvogels/pyexr\n  license: MIT\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - jeongseok-meta\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -239,8 +239,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pyexr/pyexr-0.4.0.tar.gz",
- "version": "0.4.0",
+ "url": "https://pypi.org/packages/source/p/pyexr/pyexr-0.5.0.tar.gz",
+ "version": "0.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyexr.json"
  }
