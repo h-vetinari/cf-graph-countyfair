@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,12 +38,13 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.5"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
     "setuptools",
     "numpy",
-    "python >=3.5",
+    "python >=3.9",
     "pygplates",
     "scipy",
     "cartopy"
@@ -52,12 +53,15 @@
   "schema_version": 0,
   "source": {
    "sha256": "3935e7846f7c16040a04ca689b10be8378afe6573dc8c4eaae0cf6b75f33c07a",
-   "url": "https://pypi.io/packages/source/p/platetectonictools/PlateTectonicTools-0.4.1.tar.gz"
+   "url": "https://pypi.org/packages/source/p/platetectonictools/PlateTectonicTools-0.4.1.tar.gz"
   },
   "test": {
    "imports": [
     "ptt",
     "ptt.utils"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -70,7 +74,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -86,7 +91,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -99,7 +106,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -114,12 +121,13 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.5"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
     "setuptools",
     "numpy",
-    "python >=3.5",
+    "python >=3.9",
     "pygplates",
     "scipy",
     "cartopy"
@@ -128,12 +136,15 @@
   "schema_version": 0,
   "source": {
    "sha256": "3935e7846f7c16040a04ca689b10be8378afe6573dc8c4eaae0cf6b75f33c07a",
-   "url": "https://pypi.io/packages/source/p/platetectonictools/PlateTectonicTools-0.4.1.tar.gz"
+   "url": "https://pypi.org/packages/source/p/platetectonictools/PlateTectonicTools-0.4.1.tar.gz"
   },
   "test": {
    "imports": [
     "ptt",
     "ptt.utils"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -151,7 +162,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/platetectonictools.json"
  },
- "raw_meta_yaml": "{% set name = \"PlateTectonicTools\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 3935e7846f7c16040a04ca689b10be8378afe6573dc8c4eaae0cf6b75f33c07a\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n  run:\n    - setuptools\n    - numpy\n    - python >=3.5\n    - pygplates\n    - scipy\n    - cartopy\n\ntest:\n  imports:\n    - ptt\n    - ptt.utils\n\nabout:\n  home: \"https://github.com/EarthByte/PlateTectonicTools\"\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: \"Python tools for plate tectonic research\"\n\nextra:\n  recipe-maintainers:\n    - jcannon-gplates\n",
+ "raw_meta_yaml": "{% set name = \"PlateTectonicTools\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 3935e7846f7c16040a04ca689b10be8378afe6573dc8c4eaae0cf6b75f33c07a\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - setuptools\n    - numpy\n    - python >={{ python_min }}\n    - pygplates\n    - scipy\n    - cartopy\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - ptt\n    - ptt.utils\n\nabout:\n  home: \"https://github.com/EarthByte/PlateTectonicTools\"\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: \"Python tools for plate tectonic research\"\n\nextra:\n  recipe-maintainers:\n    - jcannon-gplates\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -173,7 +184,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -189,7 +201,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -202,7 +216,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.5"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -211,17 +226,19 @@
     "cartopy",
     "numpy",
     "pygplates",
-    "python >=3.5",
+    "python >=3.9",
     "scipy",
     "setuptools"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/p/platetectonictools/PlateTectonicTools-0.4.1.tar.gz",
+ "url": "https://pypi.org/packages/source/p/platetectonictools/PlateTectonicTools-0.4.1.tar.gz",
  "version": "0.4.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/platetectonictools.json"
