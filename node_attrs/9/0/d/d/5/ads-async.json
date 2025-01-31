@@ -25,15 +25,12 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "conda-forge/pcdsdevices",
-    "klauer",
-    "tangkong",
-    "zllentz"
+    "conda-forge/pcdsdevices"
    ]
   },
   "package": {
@@ -42,7 +39,8 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
+    "setuptools",
     "setuptools_scm",
     "pip"
    ],
@@ -52,12 +50,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ed2035fe2f3912fab39db8c4bd5b9455d21841c7e1f33346c7b05dec4a7498eb",
+   "sha256": "7cf28dcb532169d433bf3db5da822b371951e366745033114b7eec861663a3e0",
    "url": "https://github.com/pcdshub/ads-async/archive/v0.3.1.tar.gz"
   },
   "test": {
    "imports": [
     "ads_async"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -71,6 +72,7 @@
    "elements": [
     "pip",
     "python",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -82,7 +84,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -97,15 +101,12 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "conda-forge/pcdsdevices",
-    "klauer",
-    "tangkong",
-    "zllentz"
+    "conda-forge/pcdsdevices"
    ]
   },
   "package": {
@@ -114,7 +115,8 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
+    "setuptools",
     "setuptools_scm",
     "pip"
    ],
@@ -124,12 +126,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ed2035fe2f3912fab39db8c4bd5b9455d21841c7e1f33346c7b05dec4a7498eb",
+   "sha256": "7cf28dcb532169d433bf3db5da822b371951e366745033114b7eec861663a3e0",
    "url": "https://github.com/pcdshub/ads-async/archive/v0.3.1.tar.gz"
   },
   "test": {
    "imports": [
     "ads_async"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -147,12 +152,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ads-async.json"
  },
- "raw_meta_yaml": "{% set name = \"ads-async\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pcdshub/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: ed2035fe2f3912fab39db8c4bd5b9455d21841c7e1f33346c7b05dec4a7498eb\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n  - python >=3.9\n  - setuptools_scm\n  - pip\n  run:\n  - python >=3.9\n\ntest:\n  imports:\n    - ads_async\n\nabout:\n  home: https://github.com/pcdshub/ads-async\n  doc_url: https://pcdshub.github.io/ads-async\n  dev_url: https://github.com/pcdshub/ads-async\n  license: LicenseRef-BSD-3-Clause-SLAC\n  license_family: BSD\n  license_file: LICENSE\n  summary: Sans-I/O and asyncio TwinCAT3 ADS server/client in pure Python.\n\nextra:\n  recipe-maintainers:\n    - conda-forge/pcdsdevices\n    - klauer\n    - tangkong\n    - zllentz\n",
+ "raw_meta_yaml": "{% set name = \"ads-async\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pcdshub/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 7cf28dcb532169d433bf3db5da822b371951e366745033114b7eec861663a3e0\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - setuptools_scm\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - ads_async\n\nabout:\n  home: https://github.com/pcdshub/ads-async\n  doc_url: https://pcdshub.github.io/ads-async\n  dev_url: https://github.com/pcdshub/ads-async\n  license: LicenseRef-BSD-3-Clause-SLAC\n  license_family: BSD\n  license_file: LICENSE\n  summary: Sans-I/O and asyncio TwinCAT3 ADS server/client in pure Python.\n\nextra:\n  recipe-maintainers:\n    - conda-forge/pcdsdevices\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
    "python",
+   "setuptools",
    "setuptools_scm"
   ]
  },
@@ -166,6 +172,7 @@
    "elements": [
     "pip",
     "python",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -177,7 +184,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -190,7 +199,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.9",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -202,7 +212,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
  "url": "https://github.com/pcdshub/ads-async/archive/v0.3.1.tar.gz",
