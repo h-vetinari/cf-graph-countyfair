@@ -85,7 +85,7 @@
       "pydantic ==2.*",
       "fsspec",
       "pandas",
-      "dash-pydantic-utils ==0.14.1",
+      "dash-pydantic-utils ==0.14.2",
       "Werkzeug <3.1"
      ]
     },
@@ -105,19 +105,19 @@
   ],
   "package": {
    "name": "dash-pydantic-form-and-utils",
-   "version": "0.14.1"
+   "version": "0.14.2"
   },
   "schema_version": 0,
   "source": [
    {
     "folder": "form",
-    "sha256": "fb6af5b84c245c8ff534c6381bca5e4d3a8f58f67add58266f1a2559f45761bd",
-    "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.14.1.tar.gz"
+    "sha256": "a532330100c593f1bfa236b9ebca8198b470db1c763ffd15d1c405926efafb1d",
+    "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.14.2.tar.gz"
    },
    {
     "folder": "utils",
-    "sha256": "79d6d36898167e7537c521a251dc32a99103b4bc2d4ebbf9d96fab7833c7be1b",
-    "url": "https://pypi.org/packages/source/d/dash-pydantic-utils/dash_pydantic_utils-0.14.1.tar.gz"
+    "sha256": "8deb83647e085de2223166ea9586689cc8f93487b44752e0032a27220b9b63b8",
+    "url": "https://pypi.org/packages/source/d/dash-pydantic-utils/dash_pydantic_utils-0.14.2.tar.gz"
    }
   ]
  },
@@ -230,7 +230,7 @@
       "pydantic ==2.*",
       "fsspec",
       "pandas",
-      "dash-pydantic-utils ==0.14.1",
+      "dash-pydantic-utils ==0.14.2",
       "Werkzeug <3.1"
      ]
     },
@@ -250,19 +250,19 @@
   ],
   "package": {
    "name": "dash-pydantic-form-and-utils",
-   "version": "0.14.1"
+   "version": "0.14.2"
   },
   "schema_version": 0,
   "source": [
    {
     "folder": "form",
-    "sha256": "fb6af5b84c245c8ff534c6381bca5e4d3a8f58f67add58266f1a2559f45761bd",
-    "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.14.1.tar.gz"
+    "sha256": "a532330100c593f1bfa236b9ebca8198b470db1c763ffd15d1c405926efafb1d",
+    "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.14.2.tar.gz"
    },
    {
     "folder": "utils",
-    "sha256": "79d6d36898167e7537c521a251dc32a99103b4bc2d4ebbf9d96fab7833c7be1b",
-    "url": "https://pypi.org/packages/source/d/dash-pydantic-utils/dash_pydantic_utils-0.14.1.tar.gz"
+    "sha256": "8deb83647e085de2223166ea9586689cc8f93487b44752e0032a27220b9b63b8",
+    "url": "https://pypi.org/packages/source/d/dash-pydantic-utils/dash_pydantic_utils-0.14.2.tar.gz"
    }
   ]
  },
@@ -281,7 +281,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/dash-pydantic-form.json"
  },
- "raw_meta_yaml": "{% set name = \"dash-pydantic-form\" %}\n{% set name_utils = \"dash-pydantic-utils\" %}\n{% set version = \"0.14.1\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: dash-pydantic-form-and-utils\n  version: {{ version }}\n\nsource:\n  - folder: form\n    url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz\n    sha256: fb6af5b84c245c8ff534c6381bca5e4d3a8f58f67add58266f1a2559f45761bd\n  - folder: utils\n    url: https://pypi.org/packages/source/{{ name_utils[0] }}/{{ name_utils }}/dash_pydantic_utils-{{ version }}.tar.gz\n    sha256: 79d6d36898167e7537c521a251dc32a99103b4bc2d4ebbf9d96fab7833c7be1b\n\nbuild:\n  noarch: python\n  number: 0\n\noutputs:\n\n  - name: {{ name_utils }}\n    build:\n      noarch: python\n      script: cd utils && pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index\n    requirements:\n      host:\n        - python {{ python_min }}.*\n        - hatchling\n        - hatch-vcs\n        - pip\n      run:\n        - python >={{ python_min }},<3.13\n        - pydantic ==2.*\n\n    test:\n      imports:\n        - dash_pydantic_utils\n      commands:\n        - pip check\n      requires:\n        - python ={{ python_min }}\n        - pip\n\n  - name: {{ name }}\n    build:\n      noarch: python\n      script: cd form && pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index\n    requirements:\n      host:\n        - python {{ python_min }}.*\n        - hatchling\n        - hatch-vcs\n        - pip\n      run:\n        - python >={{ python_min }},<3.13\n        - dash >=2.16\n        - dash-mantine-components >=0.14.6,<0.16\n        - dash-iconify\n        - dash-ag-grid >=31\n        - pydantic ==2.*\n        - fsspec\n        - pandas\n        - {{ name_utils }} =={{ version }}\n        # For some reason the below is not picked up from Dash's deps\n        - Werkzeug <3.1\n\n    test:\n      imports:\n        - dash_pydantic_form\n      commands:\n        - pip check\n      requires:\n        - python ={{ python_min }}\n        - pip\n\nabout:\n  home: https://pydf-docs.onrender.com\n  summary: Create Dash forms from pydantic objects\n  dev_url: https://github.com/RenaudLN/dash-pydantic-form\n  license: MIT\n  license_file: utils/LICENSE\n\nextra:\n  feedstock-name: {{ name }}\n  recipe-maintainers:\n    - RenaudLN\n",
+ "raw_meta_yaml": "{% set name = \"dash-pydantic-form\" %}\n{% set name_utils = \"dash-pydantic-utils\" %}\n{% set version = \"0.14.2\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: dash-pydantic-form-and-utils\n  version: {{ version }}\n\nsource:\n  - folder: form\n    url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_pydantic_form-{{ version }}.tar.gz\n    sha256: a532330100c593f1bfa236b9ebca8198b470db1c763ffd15d1c405926efafb1d\n  - folder: utils\n    url: https://pypi.org/packages/source/{{ name_utils[0] }}/{{ name_utils }}/dash_pydantic_utils-{{ version }}.tar.gz\n    sha256: 8deb83647e085de2223166ea9586689cc8f93487b44752e0032a27220b9b63b8\n\nbuild:\n  noarch: python\n  number: 0\n\noutputs:\n\n  - name: {{ name_utils }}\n    build:\n      noarch: python\n      script: cd utils && pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index\n    requirements:\n      host:\n        - python {{ python_min }}.*\n        - hatchling\n        - hatch-vcs\n        - pip\n      run:\n        - python >={{ python_min }},<3.13\n        - pydantic ==2.*\n\n    test:\n      imports:\n        - dash_pydantic_utils\n      commands:\n        - pip check\n      requires:\n        - python ={{ python_min }}\n        - pip\n\n  - name: {{ name }}\n    build:\n      noarch: python\n      script: cd form && pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index\n    requirements:\n      host:\n        - python {{ python_min }}.*\n        - hatchling\n        - hatch-vcs\n        - pip\n      run:\n        - python >={{ python_min }},<3.13\n        - dash >=2.16\n        - dash-mantine-components >=0.14.6,<0.16\n        - dash-iconify\n        - dash-ag-grid >=31\n        - pydantic ==2.*\n        - fsspec\n        - pandas\n        - {{ name_utils }} =={{ version }}\n        # For some reason the below is not picked up from Dash's deps\n        - Werkzeug <3.1\n\n    test:\n      imports:\n        - dash_pydantic_form\n      commands:\n        - pip check\n      requires:\n        - python ={{ python_min }}\n        - pip\n\nabout:\n  home: https://pydf-docs.onrender.com\n  summary: Create Dash forms from pydantic objects\n  dev_url: https://github.com/RenaudLN/dash-pydantic-form\n  license: MIT\n  license_file: utils/LICENSE\n\nextra:\n  feedstock-name: {{ name }}\n  recipe-maintainers:\n    - RenaudLN\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -360,7 +360,7 @@
     "dash-ag-grid >=31",
     "dash-iconify",
     "dash-mantine-components >=0.14.6,<0.16",
-    "dash-pydantic-utils ==0.14.1",
+    "dash-pydantic-utils ==0.14.2",
     "fsspec",
     "pandas",
     "pydantic ==2.*",
@@ -375,8 +375,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.14.1.tar.gz",
- "version": "0.14.1",
+ "url": "https://pypi.org/packages/source/d/dash-pydantic-form/dash_pydantic_form-0.14.2.tar.gz",
+ "version": "0.14.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/dash-pydantic-form.json"
  }
