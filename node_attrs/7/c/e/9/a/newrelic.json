@@ -11,6 +11,7 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -26,24 +27,17 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you'll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.",
    "doc_url": "https://docs.newrelic.com/docs/agents/python-agent",
    "home": "https://github.com/newrelic/newrelic-python-agent",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "THIRD_PARTY_NOTICES.md",
-    "newrelic/packages/wrapt/LICENSE",
-    "newrelic/packages/urllib3/LICENSE.txt"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "New Relic Python Agent"
   },
   "build": {
-   "entry_points": [
-    "newrelic-admin = newrelic.admin:main"
-   ],
-   "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -54,9 +48,44 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "newrelic",
-   "version": "10.4.0"
+   "version": "10.5.0"
   },
   "requirements": {
    "build": [
@@ -66,6 +95,7 @@
    "host": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm >=3.2,<9"
    ],
@@ -73,23 +103,10 @@
     "python"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "4115eb9e5c97ad14e8cbae23dd5275dc162beb2b140c58ac4ba786c020f51aff",
-   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.4.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "newrelic-admin help"
-   ],
-   "imports": [
-    "newrelic"
-   ],
-   "requires": [
-    "python",
-    "pip"
-   ]
+   "sha256": "c889f74914a898317e6c037ae6ef4692cbd3f42c6fce2fd1a70d31b3aa9ca967",
+   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.5.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -105,6 +122,7 @@
    "elements": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm"
    ]
@@ -118,31 +136,23 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
  "linux_aarch64_meta_yaml": {
   "about": {
-   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you'll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.",
    "doc_url": "https://docs.newrelic.com/docs/agents/python-agent",
    "home": "https://github.com/newrelic/newrelic-python-agent",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "THIRD_PARTY_NOTICES.md",
-    "newrelic/packages/wrapt/LICENSE",
-    "newrelic/packages/urllib3/LICENSE.txt"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "New Relic Python Agent"
   },
   "build": {
-   "entry_points": [
-    "newrelic-admin = newrelic.admin:main"
-   ],
-   "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -153,18 +163,58 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "newrelic",
-   "version": "10.4.0"
+   "version": "10.5.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "python",
+    "cross-python_linux-64"
    ],
    "host": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm >=3.2,<9"
    ],
@@ -172,23 +222,10 @@
     "python"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "4115eb9e5c97ad14e8cbae23dd5275dc162beb2b140c58ac4ba786c020f51aff",
-   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.4.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "newrelic-admin help"
-   ],
-   "imports": [
-    "newrelic"
-   ],
-   "requires": [
-    "python",
-    "pip"
-   ]
+   "sha256": "c889f74914a898317e6c037ae6ef4692cbd3f42c6fce2fd1a70d31b3aa9ca967",
+   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.5.0.tar.gz"
   }
  },
  "linux_aarch64_requirements": {
@@ -196,7 +233,9 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "cross-python_linux-64",
+    "python"
    ]
   },
   "host": {
@@ -204,6 +243,7 @@
    "elements": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm"
    ]
@@ -217,31 +257,23 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
  "linux_ppc64le_meta_yaml": {
   "about": {
-   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you'll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.",
    "doc_url": "https://docs.newrelic.com/docs/agents/python-agent",
    "home": "https://github.com/newrelic/newrelic-python-agent",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "THIRD_PARTY_NOTICES.md",
-    "newrelic/packages/wrapt/LICENSE",
-    "newrelic/packages/urllib3/LICENSE.txt"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "New Relic Python Agent"
   },
   "build": {
-   "entry_points": [
-    "newrelic-admin = newrelic.admin:main"
-   ],
-   "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -252,18 +284,58 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "newrelic",
-   "version": "10.4.0"
+   "version": "10.5.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "python",
+    "cross-python_linux-64"
    ],
    "host": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm >=3.2,<9"
    ],
@@ -271,23 +343,10 @@
     "python"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "4115eb9e5c97ad14e8cbae23dd5275dc162beb2b140c58ac4ba786c020f51aff",
-   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.4.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "newrelic-admin help"
-   ],
-   "imports": [
-    "newrelic"
-   ],
-   "requires": [
-    "python",
-    "pip"
-   ]
+   "sha256": "c889f74914a898317e6c037ae6ef4692cbd3f42c6fce2fd1a70d31b3aa9ca967",
+   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.5.0.tar.gz"
   }
  },
  "linux_ppc64le_requirements": {
@@ -295,7 +354,9 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "cross-python_linux-64",
+    "python"
    ]
   },
   "host": {
@@ -303,6 +364,7 @@
    "elements": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm"
    ]
@@ -316,31 +378,23 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
  "meta_yaml": {
   "about": {
-   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you'll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.",
    "doc_url": "https://docs.newrelic.com/docs/agents/python-agent",
    "home": "https://github.com/newrelic/newrelic-python-agent",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "THIRD_PARTY_NOTICES.md",
-    "newrelic/packages/wrapt/LICENSE",
-    "newrelic/packages/urllib3/LICENSE.txt"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "New Relic Python Agent"
   },
   "build": {
-   "entry_points": [
-    "newrelic-admin = newrelic.admin:main"
-   ],
-   "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -351,18 +405,231 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "newrelic",
-   "version": "10.4.0"
+   "version": "10.5.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "python",
+    "cross-python_linux-64"
    ],
    "host": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm >=3.2,<9"
    ],
@@ -370,46 +637,26 @@
     "python"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "4115eb9e5c97ad14e8cbae23dd5275dc162beb2b140c58ac4ba786c020f51aff",
-   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.4.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "newrelic-admin help"
-   ],
-   "imports": [
-    "newrelic"
-   ],
-   "requires": [
-    "python",
-    "pip"
-   ]
+   "sha256": "c889f74914a898317e6c037ae6ef4692cbd3f42c6fce2fd1a70d31b3aa9ca967",
+   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.5.0.tar.gz"
   }
  },
  "name": "newrelic",
  "osx_64_meta_yaml": {
   "about": {
-   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you'll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.",
    "doc_url": "https://docs.newrelic.com/docs/agents/python-agent",
    "home": "https://github.com/newrelic/newrelic-python-agent",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "THIRD_PARTY_NOTICES.md",
-    "newrelic/packages/wrapt/LICENSE",
-    "newrelic/packages/urllib3/LICENSE.txt"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "New Relic Python Agent"
   },
   "build": {
-   "entry_points": [
-    "newrelic-admin = newrelic.admin:main"
-   ],
-   "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -420,18 +667,58 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "newrelic",
-   "version": "10.4.0"
+   "version": "10.5.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "python",
+    "cross-python_linux-64"
    ],
    "host": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm >=3.2,<9"
    ],
@@ -439,23 +726,10 @@
     "python"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "4115eb9e5c97ad14e8cbae23dd5275dc162beb2b140c58ac4ba786c020f51aff",
-   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.4.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "newrelic-admin help"
-   ],
-   "imports": [
-    "newrelic"
-   ],
-   "requires": [
-    "python",
-    "pip"
-   ]
+   "sha256": "c889f74914a898317e6c037ae6ef4692cbd3f42c6fce2fd1a70d31b3aa9ca967",
+   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.5.0.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -463,7 +737,9 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "cross-python_linux-64",
+    "python"
    ]
   },
   "host": {
@@ -471,6 +747,7 @@
    "elements": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm"
    ]
@@ -484,31 +761,23 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
  "osx_arm64_meta_yaml": {
   "about": {
-   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you'll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.",
    "doc_url": "https://docs.newrelic.com/docs/agents/python-agent",
    "home": "https://github.com/newrelic/newrelic-python-agent",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "THIRD_PARTY_NOTICES.md",
-    "newrelic/packages/wrapt/LICENSE",
-    "newrelic/packages/urllib3/LICENSE.txt"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "New Relic Python Agent"
   },
   "build": {
-   "entry_points": [
-    "newrelic-admin = newrelic.admin:main"
-   ],
-   "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -519,18 +788,58 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "newrelic",
-   "version": "10.4.0"
+   "version": "10.5.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "python",
+    "cross-python_linux-64"
    ],
    "host": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm >=3.2,<9"
    ],
@@ -538,23 +847,10 @@
     "python"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "4115eb9e5c97ad14e8cbae23dd5275dc162beb2b140c58ac4ba786c020f51aff",
-   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.4.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "newrelic-admin help"
-   ],
-   "imports": [
-    "newrelic"
-   ],
-   "requires": [
-    "python",
-    "pip"
-   ]
+   "sha256": "c889f74914a898317e6c037ae6ef4692cbd3f42c6fce2fd1a70d31b3aa9ca967",
+   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.5.0.tar.gz"
   }
  },
  "osx_arm64_requirements": {
@@ -562,7 +858,9 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "cross-python_linux-64",
+    "python"
    ]
   },
   "host": {
@@ -570,6 +868,7 @@
    "elements": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm"
    ]
@@ -583,8 +882,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
@@ -606,14 +904,16 @@
  "pr_info": {
   "__lazy_json__": "pr_info/newrelic.json"
  },
- "raw_meta_yaml": "{% set version = \"10.4.0\" %}\n\npackage:\n  name: newrelic\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/n/newrelic/newrelic-{{ version }}.tar.gz\n  sha256: 4115eb9e5c97ad14e8cbae23dd5275dc162beb2b140c58ac4ba786c020f51aff\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation\n  entry_points:\n    - newrelic-admin = newrelic.admin:main\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - pip\n    - python\n    - setuptools\n    - setuptools_scm >=3.2,<9\n  run:\n    - python\n\ntest:\n  requires:\n    - python\n    - pip\n  imports:\n    - newrelic\n  commands:\n    - pip check\n    - newrelic-admin help  # [unix]\n\nabout:\n  home: https://github.com/newrelic/newrelic-python-agent\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - THIRD_PARTY_NOTICES.md\n    - newrelic/packages/wrapt/LICENSE\n    - newrelic/packages/urllib3/LICENSE.txt\n  summary: New Relic Python Agent\n  doc_url: https://docs.newrelic.com/docs/agents/python-agent\n  description: |\n    The newrelic package instruments your application for performance\n    monitoring and advanced performance analytics with New Relic.\n\n    Pinpoint and solve Python application performance issues down to the line\n    of code. New Relic APM is the only tool you\u2019ll need to see everything in\n    your Python application, from the end user experience to server monitoring.\n    Trace problems down to slow database queries, slow 3rd party APIs and web\n    services, caching layers, and more. Monitor your app in a production\n    environment and make sure your app can stand a big spike in traffic by\n    running scalability reports.\n\nextra:\n  recipe-maintainers:\n    - hmstepanek\n    - lrafeei\n    - umaannamalai\n    - TimPansino\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 10.5.0\n  python_min: ${{ python_min }}.*\n\npackage:\n  name: newrelic\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/n/newrelic/newrelic-${{ version }}.tar.gz\n  sha256: c889f74914a898317e6c037ae6ef4692cbd3f42c6fce2fd1a70d31b3aa9ca967\n\nbuild:\n  number: 1\n  # only build for the minimal python version\n  skip: not (match(python, python_min) and is_abi3 == 'true')\n  script:\n    - ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check\n  python:\n    version_independent: true\n    entry_points:\n      - newrelic-admin = newrelic.admin:main\n\nrequirements:\n  build:\n    - ${{ compiler(\"c\") }}\n    - ${{ stdlib(\"c\") }}\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n  host:\n    - pip\n    - python\n    - python-abi3\n    - setuptools\n    - setuptools_scm >=3.2,<9\n  run:\n    - python\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: newrelic\n  - script:\n      - if: unix\n        then: newrelic-admin help\n\nabout:\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - THIRD_PARTY_NOTICES.md\n    - newrelic/packages/wrapt/LICENSE\n    - newrelic/packages/urllib3/LICENSE.txt\n  summary: New Relic Python Agent\n  homepage: https://github.com/newrelic/newrelic-python-agent\n  documentation: https://docs.newrelic.com/docs/agents/python-agent\n  description: |\n    The newrelic package instruments your application for performance\n    monitoring and advanced performance analytics with New Relic.\n\n    Pinpoint and solve Python application performance issues down to the line\n    of code. New Relic APM is the only tool you'll need to see everything in\n    your Python application, from the end user experience to server monitoring.\n    Trace problems down to slow database queries, slow 3rd party APIs and web\n    services, caching layers, and more. Monitor your app in a production\n    environment and make sure your app can stand a big spike in traffic by\n    running scalability reports.\n\nextra:\n  recipe-maintainers:\n    - hmstepanek\n    - lrafeei\n    - umaannamalai\n    - TimPansino\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cross-python_linux-64",
    "pip",
    "python",
+   "python-abi3",
    "setuptools",
    "setuptools_scm"
   ]
@@ -623,7 +923,9 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "cross-python_linux-64",
+    "python"
    ]
   },
   "host": {
@@ -633,6 +935,7 @@
     "c_stdlib_stub",
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm"
    ]
@@ -648,8 +951,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
@@ -659,7 +961,9 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "cross-python_linux-64",
+    "python"
    ]
   },
   "host": {
@@ -667,6 +971,7 @@
    "elements": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm >=3.2,<9"
    ]
@@ -680,36 +985,28 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.4.0.tar.gz",
- "version": "10.4.0",
+ "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.5.0.tar.gz",
+ "version": "10.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/newrelic.json"
  },
  "win_64_meta_yaml": {
   "about": {
-   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "description": "The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you'll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.",
    "doc_url": "https://docs.newrelic.com/docs/agents/python-agent",
    "home": "https://github.com/newrelic/newrelic-python-agent",
    "license": "Apache-2.0",
-   "license_file": [
-    "LICENSE",
-    "THIRD_PARTY_NOTICES.md",
-    "newrelic/packages/wrapt/LICENSE",
-    "newrelic/packages/urllib3/LICENSE.txt"
-   ],
+   "license_family": "Apache-2.0",
+   "license_file": "LICENSE",
    "summary": "New Relic Python Agent"
   },
   "build": {
-   "entry_points": [
-    "newrelic-admin = newrelic.admin:main"
-   ],
-   "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv --no-build-isolation"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -720,18 +1017,58 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "newrelic",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "python",
+      "cross-python_linux-64"
+     ],
+     "host": [
+      "pip",
+      "python",
+      "python-abi3",
+      "setuptools",
+      "setuptools_scm >=3.2,<9"
+     ],
+     "run": [
+      "python"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "newrelic"
+       ],
+       "python_version": "3.9.*.*"
+      }
+     },
+     {
+      "script": "newrelic-admin help"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "newrelic",
-   "version": "10.4.0"
+   "version": "10.5.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "python",
+    "cross-python_linux-64"
    ],
    "host": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm >=3.2,<9"
    ],
@@ -739,22 +1076,10 @@
     "python"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "4115eb9e5c97ad14e8cbae23dd5275dc162beb2b140c58ac4ba786c020f51aff",
-   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.4.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "newrelic"
-   ],
-   "requires": [
-    "python",
-    "pip"
-   ]
+   "sha256": "c889f74914a898317e6c037ae6ef4692cbd3f42c6fce2fd1a70d31b3aa9ca967",
+   "url": "https://pypi.org/packages/source/n/newrelic/newrelic-10.5.0.tar.gz"
   }
  },
  "win_64_requirements": {
@@ -762,7 +1087,9 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "cross-python_linux-64",
+    "python"
    ]
   },
   "host": {
@@ -770,6 +1097,7 @@
    "elements": [
     "pip",
     "python",
+    "python-abi3",
     "setuptools",
     "setuptools_scm"
    ]
@@ -783,8 +1111,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip",
-    "python"
+    "pip"
    ]
   }
  }
