@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "simple_slurm",
-   "version": "0.2.7"
+   "version": "0.3.3"
   },
   "requirements": {
    "host": [
@@ -47,8 +47,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c439e5c756ca9e5f600c4f54cdbf31d44c91330db60b1854a0f244acc6f2d300",
-   "url": "https://pypi.org/packages/source/s/simple_slurm/simple_slurm-0.2.7.tar.gz"
+   "sha256": "eea2f76d9afe40c78a88043ef6d014b87560c9e4f4125d5e95542bcb3833a8f4",
+   "url": "https://pypi.org/packages/source/s/simple_slurm/simple_slurm-0.3.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -100,7 +100,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -110,7 +110,7 @@
   },
   "package": {
    "name": "simple_slurm",
-   "version": "0.2.7"
+   "version": "0.3.3"
   },
   "requirements": {
    "host": [
@@ -123,8 +123,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c439e5c756ca9e5f600c4f54cdbf31d44c91330db60b1854a0f244acc6f2d300",
-   "url": "https://pypi.org/packages/source/s/simple_slurm/simple_slurm-0.2.7.tar.gz"
+   "sha256": "eea2f76d9afe40c78a88043ef6d014b87560c9e4f4125d5e95542bcb3833a8f4",
+   "url": "https://pypi.org/packages/source/s/simple_slurm/simple_slurm-0.3.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -153,7 +153,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/simple_slurm.json"
  },
- "raw_meta_yaml": "{% set name = \"simple_slurm\" %}\n{% set version = \"0.2.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c439e5c756ca9e5f600c4f54cdbf31d44c91330db60b1854a0f244acc6f2d300\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - simple_slurm\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/amq92/simple_slurm\n  summary: A simple Python wrapper for Slurm with flexibility in mind.\n  license: AGPL-3.0-only\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - amq92\n",
+ "raw_meta_yaml": "{% set name = \"simple_slurm\" %}\n{% set version = \"0.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: eea2f76d9afe40c78a88043ef6d014b87560c9e4f4125d5e95542bcb3833a8f4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - simple_slurm\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/amq92/simple_slurm\n  summary: A simple Python wrapper for Slurm with flexibility in mind.\n  license: AGPL-3.0-only\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - amq92\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -214,8 +214,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/simple_slurm/simple_slurm-0.2.7.tar.gz",
- "version": "0.2.7",
+ "url": "https://pypi.org/packages/source/s/simple_slurm/simple_slurm-0.3.3.tar.gz",
+ "version": "0.3.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/simple_slurm.json"
  }
