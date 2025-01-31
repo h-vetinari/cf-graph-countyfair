@@ -25,10 +25,10 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv",
    "script_env": [
-    "__version__=0.3.14"
+    "__version__=0.3.15"
    ]
   },
   "extra": {
@@ -41,7 +41,7 @@
   },
   "package": {
    "name": "searvey",
-   "version": "0.3.14"
+   "version": "0.3.15"
   },
   "requirements": {
    "host": [
@@ -62,6 +62,7 @@
     "limits",
     "lxml",
     "multifutures",
+    "ndbc-api <=0.24.6.12.1",
     "numpy",
     "pandas",
     "pydantic",
@@ -75,14 +76,16 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bd4f8739c2ba11da4042a4d3db813124d4eb478fed781813a2dcfefd9a82d5a2",
-   "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.14.tar.gz"
+   "sha256": "5ccce84214f58b06690a76c9d8aad8373cbd1376a88599d3560f8093c2b2261c",
+   "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.15.tar.gz"
   },
   "test": {
    "commands": [
     "python -c 'import searvey.coops; searvey.coops.get_coops_stations()'",
     "python -c 'import searvey.ioc; searvey.ioc.get_ioc_stations()'",
     "python -c 'import searvey.usgs; searvey.usgs.get_usgs_stations()'",
+    "python -c 'import searvey._ndbc_api; searvey._ndbc_api.get_ndbc_stations()'",
+    "python -c 'import searvey._chs_api; searvey._chs_api.get_chs_stations()'",
     "python -c 'import searvey.stations; searvey.stations.get_stations()'"
    ],
    "imports": [
@@ -125,6 +128,7 @@
     "limits",
     "lxml",
     "multifutures",
+    "ndbc-api",
     "numpy",
     "pandas",
     "pydantic",
@@ -158,10 +162,10 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv",
    "script_env": [
-    "__version__=0.3.14"
+    "__version__=0.3.15"
    ]
   },
   "extra": {
@@ -174,7 +178,7 @@
   },
   "package": {
    "name": "searvey",
-   "version": "0.3.14"
+   "version": "0.3.15"
   },
   "requirements": {
    "host": [
@@ -195,6 +199,7 @@
     "limits",
     "lxml",
     "multifutures",
+    "ndbc-api <=0.24.6.12.1",
     "numpy",
     "pandas",
     "pydantic",
@@ -208,14 +213,16 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bd4f8739c2ba11da4042a4d3db813124d4eb478fed781813a2dcfefd9a82d5a2",
-   "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.14.tar.gz"
+   "sha256": "5ccce84214f58b06690a76c9d8aad8373cbd1376a88599d3560f8093c2b2261c",
+   "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.15.tar.gz"
   },
   "test": {
    "commands": [
     "python -c 'import searvey.coops; searvey.coops.get_coops_stations()'",
     "python -c 'import searvey.ioc; searvey.ioc.get_ioc_stations()'",
     "python -c 'import searvey.usgs; searvey.usgs.get_usgs_stations()'",
+    "python -c 'import searvey._ndbc_api; searvey._ndbc_api.get_ndbc_stations()'",
+    "python -c 'import searvey._chs_api; searvey._chs_api.get_chs_stations()'",
     "python -c 'import searvey.stations; searvey.stations.get_stations()'"
    ],
    "imports": [
@@ -245,7 +252,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/searvey.json"
  },
- "raw_meta_yaml": "{% set name = \"searvey\" %}\n{% set version = \"0.3.14\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/oceanmodeling/searvey/archive/v{{ version }}.tar.gz\n  sha256: bd4f8739c2ba11da4042a4d3db813124d4eb478fed781813a2dcfefd9a82d5a2\n\nbuild:\n  noarch: python\n  script_env:\n    - __version__={{ version }}\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - poetry-core <=1.6.0\n    - poetry-dynamic-versioning\n  run:\n    - python >={{ python_min }}\n    - beautifulsoup4\n    - dataretrieval >=1.0.0\n    - deprecated\n    - erddapy\n    - geopandas\n    - html5lib\n    - httpx\n    - limits\n    - lxml\n    - multifutures\n    - numpy\n    - pandas\n    - pydantic\n    - requests\n    - shapely\n    - tenacity\n    - tqdm\n    - typing_extensions\n    - xarray\n\ntest:\n  requires:\n    - pip\n    - pytest\n    - python {{ python_min }}\n  imports:\n    - searvey\n    - searvey.coops\n    - searvey.ioc\n    - searvey.usgs\n  commands:\n    - python -c 'import searvey.coops; searvey.coops.get_coops_stations()'\n    - python -c 'import searvey.ioc; searvey.ioc.get_ioc_stations()'\n    - python -c 'import searvey.usgs; searvey.usgs.get_usgs_stations()'\n    - python -c 'import searvey.stations; searvey.stations.get_stations()'\n\nabout:\n  home: https://github.com/oceanmodeling/searvey\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: Sea state observational data retrieval\n\n  description: |\n    Searvey aims to provide near real time observational data related to sea state.\n    Data analysis/clean up to facilitate comparison with numerical models.\n    On demand data retrieval from multiple sources.\n  doc_url: https://searvey.readthedocs.io/\n  dev_url: https://github.com/oceanmodeling/searvey\n\nextra:\n  recipe-maintainers:\n    - SorooshMani-NOAA\n    - zacharyburnett\n    - pmav99\n    - brey\n",
+ "raw_meta_yaml": "{% set name = \"searvey\" %}\n{% set version = \"0.3.15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/oceanmodeling/searvey/archive/v{{ version }}.tar.gz\n  sha256: 5ccce84214f58b06690a76c9d8aad8373cbd1376a88599d3560f8093c2b2261c\n\nbuild:\n  noarch: python\n  script_env:\n    - __version__={{ version }}\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - poetry-core <=1.6.0\n    - poetry-dynamic-versioning\n  run:\n    - python >={{ python_min }}\n    - beautifulsoup4\n    - dataretrieval >=1.0.0\n    - deprecated\n    - erddapy\n    - geopandas\n    - html5lib\n    - httpx\n    - limits\n    - lxml\n    - multifutures\n    - ndbc-api <=0.24.6.12.1\n    - numpy\n    - pandas\n    - pydantic\n    - requests\n    - shapely\n    - tenacity\n    - tqdm\n    - typing_extensions\n    - xarray\n\ntest:\n  requires:\n    - pip\n    - pytest\n    - python {{ python_min }}\n  imports:\n    - searvey\n    - searvey.coops\n    - searvey.ioc\n    - searvey.usgs\n  commands:\n    - python -c 'import searvey.coops; searvey.coops.get_coops_stations()'\n    - python -c 'import searvey.ioc; searvey.ioc.get_ioc_stations()'\n    - python -c 'import searvey.usgs; searvey.usgs.get_usgs_stations()'\n    - python -c 'import searvey._ndbc_api; searvey._ndbc_api.get_ndbc_stations()'\n    - python -c 'import searvey._chs_api; searvey._chs_api.get_chs_stations()'\n    - python -c 'import searvey.stations; searvey.stations.get_stations()'\n\nabout:\n  home: https://github.com/oceanmodeling/searvey\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: Sea state observational data retrieval\n\n  description: |\n    Searvey aims to provide near real time observational data related to sea state.\n    Data analysis/clean up to facilitate comparison with numerical models.\n    On demand data retrieval from multiple sources.\n  doc_url: https://searvey.readthedocs.io/\n  dev_url: https://github.com/oceanmodeling/searvey\n\nextra:\n  recipe-maintainers:\n    - SorooshMani-NOAA\n    - zacharyburnett\n    - pmav99\n    - brey\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -259,6 +266,7 @@
    "limits",
    "lxml",
    "multifutures",
+   "ndbc-api",
    "numpy",
    "pandas",
    "pip",
@@ -301,6 +309,7 @@
     "limits",
     "lxml",
     "multifutures",
+    "ndbc-api",
     "numpy",
     "pandas",
     "pydantic",
@@ -350,6 +359,7 @@
     "limits",
     "lxml",
     "multifutures",
+    "ndbc-api <=0.24.6.12.1",
     "numpy",
     "pandas",
     "pydantic",
@@ -371,8 +381,8 @@
    ]
   }
  },
- "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.14.tar.gz",
- "version": "0.3.14",
+ "url": "https://github.com/oceanmodeling/searvey/archive/v0.3.15.tar.gz",
+ "version": "0.3.15",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/searvey.json"
  }
