@@ -18,14 +18,14 @@
    "dev_url": "https://github.com/OpenFreeEnergy/openfe_analysis",
    "doc_url": "https://github.com/OpenFreeEnergy/openfe_analysis",
    "home": "https://github.com/OpenFreeEnergy/openfe_analysis",
-   "license": "GPL-3.0-or-later",
-   "license_family": "GPL",
+   "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE",
    "summary": "Analysis tools for the openfe ecosystem"
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,12 +33,13 @@
     "dwhswenson",
     "ialibay",
     "mikemhenry",
-    "atravitz"
+    "atravitz",
+    "hannahbaumann"
    ]
   },
   "package": {
    "name": "openfe-analysis",
-   "version": "0.2.0"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -47,18 +48,19 @@
     "versioningit"
    ],
    "run": [
-    "MDAnalysis",
+    "MDAnalysis >=2.8.0",
     "click",
     "netCDF4",
     "openff-units",
     "python >=3.10",
-    "tqdm"
+    "tqdm",
+    "pyyaml"
    ]
   },
   "schema_version": 0,
   "source": {
    "git_depth": "-1",
-   "git_rev": "v0.2.0",
+   "git_rev": "v0.3.0",
    "git_url": "https://github.com/OpenFreeEnergy/openfe_analysis.git"
   },
   "test": {
@@ -95,6 +97,7 @@
     "netcdf4",
     "openff-units",
     "python",
+    "pyyaml",
     "tqdm"
    ]
   },
@@ -112,14 +115,14 @@
    "dev_url": "https://github.com/OpenFreeEnergy/openfe_analysis",
    "doc_url": "https://github.com/OpenFreeEnergy/openfe_analysis",
    "home": "https://github.com/OpenFreeEnergy/openfe_analysis",
-   "license": "GPL-3.0-or-later",
-   "license_family": "GPL",
+   "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE",
    "summary": "Analysis tools for the openfe ecosystem"
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -127,12 +130,13 @@
     "dwhswenson",
     "ialibay",
     "mikemhenry",
-    "atravitz"
+    "atravitz",
+    "hannahbaumann"
    ]
   },
   "package": {
    "name": "openfe-analysis",
-   "version": "0.2.0"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -141,18 +145,19 @@
     "versioningit"
    ],
    "run": [
-    "MDAnalysis",
+    "MDAnalysis >=2.8.0",
     "click",
     "netCDF4",
     "openff-units",
     "python >=3.10",
-    "tqdm"
+    "tqdm",
+    "pyyaml"
    ]
   },
   "schema_version": 0,
   "source": {
    "git_depth": "-1",
-   "git_rev": "v0.2.0",
+   "git_rev": "v0.3.0",
    "git_url": "https://github.com/OpenFreeEnergy/openfe_analysis.git"
   },
   "test": {
@@ -182,7 +187,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/openfe-analysis.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"openfe-analysis\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/OpenFreeEnergy/openfe_analysis.git\n  git_rev: v{{ version }}\n  git_depth: -1\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - versioningit\n  run:\n    - MDAnalysis\n    - click\n    - netCDF4\n    - openff-units\n    - python >={{ python_min }}\n    - tqdm\n\ntest:\n  imports:\n    - openfe_analysis\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/OpenFreeEnergy/openfe_analysis\n  summary: 'Analysis tools for the openfe ecosystem'\n  description: |\n    openfe-analysis is a set of analysis tools to check the \n    health of free energy calculations in the openfe ecosystem.\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  doc_url: https://github.com/OpenFreeEnergy/openfe_analysis\n  dev_url: https://github.com/OpenFreeEnergy/openfe_analysis\n\nextra:\n  recipe-maintainers:\n    - dwhswenson\n    - ialibay\n    - mikemhenry\n    - atravitz\n",
+ "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"openfe-analysis\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/OpenFreeEnergy/openfe_analysis.git\n  git_rev: v{{ version }}\n  git_depth: -1\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - versioningit\n  run:\n    - MDAnalysis >=2.8.0\n    - click\n    - netCDF4\n    - openff-units\n    - python >={{ python_min }}\n    - tqdm\n    - pyyaml\n\ntest:\n  imports:\n    - openfe_analysis\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/OpenFreeEnergy/openfe_analysis\n  summary: 'Analysis tools for the openfe ecosystem'\n  description: |\n    openfe-analysis is a set of analysis tools to check the \n    health of free energy calculations in the openfe ecosystem.\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  doc_url: https://github.com/OpenFreeEnergy/openfe_analysis\n  dev_url: https://github.com/OpenFreeEnergy/openfe_analysis\n\nextra:\n  recipe-maintainers:\n    - dwhswenson\n    - ialibay\n    - mikemhenry\n    - atravitz\n    - hannahbaumann\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -192,6 +197,7 @@
    "openff-units",
    "pip",
    "python",
+   "pyyaml",
    "tqdm",
    "versioningit"
   ]
@@ -217,6 +223,7 @@
     "netcdf4",
     "openff-units",
     "python",
+    "pyyaml",
     "tqdm"
    ]
   },
@@ -245,11 +252,12 @@
   "run": {
    "__set__": true,
    "elements": [
-    "MDAnalysis",
+    "MDAnalysis >=2.8.0",
     "click",
     "netCDF4",
     "openff-units",
     "python >=3.10",
+    "pyyaml",
     "tqdm"
    ]
   },
@@ -262,7 +270,7 @@
   }
  },
  "url": null,
- "version": "0.2.0",
+ "version": "0.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/openfe-analysis.json"
  }
