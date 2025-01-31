@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.11",
+    "python 3.11",
     "setuptools",
     "pip"
    ],
@@ -62,7 +62,8 @@
     "codechembook"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.11"
    ]
   }
  },
@@ -93,7 +94,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -106,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -120,7 +122,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.11",
+    "python 3.11",
     "setuptools",
     "pip"
    ],
@@ -146,7 +148,8 @@
     "codechembook"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.11"
    ]
   }
  },
@@ -164,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/codechembook.json"
  },
- "raw_meta_yaml": "{% set name = \"codechembook\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/codechembook-{{ version }}.tar.gz\n  sha256: fabeee6165fd0462f675ffdc7c2ad01f4cf11cab3633c87b79da0ccb750141a0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.11\n    - setuptools\n    - pip\n  run:\n    - python >=3.11\n    - python-kaleido >=0.1.0\n    - plotly\n    - lmfit\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - codechembook\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/codechembook/\n  summary: Companion package to 'Coding for Chemists' containing helpful functions for common tasks.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ProfLear\n",
+ "raw_meta_yaml": "{% set python_min = '3.11' %}\n{% set name = \"codechembook\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/codechembook-{{ version }}.tar.gz\n  sha256: fabeee6165fd0462f675ffdc7c2ad01f4cf11cab3633c87b79da0ccb750141a0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - python-kaleido >=0.1.0\n    - plotly\n    - lmfit\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - codechembook\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/codechembook/\n  summary: Companion package to 'Coding for Chemists' containing helpful functions for common tasks.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ProfLear\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -205,7 +208,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -219,7 +223,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.11",
+    "python 3.11",
     "setuptools"
    ]
   },
@@ -237,7 +241,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.11"
    ]
   }
  },
