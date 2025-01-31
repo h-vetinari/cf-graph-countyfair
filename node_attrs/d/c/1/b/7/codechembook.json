@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "codechembook",
-   "version": "0.1.1"
+   "version": "1.0.0"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b6862cd7e6249dcff70a1360a9f489c24ca5066ce844ca62880b67dba188b720",
-   "url": "https://pypi.org/packages/source/c/codechembook/codechembook-0.1.1.tar.gz"
+   "sha256": "fabeee6165fd0462f675ffdc7c2ad01f4cf11cab3633c87b79da0ccb750141a0",
+   "url": "https://pypi.org/packages/source/c/codechembook/codechembook-1.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "codechembook",
-   "version": "0.1.1"
+   "version": "1.0.0"
   },
   "requirements": {
    "host": [
@@ -135,8 +135,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b6862cd7e6249dcff70a1360a9f489c24ca5066ce844ca62880b67dba188b720",
-   "url": "https://pypi.org/packages/source/c/codechembook/codechembook-0.1.1.tar.gz"
+   "sha256": "fabeee6165fd0462f675ffdc7c2ad01f4cf11cab3633c87b79da0ccb750141a0",
+   "url": "https://pypi.org/packages/source/c/codechembook/codechembook-1.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,7 +164,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/codechembook.json"
  },
- "raw_meta_yaml": "{% set name = \"codechembook\" %}\n{% set version = \"0.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/codechembook-{{ version }}.tar.gz\n  sha256: b6862cd7e6249dcff70a1360a9f489c24ca5066ce844ca62880b67dba188b720\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.11\n    - setuptools\n    - pip\n  run:\n    - python >=3.11\n    - python-kaleido >=0.1.0\n    - plotly\n    - lmfit\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - codechembook\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/codechembook/\n  summary: Companion package to 'Coding for Chemists' containing helpful functions for common tasks.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ProfLear\n",
+ "raw_meta_yaml": "{% set name = \"codechembook\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/codechembook-{{ version }}.tar.gz\n  sha256: fabeee6165fd0462f675ffdc7c2ad01f4cf11cab3633c87b79da0ccb750141a0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.11\n    - setuptools\n    - pip\n  run:\n    - python >=3.11\n    - python-kaleido >=0.1.0\n    - plotly\n    - lmfit\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - codechembook\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/codechembook/\n  summary: Companion package to 'Coding for Chemists' containing helpful functions for common tasks.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ProfLear\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -241,8 +241,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/codechembook/codechembook-0.1.1.tar.gz",
- "version": "0.1.1",
+ "url": "https://pypi.org/packages/source/c/codechembook/codechembook-1.0.0.tar.gz",
+ "version": "1.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/codechembook.json"
  }
