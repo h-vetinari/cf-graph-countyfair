@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "geoapps-utils",
-   "version": "0.3.0"
+   "version": "0.4.0"
   },
   "requirements": {
    "host": [
@@ -48,24 +48,18 @@
    ],
    "run": [
     "python >=3.10,<3.11",
-    "numpy >=1.23.5,<1.24.0",
+    "numpy >=1.26.0,<1.27.0",
     "pydantic >=2.5.2,<2.6.0",
-    "scipy >=1.10.1,<1.11.0",
-    "geoh5py >=0.9.0,<0.10.0",
+    "scipy >=1.14.0,<1.15.0",
+    "geoh5py >=0.10.0rc1,<0.11.0a.dev",
     "h5py >=3.2.1,<4.0.0",
     "pillow >=10.3.0,<10.4.0"
-   ],
-   "run_constrained": [
-    "dash >=2.12.0,<3.0.0",
-    "flask >=3.0.3,<4.0.0",
-    "pyqtwebengine >=5.15.2,<5.16.0,<5.15.7",
-    "pyside2 >=5.15.2,<5.16.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4671fc21594f465fe3975ffba037a4a053e63d7038aca6fbcf5da0913532fcc2",
-   "url": "https://github.com/MiraGeoscience/geoapps-utils/archive/v0.3.0.tar.gz"
+   "sha256": "d441ac5d566a5d11a5f32bbacc75c8a8d5f8a23749b0802a54a73c97405e2cf6",
+   "url": "https://github.com/MiraGeoscience/geoapps-utils/archive/v0.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -127,7 +121,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -138,7 +132,7 @@
   },
   "package": {
    "name": "geoapps-utils",
-   "version": "0.3.0"
+   "version": "0.4.0"
   },
   "requirements": {
    "host": [
@@ -149,24 +143,18 @@
    ],
    "run": [
     "python >=3.10,<3.11",
-    "numpy >=1.23.5,<1.24.0",
+    "numpy >=1.26.0,<1.27.0",
     "pydantic >=2.5.2,<2.6.0",
-    "scipy >=1.10.1,<1.11.0",
-    "geoh5py >=0.9.0,<0.10.0",
+    "scipy >=1.14.0,<1.15.0",
+    "geoh5py >=0.10.0rc1,<0.11.0a.dev",
     "h5py >=3.2.1,<4.0.0",
     "pillow >=10.3.0,<10.4.0"
-   ],
-   "run_constrained": [
-    "dash >=2.12.0,<3.0.0",
-    "flask >=3.0.3,<4.0.0",
-    "pyqtwebengine >=5.15.2,<5.16.0,<5.15.7",
-    "pyside2 >=5.15.2,<5.16.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4671fc21594f465fe3975ffba037a4a053e63d7038aca6fbcf5da0913532fcc2",
-   "url": "https://github.com/MiraGeoscience/geoapps-utils/archive/v0.3.0.tar.gz"
+   "sha256": "d441ac5d566a5d11a5f32bbacc75c8a8d5f8a23749b0802a54a73c97405e2cf6",
+   "url": "https://github.com/MiraGeoscience/geoapps-utils/archive/v0.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -195,7 +183,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/geoapps-utils.json"
  },
- "raw_meta_yaml": "{% set name = \"geoapps-utils\" %}\n{% set version = \"0.3.0\" %}\n{% set python_min = \"3.10\" %}\n{% set python_max = \"3.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/MiraGeoscience/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 4671fc21594f465fe3975ffba037a4a053e63d7038aca6fbcf5da0913532fcc2\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }},<{{ python_max }}\n    - numpy >=1.23.5,<1.24.0\n    - pydantic >=2.5.2,<2.6.0\n    - scipy >=1.10.1,<1.11.0\n    - geoh5py >=0.9.0,<0.10.0\n    - h5py >=3.2.1,<4.0.0\n    - pillow >=10.3.0,<10.4.0\n  run_constrained:\n    - dash >=2.12.0,<3.0.0\n    - flask >=3.0.3,<4.0.0\n    - pyqtwebengine >=5.15.2,<5.16.0,<5.15.7\n    - pyside2 >=5.15.2,<5.16.0\n\ntest:\n  imports:\n    - geoapps_utils\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://www.mirageoscience.com/mining-industry-software/python-integration/\n  summary: 'Provides utility functions used by geoapps.'\n  description: |\n    The geoapps-utils package provides utility functions used by \n    (geoapps)<https://github.com/MiraGeoscience/geoapps>.\n  license: MIT\n  license_file: \n    - LICENSE\n  dev_url: https://github.com/MiraGeoscience/geoapps-utils\n\nextra:\n  recipe-maintainers:\n    - SophieCurinier\n    - sebhmg\n",
+ "raw_meta_yaml": "{% set name = \"geoapps-utils\" %}\n{% set version = \"0.4.0\" %}\n{% set python_min = \"3.10\" %}\n{% set python_max = \"3.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/MiraGeoscience/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: d441ac5d566a5d11a5f32bbacc75c8a8d5f8a23749b0802a54a73c97405e2cf6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }},<{{ python_max }}\n    - numpy >=1.26.0,<1.27.0\n    - pydantic >=2.5.2,<2.6.0\n    - scipy >=1.14.0,<1.15.0\n    - geoh5py >=0.10.0rc1,<0.11.0a.dev\n    - h5py >=3.2.1,<4.0.0\n    - pillow >=10.3.0,<10.4.0\n\ntest:\n  imports:\n    - geoapps_utils\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://www.mirageoscience.com/mining-industry-software/python-integration/\n  summary: 'Provides utility functions used by geoapps.'\n  description: |\n    The geoapps-utils package provides utility functions used by \n    (geoapps)<https://github.com/MiraGeoscience/geoapps>.\n  license: MIT\n  license_file:\n    - LICENSE\n  dev_url: https://github.com/MiraGeoscience/geoapps-utils\n\nextra:\n  recipe-maintainers:\n    - SophieCurinier\n    - sebhmg\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -263,13 +251,13 @@
   "run": {
    "__set__": true,
    "elements": [
-    "geoh5py >=0.9.0,<0.10.0",
+    "geoh5py >=0.10.0rc1,<0.11.0a.dev",
     "h5py >=3.2.1,<4.0.0",
-    "numpy >=1.23.5,<1.24.0",
+    "numpy >=1.26.0,<1.27.0",
     "pillow >=10.3.0,<10.4.0",
     "pydantic >=2.5.2,<2.6.0",
     "python >=3.10,<3.11",
-    "scipy >=1.10.1,<1.11.0"
+    "scipy >=1.14.0,<1.15.0"
    ]
   },
   "test": {
@@ -280,8 +268,8 @@
    ]
   }
  },
- "url": "https://github.com/MiraGeoscience/geoapps-utils/archive/v0.3.0.tar.gz",
- "version": "0.3.0",
+ "url": "https://github.com/MiraGeoscience/geoapps-utils/archive/v0.4.0.tar.gz",
+ "version": "0.4.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/geoapps-utils.json"
  }
