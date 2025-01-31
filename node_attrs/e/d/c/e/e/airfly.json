@@ -29,7 +29,7 @@
     "airfly = airfly.cli.main:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "airfly",
-   "version": "1.0.0"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -63,8 +63,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d7f04b6bd4d20b93b7e7ec87d9cf78eae65cd7ccc1140091a314954c1969f646",
-   "url": "https://pypi.org/packages/source/a/airfly/airfly-1.0.0.tar.gz"
+   "sha256": "ac8ee0fa19003b141c536969479915609dc560c5b61c02ef8dda5d15ad08109d",
+   "url": "https://pypi.org/packages/source/a/airfly/airfly-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -129,7 +129,7 @@
     "airfly = airfly.cli.main:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -139,7 +139,7 @@
   },
   "package": {
    "name": "airfly",
-   "version": "1.0.0"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -163,8 +163,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d7f04b6bd4d20b93b7e7ec87d9cf78eae65cd7ccc1140091a314954c1969f646",
-   "url": "https://pypi.org/packages/source/a/airfly/airfly-1.0.0.tar.gz"
+   "sha256": "ac8ee0fa19003b141c536969479915609dc560c5b61c02ef8dda5d15ad08109d",
+   "url": "https://pypi.org/packages/source/a/airfly/airfly-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -194,7 +194,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/airfly.json"
  },
- "raw_meta_yaml": "{% set name = \"airfly\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airfly-{{ version }}.tar.gz\n  sha256: d7f04b6bd4d20b93b7e7ec87d9cf78eae65cd7ccc1140091a314954c1969f646\n\nbuild:\n  entry_points:\n    - airfly = airfly.cli.main:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pdm-backend\n    - pip\n  run:\n    - python >={{ python_min }}\n    - attrs\n    - cattrs\n    - regex\n    - networkx\n    - black\n    - isort\n    - click\n    - libcst\n    - asttrs\n    - loguru\n\ntest:\n  imports:\n    - airfly\n  commands:\n    - pip check\n    - airfly --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ryanchao2012/airfly\n  summary: Auto generate Airflow's dag.py on the fly\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
+ "raw_meta_yaml": "{% set name = \"airfly\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airfly-{{ version }}.tar.gz\n  sha256: ac8ee0fa19003b141c536969479915609dc560c5b61c02ef8dda5d15ad08109d\n\nbuild:\n  entry_points:\n    - airfly = airfly.cli.main:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pdm-backend\n    - pip\n  run:\n    - python >={{ python_min }}\n    - attrs\n    - cattrs\n    - regex\n    - networkx\n    - black\n    - isort\n    - click\n    - libcst\n    - asttrs\n    - loguru\n\ntest:\n  imports:\n    - airfly\n  commands:\n    - pip check\n    - airfly --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ryanchao2012/airfly\n  summary: Auto generate Airflow's dag.py on the fly\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -288,8 +288,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/airfly/airfly-1.0.0.tar.gz",
- "version": "1.0.0",
+ "url": "https://pypi.org/packages/source/a/airfly/airfly-1.1.0.tar.gz",
+ "version": "1.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/airfly.json"
  }
