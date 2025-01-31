@@ -3,7 +3,13 @@
  "branch": "main",
  "conda-forge.yml": {
   "azure": {
-   "free_disk_space": true
+   "free_disk_space": true,
+   "settings_win": {
+    "variables": {
+     "CONDA_BLD_PATH": "C:\\bld\\",
+     "MINIFORGE_HOME": "C:\\Miniforge"
+    }
+   }
   },
   "build_platform": {
    "linux_aarch64": "linux_64",
@@ -42,9 +48,12 @@
    "missing_dso_whitelist": [
     "*/libcuda.so.*"
    ],
-   "number": "2",
+   "number": "0",
    "run_exports": [
     "cutensor"
+   ],
+   "script_env": [
+    "cuda_major=11"
    ]
   },
   "extra": {
@@ -60,17 +69,17 @@
   },
   "package": {
    "name": "cutensor",
-   "version": "2.0.2.5"
+   "version": "2.1.0.9"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
-    "cuda_compiler_stub"
+    "cuda_compiler_stub",
+    "cf-nvidia-tools 1"
    ],
    "host": [
-    "patchelf >=0.12",
     "cuda-version 11.8",
     "cudatoolkit",
     "cuda-version 12.6",
@@ -85,8 +94,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0e957ae7b352f599de34b6fa1ba999b0617887f885d7436ac5737d71a6b83baa",
-   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.0.2.5-archive.zip"
+   "sha256": "ee59fcb4e8d59fc0d8cebf5f7f23bf2a196a76e6bcdcaa621aedbdcabd20a759",
+   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.1.0.9-archive.zip"
   },
   "test": {
    "files": [
@@ -108,6 +117,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cuda_compiler_stub",
     "cxx_compiler_stub"
    ]
@@ -117,8 +127,7 @@
    "elements": [
     "cuda-version",
     "cudatoolkit",
-    "libcublas",
-    "patchelf"
+    "libcublas"
    ]
   },
   "run": {
@@ -159,9 +168,12 @@
    "missing_dso_whitelist": [
     "*/libcuda.so.*"
    ],
-   "number": "2",
+   "number": "0",
    "run_exports": [
     "cutensor"
+   ],
+   "script_env": [
+    "cuda_major=11"
    ]
   },
   "extra": {
@@ -177,7 +189,7 @@
   },
   "package": {
    "name": "cutensor",
-   "version": "2.0.2.5"
+   "version": "2.1.0.9"
   },
   "requirements": {
    "build": [
@@ -185,10 +197,10 @@
     "c_stdlib_stub",
     "cxx_compiler_stub",
     "cuda_compiler_stub",
-    "arm-variant * sbsa"
+    "arm-variant * sbsa",
+    "cf-nvidia-tools 1"
    ],
    "host": [
-    "patchelf >=0.12",
     "cuda-version 11.8",
     "cudatoolkit",
     "cuda-version 12.6",
@@ -205,8 +217,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5163dd40f11f328e469a6d9b0056c8346f5d59ed538c18d6b954e4ae657c69cc",
-   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.0.2.5-archive.zip"
+   "sha256": "cef7819c4ecf3120d4f99b08463b8db1a8591be25147d1688371024885b1d2f0",
+   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.1.0.9-archive.zip"
   },
   "test": {
    "files": [
@@ -229,6 +241,7 @@
     "arm-variant",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cuda_compiler_stub",
     "cxx_compiler_stub"
    ]
@@ -238,125 +251,7 @@
    "elements": [
     "cuda-version",
     "cudatoolkit",
-    "libcublas",
-    "patchelf"
-   ]
-  },
-  "run": {
-   "__set__": true,
-   "elements": [
-    "cuda-version",
-    "cudatoolkit",
     "libcublas"
-   ]
-  },
-  "test": {
-   "__set__": true,
-   "elements": [
-    "c_compiler_stub",
-    "c_stdlib_stub",
-    "cuda-driver-dev",
-    "cuda_compiler_stub",
-    "cxx_compiler_stub",
-    "git"
-   ]
-  }
- },
- "linux_ppc64le_meta_yaml": {
-  "about": {
-   "description": "The cuTENSOR Library is a first-of-its-kind GPU-accelerated tensor linear\nalgebra library providing tensor contraction, reduction and elementwise\noperations. cuTENSOR is used to accelerate applications in the areas of\ndeep learning training and inference, computer vision, quantum chemistry\nand computational physics.\n\nLicense Agreements:- The packages are governed by the NVIDIA cuTENSOR\nSoftware License Agreement (EULA). By downloading and using the packages,\nyou accept the terms and conditions of the NVIDIA cuTENSOR EULA -\nhttps://docs.nvidia.com/cuda/cutensor/license.html\n",
-   "dev_url": "https://developer.nvidia.com/cutensor/downloads",
-   "doc_url": "https://docs.nvidia.com/cuda/cutensor/index.html",
-   "home": "https://developer.nvidia.com/cutensor",
-   "license": "LicenseRef-cuTENSOR-Software-License-Agreement",
-   "license_file": "LICENSE",
-   "license_url": "https://docs.nvidia.com/cuda/cutensor/license.html",
-   "summary": "Tensor Linear Algebra on NVIDIA GPUs"
-  },
-  "build": {
-   "ignore_run_exports_from": [
-    "cuda_compiler_stub"
-   ],
-   "missing_dso_whitelist": [
-    "*/libcuda.so.*"
-   ],
-   "number": "2",
-   "run_exports": [
-    "cutensor"
-   ]
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "conda-forge/cuda",
-    "v0i0",
-    "yangcal",
-    "JeremyWangNVDA",
-    "leofang",
-    "jakirkham",
-    "mtjrider"
-   ]
-  },
-  "package": {
-   "name": "cutensor",
-   "version": "2.0.2.5"
-  },
-  "requirements": {
-   "build": [
-    "c_compiler_stub",
-    "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "cuda_compiler_stub"
-   ],
-   "host": [
-    "patchelf >=0.12",
-    "cuda-version 11.8",
-    "cudatoolkit",
-    "cuda-version 12.4",
-    "libcublas"
-   ],
-   "run": [
-    "cuda-version",
-    "cudatoolkit",
-    "libcublas"
-   ],
-   "run_constrained": null
-  },
-  "schema_version": 0,
-  "source": {
-   "sha256": "e351dc1e69bd0c5ac45b6ef311ee2b510c8ff6f0b350b0354d6db5563e8fabae",
-   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.0.2.5-archive.zip"
-  },
-  "test": {
-   "files": [
-    "test_load_elf.c"
-   ],
-   "requires": [
-    "git",
-    "c_compiler_stub",
-    "cxx_compiler_stub",
-    "cuda_compiler_stub",
-    "c_stdlib_stub",
-    "cuda-driver-dev"
-   ]
-  }
- },
- "linux_ppc64le_requirements": {
-  "build": {
-   "__set__": true,
-   "elements": [
-    "c_compiler_stub",
-    "c_stdlib_stub",
-    "cuda_compiler_stub",
-    "cxx_compiler_stub"
-   ]
-  },
-  "host": {
-   "__set__": true,
-   "elements": [
-    "cuda-version",
-    "cudatoolkit",
-    "libcublas",
-    "patchelf"
    ]
   },
   "run": {
@@ -398,18 +293,12 @@
     "*/libcuda.so.*",
     "*/nvcuda.dll"
    ],
-   "number": "2",
+   "number": "0",
    "run_exports": [
     "cutensor"
    ],
-   "script": [
-    "copy include\\\\cutensor.h %LIBRARY_INC%\\\\",
-    "copy include\\\\cutensorMg.h %LIBRARY_INC%\\\\",
-    "mkdir %LIBRARY_INC%\\\\cutensor",
-    "copy include\\\\cutensor\\\\types.h %LIBRARY_INC%\\\\cutensor",
-    "del lib\\\\11\\\\*static*",
-    "copy lib\\\\11\\\\*.dll %LIBRARY_BIN%\\\\",
-    "copy lib\\\\11\\\\*.lib %LIBRARY_LIB%\\\\"
+   "script_env": [
+    "cuda_major=11"
    ]
   },
   "extra": {
@@ -425,7 +314,7 @@
   },
   "package": {
    "name": "cutensor",
-   "version": "2.0.2.5"
+   "version": "2.1.0.9"
   },
   "requirements": {
    "build": [
@@ -433,15 +322,14 @@
     "c_stdlib_stub",
     "cxx_compiler_stub",
     "cuda_compiler_stub",
+    "cf-nvidia-tools 1",
     "arm-variant * sbsa"
    ],
    "host": [
-    "patchelf >=0.12",
     "cuda-version 11.8",
     "cudatoolkit",
     "cuda-version 12.6",
-    "libcublas",
-    "cuda-version 12.4"
+    "libcublas"
    ],
    "run": [
     "cuda-version",
@@ -452,8 +340,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3c40b47d164fb0cdbd4a420d0cfac130ca70535743ad7dfb746cd80da5f9600a",
-   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.0.2.5-archive.zip"
+   "sha256": "ed835ba7fd617000f77e1dff87403d123edf540bd99339e3da2eaab9d32a4040",
+   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.1.0.9-archive.zip"
   },
   "test": {
    "files": null,
@@ -478,25 +366,24 @@
  "platforms": [
   "linux_64",
   "linux_aarch64",
-  "linux_ppc64le",
   "win_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/cutensor.json"
  },
- "raw_meta_yaml": "{% set version = \"2.0.2.5\" %}\n\n{% if cuda_compiler_version in (None, \"None\", True, False) %}\n{% set cuda_major = 0 %}\n{% else %}\n{% set cuda_major = environ.get(\"cuda_compiler_version\", \"11.2\").split(\".\")[0] | int %}\n{% endif %}\n\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-ppc64le\" %}  # [ppc64le]\n{% set platform = \"linux-sbsa\" %}  # [aarch64]\n{% set platform = \"windows-x86_64\" %}  # [win]\n{% set extension = \"tar.xz\" %}  # [not win]\n{% set extension = \"zip\" %}  # [win]\n\npackage:\n  name: cutensor\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/{{ platform }}/libcutensor-{{ platform }}-{{ version }}-archive.{{ extension }}\n  sha256: 0e957ae7b352f599de34b6fa1ba999b0617887f885d7436ac5737d71a6b83baa  # [linux64]\n  sha256: e351dc1e69bd0c5ac45b6ef311ee2b510c8ff6f0b350b0354d6db5563e8fabae  # [ppc64le]\n  sha256: 5163dd40f11f328e469a6d9b0056c8346f5d59ed538c18d6b954e4ae657c69cc  # [aarch64]\n  sha256: 3c40b47d164fb0cdbd4a420d0cfac130ca70535743ad7dfb746cd80da5f9600a  # [win64]\n\nbuild:\n  number: 2\n  skip: true  # [win32 or osx or cuda_compiler_version in (None, \"None\")]\n  script:  # [win64]\n    - copy include\\\\cutensor.h %LIBRARY_INC%\\\\                             # [win64]\n    - copy include\\\\cutensorMg.h %LIBRARY_INC%\\\\                           # [win64]\n    - mkdir %LIBRARY_INC%\\\\cutensor                                        # [win64]\n    - copy include\\\\cutensor\\\\types.h %LIBRARY_INC%\\\\cutensor              # [win64]\n    - del lib\\\\{{ cuda_major }}\\\\*static*                                  # [win64]\n    - copy lib\\\\{{ cuda_major }}\\\\*.dll %LIBRARY_BIN%\\\\                    # [win64]\n    - copy lib\\\\{{ cuda_major }}\\\\*.lib %LIBRARY_LIB%\\\\                    # [win64]\n  run_exports:\n    - {{ pin_subpackage('cutensor') }}\n  ignore_run_exports_from:\n    - {{ compiler('cuda') }}\n  missing_dso_whitelist:\n    - \"*/libcuda.so.*\"    # [linux]\n    - \"*/nvcuda.dll\"      # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}\n    - arm-variant * {{ arm_variant_type }}  # [aarch64]\n  host:\n    - patchelf >=0.12  # [linux]\n    - cuda-version {{ cuda_compiler_version }}\n    - cudatoolkit  # [(cuda_compiler_version or \"\").startswith(\"11\")]\n    - libcublas  # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run:\n    # https://docs.nvidia.com/cuda/cutensor/latest/release_notes.html#cutensor-v2-0-0\n    # Minimum supported CTK is 11.2 as of v2.0\n    - {{ pin_compatible(\"cuda-version\", min_pin=\"11.2.0\", max_pin=\"x\") }}  # [(cuda_compiler_version or \"\").startswith(\"11\")]\n    - {{ pin_compatible(\"cuda-version\", min_pin=\"x\", max_pin=\"x\") }}   # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cudatoolkit             # [(cuda_compiler_version or \"\").startswith(\"11\")]\n    - libcublas               # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run_constrained:\n    - arm-variant * {{ arm_variant_type }}  # [aarch64]\n\ntest:\n  requires:\n    - git\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}\n    - {{ stdlib('c') }}\n    # need the libcuda stub for import test\n    - cuda-driver-dev                          # [linux and (cuda_compiler_version or \"\").startswith(\"12\")]\n  files:\n    - test_load_elf.c        # [linux]\n\nabout:\n  home: https://developer.nvidia.com/cutensor\n  license: LicenseRef-cuTENSOR-Software-License-Agreement\n  license_url: https://docs.nvidia.com/cuda/cutensor/license.html\n  license_file: LICENSE\n  summary: Tensor Linear Algebra on NVIDIA GPUs\n  description: |\n    The cuTENSOR Library is a first-of-its-kind GPU-accelerated tensor linear\n    algebra library providing tensor contraction, reduction and elementwise\n    operations. cuTENSOR is used to accelerate applications in the areas of\n    deep learning training and inference, computer vision, quantum chemistry\n    and computational physics.\n\n    License Agreements:- The packages are governed by the NVIDIA cuTENSOR\n    Software License Agreement (EULA). By downloading and using the packages,\n    you accept the terms and conditions of the NVIDIA cuTENSOR EULA -\n    https://docs.nvidia.com/cuda/cutensor/license.html\n  doc_url: https://docs.nvidia.com/cuda/cutensor/index.html\n  dev_url: https://developer.nvidia.com/cutensor/downloads\n\nextra:\n  recipe-maintainers:\n    - conda-forge/cuda\n    - v0i0\n    - yangcal\n    - JeremyWangNVDA\n    - leofang\n    - jakirkham\n    - mtjrider\n",
+ "raw_meta_yaml": "{% set version = \"2.1.0.9\" %}\n\n{% if cuda_compiler_version in (None, \"None\", True, False) %}\n{% set cuda_major = 0 %}\n{% else %}\n{% set cuda_major = environ.get(\"cuda_compiler_version\", \"11.2\").split(\".\")[0] | int %}\n{% endif %}\n\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-ppc64le\" %}  # [ppc64le]\n{% set platform = \"linux-sbsa\" %}  # [aarch64]\n{% set platform = \"windows-x86_64\" %}  # [win]\n{% set extension = \"tar.xz\" %}  # [not win]\n{% set extension = \"zip\" %}  # [win]\n\npackage:\n  name: cutensor\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/{{ platform }}/libcutensor-{{ platform }}-{{ version }}-archive.{{ extension }}\n  sha256: ee59fcb4e8d59fc0d8cebf5f7f23bf2a196a76e6bcdcaa621aedbdcabd20a759  # [linux64]\n  sha256: cef7819c4ecf3120d4f99b08463b8db1a8591be25147d1688371024885b1d2f0  # [aarch64]\n  sha256: ed835ba7fd617000f77e1dff87403d123edf540bd99339e3da2eaab9d32a4040  # [win64]\n\nbuild:\n  number: 0\n  skip: true  # [ppc64le or cuda_compiler_version in (undefined, \"None\")]\n  run_exports:\n    - {{ pin_subpackage('cutensor') }}\n  ignore_run_exports_from:\n    - {{ compiler('cuda') }}\n  missing_dso_whitelist:\n    - \"*/libcuda.so.*\"    # [linux]\n    - \"*/nvcuda.dll\"      # [win]\n  script_env:\n    - cuda_major={{ cuda_major }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}\n    - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    - cf-nvidia-tools 1                     # [linux]\n  host:\n    - cuda-version {{ cuda_compiler_version }}\n    - cudatoolkit  # [(cuda_compiler_version or \"\").startswith(\"11\")]\n    - libcublas  # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run:\n    # https://docs.nvidia.com/cuda/cutensor/latest/release_notes.html#cutensor-v2-0-0\n    # Minimum supported CTK is 11.2 as of v2.0\n    - {{ pin_compatible(\"cuda-version\", min_pin=\"11.2.0\", max_pin=\"x\") }}  # [(cuda_compiler_version or \"\").startswith(\"11\")]\n    - {{ pin_compatible(\"cuda-version\", min_pin=\"x\", max_pin=\"x\") }}   # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cudatoolkit             # [(cuda_compiler_version or \"\").startswith(\"11\")]\n    - libcublas               # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run_constrained:\n    - arm-variant * {{ arm_variant_type }}  # [aarch64]\n\ntest:\n  requires:\n    - git\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}\n    - {{ stdlib('c') }}\n    # need the libcuda stub for import test\n    - cuda-driver-dev                          # [linux and (cuda_compiler_version or \"\").startswith(\"12\")]\n  files:\n    - test_load_elf.c        # [linux]\n\nabout:\n  home: https://developer.nvidia.com/cutensor\n  license: LicenseRef-cuTENSOR-Software-License-Agreement\n  license_url: https://docs.nvidia.com/cuda/cutensor/license.html\n  license_file: LICENSE\n  summary: Tensor Linear Algebra on NVIDIA GPUs\n  description: |\n    The cuTENSOR Library is a first-of-its-kind GPU-accelerated tensor linear\n    algebra library providing tensor contraction, reduction and elementwise\n    operations. cuTENSOR is used to accelerate applications in the areas of\n    deep learning training and inference, computer vision, quantum chemistry\n    and computational physics.\n\n    License Agreements:- The packages are governed by the NVIDIA cuTENSOR\n    Software License Agreement (EULA). By downloading and using the packages,\n    you accept the terms and conditions of the NVIDIA cuTENSOR EULA -\n    https://docs.nvidia.com/cuda/cutensor/license.html\n  doc_url: https://docs.nvidia.com/cuda/cutensor/index.html\n  dev_url: https://developer.nvidia.com/cutensor/downloads\n\nextra:\n  recipe-maintainers:\n    - conda-forge/cuda\n    - v0i0\n    - yangcal\n    - JeremyWangNVDA\n    - leofang\n    - jakirkham\n    - mtjrider\n",
  "req": {
   "__set__": true,
   "elements": [
    "arm-variant",
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cf-nvidia-tools",
    "cuda-version",
    "cuda_compiler_stub",
    "cudatoolkit",
    "cxx_compiler_stub",
-   "libcublas",
-   "patchelf"
+   "libcublas"
   ]
  },
  "requirements": {
@@ -506,6 +393,7 @@
     "arm-variant",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cuda_compiler_stub",
     "cxx_compiler_stub"
    ]
@@ -519,8 +407,7 @@
     "cuda_compiler_stub",
     "cudatoolkit",
     "cxx_compiler_stub",
-    "libcublas",
-    "patchelf"
+    "libcublas"
    ]
   },
   "run": {
@@ -555,6 +442,7 @@
     "arm-variant * sbsa",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools 1",
     "cuda_compiler_stub",
     "cxx_compiler_stub"
    ]
@@ -563,11 +451,9 @@
    "__set__": true,
    "elements": [
     "cuda-version 11.8",
-    "cuda-version 12.4",
     "cuda-version 12.6",
     "cudatoolkit",
-    "libcublas",
-    "patchelf >=0.12"
+    "libcublas"
    ]
   },
   "run": {
@@ -590,8 +476,8 @@
    ]
   }
  },
- "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.0.2.5-archive.zip",
- "version": "2.0.2.5",
+ "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.1.0.9-archive.zip",
+ "version": "2.1.0.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cutensor.json"
  },
@@ -613,18 +499,12 @@
    "missing_dso_whitelist": [
     "*/nvcuda.dll"
    ],
-   "number": "2",
+   "number": "0",
    "run_exports": [
     "cutensor"
    ],
-   "script": [
-    "copy include\\\\cutensor.h %LIBRARY_INC%\\\\",
-    "copy include\\\\cutensorMg.h %LIBRARY_INC%\\\\",
-    "mkdir %LIBRARY_INC%\\\\cutensor",
-    "copy include\\\\cutensor\\\\types.h %LIBRARY_INC%\\\\cutensor",
-    "del lib\\\\11\\\\*static*",
-    "copy lib\\\\11\\\\*.dll %LIBRARY_BIN%\\\\",
-    "copy lib\\\\11\\\\*.lib %LIBRARY_LIB%\\\\"
+   "script_env": [
+    "cuda_major=11"
    ]
   },
   "extra": {
@@ -640,7 +520,7 @@
   },
   "package": {
    "name": "cutensor",
-   "version": "2.0.2.5"
+   "version": "2.1.0.9"
   },
   "requirements": {
    "build": [
@@ -664,8 +544,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3c40b47d164fb0cdbd4a420d0cfac130ca70535743ad7dfb746cd80da5f9600a",
-   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.0.2.5-archive.zip"
+   "sha256": "ed835ba7fd617000f77e1dff87403d123edf540bd99339e3da2eaab9d32a4040",
+   "url": "https://developer.download.nvidia.com/compute/cutensor/redist/libcutensor/windows-x86_64/libcutensor-windows-x86_64-2.1.0.9-archive.zip"
   },
   "test": {
    "files": null,
