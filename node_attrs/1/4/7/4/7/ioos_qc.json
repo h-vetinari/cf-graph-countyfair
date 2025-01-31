@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "inspection": "update-grayskull"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -22,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -65,26 +68,24 @@
   ],
   "package": {
    "name": "ioos_qc",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "pip",
-    "setuptools"
+    "setuptools >=42",
+    "setuptools-scm",
+    "pip"
    ],
    "run": [
     "python >=3.9",
-    "bokeh",
     "geographiclib",
     "geojson",
     "h5netcdf",
     "jsonschema",
-    "numba",
     "numpy >=1.14",
     "pandas",
     "pyparsing",
-    "python >=3.7,<4.0",
     "ruamel.yaml",
     "scipy",
     "shapely",
@@ -93,8 +94,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "86a43e1b337cd2e0e95960a227fc9f042e6c0d4823ad02ba539bb5d27d12b7a8",
-   "url": "https://pypi.org/packages/source/i/ioos_qc/ioos_qc-2.1.0.tar.gz"
+   "sha256": "f4f367e9cb2a5ae462190dc0feae4fb848811e0b18aa1fb66aec6fa88c67fe16",
+   "url": "https://pypi.org/packages/source/i/ioos_qc/ioos_qc-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -119,19 +120,18 @@
    "elements": [
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools-scm"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "bokeh",
     "geographiclib",
     "geojson",
     "h5netcdf",
     "ioos_qc",
     "jsonschema",
-    "numba",
     "numpy",
     "pandas",
     "pyparsing",
@@ -159,7 +159,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -202,26 +202,24 @@
   ],
   "package": {
    "name": "ioos_qc",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "pip",
-    "setuptools"
+    "setuptools >=42",
+    "setuptools-scm",
+    "pip"
    ],
    "run": [
     "python >=3.9",
-    "bokeh",
     "geographiclib",
     "geojson",
     "h5netcdf",
     "jsonschema",
-    "numba",
     "numpy >=1.14",
     "pandas",
     "pyparsing",
-    "python >=3.7,<4.0",
     "ruamel.yaml",
     "scipy",
     "shapely",
@@ -230,8 +228,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "86a43e1b337cd2e0e95960a227fc9f042e6c0d4823ad02ba539bb5d27d12b7a8",
-   "url": "https://pypi.org/packages/source/i/ioos_qc/ioos_qc-2.1.0.tar.gz"
+   "sha256": "f4f367e9cb2a5ae462190dc0feae4fb848811e0b18aa1fb66aec6fa88c67fe16",
+   "url": "https://pypi.org/packages/source/i/ioos_qc/ioos_qc-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -261,17 +259,15 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ioos_qc.json"
  },
- "raw_meta_yaml": "{% set name = \"ioos_qc\" %}\n{% set version = \"2.1.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ioos_qc-{{ version }}.tar.gz\n  sha256: 86a43e1b337cd2e0e95960a227fc9f042e6c0d4823ad02ba539bb5d27d12b7a8\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - bokeh\n    - geographiclib\n    - geojson\n    - h5netcdf\n    - jsonschema\n    - numba\n    - numpy >=1.14\n    - pandas\n    - pyparsing\n    - python >=3.7,<4.0\n    - ruamel.yaml\n    - scipy\n    - shapely\n    - xarray\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - ioos_qc\n  \noutputs:\n  - name: ioos_qc\n  - name: ioos-qc\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - {{ pin_subpackage(\"ioos_qc\", max_pin=\"x.x.x\") }}\n        - python >={{ python_min }}\n    test:\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - pip check\n      imports:\n        - ioos_qc\n\nabout:\n  home: https://github.com/ioos/ioos_qc\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: |\n    Collection of utilities, scripts and tests to assist in automated\n    quality assurance and quality control for oceanographic datasets and\n    observing systems\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
+ "raw_meta_yaml": "{% set name = \"ioos_qc\" %}\n{% set version = \"2.2.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ioos_qc-{{ version }}.tar.gz\n  sha256: f4f367e9cb2a5ae462190dc0feae4fb848811e0b18aa1fb66aec6fa88c67fe16\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - setuptools-scm\n    - pip\n  run:\n    - python >={{ python_min }}\n    - geographiclib\n    - geojson\n    - h5netcdf\n    - jsonschema\n    - numpy >=1.14\n    - pandas\n    - pyparsing\n    - ruamel.yaml\n    - scipy\n    - shapely\n    - xarray\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - ioos_qc\n\noutputs:\n  - name: ioos_qc\n  - name: ioos-qc\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - {{ pin_subpackage(\"ioos_qc\", max_pin=\"x.x.x\") }}\n        - python >={{ python_min }}\n    test:\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - pip check\n      imports:\n        - ioos_qc\n\nabout:\n  home: https://github.com/ioos/ioos_qc\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: |\n    Collection of utilities, scripts and tests to assist in automated\n    quality assurance and quality control for oceanographic datasets and\n    observing systems\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
  "req": {
   "__set__": true,
   "elements": [
-   "bokeh",
    "geographiclib",
    "geojson",
    "h5netcdf",
    "ioos_qc",
    "jsonschema",
-   "numba",
    "numpy",
    "pandas",
    "pip",
@@ -280,6 +276,7 @@
    "ruamel.yaml",
    "scipy",
    "setuptools",
+   "setuptools-scm",
    "shapely",
    "xarray"
   ]
@@ -294,19 +291,18 @@
    "elements": [
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools-scm"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "bokeh",
     "geographiclib",
     "geojson",
     "h5netcdf",
     "ioos_qc",
     "jsonschema",
-    "numba",
     "numpy",
     "pandas",
     "pyparsing",
@@ -336,23 +332,21 @@
    "elements": [
     "pip",
     "python 3.9",
-    "setuptools"
+    "setuptools >=42",
+    "setuptools-scm"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "bokeh",
     "geographiclib",
     "geojson",
     "h5netcdf",
     "ioos_qc",
     "jsonschema",
-    "numba",
     "numpy >=1.14",
     "pandas",
     "pyparsing",
-    "python >=3.7,<4.0",
     "python >=3.9",
     "ruamel.yaml",
     "scipy",
@@ -368,8 +362,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/i/ioos_qc/ioos_qc-2.1.0.tar.gz",
- "version": "2.1.0",
+ "url": "https://pypi.org/packages/source/i/ioos_qc/ioos_qc-2.2.0.tar.gz",
+ "version": "2.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ioos_qc.json"
  }
