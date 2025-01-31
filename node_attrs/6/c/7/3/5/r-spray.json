@@ -31,7 +31,8 @@
    "summary": "Sparse arrays interpreted as multivariate polynomials."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": null,
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -45,7 +46,7 @@
   },
   "package": {
    "name": "r-spray",
-   "version": "1.0_25"
+   "version": "1.0_27"
   },
   "requirements": {
    "build": [
@@ -59,24 +60,24 @@
     "r-rcpp >=0.12.3",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
-    "r-partitions"
+    "r-partitions",
+    "r-stringr"
    ],
    "run": [
     "r-base",
     "r-rcpp >=0.12.3",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
-    "r-partitions"
+    "r-partitions",
+    "r-stringr"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "633b835090c0f7ce83cf7f22edf8a2aa5e6c0f140d034af122190499e752b6d5",
+   "sha256": "7a23316d904d0ee37feb066121b5eb48c500aeceb76af1fac143ff2779fd0025",
    "url": [
-    "https://cran.r-project.org/src/contrib/spray_1.0-25.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-25.tar.gz"
+    "https://cran.r-project.org/src/contrib/spray_1.0-27.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-27.tar.gz"
    ]
   },
   "test": {
@@ -101,9 +102,9 @@
     "r-base",
     "r-disordr",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp"
+    "r-rcpp",
+    "r-stringr"
    ]
   },
   "run": {
@@ -112,9 +113,9 @@
     "r-base",
     "r-disordr",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp"
+    "r-rcpp",
+    "r-stringr"
    ]
   },
   "test": {
@@ -134,7 +135,12 @@
    "summary": "Sparse arrays interpreted as multivariate polynomials."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": [
+    "*/R.dll",
+    "*/Rblas.dll",
+    "*/Rlapack.dll"
+   ],
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -148,7 +154,7 @@
   },
   "package": {
    "name": "r-spray",
-   "version": "1.0_25"
+   "version": "1.0_27"
   },
   "requirements": {
    "build": [
@@ -169,24 +175,24 @@
     "r-rcpp >=0.12.3",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
-    "r-partitions"
+    "r-partitions",
+    "r-stringr"
    ],
    "run": [
     "r-base",
     "r-rcpp >=0.12.3",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
-    "r-partitions"
+    "r-partitions",
+    "r-stringr"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "633b835090c0f7ce83cf7f22edf8a2aa5e6c0f140d034af122190499e752b6d5",
+   "sha256": "7a23316d904d0ee37feb066121b5eb48c500aeceb76af1fac143ff2779fd0025",
    "url": [
-    "https://cran.r-project.org/src/contrib/spray_1.0-25.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-25.tar.gz"
+    "https://cran.r-project.org/src/contrib/spray_1.0-27.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-27.tar.gz"
    ]
   },
   "test": {
@@ -209,7 +215,8 @@
    "summary": "Sparse arrays interpreted as multivariate polynomials."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": null,
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -223,7 +230,7 @@
   },
   "package": {
    "name": "r-spray",
-   "version": "1.0_25"
+   "version": "1.0_27"
   },
   "requirements": {
    "build": [
@@ -237,24 +244,24 @@
     "r-rcpp >=0.12.3",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
-    "r-partitions"
+    "r-partitions",
+    "r-stringr"
    ],
    "run": [
     "r-base",
     "r-rcpp >=0.12.3",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
-    "r-partitions"
+    "r-partitions",
+    "r-stringr"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "633b835090c0f7ce83cf7f22edf8a2aa5e6c0f140d034af122190499e752b6d5",
+   "sha256": "7a23316d904d0ee37feb066121b5eb48c500aeceb76af1fac143ff2779fd0025",
    "url": [
-    "https://cran.r-project.org/src/contrib/spray_1.0-25.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-25.tar.gz"
+    "https://cran.r-project.org/src/contrib/spray_1.0-27.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-27.tar.gz"
    ]
   },
   "test": {
@@ -279,9 +286,9 @@
     "r-base",
     "r-disordr",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp"
+    "r-rcpp",
+    "r-stringr"
    ]
   },
   "run": {
@@ -290,9 +297,9 @@
     "r-base",
     "r-disordr",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp"
+    "r-rcpp",
+    "r-stringr"
    ]
   },
   "test": {
@@ -315,7 +322,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/r-spray.json"
  },
- "raw_meta_yaml": "{% set version = \"1.0-25\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-spray\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/spray_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/spray/spray_{{ version }}.tar.gz\n  sha256: 633b835090c0f7ce83cf7f22edf8a2aa5e6c0f140d034af122190499e752b6d5\n\nbuild:\n  # Checking windows to see if it passes. Uncomment the line if it fails.\n  # skip: true  # [win]\n  number: 1\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}          # [not win]\n    - {{ stdlib(\"c\") }}            # [not win]\n    - {{ compiler('m2w64_c') }}    # [win]\n    - {{ stdlib(\"m2w64_c\") }}      # [win]\n    - {{ compiler('cxx') }}        # [not win]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-rcpp >=0.12.3\n    - r-disordr >=0.9_6\n    - r-magic\n    - r-mathjaxr\n    - r-partitions\n  run:\n    - r-base\n    - r-rcpp >=0.12.3\n    - r-disordr >=0.9_6\n    - r-magic\n    - r-mathjaxr\n    - r-partitions\n\ntest:\n  commands:\n    - $R -e \"library('spray')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('spray')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/RobinHankin/spray\n  license: GPL-2.0-or-later\n  summary: Sparse arrays interpreted as multivariate polynomials.\n  license_family: GPL2\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - npavlovikj\n",
+ "raw_meta_yaml": "{% set version = \"1.0-27\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-spray\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/spray_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/spray/spray_{{ version }}.tar.gz\n  sha256: 7a23316d904d0ee37feb066121b5eb48c500aeceb76af1fac143ff2779fd0025\n\nbuild:\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n  missing_dso_whitelist:\n    - '*/R.dll'        # [win]\n    - '*/Rblas.dll'    # [win]\n    - '*/Rlapack.dll'  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}          # [not win]\n    - {{ stdlib(\"c\") }}            # [not win]\n    - {{ compiler('m2w64_c') }}    # [win]\n    - {{ stdlib(\"m2w64_c\") }}      # [win]\n    - {{ compiler('cxx') }}        # [not win]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-rcpp >=0.12.3\n    - r-disordr >=0.9_6\n    - r-magic\n    - r-partitions\n    - r-stringr\n  run:\n    - r-base\n    - r-rcpp >=0.12.3\n    - r-disordr >=0.9_6\n    - r-magic\n    - r-partitions\n    - r-stringr\n\ntest:\n  commands:\n    - $R -e \"library('spray')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('spray')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/RobinHankin/spray\n  license: GPL-2.0-or-later\n  summary: Sparse arrays interpreted as multivariate polynomials.\n  license_family: GPL2\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - npavlovikj\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -331,9 +338,9 @@
    "r-base",
    "r-disordr",
    "r-magic",
-   "r-mathjaxr",
    "r-partitions",
    "r-rcpp",
+   "r-stringr",
    "sed",
    "zip"
   ]
@@ -364,9 +371,9 @@
     "r-base",
     "r-disordr",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp"
+    "r-rcpp",
+    "r-stringr"
    ]
   },
   "run": {
@@ -378,9 +385,9 @@
     "r-base",
     "r-disordr",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp"
+    "r-rcpp",
+    "r-stringr"
    ]
   },
   "test": {
@@ -412,9 +419,9 @@
     "r-base",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp >=0.12.3"
+    "r-rcpp >=0.12.3",
+    "r-stringr"
    ]
   },
   "run": {
@@ -423,9 +430,9 @@
     "r-base",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp >=0.12.3"
+    "r-rcpp >=0.12.3",
+    "r-stringr"
    ]
   },
   "test": {
@@ -434,14 +441,14 @@
   }
  },
  "url": [
-  "https://cran.r-project.org/src/contrib/spray_1.0-25.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-25.tar.gz",
-  "https://cran.r-project.org/src/contrib/spray_1.0-25.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-25.tar.gz",
-  "https://cran.r-project.org/src/contrib/spray_1.0-25.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-25.tar.gz"
+  "https://cran.r-project.org/src/contrib/spray_1.0-27.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-27.tar.gz",
+  "https://cran.r-project.org/src/contrib/spray_1.0-27.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-27.tar.gz",
+  "https://cran.r-project.org/src/contrib/spray_1.0-27.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-27.tar.gz"
  ],
- "version": "1.0_25",
+ "version": "1.0_27",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/r-spray.json"
  },
@@ -457,7 +464,12 @@
    "summary": "Sparse arrays interpreted as multivariate polynomials."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": [
+    "*/R.dll",
+    "*/Rblas.dll",
+    "*/Rlapack.dll"
+   ],
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -471,7 +483,7 @@
   },
   "package": {
    "name": "r-spray",
-   "version": "1.0_25"
+   "version": "1.0_27"
   },
   "requirements": {
    "build": [
@@ -489,24 +501,24 @@
     "r-rcpp >=0.12.3",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
-    "r-partitions"
+    "r-partitions",
+    "r-stringr"
    ],
    "run": [
     "r-base",
     "r-rcpp >=0.12.3",
     "r-disordr >=0.9_6",
     "r-magic",
-    "r-mathjaxr",
-    "r-partitions"
+    "r-partitions",
+    "r-stringr"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "633b835090c0f7ce83cf7f22edf8a2aa5e6c0f140d034af122190499e752b6d5",
+   "sha256": "7a23316d904d0ee37feb066121b5eb48c500aeceb76af1fac143ff2779fd0025",
    "url": [
-    "https://cran.r-project.org/src/contrib/spray_1.0-25.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-25.tar.gz"
+    "https://cran.r-project.org/src/contrib/spray_1.0-27.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/spray/spray_1.0-27.tar.gz"
    ]
   },
   "test": {
@@ -535,9 +547,9 @@
     "r-base",
     "r-disordr",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp"
+    "r-rcpp",
+    "r-stringr"
    ]
   },
   "run": {
@@ -546,9 +558,9 @@
     "r-base",
     "r-disordr",
     "r-magic",
-    "r-mathjaxr",
     "r-partitions",
-    "r-rcpp"
+    "r-rcpp",
+    "r-stringr"
    ]
   },
   "test": {
