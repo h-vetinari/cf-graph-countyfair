@@ -25,7 +25,7 @@
    "summary": "DESC Cosmology Likelihood Framework"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "firecrown",
-   "version": "1.7.5"
+   "version": "1.8.0"
   },
   "requirements": {
    "build": [],
@@ -78,8 +78,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f3628be6f4dbaee01ec50da23ced5879cf047ff84959bb0e550b08fc3a886ac8",
-   "url": "https://github.com/LSSTDESC/firecrown/archive/v1.7.5.tar.gz"
+   "sha256": "f31fa7feb8486b85fe946a53ad45106522f347a3e8e7666a8888254e71db87d7",
+   "url": "https://github.com/LSSTDESC/firecrown/archive/v1.8.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -144,7 +144,7 @@
    "summary": "DESC Cosmology Likelihood Framework"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -157,7 +157,7 @@
   },
   "package": {
    "name": "firecrown",
-   "version": "1.7.5"
+   "version": "1.8.0"
   },
   "requirements": {
    "build": [],
@@ -197,8 +197,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f3628be6f4dbaee01ec50da23ced5879cf047ff84959bb0e550b08fc3a886ac8",
-   "url": "https://github.com/LSSTDESC/firecrown/archive/v1.7.5.tar.gz"
+   "sha256": "f31fa7feb8486b85fe946a53ad45106522f347a3e8e7666a8888254e71db87d7",
+   "url": "https://github.com/LSSTDESC/firecrown/archive/v1.8.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -215,7 +215,7 @@
    "summary": "DESC Cosmology Likelihood Framework"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -228,7 +228,7 @@
   },
   "package": {
    "name": "firecrown",
-   "version": "1.7.5"
+   "version": "1.8.0"
   },
   "requirements": {
    "build": [],
@@ -268,8 +268,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f3628be6f4dbaee01ec50da23ced5879cf047ff84959bb0e550b08fc3a886ac8",
-   "url": "https://github.com/LSSTDESC/firecrown/archive/v1.7.5.tar.gz"
+   "sha256": "f31fa7feb8486b85fe946a53ad45106522f347a3e8e7666a8888254e71db87d7",
+   "url": "https://github.com/LSSTDESC/firecrown/archive/v1.8.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -334,7 +334,7 @@
    "summary": "DESC Cosmology Likelihood Framework"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -347,7 +347,7 @@
   },
   "package": {
    "name": "firecrown",
-   "version": "1.7.5"
+   "version": "1.8.0"
   },
   "requirements": {
    "build": [],
@@ -387,8 +387,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f3628be6f4dbaee01ec50da23ced5879cf047ff84959bb0e550b08fc3a886ac8",
-   "url": "https://github.com/LSSTDESC/firecrown/archive/v1.7.5.tar.gz"
+   "sha256": "f31fa7feb8486b85fe946a53ad45106522f347a3e8e7666a8888254e71db87d7",
+   "url": "https://github.com/LSSTDESC/firecrown/archive/v1.8.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -460,7 +460,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/firecrown.json"
  },
- "raw_meta_yaml": "{% set version = \"1.7.5\" %}\n\npackage:\n  name: firecrown\n  version: {{ version }}\n\nsource:\n  url: https://github.com/LSSTDESC/firecrown/archive/v{{ version }}.tar.gz\n  sha256: f3628be6f4dbaee01ec50da23ced5879cf047ff84959bb0e550b08fc3a886ac8\n\nbuild:\n  skip: true  # [win or py<39]\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - charset-normalizer\n    - cosmosis >=3.0.0\n    - cosmosis-build-standard-library\n    - coverage\n    - cython\n    - dill\n    - fitsio\n    - flake8\n    - fuzzywuzzy\n    - getdist\n    - idna\n    - matplotlib-base\n    - more-itertools\n    - mypy\n    - numcosmo >=0.21.1\n    - numpy >=1.23.0\n    - portalocker\n    - pybobyqa\n    - pyccl >=2.8.0\n    - pyyaml\n    - requests\n    - sacc >=0.11\n    - scipy\n    - types-pyyaml\n    - urllib3\n\ntest:\n  imports:\n    - firecrown\n\nabout:\n  home: https://github.com/LSSTDESC/firecrown\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: DESC Cosmology Likelihood Framework\n\nextra:\n  recipe-maintainers:\n    - marcpaterno\n    - vitenti\n    - beckermr\n    - mattkwiecien\n",
+ "raw_meta_yaml": "{% set version = \"1.8.0\" %}\n\npackage:\n  name: firecrown\n  version: {{ version }}\n\nsource:\n  url: https://github.com/LSSTDESC/firecrown/archive/v{{ version }}.tar.gz\n  sha256: f31fa7feb8486b85fe946a53ad45106522f347a3e8e7666a8888254e71db87d7\n\nbuild:\n  skip: true  # [win or py<310]\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - charset-normalizer\n    - cosmosis >=3.0.0\n    - cosmosis-build-standard-library\n    - coverage\n    - cython\n    - dill\n    - fitsio\n    - flake8\n    - fuzzywuzzy\n    - getdist\n    - idna\n    - matplotlib-base\n    - more-itertools\n    - mypy\n    - numcosmo >=0.21.1\n    - numpy >=1.23.0\n    - portalocker\n    - pybobyqa\n    - pyccl >=2.8.0\n    - pyyaml\n    - requests\n    - sacc >=0.11\n    - scipy\n    - types-pyyaml\n    - urllib3\n\ntest:\n  imports:\n    - firecrown\n\nabout:\n  home: https://github.com/LSSTDESC/firecrown\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: DESC Cosmology Likelihood Framework\n\nextra:\n  recipe-maintainers:\n    - marcpaterno\n    - vitenti\n    - beckermr\n    - mattkwiecien\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -593,8 +593,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/LSSTDESC/firecrown/archive/v1.7.5.tar.gz",
- "version": "1.7.5",
+ "url": "https://github.com/LSSTDESC/firecrown/archive/v1.8.0.tar.gz",
+ "version": "1.8.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/firecrown.json"
  }
