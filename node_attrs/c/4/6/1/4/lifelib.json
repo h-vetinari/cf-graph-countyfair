@@ -25,7 +25,7 @@
     "lifelib-create = lifelib.commands.create:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "lifelib",
-   "version": "0.10.1"
+   "version": "0.11.0"
   },
   "requirements": {
    "host": [
@@ -49,8 +49,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e719ca57ac8e45c22f0d6a75ff9241f2b27341582e511901268c8c480990b785",
-   "url": "https://pypi.org/packages/source/l/lifelib/lifelib-0.10.1.tar.gz"
+   "sha256": "16423b7702b297cc0d64f3143852744fff2df643d0f9e6ece01998fb48601da3",
+   "url": "https://pypi.org/packages/source/l/lifelib/lifelib-0.11.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -105,7 +105,7 @@
     "lifelib-create = lifelib.commands.create:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -115,7 +115,7 @@
   },
   "package": {
    "name": "lifelib",
-   "version": "0.10.1"
+   "version": "0.11.0"
   },
   "requirements": {
    "host": [
@@ -129,8 +129,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e719ca57ac8e45c22f0d6a75ff9241f2b27341582e511901268c8c480990b785",
-   "url": "https://pypi.org/packages/source/l/lifelib/lifelib-0.10.1.tar.gz"
+   "sha256": "16423b7702b297cc0d64f3143852744fff2df643d0f9e6ece01998fb48601da3",
+   "url": "https://pypi.org/packages/source/l/lifelib/lifelib-0.11.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -160,7 +160,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lifelib.json"
  },
- "raw_meta_yaml": "{% set name = \"lifelib\" %}\n{% set version = \"0.10.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lifelib-{{ version }}.tar.gz\n  sha256: e719ca57ac8e45c22f0d6a75ff9241f2b27341582e511901268c8c480990b785\n\nbuild:\n  entry_points:\n    - lifelib-create = lifelib.commands.create:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - modelx >=0.12.1\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - lifelib\n  commands:\n    - pip check\n    - lifelib-create --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://lifelib.io\n  summary: Actuarial models in Python\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - fumitoh\n",
+ "raw_meta_yaml": "{% set name = \"lifelib\" %}\n{% set version = \"0.11.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lifelib-{{ version }}.tar.gz\n  sha256: 16423b7702b297cc0d64f3143852744fff2df643d0f9e6ece01998fb48601da3\n\nbuild:\n  entry_points:\n    - lifelib-create = lifelib.commands.create:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - modelx >=0.12.1\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - lifelib\n  commands:\n    - pip check\n    - lifelib-create --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://lifelib.io\n  summary: Actuarial models in Python\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - fumitoh\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -224,8 +224,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/l/lifelib/lifelib-0.10.1.tar.gz",
- "version": "0.10.1",
+ "url": "https://pypi.org/packages/source/l/lifelib/lifelib-0.11.0.tar.gz",
+ "version": "0.11.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/lifelib.json"
  }
