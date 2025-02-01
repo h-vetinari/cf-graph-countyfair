@@ -5,14 +5,10 @@
   "bot": {
    "inspection": "hint-all"
   },
-  "build_platform": {
-   "linux_aarch64": "linux_64",
-   "linux_ppc64le": "linux_64",
-   "osx_arm64": "osx_64"
-  },
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -21,38 +17,25 @@
   "noarch_platforms": [
    "linux_64",
    "win_64"
-  ],
-  "provider": {
-   "linux_aarch64": "default",
-   "linux_ppc64le": "default",
-   "win": "azure"
-  },
-  "test": "native_and_emulated"
+  ]
  },
  "feedstock_name": "ipython",
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "IPython provides a rich architecture for interactive computing with\na powerful interactive shell, a kernel for Jupyter, high performance\ntools for parallel computing, and more.\n",
+   "description": "IPython provides a rich architecture for interactive computing with\na powerful interactive shell, a kernel for Jupyter, high performance\ntools for parallel computing, and more.",
    "dev_url": "https://github.com/ipython/ipython",
-   "doc_url": "https://ipython.readthedocs.io",
-   "home": "https://ipython.org",
+   "doc_url": "https://ipython.readthedocs.io/",
+   "home": "https://ipython.org/",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
    "summary": "IPython: Productive Interactive Computing"
   },
   "build": {
-   "entry_points": [
-    "ipython = IPython:start_ipython",
-    "ipython3 = IPython:start_ipython"
-   ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-   "script_env": [
-    "COV_THRESHOLD=71"
-   ]
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -70,24 +53,118 @@
     "trallard"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "ipython",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.10.*",
+      "setuptools >=61.2"
+     ],
+     "run": [
+      "__unix",
+      "pexpect >4.3",
+      "python >=3.10",
+      "decorator",
+      "exceptiongroup",
+      "jedi >=0.16",
+      "matplotlib-inline",
+      "pickleshare",
+      "prompt-toolkit >=3.0.41,<3.1.0",
+      "pygments >=2.4.0",
+      "stack_data",
+      "traitlets >=5.13.0",
+      "typing_extensions >=4.6"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "IPython",
+        "IPython.core",
+        "IPython.core.magics",
+        "IPython.core.tests",
+        "IPython.extensions",
+        "IPython.extensions.tests",
+        "IPython.external",
+        "IPython.lib",
+        "IPython.lib.tests",
+        "IPython.sphinxext",
+        "IPython.terminal",
+        "IPython.terminal.pt_inputhooks",
+        "IPython.terminal.tests",
+        "IPython.testing",
+        "IPython.testing.plugin",
+        "IPython.testing.tests",
+        "IPython.utils",
+        "IPython.utils.tests"
+       ],
+       "python_version": "3.10.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject.toml"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pip",
+        "mypy",
+        "types-decorator",
+        "black",
+        "curio",
+        "matplotlib-base !=3.2.0",
+        "nbformat",
+        "numpy >=1.23",
+        "pandas",
+        "pickleshare",
+        "pygments",
+        "pytest",
+        "pytest-asyncio <0.22",
+        "pytest-cov",
+        "testpath",
+        "trio"
+       ]
+      },
+      "script": [
+       "pip check",
+       "pygmentize -L | grep ipython",
+       "ipython -h",
+       "ipython3 -h",
+       "mypy -p IPython || exit 0",
+       "python run_test.py"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "ipython",
-   "version": "8.31.0"
+   "version": "8.32.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.10",
+    "python 3.10.*",
     "setuptools >=61.2"
    ],
    "run": [
     "__unix",
+    "pexpect >4.3",
     "python >=3.10",
     "decorator",
     "exceptiongroup",
     "jedi >=0.16",
     "matplotlib-inline",
-    "pexpect >4.3",
     "pickleshare",
     "prompt-toolkit >=3.0.41,<3.1.0",
     "pygments >=2.4.0",
@@ -96,61 +173,10 @@
     "typing_extensions >=4.6"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "b6a2274606bec6166405ff05e54932ed6e5cfecaca1fc05f2cacde7bb074d70b",
-   "url": "https://pypi.org/packages/source/i/ipython/ipython-8.31.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pygmentize -L | grep ipython",
-    "ipython -h",
-    "ipython3 -h",
-    "mypy -p IPython || exit 0"
-   ],
-   "imports": [
-    "IPython",
-    "IPython.core",
-    "IPython.core.magics",
-    "IPython.core.tests",
-    "IPython.extensions",
-    "IPython.extensions.tests",
-    "IPython.external",
-    "IPython.lib",
-    "IPython.lib.tests",
-    "IPython.sphinxext",
-    "IPython.terminal",
-    "IPython.terminal.pt_inputhooks",
-    "IPython.terminal.tests",
-    "IPython.testing",
-    "IPython.testing.plugin",
-    "IPython.testing.tests",
-    "IPython.utils",
-    "IPython.utils.tests"
-   ],
-   "requires": [
-    "pip",
-    "python 3.10",
-    "mypy",
-    "types-decorator",
-    "black",
-    "curio",
-    "matplotlib-base !=3.2.0",
-    "nbformat",
-    "numpy >=1.23",
-    "pandas",
-    "pickleshare",
-    "pygments",
-    "pytest",
-    "pytest-asyncio <0.22",
-    "pytest-cov",
-    "testpath",
-    "trio"
-   ],
-   "source_files": [
-    "pyproject.toml"
-   ]
+   "sha256": "be2c91895b0b9ea7ba49d33b23e2040c352b33eb6a519cca7ce6e0c743444251",
+   "url": "https://pypi.org/packages/source/i/ipython/ipython-8.32.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -200,7 +226,6 @@
     "pytest",
     "pytest-asyncio",
     "pytest-cov",
-    "python",
     "testpath",
     "trio",
     "types-decorator"
@@ -209,27 +234,19 @@
  },
  "meta_yaml": {
   "about": {
-   "description": "IPython provides a rich architecture for interactive computing with\na powerful interactive shell, a kernel for Jupyter, high performance\ntools for parallel computing, and more.\n",
+   "description": "IPython provides a rich architecture for interactive computing with\na powerful interactive shell, a kernel for Jupyter, high performance\ntools for parallel computing, and more.",
    "dev_url": "https://github.com/ipython/ipython",
-   "doc_url": "https://ipython.readthedocs.io",
-   "home": "https://ipython.org",
+   "doc_url": "https://ipython.readthedocs.io/",
+   "home": "https://ipython.org/",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
    "summary": "IPython: Productive Interactive Computing"
   },
   "build": {
-   "entry_points": [
-    "ipython = IPython:start_ipython",
-    "ipython3 = IPython:start_ipython"
-   ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-   "script_env": [
-    "COV_THRESHOLD=71",
-    "COV_THRESHOLD=70"
-   ]
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -247,90 +264,222 @@
     "trallard"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "ipython",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.10.*",
+      "setuptools >=61.2"
+     ],
+     "run": [
+      "__unix",
+      "pexpect >4.3",
+      "python >=3.10",
+      "decorator",
+      "exceptiongroup",
+      "jedi >=0.16",
+      "matplotlib-inline",
+      "pickleshare",
+      "prompt-toolkit >=3.0.41,<3.1.0",
+      "pygments >=2.4.0",
+      "stack_data",
+      "traitlets >=5.13.0",
+      "typing_extensions >=4.6"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "IPython",
+        "IPython.core",
+        "IPython.core.magics",
+        "IPython.core.tests",
+        "IPython.extensions",
+        "IPython.extensions.tests",
+        "IPython.external",
+        "IPython.lib",
+        "IPython.lib.tests",
+        "IPython.sphinxext",
+        "IPython.terminal",
+        "IPython.terminal.pt_inputhooks",
+        "IPython.terminal.tests",
+        "IPython.testing",
+        "IPython.testing.plugin",
+        "IPython.testing.tests",
+        "IPython.utils",
+        "IPython.utils.tests"
+       ],
+       "python_version": "3.10.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject.toml"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pip",
+        "mypy",
+        "types-decorator",
+        "black",
+        "curio",
+        "matplotlib-base !=3.2.0",
+        "nbformat",
+        "numpy >=1.23",
+        "pandas",
+        "pickleshare",
+        "pygments",
+        "pytest",
+        "pytest-asyncio <0.22",
+        "pytest-cov",
+        "testpath",
+        "trio"
+       ]
+      },
+      "script": [
+       "pip check",
+       "pygmentize -L | grep ipython",
+       "ipython -h",
+       "ipython3 -h",
+       "mypy -p IPython || exit 0",
+       "python run_test.py"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "ipython",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.10.*",
+      "setuptools >=61.2"
+     ],
+     "run": [
+      "__unix",
+      "pexpect >4.3",
+      "python >=3.10",
+      "decorator",
+      "exceptiongroup",
+      "jedi >=0.16",
+      "matplotlib-inline",
+      "pickleshare",
+      "prompt-toolkit >=3.0.41,<3.1.0",
+      "pygments >=2.4.0",
+      "stack_data",
+      "traitlets >=5.13.0",
+      "typing_extensions >=4.6"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "IPython",
+        "IPython.core",
+        "IPython.core.magics",
+        "IPython.core.tests",
+        "IPython.extensions",
+        "IPython.extensions.tests",
+        "IPython.external",
+        "IPython.lib",
+        "IPython.lib.tests",
+        "IPython.sphinxext",
+        "IPython.terminal",
+        "IPython.terminal.pt_inputhooks",
+        "IPython.terminal.tests",
+        "IPython.testing",
+        "IPython.testing.plugin",
+        "IPython.testing.tests",
+        "IPython.utils",
+        "IPython.utils.tests"
+       ],
+       "python_version": "3.10.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject.toml"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pip",
+        "mypy",
+        "types-decorator",
+        "black",
+        "curio",
+        "matplotlib-base !=3.2.0",
+        "nbformat",
+        "numpy >=1.23",
+        "pandas",
+        "pickleshare",
+        "pygments",
+        "pytest",
+        "pytest-asyncio <0.22",
+        "pytest-cov",
+        "testpath",
+        "trio"
+       ]
+      },
+      "script": [
+       "pip check",
+       "pygmentize -L | grep ipython",
+       "ipython -h",
+       "ipython3 -h",
+       "mypy -p IPython || exit 0",
+       "python run_test.py"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "ipython",
-   "version": "8.31.0"
+   "version": "8.32.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.10",
+    "python 3.10.*",
     "setuptools >=61.2"
    ],
    "run": [
     "__unix",
+    "pexpect >4.3",
     "python >=3.10",
     "decorator",
     "exceptiongroup",
     "jedi >=0.16",
     "matplotlib-inline",
-    "pexpect >4.3",
     "pickleshare",
     "prompt-toolkit >=3.0.41,<3.1.0",
     "pygments >=2.4.0",
     "stack_data",
     "traitlets >=5.13.0",
-    "typing_extensions >=4.6",
-    "__win",
-    "colorama"
+    "typing_extensions >=4.6"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "b6a2274606bec6166405ff05e54932ed6e5cfecaca1fc05f2cacde7bb074d70b",
-   "url": "https://pypi.org/packages/source/i/ipython/ipython-8.31.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pygmentize -L | grep ipython",
-    "ipython -h",
-    "ipython3 -h",
-    "mypy -p IPython || exit 0"
-   ],
-   "imports": [
-    "IPython",
-    "IPython.core",
-    "IPython.core.magics",
-    "IPython.core.tests",
-    "IPython.extensions",
-    "IPython.extensions.tests",
-    "IPython.external",
-    "IPython.lib",
-    "IPython.lib.tests",
-    "IPython.sphinxext",
-    "IPython.terminal",
-    "IPython.terminal.pt_inputhooks",
-    "IPython.terminal.tests",
-    "IPython.testing",
-    "IPython.testing.plugin",
-    "IPython.testing.tests",
-    "IPython.utils",
-    "IPython.utils.tests"
-   ],
-   "requires": [
-    "pip",
-    "python 3.10",
-    "mypy",
-    "types-decorator",
-    "black",
-    "curio",
-    "matplotlib-base !=3.2.0",
-    "nbformat",
-    "numpy >=1.23",
-    "pandas",
-    "pickleshare",
-    "pygments",
-    "pytest",
-    "pytest-asyncio <0.22",
-    "pytest-cov",
-    "testpath",
-    "trio",
-    "m2-grep"
-   ],
-   "source_files": [
-    "pyproject.toml"
-   ]
+   "sha256": "be2c91895b0b9ea7ba49d33b23e2040c352b33eb6a519cca7ce6e0c743444251",
+   "url": "https://pypi.org/packages/source/i/ipython/ipython-8.32.0.tar.gz"
   }
  },
  "name": "ipython",
@@ -348,13 +497,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ipython.json"
  },
- "raw_meta_yaml": "{% set version = \"8.31.0\" %}\n\n{% set python_min = python_min | default(\"3.10\") %}\n\npackage:\n  name: ipython\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/i/ipython/ipython-{{ version }}.tar.gz\n  sha256: b6a2274606bec6166405ff05e54932ed6e5cfecaca1fc05f2cacde7bb074d70b\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\n  noarch: python\n  script_env:\n    - COV_THRESHOLD=71  # [unix]\n    - COV_THRESHOLD=70  # [win]\n  entry_points:\n    - ipython = IPython:start_ipython\n    - ipython3 = IPython:start_ipython\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools >=61.2\n  run:\n    - __unix          # [unix]\n    - __win           # [win]\n    - colorama        # [win]\n    - python >={{ python_min }}\n    - decorator\n    - exceptiongroup\n    - jedi >=0.16\n    - matplotlib-inline\n    - pexpect >4.3    # [unix]\n    - pickleshare\n    - prompt-toolkit >=3.0.41,<3.1.0\n    - pygments >=2.4.0\n    - stack_data\n    - traitlets >=5.13.0\n    - typing_extensions >=4.6\n\ntest:\n  source_files:\n    - pyproject.toml\n  requires:\n    # pip check\n    - pip\n    # CFEP-25 minimum python\n    - python {{ python_min }}\n    # mypy\n    - mypy\n    - types-decorator\n    # windows\n    - m2-grep  # [win]\n    # actual test deps\n    - black\n    - curio\n    - matplotlib-base !=3.2.0\n    - nbformat\n    - numpy >=1.23\n    - pandas\n    - pickleshare\n    - pygments\n    - pytest\n    - pytest-asyncio <0.22\n    - pytest-cov\n    - testpath\n    - trio\n\n  imports:\n    - IPython\n    - IPython.core\n    - IPython.core.magics\n    - IPython.core.tests\n    - IPython.extensions\n    - IPython.extensions.tests\n    - IPython.external\n    - IPython.lib\n    - IPython.lib.tests\n    - IPython.sphinxext\n    - IPython.terminal\n    - IPython.terminal.pt_inputhooks\n    - IPython.terminal.tests\n    - IPython.testing\n    - IPython.testing.plugin\n    - IPython.testing.tests\n    - IPython.utils\n    - IPython.utils.tests\n  commands:\n    - pip check\n    - pygmentize -L | grep ipython\n    - ipython -h\n    - ipython3 -h\n    - mypy -p IPython || exit 0\n\nabout:\n  home: https://ipython.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'IPython: Productive Interactive Computing'\n  description: |\n    IPython provides a rich architecture for interactive computing with\n    a powerful interactive shell, a kernel for Jupyter, high performance\n    tools for parallel computing, and more.\n  doc_url: https://ipython.readthedocs.io\n  dev_url: https://github.com/ipython/ipython\n\nextra:\n  recipe-maintainers:\n    - Carreau\n    - jakirkham\n    - fperez\n    - ellisonbg\n    - minrk\n    - ocefpaf\n    - pelson\n    - takluyver\n    - bollwyvl\n    - blink1073\n    - krassowski\n    - trallard\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 8.32.0\n\npackage:\n  name: ipython\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/i/ipython/ipython-${{ version }}.tar.gz\n  sha256: be2c91895b0b9ea7ba49d33b23e2040c352b33eb6a519cca7ce6e0c743444251\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n  python:\n    entry_points:\n      - ipython = IPython:start_ipython\n      - ipython3 = IPython:start_ipython\n\nrequirements:\n  host:\n    - pip\n    - python ${{ python_min }}.*\n    - setuptools >=61.2\n  run:\n    - if: unix\n      then:\n        - __unix\n        - pexpect >4.3\n      else:\n        - __win\n        - colorama\n    - python >=${{ python_min }}\n    - decorator\n    - exceptiongroup\n    - jedi >=0.16\n    - matplotlib-inline\n    - pickleshare\n    - prompt-toolkit >=3.0.41,<3.1.0\n    - pygments >=2.4.0\n    - stack_data\n    - traitlets >=5.13.0\n    - typing_extensions >=4.6\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports:\n        - IPython\n        - IPython.core\n        - IPython.core.magics\n        - IPython.core.tests\n        - IPython.extensions\n        - IPython.extensions.tests\n        - IPython.external\n        - IPython.lib\n        - IPython.lib.tests\n        - IPython.sphinxext\n        - IPython.terminal\n        - IPython.terminal.pt_inputhooks\n        - IPython.terminal.tests\n        - IPython.testing\n        - IPython.testing.plugin\n        - IPython.testing.tests\n        - IPython.utils\n        - IPython.utils.tests\n  - files:\n      recipe:\n        - run_test.py\n      source:\n        - pyproject.toml\n    requirements:\n      run:\n        # repeat pip check on unconstrained python\n        - pip\n        # mypy\n        - mypy\n        - types-decorator\n        # windows\n        # actual test deps\n        - black\n        - curio\n        - matplotlib-base !=3.2.0\n        - nbformat\n        - numpy >=1.23\n        - pandas\n        - pickleshare\n        - pygments\n        - pytest\n        - pytest-asyncio <0.22\n        - pytest-cov\n        - testpath\n        - trio\n        - if: win\n          then:\n            - m2-grep\n    script:\n      - pip check\n      - pygmentize -L | grep ipython\n      - ipython -h\n      - ipython3 -h\n      - mypy -p IPython || exit 0\n      - python run_test.py\n\nabout:\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: 'IPython: Productive Interactive Computing'\n  homepage: https://ipython.org\n  documentation: https://ipython.readthedocs.io\n  repository: https://github.com/ipython/ipython\n  description: |\n    IPython provides a rich architecture for interactive computing with\n    a powerful interactive shell, a kernel for Jupyter, high performance\n    tools for parallel computing, and more.\n\nextra:\n  recipe-maintainers:\n    - Carreau\n    - jakirkham\n    - fperez\n    - ellisonbg\n    - minrk\n    - ocefpaf\n    - pelson\n    - takluyver\n    - bollwyvl\n    - blink1073\n    - krassowski\n    - trallard\n",
  "req": {
   "__set__": true,
   "elements": [
    "__unix",
-   "__win",
-   "colorama",
    "decorator",
    "exceptiongroup",
    "jedi",
@@ -388,8 +535,6 @@
    "__set__": true,
    "elements": [
     "__unix",
-    "__win",
-    "colorama",
     "decorator",
     "exceptiongroup",
     "jedi",
@@ -409,7 +554,6 @@
    "elements": [
     "black",
     "curio",
-    "m2-grep",
     "matplotlib-base",
     "mypy",
     "nbformat",
@@ -421,7 +565,6 @@
     "pytest",
     "pytest-asyncio",
     "pytest-cov",
-    "python",
     "testpath",
     "trio",
     "types-decorator"
@@ -438,7 +581,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.10",
+    "python 3.10.*",
     "setuptools >=61.2"
    ]
   },
@@ -446,8 +589,6 @@
    "__set__": true,
    "elements": [
     "__unix",
-    "__win",
-    "colorama",
     "decorator",
     "exceptiongroup",
     "jedi >=0.16",
@@ -467,7 +608,6 @@
    "elements": [
     "black",
     "curio",
-    "m2-grep",
     "matplotlib-base !=3.2.0",
     "mypy",
     "nbformat",
@@ -479,40 +619,32 @@
     "pytest",
     "pytest-asyncio <0.22",
     "pytest-cov",
-    "python 3.10",
     "testpath",
     "trio",
     "types-decorator"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/i/ipython/ipython-8.31.0.tar.gz",
- "version": "8.31.0",
+ "url": "https://pypi.org/packages/source/i/ipython/ipython-8.32.0.tar.gz",
+ "version": "8.32.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ipython.json"
  },
  "win_64_meta_yaml": {
   "about": {
-   "description": "IPython provides a rich architecture for interactive computing with\na powerful interactive shell, a kernel for Jupyter, high performance\ntools for parallel computing, and more.\n",
+   "description": "IPython provides a rich architecture for interactive computing with\na powerful interactive shell, a kernel for Jupyter, high performance\ntools for parallel computing, and more.",
    "dev_url": "https://github.com/ipython/ipython",
-   "doc_url": "https://ipython.readthedocs.io",
-   "home": "https://ipython.org",
+   "doc_url": "https://ipython.readthedocs.io/",
+   "home": "https://ipython.org/",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
    "summary": "IPython: Productive Interactive Computing"
   },
   "build": {
-   "entry_points": [
-    "ipython = IPython:start_ipython",
-    "ipython3 = IPython:start_ipython"
-   ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-   "script_env": [
-    "COV_THRESHOLD=70"
-   ]
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -530,19 +662,113 @@
     "trallard"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "ipython",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.10.*",
+      "setuptools >=61.2"
+     ],
+     "run": [
+      "__unix",
+      "pexpect >4.3",
+      "python >=3.10",
+      "decorator",
+      "exceptiongroup",
+      "jedi >=0.16",
+      "matplotlib-inline",
+      "pickleshare",
+      "prompt-toolkit >=3.0.41,<3.1.0",
+      "pygments >=2.4.0",
+      "stack_data",
+      "traitlets >=5.13.0",
+      "typing_extensions >=4.6"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "IPython",
+        "IPython.core",
+        "IPython.core.magics",
+        "IPython.core.tests",
+        "IPython.extensions",
+        "IPython.extensions.tests",
+        "IPython.external",
+        "IPython.lib",
+        "IPython.lib.tests",
+        "IPython.sphinxext",
+        "IPython.terminal",
+        "IPython.terminal.pt_inputhooks",
+        "IPython.terminal.tests",
+        "IPython.testing",
+        "IPython.testing.plugin",
+        "IPython.testing.tests",
+        "IPython.utils",
+        "IPython.utils.tests"
+       ],
+       "python_version": "3.10.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject.toml"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pip",
+        "mypy",
+        "types-decorator",
+        "black",
+        "curio",
+        "matplotlib-base !=3.2.0",
+        "nbformat",
+        "numpy >=1.23",
+        "pandas",
+        "pickleshare",
+        "pygments",
+        "pytest",
+        "pytest-asyncio <0.22",
+        "pytest-cov",
+        "testpath",
+        "trio"
+       ]
+      },
+      "script": [
+       "pip check",
+       "pygmentize -L | grep ipython",
+       "ipython -h",
+       "ipython3 -h",
+       "mypy -p IPython || exit 0",
+       "python run_test.py"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "ipython",
-   "version": "8.31.0"
+   "version": "8.32.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.10",
+    "python 3.10.*",
     "setuptools >=61.2"
    ],
    "run": [
-    "__win",
-    "colorama",
+    "__unix",
+    "pexpect >4.3",
     "python >=3.10",
     "decorator",
     "exceptiongroup",
@@ -556,62 +782,10 @@
     "typing_extensions >=4.6"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "b6a2274606bec6166405ff05e54932ed6e5cfecaca1fc05f2cacde7bb074d70b",
-   "url": "https://pypi.org/packages/source/i/ipython/ipython-8.31.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pygmentize -L | grep ipython",
-    "ipython -h",
-    "ipython3 -h",
-    "mypy -p IPython || exit 0"
-   ],
-   "imports": [
-    "IPython",
-    "IPython.core",
-    "IPython.core.magics",
-    "IPython.core.tests",
-    "IPython.extensions",
-    "IPython.extensions.tests",
-    "IPython.external",
-    "IPython.lib",
-    "IPython.lib.tests",
-    "IPython.sphinxext",
-    "IPython.terminal",
-    "IPython.terminal.pt_inputhooks",
-    "IPython.terminal.tests",
-    "IPython.testing",
-    "IPython.testing.plugin",
-    "IPython.testing.tests",
-    "IPython.utils",
-    "IPython.utils.tests"
-   ],
-   "requires": [
-    "pip",
-    "python 3.10",
-    "mypy",
-    "types-decorator",
-    "m2-grep",
-    "black",
-    "curio",
-    "matplotlib-base !=3.2.0",
-    "nbformat",
-    "numpy >=1.23",
-    "pandas",
-    "pickleshare",
-    "pygments",
-    "pytest",
-    "pytest-asyncio <0.22",
-    "pytest-cov",
-    "testpath",
-    "trio"
-   ],
-   "source_files": [
-    "pyproject.toml"
-   ]
+   "sha256": "be2c91895b0b9ea7ba49d33b23e2040c352b33eb6a519cca7ce6e0c743444251",
+   "url": "https://pypi.org/packages/source/i/ipython/ipython-8.32.0.tar.gz"
   }
  },
  "win_64_requirements": {
@@ -630,12 +804,12 @@
   "run": {
    "__set__": true,
    "elements": [
-    "__win",
-    "colorama",
+    "__unix",
     "decorator",
     "exceptiongroup",
     "jedi",
     "matplotlib-inline",
+    "pexpect",
     "pickleshare",
     "prompt-toolkit",
     "pygments",
@@ -650,7 +824,6 @@
    "elements": [
     "black",
     "curio",
-    "m2-grep",
     "matplotlib-base",
     "mypy",
     "nbformat",
@@ -662,7 +835,6 @@
     "pytest",
     "pytest-asyncio",
     "pytest-cov",
-    "python",
     "testpath",
     "trio",
     "types-decorator"
