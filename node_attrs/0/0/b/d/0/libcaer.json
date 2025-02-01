@@ -32,7 +32,7 @@
    "summary": "Minimal C library to access, configure and get data from neuromorphic sensors and processors."
   },
   "build": {
-   "number": "5",
+   "number": "6",
    "run_exports": [
     "libcaer"
    ]
@@ -112,7 +112,7 @@
    "summary": "Minimal C library to access, configure and get data from neuromorphic sensors and processors."
   },
   "build": {
-   "number": "5",
+   "number": "6",
    "run_exports": [
     "libcaer"
    ]
@@ -192,7 +192,7 @@
    "summary": "Minimal C library to access, configure and get data from neuromorphic sensors and processors."
   },
   "build": {
-   "number": "5",
+   "number": "6",
    "run_exports": [
     "libcaer"
    ]
@@ -266,7 +266,7 @@
    "summary": "Minimal C library to access, configure and get data from neuromorphic sensors and processors."
   },
   "build": {
-   "number": "5",
+   "number": "6",
    "run_exports": [
     "libcaer"
    ]
@@ -346,7 +346,7 @@
    "summary": "Minimal C library to access, configure and get data from neuromorphic sensors and processors."
   },
   "build": {
-   "number": "5",
+   "number": "6",
    "run_exports": [
     "libcaer"
    ]
@@ -434,7 +434,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/libcaer.json"
  },
- "raw_meta_yaml": "{% set name = \"libcaer\" %}\n{% set version = \"3.3.15\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://gitlab.com/inivation/dv/{{ name }}/-/archive/{{ version }}/libcaer-{{ version }}.tar.gz\n    sha256: a0500a4810c81cb319308211fb94892fd22697579040eaf8525c6e04b9ace653\n    patches:\n      - fix-build.patch\n\nbuild:\n  number: 5\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - ninja\n    - pkg-config\n  host:\n    - libusb\n    - libopencv\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/libcaercpp/libcaer.hpp  # [not win]\n    - if exist %PREFIX%\\\\Library\\\\include\\\\libcaercpp\\libcaer.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/inivation/libcaer/\n  license: BSD-2-Clause\n  license_file: LICENSE\n  summary: Minimal C library to access, configure and get data from neuromorphic sensors and processors.\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n",
+ "raw_meta_yaml": "{% set name = \"libcaer\" %}\n{% set version = \"3.3.15\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://gitlab.com/inivation/dv/{{ name }}/-/archive/{{ version }}/libcaer-{{ version }}.tar.gz\n    sha256: a0500a4810c81cb319308211fb94892fd22697579040eaf8525c6e04b9ace653\n    patches:\n      - fix-build.patch\n\nbuild:\n  number: 6\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - ninja\n    - pkg-config\n  host:\n    - libusb\n    - libopencv\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/libcaercpp/libcaer.hpp  # [not win]\n    - if exist %PREFIX%\\\\Library\\\\include\\\\libcaercpp\\libcaer.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/inivation/libcaer/\n  license: BSD-2-Clause\n  license_file: LICENSE\n  summary: Minimal C library to access, configure and get data from neuromorphic sensors and processors.\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n",
  "req": {
   "__set__": true,
   "elements": [
