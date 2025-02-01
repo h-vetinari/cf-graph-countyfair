@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "pytest-echo",
-   "version": "1.7.1"
+   "version": "1.8.1"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3bf6a065ca624a5915bc2a820505a44735a8aa11865a57d8214d4eac18960191",
-   "url": "https://pypi.org/packages/source/p/pytest-echo/pytest-echo-1.7.1.tar.gz"
+   "sha256": "7d765b4ddac93468fa1d303e70c48ad9e38479b4d122d5ae019919bb7fed0c2a",
+   "url": "https://pypi.org/packages/source/p/pytest-echo/pytest_echo-1.8.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -103,7 +103,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -113,7 +113,7 @@
   },
   "package": {
    "name": "pytest-echo",
-   "version": "1.7.1"
+   "version": "1.8.1"
   },
   "requirements": {
    "host": [
@@ -128,8 +128,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3bf6a065ca624a5915bc2a820505a44735a8aa11865a57d8214d4eac18960191",
-   "url": "https://pypi.org/packages/source/p/pytest-echo/pytest-echo-1.7.1.tar.gz"
+   "sha256": "7d765b4ddac93468fa1d303e70c48ad9e38479b4d122d5ae019919bb7fed0c2a",
+   "url": "https://pypi.org/packages/source/p/pytest-echo/pytest_echo-1.8.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -158,7 +158,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pytest-echo.json"
  },
- "raw_meta_yaml": "{% set name = \"pytest-echo\" %}\n{% set version = \"1.7.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3bf6a065ca624a5915bc2a820505a44735a8aa11865a57d8214d4eac18960191\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - pytest >=2.2\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pytest_echo\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/pytest-echo/\n  summary: pytest plugin with mechanisms for echoing environment variables, package version and generic attributes\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
+ "raw_meta_yaml": "{% set name = \"pytest-echo\" %}\n{% set version = \"1.8.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 7d765b4ddac93468fa1d303e70c48ad9e38479b4d122d5ae019919bb7fed0c2a\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - pytest >=2.2\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pytest_echo\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/pytest-echo/\n  summary: pytest plugin with mechanisms for echoing environment variables, package version and generic attributes\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -225,8 +225,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pytest-echo/pytest-echo-1.7.1.tar.gz",
- "version": "1.7.1",
+ "url": "https://pypi.org/packages/source/p/pytest-echo/pytest_echo-1.8.1.tar.gz",
+ "version": "1.8.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pytest-echo.json"
  }
