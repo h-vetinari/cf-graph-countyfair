@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -42,12 +42,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "setuptools >=42.0.0"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "setuptools >=42.0.0",
     "importlib-metadata >=4.6",
     "packaging >=22.0"
@@ -64,6 +64,9 @@
     "_pyinstaller_hooks_contrib.rthooks",
     "_pyinstaller_hooks_contrib.stdhooks",
     "_pyinstaller_hooks_contrib.utils"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -91,7 +94,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -106,7 +111,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -120,12 +125,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "setuptools >=42.0.0"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "setuptools >=42.0.0",
     "importlib-metadata >=4.6",
     "packaging >=22.0"
@@ -142,6 +147,9 @@
     "_pyinstaller_hooks_contrib.rthooks",
     "_pyinstaller_hooks_contrib.stdhooks",
     "_pyinstaller_hooks_contrib.utils"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -159,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyinstaller-hooks-contrib.json"
  },
- "raw_meta_yaml": "{% set name = \"pyinstaller-hooks-contrib\" %}\n{% set version = \"2025.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pyinstaller/pyinstaller-hooks-contrib/archive/v{{ version }}.tar.gz\n  sha256: ff1ef36baab12d5da8702bb39230faf52c7190fd1ae99a48fe99d58597f2c848\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - setuptools >=42.0.0\n  run:\n    - python >=3.7\n    - setuptools >=42.0.0\n    - importlib-metadata >=4.6\n    - packaging >=22.0\n\ntest:\n  imports:\n    - _pyinstaller_hooks_contrib\n    - _pyinstaller_hooks_contrib.rthooks\n    - _pyinstaller_hooks_contrib.stdhooks\n    - _pyinstaller_hooks_contrib.utils\n\nabout:\n  home: https://github.com/pyinstaller/pyinstaller-hooks-contrib\n  summary: Community maintained hooks for PyInstaller\n  license: Apache-2.0 OR GPL-2.0-or-later\n  license_file: LICENSE\n  description: |\n    A \"hook\" file extends PyInstaller to adapt it to the special needs and\n    methods used by a Python package. The word \"hook\" is used for two kinds of\n    files. A runtime hook helps the bootloader to launch an app, setting up the\n    environment. A package hook (there are several types of those) tells\n    PyInstaller what to include in the final app - such as the data files and\n    (hidden) imports mentioned above.\n  doc_url: https://github.com/pyinstaller/pyinstaller-hooks-contrib/wiki\n  dev_url: https://github.com/pyinstaller/pyinstaller-hooks-contrib\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
+ "raw_meta_yaml": "{% set name = \"pyinstaller-hooks-contrib\" %}\n{% set version = \"2025.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pyinstaller/pyinstaller-hooks-contrib/archive/v{{ version }}.tar.gz\n  sha256: ff1ef36baab12d5da8702bb39230faf52c7190fd1ae99a48fe99d58597f2c848\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools >=42.0.0\n  run:\n    - python >={{ python_min }}\n    - setuptools >=42.0.0\n    - importlib-metadata >=4.6\n    - packaging >=22.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - _pyinstaller_hooks_contrib\n    - _pyinstaller_hooks_contrib.rthooks\n    - _pyinstaller_hooks_contrib.stdhooks\n    - _pyinstaller_hooks_contrib.utils\n\nabout:\n  home: https://github.com/pyinstaller/pyinstaller-hooks-contrib\n  summary: Community maintained hooks for PyInstaller\n  license: Apache-2.0 OR GPL-2.0-or-later\n  license_file: LICENSE\n  description: |\n    A \"hook\" file extends PyInstaller to adapt it to the special needs and\n    methods used by a Python package. The word \"hook\" is used for two kinds of\n    files. A runtime hook helps the bootloader to launch an app, setting up the\n    environment. A package hook (there are several types of those) tells\n    PyInstaller what to include in the final app - such as the data files and\n    (hidden) imports mentioned above.\n  doc_url: https://github.com/pyinstaller/pyinstaller-hooks-contrib/wiki\n  dev_url: https://github.com/pyinstaller/pyinstaller-hooks-contrib\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -194,7 +202,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -207,7 +217,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7",
+    "python 3.9",
     "setuptools >=42.0.0"
    ]
   },
@@ -216,13 +226,15 @@
    "elements": [
     "importlib-metadata >=4.6",
     "packaging >=22.0",
-    "python >=3.7",
+    "python >=3.9",
     "setuptools >=42.0.0"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
  "url": "https://github.com/pyinstaller/pyinstaller-hooks-contrib/archive/v2025.1.tar.gz",
