@@ -27,7 +27,7 @@
    "summary": "Python contour toolkit"
   },
   "build": {
-   "number": "10",
+   "number": "11",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -49,7 +49,8 @@
     "libopencv",
     "opencv",
     "scikit-image",
-    "shapely"
+    "shapely",
+    "setuptools"
    ],
    "run": [
     "cdt_stub",
@@ -65,7 +66,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "00b1fa17e40ed913e88082c76aa811fa0ca5774485fe2c398f479ea9cc925971",
-   "url": "https://pypi.io/packages/source/p/pycontour/pycontour-1.5.1.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pycontour/pycontour-1.5.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -88,6 +89,7 @@
     "pip",
     "python",
     "scikit-image",
+    "setuptools",
     "shapely",
     "xorg-libxfixes"
    ]
@@ -121,7 +123,7 @@
    "summary": "Python contour toolkit"
   },
   "build": {
-   "number": "10",
+   "number": "11",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -143,7 +145,8 @@
     "libopencv",
     "opencv",
     "scikit-image",
-    "shapely"
+    "shapely",
+    "setuptools"
    ],
    "run": [
     "cdt_stub",
@@ -159,7 +162,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "00b1fa17e40ed913e88082c76aa811fa0ca5774485fe2c398f479ea9cc925971",
-   "url": "https://pypi.io/packages/source/p/pycontour/pycontour-1.5.1.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pycontour/pycontour-1.5.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -179,7 +182,7 @@
    "summary": "Python contour toolkit"
   },
   "build": {
-   "number": "10",
+   "number": "11",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -200,7 +203,8 @@
     "libopencv",
     "opencv",
     "scikit-image",
-    "shapely"
+    "shapely",
+    "setuptools"
    ],
    "run": [
     "mahotas",
@@ -215,7 +219,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "00b1fa17e40ed913e88082c76aa811fa0ca5774485fe2c398f479ea9cc925971",
-   "url": "https://pypi.io/packages/source/p/pycontour/pycontour-1.5.1.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pycontour/pycontour-1.5.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -238,6 +242,7 @@
     "pip",
     "python",
     "scikit-image",
+    "setuptools",
     "shapely"
    ]
   },
@@ -273,7 +278,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pycontour.json"
  },
- "raw_meta_yaml": "{% set name = \"pycontour\" %}\n{% set version = \"1.5.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 00b1fa17e40ed913e88082c76aa811fa0ca5774485fe2c398f479ea9cc925971\n\nbuild:\n  number: 10\n  script: {{ PYTHON }} -m pip install . -vv\n\n# run dependencies are being installed in host because of \n# https://github.com/PingjunChen/pycontour/blob/master/setup.py#L5, \n# which is **NOT** recommended practice\nrequirements:\n  host:\n    - xorg-libxfixes  # [linux]\n    - pip\n    - python\n    - mahotas\n    - numpy\n    - libopencv\n    - opencv\n    - scikit-image\n    - shapely\n  run:\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - mahotas\n    - numpy >=1.19\n    - libopencv\n    - opencv\n    - scikit-image\n    - shapely\n    - python\n\ntest:\n  imports:\n    - pycontour\n\nabout:\n  home: https://github.com/PingjunChen/pycontour\n  summary: Python contour toolkit\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  doc_url: https://pycontour.readthedocs.io/en/latest/\n  dev_url: https://pycontour.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - sarthakpati\n",
+ "raw_meta_yaml": "{% set name = \"pycontour\" %}\n{% set version = \"1.5.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 00b1fa17e40ed913e88082c76aa811fa0ca5774485fe2c398f479ea9cc925971\n\nbuild:\n  number: 11\n  script: {{ PYTHON }} -m pip install . -vv\n\n# run dependencies are being installed in host because of \n# https://github.com/PingjunChen/pycontour/blob/master/setup.py#L5, \n# which is **NOT** recommended practice\nrequirements:\n  host:\n    - xorg-libxfixes  # [linux]\n    - pip\n    - python\n    - mahotas\n    - numpy\n    - libopencv\n    - opencv\n    - scikit-image\n    - shapely\n    - setuptools\n  run:\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - mahotas\n    - numpy >=1.19\n    - libopencv\n    - opencv\n    - scikit-image\n    - shapely\n    - python\n\ntest:\n  imports:\n    - pycontour\n\nabout:\n  home: https://github.com/PingjunChen/pycontour\n  summary: Python contour toolkit\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  doc_url: https://pycontour.readthedocs.io/en/latest/\n  dev_url: https://pycontour.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - sarthakpati\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -285,6 +290,7 @@
    "pip",
    "python",
    "scikit-image",
+   "setuptools",
    "shapely",
    "xorg-libxfixes"
   ]
@@ -304,6 +310,7 @@
     "pip",
     "python",
     "scikit-image",
+    "setuptools",
     "shapely",
     "xorg-libxfixes"
    ]
@@ -342,6 +349,7 @@
     "pip",
     "python",
     "scikit-image",
+    "setuptools",
     "shapely",
     "xorg-libxfixes"
    ]
@@ -364,7 +372,7 @@
    "elements": []
   }
  },
- "url": "https://pypi.io/packages/source/p/pycontour/pycontour-1.5.1.tar.gz",
+ "url": "https://pypi.org/packages/source/p/pycontour/pycontour-1.5.1.tar.gz",
  "version": "1.5.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pycontour.json"
@@ -380,7 +388,7 @@
    "summary": "Python contour toolkit"
   },
   "build": {
-   "number": "10",
+   "number": "11",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -401,7 +409,8 @@
     "libopencv",
     "opencv",
     "scikit-image",
-    "shapely"
+    "shapely",
+    "setuptools"
    ],
    "run": [
     "mahotas",
@@ -416,7 +425,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "00b1fa17e40ed913e88082c76aa811fa0ca5774485fe2c398f479ea9cc925971",
-   "url": "https://pypi.io/packages/source/p/pycontour/pycontour-1.5.1.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pycontour/pycontour-1.5.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -439,6 +448,7 @@
     "pip",
     "python",
     "scikit-image",
+    "setuptools",
     "shapely"
    ]
   },
