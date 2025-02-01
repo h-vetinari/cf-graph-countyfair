@@ -11,6 +11,7 @@
   "conda_build": {
    "error_overlinking": true
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -22,22 +23,16 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.\n",
+   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.",
    "dev_url": "https://github.com/traefik/traefik",
    "doc_url": "https://doc.traefik.io/traefik",
-   "home": "https://traefik.io",
+   "home": "https://traefik.io/",
    "license": "MIT",
-   "license_file": [
-    "src/github.com/traefik/traefik/LICENSE.md",
-    "library_licenses/"
-   ],
+   "license_family": "MIT",
+   "license_file": "src/github.com/traefik/traefik/LICENSE.md",
    "summary": "The Cloud Native Application Proxy"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "nodejs",
-    "yarn"
-   ],
    "number": "0"
   },
   "extra": {
@@ -46,38 +41,56 @@
     "sodre"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "traefik",
-   "version": "3.3.2"
+   "version": "3.3.3"
   },
   "requirements": {
    "build": [
     "go_compiler_stub",
     "go-licenses",
     "nodejs",
-    "yarn >=1.22.22,<2"
+    "yarn >=1.22.22,<2",
+    "c_stdlib_stub"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "traefik version",
-    "traefik version | grep -iE  \"Version:\\s+3\\.3\\.2$\"",
-    "traefik --help"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec",
+   "url": "https://github.com/traefik/traefik/releases/download/v3.3.3/traefik-v3.3.3.src.tar.gz"
   }
  },
  "linux_64_requirements": {
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "go-licenses",
     "go_compiler_stub",
     "nodejs",
@@ -99,22 +112,16 @@
  },
  "linux_aarch64_meta_yaml": {
   "about": {
-   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.\n",
+   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.",
    "dev_url": "https://github.com/traefik/traefik",
    "doc_url": "https://doc.traefik.io/traefik",
-   "home": "https://traefik.io",
+   "home": "https://traefik.io/",
    "license": "MIT",
-   "license_file": [
-    "src/github.com/traefik/traefik/LICENSE.md",
-    "library_licenses/"
-   ],
+   "license_family": "MIT",
+   "license_file": "src/github.com/traefik/traefik/LICENSE.md",
    "summary": "The Cloud Native Application Proxy"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "nodejs",
-    "yarn"
-   ],
    "number": "0"
   },
   "extra": {
@@ -123,38 +130,56 @@
     "sodre"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "traefik",
-   "version": "3.3.2"
+   "version": "3.3.3"
   },
   "requirements": {
    "build": [
     "go_compiler_stub",
     "go-licenses",
     "nodejs",
-    "yarn >=1.22.22,<2"
+    "yarn >=1.22.22,<2",
+    "c_stdlib_stub"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "traefik version",
-    "traefik version | grep -iE  \"Version:\\s+3\\.3\\.2$\"",
-    "traefik --help"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec",
+   "url": "https://github.com/traefik/traefik/releases/download/v3.3.3/traefik-v3.3.3.src.tar.gz"
   }
  },
  "linux_aarch64_requirements": {
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "go-licenses",
     "go_compiler_stub",
     "nodejs",
@@ -176,22 +201,16 @@
  },
  "linux_ppc64le_meta_yaml": {
   "about": {
-   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.\n",
+   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.",
    "dev_url": "https://github.com/traefik/traefik",
    "doc_url": "https://doc.traefik.io/traefik",
-   "home": "https://traefik.io",
+   "home": "https://traefik.io/",
    "license": "MIT",
-   "license_file": [
-    "src/github.com/traefik/traefik/LICENSE.md",
-    "library_licenses/"
-   ],
+   "license_family": "MIT",
+   "license_file": "src/github.com/traefik/traefik/LICENSE.md",
    "summary": "The Cloud Native Application Proxy"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "nodejs",
-    "yarn"
-   ],
    "number": "0"
   },
   "extra": {
@@ -200,38 +219,56 @@
     "sodre"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "traefik",
-   "version": "3.3.2"
+   "version": "3.3.3"
   },
   "requirements": {
    "build": [
     "go_compiler_stub",
     "go-licenses",
     "nodejs",
-    "yarn >=1.22.22,<2"
+    "yarn >=1.22.22,<2",
+    "c_stdlib_stub"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "traefik version",
-    "traefik version | grep -iE  \"Version:\\s+3\\.3\\.2$\"",
-    "traefik --help"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec",
+   "url": "https://github.com/traefik/traefik/releases/download/v3.3.3/traefik-v3.3.3.src.tar.gz"
   }
  },
  "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "go-licenses",
     "go_compiler_stub",
     "nodejs",
@@ -253,22 +290,16 @@
  },
  "meta_yaml": {
   "about": {
-   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.\n",
+   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.",
    "dev_url": "https://github.com/traefik/traefik",
    "doc_url": "https://doc.traefik.io/traefik",
-   "home": "https://traefik.io",
+   "home": "https://traefik.io/",
    "license": "MIT",
-   "license_file": [
-    "src/github.com/traefik/traefik/LICENSE.md",
-    "library_licenses/"
-   ],
+   "license_family": "MIT",
+   "license_file": "src/github.com/traefik/traefik/LICENSE.md",
    "summary": "The Cloud Native Application Proxy"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "nodejs",
-    "yarn"
-   ],
    "number": "0"
   },
   "extra": {
@@ -277,81 +308,183 @@
     "sodre"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "traefik",
-   "version": "3.3.2"
+   "version": "3.3.3"
   },
   "requirements": {
    "build": [
     "go_compiler_stub",
     "go-licenses",
     "nodejs",
-    "yarn >=1.22.22,<2"
+    "yarn >=1.22.22,<2",
+    "c_stdlib_stub"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   },
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   },
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   },
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   },
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   },
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "traefik version",
-    "traefik version | grep -iE  \"Version:\\s+3\\.3\\.2$\"",
-    "traefik --help",
-    "traefik.exe version",
-    "traefik.exe version | grep -iE  \"Version:\\s+3\\.3\\.2$\"",
-    "traefik.exe --help"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec",
+   "url": "https://github.com/traefik/traefik/releases/download/v3.3.3/traefik-v3.3.3.src.tar.gz"
   }
  },
  "name": "traefik",
  "osx_64_meta_yaml": {
   "about": {
-   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.\n",
+   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.",
    "dev_url": "https://github.com/traefik/traefik",
    "doc_url": "https://doc.traefik.io/traefik",
-   "home": "https://traefik.io",
+   "home": "https://traefik.io/",
    "license": "MIT",
-   "license_file": [
-    "src/github.com/traefik/traefik/LICENSE.md",
-    "library_licenses/"
-   ],
+   "license_family": "MIT",
+   "license_file": "src/github.com/traefik/traefik/LICENSE.md",
    "summary": "The Cloud Native Application Proxy"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "nodejs",
-    "yarn"
-   ],
    "number": "0"
   },
   "extra": {
@@ -360,38 +493,56 @@
     "sodre"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "traefik",
-   "version": "3.3.2"
+   "version": "3.3.3"
   },
   "requirements": {
    "build": [
     "go_compiler_stub",
     "go-licenses",
     "nodejs",
-    "yarn >=1.22.22,<2"
+    "yarn >=1.22.22,<2",
+    "c_stdlib_stub"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "traefik version",
-    "traefik version | grep -iE  \"Version:\\s+3\\.3\\.2$\"",
-    "traefik --help"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec",
+   "url": "https://github.com/traefik/traefik/releases/download/v3.3.3/traefik-v3.3.3.src.tar.gz"
   }
  },
  "osx_64_requirements": {
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "go-licenses",
     "go_compiler_stub",
     "nodejs",
@@ -413,22 +564,16 @@
  },
  "osx_arm64_meta_yaml": {
   "about": {
-   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.\n",
+   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.",
    "dev_url": "https://github.com/traefik/traefik",
    "doc_url": "https://doc.traefik.io/traefik",
-   "home": "https://traefik.io",
+   "home": "https://traefik.io/",
    "license": "MIT",
-   "license_file": [
-    "src/github.com/traefik/traefik/LICENSE.md",
-    "library_licenses/"
-   ],
+   "license_family": "MIT",
+   "license_file": "src/github.com/traefik/traefik/LICENSE.md",
    "summary": "The Cloud Native Application Proxy"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "nodejs",
-    "yarn"
-   ],
    "number": "0"
   },
   "extra": {
@@ -437,38 +582,56 @@
     "sodre"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2",
+      "c_stdlib_stub"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "traefik",
-   "version": "3.3.2"
+   "version": "3.3.3"
   },
   "requirements": {
    "build": [
     "go_compiler_stub",
     "go-licenses",
     "nodejs",
-    "yarn >=1.22.22,<2"
+    "yarn >=1.22.22,<2",
+    "c_stdlib_stub"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "traefik version",
-    "traefik version | grep -iE  \"Version:\\s+3\\.3\\.2$\"",
-    "traefik --help"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec",
+   "url": "https://github.com/traefik/traefik/releases/download/v3.3.3/traefik-v3.3.3.src.tar.gz"
   }
  },
  "osx_arm64_requirements": {
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "go-licenses",
     "go_compiler_stub",
     "nodejs",
@@ -506,10 +669,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/traefik.json"
  },
- "raw_meta_yaml": "{% set version = \"3.3.2\" %}\n\npackage:\n  name: traefik\n  version: {{ version }}\n\nsource:\n  - folder: src/github.com/traefik/traefik\n    url: https://github.com/traefik/traefik/releases/download/v{{ version }}/traefik-v{{ version }}.src.tar.gz\n    sha256: 9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b\n\nbuild:\n  number: 0\n  ignore_run_exports_from:\n    - nodejs\n    - yarn\n\nrequirements:\n  build:\n    - {{ compiler('go') }}\n    - go-licenses\n    - nodejs\n    - yarn >=1.22.22,<2\n\ntest:\n  commands:\n    - traefik{{ target_goexe }} version\n    - traefik{{ target_goexe }} version | grep -iE  \"Version:\\s+{{ version.replace(\".\", \"\\.\") }}$\"\n    - traefik{{ target_goexe }} --help\n\nabout:\n  home: https://traefik.io\n  license: MIT\n  license_file:\n    - src/github.com/traefik/traefik/LICENSE.md\n    - library_licenses/\n  summary: The Cloud Native Application Proxy\n  description: |\n    Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\n    that makes deploying microservices easy. Traefik integrates with your existing\n    infrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\n    Rancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\n    Pointing Traefik at your orchestrator should be the only configuration step you need.\n  doc_url: https://doc.traefik.io/traefik\n  dev_url: https://github.com/traefik/traefik\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - sodre\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 3.3.3\n\npackage:\n  name: traefik\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/traefik/traefik/releases/download/v${{ version }}/traefik-v${{ version }}.src.tar.gz\n  sha256: bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec\n  target_directory: src/github.com/traefik/traefik\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - ${{ compiler('go') }}\n    - go-licenses\n    - nodejs\n    - yarn >=1.22.22,<2\n    - if: not target_goexe == \".exe\"\n      then:\n        - ${{ stdlib(\"c\") }}\n  ignore_run_exports:\n    by_name:\n      - nodejs\n      - yarn\n\ntests:\n  - script:\n      - traefik${{ target_goexe }} version\n      - traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"\n      - traefik${{ target_goexe }} --help\n\nabout:\n  license: MIT\n  license_file:\n    - src/github.com/traefik/traefik/LICENSE.md\n    - library_licenses/\n  summary: The Cloud Native Application Proxy\n  description: |\n    Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\n    that makes deploying microservices easy. Traefik integrates with your existing\n    infrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\n    Rancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\n    Pointing Traefik at your orchestrator should be the only configuration step you need.\n  homepage: https://traefik.io\n  repository: https://github.com/traefik/traefik\n  documentation: https://doc.traefik.io/traefik\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - sodre\n",
  "req": {
   "__set__": true,
   "elements": [
+   "c_stdlib_stub",
    "go-licenses",
    "go_compiler_stub",
    "nodejs",
@@ -520,6 +684,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "go-licenses",
     "go_compiler_stub",
     "nodejs",
@@ -528,11 +693,15 @@
   },
   "host": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_stdlib_stub"
+   ]
   },
   "run": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_stdlib_stub"
+   ]
   },
   "test": {
    "__set__": true,
@@ -544,6 +713,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "go-licenses",
     "go_compiler_stub",
     "nodejs",
@@ -563,29 +733,23 @@
    "elements": []
   }
  },
- "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz",
- "version": "3.3.2",
+ "url": "https://github.com/traefik/traefik/releases/download/v3.3.3/traefik-v3.3.3.src.tar.gz",
+ "version": "3.3.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/traefik.json"
  },
  "win_64_meta_yaml": {
   "about": {
-   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.\n",
+   "description": "Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer\nthat makes deploying microservices easy. Traefik integrates with your existing\ninfrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,\nRancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.\nPointing Traefik at your orchestrator should be the only configuration step you need.",
    "dev_url": "https://github.com/traefik/traefik",
    "doc_url": "https://doc.traefik.io/traefik",
-   "home": "https://traefik.io",
+   "home": "https://traefik.io/",
    "license": "MIT",
-   "license_file": [
-    "src/github.com/traefik/traefik/LICENSE.md",
-    "library_licenses/"
-   ],
+   "license_family": "MIT",
+   "license_file": "src/github.com/traefik/traefik/LICENSE.md",
    "summary": "The Cloud Native Application Proxy"
   },
   "build": {
-   "ignore_run_exports_from": [
-    "nodejs",
-    "yarn"
-   ],
    "number": "0"
   },
   "extra": {
@@ -594,9 +758,34 @@
     "sodre"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "traefik",
+    "requirements": {
+     "build": [
+      "go_compiler_stub",
+      "go-licenses",
+      "nodejs",
+      "yarn >=1.22.22,<2"
+     ],
+     "host": [],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "traefik${{ target_goexe }} version",
+       "traefik${{ target_goexe }} version | grep -iE  \"Version:\\s+${{ version | replace(\".\", \"\\\\.\") }}$\"",
+       "traefik${{ target_goexe }} --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "traefik",
-   "version": "3.3.2"
+   "version": "3.3.3"
   },
   "requirements": {
    "build": [
@@ -606,20 +795,10 @@
     "yarn >=1.22.22,<2"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "folder": "src/github.com/traefik/traefik",
-    "sha256": "9e52bed00308de9fdef5d989ed8ed933a26f69468edad0e270aae147906ab23b",
-    "url": "https://github.com/traefik/traefik/releases/download/v3.3.2/traefik-v3.3.2.src.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "traefik.exe version",
-    "traefik.exe version | grep -iE  \"Version:\\s+3\\.3\\.2$\"",
-    "traefik.exe --help"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec",
+   "url": "https://github.com/traefik/traefik/releases/download/v3.3.3/traefik-v3.3.3.src.tar.gz"
   }
  },
  "win_64_requirements": {
