@@ -25,7 +25,7 @@
    "summary": "A command line utility for calculating BLAKE3 hashes. "
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -90,7 +90,7 @@
    "summary": "A command line utility for calculating BLAKE3 hashes. "
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -106,9 +106,7 @@
     "rust_compiler_stub",
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cargo-bundle-licenses",
-    "m2w64_c_compiler_stub",
-    "m2w64_c_stdlib_stub"
+    "cargo-bundle-licenses"
    ]
   },
   "schema_version": 0,
@@ -135,7 +133,7 @@
    "summary": "A command line utility for calculating BLAKE3 hashes. "
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -203,15 +201,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/b3sum.json"
  },
- "raw_meta_yaml": "{% set name = \"b3sum\" %}\n{% set version = \"1.5.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 6feba0750efc1a99a79fb9a495e2628b5cd1603e15f56a06b1d6cb13ac55c618\n\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}              # [not win]\n    - {{ stdlib(\"c\") }}                # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ stdlib(\"m2w64_c\") }}          # [win]\n    - cargo-bundle-licenses\n\ntest:\n  commands:\n    - b3sum --help\n\nabout:\n  home: https://github.com/BLAKE3-team/BLAKE3\n  summary: 'A command line utility for calculating BLAKE3 hashes. '\n  description: |\n    A command line utility for calculating BLAKE3 hashes, \n    similar to Coreutils tools like b2sum or md5sum.  \n  license: CC0-1.0\n  license_file:\n    - LICENSE_A2\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - maarten-k\n",
+ "raw_meta_yaml": "{% set name = \"b3sum\" %}\n{% set version = \"1.5.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 6feba0750efc1a99a79fb9a495e2628b5cd1603e15f56a06b1d6cb13ac55c618\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n\ntest:\n  commands:\n    - b3sum --help\n\nabout:\n  home: https://github.com/BLAKE3-team/BLAKE3\n  summary: 'A command line utility for calculating BLAKE3 hashes. '\n  description: |\n    A command line utility for calculating BLAKE3 hashes, \n    similar to Coreutils tools like b2sum or md5sum.  \n  license: CC0-1.0\n  license_file:\n    - LICENSE_A2\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - maarten-k\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
    "c_stdlib_stub",
    "cargo-bundle-licenses",
-   "m2w64_c_compiler_stub",
-   "m2w64_c_stdlib_stub",
    "rust_compiler_stub"
   ]
  },
@@ -222,8 +218,6 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
-    "m2w64_c_compiler_stub",
-    "m2w64_c_stdlib_stub",
     "rust_compiler_stub"
    ]
   },
@@ -254,8 +248,6 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
-    "m2w64_c_compiler_stub",
-    "m2w64_c_stdlib_stub",
     "rust_compiler_stub"
    ]
   },
@@ -289,7 +281,7 @@
    "summary": "A command line utility for calculating BLAKE3 hashes. "
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -303,8 +295,8 @@
   "requirements": {
    "build": [
     "rust_compiler_stub",
-    "m2w64_c_compiler_stub",
-    "m2w64_c_stdlib_stub",
+    "c_compiler_stub",
+    "c_stdlib_stub",
     "cargo-bundle-licenses"
    ]
   },
@@ -323,9 +315,9 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
     "cargo-bundle-licenses",
-    "m2w64_c_compiler_stub",
-    "m2w64_c_stdlib_stub",
     "rust_compiler_stub"
    ]
   },
