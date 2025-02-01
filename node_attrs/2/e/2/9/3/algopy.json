@@ -29,7 +29,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -43,11 +43,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.10",
+    "setuptools",
     "pip"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10",
     "numpy >=2.0.0",
     "scipy >=1.14.0",
     "pytest >=8.2.2"
@@ -55,9 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "algopy-0.7.2.zip",
    "sha256": "4a82ba3d44964430733c5c44c498779ac84879cabf70b31136d550b5e6252d51",
-   "url": "https://pypi.io/packages/source/a/algopy/algopy-0.7.2.tar.gz"
+   "url": "https://pypi.org/packages/source/a/algopy/algopy-0.7.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -77,7 +77,8 @@
     "algopy.utpm.tests"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -90,7 +91,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -105,7 +107,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -122,7 +125,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -136,11 +139,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.10",
+    "setuptools",
     "pip"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10",
     "numpy >=2.0.0",
     "scipy >=1.14.0",
     "pytest >=8.2.2"
@@ -148,9 +152,8 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "algopy-0.7.2.zip",
    "sha256": "4a82ba3d44964430733c5c44c498779ac84879cabf70b31136d550b5e6252d51",
-   "url": "https://pypi.io/packages/source/a/algopy/algopy-0.7.2.tar.gz"
+   "url": "https://pypi.org/packages/source/a/algopy/algopy-0.7.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -170,7 +173,8 @@
     "algopy.utpm.tests"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -188,7 +192,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/algopy.json"
  },
- "raw_meta_yaml": "{% set name = \"algopy\" %}\n{% set version = \"0.7.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4a82ba3d44964430733c5c44c498779ac84879cabf70b31136d550b5e6252d51\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python >=3.9\n    - pip\n  run:\n    - python >=3.9\n    - numpy >=2.0.0\n    - scipy >=1.14.0\n    - pytest >=8.2.2\n\ntest:\n  imports:\n    - algopy\n    - algopy.fft\n    - algopy.linalg\n    - algopy.nthderiv\n    - algopy.special\n    - algopy.tests\n    - algopy.tracer\n    - algopy.tracer.tests\n    - algopy.tracer.tests.test_output\n    - algopy.utpm\n    - algopy.utpm.tests\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: http://packages.python.org/algopy\n  license: BSD\n  license_family: BSD\n  license_file: README.rst\n  summary: 'ALGOPY: Taylor Arithmetic Computation and Algorithmic Differentiation'\n  description: |\n    ALGOPY is a tool for Algorithmic Differentiation (AD) and Taylor polynomial\n    approximations.  ALGOPY makes it possible to perform computations on scalar\n    and polynomial matrices.  It is designed to be as compatible to numpy as\n    possible. I.e. views, broadcasting and most functions of numpy can be\n    performed on polynomial matrices. Exampels are dot,trace,qr,solve,\n    inv,eigh. The reverse mode of AD is also supported by a simple code\n    evaluation tracer.\n  doc_url: http://pythonhosted.org/algopy\n  dev_url: https://github.com/b45ch1/algopy\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
+ "raw_meta_yaml": "{% set name = \"algopy\" %}\n{% set version = \"0.7.2\" %}\n{% set python_min = \"3.10\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4a82ba3d44964430733c5c44c498779ac84879cabf70b31136d550b5e6252d51\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy >=2.0.0\n    - scipy >=1.14.0\n    - pytest >=8.2.2\n\ntest:\n  imports:\n    - algopy\n    - algopy.fft\n    - algopy.linalg\n    - algopy.nthderiv\n    - algopy.special\n    - algopy.tests\n    - algopy.tracer\n    - algopy.tracer.tests\n    - algopy.tracer.tests.test_output\n    - algopy.utpm\n    - algopy.utpm.tests\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://packages.python.org/algopy\n  license: BSD\n  license_family: BSD\n  license_file: README.rst\n  summary: 'ALGOPY: Taylor Arithmetic Computation and Algorithmic Differentiation'\n  description: |\n    ALGOPY is a tool for Algorithmic Differentiation (AD) and Taylor polynomial\n    approximations.  ALGOPY makes it possible to perform computations on scalar\n    and polynomial matrices.  It is designed to be as compatible to numpy as\n    possible. I.e. views, broadcasting and most functions of numpy can be\n    performed on polynomial matrices. Exampels are dot,trace,qr,solve,\n    inv,eigh. The reverse mode of AD is also supported by a simple code\n    evaluation tracer.\n  doc_url: http://pythonhosted.org/algopy\n  dev_url: https://github.com/b45ch1/algopy\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -196,7 +200,8 @@
    "pip",
    "pytest",
    "python",
-   "scipy"
+   "scipy",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -208,7 +213,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -223,7 +229,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -237,7 +244,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9"
+    "python 3.10",
+    "setuptools"
    ]
   },
   "run": {
@@ -245,18 +253,19 @@
    "elements": [
     "numpy >=2.0.0",
     "pytest >=8.2.2",
-    "python >=3.9",
+    "python >=3.10",
     "scipy >=1.14.0"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/a/algopy/algopy-0.7.2.tar.gz",
+ "url": "https://pypi.org/packages/source/a/algopy/algopy-0.7.2.tar.gz",
  "version": "0.7.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/algopy.json"
