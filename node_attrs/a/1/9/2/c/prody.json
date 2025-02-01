@@ -12,7 +12,6 @@
   }
  },
  "feedstock_name": "prody",
- "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
    "description": "ProDy is a free and open-source Python package for protein\nstructure, dynamics, and sequence analysis, developed by the\nBahar lab. It allows for comparative analysis and modeling of\nprotein structural  dynamics and sequence co-evolution. Fast\nand flexible ProDy API is for interactive usage as well as\napplication development. ProDy also comes with several analysis\napplications and a graphical user interface for visual analysis.\n",
@@ -30,8 +29,7 @@
     "evol = prody.apps:evol_main"
    ],
    "noarch": "python",
-   "number": "2",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -41,35 +39,51 @@
   },
   "package": {
    "name": "prody",
-   "version": "2.4.1"
+   "version": "2.5.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "python >=3.9,<3.12",
+    "biopython",
+    "requests",
+    "setuptools",
+    "scipy",
+    "pyparsing <=3.1.1",
+    "conda-build",
+    "gfortran",
+    "gxx",
+    "pip"
    ],
    "host": [
     "python 3.9",
     "pip <21.1",
     "setuptools",
-    "numpy >=1.10,<1.25"
+    "numpy >=1.10,<1.25",
+    "scipy",
+    "pyparsing <=3.1.1",
+    "biopython",
+    "requests"
    ],
    "run": [
     "python >=3.9,<3.12",
-    "biopython",
-    "matplotlib-base",
-    "pyparsing <=3.1.1",
-    "requests",
-    "setuptools",
+    "numpy >=1.10,<1.25",
     "scipy",
-    "numpy"
+    "pyparsing <=3.1.1",
+    "biopython",
+    "gfortran",
+    "gxx",
+    "pip",
+    "setuptools",
+    "requests"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "97b1b8b8100e77655db553e4dbc28ff7db23336e538ddf39d3bad8434aed1e32",
-   "url": "https://github.com/prody/ProDy/archive/v2.4.1.tar.gz"
+   "git_rev": "fa3b1a9",
+   "git_url": "https://github.com/jamesmkrieger/prody.git"
   },
   "test": {
    "commands": [
@@ -89,7 +103,16 @@
     "prody.trajectory"
    ],
    "requires": [
-    "python 3.9"
+    "python 3.9",
+    "numpy >=1.10,<1.25",
+    "scipy",
+    "pyparsing <=3.1.1",
+    "biopython",
+    "gfortran",
+    "gxx",
+    "pip",
+    "setuptools",
+    "requests"
    ]
   }
  },
@@ -97,17 +120,31 @@
   "build": {
    "__set__": true,
    "elements": [
+    "biopython",
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub"
+    "conda-build",
+    "cxx_compiler_stub",
+    "gfortran",
+    "gxx",
+    "pip",
+    "pyparsing",
+    "python",
+    "requests",
+    "scipy",
+    "setuptools"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "biopython",
     "numpy",
     "pip",
+    "pyparsing",
     "python",
+    "requests",
+    "scipy",
     "setuptools"
    ]
   },
@@ -115,8 +152,10 @@
    "__set__": true,
    "elements": [
     "biopython",
-    "matplotlib-base",
+    "gfortran",
+    "gxx",
     "numpy",
+    "pip",
     "pyparsing",
     "python",
     "requests",
@@ -127,7 +166,16 @@
   "test": {
    "__set__": true,
    "elements": [
-    "python"
+    "biopython",
+    "gfortran",
+    "gxx",
+    "numpy",
+    "pip",
+    "pyparsing",
+    "python",
+    "requests",
+    "scipy",
+    "setuptools"
    ]
   }
  },
@@ -148,8 +196,7 @@
     "evol = prody.apps:evol_main"
    ],
    "noarch": "python",
-   "number": "2",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -159,35 +206,51 @@
   },
   "package": {
    "name": "prody",
-   "version": "2.4.1"
+   "version": "2.5.0"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "c_stdlib_stub"
+    "c_stdlib_stub",
+    "python >=3.9,<3.12",
+    "biopython",
+    "requests",
+    "setuptools",
+    "scipy",
+    "pyparsing <=3.1.1",
+    "conda-build",
+    "gfortran",
+    "gxx",
+    "pip"
    ],
    "host": [
     "python 3.9",
     "pip <21.1",
     "setuptools",
-    "numpy >=1.10,<1.25"
+    "numpy >=1.10,<1.25",
+    "scipy",
+    "pyparsing <=3.1.1",
+    "biopython",
+    "requests"
    ],
    "run": [
     "python >=3.9,<3.12",
-    "biopython",
-    "matplotlib-base",
-    "pyparsing <=3.1.1",
-    "requests",
-    "setuptools",
+    "numpy >=1.10,<1.25",
     "scipy",
-    "numpy"
+    "pyparsing <=3.1.1",
+    "biopython",
+    "gfortran",
+    "gxx",
+    "pip",
+    "setuptools",
+    "requests"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "97b1b8b8100e77655db553e4dbc28ff7db23336e538ddf39d3bad8434aed1e32",
-   "url": "https://github.com/prody/ProDy/archive/v2.4.1.tar.gz"
+   "git_rev": "fa3b1a9",
+   "git_url": "https://github.com/jamesmkrieger/prody.git"
   },
   "test": {
    "commands": [
@@ -207,7 +270,16 @@
     "prody.trajectory"
    ],
    "requires": [
-    "python 3.9"
+    "python 3.9",
+    "numpy >=1.10,<1.25",
+    "scipy",
+    "pyparsing <=3.1.1",
+    "biopython",
+    "gfortran",
+    "gxx",
+    "pip",
+    "setuptools",
+    "requests"
    ]
   }
  },
@@ -225,15 +297,17 @@
  "pr_info": {
   "__lazy_json__": "pr_info/prody.json"
  },
- "raw_meta_yaml": "{% set name = \"ProDy\" %}\n{% set version = \"2.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/prody/ProDy/archive/v{{ version }}.tar.gz\n  sha256: 97b1b8b8100e77655db553e4dbc28ff7db23336e538ddf39d3bad8434aed1e32\n\nbuild:\n  noarch: python\n  number: 2\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - prody = prody.apps:prody_main\n    - evol = prody.apps:evol_main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python {{ python_min }}\n    - pip <21.1\n    - setuptools\n    - numpy >=1.10,<1.25\n  run:\n    - python >={{ python_min }},<3.12\n    - biopython\n    - matplotlib-base\n    - pyparsing <=3.1.1\n    - requests\n    - setuptools  # requires pkg_resources at runtime\n    - scipy\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    - prody --help\n    - evol --help\n  imports:\n    - prody\n    - prody.atomic\n    - prody.database\n    - prody.dynamics\n    - prody.ensemble\n    - prody.kdtree\n    - prody.measure\n    - prody.proteins\n    - prody.sequence\n    - prody.trajectory\n\nabout:\n  home: http://www.bahargroup.org/prody/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.rst\n  summary: ProDy is a free and open-source Python package for protein structure, dynamics, and sequence analysis, developed by the Bahar lab.\n  description: |\n    ProDy is a free and open-source Python package for protein \n    structure, dynamics, and sequence analysis, developed by the\n    Bahar lab. It allows for comparative analysis and modeling of \n    protein structural  dynamics and sequence co-evolution. Fast \n    and flexible ProDy API is for interactive usage as well as \n    application development. ProDy also comes with several analysis \n    applications and a graphical user interface for visual analysis.\n  doc_url: http://www.bahargroup.org/prody/manual/\n  dev_url: https://github.com/prody/ProDy\n\nextra:\n  recipe-maintainers:\n    - jamesmkrieger\n    - simonbray\n",
+ "raw_meta_yaml": "{% set name = \"prody\" %}\n{% set version = \"2.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/jamesmkrieger/{{ name }}.git\n  git_rev: fa3b1a9\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - prody = prody.apps:prody_main\n    - evol = prody.apps:evol_main\n\nrequirements:\n  build:\n    # If your project compiles code (such as a C extension) then add the required compilers as separate entries here.\n    # Compilers are named 'c', 'cxx', 'fortran', among others\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - python >={{ python_min }},<3.12\n    - biopython\n    - requests\n    - setuptools  # requires pkg_resources at runtime\n    - scipy\n    - pyparsing <=3.1.1\n    - conda-build\n    - gfortran\n    - gxx\n    - pip\n  host:\n    - python {{ python_min }}\n    - pip <21.1\n    - setuptools\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - requests\n  run:\n    - python >={{ python_min }},<3.12\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - gfortran\n    - gxx\n    - pip\n    - setuptools\n    - requests\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - gfortran\n    - gxx\n    - pip\n    - setuptools\n    - requests\n  commands:\n    - prody --help\n    - evol --help\n  imports:\n    - prody\n    - prody.atomic\n    - prody.database\n    - prody.dynamics\n    - prody.ensemble\n    - prody.kdtree\n    - prody.measure\n    - prody.proteins\n    - prody.sequence\n    - prody.trajectory\n\nabout:\n  home: http://www.bahargroup.org/prody/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.rst\n  summary: ProDy is a free and open-source Python package for protein structure, dynamics, and sequence analysis, developed by the Bahar lab.\n  description: |\n    ProDy is a free and open-source Python package for protein \n    structure, dynamics, and sequence analysis, developed by the\n    Bahar lab. It allows for comparative analysis and modeling of \n    protein structural  dynamics and sequence co-evolution. Fast \n    and flexible ProDy API is for interactive usage as well as \n    application development. ProDy also comes with several analysis \n    applications and a graphical user interface for visual analysis.\n  doc_url: http://www.bahargroup.org/prody/manual/\n  dev_url: https://github.com/prody/ProDy\n\nextra:\n  recipe-maintainers:\n    - jamesmkrieger\n    - simonbray\n",
  "req": {
   "__set__": true,
   "elements": [
    "biopython",
    "c_compiler_stub",
    "c_stdlib_stub",
+   "conda-build",
    "cxx_compiler_stub",
-   "matplotlib-base",
+   "gfortran",
+   "gxx",
    "numpy",
    "pip",
    "pyparsing",
@@ -247,20 +321,36 @@
   "build": {
    "__set__": true,
    "elements": [
+    "biopython",
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub"
+    "conda-build",
+    "cxx_compiler_stub",
+    "gfortran",
+    "gxx",
+    "pip",
+    "pyparsing",
+    "python",
+    "requests",
+    "scipy",
+    "setuptools"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "biopython",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "ctng-compilers",
     "cxx_compiler_stub",
+    "gfortran_osx-64",
     "numpy",
     "pip",
+    "pyparsing",
     "python",
+    "requests",
+    "scipy",
     "setuptools"
    ]
   },
@@ -270,9 +360,13 @@
     "biopython",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "ctng-compilers",
     "cxx_compiler_stub",
-    "matplotlib-base",
+    "gfortran",
+    "gfortran_osx-64",
+    "gxx",
     "numpy",
+    "pip",
     "pyparsing",
     "python",
     "requests",
@@ -283,7 +377,16 @@
   "test": {
    "__set__": true,
    "elements": [
-    "python"
+    "biopython",
+    "gfortran",
+    "gxx",
+    "numpy",
+    "pip",
+    "pyparsing",
+    "python",
+    "requests",
+    "scipy",
+    "setuptools"
    ]
   }
  },
@@ -292,17 +395,31 @@
   "build": {
    "__set__": true,
    "elements": [
+    "biopython",
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub"
+    "conda-build",
+    "cxx_compiler_stub",
+    "gfortran",
+    "gxx",
+    "pip",
+    "pyparsing <=3.1.1",
+    "python >=3.9,<3.12",
+    "requests",
+    "scipy",
+    "setuptools"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "biopython",
     "numpy >=1.10,<1.25",
     "pip <21.1",
+    "pyparsing <=3.1.1",
     "python 3.9",
+    "requests",
+    "scipy",
     "setuptools"
    ]
   },
@@ -310,8 +427,10 @@
    "__set__": true,
    "elements": [
     "biopython",
-    "matplotlib-base",
-    "numpy",
+    "gfortran",
+    "gxx",
+    "numpy >=1.10,<1.25",
+    "pip",
     "pyparsing <=3.1.1",
     "python >=3.9,<3.12",
     "requests",
@@ -322,12 +441,21 @@
   "test": {
    "__set__": true,
    "elements": [
-    "python 3.9"
+    "biopython",
+    "gfortran",
+    "gxx",
+    "numpy >=1.10,<1.25",
+    "pip",
+    "pyparsing <=3.1.1",
+    "python 3.9",
+    "requests",
+    "scipy",
+    "setuptools"
    ]
   }
  },
- "url": "https://github.com/prody/ProDy/archive/v2.4.1.tar.gz",
- "version": "2.4.1",
+ "url": null,
+ "version": "2.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/prody.json"
  }
