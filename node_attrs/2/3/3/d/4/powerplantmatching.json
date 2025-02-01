@@ -44,7 +44,7 @@
   },
   "package": {
    "name": "powerplantmatching",
-   "version": "0.7.0"
+   "version": "0.7.1"
   },
   "requirements": {
    "host": [
@@ -76,8 +76,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8a1cddb76b35547f6b99ffc4dd010f24a85bfcf1b35b3ab5d83029d36897c043",
-   "url": "https://pypi.org/packages/source/p/powerplantmatching/powerplantmatching-0.7.0.tar.gz"
+   "sha256": "48826ff4eafc7918546e027a3ea61b4e669b28f1df48557366a062599241932a",
+   "url": "https://pypi.org/packages/source/p/powerplantmatching/powerplantmatching-0.7.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,7 +164,7 @@
   },
   "package": {
    "name": "powerplantmatching",
-   "version": "0.7.0"
+   "version": "0.7.1"
   },
   "requirements": {
    "host": [
@@ -196,8 +196,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8a1cddb76b35547f6b99ffc4dd010f24a85bfcf1b35b3ab5d83029d36897c043",
-   "url": "https://pypi.org/packages/source/p/powerplantmatching/powerplantmatching-0.7.0.tar.gz"
+   "sha256": "48826ff4eafc7918546e027a3ea61b4e669b28f1df48557366a062599241932a",
+   "url": "https://pypi.org/packages/source/p/powerplantmatching/powerplantmatching-0.7.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -226,7 +226,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/powerplantmatching.json"
  },
- "raw_meta_yaml": "{% set name = \"powerplantmatching\" %}\n{% set version = \"0.7.0\" %}\n{% set sha256 = \"8a1cddb76b35547f6b99ffc4dd010f24a85bfcf1b35b3ab5d83029d36897c043\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/powerplantmatching-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - pandas >=0.24.0\n    - networkx >=1.10\n    - pycountry\n    - country_converter\n    - xlrd\n    - seaborn\n    - pyyaml >=5.1.0\n    - requests\n    - matplotlib-base\n    - geopy\n    - unidecode\n    - entsoe-py >=0.3.1\n    - deprecation\n    - tqdm\n    - openpyxl\n\ntest:\n  imports:\n    - powerplantmatching\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/PyPSA/powerplantmatching\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Toolset for generating and managing Power Plant Data\n  description: |\n    This package provides ready-to-use power plant data for the European\n    power system. Starting from openly available power plant datasets,\n    the package cleans, standardizes and merges the input data to create\n    a new combining dataset, which includes all the important information.\n    The package allows to easily update the combined data as\n    soon as new input datasets are released.\n  doc_url: https://github.com/PyPSA/powerplantmatching\n  dev_url: https://github.com/PyPSA/powerplantmatching\n\nextra:\n  recipe-maintainers:\n    - fneum\n    - lkstrp\n    - FabianHofmann\n    - coroa\n    - davide-f\n",
+ "raw_meta_yaml": "{% set name = \"powerplantmatching\" %}\n{% set version = \"0.7.1\" %}\n{% set sha256 = \"48826ff4eafc7918546e027a3ea61b4e669b28f1df48557366a062599241932a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/powerplantmatching-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - pandas >=0.24.0\n    - networkx >=1.10\n    - pycountry\n    - country_converter\n    - xlrd\n    - seaborn\n    - pyyaml >=5.1.0\n    - requests\n    - matplotlib-base\n    - geopy\n    - unidecode\n    - entsoe-py >=0.3.1\n    - deprecation\n    - tqdm\n    - openpyxl\n\ntest:\n  imports:\n    - powerplantmatching\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/PyPSA/powerplantmatching\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Toolset for generating and managing Power Plant Data\n  description: |\n    This package provides ready-to-use power plant data for the European\n    power system. Starting from openly available power plant datasets,\n    the package cleans, standardizes and merges the input data to create\n    a new combining dataset, which includes all the important information.\n    The package allows to easily update the combined data as\n    soon as new input datasets are released.\n  doc_url: https://github.com/PyPSA/powerplantmatching\n  dev_url: https://github.com/PyPSA/powerplantmatching\n\nextra:\n  recipe-maintainers:\n    - fneum\n    - lkstrp\n    - FabianHofmann\n    - coroa\n    - davide-f\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -344,8 +344,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/powerplantmatching/powerplantmatching-0.7.0.tar.gz",
- "version": "0.7.0",
+ "url": "https://pypi.org/packages/source/p/powerplantmatching/powerplantmatching-0.7.1.tar.gz",
+ "version": "0.7.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/powerplantmatching.json"
  }
