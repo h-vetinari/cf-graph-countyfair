@@ -47,7 +47,7 @@
   },
   "package": {
    "name": "spdlog",
-   "version": "1.15.0"
+   "version": "1.15.1"
   },
   "requirements": {
    "build": [
@@ -65,8 +65,8 @@
    "patches": [
     "patches/fix.patch"
    ],
-   "sha256": "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5",
-   "url": "https://github.com/gabime/spdlog/archive/v1.15.0.tar.gz"
+   "sha256": "25c843860f039a1600f232c6eb9e01e6627f7d030a2ae5e232bdd3c9205d26cc",
+   "url": "https://github.com/gabime/spdlog/archive/v1.15.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -123,7 +123,7 @@
   },
   "package": {
    "name": "spdlog",
-   "version": "1.15.0"
+   "version": "1.15.1"
   },
   "requirements": {
    "build": [
@@ -141,8 +141,8 @@
    "patches": [
     "patches/fix.patch"
    ],
-   "sha256": "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5",
-   "url": "https://github.com/gabime/spdlog/archive/v1.15.0.tar.gz"
+   "sha256": "25c843860f039a1600f232c6eb9e01e6627f7d030a2ae5e232bdd3c9205d26cc",
+   "url": "https://github.com/gabime/spdlog/archive/v1.15.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -199,7 +199,7 @@
   },
   "package": {
    "name": "spdlog",
-   "version": "1.15.0"
+   "version": "1.15.1"
   },
   "requirements": {
    "build": [
@@ -217,8 +217,8 @@
    "patches": [
     "patches/fix.patch"
    ],
-   "sha256": "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5",
-   "url": "https://github.com/gabime/spdlog/archive/v1.15.0.tar.gz"
+   "sha256": "25c843860f039a1600f232c6eb9e01e6627f7d030a2ae5e232bdd3c9205d26cc",
+   "url": "https://github.com/gabime/spdlog/archive/v1.15.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -275,7 +275,7 @@
   },
   "package": {
    "name": "spdlog",
-   "version": "1.15.0"
+   "version": "1.15.1"
   },
   "requirements": {
    "build": [
@@ -293,8 +293,8 @@
    "patches": [
     "patches/fix.patch"
    ],
-   "sha256": "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5",
-   "url": "https://github.com/gabime/spdlog/archive/v1.15.0.tar.gz"
+   "sha256": "25c843860f039a1600f232c6eb9e01e6627f7d030a2ae5e232bdd3c9205d26cc",
+   "url": "https://github.com/gabime/spdlog/archive/v1.15.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -328,7 +328,7 @@
   },
   "package": {
    "name": "spdlog",
-   "version": "1.15.0"
+   "version": "1.15.1"
   },
   "requirements": {
    "build": [
@@ -346,8 +346,8 @@
    "patches": [
     "patches/fix.patch"
    ],
-   "sha256": "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5",
-   "url": "https://github.com/gabime/spdlog/archive/v1.15.0.tar.gz"
+   "sha256": "25c843860f039a1600f232c6eb9e01e6627f7d030a2ae5e232bdd3c9205d26cc",
+   "url": "https://github.com/gabime/spdlog/archive/v1.15.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -404,7 +404,7 @@
   },
   "package": {
    "name": "spdlog",
-   "version": "1.15.0"
+   "version": "1.15.1"
   },
   "requirements": {
    "build": [
@@ -422,8 +422,8 @@
    "patches": [
     "patches/fix.patch"
    ],
-   "sha256": "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5",
-   "url": "https://github.com/gabime/spdlog/archive/v1.15.0.tar.gz"
+   "sha256": "25c843860f039a1600f232c6eb9e01e6627f7d030a2ae5e232bdd3c9205d26cc",
+   "url": "https://github.com/gabime/spdlog/archive/v1.15.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -474,7 +474,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/spdlog.json"
  },
- "raw_meta_yaml": "{% set name = \"spdlog\" %}\n{% set version = \"1.15.0\" %}\n{% set sha256 = \"9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/gabime/{{ name|lower }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - patches/fix.patch\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('spdlog', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - make  # [unix]\n  host:\n    - fmt\n\ntest:\n  commands:\n    - test -e $PREFIX/include/spdlog/spdlog.h  # [not win]\n    - if not exist %PREFIX%\\Library\\include\\spdlog\\spdlog.h exit 1  # [win]\n\nabout:\n  home: https://github.com/gabime/spdlog\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Super fast C++ logging library.\n\n  description: |\n    spdlog is a header only library for Super fast C++ logging\n    to be used with a C++11 compiler.\n\nextra:\n  recipe-maintainers:\n    - druvus\n    - rongou\n    - bluescarni\n",
+ "raw_meta_yaml": "{% set name = \"spdlog\" %}\n{% set version = \"1.15.1\" %}\n{% set sha256 = \"25c843860f039a1600f232c6eb9e01e6627f7d030a2ae5e232bdd3c9205d26cc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/gabime/{{ name|lower }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - patches/fix.patch\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('spdlog', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - make  # [unix]\n  host:\n    - fmt\n\ntest:\n  commands:\n    - test -e $PREFIX/include/spdlog/spdlog.h  # [not win]\n    - if not exist %PREFIX%\\Library\\include\\spdlog\\spdlog.h exit 1  # [win]\n\nabout:\n  home: https://github.com/gabime/spdlog\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Super fast C++ logging library.\n\n  description: |\n    spdlog is a header only library for Super fast C++ logging\n    to be used with a C++11 compiler.\n\nextra:\n  recipe-maintainers:\n    - druvus\n    - rongou\n    - bluescarni\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -541,8 +541,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/gabime/spdlog/archive/v1.15.0.tar.gz",
- "version": "1.15.0",
+ "url": "https://github.com/gabime/spdlog/archive/v1.15.1.tar.gz",
+ "version": "1.15.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/spdlog.json"
  },
@@ -570,7 +570,7 @@
   },
   "package": {
    "name": "spdlog",
-   "version": "1.15.0"
+   "version": "1.15.1"
   },
   "requirements": {
    "build": [
@@ -587,8 +587,8 @@
    "patches": [
     "patches/fix.patch"
    ],
-   "sha256": "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5",
-   "url": "https://github.com/gabime/spdlog/archive/v1.15.0.tar.gz"
+   "sha256": "25c843860f039a1600f232c6eb9e01e6627f7d030a2ae5e232bdd3c9205d26cc",
+   "url": "https://github.com/gabime/spdlog/archive/v1.15.1.tar.gz"
   },
   "test": {
    "commands": [
