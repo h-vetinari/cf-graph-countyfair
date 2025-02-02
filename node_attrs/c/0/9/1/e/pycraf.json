@@ -27,7 +27,7 @@
    "summary": "A Python package for spectrum-management compatibility studies"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "pycraf",
-   "version": "2.0.2"
+   "version": "2.1.0"
   },
   "requirements": {
    "build": [
@@ -58,10 +58,10 @@
    "run": [
     "python",
     "astropy",
-    "numpy",
     "scipy",
     "h5py",
     "matplotlib-base >=3.3",
+    "numpy",
     "pyproj >2.6",
     "pytest",
     "pytest-astropy",
@@ -73,9 +73,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "pycraf-2.0.2.tar.gz",
-   "sha256": "1701461c36f984160746ff28cabfd12e87a0f5dd56e71ed94bef50b19d76302e",
-   "url": "https://pypi.io/packages/source/p/pycraf/pycraf-2.0.2.tar.gz"
+   "fn": "pycraf-2.1.0.tar.gz",
+   "sha256": "daa3c7cb63a24d0e2ec814e71d58ab7e3be65985d4dd23593faf6c646b2119c1",
+   "url": "https://pypi.org/packages/source/p/pycraf/pycraf-2.1.0.tar.gz"
   },
   "test": {
    "commands": "python -c \"import pycraf; pycraf.test()\"",
@@ -150,7 +150,7 @@
    "summary": "A Python package for spectrum-management compatibility studies"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -160,7 +160,7 @@
   },
   "package": {
    "name": "pycraf",
-   "version": "2.0.2"
+   "version": "2.1.0"
   },
   "requirements": {
    "build": [
@@ -183,10 +183,10 @@
    "run": [
     "python",
     "astropy",
-    "numpy",
     "scipy",
     "h5py",
     "matplotlib-base >=3.3",
+    "numpy",
     "pyproj >2.6",
     "pytest",
     "pytest-astropy",
@@ -200,9 +200,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "pycraf-2.0.2.tar.gz",
-   "sha256": "1701461c36f984160746ff28cabfd12e87a0f5dd56e71ed94bef50b19d76302e",
-   "url": "https://pypi.io/packages/source/p/pycraf/pycraf-2.0.2.tar.gz"
+   "fn": "pycraf-2.1.0.tar.gz",
+   "sha256": "daa3c7cb63a24d0e2ec814e71d58ab7e3be65985d4dd23593faf6c646b2119c1",
+   "url": "https://pypi.org/packages/source/p/pycraf/pycraf-2.1.0.tar.gz"
   },
   "test": {
    "commands": "python -c \"import pycraf; pycraf.test()\"",
@@ -233,7 +233,7 @@
    "summary": "A Python package for spectrum-management compatibility studies"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -243,7 +243,7 @@
   },
   "package": {
    "name": "pycraf",
-   "version": "2.0.2"
+   "version": "2.1.0"
   },
   "requirements": {
    "build": [
@@ -268,10 +268,10 @@
     "compilers",
     "llvm-openmp",
     "astropy",
-    "numpy",
     "scipy",
     "h5py",
     "matplotlib-base >=3.3",
+    "numpy",
     "pyproj >2.6",
     "pytest",
     "pytest-astropy",
@@ -283,9 +283,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "pycraf-2.0.2.tar.gz",
-   "sha256": "1701461c36f984160746ff28cabfd12e87a0f5dd56e71ed94bef50b19d76302e",
-   "url": "https://pypi.io/packages/source/p/pycraf/pycraf-2.0.2.tar.gz"
+   "fn": "pycraf-2.1.0.tar.gz",
+   "sha256": "daa3c7cb63a24d0e2ec814e71d58ab7e3be65985d4dd23593faf6c646b2119c1",
+   "url": "https://pypi.org/packages/source/p/pycraf/pycraf-2.1.0.tar.gz"
   },
   "test": {
    "commands": "python -c \"import pycraf; pycraf.test()\"",
@@ -368,7 +368,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pycraf.json"
  },
- "raw_meta_yaml": "{% set name = \"pycraf\" %}\n{% set version = \"2.0.2\" %}\n{% set sha256 = \"1701461c36f984160746ff28cabfd12e87a0f5dd56e71ed94bef50b19d76302e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [py<=37]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n\n  host:\n    - compilers  # [osx]\n    - llvm-openmp  # [osx]\n    - python\n    - pip\n    - setuptools\n    - setuptools_scm\n    - astropy\n    - cython >=3\n    - numpy\n    - scipy\n    - extension-helpers\n\n  run:\n    - python\n    - compilers  # [osx]\n    - llvm-openmp  # [osx]\n    - astropy\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - h5py\n    - matplotlib-base >=3.3\n    - pyproj >2.6\n    - pytest\n    - pytest-astropy\n    - pytest-remotedata\n    - pytest-doctestplus\n    - rasterio\n    - sgp4 >=2\n\ntest:\n  imports:\n    - pycraf\n    - pycraf.conversions\n    - pycraf.atm\n    - pycraf.pathprof\n    - pycraf.antenna\n    - pycraf.protection\n    - pycraf.geospatial\n    - pycraf.satellite\n    - pycraf.geometry\n    - pycraf.mc\n    - pycraf.utils\n\n  commands: python -c \"import pycraf; pycraf.test()\"\n\nabout:\n  home: https://github.com/bwinkel/pycraf\n  license: GPL-3.0\n  license_family: GPL\n  license_file: licenses/README.rst\n  summary: A Python package for spectrum-management compatibility studies\n  description: |\n    The pycraf package provides functions and procedures for various tasks in spectrum-management compatibility studies.\n  dev_url: https://github.com/bwinkel/pycraf\n\nextra:\n  recipe-maintainers:\n    - bwinkel\n",
+ "raw_meta_yaml": "{% set name = \"pycraf\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"daa3c7cb63a24d0e2ec814e71d58ab7e3be65985d4dd23593faf6c646b2119c1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<=39]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n\n  host:\n    - compilers  # [osx]\n    - llvm-openmp  # [osx]\n    - python\n    - pip\n    - setuptools\n    - setuptools_scm\n    - astropy\n    - cython >=3\n    - numpy\n    - scipy\n    - extension-helpers\n\n  run:\n    - python\n    - compilers  # [osx]\n    - llvm-openmp  # [osx]\n    - astropy\n    - scipy\n    - h5py\n    - matplotlib-base >=3.3\n    - numpy\n    - pyproj >2.6\n    - pytest\n    - pytest-astropy\n    - pytest-remotedata\n    - pytest-doctestplus\n    - rasterio\n    - sgp4 >=2\n\ntest:\n  imports:\n    - pycraf\n    - pycraf.conversions\n    - pycraf.atm\n    - pycraf.pathprof\n    - pycraf.antenna\n    - pycraf.protection\n    - pycraf.geospatial\n    - pycraf.satellite\n    - pycraf.geometry\n    - pycraf.mc\n    - pycraf.utils\n\n  commands: python -c \"import pycraf; pycraf.test()\"\n\nabout:\n  home: https://github.com/bwinkel/pycraf\n  license: GPL-3.0\n  license_family: GPL\n  license_file: licenses/README.rst\n  summary: A Python package for spectrum-management compatibility studies\n  description: |\n    The pycraf package provides functions and procedures for various tasks in spectrum-management compatibility studies.\n  dev_url: https://github.com/bwinkel/pycraf\n\nextra:\n  recipe-maintainers:\n    - bwinkel\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -501,8 +501,8 @@
    "elements": []
   }
  },
- "url": "https://pypi.io/packages/source/p/pycraf/pycraf-2.0.2.tar.gz",
- "version": "2.0.2",
+ "url": "https://pypi.org/packages/source/p/pycraf/pycraf-2.1.0.tar.gz",
+ "version": "2.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pycraf.json"
  },
@@ -517,7 +517,7 @@
    "summary": "A Python package for spectrum-management compatibility studies"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -527,7 +527,7 @@
   },
   "package": {
    "name": "pycraf",
-   "version": "2.0.2"
+   "version": "2.1.0"
   },
   "requirements": {
    "build": [
@@ -548,10 +548,10 @@
    "run": [
     "python",
     "astropy",
-    "numpy",
     "scipy",
     "h5py",
     "matplotlib-base >=3.3",
+    "numpy",
     "pyproj >2.6",
     "pytest",
     "pytest-astropy",
@@ -563,9 +563,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "pycraf-2.0.2.tar.gz",
-   "sha256": "1701461c36f984160746ff28cabfd12e87a0f5dd56e71ed94bef50b19d76302e",
-   "url": "https://pypi.io/packages/source/p/pycraf/pycraf-2.0.2.tar.gz"
+   "fn": "pycraf-2.1.0.tar.gz",
+   "sha256": "daa3c7cb63a24d0e2ec814e71d58ab7e3be65985d4dd23593faf6c646b2119c1",
+   "url": "https://pypi.org/packages/source/p/pycraf/pycraf-2.1.0.tar.gz"
   },
   "test": {
    "commands": "python -c \"import pycraf; pycraf.test()\"",
