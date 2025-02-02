@@ -27,7 +27,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "lttl",
-   "version": "2.0.12"
+   "version": "2.1.0"
   },
   "requirements": {
    "host": [
@@ -56,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3450330cbc78e9dead81f5b8ffefc198f4857c568990c6e7a2118c27c812c3b9",
-   "url": "https://pypi.org/packages/source/L/LTTL/LTTL-2.0.12.zip"
+   "sha256": "bdbaca62631e2caae5ed6471930b4819e4ea3e8ccd77c4ed4df7eb40866609c6",
+   "url": "https://pypi.org/packages/source/L/LTTL/lttl-2.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -115,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -125,7 +125,7 @@
   },
   "package": {
    "name": "lttl",
-   "version": "2.0.12"
+   "version": "2.1.0"
   },
   "requirements": {
    "host": [
@@ -144,8 +144,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3450330cbc78e9dead81f5b8ffefc198f4857c568990c6e7a2118c27c812c3b9",
-   "url": "https://pypi.org/packages/source/L/LTTL/LTTL-2.0.12.zip"
+   "sha256": "bdbaca62631e2caae5ed6471930b4819e4ea3e8ccd77c4ed4df7eb40866609c6",
+   "url": "https://pypi.org/packages/source/L/LTTL/lttl-2.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -174,7 +174,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lttl.json"
  },
- "raw_meta_yaml": "{% set name = \"LTTL\" %}\n{% set version = \"2.0.12\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/LTTL-{{ version }}.zip\n  sha256: 3450330cbc78e9dead81f5b8ffefc198f4857c568990c6e7a2118c27c812c3b9\n\nbuild:\n  number: 2\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - backports.functools_lru_cache\n    - future\n    - numpy\n    - python >={{ python_min }}\n    - scipy\n    - setuptools\n\ntest:\n  imports:\n    - LTTL\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/axanthos/LTTL\n  summary: LangTech Text Library (LTTL) for text processing and analysis\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  dev_url: https://github.com/axanthos/LTTL\n  description: |\n    LTTL is an open-source python package for text processing and analysis. LTTL consists of (i) a set of classes for representing segmental analyses of text strings (= \u201Csegmentations\u201D), whereby portions of text strings are delineated and possibly annotated with specific labels; (ii) a set of classes for creating and manipulating segmentations, in order to produce either modified version of the original text data, or data tables summarizing properties of these data (e.g. unit frequency, complexity measures, concordances, and so on). LTTL was designed and implemented by LangTech Sarl.\n\nextra:\n  recipe-maintainers:\n    - HeavyTony2\n",
+ "raw_meta_yaml": "{% set name = \"LTTL\" %}\n{% set version = \"2.1.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz\n  sha256: bdbaca62631e2caae5ed6471930b4819e4ea3e8ccd77c4ed4df7eb40866609c6\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - backports.functools_lru_cache\n    - future\n    - numpy\n    - python >={{ python_min }}\n    - scipy\n    - setuptools\n\ntest:\n  imports:\n    - LTTL\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/axanthos/LTTL\n  summary: LangTech Text Library (LTTL) for text processing and analysis\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  dev_url: https://github.com/axanthos/LTTL\n  description: |\n    LTTL is an open-source python package for text processing and analysis. LTTL consists of (i) a set of classes for representing segmental analyses of text strings (= \u201Csegmentations\u201D), whereby portions of text strings are delineated and possibly annotated with specific labels; (ii) a set of classes for creating and manipulating segmentations, in order to produce either modified version of the original text data, or data tables summarizing properties of these data (e.g. unit frequency, complexity measures, concordances, and so on). LTTL was designed and implemented by LangTech Sarl.\n\nextra:\n  recipe-maintainers:\n    - HeavyTony2\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -252,8 +252,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/L/LTTL/LTTL-2.0.12.zip",
- "version": "2.0.12",
+ "url": "https://pypi.org/packages/source/L/LTTL/lttl-2.1.0.tar.gz",
+ "version": "2.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/lttl.json"
  }
