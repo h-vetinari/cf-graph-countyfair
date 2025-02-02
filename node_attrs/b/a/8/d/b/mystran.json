@@ -233,8 +233,7 @@
     "m2w64_c_stdlib_stub",
     "m2w64_c_compiler_stub",
     "m2w64_cxx_compiler_stub",
-    "m2w64_fortran_compiler_stub",
-    "m2-make"
+    "m2w64_fortran_compiler_stub"
    ],
    "host": [
     "f2c"
@@ -518,7 +517,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/mystran.json"
  },
- "raw_meta_yaml": "{% set name = \"mystran\" %}\n{% set version = \"15.2.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/MYSTRANsolver/MYSTRAN/archive/refs/tags/{{ version }}.tar.gz\n    sha256: 889ee74b5f17a85cff77aa0ffe4f47ff7d918325d113a68e73f856a766682d0f\n    patches:\n      - patches/f2c.patch                         # [unix]\n      - patches/remove_duplicate_targets.patch    # [unix]\n\n  - url: https://github.com/xiaoyeli/superlu/archive/refs/tags/v6.0.1.tar.gz\n    sha256: 6c5a3a9a224cb2658e9da15a6034eed44e45f6963f5a771a6b4562f7afb8f549\n    folder: superlu\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ stdlib(\"c\") }}                 # [unix]\n    - {{ compiler(\"c\") }}               # [unix]\n    - {{ compiler(\"cxx\") }}             # [unix]\n    - {{ compiler(\"fortran\") }}         # [unix]\n    - {{ stdlib('m2w64_c') }}           # [win]\n    - {{ compiler('m2w64_c') }}         # [win]\n    - {{ compiler('m2w64_cxx') }}       # [win]\n    - {{ compiler('m2w64_fortran') }}   # [win]\n    - make                              # [unix]\n    - m2-make                           # [win]\n    - cmake\n    - ninja                             # [unix]\n  host:\n    - f2c\n    # - superlu # we need dgssv from superlu which is not bundled with conda-forge superlu\n\ntest:\n  source_files:\n    - Build_Test_Cases/statics/*\n\n  commands:\n    - test -f ${PREFIX}/bin/mystran  # [unix]\n    - test -f %LIBRARY_PREFIX%\\bin\\mystran.exe  # [win]\n    - mystran Build_Test_Cases/statics/bar_tube.bdf\n    # - mystran Build_Test_Cases/statics/cquad4_pcomp.bdf\n    - mystran Build_Test_Cases/statics/cshear.bdf\n    - mystran Build_Test_Cases/statics/ctria3_pshell_center.bdf\n    # - mystran Build_Test_Cases/statics/missing_continuation.bdf\n\nabout:\n  home: https://www.mystran.com/\n  summary: 'MYSTRAN is a general purpose finite element analysis computer program for structures.'\n  license: MIT\n  license_file: LICENSE.txt\n  description: |\n    MYSTRAN is a general purpose finite element analysis computer program\n    for structures that can be modeled as linear (i.e. displacements, forces\n    and stresses proportional to applied load). MYSTRAN is an acronym for\n    \"My Structural Analysis\", to indicate it's usefulness in solving a wide\n    variety of finite element analysis problems. For anyone familiar with the\n    popular NASTRAN computer program developed by NASA (National Aeronautics\n    and Space Administration) in the 1970's and popularized in several\n    commercial versions since, the input to MYSTRAN will look quite familiar.\n    Indeed, many structural analyses modeled for execution in NASTRAN will\n    execute in MYSTRAN with little, or no, modification. MYSTRAN, however,\n    is not NASTRAN. All of the finite element processing to obtain the global\n    stiffness matrix (including the finite element matrix generation routines\n    themselves), the reduction of the stiffness matrix to the solution set, as\n    well as all of the input/output routines are written in independent, modern,\n    Fortran 90/95 code.\n  doc_url: https://github.com/MYSTRANsolver/MYSTRAN/tree/main\n\nextra:\n  recipe-maintainers:\n    - looooo\n",
+ "raw_meta_yaml": "{% set name = \"mystran\" %}\n{% set version = \"15.2.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/MYSTRANsolver/MYSTRAN/archive/refs/tags/{{ version }}.tar.gz\n    sha256: 889ee74b5f17a85cff77aa0ffe4f47ff7d918325d113a68e73f856a766682d0f\n    patches:\n      - patches/f2c.patch                         # [unix]\n      - patches/remove_duplicate_targets.patch    # [unix]\n\n  - url: https://github.com/xiaoyeli/superlu/archive/refs/tags/v6.0.1.tar.gz\n    sha256: 6c5a3a9a224cb2658e9da15a6034eed44e45f6963f5a771a6b4562f7afb8f549\n    folder: superlu\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ stdlib(\"c\") }}                 # [unix]\n    - {{ compiler(\"c\") }}               # [unix]\n    - {{ compiler(\"cxx\") }}             # [unix]\n    - {{ compiler(\"fortran\") }}         # [unix]\n    - {{ stdlib('m2w64_c') }}           # [win]\n    - {{ compiler('m2w64_c') }}         # [win]\n    - {{ compiler('m2w64_cxx') }}       # [win]\n    - {{ compiler('m2w64_fortran') }}   # [win]\n    - make\n    - cmake\n    - ninja                             # [unix]\n  host:\n    - f2c\n    # - superlu # we need dgssv from superlu which is not bundled with conda-forge superlu\n\ntest:\n  source_files:\n    - Build_Test_Cases/statics/*\n\n  commands:\n    - test -f ${PREFIX}/bin/mystran  # [unix]\n    - test -f %LIBRARY_PREFIX%\\bin\\mystran.exe  # [win]\n    - mystran Build_Test_Cases/statics/bar_tube.bdf\n    # - mystran Build_Test_Cases/statics/cquad4_pcomp.bdf\n    - mystran Build_Test_Cases/statics/cshear.bdf\n    - mystran Build_Test_Cases/statics/ctria3_pshell_center.bdf\n    # - mystran Build_Test_Cases/statics/missing_continuation.bdf\n\nabout:\n  home: https://www.mystran.com/\n  summary: 'MYSTRAN is a general purpose finite element analysis computer program for structures.'\n  license: MIT\n  license_file: LICENSE.txt\n  description: |\n    MYSTRAN is a general purpose finite element analysis computer program\n    for structures that can be modeled as linear (i.e. displacements, forces\n    and stresses proportional to applied load). MYSTRAN is an acronym for\n    \"My Structural Analysis\", to indicate it's usefulness in solving a wide\n    variety of finite element analysis problems. For anyone familiar with the\n    popular NASTRAN computer program developed by NASA (National Aeronautics\n    and Space Administration) in the 1970's and popularized in several\n    commercial versions since, the input to MYSTRAN will look quite familiar.\n    Indeed, many structural analyses modeled for execution in NASTRAN will\n    execute in MYSTRAN with little, or no, modification. MYSTRAN, however,\n    is not NASTRAN. All of the finite element processing to obtain the global\n    stiffness matrix (including the finite element matrix generation routines\n    themselves), the reduction of the stiffness matrix to the solution set, as\n    well as all of the input/output routines are written in independent, modern,\n    Fortran 90/95 code.\n  doc_url: https://github.com/MYSTRANsolver/MYSTRAN/tree/main\n\nextra:\n  recipe-maintainers:\n    - looooo\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -528,7 +527,6 @@
    "cxx_compiler_stub",
    "f2c",
    "fortran_compiler_stub",
-   "m2-make",
    "m2w64_c_compiler_stub",
    "m2w64_c_stdlib_stub",
    "m2w64_cxx_compiler_stub",
@@ -546,7 +544,6 @@
     "cmake",
     "cxx_compiler_stub",
     "fortran_compiler_stub",
-    "m2-make",
     "m2w64_c_compiler_stub",
     "m2w64_c_stdlib_stub",
     "m2w64_cxx_compiler_stub",
@@ -589,7 +586,6 @@
     "cmake",
     "cxx_compiler_stub",
     "fortran_compiler_stub",
-    "m2-make",
     "m2w64_c_compiler_stub",
     "m2w64_c_stdlib_stub",
     "m2w64_cxx_compiler_stub",
@@ -645,7 +641,7 @@
     "m2w64_c_compiler_stub",
     "m2w64_cxx_compiler_stub",
     "m2w64_fortran_compiler_stub",
-    "m2-make",
+    "make",
     "cmake"
    ],
    "host": [
@@ -682,11 +678,11 @@
    "__set__": true,
    "elements": [
     "cmake",
-    "m2-make",
     "m2w64_c_compiler_stub",
     "m2w64_c_stdlib_stub",
     "m2w64_cxx_compiler_stub",
-    "m2w64_fortran_compiler_stub"
+    "m2w64_fortran_compiler_stub",
+    "make"
    ]
   },
   "host": {
