@@ -34,27 +34,27 @@
   },
   "package": {
    "name": "kerchunk",
-   "version": "0.2.7"
+   "version": "0.2.8"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.11",
     "setuptools_scm",
     "setuptools"
    ],
    "run": [
-    "fsspec",
-    "python >=3.9",
+    "fsspec >=2025.2.0",
+    "python >=3.11",
     "numcodecs",
     "ujson",
-    "zarr"
+    "zarr >=3.0.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0425aa0fbf56f898053ee4c4dd40b35cea12d2fc986e036086e99a4ad16bd4e6",
-   "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.7.tar.gz"
+   "sha256": "85a932ffb6a26a38bebc45d5f978c962263704e34dd99f66008b402cded316af",
+   "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -65,7 +65,7 @@
    ],
    "requires": [
     "pip",
-    "python >=3.9"
+    "python >=3.11"
    ]
   }
  },
@@ -122,27 +122,27 @@
   },
   "package": {
    "name": "kerchunk",
-   "version": "0.2.7"
+   "version": "0.2.8"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.11",
     "setuptools_scm",
     "setuptools"
    ],
    "run": [
-    "fsspec",
-    "python >=3.9",
+    "fsspec >=2025.2.0",
+    "python >=3.11",
     "numcodecs",
     "ujson",
-    "zarr"
+    "zarr >=3.0.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0425aa0fbf56f898053ee4c4dd40b35cea12d2fc986e036086e99a4ad16bd4e6",
-   "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.7.tar.gz"
+   "sha256": "85a932ffb6a26a38bebc45d5f978c962263704e34dd99f66008b402cded316af",
+   "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -153,7 +153,7 @@
    ],
    "requires": [
     "pip",
-    "python >=3.9"
+    "python >=3.11"
    ]
   }
  },
@@ -171,7 +171,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/kerchunk.json"
  },
- "raw_meta_yaml": "{% set name = \"kerchunk\" %}\n{% set version = \"0.2.7\" %}\n{% set python_min = \"3.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kerchunk-{{ version }}.tar.gz\n  sha256: 0425aa0fbf56f898053ee4c4dd40b35cea12d2fc986e036086e99a4ad16bd4e6\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm\n    - setuptools\n  run:\n    - fsspec\n    - python >={{ python_min }}\n    - numcodecs\n    - ujson\n    - zarr\n\ntest:\n  imports:\n    - kerchunk\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python >={{ python_min }}\n\nabout:\n  home: https://github.com/fsspec/kerchunk\n  summary: Functions to make reference descriptions for ReferenceFileSystem\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - valeriupredoi\n    - martindurant\n    - rsignell-usgs\n",
+ "raw_meta_yaml": "{% set name = \"kerchunk\" %}\n{% set version = \"0.2.8\" %}\n{% set python_min = \"3.11\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kerchunk-{{ version }}.tar.gz\n  sha256: 85a932ffb6a26a38bebc45d5f978c962263704e34dd99f66008b402cded316af\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm\n    - setuptools\n  run:\n    - fsspec >=2025.2.0\n    - python >={{ python_min }}\n    - numcodecs\n    - ujson\n    - zarr >=3.0.1\n\ntest:\n  imports:\n    - kerchunk\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python >={{ python_min }}\n\nabout:\n  home: https://github.com/fsspec/kerchunk\n  summary: Functions to make reference descriptions for ReferenceFileSystem\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - valeriupredoi\n    - martindurant\n    - rsignell-usgs\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -227,7 +227,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9",
+    "python 3.11",
     "setuptools",
     "setuptools_scm"
    ]
@@ -235,23 +235,23 @@
   "run": {
    "__set__": true,
    "elements": [
-    "fsspec",
+    "fsspec >=2025.2.0",
     "numcodecs",
-    "python >=3.9",
+    "python >=3.11",
     "ujson",
-    "zarr"
+    "zarr >=3.0.1"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9"
+    "python >=3.11"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.7.tar.gz",
- "version": "0.2.7",
+ "url": "https://pypi.org/packages/source/k/kerchunk/kerchunk-0.2.8.tar.gz",
+ "version": "0.2.8",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/kerchunk.json"
  }
