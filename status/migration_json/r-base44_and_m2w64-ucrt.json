@@ -134,6 +134,8 @@
     "fossil": {
       "immediate_children": [],
       "num_descendants": 0,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/fossil-feedstock",
       "pre_pr_migrator_status": ""
     },
     "fpm": {
@@ -198,7 +200,7 @@
     "go1.4-bootstrap": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/13103463547\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 249, in run_migration_local\n    migrator.run_pre_piggyback_migrations(recipe_dir, feedstock_ctx.attrs, **kwargs)\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/core.py\", line 451, in run_pre_piggyback_migrations\n    mini_migrator.migrate(recipe_dir, attrs, **kwargs)\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/cstdlib.py\", line 237, in migrate\n    sections = _slice_into_output_sections(lines, attrs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/libboost.py\", line 105, in _slice_into_output_sections\n    raise RuntimeError(\nRuntimeError: Could not find all output sections in meta.yaml! Found 2 sections for outputs names = {'go1.4-bootstrap_win-64', 'go1.4-bootstrap_osx-64', 'go1.4-bootstrap_linux-64'}.\n"
+      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/13103545893\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 119, in _run_bot_task\n    data = func(attrs=attrs, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/container_cli.py\", line 225, in _migrate_feedstock\n    data = run_migration_local(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migration_runner.py\", line 249, in run_migration_local\n    migrator.run_pre_piggyback_migrations(recipe_dir, feedstock_ctx.attrs, **kwargs)\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/core.py\", line 451, in run_pre_piggyback_migrations\n    mini_migrator.migrate(recipe_dir, attrs, **kwargs)\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/cstdlib.py\", line 237, in migrate\n    sections = _slice_into_output_sections(lines, attrs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/migrators/libboost.py\", line 105, in _slice_into_output_sections\n    raise RuntimeError(\nRuntimeError: Could not find all output sections in meta.yaml! Found 2 sections for outputs names = {'go1.4-bootstrap_win-64', 'go1.4-bootstrap_osx-64', 'go1.4-bootstrap_linux-64'}.\n"
     },
     "gotm": {
       "immediate_children": [],
@@ -273,6 +275,8 @@
     "leparagliding": {
       "immediate_children": [],
       "num_descendants": 0,
+      "pr_status": "",
+      "pr_url": "https://github.com/conda-forge/leparagliding-feedstock",
       "pre_pr_migrator_status": ""
     },
     "libbezier": {
@@ -11575,7 +11579,7 @@
     "mystran": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": ""
+      "pre_pr_migrator_status": "bot error (<a href=\"https://github.com/regro/cf-scripts/actions/runs/13103545893\">bot CI job</a>): main:\nTraceback (most recent call last):\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/__main__.py\", line 104, in _run_bot_task\n    data = func(**kwargs)\n           ^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/__main__.py\", line 216, in _rerender_feedstock\n    msg = rerender_local(fs_dir, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/rerender.py\", line 255, in rerender_local\n    raise RuntimeError(f\"Failed to rerender.\noutput: {ret.stdout}\n\")\nRuntimeError: Failed to rerender.\noutput: Traceback (most recent call last):\n  File \"/opt/conda/envs/cf-scripts/bin/conda-smithy\", line 10, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_smithy/cli.py\", line 767, in main\n    args.subcommand_func(args)\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_smithy/cli.py\", line 610, in __call__\n    self._call(args, args.temporary_directory)\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_smithy/cli.py\", line 613, in _call\n    configure_feedstock.main(\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_smithy/configure_feedstock.py\", line 2858, in main\n    exclusive_config_file, cf_pinning_ver = get_cached_cfp_file_path(\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_smithy/configure_feedstock.py\", line 2671, in get_cached_cfp_file_path\n    current_pinning_version = get_most_recent_version(\n                              ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_smithy/configure_feedstock.py\", line 2544, in get_most_recent_version\n    request.raise_for_status()\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/requests/models.py\", line 1024, in raise_for_status\n    raise HTTPError(http_error_msg, response=self)\nrequests.exceptions.HTTPError: 520 Server Error:  for url: https://api.anaconda.org/package/conda-forge/conda-forge-pinning\n\n\n"
     },
     "nceplibs-ip": {
       "immediate_children": [],
@@ -59813,12 +59817,9 @@
     "eatpy",
     "m2w64-jq"
   ],
-  "awaiting-pr": [
-    "fossil",
-    "mystran",
-    "leparagliding"
-  ],
+  "awaiting-pr": [],
   "bot-error": [
+    "mystran",
     "go1.4-bootstrap"
   ],
   "done": [
@@ -59834,6 +59835,7 @@
     "dftd4-python",
     "dkh",
     "flash",
+    "fossil",
     "fpm",
     "gcp-correction",
     "genesis2",
@@ -63526,6 +63528,7 @@
     "xtb",
     "xtb-python",
     "zaber-motion",
+    "leparagliding",
     "iso_varying_string",
     "go",
     "tmsu",
