@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
   "conda_build": {
    "error_overlinking": true
   },
@@ -32,7 +35,7 @@
   },
   "package": {
    "name": "browserforge",
-   "version": "1.2.1"
+   "version": "1.2.3"
   },
   "requirements": {
    "host": [
@@ -51,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7036d73fb066a4361a015b619079474c42d8b0ff415e1d874b62366de48d0b61",
-   "url": "https://pypi.org/packages/source/b/browserforge/browserforge-1.2.1.tar.gz"
+   "sha256": "d5bec6dffd4748b30fbac9f9c1ef33b26c01a23185240bf90011843e174b7ecc",
+   "url": "https://pypi.org/packages/source/b/browserforge/browserforge-1.2.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -115,7 +118,7 @@
   },
   "package": {
    "name": "browserforge",
-   "version": "1.2.1"
+   "version": "1.2.3"
   },
   "requirements": {
    "host": [
@@ -134,8 +137,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7036d73fb066a4361a015b619079474c42d8b0ff415e1d874b62366de48d0b61",
-   "url": "https://pypi.org/packages/source/b/browserforge/browserforge-1.2.1.tar.gz"
+   "sha256": "d5bec6dffd4748b30fbac9f9c1ef33b26c01a23185240bf90011843e174b7ecc",
+   "url": "https://pypi.org/packages/source/b/browserforge/browserforge-1.2.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/browserforge.json"
  },
- "raw_meta_yaml": "{% set name = \"browserforge\" %}\n{% set version = \"1.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/browserforge-{{ version }}.tar.gz\n  sha256: 7036d73fb066a4361a015b619079474c42d8b0ff415e1d874b62366de48d0b61\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - click\n    - typing_extensions\n  run_constrained:\n    - orjson *\n\ntest:\n  imports:\n    - browserforge\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/daijro/browserforge\n  summary: Intelligent browser header & fingerprint generator\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"browserforge\" %}\n{% set version = \"1.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/browserforge-{{ version }}.tar.gz\n  sha256: d5bec6dffd4748b30fbac9f9c1ef33b26c01a23185240bf90011843e174b7ecc\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - click\n    - typing_extensions\n  run_constrained:\n    - orjson *\n\ntest:\n  imports:\n    - browserforge\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/daijro/browserforge\n  summary: Intelligent browser header & fingerprint generator\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -234,8 +237,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/b/browserforge/browserforge-1.2.1.tar.gz",
- "version": "1.2.1",
+ "url": "https://pypi.org/packages/source/b/browserforge/browserforge-1.2.3.tar.gz",
+ "version": "1.2.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/browserforge.json"
  }
