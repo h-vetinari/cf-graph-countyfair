@@ -26,7 +26,7 @@
   },
   "build": {
    "missing_dso_whitelist": null,
-   "number": "0",
+   "number": "1",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -118,13 +118,12 @@
    "summary": "Provides sparse vectors powered by ALTREP (Alternative Representations for R Objects) that behave like regular vectors, and can thus be used in data frames. Also provides tools to convert between sparse matrices and data frames with sparse columns and functions to interact with sparse vectors."
   },
   "build": {
-   "merge_build_host": true,
    "missing_dso_whitelist": [
     "*/R.dll",
     "*/Rblas.dll",
     "*/Rlapack.dll"
    ],
-   "number": "0",
+   "number": "1",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -161,8 +160,7 @@
     "r-base",
     "r-cli >=3.4.0",
     "r-rlang >=1.1.0",
-    "r-vctrs",
-    "gcc-libs"
+    "r-vctrs"
    ]
   },
   "schema_version": 0,
@@ -194,7 +192,7 @@
   },
   "build": {
    "missing_dso_whitelist": null,
-   "number": "0",
+   "number": "1",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -289,7 +287,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/r-sparsevctrs.json"
  },
- "raw_meta_yaml": "{% set version = '0.2.0' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sparsevctrs\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/sparsevctrs_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/sparsevctrs/sparsevctrs_{{ version }}.tar.gz\n  sha256: 04f806ea5e3e7aae406e4aeb759df398b7a7871a812ee20681bdcb4dfafe3f8a\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n  missing_dso_whitelist:\n    - '*/R.dll'        # [win]\n    - '*/Rblas.dll'    # [win]\n    - '*/Rlapack.dll'  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ stdlib('c') }}                # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ stdlib('m2w64_c') }}          # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-cli >=3.4.0\n    - r-rlang >=1.1.0\n    - r-vctrs\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-cli >=3.4.0\n    - r-rlang >=1.1.0\n    - r-vctrs\n\ntest:\n  commands:\n    - $R -e \"library('sparsevctrs')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('sparsevctrs')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/r-lib/sparsevctrs, https://r-lib.github.io/sparsevctrs/\n  license: MIT\n  summary: Provides sparse vectors powered by ALTREP (Alternative Representations for R Objects)\n    that behave like regular vectors, and can thus be used in data frames. Also provides\n    tools to convert between sparse matrices and data frames with sparse columns and\n    functions to interact with sparse vectors.\n  license_family: MIT\n  license_file:\n    - '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT'\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
+ "raw_meta_yaml": "{% set version = '0.2.0' %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-sparsevctrs\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/sparsevctrs_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/sparsevctrs/sparsevctrs_{{ version }}.tar.gz\n  sha256: 04f806ea5e3e7aae406e4aeb759df398b7a7871a812ee20681bdcb4dfafe3f8a\n\nbuild:\n  number: 1\n  rpaths:\n    - lib/R/lib/\n    - lib/\n  missing_dso_whitelist:\n    - '*/R.dll'        # [win]\n    - '*/Rblas.dll'    # [win]\n    - '*/Rlapack.dll'  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ stdlib('c') }}                # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ stdlib('m2w64_c') }}          # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-cli >=3.4.0\n    - r-rlang >=1.1.0\n    - r-vctrs\n  run:\n    - r-base\n    - r-cli >=3.4.0\n    - r-rlang >=1.1.0\n    - r-vctrs\n\ntest:\n  commands:\n    - $R -e \"library('sparsevctrs')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('sparsevctrs')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/r-lib/sparsevctrs, https://r-lib.github.io/sparsevctrs/\n  license: MIT\n  summary: Provides sparse vectors powered by ALTREP (Alternative Representations for R Objects)\n    that behave like regular vectors, and can thus be used in data frames. Also provides\n    tools to convert between sparse matrices and data frames with sparse columns and\n    functions to interact with sparse vectors.\n  license_family: MIT\n  license_file:\n    - '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT'\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -297,7 +295,6 @@
    "c_stdlib_stub",
    "coreutils",
    "filesystem",
-   "gcc-libs",
    "m2w64_c_compiler_stub",
    "m2w64_c_stdlib_stub",
    "make",
@@ -340,7 +337,6 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "gcc-libs",
     "r-base",
     "r-cli",
     "r-rlang",
@@ -380,7 +376,6 @@
   "run": {
    "__set__": true,
    "elements": [
-    "gcc-libs",
     "r-base",
     "r-cli >=3.4.0",
     "r-rlang >=1.1.0",
@@ -416,13 +411,12 @@
    "summary": "Provides sparse vectors powered by ALTREP (Alternative Representations for R Objects) that behave like regular vectors, and can thus be used in data frames. Also provides tools to convert between sparse matrices and data frames with sparse columns and functions to interact with sparse vectors."
   },
   "build": {
-   "merge_build_host": true,
    "missing_dso_whitelist": [
     "*/R.dll",
     "*/Rblas.dll",
     "*/Rlapack.dll"
    ],
-   "number": "0",
+   "number": "1",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -455,7 +449,6 @@
    ],
    "run": [
     "r-base",
-    "gcc-libs",
     "r-cli >=3.4.0",
     "r-rlang >=1.1.0",
     "r-vctrs"
@@ -500,7 +493,6 @@
   "run": {
    "__set__": true,
    "elements": [
-    "gcc-libs",
     "r-base",
     "r-cli",
     "r-rlang",
