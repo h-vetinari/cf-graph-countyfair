@@ -38,11 +38,11 @@
   },
   "package": {
    "name": "ltbams",
-   "version": "0.9.13"
+   "version": "1.0.2"
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
@@ -56,16 +56,15 @@
     "matplotlib-base",
     "psutil",
     "openpyxl",
-    "andes >=1.8.7",
+    "andes >=1.9.3",
     "pybind11",
-    "cvxpy",
-    "pyscipopt"
+    "cvxpy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d46f5060ee0e48912f6aa9992e590be71627fff8bf8252fb6f567fdab474b860",
-   "url": "https://pypi.org/packages/source/l/ltbams/ltbams-0.9.13.tar.gz"
+   "sha256": "7f3e3e57abfa7c2dd6efee4bfb05f296cdb329994f38d6e772dc2d6cb2ec8f73",
+   "url": "https://pypi.org/packages/source/l/ltbams/ltbams-1.0.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -76,6 +75,7 @@
     "ams"
    ],
    "requires": [
+    "python 3.9",
     "pip"
    ]
   }
@@ -105,7 +105,6 @@
     "pandas",
     "psutil",
     "pybind11",
-    "pyscipopt",
     "python",
     "scipy",
     "sympy"
@@ -114,7 +113,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -143,11 +143,11 @@
   },
   "package": {
    "name": "ltbams",
-   "version": "0.9.13"
+   "version": "1.0.2"
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
@@ -161,16 +161,15 @@
     "matplotlib-base",
     "psutil",
     "openpyxl",
-    "andes >=1.8.7",
+    "andes >=1.9.3",
     "pybind11",
-    "cvxpy",
-    "pyscipopt"
+    "cvxpy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d46f5060ee0e48912f6aa9992e590be71627fff8bf8252fb6f567fdab474b860",
-   "url": "https://pypi.org/packages/source/l/ltbams/ltbams-0.9.13.tar.gz"
+   "sha256": "7f3e3e57abfa7c2dd6efee4bfb05f296cdb329994f38d6e772dc2d6cb2ec8f73",
+   "url": "https://pypi.org/packages/source/l/ltbams/ltbams-1.0.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -181,6 +180,7 @@
     "ams"
    ],
    "requires": [
+    "python 3.9",
     "pip"
    ]
   }
@@ -199,7 +199,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ltbams.json"
  },
- "raw_meta_yaml": "{% set name = \"ltbams\" %}\n{% set version = \"0.9.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ltbams-{{ version }}.tar.gz\n  sha256: d46f5060ee0e48912f6aa9992e590be71627fff8bf8252fb6f567fdab474b860\n\nbuild:\n  entry_points:\n    - ams = ams.cli:main\n  script: |\n    mv pyproject.toml pyproject.toml.bak\n    {{ PYTHON }} -m pip install . --no-build-isolation --no-deps\n    mv pyproject.toml.bak pyproject.toml\n  number: 0\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.9\n    - pip\n    - setuptools\n  run:\n    - python >=3.9\n    - kvxopt >=1.3.2.1\n    - numpy\n    - scipy\n    - sympy >=1.6,!=1.10.0\n    - pandas\n    - matplotlib-base\n    - psutil\n    - openpyxl\n    - andes >=1.8.7\n    - pybind11\n    - cvxpy\n    - pyscipopt\n\ntest:\n  imports:\n    - ams\n  commands:\n    - pip check\n    - ams st\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/CURENT/ams\n  summary: Python software for scheduling modeling and co-simulation with dynamics.\n  license: GPL-3.0-or-later\n  license_family: GPL3\n  license_file: LICENSE\n  doc_url: https://ltb.readthedocs.io/projects/ams/\n  description: |\n    AMS is a Python software designed for power system scheduling modeling and co-simulation with dynamics.\n    It serves as the market simulator for the CURENT Largescale Testbed, enabling stability-constrained\n    production cost and market operation modeling.\n\nextra:\n  recipe-maintainers:\n    - jinningwang\n",
+ "raw_meta_yaml": "{% set name = \"ltbams\" %}\n{% set version = \"1.0.2\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ltbams-{{ version }}.tar.gz\n  sha256: 7f3e3e57abfa7c2dd6efee4bfb05f296cdb329994f38d6e772dc2d6cb2ec8f73\n\nbuild:\n  entry_points:\n    - ams = ams.cli:main\n  script: |\n    mv pyproject.toml pyproject.toml.bak\n    {{ PYTHON }} -m pip install . --no-build-isolation --no-deps\n    mv pyproject.toml.bak pyproject.toml\n  number: 0\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - kvxopt >=1.3.2.1\n    - numpy\n    - scipy\n    - sympy >=1.6,!=1.10.0\n    - pandas\n    - matplotlib-base\n    - psutil\n    - openpyxl\n    - andes >=1.9.3\n    - pybind11\n    - cvxpy\n\ntest:\n  imports:\n    - ams\n  commands:\n    - pip check\n    - ams st\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/CURENT/ams\n  summary: Python software for scheduling modeling and co-simulation with dynamics.\n  license: GPL-3.0-or-later\n  license_family: GPL3\n  license_file: LICENSE\n  doc_url: https://ltb.readthedocs.io/projects/ams/\n  description: |\n    AMS is a Python software designed for power system scheduling modeling and co-simulation with dynamics.\n    It serves as the market simulator for the CURENT Largescale Testbed, enabling stability-constrained\n    production cost and market operation modeling.\n\nextra:\n  recipe-maintainers:\n    - jinningwang\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -213,7 +213,6 @@
    "pip",
    "psutil",
    "pybind11",
-   "pyscipopt",
    "python",
    "scipy",
    "setuptools",
@@ -245,7 +244,6 @@
     "pandas",
     "psutil",
     "pybind11",
-    "pyscipopt",
     "python",
     "scipy",
     "sympy"
@@ -254,7 +252,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -268,14 +267,14 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.9",
     "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "andes >=1.8.7",
+    "andes >=1.9.3",
     "cvxpy",
     "kvxopt >=1.3.2.1",
     "matplotlib-base",
@@ -284,7 +283,6 @@
     "pandas",
     "psutil",
     "pybind11",
-    "pyscipopt",
     "python >=3.9",
     "scipy",
     "sympy >=1.6,!=1.10.0"
@@ -293,12 +291,13 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/l/ltbams/ltbams-0.9.13.tar.gz",
- "version": "0.9.13",
+ "url": "https://pypi.org/packages/source/l/ltbams/ltbams-1.0.2.tar.gz",
+ "version": "1.0.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ltbams.json"
  }
