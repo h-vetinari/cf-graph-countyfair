@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,18 +33,18 @@
   },
   "package": {
    "name": "ismip6-antarctic-ocean-forcing",
-   "version": "1.1"
+   "version": "1.2.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "pip",
-    "setuptools"
+    "setuptools >=42"
    ],
    "run": [
     "python >=3.9",
     "dask",
-    "descartes",
+    "descartes >=1.1.0",
     "gsw",
     "imageio",
     "matplotlib-base",
@@ -52,19 +52,19 @@
     "netcdf4",
     "numpy",
     "progressbar2",
-    "pyremap <0.1.0",
+    "pyremap >=1.4.1",
     "pyshp",
     "requests",
     "scikit-fmm",
     "scipy",
-    "shapely",
+    "shapely >=2.0",
     "xarray"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9b7551a485af32efafc53b6f4141e2355b8f6898d69afabe117dfcf89dc6e01d",
-   "url": "https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/1.1.tar.gz"
+   "sha256": "c09fa1b1677e5357e976153423a9f1f105883611fcfe05c8be2c45d318fcf1a6",
+   "url": "https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/1.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -133,7 +133,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -143,18 +143,18 @@
   },
   "package": {
    "name": "ismip6-antarctic-ocean-forcing",
-   "version": "1.1"
+   "version": "1.2.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "pip",
-    "setuptools"
+    "setuptools >=42"
    ],
    "run": [
     "python >=3.9",
     "dask",
-    "descartes",
+    "descartes >=1.1.0",
     "gsw",
     "imageio",
     "matplotlib-base",
@@ -162,19 +162,19 @@
     "netcdf4",
     "numpy",
     "progressbar2",
-    "pyremap <0.1.0",
+    "pyremap >=1.4.1",
     "pyshp",
     "requests",
     "scikit-fmm",
     "scipy",
-    "shapely",
+    "shapely >=2.0",
     "xarray"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9b7551a485af32efafc53b6f4141e2355b8f6898d69afabe117dfcf89dc6e01d",
-   "url": "https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/1.1.tar.gz"
+   "sha256": "c09fa1b1677e5357e976153423a9f1f105883611fcfe05c8be2c45d318fcf1a6",
+   "url": "https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/1.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -204,7 +204,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ismip6-antarctic-ocean-forcing.json"
  },
- "raw_meta_yaml": "{% set version = \"1.1\" %}\n\npackage:\n    name: ismip6-antarctic-ocean-forcing\n    version: {{ version }}\n\nsource:\n     url: https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/{{ version }}.tar.gz\n     sha256: 9b7551a485af32efafc53b6f4141e2355b8f6898d69afabe117dfcf89dc6e01d\n\nbuild:\n    number: 1\n    script: {{ PYTHON }} -m pip install . -vv\n    noarch: python\n\nrequirements:\n    host:\n        - python {{ python_min }}\n        - pip\n        - setuptools\n    run:\n        - python >={{ python_min }}\n        - dask\n        - descartes\n        - gsw\n        - imageio\n        - matplotlib-base\n        - nco\n        - netcdf4\n        - numpy\n        - progressbar2\n        - pyremap <0.1.0\n        - pyshp\n        - requests\n        - scikit-fmm\n        - scipy\n        - shapely\n        - xarray\n\ntest:\n    requires:\n        - pip\n        - python {{ python_min }}\n    imports:\n        - ismip6_ocean_forcing\n    commands:\n        - ismip6_ocean_forcing --version\n        - pip check\n\n\nabout:\n    home:  https://github.com/ismip/ismip6-antarctic-ocean-forcing\n    license: MIT\n    license_family: MIT\n    license_file: LICENSE\n    summary: A python package for creating ISMIP6 ocean forcing data sets.\n\nextra:\n    recipe-maintainers:\n        - xylar\n",
+ "raw_meta_yaml": "{% set version = \"1.2.0\" %}\n\npackage:\n  name: ismip6-antarctic-ocean-forcing\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/{{ version }}.tar.gz\n  sha256: c09fa1b1677e5357e976153423a9f1f105883611fcfe05c8be2c45d318fcf1a6\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools >=42\n  run:\n    - python >={{ python_min }}\n    - dask\n    - descartes >=1.1.0\n    - gsw\n    - imageio\n    - matplotlib-base\n    - nco\n    - netcdf4\n    - numpy\n    - progressbar2\n    - pyremap >=1.4.1\n    - pyshp\n    - requests\n    - scikit-fmm\n    - scipy\n    - shapely >=2.0\n    - xarray\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - ismip6_ocean_forcing\n  commands:\n    - ismip6_ocean_forcing --version\n    - pip check\n\n\nabout:\n  home: https://github.com/ismip/ismip6-antarctic-ocean-forcing\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A python package for creating ISMIP6 ocean forcing data sets.\n\nextra:\n  recipe-maintainers:\n    - xylar\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -283,14 +283,14 @@
    "elements": [
     "pip",
     "python 3.9",
-    "setuptools"
+    "setuptools >=42"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "dask",
-    "descartes",
+    "descartes >=1.1.0",
     "gsw",
     "imageio",
     "matplotlib-base",
@@ -298,13 +298,13 @@
     "netcdf4",
     "numpy",
     "progressbar2",
-    "pyremap <0.1.0",
+    "pyremap >=1.4.1",
     "pyshp",
     "python >=3.9",
     "requests",
     "scikit-fmm",
     "scipy",
-    "shapely",
+    "shapely >=2.0",
     "xarray"
    ]
   },
@@ -316,8 +316,8 @@
    ]
   }
  },
- "url": "https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/1.1.tar.gz",
- "version": "1.1",
+ "url": "https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/1.2.0.tar.gz",
+ "version": "1.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ismip6-antarctic-ocean-forcing.json"
  }
