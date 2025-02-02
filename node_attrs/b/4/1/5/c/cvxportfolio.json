@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -40,12 +40,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "cvxpy",
     "matplotlib-base",
     "numpy",
@@ -57,7 +57,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "3861e7484b225141b19aba03d0bc26ffa9d058918102e0c7ef7dc4c6bc80a730",
-   "url": "https://pypi.io/packages/source/c/cvxportfolio/cvxportfolio-1.4.0.tar.gz"
+   "url": "https://pypi.org/packages/source/c/cvxportfolio/cvxportfolio-1.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -65,6 +65,9 @@
    ],
    "imports": [
     "cvxportfolio"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -95,7 +98,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -110,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -125,12 +130,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "cvxpy",
     "matplotlib-base",
     "numpy",
@@ -142,7 +147,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "3861e7484b225141b19aba03d0bc26ffa9d058918102e0c7ef7dc4c6bc80a730",
-   "url": "https://pypi.io/packages/source/c/cvxportfolio/cvxportfolio-1.4.0.tar.gz"
+   "url": "https://pypi.org/packages/source/c/cvxportfolio/cvxportfolio-1.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -150,6 +155,9 @@
    ],
    "imports": [
     "cvxportfolio"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -167,7 +175,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cvxportfolio.json"
  },
- "raw_meta_yaml": "{% set name = \"cvxportfolio\" %}\n{% set version = \"1.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3861e7484b225141b19aba03d0bc26ffa9d058918102e0c7ef7dc4c6bc80a730\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - setuptools\n  run:\n    - python >=3.7\n    - cvxpy\n    - matplotlib-base\n    - numpy\n    - pandas\n    - requests\n    - scs\n\ntest:\n  imports:\n    - cvxportfolio\n  commands:\n    - python -m cvxportfolio.tests\n\nabout:\n  home: https://cvxportfolio.readthedocs.io\n  license: GPL-3.0-or-later\n  license_family: GPL3\n  license_file: LICENSE\n  summary: Portfolio optimization and back-testing\n  dev_url: https://github.com/cvxgrp/cvxportfolio\n  doc_source_url: https://github.com/cvxgrp/cvxportfolio/blob/master/README.rst\n\nextra:\n  recipe-maintainers:\n    - enzbus\n    - timkpaine\n",
+ "raw_meta_yaml": "{% set name = \"cvxportfolio\" %}\n{% set version = \"1.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3861e7484b225141b19aba03d0bc26ffa9d058918102e0c7ef7dc4c6bc80a730\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - cvxpy\n    - matplotlib-base\n    - numpy\n    - pandas\n    - requests\n    - scs\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - cvxportfolio\n  commands:\n    - python -m cvxportfolio.tests\n\nabout:\n  home: https://cvxportfolio.readthedocs.io\n  license: GPL-3.0-or-later\n  license_family: GPL3\n  license_file: LICENSE\n  summary: Portfolio optimization and back-testing\n  dev_url: https://github.com/cvxgrp/cvxportfolio\n  doc_source_url: https://github.com/cvxgrp/cvxportfolio/blob/master/README.rst\n\nextra:\n  recipe-maintainers:\n    - enzbus\n    - timkpaine\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -209,7 +217,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -222,7 +232,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -233,17 +243,19 @@
     "matplotlib-base",
     "numpy",
     "pandas",
-    "python >=3.7",
+    "python >=3.9",
     "requests",
     "scs"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/c/cvxportfolio/cvxportfolio-1.4.0.tar.gz",
+ "url": "https://pypi.org/packages/source/c/cvxportfolio/cvxportfolio-1.4.0.tar.gz",
  "version": "1.4.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cvxportfolio.json"
