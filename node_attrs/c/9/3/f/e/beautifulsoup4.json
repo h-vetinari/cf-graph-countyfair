@@ -38,7 +38,7 @@
    "summary": "Python library designed for screen-scraping"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -61,7 +61,8 @@
      ],
      "run": [
       "python >=3.9",
-      "soupsieve >=1.2"
+      "soupsieve >=1.2",
+      "typing-extensions"
      ]
     },
     "script": "build_base.sh",
@@ -97,12 +98,12 @@
   ],
   "package": {
    "name": "beautifulsoup4",
-   "version": "4.12.3"
+   "version": "4.13.0"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051",
-   "url": "https://pypi.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.12.3.tar.gz"
+   "sha256": "b6e5afb3a2b1472c8db751a92eabf7834e5c7099f990c5e4b35f1f16b60bae64",
+   "url": "https://pypi.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.13.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -123,7 +124,8 @@
    "elements": [
     "beautifulsoup4",
     "python",
-    "soupsieve"
+    "soupsieve",
+    "typing-extensions"
    ]
   },
   "test": {
@@ -146,7 +148,7 @@
    "summary": "Python library designed for screen-scraping"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -169,7 +171,8 @@
      ],
      "run": [
       "python >=3.9",
-      "soupsieve >=1.2"
+      "soupsieve >=1.2",
+      "typing-extensions"
      ]
     },
     "script": "build_base.sh",
@@ -205,12 +208,12 @@
   ],
   "package": {
    "name": "beautifulsoup4",
-   "version": "4.12.3"
+   "version": "4.13.0"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051",
-   "url": "https://pypi.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.12.3.tar.gz"
+   "sha256": "b6e5afb3a2b1472c8db751a92eabf7834e5c7099f990c5e4b35f1f16b60bae64",
+   "url": "https://pypi.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.13.0.tar.gz"
   }
  },
  "name": "beautifulsoup4",
@@ -228,7 +231,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/beautifulsoup4.json"
  },
- "raw_meta_yaml": "{% set version = \"4.12.3\" %}\n\npackage:\n  name: beautifulsoup4\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/b/beautifulsoup4/beautifulsoup4-{{ version }}.tar.gz\n  sha256: 74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051\n\nbuild:\n  number: 1\n\noutputs:\n  - name: beautifulsoup4\n    build:\n      noarch: python\n    script: build_base.bat  # [win]\n    script: build_base.sh  # [not win]\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n      host:\n        - python {{ python_min }}\n        - hatchling\n        - pip\n      run:\n        - python >={{ python_min }}\n        - soupsieve >=1.2\n    test:\n      imports:\n        - bs4\n        - bs4.builder\n      commands:\n        - pip check\n      requires:\n        - pip\n\n  - name: bs4\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage('beautifulsoup4', max_pin=\"x.x.x\") }}\n    test:\n      imports:\n        - bs4\n\nabout:\n  home: http://www.crummy.com/software/BeautifulSoup/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python library designed for screen-scraping\n  description: |\n    Beautiful Soup is a library for pulling data out of HTML and XML files.\n    It provides ways of navigating, searching, and modifying parse trees.\n  doc_url: http://beautiful-soup-4.readthedocs.io/en/latest/\n  doc_source_url: https://github.com/newvem/beautifulsoup4/blob/master/doc/source/index.rst\n  dev_url: https://code.launchpad.net/beautifulsoup\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - nehaljwani\n",
+ "raw_meta_yaml": "{% set version = \"4.13.0\" %}\n\npackage:\n  name: beautifulsoup4\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/b/beautifulsoup4/beautifulsoup4-{{ version }}.tar.gz\n  sha256: b6e5afb3a2b1472c8db751a92eabf7834e5c7099f990c5e4b35f1f16b60bae64\n\nbuild:\n  number: 0\n\noutputs:\n  - name: beautifulsoup4\n    build:\n      noarch: python\n    script: build_base.bat  # [win]\n    script: build_base.sh  # [not win]\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n      host:\n        - python {{ python_min }}\n        - hatchling\n        - pip\n      run:\n        - python >={{ python_min }}\n        - soupsieve >=1.2\n        - typing-extensions\n    test:\n      imports:\n        - bs4\n        - bs4.builder\n      commands:\n        - pip check\n      requires:\n        - pip\n\n  - name: bs4\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage('beautifulsoup4', max_pin=\"x.x.x\") }}\n    test:\n      imports:\n        - bs4\n\nabout:\n  home: http://www.crummy.com/software/BeautifulSoup/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python library designed for screen-scraping\n  description: |\n    Beautiful Soup is a library for pulling data out of HTML and XML files.\n    It provides ways of navigating, searching, and modifying parse trees.\n  doc_url: http://beautiful-soup-4.readthedocs.io/en/latest/\n  doc_source_url: https://github.com/newvem/beautifulsoup4/blob/master/doc/source/index.rst\n  dev_url: https://code.launchpad.net/beautifulsoup\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - nehaljwani\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -236,7 +239,8 @@
    "hatchling",
    "pip",
    "python",
-   "soupsieve"
+   "soupsieve",
+   "typing-extensions"
   ]
  },
  "requirements": {
@@ -257,7 +261,8 @@
    "elements": [
     "beautifulsoup4",
     "python",
-    "soupsieve"
+    "soupsieve",
+    "typing-extensions"
    ]
   },
   "test": {
@@ -286,7 +291,8 @@
    "elements": [
     "beautifulsoup4",
     "python >=3.9",
-    "soupsieve >=1.2"
+    "soupsieve >=1.2",
+    "typing-extensions"
    ]
   },
   "test": {
@@ -296,8 +302,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.12.3.tar.gz",
- "version": "4.12.3",
+ "url": "https://pypi.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.13.0.tar.gz",
+ "version": "4.13.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/beautifulsoup4.json"
  }
