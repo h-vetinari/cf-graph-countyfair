@@ -51,7 +51,7 @@
     "name": "qcportal",
     "requirements": {
      "host": [
-      "python >=3.9",
+      "python 3.9",
       "pip",
       "setuptools >=61.0",
       "versioningit"
@@ -79,15 +79,14 @@
     "test": {
      "commands": [
       "test -f $SP_DIR/qcportal/__init__.py",
-      "pip check",
       "python -c \"import qcportal as qc;assert qc.__version__ == '0.50b13.post52+gbb2748c85', f'{qc.__version__=} differs from recipe=\\'0.50b13.post52+gbb2748c85\\''\""
      ],
      "imports": [
       "qcportal"
      ],
      "requires": [
-      "pip",
-      "pytest"
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -102,7 +101,7 @@
     "name": "qcfractalcompute",
     "requirements": {
      "host": [
-      "python >=3.9",
+      "python 3.9",
       "pip",
       "setuptools >=61.0",
       "versioningit"
@@ -116,7 +115,6 @@
     "test": {
      "commands": [
       "test -f $SP_DIR/qcfractalcompute/__init__.py",
-      "pip check",
       "python -c \"import qcfractalcompute as qc;assert qc.__version__ == '0.50b13.post52+gbb2748c85', f'{qc.__version__=} differs from recipe=\\'0.50b13.post52+gbb2748c85\\''\"",
       "qcfractal-compute-manager --help"
      ],
@@ -124,8 +122,8 @@
       "qcfractalcompute"
      ],
      "requires": [
-      "pip",
-      "pytest"
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -140,7 +138,7 @@
     "name": "qcfractal",
     "requirements": {
      "host": [
-      "python >=3.9",
+      "python 3.9",
       "pip",
       "setuptools >=61.0",
       "versioningit"
@@ -155,7 +153,10 @@
       "alembic",
       "psycopg2",
       "geoip2",
+      "boto3",
       "torsiondrive",
+      "qcmanybody",
+      "geometric >=1.1",
       "qcfractalcompute =0.50b13.post52+gbb2748c85",
       "__unix"
      ]
@@ -163,7 +164,6 @@
     "test": {
      "commands": [
       "test -f $SP_DIR/qcfractal/__init__.py",
-      "pip check",
       "python -c \"import qcfractal as qc;assert qc.__version__ == '0.50b13.post52+gbb2748c85', f'{qc.__version__=} differs from recipe=\\'0.50b13.post52+gbb2748c85\\''\"",
       "qcfractal-server --help"
      ],
@@ -171,8 +171,8 @@
       "qcfractal.snowflake"
      ],
      "requires": [
-      "pip",
-      "pytest"
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -187,7 +187,7 @@
     "name": "qcarchivetesting",
     "requirements": {
      "host": [
-      "python >=3.9",
+      "python 3.9",
       "pip",
       "setuptools >=61.0",
       "versioningit"
@@ -202,15 +202,14 @@
     "test": {
      "commands": [
       "test -f $SP_DIR/qcarchivetesting/__init__.py",
-      "pip check",
       "python -c \"import qcarchivetesting as qc;assert qc.__version__ == '0.50b13.post52+gbb2748c85', f'{qc.__version__=} differs from recipe=\\'0.50b13.post52+gbb2748c85\\''\""
      ],
      "imports": [
       "qcarchivetesting.helpers"
      ],
      "requires": [
-      "pip",
-      "pytest"
+      "python 3.9",
+      "pip"
      ]
     }
    }
@@ -223,22 +222,22 @@
   "source": [
    {
     "folder": "qcportal",
-    "sha256": "f4de906793619e2c6b087c98d839ccc6c65a9514ce14ccc34bab18b16f3c6800",
+    "sha256": "a7517012a4c3b722b89ecedc218f2359b63e1895c85185de517a3f63dfdfa657",
     "url": "https://pypi.org/packages/source/q/qcportal/qcportal-0.50b13.post52+gbb2748c85.tar.gz"
    },
    {
     "folder": "qcfractalcompute",
-    "sha256": "75b304a78f4d294eccf2bb84a26d00dd1f2da2c21650798062100c3196b3d36a",
+    "sha256": "e08d8c1acdb5b09d66b52fbe918c28ca696bd32b4494de6a1d6a9f77718bbe76",
     "url": "https://pypi.org/packages/source/q/qcfractalcompute/qcfractalcompute-0.50b13.post52+gbb2748c85.tar.gz"
    },
    {
     "folder": "qcfractal",
-    "sha256": "1f762ee232445eeaa368750cd85386d9e92f65d7a4872f4b30552b322cbe59c8",
+    "sha256": "f76481548bde2201aeb99443cb3450d7236cbfdcc7995b7f6a2ac2e2749386d3",
     "url": "https://pypi.org/packages/source/q/qcfractal/qcfractal-0.50b13.post52+gbb2748c85.tar.gz"
    },
    {
     "folder": "qcarchivetesting",
-    "sha256": "9f4e695f57a80d4652ff796103067b0ad6cb92a35d6bad2a30c0013f97ddb599",
+    "sha256": "45b099cfec558ab0fb7373a3c2d1295b20ac5f2e4607e8af23f7182a9fce4c35",
     "url": "https://pypi.org/packages/source/q/qcarchivetesting/qcarchivetesting-0.50b13.post52+gbb2748c85.tar.gz"
    }
   ]
@@ -264,9 +263,11 @@
     "alembic",
     "apsw",
     "bcrypt",
+    "boto3",
     "flask",
     "flask-jwt-extended",
     "geoip2",
+    "geometric",
     "msgpack-python",
     "numpy",
     "packaging",
@@ -284,6 +285,7 @@
     "qcengine",
     "qcfractal",
     "qcfractalcompute",
+    "qcmanybody",
     "qcportal",
     "requests",
     "sqlalchemy",
@@ -299,7 +301,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "pytest"
+    "python"
    ]
   }
  },
@@ -338,7 +340,7 @@
     "name": "qcportal",
     "requirements": {
      "host": [
-      "python >=3.9",
+      "python 3.9",
       "pip",
       "setuptools >=61.0",
       "versioningit"
@@ -366,15 +368,14 @@
     "test": {
      "commands": [
       "test -f $SP_DIR/qcportal/__init__.py",
-      "pip check",
       "python -c \"import qcportal as qc;assert qc.__version__ == '0.50b13.post52+gbb2748c85', f'{qc.__version__=} differs from recipe=\\'0.50b13.post52+gbb2748c85\\''\""
      ],
      "imports": [
       "qcportal"
      ],
      "requires": [
-      "pip",
-      "pytest"
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -389,7 +390,7 @@
     "name": "qcfractalcompute",
     "requirements": {
      "host": [
-      "python >=3.9",
+      "python 3.9",
       "pip",
       "setuptools >=61.0",
       "versioningit"
@@ -403,7 +404,6 @@
     "test": {
      "commands": [
       "test -f $SP_DIR/qcfractalcompute/__init__.py",
-      "pip check",
       "python -c \"import qcfractalcompute as qc;assert qc.__version__ == '0.50b13.post52+gbb2748c85', f'{qc.__version__=} differs from recipe=\\'0.50b13.post52+gbb2748c85\\''\"",
       "qcfractal-compute-manager --help"
      ],
@@ -411,8 +411,8 @@
       "qcfractalcompute"
      ],
      "requires": [
-      "pip",
-      "pytest"
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -427,7 +427,7 @@
     "name": "qcfractal",
     "requirements": {
      "host": [
-      "python >=3.9",
+      "python 3.9",
       "pip",
       "setuptools >=61.0",
       "versioningit"
@@ -442,7 +442,10 @@
       "alembic",
       "psycopg2",
       "geoip2",
+      "boto3",
       "torsiondrive",
+      "qcmanybody",
+      "geometric >=1.1",
       "qcfractalcompute =0.50b13.post52+gbb2748c85",
       "__unix"
      ]
@@ -450,7 +453,6 @@
     "test": {
      "commands": [
       "test -f $SP_DIR/qcfractal/__init__.py",
-      "pip check",
       "python -c \"import qcfractal as qc;assert qc.__version__ == '0.50b13.post52+gbb2748c85', f'{qc.__version__=} differs from recipe=\\'0.50b13.post52+gbb2748c85\\''\"",
       "qcfractal-server --help"
      ],
@@ -458,8 +460,8 @@
       "qcfractal.snowflake"
      ],
      "requires": [
-      "pip",
-      "pytest"
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -474,7 +476,7 @@
     "name": "qcarchivetesting",
     "requirements": {
      "host": [
-      "python >=3.9",
+      "python 3.9",
       "pip",
       "setuptools >=61.0",
       "versioningit"
@@ -489,15 +491,14 @@
     "test": {
      "commands": [
       "test -f $SP_DIR/qcarchivetesting/__init__.py",
-      "pip check",
       "python -c \"import qcarchivetesting as qc;assert qc.__version__ == '0.50b13.post52+gbb2748c85', f'{qc.__version__=} differs from recipe=\\'0.50b13.post52+gbb2748c85\\''\""
      ],
      "imports": [
       "qcarchivetesting.helpers"
      ],
      "requires": [
-      "pip",
-      "pytest"
+      "python 3.9",
+      "pip"
      ]
     }
    }
@@ -510,22 +511,22 @@
   "source": [
    {
     "folder": "qcportal",
-    "sha256": "f4de906793619e2c6b087c98d839ccc6c65a9514ce14ccc34bab18b16f3c6800",
+    "sha256": "a7517012a4c3b722b89ecedc218f2359b63e1895c85185de517a3f63dfdfa657",
     "url": "https://pypi.org/packages/source/q/qcportal/qcportal-0.50b13.post52+gbb2748c85.tar.gz"
    },
    {
     "folder": "qcfractalcompute",
-    "sha256": "75b304a78f4d294eccf2bb84a26d00dd1f2da2c21650798062100c3196b3d36a",
+    "sha256": "e08d8c1acdb5b09d66b52fbe918c28ca696bd32b4494de6a1d6a9f77718bbe76",
     "url": "https://pypi.org/packages/source/q/qcfractalcompute/qcfractalcompute-0.50b13.post52+gbb2748c85.tar.gz"
    },
    {
     "folder": "qcfractal",
-    "sha256": "1f762ee232445eeaa368750cd85386d9e92f65d7a4872f4b30552b322cbe59c8",
+    "sha256": "f76481548bde2201aeb99443cb3450d7236cbfdcc7995b7f6a2ac2e2749386d3",
     "url": "https://pypi.org/packages/source/q/qcfractal/qcfractal-0.50b13.post52+gbb2748c85.tar.gz"
    },
    {
     "folder": "qcarchivetesting",
-    "sha256": "9f4e695f57a80d4652ff796103067b0ad6cb92a35d6bad2a30c0013f97ddb599",
+    "sha256": "45b099cfec558ab0fb7373a3c2d1295b20ac5f2e4607e8af23f7182a9fce4c35",
     "url": "https://pypi.org/packages/source/q/qcarchivetesting/qcarchivetesting-0.50b13.post52+gbb2748c85.tar.gz"
    }
   ]
@@ -547,7 +548,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/qcfractal.json"
  },
- "raw_meta_yaml": "{% set name = \"qcfractal\" %}\n{% set version = \"0.57\" %}\n# pattern for unpublished commits {% set version = \"0.50b13.post52+gbb2748c85\" %}\n\npackage:\n  name: {{ name|lower }}-split\n  version: {{ version }}\n\nsource:\n  # unpublished - any repo commit. sync commit in git_rev below with commit and distance in version above\n  #git_url: https://github.com/MolSSI/QCFractal.git\n  #git_rev: bb2748c8534b267e33f894ef71a2d9a6da50c5af\n  #sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081\n  # published tags.\n  - url: https://pypi.org/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz\n    sha256: f4de906793619e2c6b087c98d839ccc6c65a9514ce14ccc34bab18b16f3c6800\n    folder: qcportal\n  - url: https://pypi.org/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz\n    sha256: 75b304a78f4d294eccf2bb84a26d00dd1f2da2c21650798062100c3196b3d36a\n    folder: qcfractalcompute\n  - url: https://pypi.org/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz\n    sha256: 1f762ee232445eeaa368750cd85386d9e92f65d7a4872f4b30552b322cbe59c8\n    folder: qcfractal\n  - url: https://pypi.org/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz\n    sha256: 9f4e695f57a80d4652ff796103067b0ad6cb92a35d6bad2a30c0013f97ddb599\n    folder: qcarchivetesting\n\nbuild:\n  number: 0\n  noarch: python\n\noutputs:\n  - name: qcportal\n    build:\n      noarch: python\n      script: python -m pip install --no-deps -vv ./qcportal\n    requirements:\n      host:\n        - python >=3.9\n        - pip\n        - setuptools >=61.0\n        - versioningit\n      run:\n        - python >=3.9\n        - numpy\n        - msgpack-python\n        - requests\n        - pyyaml\n        - pydantic >=1.10,<3.0a0\n        - zstandard\n        - apsw >=3.42\n        - qcelemental <0.70a0\n        - tabulate\n        - tqdm\n        - pandas\n        - pyjwt >=2.10\n        - packaging\n        - typing_extensions\n        - python-dateutil\n        - pytz\n    test:\n      imports:\n        - qcportal\n      requires:\n        - pip\n        - pytest\n      commands:\n        - test -f $SP_DIR/qcportal/__init__.py\n        - pip check\n        - python -c \"import qcportal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n    about:\n      summary: Python library for interacting with QCArchive/QCFractal servers\n\n  - name: qcfractalcompute\n    build:\n      noarch: python\n      script: python -m pip install --no-deps -vv ./qcfractalcompute\n    requirements:\n      host:\n        - python >=3.9\n        - pip\n        - setuptools >=61.0\n        - versioningit\n      run:\n        - python >=3.9\n        - qcportal ={{ version }}\n        - parsl\n    test:\n      imports:\n        - qcfractalcompute\n      requires:\n        - pip\n        - pytest\n      commands:\n        - test -f $SP_DIR/qcfractalcompute/__init__.py\n        - pip check\n        - python -c \"import qcfractalcompute as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n        - qcfractal-compute-manager --help\n    about:\n      summary: Distributed worker package for QCArchive\n\n  - name: qcfractal\n    build:\n      noarch: python\n      script: python -m pip install --no-deps -vv ./qcfractal\n    requirements:\n      host:\n        - python >=3.9\n        - pip\n        - setuptools >=61.0\n        - versioningit\n      run:\n        - python >=3.9\n        - flask\n        - flask-jwt-extended\n        - waitress\n        - bcrypt\n        - sqlalchemy >=2.0\n        - alembic\n        - psycopg2\n        - geoip2\n        - torsiondrive\n        - qcfractalcompute ={{ version }}\n        - __unix  # [unix]\n    test:\n      imports:\n        - qcfractal.snowflake\n      requires:\n        - pip\n        - pytest\n      commands:\n        - test -f $SP_DIR/qcfractal/__init__.py\n        - pip check\n        - python -c \"import qcfractal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n        - qcfractal-server --help\n    about:\n      summary: Database and Web API for the QCArchive project\n\n  - name: qcarchivetesting\n    build:\n      noarch: python\n      script: python -m pip install --no-deps -vv ./qcarchivetesting\n    requirements:\n      host:\n        - python >=3.9\n        - pip\n        - setuptools >=61.0\n        - versioningit\n      run:\n        - python >=3.9\n        - qcfractal ={{ version }}\n        - qcengine <0.70a0\n        - pytest\n    test:\n      imports:\n        - qcarchivetesting.helpers\n      requires:\n        - pip\n        - pytest\n      commands:\n        - test -f $SP_DIR/qcarchivetesting/__init__.py\n        - pip check\n        - python -c \"import qcarchivetesting as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n    about:\n      summary: Additional testing fixtures and functions for the QCArchive project\n\nabout:\n  home: https://github.com/MolSSI/QCFractal\n  dev_url: https://github.com/MolSSI/QCFractal\n  doc_url: https://molssi.github.io/QCFractal/\n  doc_source_url: https://github.com/MolSSI/QCFractal/blob/main/docs/source/index.rst\n  license: BSD-3-Clause\n  license_url: https://opensource.org/license/bsd-3-clause/\n  license_file: LICENSE\n  license_family: BSD\n  summary: A distributed compute and database platform for quantum chemistry.\n\nextra:\n  feedstock-name: qcfractal\n  recipe-maintainers:\n    - lnaden\n    - bennybp\n",
+ "raw_meta_yaml": "{% set name = \"qcfractal\" %}\n{% set version = \"0.58\" %}\n# pattern for unpublished commits {% set version = \"0.50b13.post52+gbb2748c85\" %}\n\npackage:\n  name: {{ name|lower }}-split\n  version: {{ version }}\n\nsource:\n  # unpublished - any repo commit. sync commit in git_rev below with commit and distance in version above\n  #git_url: https://github.com/MolSSI/QCFractal.git\n  #git_rev: bb2748c8534b267e33f894ef71a2d9a6da50c5af\n  #sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081\n  # published tags.\n  - url: https://pypi.org/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz\n    sha256: a7517012a4c3b722b89ecedc218f2359b63e1895c85185de517a3f63dfdfa657\n    folder: qcportal\n  - url: https://pypi.org/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz\n    sha256: e08d8c1acdb5b09d66b52fbe918c28ca696bd32b4494de6a1d6a9f77718bbe76\n    folder: qcfractalcompute\n  - url: https://pypi.org/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz\n    sha256: f76481548bde2201aeb99443cb3450d7236cbfdcc7995b7f6a2ac2e2749386d3\n    folder: qcfractal\n  - url: https://pypi.org/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz\n    sha256: 45b099cfec558ab0fb7373a3c2d1295b20ac5f2e4607e8af23f7182a9fce4c35\n    folder: qcarchivetesting\n\nbuild:\n  number: 0\n  noarch: python\n\noutputs:\n  - name: qcportal\n    build:\n      noarch: python\n      script: python -m pip install --no-deps -vv ./qcportal\n    requirements:\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools >=61.0\n        - versioningit\n      run:\n        - python >={{ python_min }}\n        - numpy\n        - msgpack-python\n        - requests\n        - pyyaml\n        - pydantic >=1.10,<3.0a0\n        - zstandard\n        - apsw >=3.42\n        - qcelemental <0.70a0\n        - tabulate\n        - tqdm\n        - pandas\n        - pyjwt >=2.10\n        - packaging\n        - typing_extensions\n        - python-dateutil\n        - pytz\n    test:\n      imports:\n        - qcportal\n      requires:\n        - python {{ python_min }}\n        - pip\n      commands:\n        - test -f $SP_DIR/qcportal/__init__.py\n        #- pip check\n        - python -c \"import qcportal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n    about:\n      summary: Python library for interacting with QCArchive/QCFractal servers\n\n  - name: qcfractalcompute\n    build:\n      noarch: python\n      script: python -m pip install --no-deps -vv ./qcfractalcompute\n    requirements:\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools >=61.0\n        - versioningit\n      run:\n        - python >={{ python_min }}\n        - qcportal ={{ version }}\n        - parsl\n    test:\n      imports:\n        - qcfractalcompute\n      requires:\n        - python {{ python_min }}\n        - pip\n      commands:\n        - test -f $SP_DIR/qcfractalcompute/__init__.py\n        #- pip check\n        - python -c \"import qcfractalcompute as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n        - qcfractal-compute-manager --help\n    about:\n      summary: Distributed worker package for QCArchive\n\n  - name: qcfractal\n    build:\n      noarch: python\n      script: python -m pip install --no-deps -vv ./qcfractal\n    requirements:\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools >=61.0\n        - versioningit\n      run:\n        - python >={{ python_min }}\n        - flask\n        - flask-jwt-extended\n        - waitress\n        - bcrypt\n        - sqlalchemy >=2.0\n        - alembic\n        - psycopg2\n        - geoip2\n        - boto3\n        - torsiondrive\n        - qcmanybody\n        - geometric >=1.1\n\n        - qcfractalcompute ={{ version }}\n        - __unix  # [unix]\n    test:\n      imports:\n        - qcfractal.snowflake\n      requires:\n        - python {{ python_min }}\n        - pip\n      commands:\n        - test -f $SP_DIR/qcfractal/__init__.py\n        #- pip check\n        - python -c \"import qcfractal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n        - qcfractal-server --help\n    about:\n      summary: Database and Web API for the QCArchive project\n\n  - name: qcarchivetesting\n    build:\n      noarch: python\n      script: python -m pip install --no-deps -vv ./qcarchivetesting\n    requirements:\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools >=61.0\n        - versioningit\n      run:\n        - python >={{ python_min }}\n        - qcfractal ={{ version }}\n        - qcengine <0.70a0\n        - pytest\n    test:\n      imports:\n        - qcarchivetesting.helpers\n      requires:\n        - python {{ python_min }}\n        - pip\n      commands:\n        - test -f $SP_DIR/qcarchivetesting/__init__.py\n        #- pip check\n        - python -c \"import qcarchivetesting as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\\'{{ version }}\\''\"\n    about:\n      summary: Additional testing fixtures and functions for the QCArchive project\n\nabout:\n  home: https://github.com/MolSSI/QCFractal\n  dev_url: https://github.com/MolSSI/QCFractal\n  doc_url: https://molssi.github.io/QCFractal/\n  doc_source_url: https://github.com/MolSSI/QCFractal/blob/main/docs/source/index.rst\n  license: BSD-3-Clause\n  license_url: https://opensource.org/license/bsd-3-clause/\n  license_file: LICENSE\n  license_family: BSD\n  summary: A distributed compute and database platform for quantum chemistry.\n\nextra:\n  feedstock-name: qcfractal\n  recipe-maintainers:\n    - lnaden\n    - bennybp\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -555,9 +556,11 @@
    "alembic",
    "apsw",
    "bcrypt",
+   "boto3",
    "flask",
    "flask-jwt-extended",
    "geoip2",
+   "geometric",
    "msgpack-python",
    "numpy",
    "packaging",
@@ -576,6 +579,7 @@
    "qcengine",
    "qcfractal",
    "qcfractalcompute",
+   "qcmanybody",
    "qcportal",
    "requests",
    "setuptools",
@@ -610,9 +614,11 @@
     "alembic",
     "apsw",
     "bcrypt",
+    "boto3",
     "flask",
     "flask-jwt-extended",
     "geoip2",
+    "geometric",
     "msgpack-python",
     "numpy",
     "packaging",
@@ -630,6 +636,7 @@
     "qcengine",
     "qcfractal",
     "qcfractalcompute",
+    "qcmanybody",
     "qcportal",
     "requests",
     "sqlalchemy",
@@ -645,7 +652,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "pytest"
+    "python"
    ]
   }
  },
@@ -659,7 +666,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "versioningit"
    ]
@@ -671,9 +678,11 @@
     "alembic",
     "apsw >=3.42",
     "bcrypt",
+    "boto3",
     "flask",
     "flask-jwt-extended",
     "geoip2",
+    "geometric >=1.1",
     "msgpack-python",
     "numpy",
     "packaging",
@@ -691,6 +700,7 @@
     "qcengine <0.70a0",
     "qcfractal =0.50b13.post52+gbb2748c85",
     "qcfractalcompute =0.50b13.post52+gbb2748c85",
+    "qcmanybody",
     "qcportal =0.50b13.post52+gbb2748c85",
     "requests",
     "sqlalchemy >=2.0",
@@ -706,7 +716,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "pytest"
+    "python 3.9"
    ]
   }
  },
