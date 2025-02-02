@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,7 +40,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.11",
+    "python 3.11",
     "pip >=23.3.1"
    ],
    "run": [
@@ -67,6 +67,9 @@
   "test": {
    "imports": [
     "serapis"
+   ],
+   "requires": [
+    "python 3.11"
    ]
   }
  },
@@ -102,7 +105,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -118,7 +123,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -132,7 +137,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.11",
+    "python 3.11",
     "pip >=23.3.1"
    ],
    "run": [
@@ -159,6 +164,9 @@
   "test": {
    "imports": [
     "serapis"
+   ],
+   "requires": [
+    "python 3.11"
    ]
   }
  },
@@ -176,7 +184,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/serapis.json"
  },
- "raw_meta_yaml": "{% set name = \"serapis\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Serapieum-of-alex/serapis/archive/{{ version }}.tar.gz\n  sha256: 46c2120d048c780d6fc1c1ce0ca4c991d849869ca537dc44b663a625f410e1b2\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n\n  host:\n    - python >=3.11\n    - pip >=23.3.1\n  run:\n    - python >=3.11\n    - numpy >=1.25.2\n    - pip >=23.3.1\n    - pyramids >=0.5.4\n    - geopandas >=0.14.1\n    - pandas >=2.1.0\n    - matplotlib-base >=3.7.2\n    - cleopatra >=0.4.0\n    - serapeum_utils >=0.2.0\n    - statista >=0.5.0\n    - statsmodels >=0.14.1\n    - loguru >=0.7.2\n    - pathlib >=1.0.1\n\n    \ntest:\n  imports:\n    - serapis\n\nabout:\n  home: https://github.com/Serapieum-of-alex/Serapis\n  license: GPL-3.0-only\n  license_file: LICENSE.md\n  license_family: GPL-3\n  license_file: LICENSE.md\n  summary: Flood modelling package\n  description: |\n    This module builds hydrodynamic model.\n  dev_url: https://github.com/Serapieum-of-alex/Serapis\n  doc_source_url: https://github.com/Serapieum-of-alex/Serapis/blob/main/README.md\n\nextra:\n  recipe-maintainers:\n    - MAfarrag\n",
+ "raw_meta_yaml": "{% set python_min = '3.11' %}\n{% set name = \"serapis\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Serapieum-of-alex/serapis/archive/{{ version }}.tar.gz\n  sha256: 46c2120d048c780d6fc1c1ce0ca4c991d849869ca537dc44b663a625f410e1b2\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n\n  host:\n    - python {{ python_min }}\n    - pip >=23.3.1\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.25.2\n    - pip >=23.3.1\n    - pyramids >=0.5.4\n    - geopandas >=0.14.1\n    - pandas >=2.1.0\n    - matplotlib-base >=3.7.2\n    - cleopatra >=0.4.0\n    - serapeum_utils >=0.2.0\n    - statista >=0.5.0\n    - statsmodels >=0.14.1\n    - loguru >=0.7.2\n    - pathlib >=1.0.1\n\n    \ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - serapis\n\nabout:\n  home: https://github.com/Serapieum-of-alex/Serapis\n  license: GPL-3.0-only\n  license_file: LICENSE.md\n  license_family: GPL-3\n  license_file: LICENSE.md\n  summary: Flood modelling package\n  description: |\n    This module builds hydrodynamic model.\n  dev_url: https://github.com/Serapieum-of-alex/Serapis\n  doc_source_url: https://github.com/Serapieum-of-alex/Serapis/blob/main/README.md\n\nextra:\n  recipe-maintainers:\n    - MAfarrag\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -227,7 +235,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -240,7 +250,7 @@
    "__set__": true,
    "elements": [
     "pip >=23.3.1",
-    "python >=3.11"
+    "python 3.11"
    ]
   },
   "run": {
@@ -263,7 +273,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.11"
+   ]
   }
  },
  "url": "https://github.com/Serapieum-of-alex/serapis/archive/0.1.0.tar.gz",
