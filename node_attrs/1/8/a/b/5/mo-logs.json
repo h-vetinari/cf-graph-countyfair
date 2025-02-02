@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "mo-logs",
-   "version": "8.665.25029"
+   "version": "8.667.25032"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "de8c89adc9fc2472fb111ad28e3dc0adf1418146a488e1f90cd55461a2b8b9fd",
-   "url": "https://pypi.org/packages/source/m/mo-logs/mo_logs-8.665.25029.tar.gz"
+   "sha256": "2d71d48798f2d282fea78afe031df4aeaf5fc4ddf79ad82efd6893016ee5f7a0",
+   "url": "https://pypi.org/packages/source/m/mo-logs/mo_logs-8.667.25032.tar.gz"
   },
   "test": {
    "commands": [
@@ -119,7 +119,7 @@
   },
   "package": {
    "name": "mo-logs",
-   "version": "8.665.25029"
+   "version": "8.667.25032"
   },
   "requirements": {
    "host": [
@@ -136,8 +136,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "de8c89adc9fc2472fb111ad28e3dc0adf1418146a488e1f90cd55461a2b8b9fd",
-   "url": "https://pypi.org/packages/source/m/mo-logs/mo_logs-8.665.25029.tar.gz"
+   "sha256": "2d71d48798f2d282fea78afe031df4aeaf5fc4ddf79ad82efd6893016ee5f7a0",
+   "url": "https://pypi.org/packages/source/m/mo-logs/mo_logs-8.667.25032.tar.gz"
   },
   "test": {
    "commands": [
@@ -166,7 +166,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/mo-logs.json"
  },
- "raw_meta_yaml": "{% set name = \"mo-logs\" %}\n{% set version = \"8.665.25029\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: de8c89adc9fc2472fb111ad28e3dc0adf1418146a488e1f90cd55461a2b8b9fd\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - mo-dots ==10.659.25005\n    - mo-future ==7.584.24095\n    - mo-imports ==7.584.24095\n    - mo-kwargs ==7.659.25005\n\ntest:\n  imports:\n    - mo_logs\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/klahnakoski/mo-logs\n  summary: More Logs! Structured Logging and Exception Handling\n  license: MPL-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
+ "raw_meta_yaml": "{% set name = \"mo-logs\" %}\n{% set version = \"8.667.25032\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 2d71d48798f2d282fea78afe031df4aeaf5fc4ddf79ad82efd6893016ee5f7a0\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - mo-dots ==10.659.25005\n    - mo-future ==7.584.24095\n    - mo-imports ==7.584.24095\n    - mo-kwargs ==7.659.25005\n\ntest:\n  imports:\n    - mo_logs\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/klahnakoski/mo-logs\n  summary: More Logs! Structured Logging and Exception Handling\n  license: MPL-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -239,8 +239,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/m/mo-logs/mo_logs-8.665.25029.tar.gz",
- "version": "8.665.25029",
+ "url": "https://pypi.org/packages/source/m/mo-logs/mo_logs-8.667.25032.tar.gz",
+ "version": "8.667.25032",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/mo-logs.json"
  }
