@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -47,8 +47,8 @@
    ],
    "run": [
     "python >=3.7,<3.12",
-    "pyside2",
-    "qdarkstyle"
+    "qdarkstyle",
+    "qtpy"
    ]
   },
   "schema_version": 0,
@@ -64,7 +64,8 @@
     "eqt"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "pyside2"
    ]
   }
  },
@@ -85,15 +86,16 @@
   "run": {
    "__set__": true,
    "elements": [
-    "pyside2",
     "python",
-    "qdarkstyle"
+    "qdarkstyle",
+    "qtpy"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "pyside2"
    ]
   }
  },
@@ -106,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -128,8 +130,8 @@
    ],
    "run": [
     "python >=3.7,<3.12",
-    "pyside2",
-    "qdarkstyle"
+    "qdarkstyle",
+    "qtpy"
    ]
   },
   "schema_version": 0,
@@ -145,7 +147,8 @@
     "eqt"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "pyside2"
    ]
   }
  },
@@ -163,14 +166,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/eqt.json"
  },
- "raw_meta_yaml": "{% set name = \"eqt\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/eqt-{{ version }}.tar.gz\n  sha256: e651b770408150bca2c3df341e2f0e6bf81695024b0f833d17942fd20373c14b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.7,<3.12\n    - setuptools >=42\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >=3.7,<3.12\n    - pyside2\n    - qdarkstyle\n\ntest:\n  imports:\n    - eqt\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/TomographicImaging/eqt\n  summary: A number of templates and tools to develop Qt GUIs with Python effectively\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - casperdcl\n    - paskino\n",
+ "raw_meta_yaml": "{% set name = \"eqt\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/eqt-{{ version }}.tar.gz\n  sha256: e651b770408150bca2c3df341e2f0e6bf81695024b0f833d17942fd20373c14b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python >=3.7,<3.12\n    - setuptools >=42\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >=3.7,<3.12\n    - qdarkstyle\n    - qtpy\n\ntest:\n  imports:\n    - eqt\n  commands:\n    - pip check\n  requires:\n    - pip\n    - pyside2\n\nabout:\n  home: https://github.com/TomographicImaging/eqt\n  summary: A number of templates and tools to develop Qt GUIs with Python effectively\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - casperdcl\n    - paskino\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
-   "pyside2",
    "python",
    "qdarkstyle",
+   "qtpy",
    "setuptools",
    "setuptools-scm"
   ]
@@ -192,15 +195,16 @@
   "run": {
    "__set__": true,
    "elements": [
-    "pyside2",
     "python",
-    "qdarkstyle"
+    "qdarkstyle",
+    "qtpy"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "pyside2"
    ]
   }
  },
@@ -222,15 +226,16 @@
   "run": {
    "__set__": true,
    "elements": [
-    "pyside2",
     "python >=3.7,<3.12",
-    "qdarkstyle"
+    "qdarkstyle",
+    "qtpy"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "pyside2"
    ]
   }
  },
