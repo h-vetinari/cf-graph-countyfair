@@ -36,12 +36,13 @@
   },
   "package": {
    "name": "evtgen",
-   "version": "2.2.1"
+   "version": "2.2.3"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "make"
    ],
@@ -57,8 +58,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1fcae56c6b27b89c4a2f4b224d27980607442185f5570e961f6334a3543c6e77",
-   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.01.tar.gz"
+   "sha256": "b642700b703190e3304edb98ff464622db5d03c1cfc5d275ba4a628227d7d6d0",
+   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.03.tar.gz"
   },
   "test": {
    "commands": [
@@ -72,6 +73,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "make"
@@ -120,12 +122,13 @@
   },
   "package": {
    "name": "evtgen",
-   "version": "2.2.1"
+   "version": "2.2.3"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "make"
    ],
@@ -141,8 +144,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1fcae56c6b27b89c4a2f4b224d27980607442185f5570e961f6334a3543c6e77",
-   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.01.tar.gz"
+   "sha256": "b642700b703190e3304edb98ff464622db5d03c1cfc5d275ba4a628227d7d6d0",
+   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.03.tar.gz"
   },
   "test": {
    "commands": [
@@ -175,12 +178,13 @@
   },
   "package": {
    "name": "evtgen",
-   "version": "2.2.1"
+   "version": "2.2.3"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "make"
    ],
@@ -196,8 +200,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1fcae56c6b27b89c4a2f4b224d27980607442185f5570e961f6334a3543c6e77",
-   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.01.tar.gz"
+   "sha256": "b642700b703190e3304edb98ff464622db5d03c1cfc5d275ba4a628227d7d6d0",
+   "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.03.tar.gz"
   },
   "test": {
    "commands": [
@@ -211,6 +215,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "make"
@@ -250,11 +255,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/evtgen.json"
  },
- "raw_meta_yaml": "{% set name = \"evtgen\" %}\n{% set version = \"2.02.01\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version|replace(\".0\", \".\") }}\n\nsource:\n  url: https://evtgen.hepforge.org/downloads?f=EvtGen-0{{ version }}.tar.gz\n  sha256: 1fcae56c6b27b89c4a2f4b224d27980607442185f5570e961f6334a3543c6e77\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('evtgen', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n  host:\n    - pythia8\n    - hepmc3\n    - photos\n    - tauloa\n  run:\n    - {{ pin_compatible('hepmc3') }}\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libEvtGen$SHLIB_EXT  # [unix]\n    - test -f $PREFIX/lib/libEvtGenExternal$SHLIB_EXT  # [unix]\n\nabout:\n  home: https://evtgen.hepforge.org/\n  license: GPL-3.0-or-later\n  license_file: COPYING\n  summary: 'A Monte Carlo event generator that simulates the decays of heavy flavour particles'\n  description: |\n    EvtGen is a Monte Carlo event generator that simulates the decays of heavy\n    flavour particles, primarily B and D mesons. It contains a range of decay\n    models for intermediate and final states containing scalar, vector and\n    tensor mesons or resonances, as well as leptons, photons and baryons. Decay\n    amplitudes are used to generate each branch of a given full decay tree,\n    taking into account angular and time-dependent correlations which allows\n    for the simulation of CP-violating processes.\n  doc_url: https://evtgen.hepforge.org/doc/\n  dev_url: https://phab.hepforge.org/source/evtgen/\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "raw_meta_yaml": "{% set name = \"evtgen\" %}\n{% set version = \"2.02.03\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version|replace(\".0\", \".\") }}\n\nsource:\n  url: https://evtgen.hepforge.org/downloads?f=EvtGen-0{{ version }}.tar.gz\n  sha256: b642700b703190e3304edb98ff464622db5d03c1cfc5d275ba4a628227d7d6d0\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('evtgen', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n    - cmake\n    - make\n  host:\n    - pythia8\n    - hepmc3\n    - photos\n    - tauloa\n  run:\n    - {{ pin_compatible('hepmc3') }}\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libEvtGen$SHLIB_EXT  # [unix]\n    - test -f $PREFIX/lib/libEvtGenExternal$SHLIB_EXT  # [unix]\n\nabout:\n  home: https://evtgen.hepforge.org/\n  license: GPL-3.0-or-later\n  license_file: COPYING\n  summary: 'A Monte Carlo event generator that simulates the decays of heavy flavour particles'\n  description: |\n    EvtGen is a Monte Carlo event generator that simulates the decays of heavy\n    flavour particles, primarily B and D mesons. It contains a range of decay\n    models for intermediate and final states containing scalar, vector and\n    tensor mesons or resonances, as well as leptons, photons and baryons. Decay\n    amplitudes are used to generate each branch of a given full decay tree,\n    taking into account angular and time-dependent correlations which allows\n    for the simulation of CP-violating processes.\n  doc_url: https://evtgen.hepforge.org/doc/\n  dev_url: https://phab.hepforge.org/source/evtgen/\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "cmake",
    "cxx_compiler_stub",
    "hepmc3",
@@ -269,6 +275,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "make"
@@ -278,6 +285,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "hepmc3",
     "photos",
@@ -289,6 +297,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "hepmc3"
    ]
@@ -304,6 +313,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "make"
@@ -329,8 +339,8 @@
    "elements": []
   }
  },
- "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.01.tar.gz",
- "version": "2.2.1",
+ "url": "https://evtgen.hepforge.org/downloads?f=EvtGen-02.02.03.tar.gz",
+ "version": "2.2.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/evtgen.json"
  }
