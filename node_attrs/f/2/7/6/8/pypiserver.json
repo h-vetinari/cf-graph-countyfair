@@ -25,7 +25,7 @@
     "pypi-server=pypiserver.__main__:main"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,20 +40,20 @@
   "requirements": {
    "host": [
     "pip",
-    "python !=3.0,!=3.1,!=3.2,!=3.3",
+    "python 3.9",
     "setuptools",
     "setuptools-git >=0.3",
     "wheel >=0.25.0"
    ],
    "run": [
-    "python !=3.0,!=3.1,!=3.2,!=3.3",
+    "python >=3.9",
     "pip >=7"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "70760efadc3d89b3e1b3f54f078a6520f6c6a0c3dd718b46cd0cf466c9fd01b2",
-   "url": "https://pypi.io/packages/source/p/pypiserver/pypiserver-1.5.2.zip"
+   "url": "https://pypi.org/packages/source/p/pypiserver/pypiserver-1.5.2.zip"
   },
   "test": {
    "commands": [
@@ -64,7 +64,8 @@
     "pypiserver"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -93,7 +94,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -109,7 +111,7 @@
     "pypi-server=pypiserver.__main__:main"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -124,20 +126,20 @@
   "requirements": {
    "host": [
     "pip",
-    "python !=3.0,!=3.1,!=3.2,!=3.3",
+    "python 3.9",
     "setuptools",
     "setuptools-git >=0.3",
     "wheel >=0.25.0"
    ],
    "run": [
-    "python !=3.0,!=3.1,!=3.2,!=3.3",
+    "python >=3.9",
     "pip >=7"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "70760efadc3d89b3e1b3f54f078a6520f6c6a0c3dd718b46cd0cf466c9fd01b2",
-   "url": "https://pypi.io/packages/source/p/pypiserver/pypiserver-1.5.2.zip"
+   "url": "https://pypi.org/packages/source/p/pypiserver/pypiserver-1.5.2.zip"
   },
   "test": {
    "commands": [
@@ -148,7 +150,8 @@
     "pypiserver"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -166,7 +169,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pypiserver.json"
  },
- "raw_meta_yaml": "{% set name = \"pypiserver\" %}\n{% set version = \"1.5.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pypiserver-{{ version }}.zip\n  sha256: 70760efadc3d89b3e1b3f54f078a6520f6c6a0c3dd718b46cd0cf466c9fd01b2\n\nbuild:\n  entry_points:\n    - pypi-server=pypiserver.__main__:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python !=3.0,!=3.1,!=3.2,!=3.3\n    - setuptools\n    - setuptools-git >=0.3\n    - wheel >=0.25.0\n  run:\n    - python !=3.0,!=3.1,!=3.2,!=3.3\n    - pip >=7\n\ntest:\n  imports:\n    - pypiserver\n  commands:\n    - pip check\n    - pypi-server --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/pypiserver/pypiserver\n  summary: A minimal PyPI server for use with pip/easy_install.\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jtpio\n",
+ "raw_meta_yaml": "{% set name = \"pypiserver\" %}\n{% set version = \"1.5.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pypiserver-{{ version }}.zip\n  sha256: 70760efadc3d89b3e1b3f54f078a6520f6c6a0c3dd718b46cd0cf466c9fd01b2\n\nbuild:\n  entry_points:\n    - pypi-server=pypiserver.__main__:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - setuptools-git >=0.3\n    - wheel >=0.25.0\n  run:\n    - python >={{ python_min }}\n    - pip >=7\n\ntest:\n  imports:\n    - pypiserver\n  commands:\n    - pip check\n    - pypi-server --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/pypiserver/pypiserver\n  summary: A minimal PyPI server for use with pip/easy_install.\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jtpio\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -202,7 +205,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -216,7 +220,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python !=3.0,!=3.1,!=3.2,!=3.3",
+    "python 3.9",
     "setuptools",
     "setuptools-git >=0.3",
     "wheel >=0.25.0"
@@ -226,17 +230,18 @@
    "__set__": true,
    "elements": [
     "pip >=7",
-    "python !=3.0,!=3.1,!=3.2,!=3.3"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pypiserver/pypiserver-1.5.2.zip",
+ "url": "https://pypi.org/packages/source/p/pypiserver/pypiserver-1.5.2.zip",
  "version": "1.5.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pypiserver.json"
