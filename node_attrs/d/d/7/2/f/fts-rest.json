@@ -27,7 +27,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -42,11 +42,12 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.7"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
     "m2crypto",
-    "python >=3.7",
+    "python >=3.9",
     "requests >=2.20",
     "setuptools >=42"
    ]
@@ -54,7 +55,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "9d3f19b35a673df300eedcfde98ba31bdae22ef74be15bd4a17d45f569f9364d",
-   "url": "https://pypi.io/packages/source/f/fts3/fts3-3.13.4.tar.gz"
+   "url": "https://pypi.org/packages/source/f/fts3/fts3-3.13.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -74,7 +75,8 @@
     "fts3.cli"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -87,7 +89,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -102,7 +105,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -117,7 +121,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -132,11 +136,12 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.7"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
     "m2crypto",
-    "python >=3.7",
+    "python >=3.9",
     "requests >=2.20",
     "setuptools >=42"
    ]
@@ -144,7 +149,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "9d3f19b35a673df300eedcfde98ba31bdae22ef74be15bd4a17d45f569f9364d",
-   "url": "https://pypi.io/packages/source/f/fts3/fts3-3.13.4.tar.gz"
+   "url": "https://pypi.org/packages/source/f/fts3/fts3-3.13.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,7 +169,8 @@
     "fts3.cli"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -182,7 +188,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fts-rest.json"
  },
- "raw_meta_yaml": "{% set name = \"fts3\" %}\n{% set version = \"3.13.4\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fts3-{{ version }}.tar.gz\n  sha256: 9d3f19b35a673df300eedcfde98ba31bdae22ef74be15bd4a17d45f569f9364d\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n  run:\n    - m2crypto\n    - python >=3.7\n    - requests >=2.20\n    - setuptools >=42\n\ntest:\n  imports:\n    - fts3\n    - fts3.cli\n  commands:\n    - pip check\n    - fts-rest-ban --help\n    - fts-rest-delegate --help\n    - fts-rest-delete-submit --help\n    - fts-rest-server-status --help\n    - fts-rest-transfer-cancel --help\n    - fts-rest-transfer-list --help\n    - fts-rest-transfer-status --help\n    - fts-rest-transfer-submit --help\n    - fts-rest-whoami --help\n  requires:\n    - pip\n\nabout:\n  home: https://fts.web.cern.ch/\n  summary: FTS Python3 CLI and libraries\n  license: Apache-2.0\n  license_file: LICENSE\n  doc_url: https://fts3-docs.web.cern.ch/\n  dev_url: https://gitlab.cern.ch/fts/fts-rest-flask\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "raw_meta_yaml": "{% set name = \"fts3\" %}\n{% set version = \"3.13.4\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fts3-{{ version }}.tar.gz\n  sha256: 9d3f19b35a673df300eedcfde98ba31bdae22ef74be15bd4a17d45f569f9364d\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - m2crypto\n    - python >={{ python_min }}\n    - requests >=2.20\n    - setuptools >=42\n\ntest:\n  imports:\n    - fts3\n    - fts3.cli\n  commands:\n    - pip check\n    - fts-rest-ban --help\n    - fts-rest-delegate --help\n    - fts-rest-delete-submit --help\n    - fts-rest-server-status --help\n    - fts-rest-transfer-cancel --help\n    - fts-rest-transfer-list --help\n    - fts-rest-transfer-status --help\n    - fts-rest-transfer-submit --help\n    - fts-rest-whoami --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://fts.web.cern.ch/\n  summary: FTS Python3 CLI and libraries\n  license: Apache-2.0\n  license_file: LICENSE\n  doc_url: https://fts3-docs.web.cern.ch/\n  dev_url: https://gitlab.cern.ch/fts/fts-rest-flask\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -202,7 +208,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -217,7 +224,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -231,14 +239,15 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "m2crypto",
-    "python >=3.7",
+    "python >=3.9",
     "requests >=2.20",
     "setuptools >=42"
    ]
@@ -246,11 +255,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/f/fts3/fts3-3.13.4.tar.gz",
+ "url": "https://pypi.org/packages/source/f/fts3/fts3-3.13.4.tar.gz",
  "version": "3.13.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/fts-rest.json"
