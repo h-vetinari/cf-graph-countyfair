@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,18 +40,18 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "jupyter-packaging >=0.7.9,<0.8"
    ],
    "run": [
     "jupyterlab >=3.0.0,<4",
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "972cf2007ee654d97a836a1fa4c32c0eed9955db84c576ea7d9e52e5c62cc626",
-   "url": "https://pypi.io/packages/source/j/jupyterlab-drawio/jupyterlab-drawio-0.9.0.tar.gz"
+   "url": "https://pypi.org/packages/source/j/jupyterlab-drawio/jupyterlab-drawio-0.9.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -59,7 +59,8 @@
     "test -f \"${PREFIX}/share/jupyter/labextensions/jupyterlab-drawio/package.json\""
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -86,7 +87,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -99,7 +101,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -117,18 +119,18 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "jupyter-packaging >=0.7.9,<0.8"
    ],
    "run": [
     "jupyterlab >=3.0.0,<4",
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "972cf2007ee654d97a836a1fa4c32c0eed9955db84c576ea7d9e52e5c62cc626",
-   "url": "https://pypi.io/packages/source/j/jupyterlab-drawio/jupyterlab-drawio-0.9.0.tar.gz"
+   "url": "https://pypi.org/packages/source/j/jupyterlab-drawio/jupyterlab-drawio-0.9.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -136,7 +138,8 @@
     "test -f \"${PREFIX}/share/jupyter/labextensions/jupyterlab-drawio/package.json\""
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -154,7 +157,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/jupyterlab-drawio.json"
  },
- "raw_meta_yaml": "{% set name = \"jupyterlab-drawio\" %}\n{% set version = \"0.9.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyterlab-drawio-{{ version }}.tar.gz\n  sha256: 972cf2007ee654d97a836a1fa4c32c0eed9955db84c576ea7d9e52e5c62cc626\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - jupyter-packaging >=0.7.9,<0.8\n  run:\n    - jupyterlab >=3.0.0,<4\n    - python >=3.6\n\ntest:\n  commands:\n    - pip check\n    - test -f \"${PREFIX}/share/jupyter/labextensions/jupyterlab-drawio/package.json\"                                    # [unix]\n    - if exist %PREFIX%\\\\share\\\\jupyter\\\\labextensions\\\\jupyterlab-drawio\\\\package.json (exit 0) else (exit 1)          # [win]\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/QuantStack/jupyterlab-drawio\n  summary: A JupyterLab extension for embedding drawio / mxgraph.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jtpio\n    - hbcarlos\n    - wolfv\n    - SylvainCorlay\n",
+ "raw_meta_yaml": "{% set name = \"jupyterlab-drawio\" %}\n{% set version = \"0.9.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyterlab-drawio-{{ version }}.tar.gz\n  sha256: 972cf2007ee654d97a836a1fa4c32c0eed9955db84c576ea7d9e52e5c62cc626\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - jupyter-packaging >=0.7.9,<0.8\n  run:\n    - jupyterlab >=3.0.0,<4\n    - python >={{ python_min }}\n\ntest:\n  commands:\n    - pip check\n    - test -f \"${PREFIX}/share/jupyter/labextensions/jupyterlab-drawio/package.json\"                                    # [unix]\n    - if exist %PREFIX%\\\\share\\\\jupyter\\\\labextensions\\\\jupyterlab-drawio\\\\package.json (exit 0) else (exit 1)          # [win]\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/QuantStack/jupyterlab-drawio\n  summary: A JupyterLab extension for embedding drawio / mxgraph.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jtpio\n    - hbcarlos\n    - wolfv\n    - SylvainCorlay\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -187,7 +190,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -202,24 +206,25 @@
    "elements": [
     "jupyter-packaging >=0.7.9,<0.8",
     "pip",
-    "python >=3.6"
+    "python 3.9"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "jupyterlab >=3.0.0,<4",
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/j/jupyterlab-drawio/jupyterlab-drawio-0.9.0.tar.gz",
+ "url": "https://pypi.org/packages/source/j/jupyterlab-drawio/jupyterlab-drawio-0.9.0.tar.gz",
  "version": "0.9.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/jupyterlab-drawio.json"
