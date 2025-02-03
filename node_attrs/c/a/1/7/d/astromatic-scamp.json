@@ -24,7 +24,7 @@
    "summary": "A utility that computes astrometric solutions from SExtractor catalogs"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -34,11 +34,12 @@
   },
   "package": {
    "name": "astromatic-scamp",
-   "version": "2.10.0"
+   "version": "2.13.1"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "autoconf",
     "automake",
     "libtool",
@@ -61,8 +62,8 @@
     "0001-Search-lapacke-library.patch",
     "0002-Fix_sprintf_buffer_overflow.patch"
    ],
-   "sha256": "7fa02e3372f49834265b129a87c11c84a6d9c95e582dbfdfe8a2011b0a938b31",
-   "url": "https://github.com/astromatic/scamp/archive/v2.10.0.tar.gz"
+   "sha256": "37ddf664c216ef3ef5e9bb130b634fdf324a4185db7cbad3cfcf69f60a54b8b1",
+   "url": "https://github.com/astromatic/scamp/archive/v2.13.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -77,6 +78,7 @@
     "autoconf",
     "automake",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "libtool",
     "make"
    ]
@@ -113,7 +115,7 @@
    "summary": "A utility that computes astrometric solutions from SExtractor catalogs"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -123,11 +125,12 @@
   },
   "package": {
    "name": "astromatic-scamp",
-   "version": "2.10.0"
+   "version": "2.13.1"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "autoconf",
     "automake",
     "libtool",
@@ -150,8 +153,8 @@
     "0001-Search-lapacke-library.patch",
     "0002-Fix_sprintf_buffer_overflow.patch"
    ],
-   "sha256": "7fa02e3372f49834265b129a87c11c84a6d9c95e582dbfdfe8a2011b0a938b31",
-   "url": "https://github.com/astromatic/scamp/archive/v2.10.0.tar.gz"
+   "sha256": "37ddf664c216ef3ef5e9bb130b634fdf324a4185db7cbad3cfcf69f60a54b8b1",
+   "url": "https://github.com/astromatic/scamp/archive/v2.13.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -171,7 +174,7 @@
    "summary": "A utility that computes astrometric solutions from SExtractor catalogs"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -181,11 +184,12 @@
   },
   "package": {
    "name": "astromatic-scamp",
-   "version": "2.10.0"
+   "version": "2.13.1"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "autoconf",
     "automake",
     "libtool",
@@ -208,8 +212,8 @@
     "0001-Search-lapacke-library.patch",
     "0002-Fix_sprintf_buffer_overflow.patch"
    ],
-   "sha256": "7fa02e3372f49834265b129a87c11c84a6d9c95e582dbfdfe8a2011b0a938b31",
-   "url": "https://github.com/astromatic/scamp/archive/v2.10.0.tar.gz"
+   "sha256": "37ddf664c216ef3ef5e9bb130b634fdf324a4185db7cbad3cfcf69f60a54b8b1",
+   "url": "https://github.com/astromatic/scamp/archive/v2.13.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -224,6 +228,7 @@
     "autoconf",
     "automake",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "libtool",
     "make"
    ]
@@ -263,13 +268,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/astromatic-scamp.json"
  },
- "raw_meta_yaml": "{% set name = \"scamp\" %}\n{% set version = \"2.10.0\" %}\n\npackage:\n  name: astromatic-{{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/astromatic/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 7fa02e3372f49834265b129a87c11c84a6d9c95e582dbfdfe8a2011b0a938b31\n  patches:\n    - 0001-Search-lapacke-library.patch\n    - 0002-Fix_sprintf_buffer_overflow.patch\n\nbuild:\n  skip: true  # [win]\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - autoconf\n    - automake\n    - libtool\n    - make\n  host:\n    - fftw\n    - curl\n    - openblas\n  run:\n    - fftw\n    - libcurl\n    - openblas\n\ntest:\n  commands:\n    - scamp -d\n\nabout:\n  home: http://www.astromatic.net/software/scamp\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: A utility that computes astrometric solutions from SExtractor catalogs\n  description: |\n    SCAMP (Software for Calibrating AstroMetry and Photometry) is a computer\n    program that computes astrometric projection parameters from source\n    catalogues derived from FITS images. The computed solution is expressed\n    according to the WCS standard.\n  doc_url: https://scamp.readthedocs.io/\n  dev_url: https://github.com/astromatic/scamp\n\nextra:\n  recipe-maintainers:\n    - drbixx\n    - teake\n",
+ "raw_meta_yaml": "{% set name = \"scamp\" %}\n{% set version = \"2.13.1\" %}\n\npackage:\n  name: astromatic-{{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/astromatic/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 37ddf664c216ef3ef5e9bb130b634fdf324a4185db7cbad3cfcf69f60a54b8b1\n  patches:\n    - 0001-Search-lapacke-library.patch\n    - 0002-Fix_sprintf_buffer_overflow.patch\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - autoconf\n    - automake\n    - libtool\n    - make\n  host:\n    - fftw\n    - curl\n    - openblas\n  run:\n    - fftw\n    - libcurl\n    - openblas\n\ntest:\n  commands:\n    - scamp -d\n\nabout:\n  home: http://www.astromatic.net/software/scamp\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: A utility that computes astrometric solutions from SExtractor catalogs\n  description: |\n    SCAMP (Software for Calibrating AstroMetry and Photometry) is a computer\n    program that computes astrometric projection parameters from source\n    catalogues derived from FITS images. The computed solution is expressed\n    according to the WCS standard.\n  doc_url: https://scamp.readthedocs.io/\n  dev_url: https://github.com/astromatic/scamp\n\nextra:\n  recipe-maintainers:\n    - drbixx\n    - teake\n",
  "req": {
   "__set__": true,
   "elements": [
    "autoconf",
    "automake",
    "c_compiler_stub",
+   "c_stdlib_stub",
    "curl",
    "fftw",
    "libcurl",
@@ -285,6 +291,7 @@
     "autoconf",
     "automake",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "libtool",
     "make"
    ]
@@ -293,6 +300,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "curl",
     "fftw",
     "openblas"
@@ -302,6 +310,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "fftw",
     "libcurl",
     "openblas"
@@ -320,6 +329,7 @@
     "autoconf",
     "automake",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "libtool",
     "make"
    ]
@@ -345,8 +355,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/astromatic/scamp/archive/v2.10.0.tar.gz",
- "version": "2.10.0",
+ "url": "https://github.com/astromatic/scamp/archive/v2.13.1.tar.gz",
+ "version": "2.13.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/astromatic-scamp.json"
  }
