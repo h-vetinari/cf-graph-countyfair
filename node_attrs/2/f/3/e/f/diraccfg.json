@@ -28,7 +28,7 @@
     "diraccfg=diraccfg.__main__:parseArgs"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -42,7 +42,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=42",
     "wheel",
     "setuptools-scm >=3.4",
@@ -55,7 +55,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "79d1abba8520e707cdd482c5de98105caf27e78121c4c1e2273cc2329b5ed902",
-   "url": "https://pypi.io/packages/source/d/diraccfg/diraccfg-1.0.1.tar.gz"
+   "url": "https://pypi.org/packages/source/d/diraccfg/diraccfg-1.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -66,7 +66,8 @@
     "diraccfg"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -94,7 +95,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -110,7 +112,7 @@
     "diraccfg=diraccfg.__main__:parseArgs"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -124,7 +126,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=42",
     "wheel",
     "setuptools-scm >=3.4",
@@ -137,7 +139,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "79d1abba8520e707cdd482c5de98105caf27e78121c4c1e2273cc2329b5ed902",
-   "url": "https://pypi.io/packages/source/d/diraccfg/diraccfg-1.0.1.tar.gz"
+   "url": "https://pypi.org/packages/source/d/diraccfg/diraccfg-1.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -148,7 +150,8 @@
     "diraccfg"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -166,7 +169,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/diraccfg.json"
  },
- "raw_meta_yaml": "{% set name = \"diraccfg\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/diraccfg-{{ version }}.tar.gz\n  sha256: 79d1abba8520e707cdd482c5de98105caf27e78121c4c1e2273cc2329b5ed902\n\nbuild:\n  entry_points:\n    - diraccfg=diraccfg.__main__:parseArgs\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=42\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >=3.9\n\ntest:\n  imports:\n    - diraccfg\n  commands:\n    - pip check\n    - diraccfg --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/DIRACGrid/cfg\n  summary: DIRAC cfg files reader\n  license: GPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "raw_meta_yaml": "{% set name = \"diraccfg\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/diraccfg-{{ version }}.tar.gz\n  sha256: 79d1abba8520e707cdd482c5de98105caf27e78121c4c1e2273cc2329b5ed902\n\nbuild:\n  entry_points:\n    - diraccfg=diraccfg.__main__:parseArgs\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - diraccfg\n  commands:\n    - pip check\n    - diraccfg --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/DIRACGrid/cfg\n  summary: DIRAC cfg files reader\n  license: GPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -201,7 +204,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -215,7 +219,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=42",
     "setuptools-scm >=3.4",
     "wheel"
@@ -230,11 +234,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/d/diraccfg/diraccfg-1.0.1.tar.gz",
+ "url": "https://pypi.org/packages/source/d/diraccfg/diraccfg-1.0.1.tar.gz",
  "version": "1.0.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/diraccfg.json"
