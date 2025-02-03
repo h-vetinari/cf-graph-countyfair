@@ -10,6 +10,7 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -25,22 +26,22 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.\n",
+   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.",
    "dev_url": "https://github.com/cern-it-sdc-id/davix",
    "doc_url": "https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/",
    "home": "https://dmc.web.cern.ch/projects/davix/home",
    "license": "LGPL-2.1-only",
+   "license_family": "LGPL-2.1-only",
    "license_file": "LICENSE",
    "summary": "High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)"
   },
   "build": {
-   "ignore_run_exports": [
-    "libuuid"
-   ],
    "number": "0",
-   "run_exports": [
-    "davix"
-   ]
+   "run_exports": {
+    "weak": [
+     "davix"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -49,23 +50,74 @@
     "henryiii"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "davix",
-   "version": "0.8.6"
+   "version": "0.8.9"
   },
   "requirements": {
    "build": [
     "gnuconfig",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "cmake",
-    "make",
+    "ninja",
     "git",
-    "python",
+    "python >=3.9",
     "pkg-config",
     "gsoap"
    ],
    "host": [
+    "gtest",
     "gsoap",
     "openssl",
     "curl",
@@ -79,22 +131,15 @@
     "libxml2"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "0001-system-curl.patch",
-    "0002-Fix-lib-suffix.patch"
+    "0002-Fix-lib-suffix.patch",
+    "0003-Get-rid-of-forced-C-11.patch"
    ],
-   "sha256": "7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b",
-   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_6/davix-0.8.6.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
-    "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
-   ]
+   "sha256": "0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6",
+   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_9/davix-0.8.9.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -102,12 +147,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "git",
     "gnuconfig",
     "gsoap",
-    "make",
+    "ninja",
     "pkg-config",
     "python"
    ]
@@ -117,6 +163,7 @@
    "elements": [
     "curl",
     "gsoap",
+    "gtest",
     "libuuid",
     "libxml2",
     "openssl",
@@ -138,22 +185,22 @@
  },
  "linux_aarch64_meta_yaml": {
   "about": {
-   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.\n",
+   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.",
    "dev_url": "https://github.com/cern-it-sdc-id/davix",
    "doc_url": "https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/",
    "home": "https://dmc.web.cern.ch/projects/davix/home",
    "license": "LGPL-2.1-only",
+   "license_family": "LGPL-2.1-only",
    "license_file": "LICENSE",
    "summary": "High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)"
   },
   "build": {
-   "ignore_run_exports": [
-    "libuuid"
-   ],
    "number": "0",
-   "run_exports": [
-    "davix"
-   ]
+   "run_exports": {
+    "weak": [
+     "davix"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -162,23 +209,74 @@
     "henryiii"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "davix",
-   "version": "0.8.6"
+   "version": "0.8.9"
   },
   "requirements": {
    "build": [
     "gnuconfig",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "cmake",
-    "make",
+    "ninja",
     "git",
-    "python",
+    "python >=3.9",
     "pkg-config",
     "gsoap"
    ],
    "host": [
+    "gtest",
     "gsoap",
     "openssl",
     "curl",
@@ -192,22 +290,15 @@
     "libxml2"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "0001-system-curl.patch",
-    "0002-Fix-lib-suffix.patch"
+    "0002-Fix-lib-suffix.patch",
+    "0003-Get-rid-of-forced-C-11.patch"
    ],
-   "sha256": "7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b",
-   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_6/davix-0.8.6.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
-    "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
-   ]
+   "sha256": "0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6",
+   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_9/davix-0.8.9.tar.gz"
   }
  },
  "linux_aarch64_requirements": {
@@ -215,12 +306,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "git",
     "gnuconfig",
     "gsoap",
-    "make",
+    "ninja",
     "pkg-config",
     "python"
    ]
@@ -230,6 +322,7 @@
    "elements": [
     "curl",
     "gsoap",
+    "gtest",
     "libuuid",
     "libxml2",
     "openssl",
@@ -251,22 +344,22 @@
  },
  "linux_ppc64le_meta_yaml": {
   "about": {
-   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.\n",
+   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.",
    "dev_url": "https://github.com/cern-it-sdc-id/davix",
    "doc_url": "https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/",
    "home": "https://dmc.web.cern.ch/projects/davix/home",
    "license": "LGPL-2.1-only",
+   "license_family": "LGPL-2.1-only",
    "license_file": "LICENSE",
    "summary": "High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)"
   },
   "build": {
-   "ignore_run_exports": [
-    "libuuid"
-   ],
    "number": "0",
-   "run_exports": [
-    "davix"
-   ]
+   "run_exports": {
+    "weak": [
+     "davix"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -275,23 +368,74 @@
     "henryiii"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "davix",
-   "version": "0.8.6"
+   "version": "0.8.9"
   },
   "requirements": {
    "build": [
     "gnuconfig",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "cmake",
-    "make",
+    "ninja",
     "git",
-    "python",
+    "python >=3.9",
     "pkg-config",
     "gsoap"
    ],
    "host": [
+    "gtest",
     "gsoap",
     "openssl",
     "curl",
@@ -305,22 +449,15 @@
     "libxml2"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "0001-system-curl.patch",
-    "0002-Fix-lib-suffix.patch"
+    "0002-Fix-lib-suffix.patch",
+    "0003-Get-rid-of-forced-C-11.patch"
    ],
-   "sha256": "7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b",
-   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_6/davix-0.8.6.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
-    "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
-   ]
+   "sha256": "0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6",
+   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_9/davix-0.8.9.tar.gz"
   }
  },
  "linux_ppc64le_requirements": {
@@ -328,12 +465,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "git",
     "gnuconfig",
     "gsoap",
-    "make",
+    "ninja",
     "pkg-config",
     "python"
    ]
@@ -343,6 +481,7 @@
    "elements": [
     "curl",
     "gsoap",
+    "gtest",
     "libuuid",
     "libxml2",
     "openssl",
@@ -364,22 +503,22 @@
  },
  "meta_yaml": {
   "about": {
-   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.\n",
+   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.",
    "dev_url": "https://github.com/cern-it-sdc-id/davix",
    "doc_url": "https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/",
    "home": "https://dmc.web.cern.ch/projects/davix/home",
    "license": "LGPL-2.1-only",
+   "license_family": "LGPL-2.1-only",
    "license_file": "LICENSE",
    "summary": "High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)"
   },
   "build": {
-   "ignore_run_exports": [
-    "libuuid"
-   ],
    "number": "0",
-   "run_exports": [
-    "davix"
-   ]
+   "run_exports": {
+    "weak": [
+     "davix"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -388,23 +527,262 @@
     "henryiii"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "davix",
-   "version": "0.8.6"
+   "version": "0.8.9"
   },
   "requirements": {
    "build": [
     "gnuconfig",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "cmake",
-    "make",
+    "ninja",
     "git",
-    "python",
+    "python >=3.9",
     "pkg-config",
     "gsoap"
    ],
    "host": [
+    "gtest",
     "gsoap",
     "openssl",
     "curl",
@@ -418,43 +796,36 @@
     "libxml2"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "0001-system-curl.patch",
-    "0002-Fix-lib-suffix.patch"
+    "0002-Fix-lib-suffix.patch",
+    "0003-Get-rid-of-forced-C-11.patch"
    ],
-   "sha256": "7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b",
-   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_6/davix-0.8.6.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
-    "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
-   ]
+   "sha256": "0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6",
+   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_9/davix-0.8.9.tar.gz"
   }
  },
  "name": "davix",
  "osx_64_meta_yaml": {
   "about": {
-   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.\n",
+   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.",
    "dev_url": "https://github.com/cern-it-sdc-id/davix",
    "doc_url": "https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/",
    "home": "https://dmc.web.cern.ch/projects/davix/home",
    "license": "LGPL-2.1-only",
+   "license_family": "LGPL-2.1-only",
    "license_file": "LICENSE",
    "summary": "High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)"
   },
   "build": {
-   "ignore_run_exports": [
-    "libuuid"
-   ],
    "number": "0",
-   "run_exports": [
-    "davix"
-   ]
+   "run_exports": {
+    "weak": [
+     "davix"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -463,23 +834,74 @@
     "henryiii"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "davix",
-   "version": "0.8.6"
+   "version": "0.8.9"
   },
   "requirements": {
    "build": [
     "gnuconfig",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "cmake",
-    "make",
+    "ninja",
     "git",
-    "python",
+    "python >=3.9",
     "pkg-config",
     "gsoap"
    ],
    "host": [
+    "gtest",
     "gsoap",
     "openssl",
     "curl",
@@ -493,22 +915,15 @@
     "libxml2"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "0001-system-curl.patch",
-    "0002-Fix-lib-suffix.patch"
+    "0002-Fix-lib-suffix.patch",
+    "0003-Get-rid-of-forced-C-11.patch"
    ],
-   "sha256": "7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b",
-   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_6/davix-0.8.6.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
-    "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
-   ]
+   "sha256": "0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6",
+   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_9/davix-0.8.9.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -516,12 +931,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "git",
     "gnuconfig",
     "gsoap",
-    "make",
+    "ninja",
     "pkg-config",
     "python"
    ]
@@ -531,6 +947,7 @@
    "elements": [
     "curl",
     "gsoap",
+    "gtest",
     "libuuid",
     "libxml2",
     "openssl",
@@ -552,22 +969,22 @@
  },
  "osx_arm64_meta_yaml": {
   "about": {
-   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.\n",
+   "description": "The davix project aims to make file management over HTTP-based protocols\nsimple. The focus is on high-performance remote I/O and data management of\nlarge collections of files. Currently, there is support for the WebDav,\nAmazon S3, Microsoft Azure, and HTTP protocols.",
    "dev_url": "https://github.com/cern-it-sdc-id/davix",
    "doc_url": "https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/",
    "home": "https://dmc.web.cern.ch/projects/davix/home",
    "license": "LGPL-2.1-only",
+   "license_family": "LGPL-2.1-only",
    "license_file": "LICENSE",
    "summary": "High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)"
   },
   "build": {
-   "ignore_run_exports": [
-    "libuuid"
-   ],
    "number": "0",
-   "run_exports": [
-    "davix"
-   ]
+   "run_exports": {
+    "weak": [
+     "davix"
+    ]
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -576,23 +993,74 @@
     "henryiii"
    ]
   },
+  "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "davix"
+     ]
+    },
+    "name": "davix",
+    "requirements": {
+     "build": [
+      "gnuconfig",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "git",
+      "python >=3.9",
+      "pkg-config",
+      "gsoap"
+     ],
+     "host": [
+      "gtest",
+      "gsoap",
+      "openssl",
+      "curl",
+      "libxml2",
+      "libuuid",
+      "zlib"
+     ],
+     "run": [
+      "openssl",
+      "libcurl",
+      "libxml2"
+     ]
+    },
+    "tests": [
+     {
+      "script": [
+       "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
+       "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
+       "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "davix",
-   "version": "0.8.6"
+   "version": "0.8.9"
   },
   "requirements": {
    "build": [
     "gnuconfig",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "cmake",
-    "make",
+    "ninja",
     "git",
-    "python",
+    "python >=3.9",
     "pkg-config",
     "gsoap"
    ],
    "host": [
+    "gtest",
     "gsoap",
     "openssl",
     "curl",
@@ -606,22 +1074,15 @@
     "libxml2"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "0001-system-curl.patch",
-    "0002-Fix-lib-suffix.patch"
+    "0002-Fix-lib-suffix.patch",
+    "0003-Get-rid-of-forced-C-11.patch"
    ],
-   "sha256": "7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b",
-   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_6/davix-0.8.6.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'",
-    "cat \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"",
-    "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
-   ]
+   "sha256": "0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6",
+   "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_9/davix-0.8.9.tar.gz"
   }
  },
  "osx_arm64_requirements": {
@@ -629,12 +1090,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "git",
     "gnuconfig",
     "gsoap",
-    "make",
+    "ninja",
     "pkg-config",
     "python"
    ]
@@ -644,6 +1106,7 @@
    "elements": [
     "curl",
     "gsoap",
+    "gtest",
     "libuuid",
     "libxml2",
     "openssl",
@@ -680,21 +1143,23 @@
  "pr_info": {
   "__lazy_json__": "pr_info/davix.json"
  },
- "raw_meta_yaml": "{% set name = \"davix\" %}\n{% set version = \"0_8_6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version.replace('_', '.') }}\n\nsource:\n  url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz\n  sha256: 7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b\n  patches:\n    - 0001-system-curl.patch\n    # set LIB_SUFFIX to empty to install everything in '/lib/'\n    - 0002-Fix-lib-suffix.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    # https://abi-laboratory.pro/tracker/timeline/davix/\n    - {{ pin_subpackage('davix', max_pin='x.x') }}\n  ignore_run_exports:\n    - libuuid\n\nrequirements:\n  build:\n    - gnuconfig  # [unix]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - git\n    - python\n    - pkg-config\n    - gsoap\n  host:\n    - gsoap\n    - openssl\n    - curl\n    - libxml2\n    - libuuid\n    - zlib\n  run:\n    - openssl\n    - libcurl\n    - libxml2\n\ntest:\n  commands:\n    # We expect davix-ls to exit with 1 if everything is okay\n    - bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'\n    # Check the pkg-config file is as expected\n    - cat \"${PREFIX}/lib/pkgconfig/davix.pc\"\n    - grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\"\n    - bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'\n\nabout:\n  home: https://dmc.web.cern.ch/projects/davix/home\n  license: LGPL-2.1-only\n  license_file: LICENSE\n  summary: High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)\n\n  description: |\n    The davix project aims to make file management over HTTP-based protocols\n    simple. The focus is on high-performance remote I/O and data management of\n    large collections of files. Currently, there is support for the WebDav,\n    Amazon S3, Microsoft Azure, and HTTP protocols.\n  doc_url: https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/\n  dev_url: https://github.com/cern-it-sdc-id/davix\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n    - egpbos\n    - henryiii\n",
+ "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: davix\n  version: 0_8_9\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version | replace('_', '.') }}\n\nsource:\n  url: https://github.com/cern-fts/davix/releases/download/R_${{ version }}/davix-${{ version | replace('_', '.') }}.tar.gz\n  sha256: 0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6\n  patches:\n    - 0001-system-curl.patch\n    - 0002-Fix-lib-suffix.patch\n    - 0003-Get-rid-of-forced-C-11.patch\n\nbuild:\n  number: 0\n  skip: win\n  files:\n    include:\n      - \"**\"\n    exclude:\n      - bin/davix-unit-test\n\nrequirements:\n  build:\n    - if: unix\n      then: gnuconfig\n    - ${{ compiler('c') }}\n    - ${{ stdlib(\"c\") }}\n    - ${{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - git\n    - python >=3.9\n    - pkg-config\n    - gsoap\n  host:\n    - gtest\n    - gsoap\n    - openssl\n    - curl\n    - libxml2\n    - libuuid\n    - zlib\n  run:\n    - openssl\n    - libcurl\n    - libxml2\n  run_exports:\n    - ${{ pin_subpackage('davix', upper_bound='x.x') }}\n  ignore_run_exports:\n    from_package:\n      - libuuid\n\ntests:\n  - script:\n      - \"bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'\"\n      - \"cat \\\"${PREFIX}/lib/pkgconfig/davix.pc\\\"\"\n      - \"grep -q \\\"${PREFIX}\\\" \\\"${PREFIX}/lib/pkgconfig/davix.pc\\\"\"\n      - \"bash -c 'grep -q \\\"lib64\\\" \\\"${PREFIX}/lib/pkgconfig/davix.pc\\\" && exit 3 || [ $? -eq 1 ]'\"\n\nabout:\n  license: LGPL-2.1-only\n  license_file: LICENSE\n  summary: High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)\n  description: |\n    The davix project aims to make file management over HTTP-based protocols\n    simple. The focus is on high-performance remote I/O and data management of\n    large collections of files. Currently, there is support for the WebDav,\n    Amazon S3, Microsoft Azure, and HTTP protocols.\n  homepage: https://dmc.web.cern.ch/projects/davix/home\n  repository: https://github.com/cern-it-sdc-id/davix\n  documentation: https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n    - egpbos\n    - henryiii\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "cmake",
    "curl",
    "cxx_compiler_stub",
    "git",
    "gnuconfig",
    "gsoap",
+   "gtest",
    "libcurl",
    "libuuid",
    "libxml2",
-   "make",
+   "ninja",
    "openssl",
    "pkg-config",
    "python",
@@ -706,12 +1171,13 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "git",
     "gnuconfig",
     "gsoap",
-    "make",
+    "ninja",
     "pkg-config",
     "python"
    ]
@@ -720,9 +1186,11 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "curl",
     "cxx_compiler_stub",
     "gsoap",
+    "gtest",
     "libuuid",
     "libxml2",
     "openssl",
@@ -733,6 +1201,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "libcurl",
     "libxml2",
@@ -750,14 +1219,15 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "git",
     "gnuconfig",
     "gsoap",
-    "make",
+    "ninja",
     "pkg-config",
-    "python"
+    "python >=3.9"
    ]
   },
   "host": {
@@ -765,6 +1235,7 @@
    "elements": [
     "curl",
     "gsoap",
+    "gtest",
     "libuuid",
     "libxml2",
     "openssl",
@@ -784,8 +1255,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_6/davix-0.8.6.tar.gz",
- "version": "0.8.6",
+ "url": "https://github.com/cern-fts/davix/releases/download/R_0_8_9/davix-0.8.9.tar.gz",
+ "version": "0.8.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/davix.json"
  }
