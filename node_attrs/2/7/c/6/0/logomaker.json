@@ -33,24 +33,26 @@
   },
   "package": {
    "name": "logomaker",
-   "version": "0.8.3"
+   "version": "0.8.5"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "pip"
+    "pip",
+    "hatch"
    ],
    "run": [
     "python >=3.9",
     "numpy",
     "matplotlib-base",
-    "pandas"
+    "pandas",
+    "hatch"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7c92397f8fedb2ce95479213384664bead6b3e6d0b1d0a4602a9a2745aefcebe",
-   "url": "https://pypi.org/packages/source/l/logomaker/logomaker-0.8.3.tar.gz"
+   "sha256": "3f477ddc714c721a46682c8580d0a8f3d84c7093e9e1f50dea20820f90db6cb0",
+   "url": "https://pypi.org/packages/source/l/logomaker/logomaker-0.8.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -73,6 +75,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch",
     "pip",
     "python"
    ]
@@ -80,6 +83,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "hatch",
     "matplotlib-base",
     "numpy",
     "pandas",
@@ -114,24 +118,26 @@
   },
   "package": {
    "name": "logomaker",
-   "version": "0.8.3"
+   "version": "0.8.5"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "pip"
+    "pip",
+    "hatch"
    ],
    "run": [
     "python >=3.9",
     "numpy",
     "matplotlib-base",
-    "pandas"
+    "pandas",
+    "hatch"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7c92397f8fedb2ce95479213384664bead6b3e6d0b1d0a4602a9a2745aefcebe",
-   "url": "https://pypi.org/packages/source/l/logomaker/logomaker-0.8.3.tar.gz"
+   "sha256": "3f477ddc714c721a46682c8580d0a8f3d84c7093e9e1f50dea20820f90db6cb0",
+   "url": "https://pypi.org/packages/source/l/logomaker/logomaker-0.8.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -160,10 +166,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/logomaker.json"
  },
- "raw_meta_yaml": "{% set name = \"logomaker\" %}\n{% set version = \"0.8.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/logomaker-{{ version }}.tar.gz\n  sha256: 7c92397f8fedb2ce95479213384664bead6b3e6d0b1d0a4602a9a2745aefcebe\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - matplotlib-base\n    - pandas\n\ntest:\n  imports:\n    - logomaker\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://logomaker.readthedocs.io\n  summary: Package for making Sequence Logos\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hmacdope\n    - mikemhenry\n",
+ "raw_meta_yaml": "{% set name = \"logomaker\" %}\n{% set version = \"0.8.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/logomaker-{{ version }}.tar.gz\n  sha256: 3f477ddc714c721a46682c8580d0a8f3d84c7093e9e1f50dea20820f90db6cb0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatch\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - matplotlib-base\n    - pandas\n    - hatch\n\ntest:\n  imports:\n    - logomaker\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://logomaker.readthedocs.io\n  summary: Package for making Sequence Logos\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hmacdope\n    - mikemhenry\n",
  "req": {
   "__set__": true,
   "elements": [
+   "hatch",
    "matplotlib-base",
    "numpy",
    "pandas",
@@ -179,6 +186,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch",
     "pip",
     "python"
    ]
@@ -186,6 +194,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "hatch",
     "matplotlib-base",
     "numpy",
     "pandas",
@@ -209,6 +218,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch",
     "pip",
     "python 3.9"
    ]
@@ -216,6 +226,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "hatch",
     "matplotlib-base",
     "numpy",
     "pandas",
@@ -230,8 +241,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/l/logomaker/logomaker-0.8.3.tar.gz",
- "version": "0.8.3",
+ "url": "https://pypi.org/packages/source/l/logomaker/logomaker-0.8.5.tar.gz",
+ "version": "0.8.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/logomaker.json"
  }
