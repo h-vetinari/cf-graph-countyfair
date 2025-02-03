@@ -32,7 +32,7 @@
     "al = arraylake.cli.main:app"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -50,7 +50,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.10,<3.13",
+    "python 3.10",
     "hatchling",
     "hatch-vcs",
     "hatch-min-requirements",
@@ -115,7 +115,8 @@
     "arraylake"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -173,7 +174,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -189,7 +191,7 @@
     "al = arraylake.cli.main:app"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -207,7 +209,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.10,<3.13",
+    "python 3.10",
     "hatchling",
     "hatch-vcs",
     "hatch-min-requirements",
@@ -273,7 +275,8 @@
     "arraylake"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -292,7 +295,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/arraylake.json"
  },
- "raw_meta_yaml": "{% set name = \"arraylake\" %}\n{% set version = \"0.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/arraylake-{{ version }}.tar.gz\n  sha256: dc0da0835703150bbd674e5d9c09aca09e74e79b59489eafaa1c8f23fe2e082d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  entry_points:\n    - arraylake = arraylake.cli.main:app\n    - al = arraylake.cli.main:app\n\nrequirements:\n  host:\n    - python >=3.10,<3.13\n    - hatchling\n    - hatch-vcs\n    - hatch-min-requirements\n    - pip\n  run:\n    - packaging >=23.0\n    - ruamel.yaml >=0.17,<1.0\n    - python >=3.10,<3.13\n    - aiobotocore >=2.10.0,<3.0\n    - aioitertools >=0.11,<1.dev0\n    - boto3 >=1.33.2,<2.0\n    - botocore >=1.33.2,<2.0\n    - click >=8.1,<9.dev0\n    - donfig >=0.7,<1.0\n    - email_validator >=2,<3\n    - httpx >=0.23,<0.28\n    - numpy >=1.23,<3.0\n    - pydantic >=2.3,<2.10\n    - python-dateutil >=2.8.0,<3.0.0\n    - pyyaml >=6,<7.0\n    - rich >=12.6,<14.0\n    - ruamel.yaml >=0.17,<1.0\n    - structlog >=24.1,<25.dev0\n    - typer >=0.6.1,<1.0\n    - uvloop <1.0,>=0.17  # [unix]\n    - zarr >=2.18\n    - numcodecs >=0.13.1\n    - __unix  # [unix]\n    - __win   # [win]\n    - cachetools >=5.3.2,<6.0\n    - typing-extensions\n    - fsspec >=2024.2.0\n    - s3fs >=2024.02.0\n    - gcsfs >=2024.2.0\n    - sqlitedict >=2.1,<3.dev0\n    - tenacity >=8.4.1,<9.0\n    - humanize >=4.9.0,<4.10.dev0\n    # https://github.com/conda/conda/issues/13619#issuecomment-2075825121\n    - pyopenssl >=23.2.0\n  run_constrained:\n    - cfgrib >=0.9,<1\n    - python-eccodes >=2.37.0\n    - h5py >=3.7.0,<4.0.0\n    - ipytree >=0.2.2,<1.0\n    - kerchunk >=0.1,<1.0,!=0.2.1\n    - tifffile >=2023.2.27\n    - uvloop >=0.17,<1.0\n    - xarray >=v2022.12.0\n    - netcdf4 >=1.6.1,<1.7\n\ntest:\n  imports:\n    - arraylake\n  commands:\n    - pip check\n    - arraylake --version\n  requires:\n    - pip\n\nabout:\n  home: https://docs.earthmover.io\n  summary: Python client for ArrayLake\n  license: 'Unlicense'\n\nextra:\n  recipe-maintainers:\n    - rabernat\n    - jhamman\n    - dcherian\n    - monodeldiablo\n    - lindseynield\n",
+ "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"arraylake\" %}\n{% set version = \"0.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/arraylake-{{ version }}.tar.gz\n  sha256: dc0da0835703150bbd674e5d9c09aca09e74e79b59489eafaa1c8f23fe2e082d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n  entry_points:\n    - arraylake = arraylake.cli.main:app\n    - al = arraylake.cli.main:app\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - hatch-vcs\n    - hatch-min-requirements\n    - pip\n  run:\n    - packaging >=23.0\n    - ruamel.yaml >=0.17,<1.0\n    - python >={{ python_min }},<3.13\n    - aiobotocore >=2.10.0,<3.0\n    - aioitertools >=0.11,<1.dev0\n    - boto3 >=1.33.2,<2.0\n    - botocore >=1.33.2,<2.0\n    - click >=8.1,<9.dev0\n    - donfig >=0.7,<1.0\n    - email_validator >=2,<3\n    - httpx >=0.23,<0.28\n    - numpy >=1.23,<3.0\n    - pydantic >=2.3,<2.10\n    - python-dateutil >=2.8.0,<3.0.0\n    - pyyaml >=6,<7.0\n    - rich >=12.6,<14.0\n    - ruamel.yaml >=0.17,<1.0\n    - structlog >=24.1,<25.dev0\n    - typer >=0.6.1,<1.0\n    - uvloop <1.0,>=0.17  # [unix]\n    - zarr >=2.18\n    - numcodecs >=0.13.1\n    - __unix  # [unix]\n    - __win   # [win]\n    - cachetools >=5.3.2,<6.0\n    - typing-extensions\n    - fsspec >=2024.2.0\n    - s3fs >=2024.02.0\n    - gcsfs >=2024.2.0\n    - sqlitedict >=2.1,<3.dev0\n    - tenacity >=8.4.1,<9.0\n    - humanize >=4.9.0,<4.10.dev0\n    # https://github.com/conda/conda/issues/13619#issuecomment-2075825121\n    - pyopenssl >=23.2.0\n  run_constrained:\n    - cfgrib >=0.9,<1\n    - python-eccodes >=2.37.0\n    - h5py >=3.7.0,<4.0.0\n    - ipytree >=0.2.2,<1.0\n    - kerchunk >=0.1,<1.0,!=0.2.1\n    - tifffile >=2023.2.27\n    - uvloop >=0.17,<1.0\n    - xarray >=v2022.12.0\n    - netcdf4 >=1.6.1,<1.7\n\ntest:\n  imports:\n    - arraylake\n  commands:\n    - pip check\n    - arraylake --version\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://docs.earthmover.io\n  summary: Python client for ArrayLake\n  license: 'Unlicense'\n\nextra:\n  recipe-maintainers:\n    - rabernat\n    - jhamman\n    - dcherian\n    - monodeldiablo\n    - lindseynield\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -389,7 +392,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -406,7 +410,7 @@
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python >=3.10,<3.13"
+    "python 3.10"
    ]
   },
   "run": {
@@ -449,7 +453,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -470,7 +475,7 @@
     "al = arraylake.cli.main:app"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -488,7 +493,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.10,<3.13",
+    "python 3.10",
     "hatchling",
     "hatch-vcs",
     "hatch-min-requirements",
@@ -552,7 +557,8 @@
     "arraylake"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -609,7 +615,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  }
