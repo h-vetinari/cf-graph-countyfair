@@ -26,8 +26,8 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -38,11 +38,12 @@
   },
   "package": {
    "name": "imagehash",
-   "version": "4.3.1"
+   "version": "4.3.2"
   },
   "requirements": {
    "host": [
     "python 3.9",
+    "setuptools",
     "pip"
    ],
    "run": [
@@ -55,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7038d1b7f9e0585beb3dd8c0a956f02b95a346c0b5f24a9e8cc03ebadaf0aa70",
-   "url": "https://pypi.org/packages/source/i/imagehash/ImageHash-4.3.1.tar.gz"
+   "sha256": "e54a79805afb82a34acde4746a16540503a9636fd1ffb31d8e099b29bbbf8156",
+   "url": "https://pypi.org/packages/source/i/imagehash/ImageHash-4.3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -80,7 +81,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -111,8 +113,8 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -123,11 +125,12 @@
   },
   "package": {
    "name": "imagehash",
-   "version": "4.3.1"
+   "version": "4.3.2"
   },
   "requirements": {
    "host": [
     "python 3.9",
+    "setuptools",
     "pip"
    ],
    "run": [
@@ -140,8 +143,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7038d1b7f9e0585beb3dd8c0a956f02b95a346c0b5f24a9e8cc03ebadaf0aa70",
-   "url": "https://pypi.org/packages/source/i/imagehash/ImageHash-4.3.1.tar.gz"
+   "sha256": "e54a79805afb82a34acde4746a16540503a9636fd1ffb31d8e099b29bbbf8156",
+   "url": "https://pypi.org/packages/source/i/imagehash/ImageHash-4.3.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -170,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/imagehash.json"
  },
- "raw_meta_yaml": "{% set name = \"imagehash\" %}\n{% set version = \"4.3.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ImageHash-{{ version }}.tar.gz\n  sha256: 7038d1b7f9e0585beb3dd8c0a956f02b95a346c0b5f24a9e8cc03ebadaf0aa70\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pywavelets\n    - numpy\n    - pillow\n    - scipy\n\ntest:\n  imports:\n    - imagehash\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/JohannesBuchner/imagehash\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A Python Perceptual Image Hahsing Module\n\nextra:\n  recipe-maintainers:\n    - JohannesBuchner\n    - bjlittle\n    - ocefpaf\n",
+ "raw_meta_yaml": "{% set name = \"imagehash\" %}\n{% set version = \"4.3.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ImageHash-{{ version }}.tar.gz\n  sha256: e54a79805afb82a34acde4746a16540503a9636fd1ffb31d8e099b29bbbf8156\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pywavelets\n    - numpy\n    - pillow\n    - scipy\n\ntest:\n  imports:\n    - imagehash\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/JohannesBuchner/imagehash\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A Python Perceptual Image Hahsing Module\n\nextra:\n  recipe-maintainers:\n    - JohannesBuchner\n    - bjlittle\n    - ocefpaf\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -179,7 +182,8 @@
    "pip",
    "python",
    "pywavelets",
-   "scipy"
+   "scipy",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -191,7 +195,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -222,7 +227,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -243,8 +249,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/i/imagehash/ImageHash-4.3.1.tar.gz",
- "version": "4.3.1",
+ "url": "https://pypi.org/packages/source/i/imagehash/ImageHash-4.3.2.tar.gz",
+ "version": "4.3.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/imagehash.json"
  }
