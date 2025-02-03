@@ -3,8 +3,8 @@
  "branch": "main",
  "conda-forge.yml": {
   "build_platform": {
-   "linux_aarch64": "linux_aarch64",
-   "linux_ppc64le": "linux_ppc64le"
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64"
   },
   "conda_build": {
    "error_overlinking": true
@@ -13,11 +13,6 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
-  },
-  "os_version": {
-   "linux_64": "alma8",
-   "linux_aarch64": "alma8",
-   "linux_ppc64le": "alma8"
   },
   "provider": {
    "linux_aarch64": "default",
@@ -28,16 +23,16 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "nvTIFF native runtime libraries\n",
+   "description": "nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built on the CUDA platform. The library is supported on Volta+ GPU architectures.",
    "doc_url": "https://docs.nvidia.com/cuda/nvtiff/",
    "home": "https://docs.nvidia.com/cuda/nvtiff/",
    "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
    "license_file": "LICENSE",
    "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
-   "summary": "nvTIFF native runtime libraries"
+   "summary": "The NVIDIA nvTIFF development package."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "feedstock-name": "libnvtiff",
@@ -47,9 +42,15 @@
   },
   "outputs": [
    {
+    "about": {
+     "description": "This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF runtime library."
+    },
     "build": {
-     "run_exports": [
-      "libnvtiff0"
+     "ignore_run_exports_from": [
+      "cuda_compiler_stub"
      ]
     },
     "files": [
@@ -64,6 +65,9 @@
      ],
      "host": [
       "cuda-version 12.6"
+     ],
+     "run": [
+      "cuda-version"
      ],
      "run_constrained": null
     },
@@ -105,6 +109,12 @@
     }
    },
    {
+    "about": {
+     "description": "This is a developer package only. Developers should install this package to link statically to nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF static library."
+    },
     "build": null,
     "files": [
      "lib/libnvtiff_static.a"
@@ -131,6 +141,11 @@
    "name": "libnvtiff-split",
    "version": "0.4.0.62"
   },
+  "requirements": {
+   "build": [
+    "cf-nvidia-tools"
+   ]
+  },
   "schema_version": 0,
   "source": {
    "sha256": "5f76b01eddfec0c2823eaa3aae1cf4709e695e8dbdfd22b2c54493ede2dabd4c",
@@ -143,6 +158,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cuda_compiler_stub"
    ]
   },
@@ -156,6 +172,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "cuda-version",
     "libnvtiff-dev",
     "libnvtiff0"
    ]
@@ -167,16 +184,16 @@
  },
  "linux_aarch64_meta_yaml": {
   "about": {
-   "description": "nvTIFF native runtime libraries\n",
+   "description": "nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built on the CUDA platform. The library is supported on Volta+ GPU architectures.",
    "doc_url": "https://docs.nvidia.com/cuda/nvtiff/",
    "home": "https://docs.nvidia.com/cuda/nvtiff/",
    "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
    "license_file": "LICENSE",
    "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
-   "summary": "nvTIFF native runtime libraries"
+   "summary": "The NVIDIA nvTIFF development package."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "feedstock-name": "libnvtiff",
@@ -186,9 +203,15 @@
   },
   "outputs": [
    {
+    "about": {
+     "description": "This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF runtime library."
+    },
     "build": {
-     "run_exports": [
-      "libnvtiff0"
+     "ignore_run_exports_from": [
+      "cuda_compiler_stub"
      ]
     },
     "files": [
@@ -205,6 +228,9 @@
      "host": [
       "cuda-version 12.6"
      ],
+     "run": [
+      "cuda-version"
+     ],
      "run_constrained": [
       "arm-variant * sbsa"
      ]
@@ -251,6 +277,12 @@
     }
    },
    {
+    "about": {
+     "description": "This is a developer package only. Developers should install this package to link statically to nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF static library."
+    },
     "build": null,
     "files": [
      "lib/libnvtiff_static.a"
@@ -280,6 +312,11 @@
   "package": {
    "name": "libnvtiff-split",
    "version": "0.4.0.62"
+  },
+  "requirements": {
+   "build": [
+    "cf-nvidia-tools"
+   ]
   },
   "schema_version": 0,
   "source": {
@@ -294,6 +331,7 @@
     "arm-variant",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cuda_compiler_stub"
    ]
   },
@@ -307,6 +345,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "cuda-version",
     "libnvtiff-dev",
     "libnvtiff0"
    ]
@@ -318,16 +357,16 @@
  },
  "meta_yaml": {
   "about": {
-   "description": "nvTIFF native runtime libraries\n",
+   "description": "nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built on the CUDA platform. The library is supported on Volta+ GPU architectures.",
    "doc_url": "https://docs.nvidia.com/cuda/nvtiff/",
    "home": "https://docs.nvidia.com/cuda/nvtiff/",
    "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
    "license_file": "LICENSE",
    "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
-   "summary": "nvTIFF native runtime libraries"
+   "summary": "The NVIDIA nvTIFF development package."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "feedstock-name": "libnvtiff",
@@ -337,9 +376,15 @@
   },
   "outputs": [
    {
+    "about": {
+     "description": "This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF runtime library."
+    },
     "build": {
-     "run_exports": [
-      "libnvtiff0"
+     "ignore_run_exports_from": [
+      "cuda_compiler_stub"
      ]
     },
     "files": [
@@ -354,6 +399,9 @@
      ],
      "host": [
       "cuda-version 12.6"
+     ],
+     "run": [
+      "cuda-version"
      ],
      "run_constrained": null
     },
@@ -395,6 +443,12 @@
     }
    },
    {
+    "about": {
+     "description": "This is a developer package only. Developers should install this package to link statically to nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF static library."
+    },
     "build": null,
     "files": [
      "lib/libnvtiff_static.a"
@@ -417,9 +471,15 @@
     }
    },
    {
+    "about": {
+     "description": "This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF runtime library."
+    },
     "build": {
-     "run_exports": [
-      "libnvtiff0"
+     "ignore_run_exports_from": [
+      "cuda_compiler_stub"
      ]
     },
     "files": [
@@ -436,6 +496,9 @@
      "host": [
       "cuda-version 12.6"
      ],
+     "run": [
+      "cuda-version"
+     ],
      "run_constrained": [
       "arm-variant * sbsa"
      ]
@@ -482,6 +545,12 @@
     }
    },
    {
+    "about": {
+     "description": "This is a developer package only. Developers should install this package to link statically to nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF static library."
+    },
     "build": null,
     "files": [
      "lib/libnvtiff_static.a"
@@ -508,9 +577,15 @@
     }
    },
    {
+    "about": {
+     "description": "This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF runtime library."
+    },
     "build": {
-     "run_exports": [
-      "libnvtiff0"
+     "ignore_run_exports_from": [
+      "cuda_compiler_stub"
      ]
     },
     "files": [
@@ -525,6 +600,9 @@
      ],
      "host": [
       "cuda-version 12.6"
+     ],
+     "run": [
+      "cuda-version"
      ],
      "run_constrained": null
     },
@@ -565,6 +643,12 @@
     }
    },
    {
+    "about": {
+     "description": "This is a developer package only. Developers should install this package to link statically to nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF static library."
+    },
     "build": {
      "skip": true
     },
@@ -588,6 +672,11 @@
   "package": {
    "name": "libnvtiff-split",
    "version": "0.4.0.62"
+  },
+  "requirements": {
+   "build": [
+    "cf-nvidia-tools"
+   ]
   },
   "schema_version": 0,
   "source": {
@@ -613,13 +702,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/libnvtiff.json"
  },
- "raw_meta_yaml": "{% set name = \"libnvtiff\" %}\n{% set version = \"0.4.0.62\" %}\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-ppc64le\" %}  # [ppc64le]\n{% set platform = \"linux-sbsa\" %}     # [aarch64 and arm_variant_type == \"sbsa\"]\n{% set platform = \"linux-aarch64\" %}  # [aarch64 and arm_variant_type == \"tegra\"]\n{% set platform = \"windows-x86_64\" %}  # [win]\n{% set target_name = \"x86_64-linux\" %}  # [linux64]\n{% set target_name = \"ppc64le-linux\" %}  # [ppc64le]\n{% set target_name = \"sbsa-linux\" %}  # [aarch64 and arm_variant_type == \"sbsa\"]\n{% set target_name = \"aarch64-linux\" %}  # [aarch64 and arm_variant_type == \"tegra\"]\n{% set target_name = \"x64\" %}  # [win]\n{% set extension = \"tar.xz\" %}  # [not win]\n{% set extension = \"zip\" %}  # [win]\n{% set cuda_compiler_version = cuda_compiler_version | default(\"None\") %}\n{% set cuda_major = cuda_compiler_version.split(\".\")[0] %}\n\n\npackage:\n  name: libnvtiff-split\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/{{ platform }}/libnvtiff-{{ platform }}-{{ version }}_cuda{{ cuda_major }}-archive.{{ extension }}\n  sha256: 0000000000000000000000000000000000000000000000000000000000000000\n{% if cuda_major == \"11\" %}\n  sha256: 8a206bb5b6b6e277e7366b8f10eec44320c5c7422117d83e4bf80bbf800bed1e  # [linux64]\n  sha256: c8904df056d8e365566cf1ee67e6dc554be2d030458e8d3c8c94240cdd9351c9  # [aarch64 and arm_variant_type == \"sbsa\"]\n  sha256: aeb6f73952294a1def649bd9e7a3203430b20f923d3e8623cda2ce13b8a42743  # [win]\n  sha256: 178945699ccda8ce1ac6e161782ab994bdf7f5cfaa27d705fcd3931805bca21a  # [aarch64 and arm_variant_type == \"tegra\"]\n{% endif %}\n{% if cuda_major == \"12\" %}\n  sha256: 5f76b01eddfec0c2823eaa3aae1cf4709e695e8dbdfd22b2c54493ede2dabd4c  # [linux64]\n  sha256: e66c275c2bcf69b82a0da69d29d70e754a22c8f32bb6cf75b34e4a2efd7640cb  # [aarch64 and arm_variant_type == \"sbsa\"]\n  sha256: 352703d4d227253af4512c21b840e813b548831f485a5b9cb4e2195844d006e3  # [win]\n  sha256: 2a7cc95a2a3ae56093a0becc7f87b9726253728443840fccacb35f9fd974d4cc  # [aarch64 and arm_variant_type == \"tegra\"]\n{% endif %}\n\nbuild:\n  number: 0\n  skip: true  # [osx or ppc64le]\n  skip: true  # [cuda_compiler_version in (None, \"None\", \"11.8\")]\n\noutputs:\n\n  - name: libnvtiff{{ version.split(\".\")[0] }}\n    build:\n      run_exports:\n        # FIXME: Pin to patch version until 1.0\n        - {{ pin_subpackage(\"libnvtiff\" ~ version.split(\".\")[0], max_pin=\"x.x.x\") }}\n    files:\n      - lib/libnvtiff.so.*            # [linux]\n      - Library\\bin\\nvtiff*.dll       # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cuda\") }}\n        - {{ stdlib(\"c\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n      host:\n        - cuda-version {{ cuda_compiler_version }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libnvtiff.so.{{ version.split(\".\")[0] }}                            # [linux]\n        - test -f $PREFIX/lib/libnvtiff.so.{{ version }}                                          # [linux]\n        - if not exist %LIBRARY_BIN%\\nvtiff_{{ version.split(\".\")[0] }}.dll exit 1              # [win]\n\n  - name: libnvtiff-dev\n    build:\n      run_exports:\n        # FIXME: Pin to patch version until 1.0\n        - {{ pin_subpackage(\"libnvtiff\" ~ version.split(\".\")[0], max_pin=\"x.x.x\") }}\n    files:\n      - lib/libnvtiff.so                                  # [linux]\n      # - lib/pkgconfig/nvtiff*.pc                          # [linux]\n      - include/nvtiff*                                   # [linux]\n      - Library\\include                                   # [win]\n      - Library\\lib\\nvtiff.lib                            # [win]\n    requirements:\n      build:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n      host:\n        - cuda-version {{ cuda_compiler_version }}\n        - {{ pin_subpackage(\"libnvtiff\" ~ version.split(\".\")[0], exact=True) }}\n      run:\n        - {{ pin_subpackage(\"libnvtiff\" ~ version.split(\".\")[0], exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libnvtiff.so                                    # [linux]\n        # - test -f $PREFIX/lib/pkgconfig/nvtiff*.pc                            # [linux]\n        - test -f $PREFIX/include/nvtiff_version.h                            # [linux]\n        - test -f $PREFIX/include/nvtiff.h                                    # [linux]\n        - if not exist %LIBRARY_INC%\\nvtiff_version.h exit 1                  # [win]\n        - if not exist %LIBRARY_INC%\\nvtiff.h exit 1                          # [win]\n        - if not exist %LIBRARY_LIB%\\nvtiff.lib exit 1                        # [win]\n\n  - name: libnvtiff-static\n    build:\n      skip: True  # [not linux]\n    files:\n      - lib/libnvtiff_static.a  # [linux]\n    requirements:\n      build:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n      host:\n        - cuda-version {{ cuda_compiler_version }}\n      run:\n        - {{ pin_subpackage(\"libnvtiff-dev\", exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/lib/libnvtiff_static.a  # [linux]\n\nabout:\n  home: https://docs.nvidia.com/cuda/nvtiff/\n  license_file: LICENSE\n  license: LicenseRef-NVIDIA-End-User-License-Agreement\n  license_url: https://docs.nvidia.com/cuda/eula/index.html\n  summary: nvTIFF native runtime libraries\n  description: |\n    nvTIFF native runtime libraries\n  doc_url: https://docs.nvidia.com/cuda/nvtiff/\n\nextra:\n  feedstock-name: libnvtiff\n  recipe-maintainers:\n    - conda-forge/cuda\n",
+ "raw_meta_yaml": "{% set name = \"libnvtiff\" %}\n{% set version = \"0.4.0.62\" %}\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-ppc64le\" %}  # [ppc64le]\n{% set platform = \"linux-sbsa\" %}     # [aarch64 and arm_variant_type == \"sbsa\"]\n{% set platform = \"linux-aarch64\" %}  # [aarch64 and arm_variant_type == \"tegra\"]\n{% set platform = \"windows-x86_64\" %}  # [win]\n{% set target_name = \"x86_64-linux\" %}  # [linux64]\n{% set target_name = \"ppc64le-linux\" %}  # [ppc64le]\n{% set target_name = \"sbsa-linux\" %}  # [aarch64 and arm_variant_type == \"sbsa\"]\n{% set target_name = \"aarch64-linux\" %}  # [aarch64 and arm_variant_type == \"tegra\"]\n{% set target_name = \"x64\" %}  # [win]\n{% set extension = \"tar.xz\" %}  # [not win]\n{% set extension = \"zip\" %}  # [win]\n{% set cuda_compiler_version = cuda_compiler_version | default(\"None\") %}\n{% set cuda_major = cuda_compiler_version.split(\".\")[0] %}\n\n\npackage:\n  name: libnvtiff-split\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/{{ platform }}/libnvtiff-{{ platform }}-{{ version }}_cuda{{ cuda_major }}-archive.{{ extension }}\n  sha256: 0000000000000000000000000000000000000000000000000000000000000000\n{% if cuda_major == \"11\" %}\n  sha256: 8a206bb5b6b6e277e7366b8f10eec44320c5c7422117d83e4bf80bbf800bed1e  # [linux64]\n  sha256: c8904df056d8e365566cf1ee67e6dc554be2d030458e8d3c8c94240cdd9351c9  # [aarch64 and arm_variant_type == \"sbsa\"]\n  sha256: aeb6f73952294a1def649bd9e7a3203430b20f923d3e8623cda2ce13b8a42743  # [win]\n  sha256: 178945699ccda8ce1ac6e161782ab994bdf7f5cfaa27d705fcd3931805bca21a  # [aarch64 and arm_variant_type == \"tegra\"]\n{% endif %}\n{% if cuda_major == \"12\" %}\n  sha256: 5f76b01eddfec0c2823eaa3aae1cf4709e695e8dbdfd22b2c54493ede2dabd4c  # [linux64]\n  sha256: e66c275c2bcf69b82a0da69d29d70e754a22c8f32bb6cf75b34e4a2efd7640cb  # [aarch64 and arm_variant_type == \"sbsa\"]\n  sha256: 352703d4d227253af4512c21b840e813b548831f485a5b9cb4e2195844d006e3  # [win]\n  sha256: 2a7cc95a2a3ae56093a0becc7f87b9726253728443840fccacb35f9fd974d4cc  # [aarch64 and arm_variant_type == \"tegra\"]\n{% endif %}\n\nbuild:\n  number: 1\n  skip: true  # [osx or ppc64le]\n  skip: true  # [cuda_compiler_version in (None, \"None\", \"11.8\")]\n\nrequirements:\n  build:\n    - cf-nvidia-tools  # [linux]\n\noutputs:\n\n  - name: libnvtiff{{ version.split(\".\")[0] }}\n    build:\n      ignore_run_exports_from:\n        - {{ compiler(\"cuda\") }}\n    files:\n      - lib/libnvtiff.so.*            # [linux]\n      - Library\\bin\\nvtiff*.dll       # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cuda\") }}\n        - {{ stdlib(\"c\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n      host:\n        - cuda-version {{ cuda_compiler_version }}\n      run:\n        - {{ pin_compatible('cuda-version', max_pin='x', min_pin='x') }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libnvtiff.so.{{ version.split(\".\")[0] }}                            # [linux]\n        - test -f $PREFIX/lib/libnvtiff.so.{{ version }}                                          # [linux]\n        - if not exist %LIBRARY_BIN%\\nvtiff_{{ version.split(\".\")[0] }}.dll exit 1              # [win]\n    about:\n      summary: The NVIDIA nvTIFF runtime library.\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_file: LICENSE\n      description: >-\n        This is a runtime package only. Developers should install libnvtiff-dev to build\n        with nvTIFF.\n\n  - name: libnvtiff-dev\n    build:\n      run_exports:\n        # FIXME: Pin to patch version until 1.0\n        - {{ pin_subpackage(\"libnvtiff\" ~ version.split(\".\")[0], max_pin=\"x.x.x\") }}\n    files:\n      - lib/libnvtiff.so                                  # [linux]\n      # - lib/pkgconfig/nvtiff*.pc                          # [linux]\n      - include/nvtiff*                                   # [linux]\n      - Library\\include                                   # [win]\n      - Library\\lib\\nvtiff.lib                            # [win]\n    requirements:\n      build:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n      host:\n        - cuda-version {{ cuda_compiler_version }}\n        - {{ pin_subpackage(\"libnvtiff\" ~ version.split(\".\")[0], exact=True) }}\n      run:\n        - {{ pin_subpackage(\"libnvtiff\" ~ version.split(\".\")[0], exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libnvtiff.so                                    # [linux]\n        # - test -f $PREFIX/lib/pkgconfig/nvtiff*.pc                            # [linux]\n        - test -f $PREFIX/include/nvtiff_version.h                            # [linux]\n        - test -f $PREFIX/include/nvtiff.h                                    # [linux]\n        - if not exist %LIBRARY_INC%\\nvtiff_version.h exit 1                  # [win]\n        - if not exist %LIBRARY_INC%\\nvtiff.h exit 1                          # [win]\n        - if not exist %LIBRARY_LIB%\\nvtiff.lib exit 1                        # [win]\n\n  - name: libnvtiff-static\n    build:\n      skip: True  # [not linux]\n    files:\n      - lib/libnvtiff_static.a  # [linux]\n    requirements:\n      build:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n      host:\n        - cuda-version {{ cuda_compiler_version }}\n      run:\n        - {{ pin_subpackage(\"libnvtiff-dev\", exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/lib/libnvtiff_static.a  # [linux]\n    about:\n      summary: The NVIDIA nvTIFF static library.\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_file: LICENSE\n      description: >-\n        This is a developer package only. Developers should install this package to link\n        statically to nvTIFF.\n\nabout:\n  home: https://docs.nvidia.com/cuda/nvtiff/\n  license_file: LICENSE\n  license: LicenseRef-NVIDIA-End-User-License-Agreement\n  license_url: https://docs.nvidia.com/cuda/eula/index.html\n  summary: The NVIDIA nvTIFF development package.\n  description: >-\n    nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built\n    on the CUDA platform. The library is supported on Volta+ GPU architectures.\n  doc_url: https://docs.nvidia.com/cuda/nvtiff/\n\nextra:\n  feedstock-name: libnvtiff\n  recipe-maintainers:\n    - conda-forge/cuda\n",
  "req": {
   "__set__": true,
   "elements": [
    "arm-variant",
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cf-nvidia-tools",
    "cuda-version",
    "cuda_compiler_stub",
    "libnvtiff-dev",
@@ -633,6 +723,7 @@
     "arm-variant",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cuda_compiler_stub"
    ]
   },
@@ -651,6 +742,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cuda-version",
     "cuda_compiler_stub",
     "libnvtiff-dev",
     "libnvtiff0"
@@ -669,6 +761,7 @@
     "arm-variant * sbsa",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cuda_compiler_stub"
    ]
   },
@@ -682,6 +775,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "cuda-version",
     "libnvtiff-dev",
     "libnvtiff0"
    ]
@@ -698,16 +792,16 @@
  },
  "win_64_meta_yaml": {
   "about": {
-   "description": "nvTIFF native runtime libraries\n",
+   "description": "nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built on the CUDA platform. The library is supported on Volta+ GPU architectures.",
    "doc_url": "https://docs.nvidia.com/cuda/nvtiff/",
    "home": "https://docs.nvidia.com/cuda/nvtiff/",
    "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
    "license_file": "LICENSE",
    "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
-   "summary": "nvTIFF native runtime libraries"
+   "summary": "The NVIDIA nvTIFF development package."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "feedstock-name": "libnvtiff",
@@ -717,9 +811,15 @@
   },
   "outputs": [
    {
+    "about": {
+     "description": "This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF runtime library."
+    },
     "build": {
-     "run_exports": [
-      "libnvtiff0"
+     "ignore_run_exports_from": [
+      "cuda_compiler_stub"
      ]
     },
     "files": [
@@ -734,6 +834,9 @@
      ],
      "host": [
       "cuda-version 12.6"
+     ],
+     "run": [
+      "cuda-version"
      ],
      "run_constrained": null
     },
@@ -774,6 +877,12 @@
     }
    },
    {
+    "about": {
+     "description": "This is a developer package only. Developers should install this package to link statically to nvTIFF.",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "summary": "The NVIDIA nvTIFF static library."
+    },
     "build": {
      "skip": true
     },
@@ -797,6 +906,9 @@
   "package": {
    "name": "libnvtiff-split",
    "version": "0.4.0.62"
+  },
+  "requirements": {
+   "build": []
   },
   "schema_version": 0,
   "source": {
@@ -823,6 +935,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "cuda-version",
     "libnvtiff-dev",
     "libnvtiff0"
    ]
