@@ -31,7 +31,7 @@
     "root_base"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": [
     "PYTHON -m pip install . -vv",
     "lhcbstyle install"
@@ -50,18 +50,19 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.7",
-    "root_base"
+    "python 3.9",
+    "root_base",
+    "setuptools"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "root_base"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "8e385afb6eb8afea177e6801d334cc855e774983cba48d9c1135a3fda96ead2d",
-   "url": "https://pypi.io/packages/source/l/lhcbstyle/lhcbstyle-0.1.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lhcbstyle/lhcbstyle-0.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -72,7 +73,8 @@
     "lhcbstyle"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -86,7 +88,8 @@
    "elements": [
     "pip",
     "python",
-    "root_base"
+    "root_base",
+    "setuptools"
    ]
   },
   "run": {
@@ -99,7 +102,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -118,7 +122,7 @@
     "root_base"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": [
     "PYTHON -m pip install . -vv",
     "lhcbstyle install"
@@ -137,18 +141,19 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.7",
-    "root_base"
+    "python 3.9",
+    "root_base",
+    "setuptools"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "root_base"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "8e385afb6eb8afea177e6801d334cc855e774983cba48d9c1135a3fda96ead2d",
-   "url": "https://pypi.io/packages/source/l/lhcbstyle/lhcbstyle-0.1.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lhcbstyle/lhcbstyle-0.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,7 +164,8 @@
     "lhcbstyle"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -177,13 +183,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lhcbstyle.json"
  },
- "raw_meta_yaml": "{% set name = \"lhcbstyle\" %}\n{% set version = \"0.1.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lhcbstyle-{{ version }}.tar.gz\n  sha256: 8e385afb6eb8afea177e6801d334cc855e774983cba48d9c1135a3fda96ead2d\n\nbuild:\n  number: 0\n  noarch: python\n  # lhcbstyle doesn't link to ROOT so there is no need to constrain the runtime version\n  ignore_run_exports:\n    - root_base\n  entry_points:\n    - lhcbstyle = lhcbstyle.__main__:parse_args\n  script:\n    - {{ PYTHON }} -m pip install . -vv\n    - lhcbstyle install\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n    - root_base\n  run:\n    - python >=3.7\n    - root_base\n\ntest:\n  imports:\n    - lhcbstyle\n  commands:\n    - pip check\n    - lhcbstyle --help\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-docs/lhcbstyle\n  summary: LHCb style for ROOT plots\n  license: GPL-3.0-or-later\n  license_file: COPYING\n\nextra:\n  recipe-maintainers:\n    - admorris\n    - chrisburr\n",
+ "raw_meta_yaml": "{% set name = \"lhcbstyle\" %}\n{% set version = \"0.1.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lhcbstyle-{{ version }}.tar.gz\n  sha256: 8e385afb6eb8afea177e6801d334cc855e774983cba48d9c1135a3fda96ead2d\n\nbuild:\n  number: 1\n  noarch: python\n  # lhcbstyle doesn't link to ROOT so there is no need to constrain the runtime version\n  ignore_run_exports:\n    - root_base\n  entry_points:\n    - lhcbstyle = lhcbstyle.__main__:parse_args\n  script:\n    - {{ PYTHON }} -m pip install . -vv\n    - lhcbstyle install\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - root_base\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - root_base\n\ntest:\n  imports:\n    - lhcbstyle\n  commands:\n    - pip check\n    - lhcbstyle --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-docs/lhcbstyle\n  summary: LHCb style for ROOT plots\n  license: GPL-3.0-or-later\n  license_file: COPYING\n\nextra:\n  recipe-maintainers:\n    - admorris\n    - chrisburr\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
    "python",
-   "root_base"
+   "root_base",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -196,7 +203,8 @@
    "elements": [
     "pip",
     "python",
-    "root_base"
+    "root_base",
+    "setuptools"
    ]
   },
   "run": {
@@ -209,7 +217,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -223,25 +232,27 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7",
-    "root_base"
+    "python 3.9",
+    "root_base",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.7",
+    "python >=3.9",
     "root_base"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/l/lhcbstyle/lhcbstyle-0.1.0.tar.gz",
+ "url": "https://pypi.org/packages/source/l/lhcbstyle/lhcbstyle-0.1.0.tar.gz",
  "version": "0.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/lhcbstyle.json"
