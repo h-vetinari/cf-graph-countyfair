@@ -29,7 +29,7 @@
     "lb-ap = LbAPLocal.cli:main"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -44,7 +44,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "setuptools-scm >=6.2",
     "pip"
@@ -66,7 +66,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "76f6d83e6ddea5f3e54b17aadef3e0066cadc39bf5a4de880202f22d1675b0b0",
-   "url": "https://pypi.io/packages/source/l/lbaplocal/LbAPLocal-0.7.5.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lbaplocal/LbAPLocal-0.7.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -77,7 +77,8 @@
     "LbAPLocal"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -114,7 +115,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -131,7 +133,7 @@
     "lb-ap = LbAPLocal.cli:main"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -146,7 +148,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "setuptools-scm >=6.2",
     "pip"
@@ -168,7 +170,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "76f6d83e6ddea5f3e54b17aadef3e0066cadc39bf5a4de880202f22d1675b0b0",
-   "url": "https://pypi.io/packages/source/l/lbaplocal/LbAPLocal-0.7.5.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lbaplocal/LbAPLocal-0.7.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -179,7 +181,8 @@
     "LbAPLocal"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -197,7 +200,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lbaplocal.json"
  },
- "raw_meta_yaml": "{% set name = \"lbaplocal\" %}\n{% set version = \"0.7.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LbAPLocal-{{ version }}.tar.gz\n  sha256: 76f6d83e6ddea5f3e54b17aadef3e0066cadc39bf5a4de880202f22d1675b0b0\n\nbuild:\n  entry_points:\n    - lb-ap = LbAPLocal.cli:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=61.0\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >=3.9\n    - lbapcommon >=0.10.2\n    - lbdiracwrappers\n    - lbenv\n    - lbprodrun >=1.3,<2.dev0\n    - apd >=0.6.0\n    - click\n    - consolemd\n    - mplhep\n    - requests\n    - setuptools\n\ntest:\n  imports:\n    - LbAPLocal\n  commands:\n    - pip check\n    - lb-ap --help\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-dpa/analysis-productions/lbaplocal\n  summary: Tool to locally run tests for AnalysisProductions\n  dev_url: https://gitlab.cern.ch/lhcb-dpa/analysis-productions/lbaplocal\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - AidanWiederhold\n    - chrisburr\n",
+ "raw_meta_yaml": "{% set name = \"lbaplocal\" %}\n{% set version = \"0.7.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/LbAPLocal-{{ version }}.tar.gz\n  sha256: 76f6d83e6ddea5f3e54b17aadef3e0066cadc39bf5a4de880202f22d1675b0b0\n\nbuild:\n  entry_points:\n    - lb-ap = LbAPLocal.cli:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - lbapcommon >=0.10.2\n    - lbdiracwrappers\n    - lbenv\n    - lbprodrun >=1.3,<2.dev0\n    - apd >=0.6.0\n    - click\n    - consolemd\n    - mplhep\n    - requests\n    - setuptools\n\ntest:\n  imports:\n    - LbAPLocal\n  commands:\n    - pip check\n    - lb-ap --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-dpa/analysis-productions/lbaplocal\n  summary: Tool to locally run tests for AnalysisProductions\n  dev_url: https://gitlab.cern.ch/lhcb-dpa/analysis-productions/lbaplocal\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - AidanWiederhold\n    - chrisburr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -249,7 +252,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -263,7 +267,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "setuptools-scm >=6.2"
    ]
@@ -287,11 +291,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/l/lbaplocal/LbAPLocal-0.7.5.tar.gz",
+ "url": "https://pypi.org/packages/source/l/lbaplocal/LbAPLocal-0.7.5.tar.gz",
  "version": "0.7.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/lbaplocal.json"
