@@ -28,7 +28,7 @@
     "lb-telemetry = lb_telemetry:lb_telemetry"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -43,14 +43,14 @@
   },
   "requirements": {
    "host": [
-    "python >=3.6",
+    "python 3.9",
     "setuptools >=61",
     "wheel",
     "setuptools-scm >=3.4",
     "pip"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "lbplatformutils",
     "logzero",
     "requests"
@@ -59,7 +59,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "e73bc117d72f77fd2b8ad9b4483dddb9f07e90f95c4ca21c70b7123282aa59f6",
-   "url": "https://pypi.io/packages/source/l/lb-telemetry/lb-telemetry-0.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lb-telemetry/lb-telemetry-0.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -70,7 +70,8 @@
     "lb_telemetry"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -101,7 +102,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -117,7 +119,7 @@
     "lb-telemetry = lb_telemetry:lb_telemetry"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -132,14 +134,14 @@
   },
   "requirements": {
    "host": [
-    "python >=3.6",
+    "python 3.9",
     "setuptools >=61",
     "wheel",
     "setuptools-scm >=3.4",
     "pip"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "lbplatformutils",
     "logzero",
     "requests"
@@ -148,7 +150,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "e73bc117d72f77fd2b8ad9b4483dddb9f07e90f95c4ca21c70b7123282aa59f6",
-   "url": "https://pypi.io/packages/source/l/lb-telemetry/lb-telemetry-0.5.0.tar.gz"
+   "url": "https://pypi.org/packages/source/l/lb-telemetry/lb-telemetry-0.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,7 +161,8 @@
     "lb_telemetry"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -177,7 +180,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lb-telemetry.json"
  },
- "raw_meta_yaml": "{% set name = \"lb-telemetry\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lb-telemetry-{{ version }}.tar.gz\n  sha256: e73bc117d72f77fd2b8ad9b4483dddb9f07e90f95c4ca21c70b7123282aa59f6\n\nbuild:\n  entry_points:\n    - lb-telemetry = lb_telemetry:lb_telemetry\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - setuptools >=61\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >=3.6\n    - lbplatformutils\n    - logzero\n    - requests\n\ntest:\n  imports:\n    - lb_telemetry\n  commands:\n    - pip check\n    - lb-telemetry --help\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.cern.ch/lhcb/lb-telemetry\n  summary: A utility for logging telemetry data from LHCb packages to MONIT\n  license: GPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n    - CameronMcClymont\n",
+ "raw_meta_yaml": "{% set name = \"lb-telemetry\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lb-telemetry-{{ version }}.tar.gz\n  sha256: e73bc117d72f77fd2b8ad9b4483dddb9f07e90f95c4ca21c70b7123282aa59f6\n\nbuild:\n  entry_points:\n    - lb-telemetry = lb_telemetry:lb_telemetry\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - lbplatformutils\n    - logzero\n    - requests\n\ntest:\n  imports:\n    - lb_telemetry\n  commands:\n    - pip check\n    - lb-telemetry --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://gitlab.cern.ch/lhcb/lb-telemetry\n  summary: A utility for logging telemetry data from LHCb packages to MONIT\n  license: GPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n    - CameronMcClymont\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -218,7 +221,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -232,7 +236,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "setuptools >=61",
     "setuptools-scm >=3.4",
     "wheel"
@@ -243,18 +247,19 @@
    "elements": [
     "lbplatformutils",
     "logzero",
-    "python >=3.6",
+    "python >=3.9",
     "requests"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/l/lb-telemetry/lb-telemetry-0.5.0.tar.gz",
+ "url": "https://pypi.org/packages/source/l/lb-telemetry/lb-telemetry-0.5.0.tar.gz",
  "version": "0.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/lb-telemetry.json"
