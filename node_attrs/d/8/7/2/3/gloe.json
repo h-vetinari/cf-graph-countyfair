@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "pip"
    ],
@@ -50,7 +50,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "50b60e81d1a3048f8aad70e5ccc062ca75cac0d5f7af9542dc7ce770db91f843",
-   "url": "https://pypi.io/packages/source/g/gloe/gloe-0.6.0.tar.gz"
+   "url": "https://pypi.org/packages/source/g/gloe/gloe-0.6.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -60,7 +60,8 @@
     "gloe"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -87,7 +88,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -102,7 +104,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -116,7 +118,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0",
     "pip"
    ],
@@ -128,7 +130,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "50b60e81d1a3048f8aad70e5ccc062ca75cac0d5f7af9542dc7ce770db91f843",
-   "url": "https://pypi.io/packages/source/g/gloe/gloe-0.6.0.tar.gz"
+   "url": "https://pypi.org/packages/source/g/gloe/gloe-0.6.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -138,7 +140,8 @@
     "gloe"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -156,7 +159,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/gloe.json"
  },
- "raw_meta_yaml": "{% set name = \"gloe\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gloe-{{ version }}.tar.gz\n  sha256: 50b60e81d1a3048f8aad70e5ccc062ca75cac0d5f7af9542dc7ce770db91f843\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >=3.9\n    - typing-extensions >=4.7,<5.dev0\n\ntest:\n  imports:\n    - gloe\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  summary: Gloe is a general-purpose library designed to guide developers in expressing their code as a flow. \n  license: Apache-2.0\n  license_file: LICENSE\n  doc_url: https://gloe.ideos.com.br/\n  home: https://gloe.ideos.com.br/\n  dev_url: https://github.com/ideos/gloe\n\nextra:\n  recipe-maintainers:\n    - samirbraga\n",
+ "raw_meta_yaml": "{% set name = \"gloe\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gloe-{{ version }}.tar.gz\n  sha256: 50b60e81d1a3048f8aad70e5ccc062ca75cac0d5f7af9542dc7ce770db91f843\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - typing-extensions >=4.7,<5.dev0\n\ntest:\n  imports:\n    - gloe\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Gloe is a general-purpose library designed to guide developers in expressing their code as a flow. \n  license: Apache-2.0\n  license_file: LICENSE\n  doc_url: https://gloe.ideos.com.br/\n  home: https://gloe.ideos.com.br/\n  dev_url: https://github.com/ideos/gloe\n\nextra:\n  recipe-maintainers:\n    - samirbraga\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -189,7 +192,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -203,7 +207,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.9",
     "setuptools >=61.0"
    ]
   },
@@ -217,11 +221,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/g/gloe/gloe-0.6.0.tar.gz",
+ "url": "https://pypi.org/packages/source/g/gloe/gloe-0.6.0.tar.gz",
  "version": "0.6.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/gloe.json"
