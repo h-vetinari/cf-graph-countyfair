@@ -30,10 +30,10 @@
    "summary": "Read Apache Arrow batches from ODBC data sources in Python"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
-    "RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\" PYTHON -m build --no-isolation",
-    "PYTHON -m pip install --no-deps --find-links dist arrow_odbc",
+    "export RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\"",
+    "PYTHON -m pip install --no-deps --no-build-isolation .",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -59,7 +59,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -82,7 +82,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -105,7 +105,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -128,30 +128,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -163,7 +140,7 @@
   ],
   "package": {
    "name": "arrow_odbc",
-   "version": "7.0.4"
+   "version": "8.1.1"
   },
   "requirements": {
    "build": [
@@ -190,8 +167,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4ec15562f5b4dff3eb61de6f16f16e605e500f3567d1967e145d1db1d3b21b0b",
-   "url": "https://pypi.io/packages/source/a/arrow_odbc/arrow_odbc-7.0.4.tar.gz"
+   "sha256": "03880cbef1492af9ee01f3f2f4fb4702ce7365341b8ed7400546bd50467c296b",
+   "url": "https://pypi.org/packages/source/a/arrow_odbc/arrow_odbc-8.1.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -249,540 +226,10 @@
    "summary": "Read Apache Arrow batches from ODBC data sources in Python"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
-    "RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\" PYTHON -m build --no-isolation",
-    "PYTHON -m pip install --no-deps --find-links dist arrow_odbc",
-    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
-    "PYTHON -m build --no-isolation"
-   ]
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "jonashaag",
-    "timkpaine",
-    "pacman82"
-   ]
-  },
-  "outputs": [
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   }
-  ],
-  "package": {
-   "name": "arrow_odbc",
-   "version": "7.0.4"
-  },
-  "requirements": {
-   "build": [
-    "c_compiler_stub",
-    "c_stdlib_stub",
-    "rust_compiler_stub",
-    "cargo-bundle-licenses"
-   ],
-   "host": [
-    "python",
-    "python-build",
-    "cffi",
-    "maturin >=1,<2",
-    "milksnake",
-    "pip",
-    "pyarrow >=8",
-    "unixodbc",
-    "libiconv"
-   ],
-   "run": [
-    "python",
-    "cffi",
-    "pyarrow >=8"
-   ]
-  },
-  "schema_version": 0,
-  "source": {
-   "sha256": "4ec15562f5b4dff3eb61de6f16f16e605e500f3567d1967e145d1db1d3b21b0b",
-   "url": "https://pypi.io/packages/source/a/arrow_odbc/arrow_odbc-7.0.4.tar.gz"
-  },
-  "test": {
-   "imports": [
-    "arrow_odbc"
-   ]
-  }
- },
- "name": "arrow_odbc",
- "osx_64_meta_yaml": {
-  "about": {
-   "dev_url": "https://github.com/pacman82/arrow-odbc-py",
-   "home": "https://github.com/pacman82/arrow-odbc-py",
-   "license": "MIT",
-   "license_family": "MIT",
-   "license_file": [
-    "LICENSE",
-    "THIRDPARTY.yml"
-   ],
-   "summary": "Read Apache Arrow batches from ODBC data sources in Python"
-  },
-  "build": {
-   "number": "1",
-   "script": [
-    "RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\" PYTHON -m build --no-isolation",
-    "PYTHON -m pip install --no-deps --find-links dist arrow_odbc",
+    "export RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\"",
+    "PYTHON -m pip install --no-deps --no-build-isolation .",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -808,7 +255,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -831,7 +278,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -854,7 +301,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -877,7 +324,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -900,7 +347,260 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -912,7 +612,7 @@
   ],
   "package": {
    "name": "arrow_odbc",
-   "version": "7.0.4"
+   "version": "8.1.1"
   },
   "requirements": {
    "build": [
@@ -940,8 +640,169 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4ec15562f5b4dff3eb61de6f16f16e605e500f3567d1967e145d1db1d3b21b0b",
-   "url": "https://pypi.io/packages/source/a/arrow_odbc/arrow_odbc-7.0.4.tar.gz"
+   "sha256": "03880cbef1492af9ee01f3f2f4fb4702ce7365341b8ed7400546bd50467c296b",
+   "url": "https://pypi.org/packages/source/a/arrow_odbc/arrow_odbc-8.1.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "arrow_odbc"
+   ]
+  }
+ },
+ "name": "arrow_odbc",
+ "osx_64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/pacman82/arrow-odbc-py",
+   "home": "https://github.com/pacman82/arrow-odbc-py",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
+   "summary": "Read Apache Arrow batches from ODBC data sources in Python"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "export RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\"",
+    "PYTHON -m pip install --no-deps --no-build-isolation .",
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jonashaag",
+    "timkpaine",
+    "pacman82"
+   ]
+  },
+  "outputs": [
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   },
+   {
+    "name": "arrow_odbc"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "arrow-odbc",
+    "requirements": {
+     "host": [
+      "python"
+     ],
+     "run": [
+      "python",
+      "arrow_odbc =8.1.1=*_0"
+     ]
+    },
+    "test": {
+     "imports": [
+      "arrow_odbc"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "arrow_odbc",
+   "version": "8.1.1"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
+   ],
+   "host": [
+    "python",
+    "python-build",
+    "cffi",
+    "maturin >=1,<2",
+    "milksnake",
+    "pip",
+    "pyarrow >=8",
+    "unixodbc",
+    "libiconv"
+   ],
+   "run": [
+    "python",
+    "cffi",
+    "pyarrow >=8"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "03880cbef1492af9ee01f3f2f4fb4702ce7365341b8ed7400546bd50467c296b",
+   "url": "https://pypi.org/packages/source/a/arrow_odbc/arrow_odbc-8.1.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -1000,10 +861,10 @@
    "summary": "Read Apache Arrow batches from ODBC data sources in Python"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
-    "RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\" PYTHON -m build --no-isolation",
-    "PYTHON -m pip install --no-deps --find-links dist arrow_odbc",
+    "export RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\"",
+    "PYTHON -m pip install --no-deps --no-build-isolation .",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -1029,7 +890,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -1052,7 +913,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -1075,7 +936,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -1098,30 +959,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -1133,7 +971,7 @@
   ],
   "package": {
    "name": "arrow_odbc",
-   "version": "7.0.4"
+   "version": "8.1.1"
   },
   "requirements": {
    "build": [
@@ -1161,8 +999,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4ec15562f5b4dff3eb61de6f16f16e605e500f3567d1967e145d1db1d3b21b0b",
-   "url": "https://pypi.io/packages/source/a/arrow_odbc/arrow_odbc-7.0.4.tar.gz"
+   "sha256": "03880cbef1492af9ee01f3f2f4fb4702ce7365341b8ed7400546bd50467c296b",
+   "url": "https://pypi.org/packages/source/a/arrow_odbc/arrow_odbc-8.1.1.tar.gz"
   },
   "test": {
    "imports": [
@@ -1225,7 +1063,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/arrow_odbc.json"
  },
- "raw_meta_yaml": "{% set name = \"arrow_odbc\" %}\n{% set version = \"7.0.4\" %}\n{% set build_num = 1 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4ec15562f5b4dff3eb61de6f16f16e605e500f3567d1967e145d1db1d3b21b0b\n\nbuild:\n  number: {{ build_num }}\n  script:\n    - RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\" {{ PYTHON }} -m build --no-isolation  # [unix]\n    - {{ PYTHON }} -m build --no-isolation                                            # [win]\n    - {{ PYTHON }} -m pip install --no-deps --find-links dist arrow_odbc\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n\nrequirements:\n  build:\n    - maturin >=1,<2                      # [build_platform != target_platform]\n    - cffi                                # [build_platform != target_platform]\n    - python                              # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n    - crossenv                            # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('rust') }}\n    - cargo-bundle-licenses\n  host:\n    - python\n    - python-build\n    - cffi\n    - maturin >=1,<2\n    - milksnake\n    - pip\n    - pyarrow >=8\n    - unixodbc  # [not win]\n    - libiconv  # [osx]\n  run:\n    - python\n    - cffi\n    - pyarrow >=8\n\ntest:\n  imports:\n    - arrow_odbc\n\n\noutputs:\n  - name: arrow_odbc\n  - name: arrow-odbc\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python\n      run:\n        - python\n        - arrow_odbc ={{ version }}=*_{{ build_num }}\n\n    test:\n      imports:\n        - arrow_odbc\n\n\nabout:\n  home: https://github.com/pacman82/arrow-odbc-py\n  license: MIT\n  license_family: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  summary: Read Apache Arrow batches from ODBC data sources in Python\n  dev_url: https://github.com/pacman82/arrow-odbc-py\n\nextra:\n  recipe-maintainers:\n    - jonashaag\n    - timkpaine\n    - pacman82\n",
+ "raw_meta_yaml": "{% set name = \"arrow_odbc\" %}\n{% set version = \"8.1.1\" %}\n{% set build_num = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 03880cbef1492af9ee01f3f2f4fb4702ce7365341b8ed7400546bd50467c296b\n\nbuild:\n  number: {{ build_num }}\n  script:\n    - export RUSTFLAGS=\"-Clink-args=-Wl,-L$PREFIX/lib\"  # [unix]\n    - {{ PYTHON }} -m pip install --no-deps --no-build-isolation .\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n\nrequirements:\n  build:\n    - maturin >=1,<2                      # [build_platform != target_platform]\n    - cffi                                # [build_platform != target_platform]\n    - python                              # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n    - crossenv                            # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('rust') }}\n    - cargo-bundle-licenses\n  host:\n    - python\n    - python-build\n    - cffi\n    - maturin >=1,<2\n    - milksnake\n    - pip\n    - pyarrow >=8\n    - unixodbc  # [not win]\n    - libiconv  # [osx]\n  run:\n    - python\n    - cffi\n    - pyarrow >=8\n\ntest:\n  imports:\n    - arrow_odbc\n\n\noutputs:\n  - name: arrow_odbc\n  - name: arrow-odbc\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python\n      run:\n        - python\n        - arrow_odbc ={{ version }}=*_{{ build_num }}\n\n    test:\n      imports:\n        - arrow_odbc\n\n\nabout:\n  home: https://github.com/pacman82/arrow-odbc-py\n  license: MIT\n  license_family: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  summary: Read Apache Arrow batches from ODBC data sources in Python\n  dev_url: https://github.com/pacman82/arrow-odbc-py\n\nextra:\n  recipe-maintainers:\n    - jonashaag\n    - timkpaine\n    - pacman82\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -1315,7 +1153,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "arrow_odbc =7.0.4=*_1",
+    "arrow_odbc =8.1.1=*_0",
     "cffi",
     "pyarrow >=8",
     "python"
@@ -1326,8 +1164,8 @@
    "elements": []
   }
  },
- "url": "https://pypi.io/packages/source/a/arrow_odbc/arrow_odbc-7.0.4.tar.gz",
- "version": "7.0.4",
+ "url": "https://pypi.org/packages/source/a/arrow_odbc/arrow_odbc-8.1.1.tar.gz",
+ "version": "8.1.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/arrow_odbc.json"
  },
@@ -1344,10 +1182,9 @@
    "summary": "Read Apache Arrow batches from ODBC data sources in Python"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
-    "PYTHON -m build --no-isolation",
-    "PYTHON -m pip install --no-deps --find-links dist arrow_odbc",
+    "PYTHON -m pip install --no-deps --no-build-isolation .",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -1373,7 +1210,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -1396,7 +1233,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -1419,7 +1256,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -1442,30 +1279,7 @@
      ],
      "run": [
       "python",
-      "arrow_odbc =7.0.4=*_1"
-     ]
-    },
-    "test": {
-     "imports": [
-      "arrow_odbc"
-     ]
-    }
-   },
-   {
-    "name": "arrow_odbc"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "arrow-odbc",
-    "requirements": {
-     "host": [
-      "python"
-     ],
-     "run": [
-      "python",
-      "arrow_odbc =7.0.4=*_1"
+      "arrow_odbc =8.1.1=*_0"
      ]
     },
     "test": {
@@ -1477,7 +1291,7 @@
   ],
   "package": {
    "name": "arrow_odbc",
-   "version": "7.0.4"
+   "version": "8.1.1"
   },
   "requirements": {
    "build": [
@@ -1503,8 +1317,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4ec15562f5b4dff3eb61de6f16f16e605e500f3567d1967e145d1db1d3b21b0b",
-   "url": "https://pypi.io/packages/source/a/arrow_odbc/arrow_odbc-7.0.4.tar.gz"
+   "sha256": "03880cbef1492af9ee01f3f2f4fb4702ce7365341b8ed7400546bd50467c296b",
+   "url": "https://pypi.org/packages/source/a/arrow_odbc/arrow_odbc-8.1.1.tar.gz"
   },
   "test": {
    "imports": [
