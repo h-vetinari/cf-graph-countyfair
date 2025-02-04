@@ -40,6 +40,8 @@
     "python 3.9",
     "setuptools >=64",
     "setuptools-scm >=6.2",
+    "hatchling",
+    "hatch-vcs",
     "pip"
    ],
    "run": [
@@ -77,6 +79,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-vcs",
+    "hatchling",
     "pip",
     "python",
     "setuptools",
@@ -129,6 +133,8 @@
     "python 3.9",
     "setuptools >=64",
     "setuptools-scm >=6.2",
+    "hatchling",
+    "hatch-vcs",
     "pip"
    ],
    "run": [
@@ -172,10 +178,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/scikit-mol.json"
  },
- "raw_meta_yaml": "{% set name = \"scikit-mol\" %}\n{% set version = \"0.4.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scikit_mol-{{ version }}.tar.gz\n  sha256: 96a19005cb6fcabe0b19632184ff77b5dab1d49b784f7d8c66d8b5f00256ee3b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - rdkit\n    - numpy\n    - pandas\n    - scikit-learn\n    - packaging\n\ntest:\n  imports:\n    - scikit_mol\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/EBjerrum/scikit-mol\n  summary: scikit-learn classes for molecule transformation\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mikemhenry\n    - EBjerrum\n",
+ "raw_meta_yaml": "{% set name = \"scikit-mol\" %}\n{% set version = \"0.4.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scikit_mol-{{ version }}.tar.gz\n  sha256: 96a19005cb6fcabe0b19632184ff77b5dab1d49b784f7d8c66d8b5f00256ee3b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=6.2\n    - hatchling\n    - hatch-vcs\n    - pip\n  run:\n    - python >={{ python_min }}\n    - rdkit\n    - numpy\n    - pandas\n    - scikit-learn\n    - packaging\n\ntest:\n  imports:\n    - scikit_mol\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/EBjerrum/scikit-mol\n  summary: scikit-learn classes for molecule transformation\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mikemhenry\n    - EBjerrum\n",
  "req": {
   "__set__": true,
   "elements": [
+   "hatch-vcs",
+   "hatchling",
    "numpy",
    "packaging",
    "pandas",
@@ -195,6 +203,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-vcs",
+    "hatchling",
     "pip",
     "python",
     "setuptools",
@@ -229,6 +239,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-vcs",
+    "hatchling",
     "pip",
     "python 3.9",
     "setuptools >=64",
