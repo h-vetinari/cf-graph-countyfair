@@ -32,21 +32,23 @@
    "recipe-maintainers": [
     "michalk8",
     "MUCDK",
-    "giovp"
+    "giovp",
+    "selmanozleyen"
    ]
   },
   "package": {
    "name": "moscot",
-   "version": "0.3.4"
+   "version": "0.4.0"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.10",
     "pip",
+    "setuptools",
     "setuptools_scm"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.10",
     "numpy >=1.20.0",
     "scipy >=1.7.0",
     "pandas >=2.0.1",
@@ -55,19 +57,27 @@
     "anndata >=0.9.1",
     "scanpy >=1.9.3",
     "wrapt >=1.13.2",
-    "ott-jax >=0.4.4",
+    "ott-jax >=0.5.0",
     "cloudpickle >=2.2.0",
-    "rich >=13.5"
+    "rich >=13.5",
+    "docstring-inheritance >=2.0.0",
+    "mudata >=0.2.2",
+    "flax >=0.10.2",
+    "optax >=0.2.4",
+    "diffrax >=0.6.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "438b9ee5a619b21e554573bd61d30d2db331a493cab875289fceb09952a711e7",
-   "url": "https://pypi.io/packages/source/m/moscot/moscot-0.3.4.tar.gz"
+   "sha256": "f39de871356877b26875df318051b3efcdbc41a3a2df54a0479b4a0b29fc8473",
+   "url": "https://pypi.org/packages/source/m/moscot/moscot-0.4.0.tar.gz"
   },
   "test": {
    "imports": [
     "moscot"
+   ],
+   "requires": [
+    "python 3.10"
    ]
   }
  },
@@ -81,6 +91,7 @@
    "elements": [
     "pip",
     "python",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -89,9 +100,14 @@
    "elements": [
     "anndata",
     "cloudpickle",
+    "diffrax",
+    "docstring-inheritance",
+    "flax",
     "matplotlib-base",
+    "mudata",
     "networkx",
     "numpy",
+    "optax",
     "ott-jax",
     "pandas",
     "python",
@@ -103,7 +119,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -125,21 +143,23 @@
    "recipe-maintainers": [
     "michalk8",
     "MUCDK",
-    "giovp"
+    "giovp",
+    "selmanozleyen"
    ]
   },
   "package": {
    "name": "moscot",
-   "version": "0.3.4"
+   "version": "0.4.0"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.10",
     "pip",
+    "setuptools",
     "setuptools_scm"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.10",
     "numpy >=1.20.0",
     "scipy >=1.7.0",
     "pandas >=2.0.1",
@@ -148,19 +168,27 @@
     "anndata >=0.9.1",
     "scanpy >=1.9.3",
     "wrapt >=1.13.2",
-    "ott-jax >=0.4.4",
+    "ott-jax >=0.5.0",
     "cloudpickle >=2.2.0",
-    "rich >=13.5"
+    "rich >=13.5",
+    "docstring-inheritance >=2.0.0",
+    "mudata >=0.2.2",
+    "flax >=0.10.2",
+    "optax >=0.2.4",
+    "diffrax >=0.6.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "438b9ee5a619b21e554573bd61d30d2db331a493cab875289fceb09952a711e7",
-   "url": "https://pypi.io/packages/source/m/moscot/moscot-0.3.4.tar.gz"
+   "sha256": "f39de871356877b26875df318051b3efcdbc41a3a2df54a0479b4a0b29fc8473",
+   "url": "https://pypi.org/packages/source/m/moscot/moscot-0.4.0.tar.gz"
   },
   "test": {
    "imports": [
     "moscot"
+   ],
+   "requires": [
+    "python 3.10"
    ]
   }
  },
@@ -178,15 +206,20 @@
  "pr_info": {
   "__lazy_json__": "pr_info/moscot.json"
  },
- "raw_meta_yaml": "{% set name = \"moscot\" %}\n{% set version = \"0.3.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz\n  sha256: 438b9ee5a619b21e554573bd61d30d2db331a493cab875289fceb09952a711e7\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - setuptools_scm\n  run:\n    - python >=3.8\n    - numpy >=1.20.0\n    - scipy >=1.7.0\n    - pandas >=2.0.1\n    - networkx >=2.6.3\n    - matplotlib-base >=3.5.0\n    - anndata >=0.9.1\n    - scanpy >=1.9.3\n    - wrapt >=1.13.2\n    - ott-jax >=0.4.4\n    - cloudpickle >=2.2.0\n    - rich >=13.5\n\ntest:\n  imports:\n    - moscot\n  # TODO(michalk8): re-enable once https://github.com/pypa/pip/issues/11157 is merged\n  # or the false positives are resolved in moscot/ott-jax/umap-learn\n\n  # requires:\n  #   - pip\n  # commands:\n  #   - pip check\n\nabout:\n  home: https://github.com/theislab/moscot\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Multi-omic single-cell optimal transport\n  description: |\n    A scalable framework for optimal transport applications in single-cell genomics.\n  doc_url: https://moscot.readthedocs.io\n  dev_url: https://github.com/theislab/moscot\n\nextra:\n  recipe-maintainers:\n    - michalk8\n    - MUCDK\n    - giovp\n",
+ "raw_meta_yaml": "{% set name = \"moscot\" %}\n{% set version = \"0.4.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz\n  sha256: f39de871356877b26875df318051b3efcdbc41a3a2df54a0479b4a0b29fc8473\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools_scm\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.20.0\n    - scipy >=1.7.0\n    - pandas >=2.0.1\n    - networkx >=2.6.3\n    - matplotlib-base >=3.5.0\n    - anndata >=0.9.1\n    - scanpy >=1.9.3\n    - wrapt >=1.13.2\n    - ott-jax >=0.5.0\n    - cloudpickle >=2.2.0\n    - rich >=13.5\n    - docstring-inheritance >=2.0.0\n    - mudata >=0.2.2\n    - flax >=0.10.2\n    - optax >=0.2.4\n    - diffrax >=0.6.1\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - moscot\n\nabout:\n  home: https://github.com/theislab/moscot\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Multi-omic single-cell optimal transport\n  description: |\n    A scalable framework for optimal transport applications in single-cell genomics.\n  doc_url: https://moscot.readthedocs.io\n  dev_url: https://github.com/theislab/moscot\n\nextra:\n  recipe-maintainers:\n    - michalk8\n    - MUCDK\n    - giovp\n    - selmanozleyen\n",
  "req": {
   "__set__": true,
   "elements": [
    "anndata",
    "cloudpickle",
+   "diffrax",
+   "docstring-inheritance",
+   "flax",
    "matplotlib-base",
+   "mudata",
    "networkx",
    "numpy",
+   "optax",
    "ott-jax",
    "pandas",
    "pip",
@@ -194,6 +227,7 @@
    "rich",
    "scanpy",
    "scipy",
+   "setuptools",
    "setuptools_scm",
    "wrapt"
   ]
@@ -208,6 +242,7 @@
    "elements": [
     "pip",
     "python",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -216,9 +251,14 @@
    "elements": [
     "anndata",
     "cloudpickle",
+    "diffrax",
+    "docstring-inheritance",
+    "flax",
     "matplotlib-base",
+    "mudata",
     "networkx",
     "numpy",
+    "optax",
     "ott-jax",
     "pandas",
     "python",
@@ -230,7 +270,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -243,7 +285,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8",
+    "python 3.10",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -252,12 +295,17 @@
    "elements": [
     "anndata >=0.9.1",
     "cloudpickle >=2.2.0",
+    "diffrax >=0.6.1",
+    "docstring-inheritance >=2.0.0",
+    "flax >=0.10.2",
     "matplotlib-base >=3.5.0",
+    "mudata >=0.2.2",
     "networkx >=2.6.3",
     "numpy >=1.20.0",
-    "ott-jax >=0.4.4",
+    "optax >=0.2.4",
+    "ott-jax >=0.5.0",
     "pandas >=2.0.1",
-    "python >=3.8",
+    "python >=3.10",
     "rich >=13.5",
     "scanpy >=1.9.3",
     "scipy >=1.7.0",
@@ -266,11 +314,13 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.10"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/m/moscot/moscot-0.3.4.tar.gz",
- "version": "0.3.4",
+ "url": "https://pypi.org/packages/source/m/moscot/moscot-0.4.0.tar.gz",
+ "version": "0.4.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/moscot.json"
  }
