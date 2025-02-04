@@ -2,6 +2,10 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -9,6 +13,10 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
   }
  },
  "feedstock_name": "ocamlbuild",
@@ -63,6 +71,156 @@
   }
  },
  "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "ocaml"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ocaml"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "description": "OCaml is an implementation of the ML language, based on the Caml Light\ndialect extended with a complete class-based object system and a powerful\nmodule system in the style of Standard ML.\n\nOCamlbuild was distributed as part of the OCaml distribution for OCaml\nversions between 3.10.0 and 4.02.3. Starting from OCaml 4.03, it is now\nreleased separately (with its own version numbering).\n\nYou should refer to the OCambuild manual for more informations on how to\nuse ocamlbuild.\n",
+   "dev_url": "https://github.com/ocaml/ocamlbuild",
+   "doc_url": "https://github.com/ocaml/ocamlbuild/blob/master/manual/manual.adoc",
+   "home": "https://ocaml.org/",
+   "license": "LGPL-2.0-only",
+   "license_family": "LGPL",
+   "license_file": "LICENSE",
+   "summary": "OCamlbuild is a generic build tool, that has built-in rules for building OCaml library and programs."
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "peterjc"
+   ]
+  },
+  "package": {
+   "name": "ocamlbuild",
+   "version": "0.15.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ],
+   "host": [
+    "ocaml"
+   ],
+   "run": [
+    "ocaml"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "ocamlbuild-0.15.0.tar.gz",
+   "sha256": "d3f6ee73100b575d4810247d10ed8f53fccef4e90daf0e4a4c5f3e6a3030a9c9",
+   "url": "https://github.com/ocaml/ocamlbuild/archive/0.15.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "ocamlbuild -version",
+    "ocamlbuild.native -version"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "ocaml"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ocaml"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "description": "OCaml is an implementation of the ML language, based on the Caml Light\ndialect extended with a complete class-based object system and a powerful\nmodule system in the style of Standard ML.\n\nOCamlbuild was distributed as part of the OCaml distribution for OCaml\nversions between 3.10.0 and 4.02.3. Starting from OCaml 4.03, it is now\nreleased separately (with its own version numbering).\n\nYou should refer to the OCambuild manual for more informations on how to\nuse ocamlbuild.\n",
+   "dev_url": "https://github.com/ocaml/ocamlbuild",
+   "doc_url": "https://github.com/ocaml/ocamlbuild/blob/master/manual/manual.adoc",
+   "home": "https://ocaml.org/",
+   "license": "LGPL-2.0-only",
+   "license_family": "LGPL",
+   "license_file": "LICENSE",
+   "summary": "OCamlbuild is a generic build tool, that has built-in rules for building OCaml library and programs."
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "peterjc"
+   ]
+  },
+  "package": {
+   "name": "ocamlbuild",
+   "version": "0.15.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ],
+   "host": [
+    "ocaml"
+   ],
+   "run": [
+    "ocaml"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "ocamlbuild-0.15.0.tar.gz",
+   "sha256": "d3f6ee73100b575d4810247d10ed8f53fccef4e90daf0e4a4c5f3e6a3030a9c9",
+   "url": "https://github.com/ocaml/ocamlbuild/archive/0.15.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "ocamlbuild -version",
+    "ocamlbuild.native -version"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
    "elements": [
@@ -222,6 +380,8 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64"
  ],
  "pr_info": {
