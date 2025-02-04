@@ -35,7 +35,7 @@
     "xenv=xenv:main"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -50,19 +50,20 @@
   "requirements": {
    "host": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools_scm",
+    "setuptools",
     "nose"
    ],
    "run": [
-    "python",
+    "python >=3.9",
     "setuptools"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "cea9547295f0bd07c87e68353bb9eb1c2f2d1c09a840e3196c19cbc807ee4558",
-   "url": "https://pypi.io/packages/source/x/xenv/xenv-1.0.0.tar.gz"
+   "url": "https://pypi.org/packages/source/x/xenv/xenv-1.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -70,6 +71,9 @@
    ],
    "imports": [
     "xenv"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -84,6 +88,7 @@
     "nose",
     "pip",
     "python",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -96,7 +101,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -114,7 +121,7 @@
     "xenv=xenv:main"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -129,19 +136,20 @@
   "requirements": {
    "host": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools_scm",
+    "setuptools",
     "nose"
    ],
    "run": [
-    "python",
+    "python >=3.9",
     "setuptools"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "cea9547295f0bd07c87e68353bb9eb1c2f2d1c09a840e3196c19cbc807ee4558",
-   "url": "https://pypi.io/packages/source/x/xenv/xenv-1.0.0.tar.gz"
+   "url": "https://pypi.org/packages/source/x/xenv/xenv-1.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -149,6 +157,9 @@
    ],
    "imports": [
     "xenv"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -166,7 +177,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/xenv.json"
  },
- "raw_meta_yaml": "{% set name = \"xenv\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: cea9547295f0bd07c87e68353bb9eb1c2f2d1c09a840e3196c19cbc807ee4558\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - xenv=xenv:main\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools_scm\n    - nose\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - xenv\n  commands:\n    - xenv --help\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-core/xenv\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Run commands in modified environment\n  doc_url: https://gitlab.cern.ch/lhcb-core/xenv\n  dev_url: https://gitlab.cern.ch/lhcb-core/xenv\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "raw_meta_yaml": "{% set name = \"xenv\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: cea9547295f0bd07c87e68353bb9eb1c2f2d1c09a840e3196c19cbc807ee4558\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - xenv=xenv:main\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm\n    - setuptools\n    - nose\n  run:\n    - python >={{ python_min }}\n    - setuptools\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - xenv\n  commands:\n    - xenv --help\n\nabout:\n  home: https://gitlab.cern.ch/lhcb-core/xenv\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Run commands in modified environment\n  doc_url: https://gitlab.cern.ch/lhcb-core/xenv\n  dev_url: https://gitlab.cern.ch/lhcb-core/xenv\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -188,6 +199,7 @@
     "nose",
     "pip",
     "python",
+    "setuptools",
     "setuptools_scm"
    ]
   },
@@ -200,7 +212,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -214,23 +228,26 @@
    "elements": [
     "nose",
     "pip",
-    "python",
+    "python 3.9",
+    "setuptools",
     "setuptools_scm"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python",
+    "python >=3.9",
     "setuptools"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/x/xenv/xenv-1.0.0.tar.gz",
+ "url": "https://pypi.org/packages/source/x/xenv/xenv-1.0.0.tar.gz",
  "version": "1.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/xenv.json"
