@@ -41,7 +41,7 @@
   },
   "package": {
    "name": "spectra-cpp",
-   "version": "1.0.1"
+   "version": "1.1.0"
   },
   "requirements": {
    "build": [
@@ -55,16 +55,16 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "spectra-1.0.1.tar.gz",
-   "sha256": "919e3fbc8c539a321fd5a0766966922b7637cc52eb50a969241a997c733789f3",
-   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.0.1.tar.gz"
+   "fn": "spectra-1.1.0.tar.gz",
+   "sha256": "d29671e3d1b8036728933cadfddb05668a3cd6133331e91fc4535a9b85bedc79",
+   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.1.0.tar.gz"
   },
   "test": {
    "commands": [
     "test -d ${PREFIX}/include/Spectra",
-    "test -d ${PREFIX}/share/spectra/cmake",
+    "test -d ${PREFIX}/share/cmake/Spectra",
     "test -f ${PREFIX}/include/Spectra/GenEigsBase.h",
-    "test -f ${PREFIX}/share/spectra/cmake/spectra-config.cmake"
+    "test -f ${PREFIX}/share/cmake/Spectra/spectra-config.cmake"
    ]
   }
  },
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "spectra-cpp",
-   "version": "1.0.1"
+   "version": "1.1.0"
   },
   "requirements": {
    "build": [
@@ -130,16 +130,16 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "spectra-1.0.1.tar.gz",
-   "sha256": "919e3fbc8c539a321fd5a0766966922b7637cc52eb50a969241a997c733789f3",
-   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.0.1.tar.gz"
+   "fn": "spectra-1.1.0.tar.gz",
+   "sha256": "d29671e3d1b8036728933cadfddb05668a3cd6133331e91fc4535a9b85bedc79",
+   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.1.0.tar.gz"
   },
   "test": {
    "commands": [
     "test -d ${PREFIX}/include/Spectra",
-    "test -d ${PREFIX}/share/spectra/cmake",
+    "test -d ${PREFIX}/share/cmake/Spectra",
     "test -f ${PREFIX}/include/Spectra/GenEigsBase.h",
-    "test -f ${PREFIX}/share/spectra/cmake/spectra-config.cmake",
+    "test -f ${PREFIX}/share/cmake/Spectra/spectra-config.cmake",
     "if exist %LIBRARY_PREFIX%\\include\\Spectra\\GenEigsBase.h (exit 0) else (exit 1)",
     "if exist %LIBRARY_PREFIX%\\share\\spectra\\cmake\\spectra-config.cmake (exit 0) else (exit 1)"
    ]
@@ -170,7 +170,7 @@
   },
   "package": {
    "name": "spectra-cpp",
-   "version": "1.0.1"
+   "version": "1.1.0"
   },
   "requirements": {
    "build": [
@@ -184,16 +184,16 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "spectra-1.0.1.tar.gz",
-   "sha256": "919e3fbc8c539a321fd5a0766966922b7637cc52eb50a969241a997c733789f3",
-   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.0.1.tar.gz"
+   "fn": "spectra-1.1.0.tar.gz",
+   "sha256": "d29671e3d1b8036728933cadfddb05668a3cd6133331e91fc4535a9b85bedc79",
+   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.1.0.tar.gz"
   },
   "test": {
    "commands": [
     "test -d ${PREFIX}/include/Spectra",
-    "test -d ${PREFIX}/share/spectra/cmake",
+    "test -d ${PREFIX}/share/cmake/Spectra",
     "test -f ${PREFIX}/include/Spectra/GenEigsBase.h",
-    "test -f ${PREFIX}/share/spectra/cmake/spectra-config.cmake"
+    "test -f ${PREFIX}/share/cmake/Spectra/spectra-config.cmake"
    ]
   }
  },
@@ -245,7 +245,7 @@
   },
   "package": {
    "name": "spectra-cpp",
-   "version": "1.0.1"
+   "version": "1.1.0"
   },
   "requirements": {
    "build": [
@@ -259,16 +259,16 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "spectra-1.0.1.tar.gz",
-   "sha256": "919e3fbc8c539a321fd5a0766966922b7637cc52eb50a969241a997c733789f3",
-   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.0.1.tar.gz"
+   "fn": "spectra-1.1.0.tar.gz",
+   "sha256": "d29671e3d1b8036728933cadfddb05668a3cd6133331e91fc4535a9b85bedc79",
+   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.1.0.tar.gz"
   },
   "test": {
    "commands": [
     "test -d ${PREFIX}/include/Spectra",
-    "test -d ${PREFIX}/share/spectra/cmake",
+    "test -d ${PREFIX}/share/cmake/Spectra",
     "test -f ${PREFIX}/include/Spectra/GenEigsBase.h",
-    "test -f ${PREFIX}/share/spectra/cmake/spectra-config.cmake"
+    "test -f ${PREFIX}/share/cmake/Spectra/spectra-config.cmake"
    ]
   }
  },
@@ -312,7 +312,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/spectra-cpp.json"
  },
- "raw_meta_yaml": "{% set name = \"spectra-cpp\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: spectra-{{ version }}.tar.gz\n  url: https://github.com/yixuan/spectra/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 919e3fbc8c539a321fd5a0766966922b7637cc52eb50a969241a997c733789f3\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('spectra-cpp', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n    - cmake\n    - make  # [unix]\n    - eigen\n  run: []\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/Spectra  # [unix]\n    - test -d ${PREFIX}/share/spectra/cmake  # [unix]\n    - test -f ${PREFIX}/include/Spectra/GenEigsBase.h  # [unix]\n    - test -f ${PREFIX}/share/spectra/cmake/spectra-config.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\Spectra\\GenEigsBase.h (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\share\\spectra\\cmake\\spectra-config.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/yixuan/spectra\n  license: MPL-2.0\n  license_family: MOZILLA\n  license_file: LICENSE\n  summary: A header-only C++ library for large scale eigenvalue problems\n  description: A header-only C++ library for large scale eigenvalue problems\n  doc_url: https://github.com/yixuan/spectra\n  dev_url: https://github.com/yixuan/spectra\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
+ "raw_meta_yaml": "{% set name = \"spectra-cpp\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: spectra-{{ version }}.tar.gz\n  url: https://github.com/yixuan/spectra/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: d29671e3d1b8036728933cadfddb05668a3cd6133331e91fc4535a9b85bedc79\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('spectra-cpp', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n    - cmake\n    - make  # [unix]\n    - eigen\n  run: []\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/Spectra  # [unix]\n    - test -d ${PREFIX}/share/cmake/Spectra  # [unix]\n    - test -f ${PREFIX}/include/Spectra/GenEigsBase.h  # [unix]\n    - test -f ${PREFIX}/share/cmake/Spectra/spectra-config.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\Spectra\\GenEigsBase.h (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\share\\spectra\\cmake\\spectra-config.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/yixuan/spectra\n  license: MPL-2.0\n  license_family: MOZILLA\n  license_file: LICENSE\n  summary: A header-only C++ library for large scale eigenvalue problems\n  description: A header-only C++ library for large scale eigenvalue problems\n  doc_url: https://github.com/yixuan/spectra\n  dev_url: https://github.com/yixuan/spectra\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -378,8 +378,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.0.1.tar.gz",
- "version": "1.0.1",
+ "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.1.0.tar.gz",
+ "version": "1.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/spectra-cpp.json"
  },
@@ -407,7 +407,7 @@
   },
   "package": {
    "name": "spectra-cpp",
-   "version": "1.0.1"
+   "version": "1.1.0"
   },
   "requirements": {
    "build": [
@@ -420,9 +420,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "spectra-1.0.1.tar.gz",
-   "sha256": "919e3fbc8c539a321fd5a0766966922b7637cc52eb50a969241a997c733789f3",
-   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.0.1.tar.gz"
+   "fn": "spectra-1.1.0.tar.gz",
+   "sha256": "d29671e3d1b8036728933cadfddb05668a3cd6133331e91fc4535a9b85bedc79",
+   "url": "https://github.com/yixuan/spectra/archive/refs/tags/v1.1.0.tar.gz"
   },
   "test": {
    "commands": [
