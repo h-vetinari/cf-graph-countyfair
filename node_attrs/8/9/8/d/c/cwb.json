@@ -9,9 +9,6 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
-  },
-  "os_version": {
-   "linux_64": "cos7"
   }
  },
  "feedstock_name": "cwb",
@@ -21,13 +18,12 @@
    "description": "Coherent network analysis is addressing the problem of detection and\nreconstruction of gravitational waves (GW) with networks of detectors.\nIt has been extensively studied in the literature in application to\ndetection of bursts signals, which may be produced by numerous\ngravitational wave sources in the Universe.\nIn coherent methods, a statistic is built up as a coherent sum over\ndetector responses.\nIn general, it is expected to be more optimal (better sensitivity\nat the same false alarm rate) than the detection statistics of the\nindividual detectors that make up the network.\nAlso coherent methods provide estimators for the GW waveforms and\nthe source coordinates in the sky.\n\nThe method we present (called coherent WaveBurst) is significantly\ndifferent from the traditional burst detection methods.\nUnlike coincident methods, which first identify events in individual\ndetectors by using an excess power statistic and than require\ncoincidence between detectors, the coherent WaveBurst method combines\nall data streams into one coherent statistic constructed in the\nframework of the constrained maximum likelihood analysis.\nSuch an approach has significant advantages over the coincident methods.\nFirst, the sensitivity of the method is not limited by the least\nsensitive detector in the network.\nIn the coherent WaveBurst method the detection is based on the maximum\nlikelihood ratio statistic which represents the total signal-to-noise\nratio of the GW signal detected in the network.\nSecond, other coherent statistics, such as the null stream and the\nnetwork correlation coefficient can be constructed to distinguish\ngenuine GW signals from the environmental and instrumental artifacts.\nFinally, the source coordinates of the GW waveforms can be reconstructed.\n",
    "home": "https://gitlab.com/gwburst/public/library",
    "license": "GPL-3.0-or-later",
-   "license_family": "GPL",
    "license_file": "LICENSE",
    "summary": "cWB pipeline library"
   },
   "build": {
    "error_overlinking": true,
-   "number": "4",
+   "number": "0",
    "run_exports": [
     "cwb"
    ]
@@ -40,7 +36,7 @@
   },
   "package": {
    "name": "cwb",
-   "version": "6.4.6.0"
+   "version": "6.4.7.0"
   },
   "requirements": {
    "build": [
@@ -70,8 +66,8 @@
   "schema_version": 0,
   "source": {
    "patches": null,
-   "sha256": "9dc101cb906749c5cc271b151db1db96d29cfcb6ff59e77cdb676097afc75dff",
-   "url": "https://gitlab.com/gwburst/public/library/-/archive/6.4.6.0/library-6.4.6.0.tar.gz"
+   "sha256": "49f12d919348d5b0f405e986c0bac3c2097013afe1f6d9a0c16dd63cbd2a7ff6",
+   "url": "https://gitlab.com/gwburst/public/library/-/archive/cWB-6.4.7.0/library-cWB-6.4.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -127,13 +123,12 @@
    "description": "Coherent network analysis is addressing the problem of detection and\nreconstruction of gravitational waves (GW) with networks of detectors.\nIt has been extensively studied in the literature in application to\ndetection of bursts signals, which may be produced by numerous\ngravitational wave sources in the Universe.\nIn coherent methods, a statistic is built up as a coherent sum over\ndetector responses.\nIn general, it is expected to be more optimal (better sensitivity\nat the same false alarm rate) than the detection statistics of the\nindividual detectors that make up the network.\nAlso coherent methods provide estimators for the GW waveforms and\nthe source coordinates in the sky.\n\nThe method we present (called coherent WaveBurst) is significantly\ndifferent from the traditional burst detection methods.\nUnlike coincident methods, which first identify events in individual\ndetectors by using an excess power statistic and than require\ncoincidence between detectors, the coherent WaveBurst method combines\nall data streams into one coherent statistic constructed in the\nframework of the constrained maximum likelihood analysis.\nSuch an approach has significant advantages over the coincident methods.\nFirst, the sensitivity of the method is not limited by the least\nsensitive detector in the network.\nIn the coherent WaveBurst method the detection is based on the maximum\nlikelihood ratio statistic which represents the total signal-to-noise\nratio of the GW signal detected in the network.\nSecond, other coherent statistics, such as the null stream and the\nnetwork correlation coefficient can be constructed to distinguish\ngenuine GW signals from the environmental and instrumental artifacts.\nFinally, the source coordinates of the GW waveforms can be reconstructed.\n",
    "home": "https://gitlab.com/gwburst/public/library",
    "license": "GPL-3.0-or-later",
-   "license_family": "GPL",
    "license_file": "LICENSE",
    "summary": "cWB pipeline library"
   },
   "build": {
    "error_overlinking": true,
-   "number": "4",
+   "number": "0",
    "run_exports": [
     "cwb"
    ]
@@ -146,7 +141,7 @@
   },
   "package": {
    "name": "cwb",
-   "version": "6.4.6.0"
+   "version": "6.4.7.0"
   },
   "requirements": {
    "build": [
@@ -176,8 +171,8 @@
   "schema_version": 0,
   "source": {
    "patches": null,
-   "sha256": "9dc101cb906749c5cc271b151db1db96d29cfcb6ff59e77cdb676097afc75dff",
-   "url": "https://gitlab.com/gwburst/public/library/-/archive/6.4.6.0/library-6.4.6.0.tar.gz"
+   "sha256": "49f12d919348d5b0f405e986c0bac3c2097013afe1f6d9a0c16dd63cbd2a7ff6",
+   "url": "https://gitlab.com/gwburst/public/library/-/archive/cWB-6.4.7.0/library-cWB-6.4.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -197,14 +192,14 @@
    "cwb"
   ]
  },
- "parsing_error": "feedstock parsing error: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error RuntimeError raised:\n'conda build error: CondaBuildUserError: Bad character(s) (-) in package/version: cWB-6.4.7.0.\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 905, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 998, in _parse_meta_yaml_impl\n    cfg_as_dict.update(conda_build.environ.get_dict(m=m))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 371, in get_dict\n    d.update(meta_vars(m, skip_build_id=skip_build_id))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 594, in meta_vars\n    d[\"PKG_VERSION\"] = meta.version()\n                       ^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1540, in version\n    check_bad_chrs(version, \"package/version\")\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 783, in check_bad_chrs\n    raise CondaBuildUserError(\nconda_build.exceptions.CondaBuildUserError: Bad character(s) (-) in package/version: cWB-6.4.7.0.\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 909, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 998, in _parse_meta_yaml_impl\n    cfg_as_dict.update(conda_build.environ.get_dict(m=m))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 371, in get_dict\n    d.update(meta_vars(m, skip_build_id=skip_build_id))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 594, in meta_vars\n    d[\"PKG_VERSION\"] = meta.version()\n                       ^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1540, in version\n    check_bad_chrs(version, \"package/version\")\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 783, in check_bad_chrs\n    raise CondaBuildUserError(\nconda_build.exceptions.CondaBuildUserError: Bad character(s) (-) in package/version: cWB-6.4.7.0.\n'\nTraceback (most recent call last):\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/make_graph.py\", line 102, in try_load_feedstock\n    data = load_feedstock(name, attrs.data, mark_not_archived=mark_not_archived)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 705, in load_feedstock\n    return load_feedstock_containerized(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 657, in load_feedstock_containerized\n    data = run_container_operation(\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/micromamba/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/container_utils.py\", line 264, in run_container_operation\n    raise ContainerRuntimeError(\nconda_forge_feedstock_ops.container_utils.ContainerRuntimeError: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error RuntimeError raised:\n'conda build error: CondaBuildUserError: Bad character(s) (-) in package/version: cWB-6.4.7.0.\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 905, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 998, in _parse_meta_yaml_impl\n    cfg_as_dict.update(conda_build.environ.get_dict(m=m))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 371, in get_dict\n    d.update(meta_vars(m, skip_build_id=skip_build_id))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 594, in meta_vars\n    d[\"PKG_VERSION\"] = meta.version()\n                       ^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1540, in version\n    check_bad_chrs(version, \"package/version\")\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 783, in check_bad_chrs\n    raise CondaBuildUserError(\nconda_build.exceptions.CondaBuildUserError: Bad character(s) (-) in package/version: cWB-6.4.7.0.\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 909, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 998, in _parse_meta_yaml_impl\n    cfg_as_dict.update(conda_build.environ.get_dict(m=m))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 371, in get_dict\n    d.update(meta_vars(m, skip_build_id=skip_build_id))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 594, in meta_vars\n    d[\"PKG_VERSION\"] = meta.version()\n                       ^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1540, in version\n    check_bad_chrs(version, \"package/version\")\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 783, in check_bad_chrs\n    raise CondaBuildUserError(\nconda_build.exceptions.CondaBuildUserError: Bad character(s) (-) in package/version: cWB-6.4.7.0.\n'\n",
+ "parsing_error": false,
  "platforms": [
   "linux_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/cwb.json"
  },
- "raw_meta_yaml": "{% set name = \"cWB\" %}\n{% set version = \"6.4.6.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://gitlab.com/gwburst/public/library/-/archive/{{ version }}/library-{{ version }}.tar.gz\n  sha256: 9dc101cb906749c5cc271b151db1db96d29cfcb6ff59e77cdb676097afc75dff\n  patches:\n     # use rootcling from build env when cross-compiling\n    - rootcling-cross.patch   # [build_platform != target_platform]\n\nbuild:\n  error_overlinking: true\n  number: 4\n  run_exports:\n    - {{ pin_subpackage( name|lower, max_pin='x.x.x' ) }}\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n    - pkg-config  # [unix]\n    - root_base  # [build_platform != target_platform]\n  host:\n    - healpix_cxx >=3.80\n    - libframel\n    - liblal\n    - liblalburst\n    - liblalmetaio\n    - liblalsimulation\n    - root_base\n  run:\n    - root_base\n    - tcsh\n    - uproot <=4.3.7\n    - xgboost <=1.7.6\ntest:\n  commands:\n    # Check library\n    - test -f ${PREFIX}/lib/cwb${SHLIB_EXT}\n    # Check header\n    - test -f ${PREFIX}/include/cwb.hh\n    # Check commands\n    - cwb_help\n    - cwb_watenv verbose\n    - ComputeWDMFourier\n    - root ${CWB_ROOTLOGON_FILE} -e '.q'\n\nabout:\n  home: \"https://gitlab.com/gwburst/public/library\"\n  license: \"GPL-3.0-or-later\"\n  license_family: GPL\n  license_file: LICENSE\n  summary: \"cWB pipeline library\"\n  description: |\n    Coherent network analysis is addressing the problem of detection and\n    reconstruction of gravitational waves (GW) with networks of detectors.\n    It has been extensively studied in the literature in application to\n    detection of bursts signals, which may be produced by numerous\n    gravitational wave sources in the Universe.\n    In coherent methods, a statistic is built up as a coherent sum over\n    detector responses.\n    In general, it is expected to be more optimal (better sensitivity\n    at the same false alarm rate) than the detection statistics of the\n    individual detectors that make up the network.\n    Also coherent methods provide estimators for the GW waveforms and\n    the source coordinates in the sky.\n\n    The method we present (called coherent WaveBurst) is significantly\n    different from the traditional burst detection methods.\n    Unlike coincident methods, which first identify events in individual\n    detectors by using an excess power statistic and than require\n    coincidence between detectors, the coherent WaveBurst method combines\n    all data streams into one coherent statistic constructed in the\n    framework of the constrained maximum likelihood analysis.\n    Such an approach has significant advantages over the coincident methods.\n    First, the sensitivity of the method is not limited by the least\n    sensitive detector in the network.\n    In the coherent WaveBurst method the detection is based on the maximum\n    likelihood ratio statistic which represents the total signal-to-noise\n    ratio of the GW signal detected in the network.\n    Second, other coherent statistics, such as the null stream and the\n    network correlation coefficient can be constructed to distinguish\n    genuine GW signals from the environmental and instrumental artifacts.\n    Finally, the source coordinates of the GW waveforms can be reconstructed.\n\nextra:\n  recipe-maintainers:\n    - ceccozzi\n    - duncanmmacleod\n",
+ "raw_meta_yaml": "{% set name = \"cWB\" %}\n{% set version = \"6.4.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.com/gwburst/public/library/-/archive/cWB-{{ version }}/library-cWB-{{ version }}.tar.gz\n  sha256: 49f12d919348d5b0f405e986c0bac3c2097013afe1f6d9a0c16dd63cbd2a7ff6\n  patches:\n     # use rootcling from build env when cross-compiling\n    - rootcling-cross.patch   # [build_platform != target_platform]\n\nbuild:\n  error_overlinking: true\n  number: 0\n  run_exports:\n    - {{ pin_subpackage( name|lower, max_pin='x.x.x' ) }}\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n    - pkg-config  # [unix]\n    - root_base  # [build_platform != target_platform]\n  host:\n    - healpix_cxx >=3.80\n    - libframel\n    - liblal\n    - liblalburst\n    - liblalmetaio\n    - liblalsimulation\n    - root_base\n  run:\n    - root_base\n    - tcsh\n    - uproot <=4.3.7\n    - xgboost <=1.7.6\ntest:\n  commands:\n    # Check library\n    - test -f ${PREFIX}/lib/cwb${SHLIB_EXT}\n    # Check header\n    - test -f ${PREFIX}/include/cwb.hh\n    # Check commands\n    - cwb_help\n    - cwb_watenv verbose\n    - ComputeWDMFourier\n    - root ${CWB_ROOTLOGON_FILE} -e '.q'\n\nabout:\n  home: https://gitlab.com/gwburst/public/library\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: cWB pipeline library\n  description: |\n    Coherent network analysis is addressing the problem of detection and\n    reconstruction of gravitational waves (GW) with networks of detectors.\n    It has been extensively studied in the literature in application to\n    detection of bursts signals, which may be produced by numerous\n    gravitational wave sources in the Universe.\n    In coherent methods, a statistic is built up as a coherent sum over\n    detector responses.\n    In general, it is expected to be more optimal (better sensitivity\n    at the same false alarm rate) than the detection statistics of the\n    individual detectors that make up the network.\n    Also coherent methods provide estimators for the GW waveforms and\n    the source coordinates in the sky.\n\n    The method we present (called coherent WaveBurst) is significantly\n    different from the traditional burst detection methods.\n    Unlike coincident methods, which first identify events in individual\n    detectors by using an excess power statistic and than require\n    coincidence between detectors, the coherent WaveBurst method combines\n    all data streams into one coherent statistic constructed in the\n    framework of the constrained maximum likelihood analysis.\n    Such an approach has significant advantages over the coincident methods.\n    First, the sensitivity of the method is not limited by the least\n    sensitive detector in the network.\n    In the coherent WaveBurst method the detection is based on the maximum\n    likelihood ratio statistic which represents the total signal-to-noise\n    ratio of the GW signal detected in the network.\n    Second, other coherent statistics, such as the null stream and the\n    network correlation coefficient can be constructed to distinguish\n    genuine GW signals from the environmental and instrumental artifacts.\n    Finally, the source coordinates of the GW waveforms can be reconstructed.\n\nextra:\n  recipe-maintainers:\n    - ceccozzi\n    - duncanmmacleod\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -309,8 +304,8 @@
    "elements": []
   }
  },
- "url": "https://gitlab.com/gwburst/public/library/-/archive/6.4.6.0/library-6.4.6.0.tar.gz",
- "version": "6.4.6.0",
+ "url": "https://gitlab.com/gwburst/public/library/-/archive/cWB-6.4.7.0/library-cWB-6.4.7.0.tar.gz",
+ "version": "6.4.7.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cwb.json"
  }
