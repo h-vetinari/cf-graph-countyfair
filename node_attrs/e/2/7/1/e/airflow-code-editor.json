@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "airflow-code-editor",
-   "version": "7.7.0"
+   "version": "7.8.0"
   },
   "requirements": {
    "host": [
@@ -56,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e9327e0020be6b1595fbc754f09e6463d358116656791f83f9b29dd4a0bc6025",
-   "url": "https://pypi.org/packages/source/a/airflow-code-editor/airflow_code_editor-7.7.0.tar.gz"
+   "sha256": "eb991d7c02af456472e4eb15995d28592beca28e21d4d4bff42df17f99212c44",
+   "url": "https://pypi.org/packages/source/a/airflow-code-editor/airflow_code_editor-7.8.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -114,7 +114,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -125,7 +125,7 @@
   },
   "package": {
    "name": "airflow-code-editor",
-   "version": "7.7.0"
+   "version": "7.8.0"
   },
   "requirements": {
    "host": [
@@ -142,8 +142,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e9327e0020be6b1595fbc754f09e6463d358116656791f83f9b29dd4a0bc6025",
-   "url": "https://pypi.org/packages/source/a/airflow-code-editor/airflow_code_editor-7.7.0.tar.gz"
+   "sha256": "eb991d7c02af456472e4eb15995d28592beca28e21d4d4bff42df17f99212c44",
+   "url": "https://pypi.org/packages/source/a/airflow-code-editor/airflow_code_editor-7.8.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -172,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/airflow-code-editor.json"
  },
- "raw_meta_yaml": "{% set name = \"airflow-code-editor\" %}\n{% set version = \"7.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airflow_code_editor-{{ version }}.tar.gz\n  sha256: e9327e0020be6b1595fbc754f09e6463d358116656791f83f9b29dd4a0bc6025\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools \n  run:\n    - python >={{ python_min }}\n    - apache-airflow\n    - fs >=2.4.16\n    - pss >=1.44\n\ntest:\n  imports:\n    - airflow_code_editor\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/andreax79/airflow-code-editor\n  summary: Apache Airflow code editor and file manager\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - airflow_code_editor/static/fonts/LICENSE\n\nextra:\n  recipe-maintainers:\n    - xylar\n    - rxm7706\n",
+ "raw_meta_yaml": "{% set name = \"airflow-code-editor\" %}\n{% set version = \"7.8.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airflow_code_editor-{{ version }}.tar.gz\n  sha256: eb991d7c02af456472e4eb15995d28592beca28e21d4d4bff42df17f99212c44\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - apache-airflow\n    - fs >=2.4.16\n    - pss >=1.44\n\ntest:\n  imports:\n    - airflow_code_editor\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/andreax79/airflow-code-editor\n  summary: Apache Airflow code editor and file manager\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - airflow_code_editor/static/fonts/LICENSE\n\nextra:\n  recipe-maintainers:\n    - xylar\n    - rxm7706\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -245,8 +245,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/airflow-code-editor/airflow_code_editor-7.7.0.tar.gz",
- "version": "7.7.0",
+ "url": "https://pypi.org/packages/source/a/airflow-code-editor/airflow_code_editor-7.8.0.tar.gz",
+ "version": "7.8.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/airflow-code-editor.json"
  }
