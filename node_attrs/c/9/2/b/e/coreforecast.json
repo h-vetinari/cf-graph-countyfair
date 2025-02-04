@@ -14,7 +14,8 @@
    "tooling_branch_name": "main"
   },
   "provider": {
-   "linux_aarch64": "default"
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
   },
   "test": "native_and_emulated"
  },
@@ -28,7 +29,7 @@
    "summary": "Fast implementations of common forecasting routines"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -116,7 +117,7 @@
    "summary": "Fast implementations of common forecasting routines"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -196,6 +197,94 @@
    ]
   }
  },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "home": "https://nixtla.github.io/coreforecast",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "Fast implementations of common forecasting routines"
+  },
+  "build": {
+   "number": "1",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jmoralez"
+   ]
+  },
+  "package": {
+   "name": "coreforecast",
+   "version": "0.0.15"
+  },
+  "requirements": {
+   "build": [
+    "cxx_compiler_stub",
+    "c_stdlib_stub",
+    "cmake",
+    "make"
+   ],
+   "host": [
+    "python",
+    "scikit-build-core",
+    "pip",
+    "pybind11"
+   ],
+   "run": [
+    "python",
+    "numpy >=1.20.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "c95cebfe01ae0b43876ad12900109534f4862dcdcf13ebf88a57295f4daa5e5f",
+   "url": "https://pypi.org/packages/source/c/coreforecast/coreforecast-0.0.15.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pytest test_scalers.py"
+   ],
+   "files": [
+    "test_scalers.py"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "pybind11",
+    "python",
+    "scikit-build-core"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "numpy",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml": {
   "about": {
    "home": "https://nixtla.github.io/coreforecast",
@@ -204,7 +293,7 @@
    "summary": "Fast implementations of common forecasting routines"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -261,7 +350,7 @@
    "summary": "Fast implementations of common forecasting routines"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -349,7 +438,7 @@
    "summary": "Fast implementations of common forecasting routines"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -439,6 +528,7 @@
  "platforms": [
   "linux_64",
   "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
   "osx_arm64",
   "win_64"
@@ -446,7 +536,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/coreforecast.json"
  },
- "raw_meta_yaml": "{% set name = \"coreforecast\" %}\n{% set version = \"0.0.15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coreforecast-{{ version }}.tar.gz\n  sha256: c95cebfe01ae0b43876ad12900109534f4862dcdcf13ebf88a57295f4daa5e5f\n\nbuild:\n  skip: true  # [py<39]\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - make  # [not win]\n    - ninja  # [win]\n  host:\n    - python\n    - scikit-build-core\n    - pip\n    - pybind11\n  run:\n    - python\n    - numpy >=1.20.0\n\ntest:\n  requires:\n    - pytest\n  files:\n    - test_scalers.py\n  commands:\n    - pytest test_scalers.py\n\nabout:\n  home: https://nixtla.github.io/coreforecast\n  summary: Fast implementations of common forecasting routines\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jmoralez\n",
+ "raw_meta_yaml": "{% set name = \"coreforecast\" %}\n{% set version = \"0.0.15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coreforecast-{{ version }}.tar.gz\n  sha256: c95cebfe01ae0b43876ad12900109534f4862dcdcf13ebf88a57295f4daa5e5f\n\nbuild:\n  skip: true  # [py<39]\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - make  # [not win]\n    - ninja  # [win]\n  host:\n    - python\n    - scikit-build-core\n    - pip\n    - pybind11\n  run:\n    - python\n    - numpy >=1.20.0\n\ntest:\n  requires:\n    - pytest\n  files:\n    - test_scalers.py\n  commands:\n    - pytest test_scalers.py\n\nabout:\n  home: https://nixtla.github.io/coreforecast\n  summary: Fast implementations of common forecasting routines\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jmoralez\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -548,7 +638,7 @@
    "summary": "Fast implementations of common forecasting routines"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
