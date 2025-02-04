@@ -5,7 +5,9 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
+  "conda_install_tool": "pixi",
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
@@ -17,17 +19,14 @@
   "about": {
    "home": "https://github.com/keiserlab/e3fp",
    "license": "LGPL-3.0-only",
+   "license_family": "LGPL-3.0-only",
    "license_file": "LICENSE.txt",
    "summary": "Molecular 3D fingerprinting"
   },
   "build": {
-   "entry_points": [
-    "e3fp-conformer = e3fp.conformer.generate:main",
-    "e3fp-fingerprint = e3fp.fingerprint.generate:main"
-   ],
    "noarch": "python",
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -35,6 +34,51 @@
     "sethaxen"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "e3fp",
+    "requirements": {
+     "build": [],
+     "host": [
+      "flit-core",
+      "pip",
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "mmh3 >=2.3.1",
+      "numpy >=1.11.3",
+      "scipy >=0.18.0",
+      "rdkit >=2016.3.4",
+      "sdaxen_python_utilities >=0.1.5",
+      "smart_open >=1.8.3"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "e3fp",
+        "e3fp.config"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "e3fp-conformer --help",
+       "e3fp-fingerprint --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "e3fp",
    "version": "1.2.7"
@@ -43,35 +87,22 @@
    "host": [
     "flit-core",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ],
    "run": [
     "python >=3.9",
     "mmh3 >=2.3.1",
     "numpy >=1.11.3",
     "scipy >=0.18.0",
-    "rdkit >=2016.03.4",
+    "rdkit >=2016.3.4",
     "sdaxen_python_utilities >=0.1.5",
     "smart_open >=1.8.3"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "45f317ac1ac2e1d3673ed60666ed5dc35b8925fe7cfd555c4ecf2f73abe55fee",
    "url": "https://pypi.org/packages/source/e/e3fp/e3fp-1.2.7.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "e3fp-conformer --help",
-    "e3fp-fingerprint --help"
-   ],
-   "imports": [
-    "e3fp",
-    "e3fp.config"
-   ],
-   "requires": [
-    "python 3.9"
-   ]
   }
  },
  "linux_64_requirements": {
@@ -102,6 +133,7 @@
   "test": {
    "__set__": true,
    "elements": [
+    "pip",
     "python"
    ]
   }
@@ -110,17 +142,14 @@
   "about": {
    "home": "https://github.com/keiserlab/e3fp",
    "license": "LGPL-3.0-only",
+   "license_family": "LGPL-3.0-only",
    "license_file": "LICENSE.txt",
    "summary": "Molecular 3D fingerprinting"
   },
   "build": {
-   "entry_points": [
-    "e3fp-conformer = e3fp.conformer.generate:main",
-    "e3fp-fingerprint = e3fp.fingerprint.generate:main"
-   ],
    "noarch": "python",
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "1",
+   "script": "${{ PYTHON }} -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -128,6 +157,51 @@
     "sethaxen"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "e3fp",
+    "requirements": {
+     "build": [],
+     "host": [
+      "flit-core",
+      "pip",
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "mmh3 >=2.3.1",
+      "numpy >=1.11.3",
+      "scipy >=0.18.0",
+      "rdkit >=2016.3.4",
+      "sdaxen_python_utilities >=0.1.5",
+      "smart_open >=1.8.3"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "e3fp",
+        "e3fp.config"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "e3fp-conformer --help",
+       "e3fp-fingerprint --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "e3fp",
    "version": "1.2.7"
@@ -136,35 +210,22 @@
    "host": [
     "flit-core",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ],
    "run": [
     "python >=3.9",
     "mmh3 >=2.3.1",
     "numpy >=1.11.3",
     "scipy >=0.18.0",
-    "rdkit >=2016.03.4",
+    "rdkit >=2016.3.4",
     "sdaxen_python_utilities >=0.1.5",
     "smart_open >=1.8.3"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "45f317ac1ac2e1d3673ed60666ed5dc35b8925fe7cfd555c4ecf2f73abe55fee",
    "url": "https://pypi.org/packages/source/e/e3fp/e3fp-1.2.7.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "e3fp-conformer --help",
-    "e3fp-fingerprint --help"
-   ],
-   "imports": [
-    "e3fp",
-    "e3fp.config"
-   ],
-   "requires": [
-    "python 3.9"
-   ]
   }
  },
  "name": "e3fp",
@@ -181,7 +242,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/e3fp.json"
  },
- "raw_meta_yaml": "{% set name = \"e3fp\" %}\n{% set version = \"1.2.7\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/e3fp-{{ version }}.tar.gz\n  sha256: 45f317ac1ac2e1d3673ed60666ed5dc35b8925fe7cfd555c4ecf2f73abe55fee\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - e3fp-conformer = e3fp.conformer.generate:main\n    - e3fp-fingerprint = e3fp.fingerprint.generate:main\n\nrequirements:\n  host:\n    - flit-core\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - mmh3 >=2.3.1\n    - numpy >=1.11.3\n    - scipy >=0.18.0\n    - rdkit >=2016.03.4\n    - sdaxen_python_utilities >=0.1.5\n    - smart_open >=1.8.3\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - e3fp\n    - e3fp.config\n  commands:\n    - e3fp-conformer --help\n    - e3fp-fingerprint --help\n\nabout:\n  home: https://github.com/keiserlab/e3fp\n  summary: Molecular 3D fingerprinting\n  license: LGPL-3.0-only\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - hadim\n    - sethaxen\n",
+ "raw_meta_yaml": "context:\n  name: e3fp\n  version: 1.2.7\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/e3fp-${{ version }}.tar.gz\n  sha256: 45f317ac1ac2e1d3673ed60666ed5dc35b8925fe7cfd555c4ecf2f73abe55fee\n\nbuild:\n  number: 1\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv\n  python:\n    entry_points:\n      - e3fp-conformer = e3fp.conformer.generate:main\n      - e3fp-fingerprint = e3fp.fingerprint.generate:main\n\nrequirements:\n  host:\n    - flit-core\n    - pip\n    - python ${{ python_min }}.*\n  run:\n    - python >=${{ python_min }}\n    - mmh3 >=2.3.1\n    - numpy >=1.11.3\n    - scipy >=0.18.0\n    - rdkit >=2016.03.4\n    - sdaxen_python_utilities >=0.1.5\n    - smart_open >=1.8.3\n\ntests:\n  - python:\n      imports:\n        - e3fp\n        - e3fp.config\n      python_version: ${{ python_min }}.*\n  - requirements:\n      run:\n        - python ${{ python_min }}.*\n    script:\n      - e3fp-conformer --help\n      - e3fp-fingerprint --help\n\nabout:\n  summary: Molecular 3D fingerprinting\n  license: LGPL-3.0-only\n  license_file: LICENSE.txt\n  homepage: https://github.com/keiserlab/e3fp\n\nextra:\n  recipe-maintainers:\n    - hadim\n    - sethaxen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -224,6 +285,7 @@
   "test": {
    "__set__": true,
    "elements": [
+    "pip",
     "python"
    ]
   }
@@ -239,7 +301,7 @@
    "elements": [
     "flit-core",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ]
   },
   "run": {
@@ -248,7 +310,7 @@
     "mmh3 >=2.3.1",
     "numpy >=1.11.3",
     "python >=3.9",
-    "rdkit >=2016.03.4",
+    "rdkit >=2016.3.4",
     "scipy >=0.18.0",
     "sdaxen_python_utilities >=0.1.5",
     "smart_open >=1.8.3"
@@ -257,7 +319,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "python 3.9"
+    "pip",
+    "python 3.9.*"
    ]
   }
  },
