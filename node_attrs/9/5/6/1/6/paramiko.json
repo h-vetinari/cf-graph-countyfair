@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra": {
@@ -40,7 +40,7 @@
   },
   "package": {
    "name": "paramiko",
-   "version": "3.5.0"
+   "version": "3.5.1"
   },
   "requirements": {
    "host": [
@@ -57,9 +57,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "paramiko-3.5.0.tar.gz",
-   "sha256": "ad11e540da4f55cedda52931f1a3f812a8238a7af7f62a60de538cd80bb28124",
-   "url": "https://pypi.org/packages/source/p/paramiko/paramiko-3.5.0.tar.gz"
+   "fn": "paramiko-3.5.1.tar.gz",
+   "sha256": "b2c665bc45b2b215bd7d7f039901b14b067da00f3a11e6640995fd58f2664822",
+   "url": "https://pypi.org/packages/source/p/paramiko/paramiko-3.5.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra": {
@@ -128,7 +128,7 @@
   },
   "package": {
    "name": "paramiko",
-   "version": "3.5.0"
+   "version": "3.5.1"
   },
   "requirements": {
    "host": [
@@ -145,9 +145,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "paramiko-3.5.0.tar.gz",
-   "sha256": "ad11e540da4f55cedda52931f1a3f812a8238a7af7f62a60de538cd80bb28124",
-   "url": "https://pypi.org/packages/source/p/paramiko/paramiko-3.5.0.tar.gz"
+   "fn": "paramiko-3.5.1.tar.gz",
+   "sha256": "b2c665bc45b2b215bd7d7f039901b14b067da00f3a11e6640995fd58f2664822",
+   "url": "https://pypi.org/packages/source/p/paramiko/paramiko-3.5.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -176,7 +176,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/paramiko.json"
  },
- "raw_meta_yaml": "{% set name = \"paramiko\" %}\n{% set version = \"3.5.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_val = \"ad11e540da4f55cedda52931f1a3f812a8238a7af7f62a60de538cd80bb28124\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - bcrypt >=3.2\n    - cryptography >=3.3\n    - pynacl >=1.5\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - paramiko\n\nabout:\n  home: http://www.paramiko.org/\n  license_file: LICENSE\n  license: LGPL-2.1-or-later\n  summary: SSH2 protocol library\n  license_family: LGPL\n  dev_url: https://github.com/paramiko/paramiko/\n  doc_url: http://docs.paramiko.org/\n\nextra:\n  recipe-maintainers:\n    - vamega\n    - jakirkham\n    - tschoonj\n",
+ "raw_meta_yaml": "{% set name = \"paramiko\" %}\n{% set version = \"3.5.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_val = \"b2c665bc45b2b215bd7d7f039901b14b067da00f3a11e6640995fd58f2664822\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - bcrypt >=3.2\n    - cryptography >=3.3\n    - pynacl >=1.5\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - paramiko\n\nabout:\n  home: http://www.paramiko.org/\n  license_file: LICENSE\n  license: LGPL-2.1-or-later\n  summary: SSH2 protocol library\n  license_family: LGPL\n  dev_url: https://github.com/paramiko/paramiko/\n  doc_url: http://docs.paramiko.org/\n\nextra:\n  recipe-maintainers:\n    - vamega\n    - jakirkham\n    - tschoonj\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -249,8 +249,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/paramiko/paramiko-3.5.0.tar.gz",
- "version": "3.5.0",
+ "url": "https://pypi.org/packages/source/p/paramiko/paramiko-3.5.1.tar.gz",
+ "version": "3.5.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/paramiko.json"
  }
