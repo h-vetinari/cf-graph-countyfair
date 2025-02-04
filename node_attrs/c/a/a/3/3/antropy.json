@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "antropy",
-   "version": "0.1.8"
+   "version": "0.1.9"
   },
   "requirements": {
    "host": [
@@ -52,14 +52,13 @@
     "numpy",
     "scipy",
     "scikit-learn",
-    "numba",
-    "stochastic"
+    "numba"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f7ec1762ff58047531cfa3a68ac65fe333089cc0da81cfb7d9be6afd0629fac4",
-   "url": "https://pypi.org/packages/source/a/antropy/antropy-0.1.8.tar.gz"
+   "sha256": "7c234464e065a566eaff4d367db31c0983ef669803ba7c4e35c74e1518adee21",
+   "url": "https://pypi.org/packages/source/a/antropy/antropy-0.1.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -94,8 +93,7 @@
     "numpy",
     "python",
     "scikit-learn",
-    "scipy",
-    "stochastic"
+    "scipy"
    ]
   },
   "test": {
@@ -129,7 +127,7 @@
   },
   "package": {
    "name": "antropy",
-   "version": "0.1.8"
+   "version": "0.1.9"
   },
   "requirements": {
    "host": [
@@ -142,14 +140,13 @@
     "numpy",
     "scipy",
     "scikit-learn",
-    "numba",
-    "stochastic"
+    "numba"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f7ec1762ff58047531cfa3a68ac65fe333089cc0da81cfb7d9be6afd0629fac4",
-   "url": "https://pypi.org/packages/source/a/antropy/antropy-0.1.8.tar.gz"
+   "sha256": "7c234464e065a566eaff4d367db31c0983ef669803ba7c4e35c74e1518adee21",
+   "url": "https://pypi.org/packages/source/a/antropy/antropy-0.1.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -178,7 +175,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/antropy.json"
  },
- "raw_meta_yaml": "{% set name = \"antropy\" %}\n{% set version = \"0.1.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f7ec1762ff58047531cfa3a68ac65fe333089cc0da81cfb7d9be6afd0629fac4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - scikit-learn\n    - numba\n    - stochastic\n\ntest:\n  imports:\n    - antropy\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://raphaelvallat.com/antropy/build/html/index.html\n  summary: Entropy and complexity of (EEG) time-series data in Python\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  dev_url: https://github.com/raphaelvallat/antropy\n\nextra:\n  recipe-maintainers:\n    - raphaelvallat\n    - larsoner\n    - hoechenberger\n",
+ "raw_meta_yaml": "{% set name = \"antropy\" %}\n{% set version = \"0.1.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7c234464e065a566eaff4d367db31c0983ef669803ba7c4e35c74e1518adee21\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n    - scikit-learn\n    - numba\n\ntest:\n  imports:\n    - antropy\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://raphaelvallat.com/antropy/build/html/index.html\n  summary: Entropy and complexity of (EEG) time-series data in Python\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  dev_url: https://github.com/raphaelvallat/antropy\n\nextra:\n  recipe-maintainers:\n    - raphaelvallat\n    - larsoner\n    - hoechenberger\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -188,8 +185,7 @@
    "python",
    "scikit-learn",
    "scipy",
-   "setuptools",
-   "stochastic"
+   "setuptools"
   ]
  },
  "requirements": {
@@ -212,8 +208,7 @@
     "numpy",
     "python",
     "scikit-learn",
-    "scipy",
-    "stochastic"
+    "scipy"
    ]
   },
   "test": {
@@ -245,8 +240,7 @@
     "numpy",
     "python >=3.9",
     "scikit-learn",
-    "scipy",
-    "stochastic"
+    "scipy"
    ]
   },
   "test": {
@@ -257,8 +251,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/antropy/antropy-0.1.8.tar.gz",
- "version": "0.1.8",
+ "url": "https://pypi.org/packages/source/a/antropy/antropy-0.1.9.tar.gz",
+ "version": "0.1.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/antropy.json"
  }
