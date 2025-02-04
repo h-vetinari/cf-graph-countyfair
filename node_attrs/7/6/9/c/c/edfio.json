@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -41,29 +41,31 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9,<3.13",
+    "python 3.9",
     "hatchling",
     "hatch-vcs",
     "pip"
    ],
    "run": [
-    "python >=3.9.0,<4.0.0,<3.13",
+    "python >=3.9",
     "numpy >=1.22.0"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "b4d8e276899c578cc585126f1c2e130f708eeeb61d9bcd760d6f4c91b87f9423",
-   "url": "https://pypi.io/packages/source/e/edfio/edfio-0.4.5.tar.gz"
+   "url": "https://pypi.org/packages/source/e/edfio/edfio-0.4.5.tar.gz"
   },
   "test": {
    "commands": [
-    "pip check"
+    "pip check",
+    "python -c \"import edfio; assert edfio.__version__ == '0.4.5', edfio.__version__\""
    ],
    "imports": [
     "edfio"
    ],
    "requires": [
+    "python 3.9",
     "pip"
    ]
   }
@@ -92,7 +94,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -105,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -121,29 +124,31 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9,<3.13",
+    "python 3.9",
     "hatchling",
     "hatch-vcs",
     "pip"
    ],
    "run": [
-    "python >=3.9.0,<4.0.0,<3.13",
+    "python >=3.9",
     "numpy >=1.22.0"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "b4d8e276899c578cc585126f1c2e130f708eeeb61d9bcd760d6f4c91b87f9423",
-   "url": "https://pypi.io/packages/source/e/edfio/edfio-0.4.5.tar.gz"
+   "url": "https://pypi.org/packages/source/e/edfio/edfio-0.4.5.tar.gz"
   },
   "test": {
    "commands": [
-    "pip check"
+    "pip check",
+    "python -c \"import edfio; assert edfio.__version__ == '0.4.5', edfio.__version__\""
    ],
    "imports": [
     "edfio"
    ],
    "requires": [
+    "python 3.9",
     "pip"
    ]
   }
@@ -162,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/edfio.json"
  },
- "raw_meta_yaml": "{% set name = \"edfio\" %}\n{% set version = \"0.4.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/edfio-{{ version }}.tar.gz\n  sha256: b4d8e276899c578cc585126f1c2e130f708eeeb61d9bcd760d6f4c91b87f9423\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9,<3.13\n    - hatchling\n    - hatch-vcs\n    - pip\n  run:\n    - python >=3.9.0,<4.0.0,<3.13\n    - numpy >=1.22.0\n\ntest:\n  imports:\n    - edfio\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/the-siesta-group/edfio\n  summary: Read and write EDF/EDF+ files.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - DerPhysikeR\n    - marcoross\n    - hofaflo\n",
+ "raw_meta_yaml": "{% set name = \"edfio\" %}\n{% set version = \"0.4.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/edfio-{{ version }}.tar.gz\n  sha256: b4d8e276899c578cc585126f1c2e130f708eeeb61d9bcd760d6f4c91b87f9423\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - hatch-vcs\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.22.0\n\ntest:\n  imports:\n    - edfio\n  commands:\n    - pip check\n    - python -c \"import edfio; assert edfio.__version__ == '{{ version }}', edfio.__version__\"\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/the-siesta-group/edfio\n  summary: Read and write EDF/EDF+ files.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - DerPhysikeR\n    - marcoross\n    - hofaflo\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -197,7 +202,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -213,24 +219,25 @@
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python >=3.9,<3.13"
+    "python 3.9"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "numpy >=1.22.0",
-    "python >=3.9.0,<4.0.0,<3.13"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/e/edfio/edfio-0.4.5.tar.gz",
+ "url": "https://pypi.org/packages/source/e/edfio/edfio-0.4.5.tar.gz",
  "version": "0.4.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/edfio.json"
