@@ -33,7 +33,13 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "1"
+   "ignore_run_exports": [
+    "libboost-python",
+    "exprtk",
+    "metis",
+    "libzlib"
+   ],
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -51,7 +57,8 @@
     "cxx_compiler_stub",
     "cmake",
     "ninja",
-    "libgomp"
+    "libgomp",
+    "make"
    ],
    "host": [
     "eigen",
@@ -66,17 +73,21 @@
     "range-v3",
     "tclap",
     "vtk >=9.3.0",
-    "zlib"
+    "zlib",
+    "mfront 4.2",
+    "mgis 2.2"
    ],
    "run": [
     "tetgen",
-    "python"
+    "python",
+    "mfront 4.2",
+    "mgis 2.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e",
-   "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz"
+   "sha256": "baf02645c5ff6b0fff20ee1fd5ed2e769ea04e9ebec93b2daf2739ce09c9acc7",
+   "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/3814f0097ca199d43ade2e25654c37abab0f7a9b/ogs-3814f0097ca199d43ade2e25654c37abab0f7a9b.tar.gz"
   },
   "test": {
    "commands": [
@@ -93,6 +104,7 @@
     "cmake",
     "cxx_compiler_stub",
     "libgomp",
+    "make",
     "ninja"
    ]
   },
@@ -105,6 +117,8 @@
     "libboost-python-devel",
     "libxml2",
     "metis",
+    "mfront",
+    "mgis",
     "nlohmann_json",
     "pybind11",
     "python",
@@ -117,6 +131,8 @@
   "run": {
    "__set__": true,
    "elements": [
+    "mfront",
+    "mgis",
     "python",
     "tetgen"
    ]
@@ -142,7 +158,13 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "1"
+   "ignore_run_exports": [
+    "libboost-python",
+    "exprtk",
+    "metis",
+    "libzlib"
+   ],
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -161,6 +183,7 @@
     "cmake",
     "ninja",
     "libgomp",
+    "make",
     "llvm-openmp"
    ],
    "host": [
@@ -176,17 +199,21 @@
     "range-v3",
     "tclap",
     "vtk >=9.3.0",
-    "zlib"
+    "zlib",
+    "mfront 4.2",
+    "mgis 2.2"
    ],
    "run": [
     "tetgen",
-    "python"
+    "python",
+    "mfront 4.2",
+    "mgis 2.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e",
-   "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz"
+   "sha256": "baf02645c5ff6b0fff20ee1fd5ed2e769ea04e9ebec93b2daf2739ce09c9acc7",
+   "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/3814f0097ca199d43ade2e25654c37abab0f7a9b/ogs-3814f0097ca199d43ade2e25654c37abab0f7a9b.tar.gz"
   },
   "test": {
    "commands": [
@@ -211,7 +238,13 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "1"
+   "ignore_run_exports": [
+    "libboost-python",
+    "exprtk",
+    "metis",
+    "libzlib"
+   ],
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -253,8 +286,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e",
-   "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz"
+   "sha256": "baf02645c5ff6b0fff20ee1fd5ed2e769ea04e9ebec93b2daf2739ce09c9acc7",
+   "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/3814f0097ca199d43ade2e25654c37abab0f7a9b/ogs-3814f0097ca199d43ade2e25654c37abab0f7a9b.tar.gz"
   },
   "test": {
    "commands": [
@@ -320,7 +353,13 @@
    "summary": "OpenGeoSys (OGS) THMC simulator."
   },
   "build": {
-   "number": "1"
+   "ignore_run_exports": [
+    "libboost-python",
+    "exprtk",
+    "metis",
+    "libzlib"
+   ],
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -362,8 +401,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e",
-   "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz"
+   "sha256": "baf02645c5ff6b0fff20ee1fd5ed2e769ea04e9ebec93b2daf2739ce09c9acc7",
+   "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/3814f0097ca199d43ade2e25654c37abab0f7a9b/ogs-3814f0097ca199d43ade2e25654c37abab0f7a9b.tar.gz"
   },
   "test": {
    "commands": [
@@ -428,7 +467,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ogs.json"
  },
- "raw_meta_yaml": "{% set version = \"6.5.4\" %}\n\npackage:\n  name: ogs\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ufz/ogs/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 86d2446a3d9cb8d5323afcfb259a468ea2dd16a1d5922c24cfcbd298e2ec209e\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - libgomp                                # [linux]\n    - llvm-openmp                            # [osx]\n  host:\n    - eigen\n    - exprtk\n    - hdf5\n    - libboost-python-devel\n    - libxml2\n    - metis\n    - nlohmann_json\n    - pybind11\n    - python\n    - range-v3\n    - tclap\n    - vtk >=9.3.0\n    - zlib\n  run:\n    - tetgen\n    - python\n\ntest:\n  commands:\n    - ogs --version\n\nabout:\n  home: http://www.opengeosys.org/\n  summary: OpenGeoSys (OGS) THMC simulator.\n  description: |\n    OpenGeoSys (OGS) is a scientific open source project for the development\n    of numerical methods for the simulation of thermo-hydro-mechanical-\n    chemical (THMC) processes in porous and fractured media. \n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - LICENSE.txt\n    - scripts/cmake/json-cmake/LICENSE\n    - build/third_party_licenses.txt\n  doc_url: https://www.opengeosys.org/docs\n  dev_url: https://gitlab.opengeosys.org/ogs/ogs\n\nextra:\n  recipe-maintainers:\n    - bilke\n",
+ "raw_meta_yaml": "{% set version = \"6.5.4\" %}\n{% set commit = \"3814f0097ca199d43ade2e25654c37abab0f7a9b\" %}\n\npackage:\n  name: ogs\n  version: {{ version }}\n\nsource:\n  #url: https://github.com/ufz/ogs/archive/refs/tags/{{ version }}.tar.gz\n  url: https://gitlab.opengeosys.org/ogs/ogs/-/archive/{{ commit }}/ogs-{{ commit }}.tar.gz\n  sha256: baf02645c5ff6b0fff20ee1fd5ed2e769ea04e9ebec93b2daf2739ce09c9acc7\n\nbuild:\n  number: 2\n  skip: true  # [win]\n  ignore_run_exports:\n    - libboost-python\n    - exprtk\n    - metis\n    - libzlib\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - libgomp                                # [linux]\n    - llvm-openmp                            # [osx]\n    - make                                   # [linux]\n  host:\n    - eigen\n    - exprtk\n    - hdf5\n    - libboost-python-devel\n    - libxml2\n    - metis\n    - nlohmann_json\n    - pybind11\n    - python\n    - range-v3\n    - tclap\n    - vtk >=9.3.0\n    - zlib\n    - mfront 4.2                           # [linux]\n    - mgis 2.2                             # [linux]\n  run:\n    - tetgen\n    - python\n    - mfront 4.2                           # [linux]\n    - mgis 2.2                             # [linux]\n\ntest:\n  commands:\n    - ogs --version\n\nabout:\n  home: http://www.opengeosys.org/\n  summary: OpenGeoSys (OGS) THMC simulator.\n  description: |\n    OpenGeoSys (OGS) is a scientific open source project for the development\n    of numerical methods for the simulation of thermo-hydro-mechanical-\n    chemical (THMC) processes in porous and fractured media. \n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - LICENSE.txt\n    - scripts/cmake/json-cmake/LICENSE\n    - build/third_party_licenses.txt\n  doc_url: https://www.opengeosys.org/docs\n  dev_url: https://gitlab.opengeosys.org/ogs/ogs\n\nextra:\n  recipe-maintainers:\n    - bilke\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -443,7 +482,10 @@
    "libgomp",
    "libxml2",
    "llvm-openmp",
+   "make",
    "metis",
+   "mfront",
+   "mgis",
    "ninja",
    "nlohmann_json",
    "pybind11",
@@ -465,6 +507,7 @@
     "cxx_compiler_stub",
     "libgomp",
     "llvm-openmp",
+    "make",
     "ninja"
    ]
   },
@@ -481,6 +524,8 @@
     "libboost-python-devel",
     "libxml2",
     "metis",
+    "mfront",
+    "mgis",
     "nlohmann_json",
     "openmp",
     "pybind11",
@@ -498,6 +543,8 @@
     "c_stdlib_stub",
     "ctng-compilers",
     "cxx_compiler_stub",
+    "mfront",
+    "mgis",
     "openmp",
     "python",
     "tetgen"
@@ -519,6 +566,7 @@
     "cxx_compiler_stub",
     "libgomp",
     "llvm-openmp",
+    "make",
     "ninja"
    ]
   },
@@ -531,6 +579,8 @@
     "libboost-python-devel",
     "libxml2",
     "metis",
+    "mfront 4.2",
+    "mgis 2.2",
     "nlohmann_json",
     "pybind11",
     "python",
@@ -543,6 +593,8 @@
   "run": {
    "__set__": true,
    "elements": [
+    "mfront 4.2",
+    "mgis 2.2",
     "python",
     "tetgen"
    ]
@@ -552,7 +604,7 @@
    "elements": []
   }
  },
- "url": "https://github.com/ufz/ogs/archive/refs/tags/6.5.4.tar.gz",
+ "url": "https://gitlab.opengeosys.org/ogs/ogs/-/archive/3814f0097ca199d43ade2e25654c37abab0f7a9b/ogs-3814f0097ca199d43ade2e25654c37abab0f7a9b.tar.gz",
  "version": "6.5.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ogs.json"
