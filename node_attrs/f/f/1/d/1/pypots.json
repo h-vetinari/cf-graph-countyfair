@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -42,12 +42,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.9",
     "setuptools",
     "pip"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "h5py",
     "tqdm",
     "numpy",
@@ -71,11 +71,14 @@
   "schema_version": 0,
   "source": {
    "sha256": "e0308699a3d5b30531bc0656c71ddc7297fdc986e1085368f9627c67a343ab82",
-   "url": "https://pypi.io/packages/source/p/pypots/pypots-0.8.1.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pypots/pypots-0.8.1.tar.gz"
   },
   "test": {
    "imports": [
     "pypots"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -118,7 +121,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -133,7 +138,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -147,12 +152,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.9",
     "setuptools",
     "pip"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "h5py",
     "tqdm",
     "numpy",
@@ -176,11 +181,14 @@
   "schema_version": 0,
   "source": {
    "sha256": "e0308699a3d5b30531bc0656c71ddc7297fdc986e1085368f9627c67a343ab82",
-   "url": "https://pypi.io/packages/source/p/pypots/pypots-0.8.1.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pypots/pypots-0.8.1.tar.gz"
   },
   "test": {
    "imports": [
     "pypots"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -198,7 +206,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pypots.json"
  },
- "raw_meta_yaml": "{% set name = \"pypots\" %}\n{% set version = \"0.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e0308699a3d5b30531bc0656c71ddc7297fdc986e1085368f9627c67a343ab82\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8\n    - setuptools\n    - pip\n  run:\n    - python >=3.8\n    - h5py\n    - tqdm\n    - numpy\n    - scipy\n    - sympy\n    - einops\n    - pandas\n    - pyarrow\n    - requests\n    - seaborn\n    - matplotlib\n    - tensorboard\n    - scikit-learn\n    - pytorch >=1.10.0\n    - tsdb >=0.6\n    - pygrinder >=0.6.4\n    - benchpots >=0.3\n    - ai4ts\n\ntest:\n  imports:\n    - pypots\n\nabout:\n  home: https://github.com/WenjieDu/PyPOTS\n  summary: a Python toolbox for machine learning on Partially-Observed Time Series\n  description: |\n    PyPOTS is born to become a handy toolbox that is going to make data mining on POTS easy rather than tedious, \n    to help engineers and researchers focus more on the core problems in their hands rather than on how to deal \n    with the missing parts in their data. PyPOTS will keep integrating classical and the latest state-of-the-art \n    data mining algorithms for partially-observed multivariate time series. For sure, besides various algorithms, \n    PyPOTS is going to have unified APIs together with detailed documentation and interactive examples across \n    algorithms as tutorials.\n  license: BSD-3-Clause\n  license_file: LICENSE\n  doc_url: https://docs.pypots.com\n  dev_url: https://github.com/WenjieDu/PyPOTS\n\nextra:\n  recipe-maintainers:\n    - WenjieDu\n",
+ "raw_meta_yaml": "{% set name = \"pypots\" %}\n{% set version = \"0.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e0308699a3d5b30531bc0656c71ddc7297fdc986e1085368f9627c67a343ab82\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - h5py\n    - tqdm\n    - numpy\n    - scipy\n    - sympy\n    - einops\n    - pandas\n    - pyarrow\n    - requests\n    - seaborn\n    - matplotlib\n    - tensorboard\n    - scikit-learn\n    - pytorch >=1.10.0\n    - tsdb >=0.6\n    - pygrinder >=0.6.4\n    - benchpots >=0.3\n    - ai4ts\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pypots\n\nabout:\n  home: https://github.com/WenjieDu/PyPOTS\n  summary: a Python toolbox for machine learning on Partially-Observed Time Series\n  description: |\n    PyPOTS is born to become a handy toolbox that is going to make data mining on POTS easy rather than tedious, \n    to help engineers and researchers focus more on the core problems in their hands rather than on how to deal \n    with the missing parts in their data. PyPOTS will keep integrating classical and the latest state-of-the-art \n    data mining algorithms for partially-observed multivariate time series. For sure, besides various algorithms, \n    PyPOTS is going to have unified APIs together with detailed documentation and interactive examples across \n    algorithms as tutorials.\n  license: BSD-3-Clause\n  license_file: LICENSE\n  doc_url: https://docs.pypots.com\n  dev_url: https://github.com/WenjieDu/PyPOTS\n\nextra:\n  recipe-maintainers:\n    - WenjieDu\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -264,7 +272,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -277,7 +287,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -293,7 +303,7 @@
     "pandas",
     "pyarrow",
     "pygrinder >=0.6.4",
-    "python >=3.8",
+    "python >=3.9",
     "pytorch >=1.10.0",
     "requests",
     "scikit-learn",
@@ -307,10 +317,12 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pypots/pypots-0.8.1.tar.gz",
+ "url": "https://pypi.org/packages/source/p/pypots/pypots-0.8.1.tar.gz",
  "version": "0.8.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pypots.json"
