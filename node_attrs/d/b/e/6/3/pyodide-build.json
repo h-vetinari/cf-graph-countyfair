@@ -8,6 +8,7 @@
   "conda_build": {
    "error_overlinking": true
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -20,13 +21,14 @@
   "about": {
    "home": "https://github.com/pyodide/pyodide-build",
    "license": "MPL-2.0",
+   "license_family": "MPL-2.0",
    "license_file": "LICENSE",
    "summary": "Tools for building Pyodide"
   },
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -34,16 +36,72 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "pyodide-build",
+    "requirements": {
+     "build": [],
+     "host": [
+      "hatch-vcs",
+      "hatchling",
+      "pip",
+      "python 3.12.*"
+     ],
+     "run": [
+      "auditwheel-emscripten >=0.0.9,<0.1.0",
+      "cmake >=3.24",
+      "packaging",
+      "pydantic >=2,<3",
+      "pyodide-cli >=0.2.1,<0.3.dev0",
+      "python >=3.12",
+      "python-build >=1.2.0,<1.3.dev0",
+      "pyodide-lock ==0.1.0a7",
+      "requests",
+      "resolvelib",
+      "rich",
+      "ruamel.yaml",
+      "typer",
+      "unearth >=0.6,<1.dev0",
+      "virtualenv",
+      "wheel"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyodide_build"
+       ],
+       "python_version": "3.12.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.12.*"
+       ]
+      },
+      "script": [
+       "pyodide build-recipes --help",
+       "pyodide skeleton --help",
+       "pyodide config --help",
+       "python -c \"v = __import__('pyodide_build').__version__; print(v); assert v == '${{ version }}'\""
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "pyodide-build",
-   "version": "0.29.2"
+   "version": "0.29.3"
   },
   "requirements": {
    "host": [
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python 3.12"
+    "python 3.12.*"
    ],
    "run": [
     "auditwheel-emscripten >=0.0.9,<0.1.0",
@@ -64,29 +122,13 @@
     "wheel"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "0000-no-cmake-from-pip.patch"
    ],
-   "sha256": "6ffb5271a34890d857d7d53427d426442a44e5863c1ba66d224375be30d2a038",
-   "url": "https://pypi.org/packages/source/p/pyodide-build/pyodide_build-0.29.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pyodide build-recipes --help",
-    "pyodide skeleton --help",
-    "pyodide config --help",
-    "python -c \"v = __import__('pyodide_build').__version__; print(v); assert v == '0.29.2'\""
-   ],
-   "imports": [
-    "pyodide_build"
-   ],
-   "requires": [
-    "pip",
-    "python 3.12"
-   ]
+   "sha256": "7da6e59dbf8d7bce2b98d85417afe742d3d712df77fea415d352f646ed44207e",
+   "url": "https://pypi.org/packages/source/p/pyodide-build/pyodide_build-0.29.3.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -136,13 +178,14 @@
   "about": {
    "home": "https://github.com/pyodide/pyodide-build",
    "license": "MPL-2.0",
+   "license_family": "MPL-2.0",
    "license_file": "LICENSE",
    "summary": "Tools for building Pyodide"
   },
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
@@ -150,16 +193,72 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "pyodide-build",
+    "requirements": {
+     "build": [],
+     "host": [
+      "hatch-vcs",
+      "hatchling",
+      "pip",
+      "python 3.12.*"
+     ],
+     "run": [
+      "auditwheel-emscripten >=0.0.9,<0.1.0",
+      "cmake >=3.24",
+      "packaging",
+      "pydantic >=2,<3",
+      "pyodide-cli >=0.2.1,<0.3.dev0",
+      "python >=3.12",
+      "python-build >=1.2.0,<1.3.dev0",
+      "pyodide-lock ==0.1.0a7",
+      "requests",
+      "resolvelib",
+      "rich",
+      "ruamel.yaml",
+      "typer",
+      "unearth >=0.6,<1.dev0",
+      "virtualenv",
+      "wheel"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyodide_build"
+       ],
+       "python_version": "3.12.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.12.*"
+       ]
+      },
+      "script": [
+       "pyodide build-recipes --help",
+       "pyodide skeleton --help",
+       "pyodide config --help",
+       "python -c \"v = __import__('pyodide_build').__version__; print(v); assert v == '${{ version }}'\""
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "pyodide-build",
-   "version": "0.29.2"
+   "version": "0.29.3"
   },
   "requirements": {
    "host": [
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python 3.12"
+    "python 3.12.*"
    ],
    "run": [
     "auditwheel-emscripten >=0.0.9,<0.1.0",
@@ -180,29 +279,13 @@
     "wheel"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "patches": [
     "0000-no-cmake-from-pip.patch"
    ],
-   "sha256": "6ffb5271a34890d857d7d53427d426442a44e5863c1ba66d224375be30d2a038",
-   "url": "https://pypi.org/packages/source/p/pyodide-build/pyodide_build-0.29.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pyodide build-recipes --help",
-    "pyodide skeleton --help",
-    "pyodide config --help",
-    "python -c \"v = __import__('pyodide_build').__version__; print(v); assert v == '0.29.2'\""
-   ],
-   "imports": [
-    "pyodide_build"
-   ],
-   "requires": [
-    "pip",
-    "python 3.12"
-   ]
+   "sha256": "7da6e59dbf8d7bce2b98d85417afe742d3d712df77fea415d352f646ed44207e",
+   "url": "https://pypi.org/packages/source/p/pyodide-build/pyodide_build-0.29.3.tar.gz"
   }
  },
  "name": "pyodide-build",
@@ -219,7 +302,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyodide-build.json"
  },
- "raw_meta_yaml": "{% set version = \"0.29.2\" %}\n\n{% set python_min = python_min | default(\"3.12\") %}\n\npackage:\n  name: pyodide-build\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/pyodide-build/pyodide_build-{{ version }}.tar.gz\n  sha256: 6ffb5271a34890d857d7d53427d426442a44e5863c1ba66d224375be30d2a038\n  patches:\n    # this _should_ fail if the version of cmake changes below\n    - 0000-no-cmake-from-pip.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - hatch-vcs\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - auditwheel-emscripten >=0.0.9,<0.1.0\n    - cmake >=3.24\n    - packaging\n    - pydantic >=2,<3\n    - pyodide-cli >=0.2.1,<0.3.dev0\n    - python >={{ python_min }}\n    - python-build >=1.2.0,<1.3.dev0\n    - pyodide-lock ==0.1.0a7\n    - requests\n    - resolvelib\n    - rich\n    - ruamel.yaml\n    - typer\n    - unearth >=0.6,<1.dev0\n    - virtualenv\n    - wheel\n\ntest:\n  imports:\n    - pyodide_build\n  requires:\n    - pip\n    - python {{ python_min }}\n    - m2-grep  # [win]\n  commands:\n    - pip check\n    - pyodide build-recipes --help\n    - pyodide skeleton --help\n    - pyodide config --help\n    - python -c \"v = __import__('pyodide_build').__version__; print(v); assert v == '{{ version }}'\"\n\nabout:\n  home: https://github.com/pyodide/pyodide-build\n  summary: Tools for building Pyodide\n  license: MPL-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - agriyakhetarpal\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 0.29.3\n\npackage:\n  name: pyodide-build\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/pyodide-build/pyodide_build-${{ version }}.tar.gz\n  sha256: 7da6e59dbf8d7bce2b98d85417afe742d3d712df77fea415d352f646ed44207e\n  patches:\n    # this _should_ fail if the version of cmake changes below\n    - 0000-no-cmake-from-pip.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n\nrequirements:\n  host:\n    - hatch-vcs\n    - hatchling\n    - pip\n    - python ${{ python_min }}.*\n  run:\n    - auditwheel-emscripten >=0.0.9,<0.1.0\n    - cmake >=3.24\n    - packaging\n    - pydantic >=2,<3\n    - pyodide-cli >=0.2.1,<0.3.dev0\n    - python >=${{ python_min }}\n    - python-build >=1.2.0,<1.3.dev0\n    - pyodide-lock ==0.1.0a7\n    - requests\n    - resolvelib\n    - rich\n    - ruamel.yaml\n    - typer\n    - unearth >=0.6,<1.dev0\n    - virtualenv\n    - wheel\n\ntests:\n  - python:\n      python_version: ${{ python_min }}.*\n      pip_check: true\n      imports: pyodide_build\n  - requirements:\n      run:\n        - python ${{ python_min }}.*\n    script:\n      - pyodide build-recipes --help\n      - pyodide skeleton --help\n      - pyodide config --help\n      - python -c \"v = __import__('pyodide_build').__version__; print(v); assert v == '${{ version }}'\"\n\nabout:\n  summary: Tools for building Pyodide\n  license: MPL-2.0\n  license_file: LICENSE\n  homepage: https://github.com/pyodide/pyodide-build\n\nextra:\n  recipe-maintainers:\n    - agriyakhetarpal\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -299,7 +382,7 @@
     "hatch-vcs",
     "hatchling",
     "pip",
-    "python 3.12"
+    "python 3.12.*"
    ]
   },
   "run": {
@@ -327,12 +410,12 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.12"
+    "python 3.12.*"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pyodide-build/pyodide_build-0.29.2.tar.gz",
- "version": "0.29.2",
+ "url": "https://pypi.org/packages/source/p/pyodide-build/pyodide_build-0.29.3.tar.gz",
+ "version": "0.29.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyodide-build.json"
  }
