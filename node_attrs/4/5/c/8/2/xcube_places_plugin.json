@@ -16,7 +16,7 @@
  "linux_64_meta_yaml": {
   "about": {
    "description": "xcube_places_plugin allows to load features from geoDB as xcube places",
-   "home": "https://github.com/dcs4cop/xcube-geodb-places",
+   "home": "https://github.com/xcube-dev/xcube-geodb-places",
    "license": "MIT",
    "license_family": "MIT",
    "license_file": "LICENSE",
@@ -24,25 +24,27 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "6",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "thomasstorm"
+    "thomasstorm",
+    "TonioF"
    ]
   },
   "package": {
    "name": "xcube_places_plugin",
-   "version": "0.0.2"
+   "version": "0.0.4"
   },
   "requirements": {
    "host": [
-    "python >=3.6",
-    "pip"
+    "python =3.8",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.8",
     "xcube >=1.2.0",
     "xcube_geodb",
     "requests",
@@ -51,12 +53,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2e4685530ee1d19cfb366456485d294dcb1c225bb34ecfec76c35e1f5be4046e",
-   "url": "https://github.com/dcs4cop/xcube-geodb-places/archive/refs/tags/v0.0.2.tar.gz"
+   "sha256": "65abde603a67df65cb5b9cd6b022c323f1eb691fd450602a33517431db7008ed",
+   "url": "https://github.com/xcube-dev/xcube-geodb-places/archive/refs/tags/v0.0.4.tar.gz"
   },
   "test": {
    "imports": [
     "xcube_places_plugin"
+   ],
+   "requires": [
+    "python 3.8"
    ]
   }
  },
@@ -69,7 +74,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -84,13 +90,15 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
   "about": {
    "description": "xcube_places_plugin allows to load features from geoDB as xcube places",
-   "home": "https://github.com/dcs4cop/xcube-geodb-places",
+   "home": "https://github.com/xcube-dev/xcube-geodb-places",
    "license": "MIT",
    "license_family": "MIT",
    "license_file": "LICENSE",
@@ -98,25 +106,27 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "6",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "thomasstorm"
+    "thomasstorm",
+    "TonioF"
    ]
   },
   "package": {
    "name": "xcube_places_plugin",
-   "version": "0.0.2"
+   "version": "0.0.4"
   },
   "requirements": {
    "host": [
-    "python >=3.6",
-    "pip"
+    "python =3.8",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.8",
     "xcube >=1.2.0",
     "xcube_geodb",
     "requests",
@@ -125,12 +135,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2e4685530ee1d19cfb366456485d294dcb1c225bb34ecfec76c35e1f5be4046e",
-   "url": "https://github.com/dcs4cop/xcube-geodb-places/archive/refs/tags/v0.0.2.tar.gz"
+   "sha256": "65abde603a67df65cb5b9cd6b022c323f1eb691fd450602a33517431db7008ed",
+   "url": "https://github.com/xcube-dev/xcube-geodb-places/archive/refs/tags/v0.0.4.tar.gz"
   },
   "test": {
    "imports": [
     "xcube_places_plugin"
+   ],
+   "requires": [
+    "python 3.8"
    ]
   }
  },
@@ -148,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/xcube_places_plugin.json"
  },
- "raw_meta_yaml": "package:\n  name: xcube_places_plugin\n  version: 0.0.2\n\nsource:\n  url: https://github.com/dcs4cop/xcube-geodb-places/archive/refs/tags/v0.0.2.tar.gz\n  sha256: 2e4685530ee1d19cfb366456485d294dcb1c225bb34ecfec76c35e1f5be4046e\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - xcube >=1.2.0\n    - xcube_geodb\n    - requests\n    - python-fastjsonschema\n\ntest:\n  imports:\n    - xcube_places_plugin \n\nabout:\n  summary: xcube_places_plugin allows to load features from geoDB as xcube places\n  home: https://github.com/dcs4cop/xcube-geodb-places\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  description: xcube_places_plugin allows to load features from geoDB as xcube places\n\nextra:\n  recipe-maintainers:\n    - thomasstorm\n",
+ "raw_meta_yaml": "{% set python_min = \"3.8\" %}\n\npackage:\n  name: xcube_places_plugin\n  version: 0.0.4\n\nsource:\n  url: https://github.com/xcube-dev/xcube-geodb-places/archive/refs/tags/v0.0.4.tar.gz\n  sha256: 65abde603a67df65cb5b9cd6b022c323f1eb691fd450602a33517431db7008ed\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 6\n\nrequirements:\n  host:\n    - python ={{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - xcube >=1.2.0\n    - xcube_geodb\n    - requests\n    - python-fastjsonschema\n\ntest:\n  imports:\n    - xcube_places_plugin \n  requires:\n    - python {{ python_min }} \n\nabout:\n  summary: xcube_places_plugin allows to load features from geoDB as xcube places\n  home: https://github.com/xcube-dev/xcube-geodb-places\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  description: xcube_places_plugin allows to load features from geoDB as xcube places\n\nextra:\n  recipe-maintainers:\n    - thomasstorm\n    - TonioF\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -156,6 +169,7 @@
    "python",
    "python-fastjsonschema",
    "requests",
+   "setuptools",
    "xcube",
    "xcube_geodb"
   ]
@@ -169,7 +183,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -184,7 +199,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -197,13 +214,14 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6"
+    "python =3.8",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.6",
+    "python >=3.8",
     "python-fastjsonschema",
     "requests",
     "xcube >=1.2.0",
@@ -212,11 +230,13 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.8"
+   ]
   }
  },
- "url": "https://github.com/dcs4cop/xcube-geodb-places/archive/refs/tags/v0.0.2.tar.gz",
- "version": "0.0.2",
+ "url": "https://github.com/xcube-dev/xcube-geodb-places/archive/refs/tags/v0.0.4.tar.gz",
+ "version": "0.0.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/xcube_places_plugin.json"
  }
