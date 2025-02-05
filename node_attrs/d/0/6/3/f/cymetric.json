@@ -23,7 +23,7 @@
    "summary": "Cyclus Metrics"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -111,7 +111,7 @@
    "summary": "Cyclus Metrics"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -172,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cymetric.json"
  },
- "raw_meta_yaml": "{% set version = \"1.6.0\" %}\n\npackage:\n  name: cymetric\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/cyclus/cymetric.git\n  git_rev: 1.6.0\n\nbuild:\n  number: 2\n  skip: True  # [win or osx or py<=27]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - cyclus {{ version }}\n    - numpy\n    - pandas\n    - pytables\n\ntest:\n  requires:\n    - pytest\n    - cycamore {{ version }}\n  imports:\n    - cymetric\n  source_files:\n    - tests\n\nabout:\n  home: http://fuelcycle.org\n  license: BSD-3-Clause\n  license_file: LICENSE.rst\n  license_family: BSD\n  summary: 'Cyclus Metrics'\n  doc_url: http://fuelcycle.org/user/cymetric/index.html\n  dev_url: https://github.com/cyclus/cymetric\n\nextra:\n  recipe-maintainers:\n    - gonuke\n    - katyhuff\n    - FlanFlanagan\n    - bennibbelink\n    - munkm\n    - abachma2\n",
+ "raw_meta_yaml": "{% set version = \"1.6.0\" %}\n\npackage:\n  name: cymetric\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/cyclus/cymetric.git\n  git_rev: 1.6.0\n\nbuild:\n  number: 3\n  skip: True  # [win or osx or py<310]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - cyclus {{ version }}\n    - numpy\n    - pandas\n    - pytables\n\ntest:\n  requires:\n    - pytest\n    - cycamore {{ version }}\n  imports:\n    - cymetric\n  source_files:\n    - tests\n\nabout:\n  home: http://fuelcycle.org\n  license: BSD-3-Clause\n  license_file: LICENSE.rst\n  license_family: BSD\n  summary: 'Cyclus Metrics'\n  doc_url: http://fuelcycle.org/user/cymetric/index.html\n  dev_url: https://github.com/cyclus/cymetric\n\nextra:\n  recipe-maintainers:\n    - gonuke\n    - katyhuff\n    - FlanFlanagan\n    - bennibbelink\n    - munkm\n    - abachma2\n",
  "req": {
   "__set__": true,
   "elements": [
