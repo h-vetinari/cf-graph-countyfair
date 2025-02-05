@@ -15,16 +15,18 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "A fast plugin server based on FastAPI and pluggy, providing a composable way to build a web-server",
+   "description": "A system for creating modular, configurable, pluggable and concurrent applications",
    "dev_url": "https://github.com/jupyter-server/fps",
    "home": "https://github.com/jupyter-server/fps",
-   "keywords": "asgi, server, fastapi, pluggy, plugins",
    "license": "BSD-3-Clause",
    "license_family": "BSD",
    "license_file": "LICENSE",
-   "summary": "A fast plugin server"
+   "summary": "Fast Pluggable System"
   },
   "build": {
+   "entry_points": [
+    "fps = fps._cli:main"
+   ],
    "noarch": "python",
    "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
@@ -37,31 +39,43 @@
   },
   "package": {
    "name": "fps",
-   "version": "0.0.21"
+   "version": "0.1.0"
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python >=3.9",
     "pip",
     "hatchling"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
+    "anyio",
+    "anyioutils >=0.4.9",
+    "click >=8.1.8,<9",
+    "structlog",
+    "exceptiongroup",
+    "importlib_metadata",
     "fastapi",
-    "pluggy >=1.0.0,<2.0.0",
-    "toml",
-    "typer",
-    "rich"
+    "anycorn"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "93d908c8b518b14879f1128f467834311ad1ae546ca6e49b47d72d0aa00f22f6",
-   "url": "https://pypi.io/packages/source/f/fps/fps-0.0.21.tar.gz"
+   "sha256": "0fa0f407cb23f0dc4623a68567bc106b82789890627ee84077efe027e0f86548",
+   "url": "https://pypi.org/packages/source/f/fps/fps-0.1.0.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check",
+    "fps --help"
+   ],
    "imports": [
-    "fps"
+    "fps",
+    "fps.web"
+   ],
+   "requires": [
+    "pip",
+    "python >=3.9"
    ]
   }
  },
@@ -81,31 +95,39 @@
   "run": {
    "__set__": true,
    "elements": [
+    "anycorn",
+    "anyio",
+    "anyioutils",
+    "click",
+    "exceptiongroup",
     "fastapi",
-    "pluggy",
+    "importlib_metadata",
     "python",
-    "rich",
-    "toml",
-    "typer"
+    "structlog"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "meta_yaml": {
   "about": {
-   "description": "A fast plugin server based on FastAPI and pluggy, providing a composable way to build a web-server",
+   "description": "A system for creating modular, configurable, pluggable and concurrent applications",
    "dev_url": "https://github.com/jupyter-server/fps",
    "home": "https://github.com/jupyter-server/fps",
-   "keywords": "asgi, server, fastapi, pluggy, plugins",
    "license": "BSD-3-Clause",
    "license_family": "BSD",
    "license_file": "LICENSE",
-   "summary": "A fast plugin server"
+   "summary": "Fast Pluggable System"
   },
   "build": {
+   "entry_points": [
+    "fps = fps._cli:main"
+   ],
    "noarch": "python",
    "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
@@ -118,31 +140,43 @@
   },
   "package": {
    "name": "fps",
-   "version": "0.0.21"
+   "version": "0.1.0"
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python >=3.9",
     "pip",
     "hatchling"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
+    "anyio",
+    "anyioutils >=0.4.9",
+    "click >=8.1.8,<9",
+    "structlog",
+    "exceptiongroup",
+    "importlib_metadata",
     "fastapi",
-    "pluggy >=1.0.0,<2.0.0",
-    "toml",
-    "typer",
-    "rich"
+    "anycorn"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "93d908c8b518b14879f1128f467834311ad1ae546ca6e49b47d72d0aa00f22f6",
-   "url": "https://pypi.io/packages/source/f/fps/fps-0.0.21.tar.gz"
+   "sha256": "0fa0f407cb23f0dc4623a68567bc106b82789890627ee84077efe027e0f86548",
+   "url": "https://pypi.org/packages/source/f/fps/fps-0.1.0.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check",
+    "fps --help"
+   ],
    "imports": [
-    "fps"
+    "fps",
+    "fps.web"
+   ],
+   "requires": [
+    "pip",
+    "python >=3.9"
    ]
   }
  },
@@ -160,18 +194,21 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fps.json"
  },
- "raw_meta_yaml": "{% set name = \"fps\" %}\n{% set version = \"0.0.21\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 93d908c8b518b14879f1128f467834311ad1ae546ca6e49b47d72d0aa00f22f6\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - hatchling\n  run:\n    - python >=3.7\n    - fastapi\n    - pluggy >=1.0.0,<2.0.0\n    - toml\n    - typer\n    - rich\n\ntest:\n  imports:\n    - fps\n\nabout:\n  home: https://github.com/jupyter-server/fps\n  summary: A fast plugin server\n  description: A fast plugin server based on FastAPI and pluggy, providing a composable way to build a web-server\n  keywords: asgi, server, fastapi, pluggy, plugins\n  dev_url: https://github.com/jupyter-server/fps\n  license_file: LICENSE\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - adriendelsalle\n    - davidbrochart\n",
+ "raw_meta_yaml": "{% set name = \"fps\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0fa0f407cb23f0dc4623a68567bc106b82789890627ee84077efe027e0f86548\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - fps = fps._cli:main\n\nrequirements:\n  host:\n    - python >=3.9\n    - pip\n    - hatchling\n  run:\n    - python >=3.9\n    - anyio\n    - anyioutils >=0.4.9\n    - click >=8.1.8,<9\n    - structlog\n    - exceptiongroup\n    - importlib_metadata\n    - fastapi\n    - anycorn\n\ntest:\n  imports:\n    - fps\n    - fps.web\n  commands:\n    - pip check\n    - fps --help\n  requires:\n    - pip\n    - python >=3.9\n\nabout:\n  home: https://github.com/jupyter-server/fps\n  summary: Fast Pluggable System\n  description: A system for creating modular, configurable, pluggable and concurrent applications\n  dev_url: https://github.com/jupyter-server/fps\n  license_file: LICENSE\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - adriendelsalle\n    - davidbrochart\n",
  "req": {
   "__set__": true,
   "elements": [
+   "anycorn",
+   "anyio",
+   "anyioutils",
+   "click",
+   "exceptiongroup",
    "fastapi",
    "hatchling",
+   "importlib_metadata",
    "pip",
-   "pluggy",
    "python",
-   "rich",
-   "toml",
-   "typer"
+   "structlog"
   ]
  },
  "requirements": {
@@ -190,17 +227,23 @@
   "run": {
    "__set__": true,
    "elements": [
+    "anycorn",
+    "anyio",
+    "anyioutils",
+    "click",
+    "exceptiongroup",
     "fastapi",
-    "pluggy",
+    "importlib_metadata",
     "python",
-    "rich",
-    "toml",
-    "typer"
+    "structlog"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -214,27 +257,33 @@
    "elements": [
     "hatchling",
     "pip",
-    "python >=3.7"
+    "python >=3.9"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "anycorn",
+    "anyio",
+    "anyioutils >=0.4.9",
+    "click >=8.1.8,<9",
+    "exceptiongroup",
     "fastapi",
-    "pluggy >=1.0.0,<2.0.0",
-    "python >=3.7",
-    "rich",
-    "toml",
-    "typer"
+    "importlib_metadata",
+    "python >=3.9",
+    "structlog"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python >=3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/f/fps/fps-0.0.21.tar.gz",
- "version": "0.0.21",
+ "url": "https://pypi.org/packages/source/f/fps/fps-0.1.0.tar.gz",
+ "version": "0.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/fps.json"
  }
