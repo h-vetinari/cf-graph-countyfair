@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "dvc-ssh",
-   "version": "4.1.1"
+   "version": "4.2.0"
   },
   "requirements": {
    "host": [
@@ -52,8 +52,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "96f0baa005d0478bbbb3ed759fa360404c4f73dcabab72409a65edb8ec36dad2",
-   "url": "https://pypi.org/packages/source/d/dvc-ssh/dvc-ssh-4.1.1.tar.gz"
+   "sha256": "bc082e04b99542cff0a48b22ec7ad6f6ecc2a11e65f84463b84c789c2beae97a",
+   "url": "https://pypi.org/packages/source/d/dvc-ssh/dvc_ssh-4.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -110,7 +110,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -121,7 +121,7 @@
   },
   "package": {
    "name": "dvc-ssh",
-   "version": "4.1.1"
+   "version": "4.2.0"
   },
   "requirements": {
    "host": [
@@ -137,8 +137,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "96f0baa005d0478bbbb3ed759fa360404c4f73dcabab72409a65edb8ec36dad2",
-   "url": "https://pypi.org/packages/source/d/dvc-ssh/dvc-ssh-4.1.1.tar.gz"
+   "sha256": "bc082e04b99542cff0a48b22ec7ad6f6ecc2a11e65f84463b84c789c2beae97a",
+   "url": "https://pypi.org/packages/source/d/dvc-ssh/dvc_ssh-4.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -170,7 +170,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/dvc-ssh.json"
  },
- "raw_meta_yaml": "{% set name = \"dvc-ssh\" %}\n{% set version = \"4.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 96f0baa005d0478bbbb3ed759fa360404c4f73dcabab72409a65edb8ec36dad2\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools_scm >=6.3.1\n  run:\n    - python >={{ python_min }}\n    - dvc\n    - sshfs >=2021.11.2\n\ntest:\n  imports:\n    - dvc_ssh\n  requires:\n    - git\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n    - dvc version\n    - dvc version | grep ssh\n\nabout:\n  home: https://github.com/iterative/dvc-ssh\n  summary: SSH plugin for DVC\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - efiop\n    - shcheklein\n",
+ "raw_meta_yaml": "{% set name = \"dvc-ssh\" %}\n{% set version = \"4.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: bc082e04b99542cff0a48b22ec7ad6f6ecc2a11e65f84463b84c789c2beae97a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools_scm >=6.3.1\n  run:\n    - python >={{ python_min }}\n    - dvc\n    - sshfs >=2021.11.2\n\ntest:\n  imports:\n    - dvc_ssh\n  requires:\n    - git\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n    - dvc version\n    - dvc version | grep ssh\n\nabout:\n  home: https://github.com/iterative/dvc-ssh\n  summary: SSH plugin for DVC\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - efiop\n    - shcheklein\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -242,8 +242,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/dvc-ssh/dvc-ssh-4.1.1.tar.gz",
- "version": "4.1.1",
+ "url": "https://pypi.org/packages/source/d/dvc-ssh/dvc_ssh-4.2.0.tar.gz",
+ "version": "4.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/dvc-ssh.json"
  }
