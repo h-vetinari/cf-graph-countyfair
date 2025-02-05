@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "qnmfits",
-   "version": "2025.0.0"
+   "version": "2025.1.0"
   },
   "requirements": {
    "host": [
@@ -48,8 +48,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f3a615a7922c044b7cb8063d8d467b3f6c3e15efb00afbd70ac54114974ba495",
-   "url": "https://pypi.org/packages/source/q/qnmfits/qnmfits-2025.0.0.tar.gz"
+   "sha256": "9abf958e8c5a24dc26a6e8bd4d0f2e833b47c6dcac402ba0253cfdf0b80f653a",
+   "url": "https://pypi.org/packages/source/q/qnmfits/qnmfits-2025.1.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -107,7 +107,7 @@
   },
   "package": {
    "name": "qnmfits",
-   "version": "2025.0.0"
+   "version": "2025.1.0"
   },
   "requirements": {
    "host": [
@@ -123,8 +123,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f3a615a7922c044b7cb8063d8d467b3f6c3e15efb00afbd70ac54114974ba495",
-   "url": "https://pypi.org/packages/source/q/qnmfits/qnmfits-2025.0.0.tar.gz"
+   "sha256": "9abf958e8c5a24dc26a6e8bd4d0f2e833b47c6dcac402ba0253cfdf0b80f653a",
+   "url": "https://pypi.org/packages/source/q/qnmfits/qnmfits-2025.1.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -149,7 +149,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/qnmfits.json"
  },
- "raw_meta_yaml": "{% set name = \"qnmfits\" %}\n{% set version = \"2025.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qnmfits-{{ version }}.tar.gz\n  sha256: f3a615a7922c044b7cb8063d8d467b3f6c3e15efb00afbd70ac54114974ba495\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - scri >=2022.9.0\n    - qnm >=0.4.3\n\ntest:\n  imports:\n    - qnmfits\n  requires:\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/sxs-collaboration/qnmfits\n  summary: 'Fitting of quasinormal modes to ringdown waveforms'\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - eliotfinch\n",
+ "raw_meta_yaml": "{% set name = \"qnmfits\" %}\n{% set version = \"2025.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qnmfits-{{ version }}.tar.gz\n  sha256: 9abf958e8c5a24dc26a6e8bd4d0f2e833b47c6dcac402ba0253cfdf0b80f653a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - scri >=2022.9.0\n    - qnm >=0.4.3\n\ntest:\n  imports:\n    - qnmfits\n  requires:\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/sxs-collaboration/qnmfits\n  summary: 'Fitting of quasinormal modes to ringdown waveforms'\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - eliotfinch\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -217,8 +217,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/q/qnmfits/qnmfits-2025.0.0.tar.gz",
- "version": "2025.0.0",
+ "url": "https://pypi.org/packages/source/q/qnmfits/qnmfits-2025.1.0.tar.gz",
+ "version": "2025.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/qnmfits.json"
  }
