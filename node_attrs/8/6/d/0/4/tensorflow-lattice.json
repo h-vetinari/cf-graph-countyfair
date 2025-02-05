@@ -27,6 +27,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "ehfd",
     "maresb"
    ]
   },
@@ -120,6 +121,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "ehfd",
     "maresb"
    ]
   },
@@ -179,7 +181,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tensorflow-lattice.json"
  },
- "raw_meta_yaml": "{% set name = \"tensorflow-lattice\" %}\n{% set version = \"2.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tensorflow_lattice-{{ version }}.tar.gz\n  sha256: 0fb71bbc6fe79fd1bf78f4a0623aa9854bf4e6616ae8cd4a7263efe843158d12\n  patches:\n    - setup.py.patch\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - absl-py\n    - numpy\n    - pandas\n    - six\n    - scikit-learn\n    - matplotlib-base\n    - python-graphviz\n    - tf-keras\n\ntest:\n  imports:\n    - tensorflow_lattice\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tensorflow/lattice\n  summary: A library that implements optionally monotonic lattice based models.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maresb\n",
+ "raw_meta_yaml": "{% set name = \"tensorflow-lattice\" %}\n{% set version = \"2.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tensorflow_lattice-{{ version }}.tar.gz\n  sha256: 0fb71bbc6fe79fd1bf78f4a0623aa9854bf4e6616ae8cd4a7263efe843158d12\n  patches:\n    - setup.py.patch\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - absl-py\n    - numpy\n    - pandas\n    - six\n    - scikit-learn\n    - matplotlib-base\n    - python-graphviz\n    - tf-keras\n\ntest:\n  imports:\n    - tensorflow_lattice\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tensorflow/lattice\n  summary: A library that implements optionally monotonic lattice based models.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ehfd\n    - maresb\n",
  "req": {
   "__set__": true,
   "elements": [
