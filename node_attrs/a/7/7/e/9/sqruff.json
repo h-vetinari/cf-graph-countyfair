@@ -59,7 +59,7 @@
   ],
   "package": {
    "name": "sqruff",
-   "version": "0.24.3"
+   "version": "0.25.0"
   },
   "requirements": {
    "build": [
@@ -72,8 +72,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "465f67fb722d32f28d7aa70a3ecd7261542193757f07d40b32825f71d9165c1b",
-   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.24.3.tar.gz"
+   "sha256": "9b7a5a5a388959c84ba2c510a3a23df77f794e41d4ce5af0e2fa91a8449df52b",
+   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.25.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -140,7 +140,7 @@
   ],
   "package": {
    "name": "sqruff",
-   "version": "0.24.3"
+   "version": "0.25.0"
   },
   "requirements": {
    "build": [
@@ -153,8 +153,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "465f67fb722d32f28d7aa70a3ecd7261542193757f07d40b32825f71d9165c1b",
-   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.24.3.tar.gz"
+   "sha256": "9b7a5a5a388959c84ba2c510a3a23df77f794e41d4ce5af0e2fa91a8449df52b",
+   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.25.0.tar.gz"
   }
  },
  "linux_aarch64_requirements": {
@@ -221,7 +221,7 @@
   ],
   "package": {
    "name": "sqruff",
-   "version": "0.24.3"
+   "version": "0.25.0"
   },
   "requirements": {
    "build": [
@@ -234,8 +234,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "465f67fb722d32f28d7aa70a3ecd7261542193757f07d40b32825f71d9165c1b",
-   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.24.3.tar.gz"
+   "sha256": "9b7a5a5a388959c84ba2c510a3a23df77f794e41d4ce5af0e2fa91a8449df52b",
+   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.25.0.tar.gz"
   }
  },
  "linux_ppc64le_requirements": {
@@ -382,7 +382,7 @@
   ],
   "package": {
    "name": "sqruff",
-   "version": "0.24.3"
+   "version": "0.25.0"
   },
   "requirements": {
    "build": [
@@ -395,8 +395,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "465f67fb722d32f28d7aa70a3ecd7261542193757f07d40b32825f71d9165c1b",
-   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.24.3.tar.gz"
+   "sha256": "9b7a5a5a388959c84ba2c510a3a23df77f794e41d4ce5af0e2fa91a8449df52b",
+   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.25.0.tar.gz"
   }
  },
  "name": "sqruff",
@@ -440,7 +440,7 @@
   ],
   "package": {
    "name": "sqruff",
-   "version": "0.24.3"
+   "version": "0.25.0"
   },
   "requirements": {
    "build": [
@@ -453,8 +453,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "465f67fb722d32f28d7aa70a3ecd7261542193757f07d40b32825f71d9165c1b",
-   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.24.3.tar.gz"
+   "sha256": "9b7a5a5a388959c84ba2c510a3a23df77f794e41d4ce5af0e2fa91a8449df52b",
+   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.25.0.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -498,7 +498,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sqruff.json"
  },
- "raw_meta_yaml": "context:\n  name: sqruff\n  version: \"0.24.3\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/quarylabs/sqruff/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: 465f67fb722d32f28d7aa70a3ecd7261542193757f07d40b32825f71d9165c1b\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - ${{ compiler('rust') }}\n    - ${{ compiler('c') }}\n    - ${{ stdlib('c') }}\n    - make\n    - cargo-bundle-licenses\n\ntests:\n  - script:\n      - sqruff --help\n\nabout:\n  homepage: https://github.com/quarylabs/sqruff\n  summary: Fast SQL formatter/linter\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - moritzwilksch\n",
+ "raw_meta_yaml": "context:\n  name: sqruff\n  version: \"0.25.0\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/quarylabs/sqruff/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: 9b7a5a5a388959c84ba2c510a3a23df77f794e41d4ce5af0e2fa91a8449df52b\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - ${{ compiler('rust') }}\n    - ${{ compiler('c') }}\n    - ${{ stdlib('c') }}\n    - make\n    - cargo-bundle-licenses\n\ntests:\n  - script:\n      - sqruff --help\n\nabout:\n  homepage: https://github.com/quarylabs/sqruff\n  summary: Fast SQL formatter/linter\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - moritzwilksch\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -564,8 +564,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.24.3.tar.gz",
- "version": "0.24.3",
+ "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.25.0.tar.gz",
+ "version": "0.25.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sqruff.json"
  },
@@ -609,7 +609,7 @@
   ],
   "package": {
    "name": "sqruff",
-   "version": "0.24.3"
+   "version": "0.25.0"
   },
   "requirements": {
    "build": [
@@ -622,8 +622,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "465f67fb722d32f28d7aa70a3ecd7261542193757f07d40b32825f71d9165c1b",
-   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.24.3.tar.gz"
+   "sha256": "9b7a5a5a388959c84ba2c510a3a23df77f794e41d4ce5af0e2fa91a8449df52b",
+   "url": "https://github.com/quarylabs/sqruff/archive/refs/tags/v0.25.0.tar.gz"
   }
  },
  "win_64_requirements": {
