@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv "
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "mo-future",
-   "version": "7.584.24095"
+   "version": "7.671.25036"
   },
   "requirements": {
    "host": [
@@ -49,8 +49,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0fa6f36b291fa4625f0bd6b34db2083fac9c0fa0926428d6e4c7fd96fa486ba4",
-   "url": "https://pypi.org/packages/source/m/mo-future/mo-future-7.584.24095.tar.gz"
+   "sha256": "aaca2693558cea08a5905f8e07c39da7c30fe76759e11d6a776a687b8d40a7dd",
+   "url": "https://pypi.org/packages/source/m/mo-future/mo_future-7.671.25036.tar.gz"
   },
   "test": {
    "commands": [
@@ -101,7 +101,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv "
   },
   "extra": {
@@ -111,7 +111,7 @@
   },
   "package": {
    "name": "mo-future",
-   "version": "7.584.24095"
+   "version": "7.671.25036"
   },
   "requirements": {
    "host": [
@@ -124,8 +124,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0fa6f36b291fa4625f0bd6b34db2083fac9c0fa0926428d6e4c7fd96fa486ba4",
-   "url": "https://pypi.org/packages/source/m/mo-future/mo-future-7.584.24095.tar.gz"
+   "sha256": "aaca2693558cea08a5905f8e07c39da7c30fe76759e11d6a776a687b8d40a7dd",
+   "url": "https://pypi.org/packages/source/m/mo-future/mo_future-7.671.25036.tar.gz"
   },
   "test": {
    "commands": [
@@ -154,7 +154,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/mo-future.json"
  },
- "raw_meta_yaml": "{% set name = \"mo-future\" %}\n{% set version = \"7.584.24095\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0fa6f36b291fa4625f0bd6b34db2083fac9c0fa0926428d6e4c7fd96fa486ba4\n\nbuild:\n  number: 1\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . -vv '\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - mo_future\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/klahnakoski/mo-files\n  license: MPL-2.0\n  license_family: MOZILLA\n  license_file: LICENSE\n  summary: More future! Make Python 2/3 compatibility a bit easier\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
+ "raw_meta_yaml": "{% set name = \"mo-future\" %}\n{% set version = \"7.671.25036\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: aaca2693558cea08a5905f8e07c39da7c30fe76759e11d6a776a687b8d40a7dd\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . -vv '\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - mo_future\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/klahnakoski/mo-files\n  license: MPL-2.0\n  license_family: MOZILLA\n  license_file: LICENSE\n  summary: More future! Make Python 2/3 compatibility a bit easier\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -215,8 +215,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/m/mo-future/mo-future-7.584.24095.tar.gz",
- "version": "7.584.24095",
+ "url": "https://pypi.org/packages/source/m/mo-future/mo_future-7.671.25036.tar.gz",
+ "version": "7.671.25036",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/mo-future.json"
  }
