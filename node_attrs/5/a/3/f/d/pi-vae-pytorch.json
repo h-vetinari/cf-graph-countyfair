@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "pi-vae-pytorch",
-   "version": "1.0.0b6"
+   "version": "1.0.0rc1"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c8dbc8ee04426fa7d3c6e42e381daf7f271e75728b00a6ac1d856b3e23406f4d",
-   "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0b6.tar.gz"
+   "sha256": "5ed240208ba8b3fc848033900f50b22aa60d8ce5b31c6cd059567b0060e467a9",
+   "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc1.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "pi-vae-pytorch",
-   "version": "1.0.0b6"
+   "version": "1.0.0rc1"
   },
   "requirements": {
    "host": [
@@ -132,8 +132,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c8dbc8ee04426fa7d3c6e42e381daf7f271e75728b00a6ac1d856b3e23406f4d",
-   "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0b6.tar.gz"
+   "sha256": "5ed240208ba8b3fc848033900f50b22aa60d8ce5b31c6cd059567b0060e467a9",
+   "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc1.tar.gz"
   },
   "test": {
    "commands": [
@@ -162,7 +162,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pi-vae-pytorch.json"
  },
- "raw_meta_yaml": "{% set name = \"pi-vae-pytorch\" %}\n{% set version = \"1.0.0b6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pi_vae_pytorch-{{ version }}.tar.gz\n  sha256: c8dbc8ee04426fa7d3c6e42e381daf7f271e75728b00a6ac1d856b3e23406f4d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pytorch\n\ntest:\n  imports:\n    - pi_vae_pytorch\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/mmcinnestaylor/pi-vae-pytorch\n  summary: A Pytorch implementation of Poisson Identifiable VAE (pi-VAE), a variational auto encoder used to construct latent variable models of neural activity while simultaneously modeling the relation between the latent and task variables.\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/mmcinnestaylor/pi-vae-pytorch\n  doc_url: https://mmcinnestaylor.github.io/pi-vae-pytorch\n\nextra:\n  recipe-maintainers:\n    - mmcinnestaylor\n",
+ "raw_meta_yaml": "{% set name = \"pi-vae-pytorch\" %}\n{% set version = \"1.0.0rc1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pi_vae_pytorch-{{ version }}.tar.gz\n  sha256: 5ed240208ba8b3fc848033900f50b22aa60d8ce5b31c6cd059567b0060e467a9\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pytorch\n\ntest:\n  imports:\n    - pi_vae_pytorch\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/mmcinnestaylor/pi-vae-pytorch\n  summary: A Pytorch implementation of Poisson Identifiable VAE (pi-VAE), a variational auto encoder used to construct latent variable models of neural activity while simultaneously modeling the relation between the latent and task variables.\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/mmcinnestaylor/pi-vae-pytorch\n  doc_url: https://mmcinnestaylor.github.io/pi-vae-pytorch\n\nextra:\n  recipe-maintainers:\n    - mmcinnestaylor\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -232,8 +232,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0b6.tar.gz",
- "version": "1.0.0b6",
+ "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc1.tar.gz",
+ "version": "1.0.0rc1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pi-vae-pytorch.json"
  }
