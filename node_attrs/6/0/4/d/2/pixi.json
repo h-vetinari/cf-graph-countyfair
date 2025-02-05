@@ -73,7 +73,7 @@
   ],
   "package": {
    "name": "pixi",
-   "version": "0.40.3"
+   "version": "0.41.0"
   },
   "requirements": {
    "build": [
@@ -92,8 +92,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "b7cff3f4dd3a1e164f1088d07fe4d20b5830855d481b0811d979074ab0d3bc08",
-   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.40.3.tar.gz"
+   "sha256": "8904caca64da9b3197fc2c6db31bbdd0fc1fe0ddd30a6af342618bd61ab291c9",
+   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.41.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -174,7 +174,7 @@
   ],
   "package": {
    "name": "pixi",
-   "version": "0.40.3"
+   "version": "0.41.0"
   },
   "requirements": {
    "build": [
@@ -193,8 +193,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "b7cff3f4dd3a1e164f1088d07fe4d20b5830855d481b0811d979074ab0d3bc08",
-   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.40.3.tar.gz"
+   "sha256": "8904caca64da9b3197fc2c6db31bbdd0fc1fe0ddd30a6af342618bd61ab291c9",
+   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.41.0.tar.gz"
   }
  },
  "linux_aarch64_requirements": {
@@ -275,7 +275,7 @@
   ],
   "package": {
    "name": "pixi",
-   "version": "0.40.3"
+   "version": "0.41.0"
   },
   "requirements": {
    "build": [
@@ -294,8 +294,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "b7cff3f4dd3a1e164f1088d07fe4d20b5830855d481b0811d979074ab0d3bc08",
-   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.40.3.tar.gz"
+   "sha256": "8904caca64da9b3197fc2c6db31bbdd0fc1fe0ddd30a6af342618bd61ab291c9",
+   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.41.0.tar.gz"
   }
  },
  "linux_ppc64le_requirements": {
@@ -501,7 +501,7 @@
   ],
   "package": {
    "name": "pixi",
-   "version": "0.40.3"
+   "version": "0.41.0"
   },
   "requirements": {
    "build": [
@@ -520,8 +520,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "b7cff3f4dd3a1e164f1088d07fe4d20b5830855d481b0811d979074ab0d3bc08",
-   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.40.3.tar.gz"
+   "sha256": "8904caca64da9b3197fc2c6db31bbdd0fc1fe0ddd30a6af342618bd61ab291c9",
+   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.41.0.tar.gz"
   }
  },
  "name": "pixi",
@@ -574,7 +574,7 @@
   ],
   "package": {
    "name": "pixi",
-   "version": "0.40.3"
+   "version": "0.41.0"
   },
   "requirements": {
    "build": [
@@ -593,8 +593,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "b7cff3f4dd3a1e164f1088d07fe4d20b5830855d481b0811d979074ab0d3bc08",
-   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.40.3.tar.gz"
+   "sha256": "8904caca64da9b3197fc2c6db31bbdd0fc1fe0ddd30a6af342618bd61ab291c9",
+   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.41.0.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -675,7 +675,7 @@
   ],
   "package": {
    "name": "pixi",
-   "version": "0.40.3"
+   "version": "0.41.0"
   },
   "requirements": {
    "build": [
@@ -694,8 +694,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "b7cff3f4dd3a1e164f1088d07fe4d20b5830855d481b0811d979074ab0d3bc08",
-   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.40.3.tar.gz"
+   "sha256": "8904caca64da9b3197fc2c6db31bbdd0fc1fe0ddd30a6af342618bd61ab291c9",
+   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.41.0.tar.gz"
   }
  },
  "osx_arm64_requirements": {
@@ -745,7 +745,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pixi.json"
  },
- "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: pixi\n  version: \"0.40.3\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/prefix-dev/pixi/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: b7cff3f4dd3a1e164f1088d07fe4d20b5830855d481b0811d979074ab0d3bc08\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - ${{ compiler('rust') }}\n    - cargo-bundle-licenses\n    # to compile the libsolv parts\n    - ${{ compiler('c') }}\n    - ${{ stdlib(\"c\") }}\n    - ${{ compiler('cxx') }}\n    - pkg-config\n    - cmake\n    - if: unix\n      then: make\n  host:\n    - if: linux\n      then: openssl\n    - if: win\n      then: libgit2\n\ntests:\n  - script:\n      - pixi --help\n\nabout:\n  summary: pixi is a cross-platform, multi-language package manager and workflow tool build on the shoulders of the conda ecosystem.\n  description: |\n    pixi is a cross-platform, multi-language package manager and workflow tool build on the shoulders of the conda ecosystem.\n\n    pixi provides all developers the exceptional experience that is usually found with package managers like cargo or yarn but for any language.\n\n    # Highlights\n\n    - Support for multiple languages like Python, C++ and R using Conda packages\n    - All OS's: Linux, Windows, macOS (including Apple Silicon)\n    - A lockfile is always included and always up-to-date.\n    - A clean and simple Cargo-like command-line interface.\n    - Install tools per-project or system-wide.\n    - Completely written in Rust and build on top of the rattler library.\n\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  homepage: https://github.com/prefix-dev/pixi\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - baszalmstra\n    - tdejager\n    - ruben-arts\n",
+ "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: pixi\n  version: \"0.41.0\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/prefix-dev/pixi/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: 8904caca64da9b3197fc2c6db31bbdd0fc1fe0ddd30a6af342618bd61ab291c9\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - ${{ compiler('rust') }}\n    - cargo-bundle-licenses\n    # to compile the libsolv parts\n    - ${{ compiler('c') }}\n    - ${{ stdlib(\"c\") }}\n    - ${{ compiler('cxx') }}\n    - pkg-config\n    - cmake\n    - if: unix\n      then: make\n  host:\n    - if: linux\n      then: openssl\n    - if: win\n      then: libgit2\n\ntests:\n  - script:\n      - pixi --help\n\nabout:\n  summary: pixi is a cross-platform, multi-language package manager and workflow tool build on the shoulders of the conda ecosystem.\n  description: |\n    pixi is a cross-platform, multi-language package manager and workflow tool build on the shoulders of the conda ecosystem.\n\n    pixi provides all developers the exceptional experience that is usually found with package managers like cargo or yarn but for any language.\n\n    # Highlights\n\n    - Support for multiple languages like Python, C++ and R using Conda packages\n    - All OS's: Linux, Windows, macOS (including Apple Silicon)\n    - A lockfile is always included and always up-to-date.\n    - A clean and simple Cargo-like command-line interface.\n    - Install tools per-project or system-wide.\n    - Completely written in Rust and build on top of the rattler library.\n\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  homepage: https://github.com/prefix-dev/pixi\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - baszalmstra\n    - tdejager\n    - ruben-arts\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -826,8 +826,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.40.3.tar.gz",
- "version": "0.40.3",
+ "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.41.0.tar.gz",
+ "version": "0.41.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pixi.json"
  },
@@ -880,7 +880,7 @@
   ],
   "package": {
    "name": "pixi",
-   "version": "0.40.3"
+   "version": "0.41.0"
   },
   "requirements": {
    "build": [
@@ -899,8 +899,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "b7cff3f4dd3a1e164f1088d07fe4d20b5830855d481b0811d979074ab0d3bc08",
-   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.40.3.tar.gz"
+   "sha256": "8904caca64da9b3197fc2c6db31bbdd0fc1fe0ddd30a6af342618bd61ab291c9",
+   "url": "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.41.0.tar.gz"
   }
  },
  "win_64_requirements": {
