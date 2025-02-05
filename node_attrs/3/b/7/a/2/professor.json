@@ -24,8 +24,7 @@
    "summary": "A tuning tool for Monte Carlo event generators"
   },
   "build": {
-   "number": "1",
-   "skip": true
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -34,24 +33,26 @@
   },
   "package": {
    "name": "professor",
-   "version": "2.4.0"
+   "version": "2.5.1"
   },
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ],
    "host": [
     "python",
     "cython",
     "pip",
-    "eigen"
+    "eigen",
+    "numpy"
    ],
    "run": [
     "python",
     "emcee",
     "h5py",
-    "iminuit ==1.5.4",
+    "iminuit",
     "ipython",
     "matplotlib-base",
     "numpy",
@@ -70,8 +71,8 @@
    "patches": [
     "0001-Fix-LC_ID_DYLIB-on-macOS.patch"
    ],
-   "sha256": "8488f12a87080571837809b364864ce4ef079398089b6ea071def30ae43941aa",
-   "url": "https://gitlab.com/hepcedar/professor/-/archive/professor-2.4.0/professor-professor-2.4.0.tar.gz"
+   "sha256": "c49174d1e4117da13083928a57e9bd6a52be25b9ccadee620315742f8e6b9430",
+   "url": "https://gitlab.com/hepcedar/professor/-/archive/professor-2.5.1/professor-professor-2.5.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -103,6 +104,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "make"
    ]
@@ -112,6 +114,7 @@
    "elements": [
     "cython",
     "eigen",
+    "numpy",
     "pip",
     "python"
    ]
@@ -152,8 +155,7 @@
    "summary": "A tuning tool for Monte Carlo event generators"
   },
   "build": {
-   "number": "1",
-   "skip": true
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -162,24 +164,26 @@
   },
   "package": {
    "name": "professor",
-   "version": "2.4.0"
+   "version": "2.5.1"
   },
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ],
    "host": [
     "python",
     "cython",
     "pip",
-    "eigen"
+    "eigen",
+    "numpy"
    ],
    "run": [
     "python",
     "emcee",
     "h5py",
-    "iminuit ==1.5.4",
+    "iminuit",
     "ipython",
     "matplotlib-base",
     "numpy",
@@ -198,8 +202,8 @@
    "patches": [
     "0001-Fix-LC_ID_DYLIB-on-macOS.patch"
    ],
-   "sha256": "8488f12a87080571837809b364864ce4ef079398089b6ea071def30ae43941aa",
-   "url": "https://gitlab.com/hepcedar/professor/-/archive/professor-2.4.0/professor-professor-2.4.0.tar.gz"
+   "sha256": "c49174d1e4117da13083928a57e9bd6a52be25b9ccadee620315742f8e6b9430",
+   "url": "https://gitlab.com/hepcedar/professor/-/archive/professor-2.5.1/professor-professor-2.5.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -228,134 +232,6 @@
   }
  },
  "name": "professor",
- "osx_64_meta_yaml": {
-  "about": {
-   "description": "Professor is a tuning tool for Monte Carlo event generators, based on the ideas\ndescribed in \"Tuning and Test of Fragmentation Models Based on Identified\nParticles and Precision Event Shape Data\" (Z. Phys., C73 (1996) 11-60).\n",
-   "dev_url": "https://gitlab.com/hepcedar/professor/",
-   "doc_url": "https://professor.hepforge.org/docs.sphinx220/index.html",
-   "home": "https://professor.hepforge.org",
-   "license": "GPL-3.0-only",
-   "license_file": "LICENSE",
-   "summary": "A tuning tool for Monte Carlo event generators"
-  },
-  "build": {
-   "number": "1",
-   "skip": true
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "admorris"
-   ]
-  },
-  "package": {
-   "name": "professor",
-   "version": "2.4.0"
-  },
-  "requirements": {
-   "build": [
-    "cxx_compiler_stub",
-    "make"
-   ],
-   "host": [
-    "python",
-    "cython",
-    "pip",
-    "eigen"
-   ],
-   "run": [
-    "python",
-    "emcee",
-    "h5py",
-    "iminuit ==1.5.4",
-    "ipython",
-    "matplotlib-base",
-    "numpy",
-    "pydoe",
-    "pymultinest",
-    "scikit-learn",
-    "scipy",
-    "sympy",
-    "tabulate",
-    "wxpython",
-    "yoda"
-   ]
-  },
-  "schema_version": 0,
-  "source": {
-   "patches": [
-    "0001-Fix-LC_ID_DYLIB-on-macOS.patch"
-   ],
-   "sha256": "8488f12a87080571837809b364864ce4ef079398089b6ea071def30ae43941aa",
-   "url": "https://gitlab.com/hepcedar/professor/-/archive/professor-2.4.0/professor-professor-2.4.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "prof2-bootstrap --help",
-    "prof2-config --help",
-    "prof2-eigentunes --help",
-    "prof2-envelopes --help",
-    "prof2-errors --help",
-    "prof2-I --help",
-    "prof2-ipol --help",
-    "prof2-jackknife --help",
-    "prof2-ls --help",
-    "prof2-ncoeffs --help",
-    "prof2-plotspace --help",
-    "prof2-predict --help",
-    "prof2-residuals --help",
-    "prof2-runcombs --help",
-    "prof2-sample --help",
-    "prof2-sens --help",
-    "prof2-tune --help",
-    "prof2-tune-nest --help"
-   ],
-   "imports": [
-    "professor2"
-   ]
-  }
- },
- "osx_64_requirements": {
-  "build": {
-   "__set__": true,
-   "elements": [
-    "cxx_compiler_stub",
-    "make"
-   ]
-  },
-  "host": {
-   "__set__": true,
-   "elements": [
-    "cython",
-    "eigen",
-    "pip",
-    "python"
-   ]
-  },
-  "run": {
-   "__set__": true,
-   "elements": [
-    "emcee",
-    "h5py",
-    "iminuit",
-    "ipython",
-    "matplotlib-base",
-    "numpy",
-    "pydoe",
-    "pymultinest",
-    "python",
-    "scikit-learn",
-    "scipy",
-    "sympy",
-    "tabulate",
-    "wxpython",
-    "yoda"
-   ]
-  },
-  "test": {
-   "__set__": true,
-   "elements": []
-  }
- },
  "outputs_names": {
   "__set__": true,
   "elements": [
@@ -364,16 +240,16 @@
  },
  "parsing_error": false,
  "platforms": [
-  "linux_64",
-  "osx_64"
+  "linux_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/professor.json"
  },
- "raw_meta_yaml": "{% set name = \"Professor\" %}\n{% set version = \"2.4.0\" %}\n{% set tag = name|lower ~ \"-\" ~ version %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.com/hepcedar/professor/-/archive/{{ tag }}/professor-{{ tag }}.tar.gz\n  sha256: 8488f12a87080571837809b364864ce4ef079398089b6ea071def30ae43941aa\n  patches:\n    - 0001-Fix-LC_ID_DYLIB-on-macOS.patch\n\nbuild:\n  number: 1\n  skip: true  # [win or py>39]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - make\n  host:\n    - python\n    - cython\n    - pip\n    - eigen\n  run:\n    - python\n    - emcee\n    - h5py\n    - iminuit ==1.5.4\n    - ipython\n    - matplotlib-base\n    - numpy\n    - pydoe\n    - pymultinest\n    - scikit-learn\n    - scipy\n    - sympy\n    - tabulate\n    - wxpython\n    - yoda\n\ntest:\n  imports:\n    - professor2\n  commands:\n    - prof2-bootstrap --help\n    - prof2-config --help\n    - prof2-eigentunes --help\n    - prof2-envelopes --help\n    - prof2-errors --help\n    - prof2-I --help\n    - prof2-ipol --help\n    - prof2-jackknife --help\n    - prof2-ls --help\n    - prof2-ncoeffs --help\n    - prof2-plotspace --help\n    - prof2-predict --help\n    - prof2-residuals --help\n    - prof2-runcombs --help\n    - prof2-sample --help\n    - prof2-sens --help\n    - prof2-tune --help\n    - prof2-tune-nest --help\n\nabout:\n  home: https://professor.hepforge.org\n  summary: A tuning tool for Monte Carlo event generators\n  description: |\n    Professor is a tuning tool for Monte Carlo event generators, based on the ideas\n    described in \"Tuning and Test of Fragmentation Models Based on Identified\n    Particles and Precision Event Shape Data\" (Z. Phys., C73 (1996) 11-60).\n  license: GPL-3.0-only\n  license_file: LICENSE\n  doc_url: https://professor.hepforge.org/docs.sphinx220/index.html\n  dev_url: https://gitlab.com/hepcedar/professor/\n\nextra:\n  recipe-maintainers:\n    - admorris\n",
+ "raw_meta_yaml": "{% set name = \"Professor\" %}\n{% set version = \"2.5.1\" %}\n{% set tag = name|lower ~ \"-\" ~ version %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.com/hepcedar/professor/-/archive/{{ tag }}/professor-{{ tag }}.tar.gz\n  sha256: c49174d1e4117da13083928a57e9bd6a52be25b9ccadee620315742f8e6b9430\n  patches:\n    - 0001-Fix-LC_ID_DYLIB-on-macOS.patch\n\nbuild:\n  number: 0\n  skip: true  # [win or osx or py>311]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - make\n  host:\n    - python\n    - cython\n    - pip\n    - eigen\n    - numpy\n  run:\n    - python\n    - emcee\n    - h5py\n    - iminuit\n    - ipython\n    - matplotlib-base\n    - numpy\n    - pydoe\n    - pymultinest\n    - scikit-learn\n    - scipy\n    - sympy\n    - tabulate\n    - wxpython\n    - yoda\n\ntest:\n  imports:\n    - professor2\n  commands:\n    - prof2-bootstrap --help\n    - prof2-config --help\n    - prof2-eigentunes --help\n    - prof2-envelopes --help\n    - prof2-errors --help\n    - prof2-I --help\n    - prof2-ipol --help\n    - prof2-jackknife --help\n    - prof2-ls --help\n    - prof2-ncoeffs --help\n    - prof2-plotspace --help\n    - prof2-predict --help\n    - prof2-residuals --help\n    - prof2-runcombs --help\n    - prof2-sample --help\n    - prof2-sens --help\n    - prof2-tune --help\n    - prof2-tune-nest --help\n\nabout:\n  home: https://professor.hepforge.org\n  summary: A tuning tool for Monte Carlo event generators\n  description: |\n    Professor is a tuning tool for Monte Carlo event generators, based on the ideas\n    described in \"Tuning and Test of Fragmentation Models Based on Identified\n    Particles and Precision Event Shape Data\" (Z. Phys., C73 (1996) 11-60).\n  license: GPL-3.0-only\n  license_file: LICENSE\n  doc_url: https://professor.hepforge.org/docs.sphinx220/index.html\n  dev_url: https://gitlab.com/hepcedar/professor/\n\nextra:\n  recipe-maintainers:\n    - admorris\n",
  "req": {
   "__set__": true,
   "elements": [
+   "c_stdlib_stub",
    "cxx_compiler_stub",
    "cython",
    "eigen",
@@ -400,6 +276,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "make"
    ]
@@ -407,9 +284,11 @@
   "host": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "cython",
     "eigen",
+    "numpy",
     "pip",
     "python"
    ]
@@ -417,6 +296,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "emcee",
     "h5py",
@@ -445,6 +325,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "make"
    ]
@@ -454,6 +335,7 @@
    "elements": [
     "cython",
     "eigen",
+    "numpy",
     "pip",
     "python"
    ]
@@ -463,7 +345,7 @@
    "elements": [
     "emcee",
     "h5py",
-    "iminuit ==1.5.4",
+    "iminuit",
     "ipython",
     "matplotlib-base",
     "numpy",
@@ -483,8 +365,8 @@
    "elements": []
   }
  },
- "url": "https://gitlab.com/hepcedar/professor/-/archive/professor-2.4.0/professor-professor-2.4.0.tar.gz",
- "version": "2.4.0",
+ "url": "https://gitlab.com/hepcedar/professor/-/archive/professor-2.5.1/professor-professor-2.5.1.tar.gz",
+ "version": "2.5.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/professor.json"
  }
