@@ -45,12 +45,12 @@
   },
   "package": {
    "name": "neo4j-python-driver",
-   "version": "5.27.0"
+   "version": "5.28.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "setuptools ==68.0.0",
+    "setuptools ==75.6.0",
     "tomlkit ==0.12.5",
     "pip",
     "wheel"
@@ -62,8 +62,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f82ee807cd15b178898d83f41a66372e11719a25dd487fd7bea48fd4b7323765",
-   "url": "https://pypi.org/packages/source/n/neo4j/neo4j-5.27.0.tar.gz"
+   "sha256": "e20e05db87cec0603710d834b58ff2e75f33ebc3a3c4654596035f48c2d9ec99",
+   "url": "https://pypi.org/packages/source/n/neo4j/neo4j-5.28.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -135,12 +135,12 @@
   },
   "package": {
    "name": "neo4j-python-driver",
-   "version": "5.27.0"
+   "version": "5.28.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "setuptools ==68.0.0",
+    "setuptools ==75.6.0",
     "tomlkit ==0.12.5",
     "pip",
     "wheel"
@@ -152,8 +152,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f82ee807cd15b178898d83f41a66372e11719a25dd487fd7bea48fd4b7323765",
-   "url": "https://pypi.org/packages/source/n/neo4j/neo4j-5.27.0.tar.gz"
+   "sha256": "e20e05db87cec0603710d834b58ff2e75f33ebc3a3c4654596035f48c2d9ec99",
+   "url": "https://pypi.org/packages/source/n/neo4j/neo4j-5.28.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -183,7 +183,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/neo4j-python-driver.json"
  },
- "raw_meta_yaml": "{% set name = \"neo4j\" %}\n{% set version = \"5.27.0\" %}\n{% set python_min = python_min|default(\"3.7\") %}\n\npackage:\n  name: neo4j-python-driver\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/neo4j-{{ version }}.tar.gz\n  sha256: f82ee807cd15b178898d83f41a66372e11719a25dd487fd7bea48fd4b7323765\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools ==68.0.0\n    - tomlkit ==0.12.5\n    - pip\n    # required but not listed upstream\n    - wheel\n  run:\n    - python >={{ python_min }}\n    - pytz\n\ntest:\n  imports:\n    - neo4j\n    - neo4j.graph\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/neo4j/neo4j-python-driver\n  summary: Neo4j Bolt driver for Python\n  license: Apache-2.0 AND Python-2.0\n  license_file:\n    - LICENSE.APACHE2.txt\n    - LICENSE.PYTHON.txt\n    - LICENSE.txt\n    - NOTICE.txt\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n    - thebestnom\n    - xylar\n",
+ "raw_meta_yaml": "{% set name = \"neo4j\" %}\n{% set version = \"5.28.0\" %}\n{% set python_min = python_min|default(\"3.7\") %}\n\npackage:\n  name: neo4j-python-driver\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/neo4j-{{ version }}.tar.gz\n  sha256: e20e05db87cec0603710d834b58ff2e75f33ebc3a3c4654596035f48c2d9ec99\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools ==75.6.0\n    - tomlkit ==0.12.5\n    - pip\n    # required but not listed upstream\n    - wheel\n  run:\n    - python >={{ python_min }}\n    - pytz\n\ntest:\n  imports:\n    - neo4j\n    - neo4j.graph\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/neo4j/neo4j-python-driver\n  summary: Neo4j Bolt driver for Python\n  license: Apache-2.0 AND Python-2.0\n  license_file:\n    - LICENSE.APACHE2.txt\n    - LICENSE.PYTHON.txt\n    - LICENSE.txt\n    - NOTICE.txt\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n    - thebestnom\n    - xylar\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -236,7 +236,7 @@
    "elements": [
     "pip",
     "python 3.9",
-    "setuptools ==68.0.0",
+    "setuptools ==75.6.0",
     "tomlkit ==0.12.5",
     "wheel"
    ]
@@ -256,8 +256,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/n/neo4j/neo4j-5.27.0.tar.gz",
- "version": "5.27.0",
+ "url": "https://pypi.org/packages/source/n/neo4j/neo4j-5.28.0.tar.gz",
+ "version": "5.28.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/neo4j-python-driver.json"
  }
