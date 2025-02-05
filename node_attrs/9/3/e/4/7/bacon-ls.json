@@ -45,7 +45,7 @@
   },
   "package": {
    "name": "bacon-ls",
-   "version": "0.14.0"
+   "version": "0.15.0"
   },
   "requirements": {
    "build": [
@@ -57,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "558f2b69fd2f57e864412acb0b832a9b410c5442907d1228f1c40ab53e58f10c",
-   "url": "https://github.com/crisidev/bacon-ls/archive/0.14.0.tar.gz"
+   "sha256": "1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593",
+   "url": "https://github.com/crisidev/bacon-ls/archive/0.15.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +112,7 @@
   },
   "package": {
    "name": "bacon-ls",
-   "version": "0.14.0"
+   "version": "0.15.0"
   },
   "requirements": {
    "build": [
@@ -124,8 +124,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "558f2b69fd2f57e864412acb0b832a9b410c5442907d1228f1c40ab53e58f10c",
-   "url": "https://github.com/crisidev/bacon-ls/archive/0.14.0.tar.gz"
+   "sha256": "1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593",
+   "url": "https://github.com/crisidev/bacon-ls/archive/0.15.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -179,7 +179,7 @@
   },
   "package": {
    "name": "bacon-ls",
-   "version": "0.14.0"
+   "version": "0.15.0"
   },
   "requirements": {
    "build": [
@@ -191,8 +191,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "558f2b69fd2f57e864412acb0b832a9b410c5442907d1228f1c40ab53e58f10c",
-   "url": "https://github.com/crisidev/bacon-ls/archive/0.14.0.tar.gz"
+   "sha256": "1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593",
+   "url": "https://github.com/crisidev/bacon-ls/archive/0.15.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -246,7 +246,7 @@
   },
   "package": {
    "name": "bacon-ls",
-   "version": "0.14.0"
+   "version": "0.15.0"
   },
   "requirements": {
    "build": [
@@ -258,8 +258,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "558f2b69fd2f57e864412acb0b832a9b410c5442907d1228f1c40ab53e58f10c",
-   "url": "https://github.com/crisidev/bacon-ls/archive/0.14.0.tar.gz"
+   "sha256": "1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593",
+   "url": "https://github.com/crisidev/bacon-ls/archive/0.15.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -294,7 +294,7 @@
   },
   "package": {
    "name": "bacon-ls",
-   "version": "0.14.0"
+   "version": "0.15.0"
   },
   "requirements": {
    "build": [
@@ -306,8 +306,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "558f2b69fd2f57e864412acb0b832a9b410c5442907d1228f1c40ab53e58f10c",
-   "url": "https://github.com/crisidev/bacon-ls/archive/0.14.0.tar.gz"
+   "sha256": "1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593",
+   "url": "https://github.com/crisidev/bacon-ls/archive/0.15.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -361,7 +361,7 @@
   },
   "package": {
    "name": "bacon-ls",
-   "version": "0.14.0"
+   "version": "0.15.0"
   },
   "requirements": {
    "build": [
@@ -373,8 +373,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "558f2b69fd2f57e864412acb0b832a9b410c5442907d1228f1c40ab53e58f10c",
-   "url": "https://github.com/crisidev/bacon-ls/archive/0.14.0.tar.gz"
+   "sha256": "1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593",
+   "url": "https://github.com/crisidev/bacon-ls/archive/0.15.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -425,7 +425,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/bacon-ls.json"
  },
- "raw_meta_yaml": "{% set name = \"bacon-ls\" %}\n{% set version = \"0.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/crisidev/bacon-ls/archive/{{ version }}.tar.gz\n  sha256: 558f2b69fd2f57e864412acb0b832a9b410c5442907d1228f1c40ab53e58f10c\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n    - cargo-bundle-licenses\n\ntest:\n  commands:\n    - bacon-ls &  # [not win]\n    - exe_pid=$!  # [not win]\n    - trap \"kill -SIGTERM ${exe_pid}\" SIGTERM  # [not win]\n    - start /b bacon-ls   # [win]\n    - if %errorlevel% neq 0 exit %errorlevel%  # [win]\n    - taskkill /F /im bacon-ls.exe  # [win]\n    - if %errorlevel% neq 0 exit %errorlevel%  # [win]\n\nabout:\n  home: https://github.com/crisidev/bacon-ls\n  license: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  summary: A Language Server for Rust using Bacon diagnostics\n  dev_url: https://github.com/crisidev/bacon-ls\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
+ "raw_meta_yaml": "{% set name = \"bacon-ls\" %}\n{% set version = \"0.15.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/crisidev/bacon-ls/archive/{{ version }}.tar.gz\n  sha256: 1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n    - cargo-bundle-licenses\n\ntest:\n  commands:\n    - bacon-ls &  # [not win]\n    - exe_pid=$!  # [not win]\n    - trap \"kill -SIGTERM ${exe_pid}\" SIGTERM  # [not win]\n    - start /b bacon-ls   # [win]\n    - if %errorlevel% neq 0 exit %errorlevel%  # [win]\n    - taskkill /F /im bacon-ls.exe  # [win]\n    - if %errorlevel% neq 0 exit %errorlevel%  # [win]\n\nabout:\n  home: https://github.com/crisidev/bacon-ls\n  license: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  summary: A Language Server for Rust using Bacon diagnostics\n  dev_url: https://github.com/crisidev/bacon-ls\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -488,8 +488,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/crisidev/bacon-ls/archive/0.14.0.tar.gz",
- "version": "0.14.0",
+ "url": "https://github.com/crisidev/bacon-ls/archive/0.15.0.tar.gz",
+ "version": "0.15.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/bacon-ls.json"
  },
@@ -514,7 +514,7 @@
   },
   "package": {
    "name": "bacon-ls",
-   "version": "0.14.0"
+   "version": "0.15.0"
   },
   "requirements": {
    "build": [
@@ -526,8 +526,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "558f2b69fd2f57e864412acb0b832a9b410c5442907d1228f1c40ab53e58f10c",
-   "url": "https://github.com/crisidev/bacon-ls/archive/0.14.0.tar.gz"
+   "sha256": "1d48ee1622f2bea444e5f4652665d1f6424c5272f3500ba2d704d58b4c577593",
+   "url": "https://github.com/crisidev/bacon-ls/archive/0.15.0.tar.gz"
   },
   "test": {
    "commands": [
