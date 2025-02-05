@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "movement",
-   "version": "0.0.22"
+   "version": "0.0.23"
   },
   "requirements": {
    "host": [
@@ -56,6 +56,7 @@
     "attrs",
     "pooch",
     "tqdm",
+    "shapely",
     "sleap-io",
     "xarray",
     "pyyaml",
@@ -72,8 +73,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "eb556280ec8d61125f629343a8f5e75016abe6b04912504d09e7a12db79e1896",
-   "url": "https://pypi.org/packages/source/m/movement/movement-0.0.22.tar.gz"
+   "sha256": "e464601bdbca0601a50dff1d54ecd3b200957b0c17f9a30d1e1371a3c00467fa",
+   "url": "https://pypi.org/packages/source/m/movement/movement-0.0.23.tar.gz"
   },
   "test": {
    "commands": [
@@ -123,6 +124,7 @@
     "pyyaml",
     "scipy",
     "seaborn",
+    "shapely",
     "sleap-io",
     "tqdm",
     "xarray"
@@ -160,7 +162,7 @@
   },
   "package": {
    "name": "movement",
-   "version": "0.0.22"
+   "version": "0.0.23"
   },
   "requirements": {
    "host": [
@@ -178,6 +180,7 @@
     "attrs",
     "pooch",
     "tqdm",
+    "shapely",
     "sleap-io",
     "xarray",
     "pyyaml",
@@ -194,8 +197,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "eb556280ec8d61125f629343a8f5e75016abe6b04912504d09e7a12db79e1896",
-   "url": "https://pypi.org/packages/source/m/movement/movement-0.0.22.tar.gz"
+   "sha256": "e464601bdbca0601a50dff1d54ecd3b200957b0c17f9a30d1e1371a3c00467fa",
+   "url": "https://pypi.org/packages/source/m/movement/movement-0.0.23.tar.gz"
   },
   "test": {
    "commands": [
@@ -225,7 +228,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/movement.json"
  },
- "raw_meta_yaml": "{% set name = \"movement\" %}\n{% set version = \"0.0.22\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/movement-{{ version }}.tar.gz\n  sha256: eb556280ec8d61125f629343a8f5e75016abe6b04912504d09e7a12db79e1896\n\nbuild:\n  entry_points:\n    - movement = movement.cli_entrypoint:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=45\n    - wheel\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - pandas\n    - h5py\n    - attrs\n    - pooch\n    - tqdm\n    - sleap-io\n    - xarray\n    - pyyaml\n    - pytables\n    - matplotlib-base\n    - seaborn\n    - nc-time-axis\n    - scipy\n    - bottleneck\n    - numbagg\n    - flox\n    - opt_einsum\n\ntest:\n  imports:\n    - movement\n  commands:\n    - pip check\n    - movement --help\n    - movement info\n  requires:\n    - pip\n\nabout:\n  home: https://movement.neuroinformatics.dev/\n  summary: Analysis of body movement\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - niksirbi\n    - lochhh\n    - adamltyson\n",
+ "raw_meta_yaml": "{% set name = \"movement\" %}\n{% set version = \"0.0.23\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/movement-{{ version }}.tar.gz\n  sha256: e464601bdbca0601a50dff1d54ecd3b200957b0c17f9a30d1e1371a3c00467fa\n\nbuild:\n  entry_points:\n    - movement = movement.cli_entrypoint:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=45\n    - wheel\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - pandas\n    - h5py\n    - attrs\n    - pooch\n    - tqdm\n    - shapely\n    - sleap-io\n    - xarray\n    - pyyaml\n    - pytables\n    - matplotlib-base\n    - seaborn\n    - nc-time-axis\n    - scipy\n    - bottleneck\n    - numbagg\n    - flox\n    - opt_einsum\n\ntest:\n  imports:\n    - movement\n  commands:\n    - pip check\n    - movement --help\n    - movement info\n  requires:\n    - pip\n\nabout:\n  home: https://movement.neuroinformatics.dev/\n  summary: Analysis of body movement\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - niksirbi\n    - lochhh\n    - adamltyson\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -248,6 +251,7 @@
    "seaborn",
    "setuptools",
    "setuptools-scm",
+   "shapely",
    "sleap-io",
    "tqdm",
    "wheel",
@@ -288,6 +292,7 @@
     "pyyaml",
     "scipy",
     "seaborn",
+    "shapely",
     "sleap-io",
     "tqdm",
     "xarray"
@@ -335,6 +340,7 @@
     "pyyaml",
     "scipy",
     "seaborn",
+    "shapely",
     "sleap-io",
     "tqdm",
     "xarray"
@@ -347,8 +353,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/m/movement/movement-0.0.22.tar.gz",
- "version": "0.0.22",
+ "url": "https://pypi.org/packages/source/m/movement/movement-0.0.23.tar.gz",
+ "version": "0.0.23",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/movement.json"
  }
