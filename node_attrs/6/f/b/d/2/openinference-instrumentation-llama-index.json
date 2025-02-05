@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "openinference-instrumentation-llama-index",
-   "version": "3.1.3"
+   "version": "3.1.4"
   },
   "requirements": {
    "host": [
@@ -60,8 +60,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a245d7c653552269ef9fb1e7617877f051d5c07b27d273333abd710d8488960e",
-   "url": "https://pypi.org/packages/source/o/openinference-instrumentation-llama-index/openinference_instrumentation_llama_index-3.1.3.tar.gz"
+   "sha256": "cb62c7e56157781d0ce69fdc06075f4bc39a1778e845b464b58fb006530571c0",
+   "url": "https://pypi.org/packages/source/o/openinference-instrumentation-llama-index/openinference_instrumentation_llama_index-3.1.4.tar.gz"
   },
   "test": {
    "imports": [
@@ -114,7 +114,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -128,7 +128,7 @@
   },
   "package": {
    "name": "openinference-instrumentation-llama-index",
-   "version": "3.1.3"
+   "version": "3.1.4"
   },
   "requirements": {
    "host": [
@@ -149,8 +149,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a245d7c653552269ef9fb1e7617877f051d5c07b27d273333abd710d8488960e",
-   "url": "https://pypi.org/packages/source/o/openinference-instrumentation-llama-index/openinference_instrumentation_llama_index-3.1.3.tar.gz"
+   "sha256": "cb62c7e56157781d0ce69fdc06075f4bc39a1778e845b464b58fb006530571c0",
+   "url": "https://pypi.org/packages/source/o/openinference-instrumentation-llama-index/openinference_instrumentation_llama_index-3.1.4.tar.gz"
   },
   "test": {
    "imports": [
@@ -175,7 +175,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/openinference-instrumentation-llama-index.json"
  },
- "raw_meta_yaml": "{% set name = \"openinference-instrumentation-llama-index\" %}\n{% set version = \"3.1.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/openinference_instrumentation_llama_index-{{ version }}.tar.gz\n  sha256: a245d7c653552269ef9fb1e7617877f051d5c07b27d273333abd710d8488960e\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }},<3.12\n    - opentelemetry-api\n    - opentelemetry-instrumentation\n    - opentelemetry-semantic-conventions\n    - openinference-instrumentation >=0.1.12\n    - openinference-semantic-conventions >=0.1.9\n    - typing-extensions\n    - wrapt\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - openinference.instrumentation.llama_index\n\nabout:\n  summary: OpenInference LlamaIndex Instrumentation\n  home: https://github.com/Arize-ai/openinference\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - michaelschiff\n    - mikeldking\n    - RogerHYang\n    - axiomofjoy\n    - anticorrelator\n",
+ "raw_meta_yaml": "{% set name = \"openinference-instrumentation-llama-index\" %}\n{% set version = \"3.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/openinference_instrumentation_llama_index-{{ version }}.tar.gz\n  sha256: cb62c7e56157781d0ce69fdc06075f4bc39a1778e845b464b58fb006530571c0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }},<3.12\n    - opentelemetry-api\n    - opentelemetry-instrumentation\n    - opentelemetry-semantic-conventions\n    - openinference-instrumentation >=0.1.12\n    - openinference-semantic-conventions >=0.1.9\n    - typing-extensions\n    - wrapt\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - openinference.instrumentation.llama_index\n\nabout:\n  summary: OpenInference LlamaIndex Instrumentation\n  home: https://github.com/Arize-ai/openinference\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - michaelschiff\n    - mikeldking\n    - RogerHYang\n    - axiomofjoy\n    - anticorrelator\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -258,8 +258,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/o/openinference-instrumentation-llama-index/openinference_instrumentation_llama_index-3.1.3.tar.gz",
- "version": "3.1.3",
+ "url": "https://pypi.org/packages/source/o/openinference-instrumentation-llama-index/openinference_instrumentation_llama_index-3.1.4.tar.gz",
+ "version": "3.1.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/openinference-instrumentation-llama-index.json"
  }
