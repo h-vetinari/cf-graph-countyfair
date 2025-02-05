@@ -36,7 +36,7 @@
    "summary": "SoapySDR module that registers type converters implemented in VOLK"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -50,6 +50,7 @@
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -75,6 +76,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -107,7 +109,7 @@
    "summary": "SoapySDR module that registers type converters implemented in VOLK"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -121,6 +123,7 @@
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -146,6 +149,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -178,7 +182,7 @@
    "summary": "SoapySDR module that registers type converters implemented in VOLK"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -192,6 +196,7 @@
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -217,6 +222,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -249,7 +255,7 @@
    "summary": "SoapySDR module that registers type converters implemented in VOLK"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -263,6 +269,7 @@
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -298,7 +305,7 @@
    "summary": "SoapySDR module that registers type converters implemented in VOLK"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -312,6 +319,7 @@
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -337,6 +345,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -369,7 +378,7 @@
    "summary": "SoapySDR module that registers type converters implemented in VOLK"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -383,6 +392,7 @@
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -408,6 +418,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -447,10 +458,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/soapysdr-module-volk-converters.json"
  },
- "raw_meta_yaml": "{% set version = \"0.1.1\" %}\n\npackage:\n  name: soapysdr-module-volk-converters\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pothosware/SoapyVOLKConverters/archive/soapy-volk-converters-{{ version }}.tar.gz\n  sha256: c7e12846b926bf0dde01809d1bcb0bf7fcb3e84a4e1e543b834914a392306658\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n  host:\n    - soapysdr\n    - volk\n\ntest:\n  commands:\n    # verify that libraries get installed\n    - test -f $PREFIX/lib/SoapySDR/modules{{ soapysdr }}/libvolkConverters.so  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\SoapySDR\\\\modules{{ soapysdr }}\\\\volkConverters.dll exit 1  # [win]\n\n    # show info to see if module is detected\n    - SoapySDRUtil --info\n    - SoapySDRUtil --info | grep volkConverters  # [not win]\n    - SoapySDRUtil --info | findstr /l volkConverters  # [win]\n\nabout:\n  home: https://github.com/pothosware/SoapyVOLKConverters/wiki\n  license: GPL-3.0-or-later\n  license_file: COPYING\n  summary: 'SoapySDR module that registers type converters implemented in VOLK'\n  description: >\n    This Soapy module adds vectorized numeric conversion functions, providing\n    more efficient conversions in many cases than with stock SoapySDR. Once\n    this module is installed, nothing more needs to be done; Soapy modules that\n    use SoapySDR's converter infrastructure will automatically default to these\n    new converters.\n  doc_url: https://github.com/pothosware/SoapyVOLKConverters/wiki\n  dev_url: https://github.com/pothosware/SoapyVOLKConverters\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
+ "raw_meta_yaml": "{% set version = \"0.1.1\" %}\n\npackage:\n  name: soapysdr-module-volk-converters\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pothosware/SoapyVOLKConverters/archive/soapy-volk-converters-{{ version }}.tar.gz\n  sha256: c7e12846b926bf0dde01809d1bcb0bf7fcb3e84a4e1e543b834914a392306658\n\nbuild:\n  number: 3\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - ninja\n  host:\n    - soapysdr\n    - volk\n\ntest:\n  commands:\n    # verify that libraries get installed\n    - test -f $PREFIX/lib/SoapySDR/modules{{ soapysdr }}/libvolkConverters.so  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\SoapySDR\\\\modules{{ soapysdr }}\\\\volkConverters.dll exit 1  # [win]\n\n    # show info to see if module is detected\n    - SoapySDRUtil --info\n    - SoapySDRUtil --info | grep volkConverters  # [not win]\n    - SoapySDRUtil --info | findstr /l volkConverters  # [win]\n\nabout:\n  home: https://github.com/pothosware/SoapyVOLKConverters/wiki\n  license: GPL-3.0-or-later\n  license_file: COPYING\n  summary: 'SoapySDR module that registers type converters implemented in VOLK'\n  description: >\n    This Soapy module adds vectorized numeric conversion functions, providing\n    more efficient conversions in many cases than with stock SoapySDR. Once\n    this module is installed, nothing more needs to be done; Soapy modules that\n    use SoapySDR's converter infrastructure will automatically default to these\n    new converters.\n  doc_url: https://github.com/pothosware/SoapyVOLKConverters/wiki\n  dev_url: https://github.com/pothosware/SoapyVOLKConverters\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req": {
   "__set__": true,
   "elements": [
+   "c_stdlib_stub",
    "cmake",
    "cxx_compiler_stub",
    "ninja",
@@ -462,6 +474,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -470,6 +483,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "soapysdr",
     "volk"
@@ -478,6 +492,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cxx_compiler_stub"
    ]
   },
@@ -491,6 +506,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -528,7 +544,7 @@
    "summary": "SoapySDR module that registers type converters implemented in VOLK"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -542,6 +558,7 @@
   "requirements": {
    "build": [
     "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -567,6 +584,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
