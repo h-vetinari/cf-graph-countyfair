@@ -29,7 +29,7 @@
     "pipe_asdf = abacusnbody.data.pipe_asdf:main"
    ],
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "abacusutils",
-   "version": "2.0.1"
+   "version": "2.1.0"
   },
   "requirements": {
    "host": [
@@ -49,13 +49,15 @@
     "pip"
    ],
    "run": [
+    "astropy >=4.0.0",
+    "blosc >=1.9.2",
     "python >=3.9",
     "numpy >=1.16",
     "python-blosc >=1.9.2",
     "astropy-base >=4.0.0",
     "scipy >=1.5.0",
     "numba >=0.56",
-    "asdf >=2.8",
+    "asdf >=3.1.0",
     "h5py",
     "pyyaml",
     "asdf-astropy >=0.3",
@@ -65,8 +67,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e49562cac5e1ea2220b57eb173d3d5015169bddfe5f7939996d8848917ae1d4f",
-   "url": "https://pypi.org/packages/source/a/abacusutils/abacusutils-2.0.1.tar.gz"
+   "sha256": "7277f70a8b0e28efff5f3995b0d56a2587c6215bee6497bec13c1406a1ee4de5",
+   "url": "https://pypi.org/packages/source/a/abacusutils/abacusutils-2.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -102,7 +104,9 @@
    "elements": [
     "asdf",
     "asdf-astropy",
+    "astropy",
     "astropy-base",
+    "blosc",
     "h5py",
     "msgpack-python",
     "numba",
@@ -134,7 +138,7 @@
     "pipe_asdf = abacusnbody.data.pipe_asdf:main"
    ],
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -144,7 +148,7 @@
   },
   "package": {
    "name": "abacusutils",
-   "version": "2.0.1"
+   "version": "2.1.0"
   },
   "requirements": {
    "host": [
@@ -154,13 +158,15 @@
     "pip"
    ],
    "run": [
+    "astropy >=4.0.0",
+    "blosc >=1.9.2",
     "python >=3.9",
     "numpy >=1.16",
     "python-blosc >=1.9.2",
     "astropy-base >=4.0.0",
     "scipy >=1.5.0",
     "numba >=0.56",
-    "asdf >=2.8",
+    "asdf >=3.1.0",
     "h5py",
     "pyyaml",
     "asdf-astropy >=0.3",
@@ -170,8 +176,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e49562cac5e1ea2220b57eb173d3d5015169bddfe5f7939996d8848917ae1d4f",
-   "url": "https://pypi.org/packages/source/a/abacusutils/abacusutils-2.0.1.tar.gz"
+   "sha256": "7277f70a8b0e28efff5f3995b0d56a2587c6215bee6497bec13c1406a1ee4de5",
+   "url": "https://pypi.org/packages/source/a/abacusutils/abacusutils-2.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -202,13 +208,15 @@
  "pr_info": {
   "__lazy_json__": "pr_info/abacusutils.json"
  },
- "raw_meta_yaml": "{% set name = \"abacusutils\" %}\n{% set version = \"2.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/abacusutils-{{ version }}.tar.gz\n  sha256: e49562cac5e1ea2220b57eb173d3d5015169bddfe5f7939996d8848917ae1d4f\n\nbuild:\n  entry_points:\n    - pipe_asdf = abacusnbody.data.pipe_asdf:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 2\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.16\n    - python-blosc >=1.9.2\n    - astropy-base >=4.0.0\n    - scipy >=1.5.0\n    - numba >=0.56\n    - asdf >=2.8\n    - h5py\n    - pyyaml\n    - asdf-astropy >=0.3\n    - msgpack-python >=1\n    - parallel-numpy-rng >=0.1.2\n\ntest:\n  imports:\n    - abacusnbody.data\n    - abacusnbody.hod\n  commands:\n    - pip check\n    - pipe_asdf --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/abacusorg/abacusutils\n  summary: Python and C/C++ code to read halo catalogs and other Abacus N-body data products\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"abacusutils\" %}\n{% set version = \"2.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/abacusutils-{{ version }}.tar.gz\n  sha256: 7277f70a8b0e28efff5f3995b0d56a2587c6215bee6497bec13c1406a1ee4de5\n\nbuild:\n  entry_points:\n    - pipe_asdf = abacusnbody.data.pipe_asdf:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - astropy >=4.0.0\n    - blosc >=1.9.2\n    - python >={{ python_min }}\n    - numpy >=1.16\n    - python-blosc >=1.9.2\n    - astropy-base >=4.0.0\n    - scipy >=1.5.0\n    - numba >=0.56\n    - asdf >=3.1.0\n    - h5py\n    - pyyaml\n    - asdf-astropy >=0.3\n    - msgpack-python >=1\n    - parallel-numpy-rng >=0.1.2\n\ntest:\n  imports:\n    - abacusnbody.data\n    - abacusnbody.hod\n  commands:\n    - pip check\n    - pipe_asdf --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/abacusorg/abacusutils\n  summary: Python and C/C++ code to read halo catalogs and other Abacus N-body data products\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
    "asdf",
    "asdf-astropy",
+   "astropy",
    "astropy-base",
+   "blosc",
    "h5py",
    "msgpack-python",
    "numba",
@@ -242,7 +250,9 @@
    "elements": [
     "asdf",
     "asdf-astropy",
+    "astropy",
     "astropy-base",
+    "blosc",
     "h5py",
     "msgpack-python",
     "numba",
@@ -280,9 +290,11 @@
   "run": {
    "__set__": true,
    "elements": [
-    "asdf >=2.8",
+    "asdf >=3.1.0",
     "asdf-astropy >=0.3",
+    "astropy >=4.0.0",
     "astropy-base >=4.0.0",
+    "blosc >=1.9.2",
     "h5py",
     "msgpack-python >=1",
     "numba >=0.56",
@@ -302,8 +314,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/abacusutils/abacusutils-2.0.1.tar.gz",
- "version": "2.0.1",
+ "url": "https://pypi.org/packages/source/a/abacusutils/abacusutils-2.1.0.tar.gz",
+ "version": "2.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/abacusutils.json"
  }
