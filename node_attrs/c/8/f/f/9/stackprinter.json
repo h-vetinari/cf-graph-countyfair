@@ -24,34 +24,39 @@
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
-    "scopatz"
+    "scopatz",
+    "tetov"
    ]
   },
   "package": {
    "name": "stackprinter",
-   "version": "0.2.5"
+   "version": "0.2.12"
   },
   "requirements": {
    "host": [
-    "python >=3.4",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python >=3.4"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e0197c54dafe7867020731c3dcab96a14d103c1e39130fa0b5159a2f0af427b6",
-   "url": "https://pypi.io/packages/source/s/stackprinter/stackprinter-0.2.5.tar.gz"
+   "sha256": "271efc75ebdcc1554e58168ea7779f98066d54a325f57c7dc19f10fa998ef01e",
+   "url": "https://pypi.org/packages/source/s/stackprinter/stackprinter-0.2.12.tar.gz"
   },
   "test": {
    "imports": [
     "stackprinter"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -64,7 +69,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -75,7 +81,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -89,34 +97,39 @@
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
-    "scopatz"
+    "scopatz",
+    "tetov"
    ]
   },
   "package": {
    "name": "stackprinter",
-   "version": "0.2.5"
+   "version": "0.2.12"
   },
   "requirements": {
    "host": [
-    "python >=3.4",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python >=3.4"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e0197c54dafe7867020731c3dcab96a14d103c1e39130fa0b5159a2f0af427b6",
-   "url": "https://pypi.io/packages/source/s/stackprinter/stackprinter-0.2.5.tar.gz"
+   "sha256": "271efc75ebdcc1554e58168ea7779f98066d54a325f57c7dc19f10fa998ef01e",
+   "url": "https://pypi.org/packages/source/s/stackprinter/stackprinter-0.2.12.tar.gz"
   },
   "test": {
    "imports": [
     "stackprinter"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -134,12 +147,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/stackprinter.json"
  },
- "raw_meta_yaml": "{% set name = \"stackprinter\" %}\n{% set version = \"0.2.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e0197c54dafe7867020731c3dcab96a14d103c1e39130fa0b5159a2f0af427b6\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.4\n    - pip\n  run:\n    - python >=3.4\n\ntest:\n  imports:\n    - stackprinter\n\nabout:\n  home: https://github.com/cknd/stackprinter\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Debugging-friendly exceptions for Python\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml": "{% set name = \"stackprinter\" %}\n{% set version = \"0.2.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 271efc75ebdcc1554e58168ea7779f98066d54a325f57c7dc19f10fa998ef01e\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - stackprinter\n\nabout:\n  home: https://github.com/cknd/stackprinter\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Debugging-friendly exceptions for Python\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - tetov\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -151,7 +165,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -162,7 +177,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -175,22 +192,25 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.4"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.4"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/s/stackprinter/stackprinter-0.2.5.tar.gz",
- "version": "0.2.5",
+ "url": "https://pypi.org/packages/source/s/stackprinter/stackprinter-0.2.12.tar.gz",
+ "version": "0.2.12",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/stackprinter.json"
  }
