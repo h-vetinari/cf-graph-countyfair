@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "py-modelrunner",
-   "version": "0.18.3"
+   "version": "0.19.0"
   },
   "requirements": {
    "host": [
@@ -57,13 +57,13 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5fa8d8864cfb882f95ac94d497a7db8a077abdb854017611951d1288d557e1e6",
-   "url": "https://pypi.org/packages/source/p/py-modelrunner/py_modelrunner-0.18.3.tar.gz"
+   "sha256": "c97d09330604acbf4e72e594b83d1b48f2031b90e435be0f042d69937afcd371",
+   "url": "https://pypi.org/packages/source/p/py-modelrunner/py_modelrunner-0.19.0.tar.gz"
   },
   "test": {
    "commands": [
     "pip check",
-    "pip list | grep -i py-modelrunner | grep 0.18.3"
+    "pip list | grep -i py-modelrunner | grep 0.19.0"
    ],
    "imports": [
     "modelrunner"
@@ -128,7 +128,7 @@
   },
   "package": {
    "name": "py-modelrunner",
-   "version": "0.18.3"
+   "version": "0.19.0"
   },
   "requirements": {
    "host": [
@@ -150,13 +150,13 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5fa8d8864cfb882f95ac94d497a7db8a077abdb854017611951d1288d557e1e6",
-   "url": "https://pypi.org/packages/source/p/py-modelrunner/py_modelrunner-0.18.3.tar.gz"
+   "sha256": "c97d09330604acbf4e72e594b83d1b48f2031b90e435be0f042d69937afcd371",
+   "url": "https://pypi.org/packages/source/p/py-modelrunner/py_modelrunner-0.19.0.tar.gz"
   },
   "test": {
    "commands": [
     "pip check",
-    "pip list | grep -i py-modelrunner | grep 0.18.3"
+    "pip list | grep -i py-modelrunner | grep 0.19.0"
    ],
    "imports": [
     "modelrunner"
@@ -181,7 +181,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/py-modelrunner.json"
  },
- "raw_meta_yaml": "{% set name = \"py-modelrunner\" %}\n{% set version = \"0.18.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 5fa8d8864cfb882f95ac94d497a7db8a077abdb854017611951d1288d557e1e6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools_scm\n  run:\n    - python >={{ python_min }}\n    - jinja2 >=3\n    - h5py >=3.5\n    - numpy >=1.18.0\n    - pandas >=1.2\n    - pyyaml >=5\n    - tqdm >=4.45\n    - zarr >=2\n    - numcodecs >=0.10\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - modelrunner\n  commands:\n    - pip check\n    # Check whether the pip version is reported correctly\n    - pip list | grep -i {{ name }} | grep {{ version }}\n\nabout:\n  home: https://github.com/zwicker-group/py-modelrunner\n  summary: Python classes for organizing (HPC) simulations\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - david-zwicker\n",
+ "raw_meta_yaml": "{% set name = \"py-modelrunner\" %}\n{% set version = \"0.19.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: c97d09330604acbf4e72e594b83d1b48f2031b90e435be0f042d69937afcd371\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools_scm\n  run:\n    - python >={{ python_min }}\n    - jinja2 >=3\n    - h5py >=3.5\n    - numpy >=1.18.0\n    - pandas >=1.2\n    - pyyaml >=5\n    - tqdm >=4.45\n    - zarr >=2\n    - numcodecs >=0.10\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - modelrunner\n  commands:\n    - pip check\n    # Check whether the pip version is reported correctly\n    - pip list | grep -i {{ name }} | grep {{ version }}\n\nabout:\n  home: https://github.com/zwicker-group/py-modelrunner\n  summary: Python classes for organizing (HPC) simulations\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - david-zwicker\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -269,8 +269,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/py-modelrunner/py_modelrunner-0.18.3.tar.gz",
- "version": "0.18.3",
+ "url": "https://pypi.org/packages/source/p/py-modelrunner/py_modelrunner-0.19.0.tar.gz",
+ "version": "0.19.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/py-modelrunner.json"
  }
