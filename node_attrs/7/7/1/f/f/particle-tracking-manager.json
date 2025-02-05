@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "particle-tracking-manager",
-   "version": "0.10.1"
+   "version": "0.11.1"
   },
   "requirements": {
    "host": [
@@ -57,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c0aff5f6bab17025718353885edb70dc0983fb1d37899e7e84e322deee8c8808",
-   "url": "https://pypi.org/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.10.1.tar.gz"
+   "sha256": "40cd8878152b6cd22f6e6163cf91990ae1d08237de24fac3bdb22ea44693c775",
+   "url": "https://pypi.org/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.11.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -127,7 +127,7 @@
   },
   "package": {
    "name": "particle-tracking-manager",
-   "version": "0.10.1"
+   "version": "0.11.1"
   },
   "requirements": {
    "host": [
@@ -149,8 +149,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c0aff5f6bab17025718353885edb70dc0983fb1d37899e7e84e322deee8c8808",
-   "url": "https://pypi.org/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.10.1.tar.gz"
+   "sha256": "40cd8878152b6cd22f6e6163cf91990ae1d08237de24fac3bdb22ea44693c775",
+   "url": "https://pypi.org/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.11.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -179,7 +179,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/particle-tracking-manager.json"
  },
- "raw_meta_yaml": "{% set name = \"particle-tracking-manager\" %}\n{% set version = \"0.10.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/particle_tracking_manager-{{ version }}.tar.gz\n  sha256: c0aff5f6bab17025718353885edb70dc0983fb1d37899e7e84e322deee8c8808\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - appdirs\n    - kerchunk\n    - numpy\n    - opendrift >=1.11.13\n    - pandas\n    - xarray\n\ntest:\n  imports:\n    - particle_tracking_manager\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/axiom-data-science/particle-tracking-manager\n  summary: Manager for particle tracking simulations.\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - kthyng\n",
+ "raw_meta_yaml": "{% set name = \"particle-tracking-manager\" %}\n{% set version = \"0.11.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/particle_tracking_manager-{{ version }}.tar.gz\n  sha256: 40cd8878152b6cd22f6e6163cf91990ae1d08237de24fac3bdb22ea44693c775\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - wheel\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - appdirs\n    - kerchunk\n    - numpy\n    - opendrift >=1.11.13\n    - pandas\n    - xarray\n\ntest:\n  imports:\n    - particle_tracking_manager\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/axiom-data-science/particle-tracking-manager\n  summary: Manager for particle tracking simulations.\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - kthyng\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -267,8 +267,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.10.1.tar.gz",
- "version": "0.10.1",
+ "url": "https://pypi.org/packages/source/p/particle-tracking-manager/particle_tracking_manager-0.11.1.tar.gz",
+ "version": "0.11.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/particle-tracking-manager.json"
  }
