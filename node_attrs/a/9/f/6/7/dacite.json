@@ -40,7 +40,7 @@
   },
   "package": {
    "name": "dacite",
-   "version": "1.9.1"
+   "version": "1.9.2"
   },
   "requirements": {
    "host": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f8416cb958116f7bc4d36e0d478a56f39fdc6e636d036bd8c6d46b6a218900ed",
-   "url": "https://github.com/konradhalas/dacite/archive/v1.9.1.tar.gz"
+   "sha256": "cec83bf402dc6ac0e5a2030500ef7296ad4d5c77e756475252b99e89a4d5ebfa",
+   "url": "https://github.com/konradhalas/dacite/archive/v1.9.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -120,7 +120,7 @@
   },
   "package": {
    "name": "dacite",
-   "version": "1.9.1"
+   "version": "1.9.2"
   },
   "requirements": {
    "host": [
@@ -135,8 +135,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f8416cb958116f7bc4d36e0d478a56f39fdc6e636d036bd8c6d46b6a218900ed",
-   "url": "https://github.com/konradhalas/dacite/archive/v1.9.1.tar.gz"
+   "sha256": "cec83bf402dc6ac0e5a2030500ef7296ad4d5c77e756475252b99e89a4d5ebfa",
+   "url": "https://github.com/konradhalas/dacite/archive/v1.9.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -165,7 +165,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/dacite.json"
  },
- "raw_meta_yaml": "{% set name = \"dacite\" %}\n{% set version = \"1.9.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/konradhalas/dacite/archive/v{{ version }}.tar.gz\n  sha256: f8416cb958116f7bc4d36e0d478a56f39fdc6e636d036bd8c6d46b6a218900ed\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - dataclasses\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - dacite\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/konradhalas/dacite\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Simple creation of data classes from dictionaries.\n\nextra:\n  recipe-maintainers:\n    - mands\n    - rxm7706\n",
+ "raw_meta_yaml": "{% set name = \"dacite\" %}\n{% set version = \"1.9.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/konradhalas/dacite/archive/v{{ version }}.tar.gz\n  sha256: cec83bf402dc6ac0e5a2030500ef7296ad4d5c77e756475252b99e89a4d5ebfa\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - dataclasses\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - dacite\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/konradhalas/dacite\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Simple creation of data classes from dictionaries.\n\nextra:\n  recipe-maintainers:\n    - mands\n    - rxm7706\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -232,8 +232,8 @@
    ]
   }
  },
- "url": "https://github.com/konradhalas/dacite/archive/v1.9.1.tar.gz",
- "version": "1.9.1",
+ "url": "https://github.com/konradhalas/dacite/archive/v1.9.2.tar.gz",
+ "version": "1.9.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/dacite.json"
  }
