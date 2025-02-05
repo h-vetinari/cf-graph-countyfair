@@ -43,28 +43,28 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.10",
     "setuptools >=64.0",
     "setuptools-scm",
     "pip"
    ],
    "run": [
-    "python >=3.9",
-    "xarray",
+    "python >=3.10",
+    "xarray >=2024.11.0",
     "dask",
     "numpy",
     "netcdf4",
     "shapely",
     "scipy",
     "matplotlib-base",
-    "xarray-datatree",
     "tqdm",
     "zarr",
     "fsspec",
     "aiohttp",
     "PyYAML",
     "holoviews",
-    "geoviews"
+    "geoviews",
+    "pyogrio"
    ]
   },
   "schema_version": 0,
@@ -83,6 +83,7 @@
     "slcl1butils"
    ],
    "requires": [
+    "python 3.10",
     "pip"
    ]
   }
@@ -112,20 +113,21 @@
     "matplotlib-base",
     "netcdf4",
     "numpy",
+    "pyogrio",
     "python",
     "pyyaml",
     "scipy",
     "shapely",
     "tqdm",
     "xarray",
-    "xarray-datatree",
     "zarr"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -159,28 +161,28 @@
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.10",
     "setuptools >=64.0",
     "setuptools-scm",
     "pip"
    ],
    "run": [
-    "python >=3.9",
-    "xarray",
+    "python >=3.10",
+    "xarray >=2024.11.0",
     "dask",
     "numpy",
     "netcdf4",
     "shapely",
     "scipy",
     "matplotlib-base",
-    "xarray-datatree",
     "tqdm",
     "zarr",
     "fsspec",
     "aiohttp",
     "PyYAML",
     "holoviews",
-    "geoviews"
+    "geoviews",
+    "pyogrio"
    ]
   },
   "schema_version": 0,
@@ -199,6 +201,7 @@
     "slcl1butils"
    ],
    "requires": [
+    "python 3.10",
     "pip"
    ]
   }
@@ -217,7 +220,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/slcl1butils.json"
  },
- "raw_meta_yaml": "{% set name = \"slcl1butils\" %}\n{% set version = \"2025.1.30\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/slcl1butils-{{ version }}.tar.gz\n  sha256: 53def84d12dd99a2b46ac869c523ce0f6bb9c35e8d8a8b5b15533fb27974c13c\n\nbuild:\n  entry_points:\n    - do_IW_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_IW_L1C_SAFE_from_L1B_SAFE:main\n    - do_WV_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_WV_L1C_SAFE_from_L1B_SAFE:main\n    - stack_WV_L1C_to_ZARR = slcl1butils.compute.stack_wv_l1c_monthly:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.9\n    - setuptools >=64.0\n    - setuptools-scm\n    - pip\n  run:\n    - python >=3.9\n    - xarray\n    - dask\n    - numpy\n    - netcdf4\n    - shapely\n    - scipy\n    - matplotlib-base\n    - xarray-datatree\n    - tqdm\n    - zarr\n    - fsspec\n    - aiohttp\n    - PyYAML\n    - holoviews\n    - geoviews\n\ntest:\n  imports:\n    - slcl1butils\n  commands:\n    - pip check\n    - do_IW_L1C_SAFE_from_L1B_SAFE --help\n    - do_WV_L1C_SAFE_from_L1B_SAFE --help\n    - stack_WV_L1C_to_ZARR --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/umr-lops/utils_xsarslc_l1b\n  summary: Python library to exploit SAR IFREMER L1B products\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  description: |\n    python tool to read/display/enrich Sentinel-1 SAR Level-1 B SLC products produced at IFREMER\n\nextra:\n  recipe-maintainers:\n    - agrouaze\n    - alxmouche\n",
+ "raw_meta_yaml": "{% set name = \"slcl1butils\" %}\n{% set version = \"2025.1.30\" %}\n{% set python_min = '3.10' %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/slcl1butils-{{ version }}.tar.gz\n  sha256: 53def84d12dd99a2b46ac869c523ce0f6bb9c35e8d8a8b5b15533fb27974c13c\n\nbuild:\n  entry_points:\n    - do_IW_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_IW_L1C_SAFE_from_L1B_SAFE:main\n    - do_WV_L1C_SAFE_from_L1B_SAFE = slcl1butils.scripts.do_WV_L1C_SAFE_from_L1B_SAFE:main\n    - stack_WV_L1C_to_ZARR = slcl1butils.compute.stack_wv_l1c_monthly:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64.0\n    - setuptools-scm\n    - pip\n  run:\n    - python >={{ python_min }}\n    - xarray >=2024.11.0\n    - dask\n    - numpy\n    - netcdf4\n    - shapely\n    - scipy\n    - matplotlib-base\n    - tqdm\n    - zarr\n    - fsspec\n    - aiohttp\n    - PyYAML\n    - holoviews\n    - geoviews\n    - pyogrio\n\ntest:\n  imports:\n    - slcl1butils\n  commands:\n    - pip check\n    - do_IW_L1C_SAFE_from_L1B_SAFE --help\n    - do_WV_L1C_SAFE_from_L1B_SAFE --help\n    - stack_WV_L1C_to_ZARR --help\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/umr-lops/utils_xsarslc_l1b\n  summary: Python library to exploit SAR IFREMER L1B products\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  description: |\n    python tool to read/display/enrich Sentinel-1 SAR Level-1 B SLC products produced at IFREMER\n\nextra:\n  recipe-maintainers:\n    - agrouaze\n    - alxmouche\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -230,6 +233,7 @@
    "netcdf4",
    "numpy",
    "pip",
+   "pyogrio",
    "python",
    "pyyaml",
    "scipy",
@@ -238,7 +242,6 @@
    "shapely",
    "tqdm",
    "xarray",
-   "xarray-datatree",
    "zarr"
   ]
  },
@@ -267,20 +270,21 @@
     "matplotlib-base",
     "netcdf4",
     "numpy",
+    "pyogrio",
     "python",
     "pyyaml",
     "scipy",
     "shapely",
     "tqdm",
     "xarray",
-    "xarray-datatree",
     "zarr"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -294,7 +298,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.10",
     "setuptools >=64.0",
     "setuptools-scm"
    ]
@@ -311,19 +315,20 @@
     "matplotlib-base",
     "netcdf4",
     "numpy",
-    "python >=3.9",
+    "pyogrio",
+    "python >=3.10",
     "scipy",
     "shapely",
     "tqdm",
-    "xarray",
-    "xarray-datatree",
+    "xarray >=2024.11.0",
     "zarr"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
