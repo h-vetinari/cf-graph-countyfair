@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "python -m pip install . -vv"
   },
   "extra": {
@@ -39,7 +39,7 @@
     "requirements": {
      "build": [],
      "host": [
-      "python ==3.9",
+      "python 3.9.*",
       "pip",
       "setuptools"
      ],
@@ -53,7 +53,7 @@
        "imports": [
         "orderly_set"
        ],
-       "python_version": "3.9"
+       "python_version": "3.9.*"
       }
      }
     ]
@@ -61,11 +61,11 @@
   ],
   "package": {
    "name": "orderly-set",
-   "version": "5.2.3"
+   "version": "5.3.0"
   },
   "requirements": {
    "host": [
-    "python ==3.9",
+    "python 3.9.*",
     "pip",
     "setuptools"
    ],
@@ -75,8 +75,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "571ed97c5a5fca7ddeb6b2d26c19aca896b0ed91f334d9c109edd2f265fb3017",
-   "url": "https://pypi.org/packages/source/o/orderly-set/orderly_set-5.2.3.tar.gz"
+   "sha256": "80b3d8fdd3d39004d9aad389eaa0eab02c71f0a0511ba3a6d54a935a6c6a0acc",
+   "url": "https://pypi.org/packages/source/o/orderly-set/orderly_set-5.3.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -115,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "python -m pip install . -vv"
   },
   "extra": {
@@ -130,7 +130,7 @@
     "requirements": {
      "build": [],
      "host": [
-      "python ==3.9",
+      "python 3.9.*",
       "pip",
       "setuptools"
      ],
@@ -144,7 +144,7 @@
        "imports": [
         "orderly_set"
        ],
-       "python_version": "3.9"
+       "python_version": "3.9.*"
       }
      }
     ]
@@ -152,11 +152,11 @@
   ],
   "package": {
    "name": "orderly-set",
-   "version": "5.2.3"
+   "version": "5.3.0"
   },
   "requirements": {
    "host": [
-    "python ==3.9",
+    "python 3.9.*",
     "pip",
     "setuptools"
    ],
@@ -166,8 +166,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "571ed97c5a5fca7ddeb6b2d26c19aca896b0ed91f334d9c109edd2f265fb3017",
-   "url": "https://pypi.org/packages/source/o/orderly-set/orderly_set-5.2.3.tar.gz"
+   "sha256": "80b3d8fdd3d39004d9aad389eaa0eab02c71f0a0511ba3a6d54a935a6c6a0acc",
+   "url": "https://pypi.org/packages/source/o/orderly-set/orderly_set-5.3.0.tar.gz"
   }
  },
  "name": "orderly-set",
@@ -177,14 +177,14 @@
    "orderly-set"
   ]
  },
- "parsing_error": "feedstock parsing error: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error CalledProcessError raised:\n1, ['rattler-build', 'build', '--render-only', '--variant-config', PosixPath('/tmp/tmpcd_rww78/orderly-set-feedstock-main/.ci_support/linux_64_.yaml'), '--build-platform', 'linux-64']\nTraceback (most recent call last):\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/make_graph.py\", line 102, in try_load_feedstock\n    data = load_feedstock(name, attrs.data, mark_not_archived=mark_not_archived)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 705, in load_feedstock\n    return load_feedstock_containerized(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 657, in load_feedstock_containerized\n    data = run_container_operation(\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/micromamba/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/container_utils.py\", line 264, in run_container_operation\n    raise ContainerRuntimeError(\nconda_forge_feedstock_ops.container_utils.ContainerRuntimeError: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error CalledProcessError raised:\n1, ['rattler-build', 'build', '--render-only', '--variant-config', PosixPath('/tmp/tmpcd_rww78/orderly-set-feedstock-main/.ci_support/linux_64_.yaml'), '--build-platform', 'linux-64']\n",
+ "parsing_error": false,
  "platforms": [
   "linux_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/orderly-set.json"
  },
- "raw_meta_yaml": "context:\n  name: orderly-set\n  version: 5.2.3\n  python_min: \"3.9\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/orderly_set-${{ version }}.tar.gz\n  sha256: 571ed97c5a5fca7ddeb6b2d26c19aca896b0ed91f334d9c109edd2f265fb3017\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install . -vv\n\nrequirements:\n  host:\n    - python ${{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >=${{ python_min }}\n\ntests:\n  - python:\n      imports:\n        - orderly_set\n      pip_check: true\n      python_version: ${{ python_min }}\n\nabout:\n  summary: Orderly set\n  license: MIT\n  license_file: MIT-LICENSE\n  homepage: https://github.com/seperman/orderly-set\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "raw_meta_yaml": "context:\n  name: orderly-set\n  version: 5.3.0\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/orderly_set-${{ version }}.tar.gz\n  sha256: 80b3d8fdd3d39004d9aad389eaa0eab02c71f0a0511ba3a6d54a935a6c6a0acc\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install . -vv\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - pip\n    - setuptools\n  run:\n    - python >=${{ python_min }}\n\ntests:\n  - python:\n      imports:\n        - orderly_set\n      pip_check: true\n      python_version: ${{ python_min }}.*\n\nabout:\n  summary: Orderly set\n  license: MIT\n  license_file: MIT-LICENSE\n  homepage: https://github.com/seperman/orderly-set\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -229,7 +229,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python ==3.9",
+    "python 3.9.*",
     "setuptools"
    ]
   },
@@ -246,8 +246,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/o/orderly-set/orderly_set-5.2.3.tar.gz",
- "version": "5.2.3",
+ "url": "https://pypi.org/packages/source/o/orderly-set/orderly_set-5.3.0.tar.gz",
+ "version": "5.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/orderly-set.json"
  }
