@@ -17,6 +17,8 @@
    "tooling_branch_name": "main"
   },
   "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default",
    "win": "azure"
   },
   "test": "native_and_emulated"
@@ -91,6 +93,216 @@
   }
  },
  "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "imagemagick",
+    "r-base",
+    "r-curl",
+    "r-magrittr",
+    "r-rcpp"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "imagemagick",
+    "r-base",
+    "r-curl",
+    "r-magrittr",
+    "r-rcpp"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/ropensci/magick",
+   "home": "https://docs.ropensci.org/magick",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary": "Bindings to 'ImageMagick': the most comprehensive open-source image processing library available. Supports many common formats (png, jpeg, tiff, pdf, etc) and manipulations (rotate, scale, crop, trim, flip, blur, etc). All operations are vectorized via the Magick++ STL meaning they operate either on a single frame or a series of frames for working with layers, collages, or animation. In RStudio images are automatically previewed when printed to the console, resulting in an interactive editing environment. The latest  version of the package includes a native graphics device for creating  in-memory graphics or drawing onto images using pixel coordinates."
+  },
+  "build": {
+   "number": "0",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-magick",
+   "version": "2.8.5"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "autoconf",
+    "automake",
+    "pkg-config",
+    "make"
+   ],
+   "host": [
+    "r-base",
+    "r-rcpp >=0.12.12",
+    "r-curl",
+    "r-magrittr",
+    "imagemagick"
+   ],
+   "run": [
+    "r-base",
+    "r-rcpp >=0.12.12",
+    "r-curl",
+    "r-magrittr",
+    "imagemagick"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "eaed903c16515794f18208f1e646322fa89b4bd7e16066b885fde94d0da11c5a",
+   "url": [
+    "https://cran.r-project.org/src/contrib/magick_2.8.5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/magick/magick_2.8.5.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('magick')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "imagemagick",
+    "r-base",
+    "r-curl",
+    "r-magrittr",
+    "r-rcpp"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "imagemagick",
+    "r-base",
+    "r-curl",
+    "r-magrittr",
+    "r-rcpp"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "dev_url": "https://github.com/ropensci/magick",
+   "home": "https://docs.ropensci.org/magick",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary": "Bindings to 'ImageMagick': the most comprehensive open-source image processing library available. Supports many common formats (png, jpeg, tiff, pdf, etc) and manipulations (rotate, scale, crop, trim, flip, blur, etc). All operations are vectorized via the Magick++ STL meaning they operate either on a single frame or a series of frames for working with layers, collages, or animation. In RStudio images are automatically previewed when printed to the console, resulting in an interactive editing environment. The latest  version of the package includes a native graphics device for creating  in-memory graphics or drawing onto images using pixel coordinates."
+  },
+  "build": {
+   "number": "0",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-magick",
+   "version": "2.8.5"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "autoconf",
+    "automake",
+    "pkg-config",
+    "make"
+   ],
+   "host": [
+    "r-base",
+    "r-rcpp >=0.12.12",
+    "r-curl",
+    "r-magrittr",
+    "imagemagick"
+   ],
+   "run": [
+    "r-base",
+    "r-rcpp >=0.12.12",
+    "r-curl",
+    "r-magrittr",
+    "imagemagick"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "eaed903c16515794f18208f1e646322fa89b4bd7e16066b885fde94d0da11c5a",
+   "url": [
+    "https://cran.r-project.org/src/contrib/magick_2.8.5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/magick/magick_2.8.5.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('magick')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
    "elements": [
@@ -427,6 +639,8 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
   "osx_arm64",
   "win_64"
@@ -568,6 +782,10 @@
   }
  },
  "url": [
+  "https://cran.r-project.org/src/contrib/magick_2.8.5.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/magick/magick_2.8.5.tar.gz",
+  "https://cran.r-project.org/src/contrib/magick_2.8.5.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/magick/magick_2.8.5.tar.gz",
   "https://cran.r-project.org/src/contrib/magick_2.8.5.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/magick/magick_2.8.5.tar.gz",
   "https://cran.r-project.org/src/contrib/magick_2.8.5.tar.gz",
