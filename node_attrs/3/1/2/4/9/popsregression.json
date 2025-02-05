@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "popsregression",
-   "version": "0.2.8.2"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "539c22323d1be6dffcf09404fb776f7bbe0c56403b648de49ff7284172616b4e",
-   "url": "https://pypi.org/packages/source/P/POPSregression/popsregression-0.2.8.2.tar.gz"
+   "sha256": "f1d8fbb7a61b80d775ad0615c7ddb99abb39888523ce43c2ced82962d38c5fec",
+   "url": "https://pypi.org/packages/source/P/POPSregression/popsregression-0.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -122,7 +122,7 @@
   },
   "package": {
    "name": "popsregression",
-   "version": "0.2.8.2"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -140,8 +140,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "539c22323d1be6dffcf09404fb776f7bbe0c56403b648de49ff7284172616b4e",
-   "url": "https://pypi.org/packages/source/P/POPSregression/popsregression-0.2.8.2.tar.gz"
+   "sha256": "f1d8fbb7a61b80d775ad0615c7ddb99abb39888523ce43c2ced82962d38c5fec",
+   "url": "https://pypi.org/packages/source/P/POPSregression/popsregression-0.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -170,7 +170,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/popsregression.json"
  },
- "raw_meta_yaml": "{% set name = \"POPSregression\" %}\n{% set version = \"0.2.8.2\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/popsregression-{{ version }}.tar.gz\n  sha256: 539c22323d1be6dffcf09404fb776f7bbe0c56403b648de49ff7284172616b4e\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=45\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - scikit-learn >=0.24.0\n    - scipy >=1.6.0\n    - numpy >=1.20.0\n\ntest:\n  imports:\n    - POPSRegression\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tomswinburne/POPS-Regression\n  summary: Bayesian regression for low-noise data using POPS algorithm\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - tomswinburne\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"POPSregression\" %}\n{% set version = \"0.3.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/popsregression-{{ version }}.tar.gz\n  sha256: f1d8fbb7a61b80d775ad0615c7ddb99abb39888523ce43c2ced82962d38c5fec\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=45\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - scikit-learn >=0.24.0\n    - scipy >=1.6.0\n    - numpy >=1.20.0\n\ntest:\n  imports:\n    - POPSRegression\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tomswinburne/POPS-Regression\n  summary: Bayesian regression for low-noise data using POPS algorithm\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - tomswinburne\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -246,8 +246,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/P/POPSregression/popsregression-0.2.8.2.tar.gz",
- "version": "0.2.8.2",
+ "url": "https://pypi.org/packages/source/P/POPSregression/popsregression-0.3.0.tar.gz",
+ "version": "0.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/popsregression.json"
  }
