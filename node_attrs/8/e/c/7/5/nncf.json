@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "nncf",
-   "version": "2.14.1"
+   "version": "2.15.0"
   },
   "requirements": {
    "host": [
@@ -54,26 +54,26 @@
     "natsort >=7.1.0",
     "networkx >=2.6, <=3.3",
     "ninja >=1.10.0.post2, <1.12",
-    "numpy >=1.19.1, <2.2.0",
+    "numpy >=1.24.0, <2.2.0",
     "openvino-telemetry >=2023.2.0",
     "packaging >=20.0",
     "pandas >=1.1.5, <2.3",
     "pymoo >=0.6.0.1",
     "psutil",
+    "py-cpuinfo >=9.0.0",
     "pydot >=1.4.1, <3.0.0",
     "rich >=13.5.2",
     "python >=3.9",
     "scikit-learn >=0.24.0",
     "scipy >=1.3.2",
     "tabulate >=0.9.0",
-    "tqdm >=4.54.1",
     "safetensors >=0.4.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b40fb3495c678d9b67f8818113e2fe3011feeb258a6338657c612fa0f3ee1f3c",
-   "url": "https://pypi.org/packages/source/n/nncf/nncf-2.14.1.tar.gz"
+   "sha256": "ee218f100a7d9c32ac7546c7a40df0cc82d6debd9bb3fae6010ae226d073e27f",
+   "url": "https://pypi.org/packages/source/n/nncf/nncf-2.15.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -114,6 +114,7 @@
     "packaging",
     "pandas",
     "psutil",
+    "py-cpuinfo",
     "pydot",
     "pymoo",
     "python",
@@ -121,8 +122,7 @@
     "safetensors",
     "scikit-learn",
     "scipy",
-    "tabulate",
-    "tqdm"
+    "tabulate"
    ]
   },
   "test": {
@@ -155,7 +155,7 @@
   },
   "package": {
    "name": "nncf",
-   "version": "2.14.1"
+   "version": "2.15.0"
   },
   "requirements": {
    "host": [
@@ -171,26 +171,26 @@
     "natsort >=7.1.0",
     "networkx >=2.6, <=3.3",
     "ninja >=1.10.0.post2, <1.12",
-    "numpy >=1.19.1, <2.2.0",
+    "numpy >=1.24.0, <2.2.0",
     "openvino-telemetry >=2023.2.0",
     "packaging >=20.0",
     "pandas >=1.1.5, <2.3",
     "pymoo >=0.6.0.1",
     "psutil",
+    "py-cpuinfo >=9.0.0",
     "pydot >=1.4.1, <3.0.0",
     "rich >=13.5.2",
     "python >=3.9",
     "scikit-learn >=0.24.0",
     "scipy >=1.3.2",
     "tabulate >=0.9.0",
-    "tqdm >=4.54.1",
     "safetensors >=0.4.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b40fb3495c678d9b67f8818113e2fe3011feeb258a6338657c612fa0f3ee1f3c",
-   "url": "https://pypi.org/packages/source/n/nncf/nncf-2.14.1.tar.gz"
+   "sha256": "ee218f100a7d9c32ac7546c7a40df0cc82d6debd9bb3fae6010ae226d073e27f",
+   "url": "https://pypi.org/packages/source/n/nncf/nncf-2.15.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -217,7 +217,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/nncf.json"
  },
- "raw_meta_yaml": "{% set name = \"nncf\" %}\n{% set version = \"2.14.1\" %}\n{% set python_min = \"3.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b40fb3495c678d9b67f8818113e2fe3011feeb258a6338657c612fa0f3ee1f3c\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --install-option=--release\n\nrequirements:\n  host:\n    - pip ==22.2\n    - python {{ python_min }}\n    - python-build\n    - setuptools >=61.0\n    - wheel\n  run:\n    - jsonschema >=3.2.0\n    - jstyleson >=0.0.2\n    - natsort >=7.1.0\n    - networkx >=2.6, <=3.3\n    - ninja >=1.10.0.post2, <1.12\n    - numpy >=1.19.1, <2.2.0\n    - openvino-telemetry >=2023.2.0\n    - packaging >=20.0\n    - pandas >=1.1.5, <2.3\n    - pymoo >=0.6.0.1\n    - psutil\n    - pydot >=1.4.1, <3.0.0\n    - rich >=13.5.2\n    - python >={{ python_min }}\n    - scikit-learn >=0.24.0\n    - scipy >=1.3.2\n    - tabulate >=0.9.0\n    - tqdm >=4.54.1\n    - safetensors >=0.4.1\n\ntest:\n  imports:\n    - nncf\n    - nncf.api\n#  commands:\n#    - pip check  # won't work because conda's version of ninja does not get registered in pip - https://github.com/mesonbuild/meson-python/issues/60, https://github.com/pypa/pip/issues/11157\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/openvinotoolkit/nncf\n  summary: Neural Networks Compression Framework\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - sarthakpati\n    - vshampor\n    - KodiaqQ\n    - alexsu52\n",
+ "raw_meta_yaml": "{% set name = \"nncf\" %}\n{% set version = \"2.15.0\" %}\n{% set python_min = \"3.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: ee218f100a7d9c32ac7546c7a40df0cc82d6debd9bb3fae6010ae226d073e27f\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --install-option=--release\n\nrequirements:\n  host:\n    - pip ==22.2\n    - python {{ python_min }}\n    - python-build\n    - setuptools >=61.0\n    - wheel\n  run:\n    - jsonschema >=3.2.0\n    - jstyleson >=0.0.2\n    - natsort >=7.1.0\n    - networkx >=2.6, <=3.3\n    - ninja >=1.10.0.post2, <1.12\n    - numpy >=1.24.0, <2.2.0\n    - openvino-telemetry >=2023.2.0\n    - packaging >=20.0\n    - pandas >=1.1.5, <2.3\n    - pymoo >=0.6.0.1\n    - psutil\n    - py-cpuinfo >=9.0.0\n    - pydot >=1.4.1, <3.0.0\n    - rich >=13.5.2\n    - python >={{ python_min }}\n    - scikit-learn >=0.24.0\n    - scipy >=1.3.2\n    - tabulate >=0.9.0\n    - safetensors >=0.4.1\n\ntest:\n  imports:\n    - nncf\n    - nncf.api\n#  commands:\n#    - pip check  # won't work because conda's version of ninja does not get registered in pip - https://github.com/mesonbuild/meson-python/issues/60, https://github.com/pypa/pip/issues/11157\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/openvinotoolkit/nncf\n  summary: Neural Networks Compression Framework\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - sarthakpati\n    - vshampor\n    - KodiaqQ\n    - alexsu52\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -232,6 +232,7 @@
    "pandas",
    "pip",
    "psutil",
+   "py-cpuinfo",
    "pydot",
    "pymoo",
    "python",
@@ -242,7 +243,6 @@
    "scipy",
    "setuptools",
    "tabulate",
-   "tqdm",
    "wheel"
   ]
  },
@@ -274,6 +274,7 @@
     "packaging",
     "pandas",
     "psutil",
+    "py-cpuinfo",
     "pydot",
     "pymoo",
     "python",
@@ -281,8 +282,7 @@
     "safetensors",
     "scikit-learn",
     "scipy",
-    "tabulate",
-    "tqdm"
+    "tabulate"
    ]
   },
   "test": {
@@ -317,11 +317,12 @@
     "natsort >=7.1.0",
     "networkx >=2.6, <=3.3",
     "ninja >=1.10.0.post2, <1.12",
-    "numpy >=1.19.1, <2.2.0",
+    "numpy >=1.24.0, <2.2.0",
     "openvino-telemetry >=2023.2.0",
     "packaging >=20.0",
     "pandas >=1.1.5, <2.3",
     "psutil",
+    "py-cpuinfo >=9.0.0",
     "pydot >=1.4.1, <3.0.0",
     "pymoo >=0.6.0.1",
     "python >=3.9",
@@ -329,8 +330,7 @@
     "safetensors >=0.4.1",
     "scikit-learn >=0.24.0",
     "scipy >=1.3.2",
-    "tabulate >=0.9.0",
-    "tqdm >=4.54.1"
+    "tabulate >=0.9.0"
    ]
   },
   "test": {
@@ -341,8 +341,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/n/nncf/nncf-2.14.1.tar.gz",
- "version": "2.14.1",
+ "url": "https://pypi.org/packages/source/n/nncf/nncf-2.15.0.tar.gz",
+ "version": "2.15.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/nncf.json"
  }
