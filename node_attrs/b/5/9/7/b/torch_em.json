@@ -33,11 +33,11 @@
   },
   "package": {
    "name": "torch_em",
-   "version": "0.7.5"
+   "version": "0.7.6"
   },
   "requirements": {
    "host": [
-    "python >=3.6",
+    "python 3.10",
     "pip",
     "setuptools"
    ],
@@ -46,7 +46,7 @@
     "bioimageio.spec >=0.5.2",
     "kornia",
     "natsort",
-    "python >=3.6",
+    "python >=3.10",
     "python-elf >=0.4.8",
     "pytorch",
     "tensorboard",
@@ -58,8 +58,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f9aaab8a89eebd0e7499807545efb1ceac3e9911a8f2ea3f7a139f73398cbd62",
-   "url": "https://github.com/constantinpape/torch_em/archive/0.7.5.tar.gz"
+   "patches": [
+    "fix_compile_test.patch"
+   ],
+   "sha256": "5f6bdf9b53e3bdaf3c3d8a3de351753a213c8a9e94bb700d3f9dd2441cb05cdb",
+   "url": "https://github.com/constantinpape/torch_em/archive/0.7.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -67,6 +70,9 @@
    ],
    "imports": [
     "torch_em"
+   ],
+   "requires": [
+    "python 3.10"
    ],
    "source_files": [
     "test/**/*.py"
@@ -105,7 +111,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -128,11 +136,11 @@
   },
   "package": {
    "name": "torch_em",
-   "version": "0.7.5"
+   "version": "0.7.6"
   },
   "requirements": {
    "host": [
-    "python >=3.6",
+    "python 3.10",
     "pip",
     "setuptools"
    ],
@@ -141,7 +149,7 @@
     "bioimageio.spec >=0.5.2",
     "kornia",
     "natsort",
-    "python >=3.6",
+    "python >=3.10",
     "python-elf >=0.4.8",
     "pytorch",
     "tensorboard",
@@ -153,8 +161,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f9aaab8a89eebd0e7499807545efb1ceac3e9911a8f2ea3f7a139f73398cbd62",
-   "url": "https://github.com/constantinpape/torch_em/archive/0.7.5.tar.gz"
+   "patches": [
+    "fix_compile_test.patch"
+   ],
+   "sha256": "5f6bdf9b53e3bdaf3c3d8a3de351753a213c8a9e94bb700d3f9dd2441cb05cdb",
+   "url": "https://github.com/constantinpape/torch_em/archive/0.7.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -162,6 +173,9 @@
    ],
    "imports": [
     "torch_em"
+   ],
+   "requires": [
+    "python 3.10"
    ],
    "source_files": [
     "test/**/*.py"
@@ -182,7 +196,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/torch_em.json"
  },
- "raw_meta_yaml": "{% set version = \"0.7.5\" %}\n\npackage:\n  name: torch_em\n  version: {{ version }}\n\nsource:\n  url: https://github.com/constantinpape/torch_em/archive/{{ version }}.tar.gz\n  sha256: f9aaab8a89eebd0e7499807545efb1ceac3e9911a8f2ea3f7a139f73398cbd62\n\nbuild:\n  number: 0\n  script: pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - setuptools\n  run:\n    - bioimageio.core >=0.6.1\n    - bioimageio.spec >=0.5.2\n    - kornia\n    - natsort\n    - python >=3.6\n    - python-elf >=0.4.8\n    - pytorch\n    - tensorboard\n    - tifffile\n    - torchvision\n    - tqdm\n    - timm\n\ntest:\n  imports:\n    - torch_em\n  source_files:\n    - test/**/*.py\n  commands:\n    - python -m unittest discover -s test -v\n\nabout:\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: Deep-learning based semantic and instance segmentation for 3D Electron Microscopy and other bioimage analysis problems based on pytorch.\n  home: https://github.com/constantinpape/torch-em\n\nextra:\n  recipe-maintainers:\n    - constantinpape\n",
+ "raw_meta_yaml": "{% set version = \"0.7.6\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: torch_em\n  version: {{ version }}\n\nsource:\n  url: https://github.com/constantinpape/torch_em/archive/{{ version }}.tar.gz\n  sha256: 5f6bdf9b53e3bdaf3c3d8a3de351753a213c8a9e94bb700d3f9dd2441cb05cdb\n  patches:\n    - fix_compile_test.patch\n\nbuild:\n  number: 0\n  script: pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - bioimageio.core >=0.6.1\n    - bioimageio.spec >=0.5.2\n    - kornia\n    - natsort\n    - python >={{ python_min }}\n    - python-elf >=0.4.8\n    - pytorch\n    - tensorboard\n    - tifffile\n    - torchvision\n    - tqdm\n    - timm\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - torch_em\n  source_files:\n    - test/**/*.py\n  commands:\n    - python -m unittest discover -s test -v\n\nabout:\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: Deep-learning based semantic and instance segmentation for 3D Electron Microscopy and other bioimage analysis problems based on pytorch.\n  home: https://github.com/constantinpape/torch-em\n\nextra:\n  recipe-maintainers:\n    - constantinpape\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -234,7 +248,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -247,7 +263,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6",
+    "python 3.10",
     "setuptools"
    ]
   },
@@ -258,7 +274,7 @@
     "bioimageio.spec >=0.5.2",
     "kornia",
     "natsort",
-    "python >=3.6",
+    "python >=3.10",
     "python-elf >=0.4.8",
     "pytorch",
     "tensorboard",
@@ -270,11 +286,13 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.10"
+   ]
   }
  },
- "url": "https://github.com/constantinpape/torch_em/archive/0.7.5.tar.gz",
- "version": "0.7.5",
+ "url": "https://github.com/constantinpape/torch_em/archive/0.7.6.tar.gz",
+ "version": "0.7.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/torch_em.json"
  }
