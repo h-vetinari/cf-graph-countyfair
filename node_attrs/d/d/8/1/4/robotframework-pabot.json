@@ -8,6 +8,7 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -20,32 +21,72 @@
   "about": {
    "description": "A parallel executor for Robot Framework tests. With Pabot you can split one\nexecution into multiple and save test execution time.",
    "dev_url": "https://github.com/mkorpela/pabot",
-   "home": "https://pabot.org",
+   "home": "https://pabot.org/",
    "license": "Apache-2.0",
+   "license_family": "Apache-2.0",
    "license_file": "LICENSE.txt",
    "summary": "Parallel test runner for Robot Framework"
   },
   "build": {
-   "entry_points": [
-    "pabot = pabot.pabot:main"
-   ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "robotframework-pabot",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*",
+      "setuptools"
+     ],
+     "run": [
+      "natsort >=8.2.0",
+      "python >=3.9",
+      "robotframework >=3.2",
+      "robotframework-stacktrace >=0.4.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pabot",
+        "pabot.py3"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "pabot --version",
+       "pabot --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "robotframework-pabot",
-   "version": "4.0.6"
+   "version": "4.1.1"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools"
    ],
    "run": [
@@ -55,25 +96,10 @@
     "robotframework-stacktrace >=0.4.1"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "753a57aae5fb001fbe81ff583a629d0d9ca19cc90f5a8e841d87b2e9bd7033ce",
-   "url": "https://pypi.org/packages/source/r/robotframework-pabot/robotframework_pabot-4.0.6.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pabot --version",
-    "pabot --help"
-   ],
-   "imports": [
-    "pabot",
-    "pabot.py3"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+   "sha256": "487e006347458dcd3bd7ca54a203137e9de10ec14d613117956ed1305f05d1ab",
+   "url": "https://pypi.org/packages/source/r/robotframework-pabot/robotframework_pabot-4.1.1.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -110,32 +136,72 @@
   "about": {
    "description": "A parallel executor for Robot Framework tests. With Pabot you can split one\nexecution into multiple and save test execution time.",
    "dev_url": "https://github.com/mkorpela/pabot",
-   "home": "https://pabot.org",
+   "home": "https://pabot.org/",
    "license": "Apache-2.0",
+   "license_family": "Apache-2.0",
    "license_file": "LICENSE.txt",
    "summary": "Parallel test runner for Robot Framework"
   },
   "build": {
-   "entry_points": [
-    "pabot = pabot.pabot:main"
-   ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
   },
   "extra": {
    "recipe-maintainers": [
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "robotframework-pabot",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*",
+      "setuptools"
+     ],
+     "run": [
+      "natsort >=8.2.0",
+      "python >=3.9",
+      "robotframework >=3.2",
+      "robotframework-stacktrace >=0.4.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pabot",
+        "pabot.py3"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "pabot --version",
+       "pabot --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "robotframework-pabot",
-   "version": "4.0.6"
+   "version": "4.1.1"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools"
    ],
    "run": [
@@ -145,25 +211,10 @@
     "robotframework-stacktrace >=0.4.1"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "753a57aae5fb001fbe81ff583a629d0d9ca19cc90f5a8e841d87b2e9bd7033ce",
-   "url": "https://pypi.org/packages/source/r/robotframework-pabot/robotframework_pabot-4.0.6.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pabot --version",
-    "pabot --help"
-   ],
-   "imports": [
-    "pabot",
-    "pabot.py3"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+   "sha256": "487e006347458dcd3bd7ca54a203137e9de10ec14d613117956ed1305f05d1ab",
+   "url": "https://pypi.org/packages/source/r/robotframework-pabot/robotframework_pabot-4.1.1.tar.gz"
   }
  },
  "name": "robotframework-pabot",
@@ -180,7 +231,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/robotframework-pabot.json"
  },
- "raw_meta_yaml": "{% set version = \"4.0.6\" %}\n\n{% set python_min = python_min | default(\"3.9\") %}\n\npackage:\n  name: robotframework-pabot\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/r/robotframework-pabot/robotframework_pabot-{{ version }}.tar.gz\n  sha256: 753a57aae5fb001fbe81ff583a629d0d9ca19cc90f5a8e841d87b2e9bd7033ce\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n  entry_points:\n    - pabot = pabot.pabot:main\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - natsort >=8.2.0\n    - python >={{ python_min }}\n    - robotframework >=3.2\n    - robotframework-stacktrace >=0.4.1\n\ntest:\n  imports:\n    - pabot\n    - pabot.py3\n  commands:\n    - pip check\n    - pabot --version\n    - pabot --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pabot.org\n  summary: Parallel test runner for Robot Framework\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  description: |-\n    A parallel executor for Robot Framework tests. With Pabot you can split one\n    execution into multiple and save test execution time.\n  dev_url: https://github.com/mkorpela/pabot\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 4.1.1\n\npackage:\n  name: robotframework-pabot\n  version: ${{ version }}\n\nsource:\n  - url: https://pypi.org/packages/source/r/robotframework-pabot/robotframework_pabot-${{ version }}.tar.gz\n    sha256: 487e006347458dcd3bd7ca54a203137e9de10ec14d613117956ed1305f05d1ab\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n  python:\n    entry_points:\n      - pabot = pabot.pabot:main\n\nrequirements:\n  host:\n    - pip\n    - python ${{ python_min }}.*\n    - setuptools\n  run:\n    - natsort >=8.2.0\n    - python >=${{ python_min }}\n    - robotframework >=3.2\n    - robotframework-stacktrace >=0.4.1\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports:\n        - pabot\n        - pabot.py3\n  - requirements:\n      run:\n        - python ${{ python_min }}.*\n    script:\n      - pabot --version\n      - pabot --help\n\nabout:\n  summary: Parallel test runner for Robot Framework\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  description: |-\n    A parallel executor for Robot Framework tests. With Pabot you can split one\n    execution into multiple and save test execution time.\n  homepage: https://pabot.org\n  repository: https://github.com/mkorpela/pabot\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -232,7 +283,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools"
    ]
   },
@@ -249,12 +300,12 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/r/robotframework-pabot/robotframework_pabot-4.0.6.tar.gz",
- "version": "4.0.6",
+ "url": "https://pypi.org/packages/source/r/robotframework-pabot/robotframework_pabot-4.1.1.tar.gz",
+ "version": "4.1.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/robotframework-pabot.json"
  }
