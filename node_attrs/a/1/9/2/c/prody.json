@@ -29,7 +29,7 @@
     "evol = prody.apps:evol_main"
    ],
    "noarch": "python",
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -83,7 +83,7 @@
   },
   "schema_version": 0,
   "source": {
-   "git_rev": "ae61774",
+   "git_rev": "121619c",
    "git_url": "https://github.com/jamesmkrieger/prody.git"
   },
   "test": {
@@ -114,7 +114,8 @@
     "pip",
     "setuptools",
     "requests",
-    "pytest"
+    "pytest",
+    "pytest-xprocess"
    ]
   }
  },
@@ -176,6 +177,7 @@
     "pip",
     "pyparsing",
     "pytest",
+    "pytest-xprocess",
     "python",
     "requests",
     "scipy",
@@ -200,7 +202,7 @@
     "evol = prody.apps:evol_main"
    ],
    "noarch": "python",
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -254,7 +256,7 @@
   },
   "schema_version": 0,
   "source": {
-   "git_rev": "ae61774",
+   "git_rev": "121619c",
    "git_url": "https://github.com/jamesmkrieger/prody.git"
   },
   "test": {
@@ -285,7 +287,8 @@
     "pip",
     "setuptools",
     "requests",
-    "pytest"
+    "pytest",
+    "pytest-xprocess"
    ]
   }
  },
@@ -303,7 +306,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/prody.json"
  },
- "raw_meta_yaml": "{% set name = \"prody\" %}\n{% set version = \"2.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/jamesmkrieger/{{ name }}.git\n  git_rev: ae61774\n\nbuild:\n  noarch: python\n  number: 1\n  entry_points:\n    - prody = prody.apps:prody_main\n    - evol = prody.apps:evol_main\n\nrequirements:\n  build:\n    # If your project compiles code (such as a C extension) then add the required compilers as separate entries here.\n    # Compilers are named 'c', 'cxx', 'fortran', among others\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - python >={{ python_min }},<3.12\n    - biopython\n    - requests\n    - setuptools  # requires pkg_resources at runtime\n    - scipy\n    - pyparsing <=3.1.1\n    - conda-build\n    - gfortran\n    - gxx\n    - pip\n    - numpy >=1.10,<1.25\n  host:\n    - python {{ python_min }}\n    - pip <21.1\n    - setuptools\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - requests\n  run:\n    - python >={{ python_min }},<3.12\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - gfortran\n    - gxx\n    - pip\n    - setuptools\n    - requests\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - gfortran\n    - gxx\n    - pip\n    - setuptools\n    - requests\n    - pytest\n  commands:\n    - prody --help\n    - evol --help\n  imports:\n    - prody\n    - prody.atomic\n    - prody.database\n    - prody.dynamics\n    - prody.ensemble\n    - prody.kdtree\n    - prody.measure\n    - prody.proteins\n    - prody.sequence\n    - prody.trajectory\n\nabout:\n  home: http://www.bahargroup.org/prody/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.rst\n  summary: ProDy is a free and open-source Python package for protein structure, dynamics, and sequence analysis, developed by the Bahar lab.\n  description: |\n    ProDy is a free and open-source Python package for protein \n    structure, dynamics, and sequence analysis, developed by the\n    Bahar lab. It allows for comparative analysis and modeling of \n    protein structural  dynamics and sequence co-evolution. Fast \n    and flexible ProDy API is for interactive usage as well as \n    application development. ProDy also comes with several analysis \n    applications and a graphical user interface for visual analysis.\n  doc_url: http://www.bahargroup.org/prody/manual/\n  dev_url: https://github.com/prody/ProDy\n\nextra:\n  recipe-maintainers:\n    - jamesmkrieger\n    - simonbray\n",
+ "raw_meta_yaml": "{% set name = \"prody\" %}\n{% set version = \"2.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/jamesmkrieger/{{ name }}.git\n  git_rev: 121619c\n\nbuild:\n  noarch: python\n  number: 2\n  entry_points:\n    - prody = prody.apps:prody_main\n    - evol = prody.apps:evol_main\n\nrequirements:\n  build:\n    # If your project compiles code (such as a C extension) then add the required compilers as separate entries here.\n    # Compilers are named 'c', 'cxx', 'fortran', among others\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - python >={{ python_min }},<3.12\n    - biopython\n    - requests\n    - setuptools  # requires pkg_resources at runtime\n    - scipy\n    - pyparsing <=3.1.1\n    - conda-build\n    - gfortran\n    - gxx\n    - pip\n    - numpy >=1.10,<1.25\n  host:\n    - python {{ python_min }}\n    - pip <21.1\n    - setuptools\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - requests\n  run:\n    - python >={{ python_min }},<3.12\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - gfortran\n    - gxx\n    - pip\n    - setuptools\n    - requests\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - numpy >=1.10,<1.25\n    - scipy\n    - pyparsing <=3.1.1\n    - biopython\n    - gfortran\n    - gxx\n    - pip\n    - setuptools\n    - requests\n    - pytest\n    - pytest-xprocess\n  commands:\n    - prody --help\n    - evol --help\n  imports:\n    - prody\n    - prody.atomic\n    - prody.database\n    - prody.dynamics\n    - prody.ensemble\n    - prody.kdtree\n    - prody.measure\n    - prody.proteins\n    - prody.sequence\n    - prody.trajectory\n\nabout:\n  home: http://www.bahargroup.org/prody/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.rst\n  summary: ProDy is a free and open-source Python package for protein structure, dynamics, and sequence analysis, developed by the Bahar lab.\n  description: |\n    ProDy is a free and open-source Python package for protein \n    structure, dynamics, and sequence analysis, developed by the\n    Bahar lab. It allows for comparative analysis and modeling of \n    protein structural  dynamics and sequence co-evolution. Fast \n    and flexible ProDy API is for interactive usage as well as \n    application development. ProDy also comes with several analysis \n    applications and a graphical user interface for visual analysis.\n  doc_url: http://www.bahargroup.org/prody/manual/\n  dev_url: https://github.com/prody/ProDy\n\nextra:\n  recipe-maintainers:\n    - jamesmkrieger\n    - simonbray\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -391,6 +394,7 @@
     "pip",
     "pyparsing",
     "pytest",
+    "pytest-xprocess",
     "python",
     "requests",
     "scipy",
@@ -457,6 +461,7 @@
     "pip",
     "pyparsing <=3.1.1",
     "pytest",
+    "pytest-xprocess",
     "python 3.9",
     "requests",
     "scipy",
