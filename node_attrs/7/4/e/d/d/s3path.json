@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,15 +33,15 @@
   },
   "package": {
    "name": "s3path",
-   "version": "0.5.8"
+   "version": "0.6.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.8"
+    "python 3.9"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "boto3 >=1.16.35",
     "smart_open",
     "packaging"
@@ -49,12 +49,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "af5a46ae67694f4fff70b0975cb292a9c557282fae6ffb246d082ade2985e48f",
-   "url": "https://pypi.io/packages/source/s/s3path/s3path-0.5.8.tar.gz"
+   "sha256": "33cf732e2b73582e11e09f957bc475cc60237abd40f928973cf5ce0a4cf67b3d",
+   "url": "https://pypi.org/packages/source/s/s3path/s3path-0.6.0.tar.gz"
   },
   "test": {
    "imports": [
     "s3path"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -81,7 +84,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -94,7 +99,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -104,15 +109,15 @@
   },
   "package": {
    "name": "s3path",
-   "version": "0.5.8"
+   "version": "0.6.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.8"
+    "python 3.9"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "boto3 >=1.16.35",
     "smart_open",
     "packaging"
@@ -120,12 +125,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "af5a46ae67694f4fff70b0975cb292a9c557282fae6ffb246d082ade2985e48f",
-   "url": "https://pypi.io/packages/source/s/s3path/s3path-0.5.8.tar.gz"
+   "sha256": "33cf732e2b73582e11e09f957bc475cc60237abd40f928973cf5ce0a4cf67b3d",
+   "url": "https://pypi.org/packages/source/s/s3path/s3path-0.6.0.tar.gz"
   },
   "test": {
    "imports": [
     "s3path"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -143,7 +151,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/s3path.json"
  },
- "raw_meta_yaml": "{% set name = \"s3path\" %}\n{% set version = \"0.5.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: af5a46ae67694f4fff70b0975cb292a9c557282fae6ffb246d082ade2985e48f\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.8\n  run:\n    - python >=3.8\n    - boto3 >=1.16.35\n    - smart_open\n    - packaging\n\ntest:\n  imports:\n    - s3path\n\nabout:\n  home: https://github.com/liormizr/s3path\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Pathlib Extension for AWS S3 Service, to provide File-System/Path like interface\n\nextra:\n  recipe-maintainers:\n    - liormizr\n",
+ "raw_meta_yaml": "{% set name = \"s3path\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 33cf732e2b73582e11e09f957bc475cc60237abd40f928973cf5ce0a4cf67b3d\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - boto3 >=1.16.35\n    - smart_open\n    - packaging\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - s3path\n\nabout:\n  home: https://github.com/liormizr/s3path\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Pathlib Extension for AWS S3 Service, to provide File-System/Path like interface\n\nextra:\n  recipe-maintainers:\n    - liormizr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -177,7 +185,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -190,7 +200,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8"
+    "python 3.9"
    ]
   },
   "run": {
@@ -198,17 +208,19 @@
    "elements": [
     "boto3 >=1.16.35",
     "packaging",
-    "python >=3.8",
+    "python >=3.9",
     "smart_open"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/s/s3path/s3path-0.5.8.tar.gz",
- "version": "0.5.8",
+ "url": "https://pypi.org/packages/source/s/s3path/s3path-0.6.0.tar.gz",
+ "version": "0.6.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/s3path.json"
  }
