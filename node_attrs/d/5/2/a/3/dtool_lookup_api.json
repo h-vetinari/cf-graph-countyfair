@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "dtool_lookup_api",
-   "version": "0.10.1"
+   "version": "0.10.2"
   },
   "requirements": {
    "host": [
@@ -57,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6880f019b947269494b1e4d20171a1d82a277a788bd0bdfb600900cfab165305",
-   "url": "https://pypi.org/packages/source/d/dtool-lookup-api/dtool_lookup_api-0.10.1.tar.gz"
+   "sha256": "1f989f87b795d4becc0b1b2bb26ffeb6c4a41e2f58c582908516b4f68451481a",
+   "url": "https://pypi.org/packages/source/d/dtool-lookup-api/dtool_lookup_api-0.10.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -126,7 +126,7 @@
   },
   "package": {
    "name": "dtool_lookup_api",
-   "version": "0.10.1"
+   "version": "0.10.2"
   },
   "requirements": {
    "host": [
@@ -147,8 +147,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6880f019b947269494b1e4d20171a1d82a277a788bd0bdfb600900cfab165305",
-   "url": "https://pypi.org/packages/source/d/dtool-lookup-api/dtool_lookup_api-0.10.1.tar.gz"
+   "sha256": "1f989f87b795d4becc0b1b2bb26ffeb6c4a41e2f58c582908516b4f68451481a",
+   "url": "https://pypi.org/packages/source/d/dtool-lookup-api/dtool_lookup_api-0.10.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -177,7 +177,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/dtool_lookup_api.json"
  },
- "raw_meta_yaml": "{% set name = \"dtool_lookup_api\" %}\n{% set version = \"0.10.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/dtool-lookup-api/{{ name }}-{{ version }}.tar.gz\n  sha256: 6880f019b947269494b1e4d20171a1d82a277a788bd0bdfb600900cfab165305\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - setuptools_scm\n  run:\n    - certifi\n    - aiohttp\n    - asgiref\n    - dtoolcore >=3.9.0\n    - python >={{ python_min }}\n    - setuptools\n    - pyyaml\n\ntest:\n  imports:\n    - dtool_lookup_api\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/IMTEK-Simulation/dtool-lookup-api\n  summary: This package offers both synchronous and asynchronous implementations of a standardized Python API to communicate with the dtool lookup server.\n  license: MIT\n  license_file: LICENSE.rst\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"dtool_lookup_api\" %}\n{% set version = \"0.10.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/dtool-lookup-api/{{ name }}-{{ version }}.tar.gz\n  sha256: 1f989f87b795d4becc0b1b2bb26ffeb6c4a41e2f58c582908516b4f68451481a\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - setuptools_scm\n  run:\n    - certifi\n    - aiohttp\n    - asgiref\n    - dtoolcore >=3.9.0\n    - python >={{ python_min }}\n    - setuptools\n    - pyyaml\n\ntest:\n  imports:\n    - dtool_lookup_api\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/IMTEK-Simulation/dtool-lookup-api\n  summary: This package offers both synchronous and asynchronous implementations of a standardized Python API to communicate with the dtool lookup server.\n  license: MIT\n  license_file: LICENSE.rst\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -261,8 +261,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/dtool-lookup-api/dtool_lookup_api-0.10.1.tar.gz",
- "version": "0.10.1",
+ "url": "https://pypi.org/packages/source/d/dtool-lookup-api/dtool_lookup_api-0.10.2.tar.gz",
+ "version": "0.10.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/dtool_lookup_api.json"
  }
