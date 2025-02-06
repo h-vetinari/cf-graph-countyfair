@@ -41,7 +41,7 @@
   },
   "package": {
    "name": "graph-pes",
-   "version": "0.0.21"
+   "version": "0.0.22"
   },
   "requirements": {
    "host": [
@@ -54,7 +54,7 @@
     "ase",
     "dacite",
     "data2objects >=0.1.0",
-    "e3nn",
+    "e3nn ==0.5.3",
     "load-atoms >=0.3.9",
     "locache >=4.0.2",
     "numpy",
@@ -68,8 +68,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0c6c90f5b867f75db46f23fc6266fcf12a4eef857c9e0b9d5842bcb70029ddc7",
-   "url": "https://pypi.org/packages/source/g/graph-pes/graph_pes-0.0.21.tar.gz"
+   "sha256": "5f11b033752e41c458986532e380dc4a892bd8f28b6cee1fbc3cf4e37a844a47",
+   "url": "https://pypi.org/packages/source/g/graph-pes/graph_pes-0.0.22.tar.gz"
   },
   "test": {
    "commands": [
@@ -150,7 +150,7 @@
   },
   "package": {
    "name": "graph-pes",
-   "version": "0.0.21"
+   "version": "0.0.22"
   },
   "requirements": {
    "host": [
@@ -163,7 +163,7 @@
     "ase",
     "dacite",
     "data2objects >=0.1.0",
-    "e3nn",
+    "e3nn ==0.5.3",
     "load-atoms >=0.3.9",
     "locache >=4.0.2",
     "numpy",
@@ -177,8 +177,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0c6c90f5b867f75db46f23fc6266fcf12a4eef857c9e0b9d5842bcb70029ddc7",
-   "url": "https://pypi.org/packages/source/g/graph-pes/graph_pes-0.0.21.tar.gz"
+   "sha256": "5f11b033752e41c458986532e380dc4a892bd8f28b6cee1fbc3cf4e37a844a47",
+   "url": "https://pypi.org/packages/source/g/graph-pes/graph_pes-0.0.22.tar.gz"
   },
   "test": {
    "commands": [
@@ -209,7 +209,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/graph-pes.json"
  },
- "raw_meta_yaml": "{% set name = \"graph-pes\" %}\n{% set version = \"0.0.21\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/graph_pes-{{ version }}.tar.gz\n  sha256: 0c6c90f5b867f75db46f23fc6266fcf12a4eef857c9e0b9d5842bcb70029ddc7\n\nbuild:\n  entry_points:\n    - graph-pes-train = graph_pes.scripts.train:main\n    - graph-pes-id = graph_pes.scripts.id:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0.0\n    - wheel\n    - pip\n  run:\n    - ase\n    - dacite\n    - data2objects >=0.1.0\n    - e3nn\n    - load-atoms >=0.3.9\n    - locache >=4.0.2\n    - numpy\n    - python >={{ python_min }}\n    - pytorch\n    - pytorch-lightning\n    - rich\n    - scikit-learn\n    - wandb\n\ntest:\n  imports:\n    - graph_pes\n  commands:\n    - pip check\n    - graph-pes-train --help\n    - graph-pes-id --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://jla-gardner.github.io/graph-pes/\n  dev_url: https://github.com/jla-gradner/graph-pes\n  summary: Potential Energy Surfaces on Graphs\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - awvwgk\n",
+ "raw_meta_yaml": "{% set name = \"graph-pes\" %}\n{% set version = \"0.0.22\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/graph_pes-{{ version }}.tar.gz\n  sha256: 5f11b033752e41c458986532e380dc4a892bd8f28b6cee1fbc3cf4e37a844a47\n\nbuild:\n  entry_points:\n    - graph-pes-train = graph_pes.scripts.train:main\n    - graph-pes-id = graph_pes.scripts.id:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0.0\n    - wheel\n    - pip\n  run:\n    - ase\n    - dacite\n    - data2objects >=0.1.0\n    - e3nn ==0.5.3\n    - load-atoms >=0.3.9\n    - locache >=4.0.2\n    - numpy\n    - python >={{ python_min }}\n    - pytorch\n    - pytorch-lightning\n    - rich\n    - scikit-learn\n    - wandb\n\ntest:\n  imports:\n    - graph_pes\n  commands:\n    - pip check\n    - graph-pes-train --help\n    - graph-pes-id --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://jla-gardner.github.io/graph-pes/\n  dev_url: https://github.com/jla-gradner/graph-pes\n  summary: Potential Energy Surfaces on Graphs\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - awvwgk\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -292,7 +292,7 @@
     "ase",
     "dacite",
     "data2objects >=0.1.0",
-    "e3nn",
+    "e3nn ==0.5.3",
     "load-atoms >=0.3.9",
     "locache >=4.0.2",
     "numpy",
@@ -312,8 +312,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/graph-pes/graph_pes-0.0.21.tar.gz",
- "version": "0.0.21",
+ "url": "https://pypi.org/packages/source/g/graph-pes/graph_pes-0.0.22.tar.gz",
+ "version": "0.0.22",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/graph-pes.json"
  }
