@@ -32,7 +32,7 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SophieCurinier",
+    "andrewg-mira",
     "sebhmg"
    ]
   },
@@ -48,15 +48,15 @@
     "pip"
    ],
    "run": [
-    "python >=3.10,<3.11",
+    "python >=3.10,<4.0.0",
     "discretize >=0.10.0,<0.11.0",
-    "numpy >=1.23.5,<1.24.0",
-    "scipy >=1.10.1,<1.11.0",
-    "geoh5py >=0.9.0,<0.10.0",
-    "geoapps-utils >=0.3.0,<0.4.0",
+    "numpy >=1.26.0,<1.27.0",
+    "scipy >=1.14.0,<1.15.0",
+    "geoh5py 0.10.*",
+    "geoapps-utils 0.4.*",
     "h5py >=3.2.1,<4.0.0",
     "pillow >=10.3.0,<10.4.0",
-    "pydantic >=2.5.2,<2.6.0"
+    "pydantic >=2.5.2,<3.0.0"
    ]
   },
   "schema_version": 0,
@@ -132,7 +132,7 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SophieCurinier",
+    "andrewg-mira",
     "sebhmg"
    ]
   },
@@ -148,15 +148,15 @@
     "pip"
    ],
    "run": [
-    "python >=3.10,<3.11",
+    "python >=3.10,<4.0.0",
     "discretize >=0.10.0,<0.11.0",
-    "numpy >=1.23.5,<1.24.0",
-    "scipy >=1.10.1,<1.11.0",
-    "geoh5py >=0.9.0,<0.10.0",
-    "geoapps-utils >=0.3.0,<0.4.0",
+    "numpy >=1.26.0,<1.27.0",
+    "scipy >=1.14.0,<1.15.0",
+    "geoh5py 0.10.*",
+    "geoapps-utils 0.4.*",
     "h5py >=3.2.1,<4.0.0",
     "pillow >=10.3.0,<10.4.0",
-    "pydantic >=2.5.2,<2.6.0"
+    "pydantic >=2.5.2,<3.0.0"
    ]
   },
   "schema_version": 0,
@@ -191,7 +191,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/octree-creation-app.json"
  },
- "raw_meta_yaml": "{% set name = \"octree-creation-app\" %}\n{% set version = \"0.1.1\" %}\n{% set python_min = \"3.10\" %}\n{% set python_max = \"3.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/MiraGeoscience/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: b3359c7b3333a3208fa78c4f114eae8b5be0b256ece51aa4b9d14b5f2998bf3b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }},<{{ python_max }}\n    - discretize >=0.10.0,<0.11.0\n    - numpy >=1.23.5,<1.24.0\n    - scipy >=1.10.1,<1.11.0\n    - geoh5py >=0.9.0,<0.10.0\n    - geoapps-utils >=0.3.0,<0.4.0\n    - h5py >=3.2.1,<4.0.0\n    - pillow >=10.3.0,<10.4.0\n    - pydantic >=2.5.2,<2.6.0\n\ntest:\n  imports:\n    - octree_creation_app\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://www.mirageoscience.com/mining-industry-software/python-integration/\n  summary: 'Octree creation app.'\n  description: |\n    The octree-creation-app package lets users create Octree mesh objects with local \n    refinements using the SimPEG.discretize package. The refinements can be performed \n    on any number of Objects stored in a geoh5 file.\n  license: MIT\n  license_file: \n    - LICENSE\n  doc_url: https://mirageoscience-octree-creation-app.readthedocs-hosted.com/\n  dev_url: https://github.com/MiraGeoscience/octree-creation-app\n\nextra:\n  recipe-maintainers:\n    - SophieCurinier\n    - sebhmg\n",
+ "raw_meta_yaml": "{% set name = \"octree-creation-app\" %}\n{% set version = \"0.1.1\" %}\n{% set python_min = \"3.10\" %}\n{% set python_max = \"4.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/MiraGeoscience/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: b3359c7b3333a3208fa78c4f114eae8b5be0b256ece51aa4b9d14b5f2998bf3b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }},<{{ python_max }}\n    - discretize >=0.10.0,<0.11.0\n    - numpy >=1.26.0,<1.27.0\n    - scipy >=1.14.0,<1.15.0\n    - geoh5py 0.10.*\n    - geoapps-utils 0.4.*\n    - h5py >=3.2.1,<4.0.0\n    - pillow >=10.3.0,<10.4.0\n    - pydantic >=2.5.2,<3.0.0\n\ntest:\n  imports:\n    - octree_creation_app\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://www.mirageoscience.com/mining-industry-software/python-integration/\n  summary: 'Octree creation app.'\n  description: |\n    The octree-creation-app package lets users create Octree mesh objects with local \n    refinements using the SimPEG.discretize package. The refinements can be performed \n    on any number of Objects stored in a geoh5 file.\n  license: MIT\n  license_file: \n    - LICENSE\n  doc_url: https://mirageoscience-octree-creation-app.readthedocs-hosted.com/\n  dev_url: https://github.com/MiraGeoscience/octree-creation-app\n\nextra:\n  recipe-maintainers:\n    - andrewg-mira\n    - sebhmg\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -264,14 +264,14 @@
    "__set__": true,
    "elements": [
     "discretize >=0.10.0,<0.11.0",
-    "geoapps-utils >=0.3.0,<0.4.0",
-    "geoh5py >=0.9.0,<0.10.0",
+    "geoapps-utils 0.4.*",
+    "geoh5py 0.10.*",
     "h5py >=3.2.1,<4.0.0",
-    "numpy >=1.23.5,<1.24.0",
+    "numpy >=1.26.0,<1.27.0",
     "pillow >=10.3.0,<10.4.0",
-    "pydantic >=2.5.2,<2.6.0",
-    "python >=3.10,<3.11",
-    "scipy >=1.10.1,<1.11.0"
+    "pydantic >=2.5.2,<3.0.0",
+    "python >=3.10,<4.0.0",
+    "scipy >=1.14.0,<1.15.0"
    ]
   },
   "test": {
