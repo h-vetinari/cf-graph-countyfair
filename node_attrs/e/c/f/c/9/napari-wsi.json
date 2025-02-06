@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -34,31 +34,28 @@
   },
   "package": {
    "name": "napari-wsi",
-   "version": "0.1.4"
+   "version": "1.0.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "poetry-core",
-    "python 3.10"
+    "hatchling",
+    "python 3.11"
    ],
    "run": [
-    "dask >=2023",
-    "imagecodecs >=2023.9.18",
-    "magicgui >=0.7.3",
-    "matplotlib-base >=3.8",
-    "napari >=0.4.18",
+    "dask >=2025.1",
+    "magicgui >=0.10",
     "numpy >=1.26",
-    "python >=3.10,<3.12",
-    "rasterio >=1.3",
-    "tifffile >=2023",
-    "zarr >=2.16"
+    "pillow >=11.1",
+    "python >=3.11",
+    "universal_pathlib >=0.2",
+    "zarr >=3.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "eaf1271b93aba97b6c50664b0bc5fa4f0489a46a302b8043b09d3af651d92557",
-   "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-0.1.4.tar.gz"
+   "sha256": "98f5962c81f363196fc4b964c34acf645ca57ebae998452f9eca5bd0fb6da776",
+   "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -70,7 +67,7 @@
    ],
    "requires": [
     "pip",
-    "python 3.10"
+    "python 3.11"
    ]
   }
  },
@@ -82,8 +79,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
     "python"
    ]
   },
@@ -91,14 +88,11 @@
    "__set__": true,
    "elements": [
     "dask",
-    "imagecodecs",
     "magicgui",
-    "matplotlib-base",
-    "napari",
     "numpy",
+    "pillow",
     "python",
-    "rasterio",
-    "tifffile",
+    "universal_pathlib",
     "zarr"
    ]
   },
@@ -119,7 +113,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -131,31 +125,28 @@
   },
   "package": {
    "name": "napari-wsi",
-   "version": "0.1.4"
+   "version": "1.0.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "poetry-core",
-    "python 3.10"
+    "hatchling",
+    "python 3.11"
    ],
    "run": [
-    "dask >=2023",
-    "imagecodecs >=2023.9.18",
-    "magicgui >=0.7.3",
-    "matplotlib-base >=3.8",
-    "napari >=0.4.18",
+    "dask >=2025.1",
+    "magicgui >=0.10",
     "numpy >=1.26",
-    "python >=3.10,<3.12",
-    "rasterio >=1.3",
-    "tifffile >=2023",
-    "zarr >=2.16"
+    "pillow >=11.1",
+    "python >=3.11",
+    "universal_pathlib >=0.2",
+    "zarr >=3.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "eaf1271b93aba97b6c50664b0bc5fa4f0489a46a302b8043b09d3af651d92557",
-   "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-0.1.4.tar.gz"
+   "sha256": "98f5962c81f363196fc4b964c34acf645ca57ebae998452f9eca5bd0fb6da776",
+   "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -167,7 +158,7 @@
    ],
    "requires": [
     "pip",
-    "python 3.10"
+    "python 3.11"
    ]
   }
  },
@@ -185,21 +176,18 @@
  "pr_info": {
   "__lazy_json__": "pr_info/napari-wsi.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"napari-wsi\" %}\n{% set version = \"0.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari_wsi-{{ version }}.tar.gz\n  sha256: eaf1271b93aba97b6c50664b0bc5fa4f0489a46a302b8043b09d3af651d92557\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - poetry-core\n    - python {{ python_min }}\n  run:\n    - dask >=2023\n    - imagecodecs >=2023.9.18\n    - magicgui >=0.7.3\n    - matplotlib-base >=3.8\n    - napari >=0.4.18\n    - numpy >=1.26\n    - python >={{ python_min }},<3.12\n    - rasterio >=1.3\n    - tifffile >=2023\n    - zarr >=2.16\n\ntest:\n  imports:\n    - napari_wsi\n  commands:\n    - pip list\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/AstraZeneca/napari-wsi\n  summary: A plugin to read whole slide images within napari.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - jaimergp\n    - pmplewa\n",
+ "raw_meta_yaml": "{% set python_min = \"3.11\" %}\n{% set name = \"napari-wsi\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari_wsi-{{ version }}.tar.gz\n  sha256: 98f5962c81f363196fc4b964c34acf645ca57ebae998452f9eca5bd0fb6da776\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - hatchling\n    - python {{ python_min }}\n  run:\n    - dask >=2025.1\n    - magicgui >=0.10\n    - numpy >=1.26\n    # - openslide >=4.0\n    # - openslide-python >=1.4\n    - pillow >=11.1\n    - python >={{ python_min }}\n    # - rasterio >=1.4\n    - universal_pathlib >=0.2\n    # - wsidicom >=0.22\n    - zarr >=3.0\n\ntest:\n  imports:\n    - napari_wsi\n  commands:\n    - pip list\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/AstraZeneca/napari-wsi\n  summary: A plugin to read whole slide images within napari.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - jaimergp\n    - pmplewa\n",
  "req": {
   "__set__": true,
   "elements": [
    "dask",
-   "imagecodecs",
+   "hatchling",
    "magicgui",
-   "matplotlib-base",
-   "napari",
    "numpy",
+   "pillow",
    "pip",
-   "poetry-core",
    "python",
-   "rasterio",
-   "tifffile",
+   "universal_pathlib",
    "zarr"
   ]
  },
@@ -211,8 +199,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
     "python"
    ]
   },
@@ -220,14 +208,11 @@
    "__set__": true,
    "elements": [
     "dask",
-    "imagecodecs",
     "magicgui",
-    "matplotlib-base",
-    "napari",
     "numpy",
+    "pillow",
     "python",
-    "rasterio",
-    "tifffile",
+    "universal_pathlib",
     "zarr"
    ]
   },
@@ -248,36 +233,33 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
-    "python 3.10"
+    "python 3.11"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "dask >=2023",
-    "imagecodecs >=2023.9.18",
-    "magicgui >=0.7.3",
-    "matplotlib-base >=3.8",
-    "napari >=0.4.18",
+    "dask >=2025.1",
+    "magicgui >=0.10",
     "numpy >=1.26",
-    "python >=3.10,<3.12",
-    "rasterio >=1.3",
-    "tifffile >=2023",
-    "zarr >=2.16"
+    "pillow >=11.1",
+    "python >=3.11",
+    "universal_pathlib >=0.2",
+    "zarr >=3.0"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.10"
+    "python 3.11"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-0.1.4.tar.gz",
- "version": "0.1.4",
+ "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.0.0.tar.gz",
+ "version": "1.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/napari-wsi.json"
  }
