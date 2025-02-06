@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -43,7 +43,7 @@
       "pylsp = pylsp.__main__:main"
      ],
      "noarch": "python",
-     "number": "1",
+     "number": "0",
      "script": "python -m pip install . --no-deps --no-build-isolation -vv"
     },
     "name": "python-lsp-server-base",
@@ -68,19 +68,19 @@
      "commands": [
       "python -m pip check",
       "pylsp --help",
-      "pip list | grep -i python-lsp-server | grep 1.12.0"
+      "pip list | grep -i python-lsp-server | grep 1.12.1"
      ],
      "requires": [
       "pip",
       "python 3.9"
      ]
     },
-    "version": "1.12.0"
+    "version": "1.12.1"
    },
    {
     "build": {
      "noarch": "python",
-     "number": "1"
+     "number": "0"
     },
     "name": "python-lsp-server",
     "requirements": {
@@ -90,6 +90,7 @@
      ],
      "run": [
       "python-lsp-server-base",
+      "python >=3.9",
       "autopep8 >=2.0.4,<2.1.0",
       "flake8 >=7.1.0,<8.0.0",
       "mccabe >=0.7.0,<0.8.0",
@@ -106,19 +107,19 @@
      "commands": [
       "python -m pip check",
       "pylsp --help",
-      "pip list | grep -i python-lsp-server | grep 1.12.0"
+      "pip list | grep -i python-lsp-server | grep 1.12.1"
      ],
      "requires": [
       "pip",
       "python 3.9"
      ]
     },
-    "version": "1.12.0"
+    "version": "1.12.1"
    }
   ],
   "package": {
    "name": "python-lsp-server-meta",
-   "version": "1.12.0"
+   "version": "1.12.1"
   },
   "requirements": {
    "host": [
@@ -132,8 +133,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b6a336f128da03bd9bac1e61c3acca6e84242b8b31055a1ccf49d83df9dc053b",
-   "url": "https://pypi.org/packages/source/p/python-lsp-server/python_lsp_server-1.12.0.tar.gz"
+   "sha256": "bd90fcabf53066f0a66e4246767e96cd99c13ad16e61b95fd3ab622821ea048c",
+   "url": "https://pypi.org/packages/source/p/python-lsp-server/python_lsp_server-1.12.1.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -194,7 +195,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -212,7 +213,7 @@
       "pylsp = pylsp.__main__:main"
      ],
      "noarch": "python",
-     "number": "1",
+     "number": "0",
      "script": "python -m pip install . --no-deps --no-build-isolation -vv"
     },
     "name": "python-lsp-server-base",
@@ -237,19 +238,19 @@
      "commands": [
       "python -m pip check",
       "pylsp --help",
-      "pip list | grep -i python-lsp-server | grep 1.12.0"
+      "pip list | grep -i python-lsp-server | grep 1.12.1"
      ],
      "requires": [
       "pip",
       "python 3.9"
      ]
     },
-    "version": "1.12.0"
+    "version": "1.12.1"
    },
    {
     "build": {
      "noarch": "python",
-     "number": "1"
+     "number": "0"
     },
     "name": "python-lsp-server",
     "requirements": {
@@ -259,6 +260,7 @@
      ],
      "run": [
       "python-lsp-server-base",
+      "python >=3.9",
       "autopep8 >=2.0.4,<2.1.0",
       "flake8 >=7.1.0,<8.0.0",
       "mccabe >=0.7.0,<0.8.0",
@@ -275,19 +277,19 @@
      "commands": [
       "python -m pip check",
       "pylsp --help",
-      "pip list | grep -i python-lsp-server | grep 1.12.0"
+      "pip list | grep -i python-lsp-server | grep 1.12.1"
      ],
      "requires": [
       "pip",
       "python 3.9"
      ]
     },
-    "version": "1.12.0"
+    "version": "1.12.1"
    }
   ],
   "package": {
    "name": "python-lsp-server-meta",
-   "version": "1.12.0"
+   "version": "1.12.1"
   },
   "requirements": {
    "host": [
@@ -301,8 +303,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b6a336f128da03bd9bac1e61c3acca6e84242b8b31055a1ccf49d83df9dc053b",
-   "url": "https://pypi.org/packages/source/p/python-lsp-server/python_lsp_server-1.12.0.tar.gz"
+   "sha256": "bd90fcabf53066f0a66e4246767e96cd99c13ad16e61b95fd3ab622821ea048c",
+   "url": "https://pypi.org/packages/source/p/python-lsp-server/python_lsp_server-1.12.1.tar.gz"
   }
  },
  "name": "python-lsp-server-meta",
@@ -321,7 +323,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/python-lsp-server.json"
  },
- "raw_meta_yaml": "{% set name = \"python-lsp-server\" %}\n{% set version = \"1.12.0\" %}\n{% set build_number = 1 %}\n\npackage:\n  name: {{ name|lower }}-meta\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: b6a336f128da03bd9bac1e61c3acca6e84242b8b31055a1ccf49d83df9dc053b\n\nbuild:\n  number: {{ build_number }}\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - setuptools >=61.2.0\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\noutputs:\n  - name: {{ name|lower }}-base\n    version: {{ version }}\n    build:\n      number: {{ build_number }}\n      noarch: python\n      script: python -m pip install . --no-deps --no-build-isolation -vv\n      entry_points:\n        - pylsp = pylsp.__main__:main\n    requirements:\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools >=61.2.0\n        # Needed at build time to produce a package with the correct version for pip\n        # See https://github.com/pypa/setuptools_scm/issues/636#issuecomment-1026435048\n        - setuptools_scm >=3.4.3\n      run:\n        - python >={{ python_min }}\n        - importlib-metadata >=4.8.3\n        - jedi >=0.17.2,<0.20\n        - python-lsp-jsonrpc >=1.1.0,<2.0.0\n        - pluggy >=1.0.0\n        - docstring-to-markdown\n        - ujson >=3.0.0\n    test:\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - python -m pip check\n        - pylsp --help\n        # The pip version can be reported incorrectly if setuptools_scm isn't available\n        # at build time.\n        # Based on https://github.com/conda-forge/pyusb-feedstock/pull/4\n        - pip list | grep -i python-lsp-server | grep {{ version }}\n\n  - name: {{ name|lower }}\n    version: {{ version }}\n    build:\n      number: {{ build_number }}\n      noarch: python\n    requirements:\n      host:\n        - {{ pin_subpackage(\"python-lsp-server-base\", exact=True) }}\n        - python {{ python_min }}\n      run:\n        - {{ pin_subpackage(\"python-lsp-server-base\", exact=True) }}\n        - autopep8 >=2.0.4,<2.1.0\n        - flake8 >=7.1.0,<8.0.0\n        - mccabe >=0.7.0,<0.8.0\n        - pycodestyle >=2.12.0,<2.13.0\n        - pydocstyle >=6.3.0,<6.4.0\n        - pyflakes >=3.2.0,<3.3.0\n        - pylint >=3.1.0,<4.0.0\n        - rope >=1.11.0\n        - whatthepatch >=1.0.2,<2.0.0\n        - yapf >=0.33.0\n    test:\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - python -m pip check\n        - pylsp --help\n        # The pip version can be reported incorrectly if setuptools_scm isn't available\n        # at build time.\n        # Based on https://github.com/conda-forge/pyusb-feedstock/pull/4\n        - pip list | grep -i python-lsp-server | grep {{ version }}\n\nabout:\n  home: https://github.com/python-lsp/python-lsp-server\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: An implementation of the Language Server Protocol for Python\n  description: |\n    A Python 3.8+ implementation of the Language Server Protocol\n    making use of Jedi, pycodestyle, Pyflakes and YAPF.\n  dev_url: https://github.com/python-lsp/python-lsp-server\n\nextra:\n  recipe-maintainers:\n    - krassowski\n    - ccordoba12\n    - andfoy\n    - steff456\n    - dalthviz\n",
+ "raw_meta_yaml": "{% set name = \"python-lsp-server\" %}\n{% set version = \"1.12.1\" %}\n{% set build_number = 0 %}\n\npackage:\n  name: {{ name|lower }}-meta\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: bd90fcabf53066f0a66e4246767e96cd99c13ad16e61b95fd3ab622821ea048c\n\nbuild:\n  number: {{ build_number }}\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - setuptools >=61.2.0\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\noutputs:\n  - name: {{ name|lower }}-base\n    version: {{ version }}\n    build:\n      number: {{ build_number }}\n      noarch: python\n      script: python -m pip install . --no-deps --no-build-isolation -vv\n      entry_points:\n        - pylsp = pylsp.__main__:main\n    requirements:\n      host:\n        - python {{ python_min }}\n        - pip\n        - setuptools >=61.2.0\n        # Needed at build time to produce a package with the correct version for pip\n        # See https://github.com/pypa/setuptools_scm/issues/636#issuecomment-1026435048\n        - setuptools_scm >=3.4.3\n      run:\n        - python >={{ python_min }}\n        - importlib-metadata >=4.8.3\n        - jedi >=0.17.2,<0.20\n        - python-lsp-jsonrpc >=1.1.0,<2.0.0\n        - pluggy >=1.0.0\n        - docstring-to-markdown\n        - ujson >=3.0.0\n    test:\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - python -m pip check\n        - pylsp --help\n        # The pip version can be reported incorrectly if setuptools_scm isn't available\n        # at build time.\n        # Based on https://github.com/conda-forge/pyusb-feedstock/pull/4\n        - pip list | grep -i python-lsp-server | grep {{ version }}\n\n  - name: {{ name|lower }}\n    version: {{ version }}\n    build:\n      number: {{ build_number }}\n      noarch: python\n    requirements:\n      host:\n        - {{ pin_subpackage(\"python-lsp-server-base\", exact=True) }}\n        - python {{ python_min }}\n      run:\n        - {{ pin_subpackage(\"python-lsp-server-base\", exact=True) }}\n        - python >={{ python_min }}\n        - autopep8 >=2.0.4,<2.1.0\n        - flake8 >=7.1.0,<8.0.0\n        - mccabe >=0.7.0,<0.8.0\n        - pycodestyle >=2.12.0,<2.13.0\n        - pydocstyle >=6.3.0,<6.4.0\n        - pyflakes >=3.2.0,<3.3.0\n        - pylint >=3.1.0,<4.0.0\n        - rope >=1.11.0\n        - whatthepatch >=1.0.2,<2.0.0\n        - yapf >=0.33.0\n    test:\n      requires:\n        - pip\n        - python {{ python_min }}\n      commands:\n        - python -m pip check\n        - pylsp --help\n        # The pip version can be reported incorrectly if setuptools_scm isn't available\n        # at build time.\n        # Based on https://github.com/conda-forge/pyusb-feedstock/pull/4\n        - pip list | grep -i python-lsp-server | grep {{ version }}\n\nabout:\n  home: https://github.com/python-lsp/python-lsp-server\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: An implementation of the Language Server Protocol for Python\n  description: |\n    A Python 3.8+ implementation of the Language Server Protocol\n    making use of Jedi, pycodestyle, Pyflakes and YAPF.\n  dev_url: https://github.com/python-lsp/python-lsp-server\n\nextra:\n  recipe-maintainers:\n    - krassowski\n    - ccordoba12\n    - andfoy\n    - steff456\n    - dalthviz\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -441,8 +443,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/python-lsp-server/python_lsp_server-1.12.0.tar.gz",
- "version": "1.12.0",
+ "url": "https://pypi.org/packages/source/p/python-lsp-server/python_lsp_server-1.12.1.tar.gz",
+ "version": "1.12.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/python-lsp-server.json"
  }
