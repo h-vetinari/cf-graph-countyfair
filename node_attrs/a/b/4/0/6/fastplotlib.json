@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -105,7 +105,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fastplotlib.json"
  },
- "raw_meta_yaml": "{% set version = \"0.3.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: fastplotlib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/f/fastplotlib/fastplotlib-{{ version }}.tar.gz\n  sha256: 42876e94fd8d9f2499d32e723cc975c6672a76f2876d9f3c4118cfa9998cd3f2\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.23.0\n    - wgpu-py >=0.18.1\n    - pygfx ~=0.7.0\n    - cmap\n\ntest:\n  # Tests are in the run_test.py file\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/fastplotlib/fastplotlib\n  summary: A fast plotting library built using the pygfx render engine\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "raw_meta_yaml": "{% set version = \"0.3.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: fastplotlib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/f/fastplotlib/fastplotlib-{{ version }}.tar.gz\n  sha256: 42876e94fd8d9f2499d32e723cc975c6672a76f2876d9f3c4118cfa9998cd3f2\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.23.0\n    - wgpu-py >=0.18.1\n    - pygfx ~=0.7.0\n    - cmap\n\ntest:\n  # Tests are in the run_test.py file\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/fastplotlib/fastplotlib\n  summary: A fast plotting library built using the pygfx render engine\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req": {
   "__set__": true,
   "elements": [
