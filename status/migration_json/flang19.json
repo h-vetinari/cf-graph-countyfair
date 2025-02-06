@@ -493,6 +493,11 @@
       "num_descendants": 0,
       "pre_pr_migrator_status": ""
     },
+    "cuttools": {
+      "immediate_children": [],
+      "num_descendants": 0,
+      "pre_pr_migrator_status": ""
+    },
     "daetk": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -678,7 +683,7 @@
       "immediate_children": [
         "qcdloop-fortran"
       ],
-      "num_descendants": 1,
+      "num_descendants": 2,
       "pre_pr_migrator_status": ""
     },
     "fftlog": {
@@ -1530,8 +1535,10 @@
       "pre_pr_migrator_status": ""
     },
     "mpfun90": {
-      "immediate_children": [],
-      "num_descendants": 0,
+      "immediate_children": [
+        "cuttools"
+      ],
+      "num_descendants": 1,
       "pre_pr_migrator_status": ""
     },
     "mpi_serial": {
@@ -1860,9 +1867,10 @@
     },
     "oneloop": {
       "immediate_children": [
+        "cuttools",
         "ninja-hep-ph"
       ],
-      "num_descendants": 1,
+      "num_descendants": 2,
       "pre_pr_migrator_status": ""
     },
     "openblas": {
@@ -2195,7 +2203,7 @@
         "yggdrasil",
         "zoltan"
       ],
-      "num_descendants": 309,
+      "num_descendants": 310,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/openmp-feedstock",
       "pre_pr_migrator_status": ""
@@ -2516,8 +2524,10 @@
       "pre_pr_migrator_status": ""
     },
     "qcdloop-fortran": {
-      "immediate_children": [],
-      "num_descendants": 0,
+      "immediate_children": [
+        "cuttools"
+      ],
+      "num_descendants": 1,
       "pre_pr_migrator_status": ""
     },
     "qcxms": {
@@ -3362,6 +3372,7 @@
     "fortran_stdlib",
     "ff",
     "qcdloop-fortran",
+    "cuttools",
     "f77_zmq",
     "enumlib",
     "coretran",
