@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "sshfs",
-   "version": "2024.9.0"
+   "version": "2025.2.0"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "53589de34083f7f59203473526d80d9b1692267c37bf51f007d589660feaf458",
-   "url": "https://pypi.org/packages/source/s/sshfs/sshfs-2024.9.0.tar.gz"
+   "sha256": "1a60b872062078cfb9d954d9c728f3e72e5bc81aa913dc0f91e687305a005fe1",
+   "url": "https://pypi.org/packages/source/s/sshfs/sshfs-2025.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -109,7 +109,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -122,7 +122,7 @@
   },
   "package": {
    "name": "sshfs",
-   "version": "2024.9.0"
+   "version": "2025.2.0"
   },
   "requirements": {
    "host": [
@@ -138,8 +138,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "53589de34083f7f59203473526d80d9b1692267c37bf51f007d589660feaf458",
-   "url": "https://pypi.org/packages/source/s/sshfs/sshfs-2024.9.0.tar.gz"
+   "sha256": "1a60b872062078cfb9d954d9c728f3e72e5bc81aa913dc0f91e687305a005fe1",
+   "url": "https://pypi.org/packages/source/s/sshfs/sshfs-2025.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -169,7 +169,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sshfs.json"
  },
- "raw_meta_yaml": "{% set name = \"sshfs\" %}\n{% set version = \"2024.9.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sshfs-{{ version }}.tar.gz\n  sha256: 53589de34083f7f59203473526d80d9b1692267c37bf51f007d589660feaf458\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm >=6.3.1\n  run:\n    - asyncssh >=2.11.0,<3\n    - fsspec >=2021.8.1\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - sshfs\n    - sshfs.pools\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/sshfs/\n  summary: SSH Filesystem -- Async SSH/SFTP backend for fsspec\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - isidentical\n    - efiop\n    - pmrowla\n    - shcheklein\n",
+ "raw_meta_yaml": "{% set name = \"sshfs\" %}\n{% set version = \"2025.2.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sshfs-{{ version }}.tar.gz\n  sha256: 1a60b872062078cfb9d954d9c728f3e72e5bc81aa913dc0f91e687305a005fe1\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm >=6.3.1\n  run:\n    - asyncssh >=2.11.0,<3\n    - fsspec >=2021.8.1\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - sshfs\n    - sshfs.pools\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/sshfs/\n  summary: SSH Filesystem -- Async SSH/SFTP backend for fsspec\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - isidentical\n    - efiop\n    - pmrowla\n    - shcheklein\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -239,8 +239,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/sshfs/sshfs-2024.9.0.tar.gz",
- "version": "2024.9.0",
+ "url": "https://pypi.org/packages/source/s/sshfs/sshfs-2025.2.0.tar.gz",
+ "version": "2025.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sshfs.json"
  }
