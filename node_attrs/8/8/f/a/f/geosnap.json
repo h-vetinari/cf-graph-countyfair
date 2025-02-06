@@ -41,7 +41,7 @@
   },
   "package": {
    "name": "geosnap",
-   "version": "0.15.1"
+   "version": "0.15.2"
   },
   "requirements": {
    "host": [
@@ -77,8 +77,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a94e13ae9b426204567a195bad4f72210bdfd10aa417033a4024e52b13bf1ac9",
-   "url": "https://pypi.org/packages/source/g/geosnap/geosnap-0.15.1.tar.gz"
+   "sha256": "d78f177243446f6ffa0b5817184ee7e9e0bdb1571f79722821b0fc8dc7f5405a",
+   "url": "https://pypi.org/packages/source/g/geosnap/geosnap-0.15.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -162,7 +162,7 @@
   },
   "package": {
    "name": "geosnap",
-   "version": "0.15.1"
+   "version": "0.15.2"
   },
   "requirements": {
    "host": [
@@ -198,8 +198,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a94e13ae9b426204567a195bad4f72210bdfd10aa417033a4024e52b13bf1ac9",
-   "url": "https://pypi.org/packages/source/g/geosnap/geosnap-0.15.1.tar.gz"
+   "sha256": "d78f177243446f6ffa0b5817184ee7e9e0bdb1571f79722821b0fc8dc7f5405a",
+   "url": "https://pypi.org/packages/source/g/geosnap/geosnap-0.15.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -224,7 +224,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/geosnap.json"
  },
- "raw_meta_yaml": "{% set name = \"geosnap\" %}\n{% set version = \"0.15.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a94e13ae9b426204567a195bad4f72210bdfd10aa417033a4024e52b13bf1ac9\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools >=61.0\n    - setuptools-scm >=6.2\n  run:\n    - python >={{ python_min }}\n    - pandas\n    - giddy >=2.2.1\n    - libpysal\n    - geopandas\n    - matplotlib-base\n    - scikit-learn\n    - seaborn\n    - pyarrow >=0.14.1\n    - platformdirs\n    - tqdm\n    - quilt3 >=3.1.11\n    - xlrd\n    - mapclassify\n    - tobler >=0.8.2\n    - contextily\n    - spopt >=0.1.1\n    - fsspec\n    - s3fs\n    - segregation >=2.1\n    - pooch\n    - pandana >=0.7\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - geosnap\n\nabout:\n  home: http://github.com/spatialucr/geosnap\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Geospatial Neighborhood Analysis in Python\n\n  description: |\n    geosnap is an open-source, Python package for exploring, modeling, and visualizing neighborhood \n    dynamics. It provides a suite of tools for creating socio-spatial datasets, harmonizing those \n    datasets into consistent set of time-static boundaries, and modeling neighborhood change using \n    classic and spatial statistical methods.\n  doc_url: http://spatialucr.github.io/geosnap\n  dev_url: https://github.com/spatialucr/geosnap\n\nextra:\n  recipe-maintainers:\n    - jGaboardi\n    - knaaptime\n    - sjsrey\n",
+ "raw_meta_yaml": "{% set name = \"geosnap\" %}\n{% set version = \"0.15.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d78f177243446f6ffa0b5817184ee7e9e0bdb1571f79722821b0fc8dc7f5405a\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools >=61.0\n    - setuptools-scm >=6.2\n  run:\n    - python >={{ python_min }}\n    - pandas\n    - giddy >=2.2.1\n    - libpysal\n    - geopandas\n    - matplotlib-base\n    - scikit-learn\n    - seaborn\n    - pyarrow >=0.14.1\n    - platformdirs\n    - tqdm\n    - quilt3 >=3.1.11\n    - xlrd\n    - mapclassify\n    - tobler >=0.8.2\n    - contextily\n    - spopt >=0.1.1\n    - fsspec\n    - s3fs\n    - segregation >=2.1\n    - pooch\n    - pandana >=0.7\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - geosnap\n\nabout:\n  home: http://github.com/spatialucr/geosnap\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Geospatial Neighborhood Analysis in Python\n\n  description: |\n    geosnap is an open-source, Python package for exploring, modeling, and visualizing neighborhood \n    dynamics. It provides a suite of tools for creating socio-spatial datasets, harmonizing those \n    datasets into consistent set of time-static boundaries, and modeling neighborhood change using \n    classic and spatial statistical methods.\n  doc_url: http://spatialucr.github.io/geosnap\n  dev_url: https://github.com/spatialucr/geosnap\n\nextra:\n  recipe-maintainers:\n    - jGaboardi\n    - knaaptime\n    - sjsrey\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -352,8 +352,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/geosnap/geosnap-0.15.1.tar.gz",
- "version": "0.15.1",
+ "url": "https://pypi.org/packages/source/g/geosnap/geosnap-0.15.2.tar.gz",
+ "version": "0.15.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/geosnap.json"
  }
