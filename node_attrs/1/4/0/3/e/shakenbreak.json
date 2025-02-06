@@ -58,7 +58,7 @@
   },
   "package": {
    "name": "shakenbreak",
-   "version": "3.4.0"
+   "version": "3.4.1"
   },
   "requirements": {
    "host": [
@@ -83,8 +83,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "913d66342b64c43870a33225b5c0e94d65be79efd30f68b10de298301c0ba6d7",
-   "url": "https://pypi.org/packages/source/s/shakenbreak/shakenbreak-3.4.0.tar.gz"
+   "sha256": "20cdfbdc3a9ea68b710e7e80709f0d24663c89271ade0137a9b9701620b85d70",
+   "url": "https://pypi.org/packages/source/s/shakenbreak/shakenbreak-3.4.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -199,7 +199,7 @@
   },
   "package": {
    "name": "shakenbreak",
-   "version": "3.4.0"
+   "version": "3.4.1"
   },
   "requirements": {
    "host": [
@@ -224,8 +224,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "913d66342b64c43870a33225b5c0e94d65be79efd30f68b10de298301c0ba6d7",
-   "url": "https://pypi.org/packages/source/s/shakenbreak/shakenbreak-3.4.0.tar.gz"
+   "sha256": "20cdfbdc3a9ea68b710e7e80709f0d24663c89271ade0137a9b9701620b85d70",
+   "url": "https://pypi.org/packages/source/s/shakenbreak/shakenbreak-3.4.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -272,7 +272,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/shakenbreak.json"
  },
- "raw_meta_yaml": "{% set name = \"shakenbreak\" %}\n{% set version = \"3.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 913d66342b64c43870a33225b5c0e94d65be79efd30f68b10de298301c0ba6d7\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - snb = shakenbreak.cli:snb\n    - snb-generate = shakenbreak.cli:generate\n    - snb-generate_all = shakenbreak.cli:generate_all\n    - snb-run = shakenbreak.cli:run\n    - snb-parse = shakenbreak.cli:parse\n    - snb-analyse = shakenbreak.cli:analyse\n    - snb-plot = shakenbreak.cli:plot\n    - snb-regenerate = shakenbreak.cli:regenerate\n    - snb-groundstate = shakenbreak.cli:groundstate\n    - snb-mag = shakenbreak.cli:mag\n    - shakenbreak = shakenbreak.cli:snb\n    - shakenbreak-generate = shakenbreak.cli:generate\n    - shakenbreak-generate_all = shakenbreak.cli:generate_all\n    - shakenbreak-run = shakenbreak.cli:run\n    - shakenbreak-parse = shakenbreak.cli:parse\n    - shakenbreak-analyse = shakenbreak.cli:analyse\n    - shakenbreak-plot = shakenbreak.cli:plot\n    - shakenbreak-regenerate = shakenbreak.cli:regenerate\n    - shakenbreak-groundstate = shakenbreak.cli:groundstate\n    - shakenbreak-mag = shakenbreak.cli:mag\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - doped >=3.0.0  # `_scan_sm_stol_till_match` required\n    - pymatgen  # requirement set by doped\n    - pymatgen-analysis-defects  # requirement set by doped\n    - ase\n    - numpy\n    - click >8.0\n    - hiphive >=1.0\n    - importlib-metadata\n    - matplotlib-base >=3.6\n    - pandas >=1.1.0    \n    - seaborn\n\ntest:  # needs to be commented out if ever any co-dependent doped/ShakeNBreak releases\n  requires:\n    - python {{ python_min }}\n  imports:\n    - shakenbreak\n\n  commands:\n    - snb --help\n    - snb-generate --help\n    - snb-generate_all --help\n    - snb-run --help\n    - snb-parse --help\n    - snb-analyse --help\n    - snb-plot --help\n    - snb-regenerate --help\n    - snb-groundstate --help\n    - snb-mag --help\n    - shakenbreak --help\n    - shakenbreak-generate --help\n    - shakenbreak-generate_all --help\n    - shakenbreak-run --help\n    - shakenbreak-parse --help\n    - shakenbreak-analyse --help\n    - shakenbreak-plot --help\n    - shakenbreak-regenerate --help\n    - shakenbreak-groundstate --help\n    - shakenbreak-mag --help\n\nabout:\n  home: https://github.com/SMTG-Bham/ShakeNBreak\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Package to generate and analyse distorted defect structures, in order to identify ground-state and metastable defect configurations.\n  doc_url: https://shakenbreak.readthedocs.io/en/latest/\n  dev_url: https://github.com/SMTG-Bham/ShakeNBreak\n\nextra:\n  recipe-maintainers:\n    - kavanase\n    - ireaml\n",
+ "raw_meta_yaml": "{% set name = \"shakenbreak\" %}\n{% set version = \"3.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 20cdfbdc3a9ea68b710e7e80709f0d24663c89271ade0137a9b9701620b85d70\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - snb = shakenbreak.cli:snb\n    - snb-generate = shakenbreak.cli:generate\n    - snb-generate_all = shakenbreak.cli:generate_all\n    - snb-run = shakenbreak.cli:run\n    - snb-parse = shakenbreak.cli:parse\n    - snb-analyse = shakenbreak.cli:analyse\n    - snb-plot = shakenbreak.cli:plot\n    - snb-regenerate = shakenbreak.cli:regenerate\n    - snb-groundstate = shakenbreak.cli:groundstate\n    - snb-mag = shakenbreak.cli:mag\n    - shakenbreak = shakenbreak.cli:snb\n    - shakenbreak-generate = shakenbreak.cli:generate\n    - shakenbreak-generate_all = shakenbreak.cli:generate_all\n    - shakenbreak-run = shakenbreak.cli:run\n    - shakenbreak-parse = shakenbreak.cli:parse\n    - shakenbreak-analyse = shakenbreak.cli:analyse\n    - shakenbreak-plot = shakenbreak.cli:plot\n    - shakenbreak-regenerate = shakenbreak.cli:regenerate\n    - shakenbreak-groundstate = shakenbreak.cli:groundstate\n    - shakenbreak-mag = shakenbreak.cli:mag\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - doped >=3.0.0  # `_scan_sm_stol_till_match` required\n    - pymatgen  # requirement set by doped\n    - pymatgen-analysis-defects  # requirement set by doped\n    - ase\n    - numpy\n    - click >8.0\n    - hiphive >=1.0\n    - importlib-metadata\n    - matplotlib-base >=3.6\n    - pandas >=1.1.0    \n    - seaborn\n\ntest:  # needs to be commented out if ever any co-dependent doped/ShakeNBreak releases\n  requires:\n    - python {{ python_min }}\n  imports:\n    - shakenbreak\n\n  commands:\n    - snb --help\n    - snb-generate --help\n    - snb-generate_all --help\n    - snb-run --help\n    - snb-parse --help\n    - snb-analyse --help\n    - snb-plot --help\n    - snb-regenerate --help\n    - snb-groundstate --help\n    - snb-mag --help\n    - shakenbreak --help\n    - shakenbreak-generate --help\n    - shakenbreak-generate_all --help\n    - shakenbreak-run --help\n    - shakenbreak-parse --help\n    - shakenbreak-analyse --help\n    - shakenbreak-plot --help\n    - shakenbreak-regenerate --help\n    - shakenbreak-groundstate --help\n    - shakenbreak-mag --help\n\nabout:\n  home: https://github.com/SMTG-Bham/ShakeNBreak\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Package to generate and analyse distorted defect structures, in order to identify ground-state and metastable defect configurations.\n  doc_url: https://shakenbreak.readthedocs.io/en/latest/\n  dev_url: https://github.com/SMTG-Bham/ShakeNBreak\n\nextra:\n  recipe-maintainers:\n    - kavanase\n    - ireaml\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -367,8 +367,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/shakenbreak/shakenbreak-3.4.0.tar.gz",
- "version": "3.4.0",
+ "url": "https://pypi.org/packages/source/s/shakenbreak/shakenbreak-3.4.1.tar.gz",
+ "version": "3.4.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/shakenbreak.json"
  }
