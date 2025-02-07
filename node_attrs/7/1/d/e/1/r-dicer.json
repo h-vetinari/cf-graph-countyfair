@@ -29,7 +29,7 @@
    "summary": "Performs cluster analysis using an ensemble clustering framework, Chiu & Talhouk (2018) <doi:10.1186/s12859-017-1996-y>.  Results from a diverse set of algorithms are pooled together using methods such as majority voting, K-Modes, LinkCluE, and CSPA. There are options to compare cluster assignments across algorithms using internal and external indices, visualizations such as heatmaps, and significance testing for the existence of clusters."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -42,7 +42,7 @@
   },
   "package": {
    "name": "r-dicer",
-   "version": "2.2.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "build": [
@@ -53,7 +53,6 @@
    ],
    "host": [
     "r-base",
-    "r-nmf",
     "r-rankaggreg",
     "r-rcpp",
     "r-abind",
@@ -61,7 +60,7 @@
     "r-clvalid",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-dplyr >=0.7.5",
     "r-ggplot2",
@@ -69,6 +68,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-stringr",
     "r-tidyr",
@@ -76,7 +76,6 @@
    ],
    "run": [
     "r-base",
-    "r-nmf",
     "r-rankaggreg",
     "r-rcpp",
     "r-abind",
@@ -84,7 +83,7 @@
     "r-clvalid",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-dplyr >=0.7.5",
     "r-ggplot2",
@@ -92,6 +91,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-stringr",
     "r-tidyr",
@@ -100,10 +100,10 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5580e3a05e539a88e20d50629909aeb462be8bffa16768c01f9126c83b0fcbdd",
+   "sha256": "8ca87bf3a19e06c51cdc615e71c94a76d2c2b30c5ae8f593a711d0171960afa4",
    "url": [
-    "https://cran.r-project.org/src/contrib/diceR_2.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_2.2.0.tar.gz"
+    "https://cran.r-project.org/src/contrib/diceR_3.0.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_3.0.0.tar.gz"
    ]
   },
   "test": {
@@ -130,7 +130,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr",
@@ -139,7 +139,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr",
     "r-rankaggreg",
     "r-rcpp",
@@ -156,7 +156,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr",
@@ -165,7 +165,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr",
     "r-rankaggreg",
     "r-rcpp",
@@ -192,7 +192,7 @@
    "summary": "Performs cluster analysis using an ensemble clustering framework, Chiu & Talhouk (2018) <doi:10.1186/s12859-017-1996-y>.  Results from a diverse set of algorithms are pooled together using methods such as majority voting, K-Modes, LinkCluE, and CSPA. There are options to compare cluster assignments across algorithms using internal and external indices, visualizations such as heatmaps, and significance testing for the existence of clusters."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -205,7 +205,7 @@
   },
   "package": {
    "name": "r-dicer",
-   "version": "2.2.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "build": [
@@ -223,7 +223,6 @@
    ],
    "host": [
     "r-base",
-    "r-nmf",
     "r-rankaggreg",
     "r-rcpp",
     "r-abind",
@@ -231,7 +230,7 @@
     "r-clvalid",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-dplyr >=0.7.5",
     "r-ggplot2",
@@ -239,6 +238,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-stringr",
     "r-tidyr",
@@ -246,7 +246,6 @@
    ],
    "run": [
     "r-base",
-    "r-nmf",
     "r-rankaggreg",
     "r-rcpp",
     "r-abind",
@@ -254,7 +253,7 @@
     "r-clvalid",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-dplyr >=0.7.5",
     "r-ggplot2",
@@ -262,6 +261,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-stringr",
     "r-tidyr",
@@ -270,10 +270,10 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5580e3a05e539a88e20d50629909aeb462be8bffa16768c01f9126c83b0fcbdd",
+   "sha256": "8ca87bf3a19e06c51cdc615e71c94a76d2c2b30c5ae8f593a711d0171960afa4",
    "url": [
-    "https://cran.r-project.org/src/contrib/diceR_2.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_2.2.0.tar.gz"
+    "https://cran.r-project.org/src/contrib/diceR_3.0.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_3.0.0.tar.gz"
    ]
   },
   "test": {
@@ -297,7 +297,7 @@
    "summary": "Performs cluster analysis using an ensemble clustering framework, Chiu & Talhouk (2018) <doi:10.1186/s12859-017-1996-y>.  Results from a diverse set of algorithms are pooled together using methods such as majority voting, K-Modes, LinkCluE, and CSPA. There are options to compare cluster assignments across algorithms using internal and external indices, visualizations such as heatmaps, and significance testing for the existence of clusters."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -310,7 +310,7 @@
   },
   "package": {
    "name": "r-dicer",
-   "version": "2.2.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "build": [
@@ -321,7 +321,6 @@
    ],
    "host": [
     "r-base",
-    "r-nmf",
     "r-rankaggreg",
     "r-rcpp",
     "r-abind",
@@ -329,7 +328,7 @@
     "r-clvalid",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-dplyr >=0.7.5",
     "r-ggplot2",
@@ -337,6 +336,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-stringr",
     "r-tidyr",
@@ -344,7 +344,6 @@
    ],
    "run": [
     "r-base",
-    "r-nmf",
     "r-rankaggreg",
     "r-rcpp",
     "r-abind",
@@ -352,7 +351,7 @@
     "r-clvalid",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-dplyr >=0.7.5",
     "r-ggplot2",
@@ -360,6 +359,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-stringr",
     "r-tidyr",
@@ -368,10 +368,10 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5580e3a05e539a88e20d50629909aeb462be8bffa16768c01f9126c83b0fcbdd",
+   "sha256": "8ca87bf3a19e06c51cdc615e71c94a76d2c2b30c5ae8f593a711d0171960afa4",
    "url": [
-    "https://cran.r-project.org/src/contrib/diceR_2.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_2.2.0.tar.gz"
+    "https://cran.r-project.org/src/contrib/diceR_3.0.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_3.0.0.tar.gz"
    ]
   },
   "test": {
@@ -398,7 +398,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr",
@@ -407,7 +407,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr",
     "r-rankaggreg",
     "r-rcpp",
@@ -424,7 +424,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr",
@@ -433,7 +433,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr",
     "r-rankaggreg",
     "r-rcpp",
@@ -462,7 +462,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/r-dicer.json"
  },
- "raw_meta_yaml": "{% set version = \"2.2.0\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-dicer\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/diceR_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/diceR/diceR_{{ version }}.tar.gz\n  sha256: 5580e3a05e539a88e20d50629909aeb462be8bffa16768c01f9126c83b0fcbdd\n\nbuild:\n  number: 1\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ stdlib(\"c\") }}                # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ stdlib(\"m2w64_c\") }}          # [win]\n    - {{ compiler('cxx') }}            # [not win]\n    - {{ compiler('m2w64_cxx') }}      # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-nmf\n    - r-rankaggreg\n    - r-rcpp\n    - r-abind\n    - r-assertthat\n    - r-clvalid\n    - r-class\n    - r-clue\n    - r-clustersim\n    - r-clv\n    - r-dplyr >=0.7.5\n    - r-ggplot2\n    - r-infotheo\n    - r-klar\n    - r-magrittr\n    - r-mclust\n    - r-purrr >=0.2.3\n    - r-stringr\n    - r-tidyr\n    - r-yardstick\n  run:\n    - r-base\n    - r-nmf\n    - r-rankaggreg\n    - r-rcpp\n    - r-abind\n    - r-assertthat\n    - r-clvalid\n    - r-class\n    - r-clue\n    - r-clustersim\n    - r-clv\n    - r-dplyr >=0.7.5\n    - r-ggplot2\n    - r-infotheo\n    - r-klar\n    - r-magrittr\n    - r-mclust\n    - r-purrr >=0.2.3\n    - r-stringr\n    - r-tidyr\n    - r-yardstick\n\ntest:\n  commands:\n    - $R -e \"library('diceR')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('diceR')\\\"\"  # [win]\n\nabout:\n  home: https://alinetalhouk.github.io/diceR/\n  dev_url: https://github.com/AlineTalhouk/diceR/\n  license: MIT\n  summary: Performs cluster analysis using an ensemble clustering framework, Chiu & Talhouk (2018) <doi:10.1186/s12859-017-1996-y>.  Results from a diverse set of algorithms are pooled together using methods such as majority voting, K-Modes, LinkCluE, and CSPA. There are options to compare cluster assignments across algorithms\n    using internal and external indices, visualizations such as heatmaps, and significance testing for the existence of clusters.\n  license_family: MIT\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
+ "raw_meta_yaml": "{% set version = \"3.0.0\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-dicer\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/diceR_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/diceR/diceR_{{ version }}.tar.gz\n  sha256: 8ca87bf3a19e06c51cdc615e71c94a76d2c2b30c5ae8f593a711d0171960afa4\n\nbuild:\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ stdlib(\"c\") }}                # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ stdlib(\"m2w64_c\") }}          # [win]\n    - {{ compiler('cxx') }}            # [not win]\n    - {{ compiler('m2w64_cxx') }}      # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-rankaggreg\n    - r-rcpp\n    - r-abind\n    - r-assertthat\n    - r-clvalid\n    - r-class\n    - r-clue\n    - r-clustercrit\n    - r-clv\n    - r-dplyr >=0.7.5\n    - r-ggplot2\n    - r-infotheo\n    - r-klar\n    - r-magrittr\n    - r-mclust\n    - r-pheatmap\n    - r-purrr >=0.2.3\n    - r-stringr\n    - r-tidyr\n    - r-yardstick\n  run:\n    - r-base\n    - r-rankaggreg\n    - r-rcpp\n    - r-abind\n    - r-assertthat\n    - r-clvalid\n    - r-class\n    - r-clue\n    - r-clustercrit\n    - r-clv\n    - r-dplyr >=0.7.5\n    - r-ggplot2\n    - r-infotheo\n    - r-klar\n    - r-magrittr\n    - r-mclust\n    - r-pheatmap\n    - r-purrr >=0.2.3\n    - r-stringr\n    - r-tidyr\n    - r-yardstick\n\ntest:\n  commands:\n    - $R -e \"library('diceR')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('diceR')\\\"\"  # [win]\n\nabout:\n  home: https://alinetalhouk.github.io/diceR/\n  dev_url: https://github.com/AlineTalhouk/diceR/\n  license: MIT\n  summary: Performs cluster analysis using an ensemble clustering framework, Chiu & Talhouk (2018) <doi:10.1186/s12859-017-1996-y>.  Results from a diverse set of algorithms are pooled together using methods such as majority voting, K-Modes, LinkCluE, and CSPA. There are options to compare cluster assignments across algorithms\n    using internal and external indices, visualizations such as heatmaps, and significance testing for the existence of clusters.\n  license_family: MIT\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -480,7 +480,7 @@
    "r-base",
    "r-class",
    "r-clue",
-   "r-clustersim",
+   "r-clustercrit",
    "r-clv",
    "r-clvalid",
    "r-dplyr",
@@ -489,7 +489,7 @@
    "r-klar",
    "r-magrittr",
    "r-mclust",
-   "r-nmf",
+   "r-pheatmap",
    "r-purrr",
    "r-rankaggreg",
    "r-rcpp",
@@ -528,7 +528,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr",
@@ -537,7 +537,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr",
     "r-rankaggreg",
     "r-rcpp",
@@ -557,7 +557,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr",
@@ -566,7 +566,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr",
     "r-rankaggreg",
     "r-rcpp",
@@ -606,7 +606,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr >=0.7.5",
@@ -615,7 +615,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-rankaggreg",
     "r-rcpp",
@@ -632,7 +632,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr >=0.7.5",
@@ -641,7 +641,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-rankaggreg",
     "r-rcpp",
@@ -656,14 +656,14 @@
   }
  },
  "url": [
-  "https://cran.r-project.org/src/contrib/diceR_2.2.0.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_2.2.0.tar.gz",
-  "https://cran.r-project.org/src/contrib/diceR_2.2.0.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_2.2.0.tar.gz",
-  "https://cran.r-project.org/src/contrib/diceR_2.2.0.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_2.2.0.tar.gz"
+  "https://cran.r-project.org/src/contrib/diceR_3.0.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_3.0.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/diceR_3.0.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_3.0.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/diceR_3.0.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_3.0.0.tar.gz"
  ],
- "version": "2.2.0",
+ "version": "3.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/r-dicer.json"
  },
@@ -680,7 +680,7 @@
    "summary": "Performs cluster analysis using an ensemble clustering framework, Chiu & Talhouk (2018) <doi:10.1186/s12859-017-1996-y>.  Results from a diverse set of algorithms are pooled together using methods such as majority voting, K-Modes, LinkCluE, and CSPA. There are options to compare cluster assignments across algorithms using internal and external indices, visualizations such as heatmaps, and significance testing for the existence of clusters."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -693,7 +693,7 @@
   },
   "package": {
    "name": "r-dicer",
-   "version": "2.2.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "build": [
@@ -708,7 +708,6 @@
    ],
    "host": [
     "r-base",
-    "r-nmf",
     "r-rankaggreg",
     "r-rcpp",
     "r-abind",
@@ -716,7 +715,7 @@
     "r-clvalid",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-dplyr >=0.7.5",
     "r-ggplot2",
@@ -724,6 +723,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-stringr",
     "r-tidyr",
@@ -731,7 +731,6 @@
    ],
    "run": [
     "r-base",
-    "r-nmf",
     "r-rankaggreg",
     "r-rcpp",
     "r-abind",
@@ -739,7 +738,7 @@
     "r-clvalid",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-dplyr >=0.7.5",
     "r-ggplot2",
@@ -747,6 +746,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
+    "r-pheatmap",
     "r-purrr >=0.2.3",
     "r-stringr",
     "r-tidyr",
@@ -755,10 +755,10 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5580e3a05e539a88e20d50629909aeb462be8bffa16768c01f9126c83b0fcbdd",
+   "sha256": "8ca87bf3a19e06c51cdc615e71c94a76d2c2b30c5ae8f593a711d0171960afa4",
    "url": [
-    "https://cran.r-project.org/src/contrib/diceR_2.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_2.2.0.tar.gz"
+    "https://cran.r-project.org/src/contrib/diceR_3.0.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/diceR/diceR_3.0.0.tar.gz"
    ]
   },
   "test": {
@@ -789,7 +789,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr",
@@ -798,7 +798,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr",
     "r-rankaggreg",
     "r-rcpp",
@@ -815,7 +815,7 @@
     "r-base",
     "r-class",
     "r-clue",
-    "r-clustersim",
+    "r-clustercrit",
     "r-clv",
     "r-clvalid",
     "r-dplyr",
@@ -824,7 +824,7 @@
     "r-klar",
     "r-magrittr",
     "r-mclust",
-    "r-nmf",
+    "r-pheatmap",
     "r-purrr",
     "r-rankaggreg",
     "r-rcpp",
