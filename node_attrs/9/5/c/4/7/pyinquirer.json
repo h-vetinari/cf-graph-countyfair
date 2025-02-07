@@ -29,13 +29,14 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
     "apeltzer",
-    "ewels"
+    "ewels",
+    "thewchan"
    ]
   },
   "package": {
@@ -44,13 +45,13 @@
   },
   "requirements": {
    "host": [
-    "python",
+    "python 3.9",
     "setuptools",
     "pip"
    ],
    "run": [
-    "python >=",
-    "prompt_toolkit ==1.0.14",
+    "python >=3.9",
+    "prompt_toolkit >=1.0.14,<2.0.0",
     "Pygments >=2.2.0",
     "regex >=2016.11.21"
    ]
@@ -61,15 +62,12 @@
    "url": "https://pypi.org/packages/source/P/PyInquirer/PyInquirer-1.0.3.tar.gz"
   },
   "test": {
-   "commands": [
-    "pip check"
-   ],
    "imports": [
     "PyInquirer"
    ],
    "requires": [
     "pip",
-    "python"
+    "python 3.9"
    ]
   }
  },
@@ -116,13 +114,14 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
     "apeltzer",
-    "ewels"
+    "ewels",
+    "thewchan"
    ]
   },
   "package": {
@@ -131,13 +130,13 @@
   },
   "requirements": {
    "host": [
-    "python",
+    "python 3.9",
     "setuptools",
     "pip"
    ],
    "run": [
-    "python >=",
-    "prompt_toolkit ==1.0.14",
+    "python >=3.9",
+    "prompt_toolkit >=1.0.14,<2.0.0",
     "Pygments >=2.2.0",
     "regex >=2016.11.21"
    ]
@@ -148,15 +147,12 @@
    "url": "https://pypi.org/packages/source/P/PyInquirer/PyInquirer-1.0.3.tar.gz"
   },
   "test": {
-   "commands": [
-    "pip check"
-   ],
    "imports": [
     "PyInquirer"
    ],
    "requires": [
     "pip",
-    "python"
+    "python 3.9"
    ]
   }
  },
@@ -174,7 +170,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyinquirer.json"
  },
- "raw_meta_yaml": "{% set name = \"PyInquirer\" %}\n{% set version = \"1.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c9a92d68d7727fbd886a7908c08fd9e9773e5dc211bf5cbf836ba90d366dee51\n\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - prompt_toolkit ==1.0.14\n    - Pygments >=2.2.0\n    - regex >=2016.11.21\n\ntest:\n  imports:\n    - PyInquirer\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/CITGuru/PyInquirer\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: PyInquirer is a collection of common interactive command line user interfaces.\n\n  description: |\n    PyInquirer is a collection of common interactive command line user interfaces.\n  doc_url: https://github.com/CITGuru/PyInquirer#documentation\n  dev_url: https://github.com/CITGuru/PyInquirer\n\nextra:\n  recipe-maintainers:\n    - apeltzer\n    - ewels\n",
+ "raw_meta_yaml": "{% set name = \"PyInquirer\" %}\n{% set version = \"1.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c9a92d68d7727fbd886a7908c08fd9e9773e5dc211bf5cbf836ba90d366dee51\n\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    # prompt_tookin ==1.0.14 likely too tight a pin and is causing problem downstream\n    - prompt_toolkit >=1.0.14,<2.0.0\n    - Pygments >=2.2.0\n    - regex >=2016.11.21\n\ntest:\n  imports:\n    - PyInquirer\n  requires:\n    - pip\n    - python {{ python_min }}\n  # Remove pip check in order to loosen prompt_toolkit pin  \n  # commands:\n    # - pip check\n\nabout:\n  home: https://github.com/CITGuru/PyInquirer\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: PyInquirer is a collection of common interactive command line user interfaces.\n\n  description: |\n    PyInquirer is a collection of common interactive command line user interfaces.\n  doc_url: https://github.com/CITGuru/PyInquirer#documentation\n  dev_url: https://github.com/CITGuru/PyInquirer\n\nextra:\n  recipe-maintainers:\n    - apeltzer\n    - ewels\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -226,7 +222,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -234,8 +230,8 @@
    "__set__": true,
    "elements": [
     "Pygments >=2.2.0",
-    "prompt_toolkit ==1.0.14",
-    "python >=",
+    "prompt_toolkit >=1.0.14,<2.0.0",
+    "python >=3.9",
     "regex >=2016.11.21"
    ]
   },
@@ -243,7 +239,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python 3.9"
    ]
   }
  },
