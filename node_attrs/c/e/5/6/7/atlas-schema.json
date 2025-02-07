@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "atlas-schema",
-   "version": "0.2.0"
+   "version": "0.2.1"
   },
   "requirements": {
    "host": [
@@ -44,14 +44,15 @@
    "run": [
     "python >=3.9",
     "coffea >=2024.10.0",
+    "particle >=0.25.0",
     "distributed >=2024.3.0",
     "bokeh !=3.0.*,>=2.4.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bad356109dd3c5327c73368c11266aa8ada59f93f88eca20135ef4d236519da6",
-   "url": "https://pypi.org/packages/source/a/atlas-schema/atlas_schema-0.2.0.tar.gz"
+   "sha256": "6a4cc62e61e907019bbd22f9b5824ec4f38a91a58ea74dd35742f71867235421",
+   "url": "https://pypi.org/packages/source/a/atlas-schema/atlas_schema-0.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -86,6 +87,7 @@
     "bokeh",
     "coffea",
     "distributed",
+    "particle",
     "python"
    ]
   },
@@ -116,7 +118,7 @@
   },
   "package": {
    "name": "atlas-schema",
-   "version": "0.2.0"
+   "version": "0.2.1"
   },
   "requirements": {
    "host": [
@@ -128,14 +130,15 @@
    "run": [
     "python >=3.9",
     "coffea >=2024.10.0",
+    "particle >=0.25.0",
     "distributed >=2024.3.0",
     "bokeh !=3.0.*,>=2.4.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bad356109dd3c5327c73368c11266aa8ada59f93f88eca20135ef4d236519da6",
-   "url": "https://pypi.org/packages/source/a/atlas-schema/atlas_schema-0.2.0.tar.gz"
+   "sha256": "6a4cc62e61e907019bbd22f9b5824ec4f38a91a58ea74dd35742f71867235421",
+   "url": "https://pypi.org/packages/source/a/atlas-schema/atlas_schema-0.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/atlas-schema.json"
  },
- "raw_meta_yaml": "{% set name = \"atlas-schema\" %}\n{% set version = \"0.2.0\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/atlas_schema-{{ version }}.tar.gz\n  sha256: bad356109dd3c5327c73368c11266aa8ada59f93f88eca20135ef4d236519da6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling >=0.7\n    - hatch-vcs >=0.3.0\n  run:\n    - python >={{ python_min }}\n    - coffea >=2024.10.0\n    # below are for coffea[dask]\n    - distributed >=2024.3.0\n    - bokeh !=3.0.*,>=2.4.2\n\ntest:\n  imports:\n    - atlas_schema\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/scipp-atlas/atlas-schema/\n  summary: Helper python package for ATLAS Common NTuple Analysis work.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kratsg\n",
+ "raw_meta_yaml": "{% set name = \"atlas-schema\" %}\n{% set version = \"0.2.1\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/atlas_schema-{{ version }}.tar.gz\n  sha256: 6a4cc62e61e907019bbd22f9b5824ec4f38a91a58ea74dd35742f71867235421\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling >=0.7\n    - hatch-vcs >=0.3.0\n  run:\n    - python >={{ python_min }}\n    - coffea >=2024.10.0\n    - particle >=0.25.0\n    # below are for coffea[dask]\n    - distributed >=2024.3.0\n    - bokeh !=3.0.*,>=2.4.2\n\ntest:\n  imports:\n    - atlas_schema\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/scipp-atlas/atlas-schema/\n  summary: Helper python package for ATLAS Common NTuple Analysis work.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kratsg\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -173,6 +176,7 @@
    "distributed",
    "hatch-vcs",
    "hatchling",
+   "particle",
    "pip",
    "python"
   ]
@@ -197,6 +201,7 @@
     "bokeh",
     "coffea",
     "distributed",
+    "particle",
     "python"
    ]
   },
@@ -229,6 +234,7 @@
     "bokeh !=3.0.*,>=2.4.2",
     "coffea >=2024.10.0",
     "distributed >=2024.3.0",
+    "particle >=0.25.0",
     "python >=3.9"
    ]
   },
@@ -240,8 +246,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/atlas-schema/atlas_schema-0.2.0.tar.gz",
- "version": "0.2.0",
+ "url": "https://pypi.org/packages/source/a/atlas-schema/atlas_schema-0.2.1.tar.gz",
+ "version": "0.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/atlas-schema.json"
  }
