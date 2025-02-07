@@ -21,12 +21,12 @@
   "about": {
    "home": "https://github.com/coderedcorp/wagtail-seo",
    "license": "BSD-3-Clause",
-   "license_file": "LICENSE",
+   "license_file": "LICENSE.txt",
    "summary": "Search engine and social media optimization for Wagtail."
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "wagtail-seo",
-   "version": "2.5.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "host": [
@@ -46,13 +46,13 @@
    ],
    "run": [
     "python >=3.9",
-    "wagtail >=3.0,<7.0"
+    "wagtail >=4.0,<7"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "374b7617c67c845171ef8b08339621d9d2c9e01aad7df66340e8aeedf6aaee24",
-   "url": "https://github.com/coderedcorp/wagtail-seo/archive/v2.5.0.tar.gz"
+   "sha256": "8d7c6e61135d73a82716eff77d4981e446049ccdad0d92ac31faa98de6d85215",
+   "url": "https://github.com/coderedcorp/wagtail-seo/archive/v3.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -99,12 +99,12 @@
   "about": {
    "home": "https://github.com/coderedcorp/wagtail-seo",
    "license": "BSD-3-Clause",
-   "license_file": "LICENSE",
+   "license_file": "LICENSE.txt",
    "summary": "Search engine and social media optimization for Wagtail."
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -114,7 +114,7 @@
   },
   "package": {
    "name": "wagtail-seo",
-   "version": "2.5.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "host": [
@@ -124,13 +124,13 @@
    ],
    "run": [
     "python >=3.9",
-    "wagtail >=3.0,<7.0"
+    "wagtail >=4.0,<7"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "374b7617c67c845171ef8b08339621d9d2c9e01aad7df66340e8aeedf6aaee24",
-   "url": "https://github.com/coderedcorp/wagtail-seo/archive/v2.5.0.tar.gz"
+   "sha256": "8d7c6e61135d73a82716eff77d4981e446049ccdad0d92ac31faa98de6d85215",
+   "url": "https://github.com/coderedcorp/wagtail-seo/archive/v3.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,7 +159,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/wagtail-seo.json"
  },
- "raw_meta_yaml": "{% set name = \"wagtail-seo\" %}\n{% set version = \"2.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/coderedcorp/wagtail-seo/archive/v{{ version }}.tar.gz\n  sha256: 374b7617c67c845171ef8b08339621d9d2c9e01aad7df66340e8aeedf6aaee24\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - wagtail >=3.0,<7.0\n\ntest:\n  imports:\n    - wagtailseo\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/coderedcorp/wagtail-seo\n  summary: Search engine and social media optimization for Wagtail.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
+ "raw_meta_yaml": "{% set name = \"wagtail-seo\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/coderedcorp/wagtail-seo/archive/v{{ version }}.tar.gz\n  sha256: 8d7c6e61135d73a82716eff77d4981e446049ccdad0d92ac31faa98de6d85215\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - wagtail >=4.0,<7\n\ntest:\n  imports:\n    - wagtailseo\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/coderedcorp/wagtail-seo\n  summary: Search engine and social media optimization for Wagtail.\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -215,7 +215,7 @@
    "__set__": true,
    "elements": [
     "python >=3.9",
-    "wagtail >=3.0,<7.0"
+    "wagtail >=4.0,<7"
    ]
   },
   "test": {
@@ -226,8 +226,8 @@
    ]
   }
  },
- "url": "https://github.com/coderedcorp/wagtail-seo/archive/v2.5.0.tar.gz",
- "version": "2.5.0",
+ "url": "https://github.com/coderedcorp/wagtail-seo/archive/v3.0.0.tar.gz",
+ "version": "3.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/wagtail-seo.json"
  }
