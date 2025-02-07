@@ -8,12 +8,16 @@
     "cwb": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "not solvable (<a href='https://github.com/regro/cf-scripts/actions/runs/13201939766'>bot CI job</a>) @ main\n        <details>\n        <div align=\"left\">\n        <pre>\n        linux_64_: Cannot solve the request because of: root_base 6.32.8.* cannot be installed because there are no viable options:\n\u2514\u2500 root_base 6.32.8 | 6.32.8 | 6.32.8 | 6.32.8 | 6.32.8 would require\n   \u2514\u2500 pythia8 >=8.312,<8.400.0a0, which cannot be installed because there are no viable options:\n      \u251C\u2500 pythia8 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 would require\n      \u2502  \u2514\u2500 _x86_64-microarch-level >=3, which cannot be installed because there are no viable options:\n      \u2502     \u2514\u2500 _x86_64-microarch-level 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 would require\n      \u2502        \u2514\u2500 __archspec ==1 cannonlake, for which no candidates were found.\n      \u2514\u2500 pythia8 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 | 8.312 would require\n         \u2514\u2500 _x86_64-microarch-level >=1, which cannot be installed because there are no viable options:\n            \u2514\u2500 _x86_64-microarch-level 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 would require\n               \u2514\u2500 __archspec ==1 core2, for which no candidates were found.\n\n        </pre>\n        </div>\n        </details>"
+      "pr_status": "unknown",
+      "pr_url": "https://github.com/conda-forge/cwb-feedstock/pull/30",
+      "pre_pr_migrator_status": ""
     },
     "delphes": {
       "immediate_children": [],
       "num_descendants": 0,
-      "pre_pr_migrator_status": "not solvable (<a href='https://github.com/regro/cf-scripts/actions/runs/13200643317'>bot CI job</a>) @ main\n        <details>\n        <div align=\"left\">\n        <pre>\n        osx_64_: Cannot solve the request because of: root_base >=6.32.2,<6.32.3.0a0 cannot be installed because there are no viable options:\n\u2514\u2500 root_base 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 | 6.32.2 would require\n   \u2514\u2500 clangxx_osx-64 16.*, for which no candidates were found.\n\n        </pre>\n        </div>\n        </details>"
+      "pr_status": "unknown",
+      "pr_url": "https://github.com/conda-forge/delphes-feedstock/pull/7",
+      "pre_pr_migrator_status": ""
     },
     "gds-dmt": {
       "immediate_children": [
@@ -116,7 +120,10 @@
   "done": [
     "gds-root-extensions"
   ],
-  "in-pr": [],
+  "in-pr": [
+    "delphes",
+    "cwb"
+  ],
   "not-solvable": [
     "yoda",
     "stir",
@@ -126,8 +133,6 @@
     "hammer",
     "gwollum",
     "gds-gui",
-    "gds-dmt",
-    "delphes",
-    "cwb"
+    "gds-dmt"
   ]
 }
