@@ -48,7 +48,7 @@
   },
   "package": {
    "name": "mdtraj",
-   "version": "1.10.2"
+   "version": "1.10.3"
   },
   "requirements": {
    "build": [
@@ -84,8 +84,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8108bd42792b653f96c9352956f1100ccebbe21b0fe598b05a7a85c39704136f",
-   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.2.tar.gz"
+   "sha256": "d14a35009263725b784c436a8ac63fb6ceeb2bb366a526715dac6590d21025e5",
+   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -167,7 +167,7 @@
   },
   "package": {
    "name": "mdtraj",
-   "version": "1.10.2"
+   "version": "1.10.3"
   },
   "requirements": {
    "build": [
@@ -203,8 +203,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8108bd42792b653f96c9352956f1100ccebbe21b0fe598b05a7a85c39704136f",
-   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.2.tar.gz"
+   "sha256": "d14a35009263725b784c436a8ac63fb6ceeb2bb366a526715dac6590d21025e5",
+   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -245,7 +245,7 @@
   },
   "package": {
    "name": "mdtraj",
-   "version": "1.10.2"
+   "version": "1.10.3"
   },
   "requirements": {
    "build": [
@@ -281,8 +281,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8108bd42792b653f96c9352956f1100ccebbe21b0fe598b05a7a85c39704136f",
-   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.2.tar.gz"
+   "sha256": "d14a35009263725b784c436a8ac63fb6ceeb2bb366a526715dac6590d21025e5",
+   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -364,7 +364,7 @@
   },
   "package": {
    "name": "mdtraj",
-   "version": "1.10.2"
+   "version": "1.10.3"
   },
   "requirements": {
    "build": [
@@ -400,8 +400,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8108bd42792b653f96c9352956f1100ccebbe21b0fe598b05a7a85c39704136f",
-   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.2.tar.gz"
+   "sha256": "d14a35009263725b784c436a8ac63fb6ceeb2bb366a526715dac6590d21025e5",
+   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -471,7 +471,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/mdtraj.json"
  },
- "raw_meta_yaml": "{% set version = \"1.10.2\" %}\n\npackage:\n  name: mdtraj\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/m/mdtraj/mdtraj-{{ version }}.tar.gz\n  sha256: 8108bd42792b653f96c9352956f1100ccebbe21b0fe598b05a7a85c39704136f\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - mdconvert = mdtraj.scripts.mdconvert:entry_point\n    - mdinspect = mdtraj.scripts.mdinspect:entry_point\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython =3                              # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - versioneer\n  host:\n    - python\n    - pip\n    - setuptools\n    - versioneer\n    - cython =3\n    - numpy\n    - zlib\n  run:\n    - python\n    - setuptools\n    - packaging\n    - numpy >=1.25.0\n    - scipy\n    - pandas\n    - pyparsing\n    - pytables\n    - snappy\n    - zlib\n  run_constrained:\n    # https://github.com/MDAnalysis/mdanalysis/issues/4172; 2.x and 3.0.1 seem fine\n    - gsd !=3.0.0\n\ntest:\n  imports:\n    - mdtraj\n  commands:\n    - mdconvert -h\n    - mdinspect -h\n\nabout:\n  home: https://github.com/mdtraj/mdtraj\n  license: LGPL-2.1-or-later\n  license_file: LICENSE\n  summary: A modern, open library for the analysis of molecular dynamics trajectories\n  description: |\n    MDTraj is a python library that allows users to manipulate molecular dynamics\n    (MD) trajectories and perform a variety of analyses, including fast RMSD,\n    solvent accessible surface area, hydrogen bonding, etc. A highlight of MDTraj\n    is the wide variety of molecular dynamics trajectory file formats which are\n    supported, including RCSB pdb, GROMACS xtc, tng, and trr, CHARMM / NAMD dcd, AMBER\n    binpos, AMBER NetCDF, AMBER mdcrd, TINKER arc and MDTraj HDF5.\n  doc_url: http://mdtraj.org/\n  dev_url: https://github.com/mdtraj/mdtraj\n\nextra:\n  recipe-maintainers:\n    - marscher\n    - mattwthompson\n    - sroet\n    - jeremyleung521\n",
+ "raw_meta_yaml": "{% set name = \"mdtraj\" %}\n{% set version = \"1.10.3\" %}\n\npackage:\n  name: mdtraj\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/m/mdtraj/{{ name }}-{{ version }}.tar.gz\n  sha256: d14a35009263725b784c436a8ac63fb6ceeb2bb366a526715dac6590d21025e5\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - mdconvert = mdtraj.scripts.mdconvert:entry_point\n    - mdinspect = mdtraj.scripts.mdinspect:entry_point\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython =3                              # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - versioneer\n  host:\n    - python\n    - pip\n    - setuptools\n    - versioneer\n    - cython =3\n    - numpy\n    - zlib\n  run:\n    - python\n    - setuptools\n    - packaging\n    - numpy >=1.25.0\n    - scipy\n    - pandas\n    - pyparsing\n    - pytables\n    - snappy\n    - zlib\n  run_constrained:\n    # https://github.com/MDAnalysis/mdanalysis/issues/4172; 2.x and 3.0.1 seem fine\n    - gsd !=3.0.0\n\ntest:\n  imports:\n    - mdtraj\n  commands:\n    - mdconvert -h\n    - mdinspect -h\n\nabout:\n  home: https://github.com/mdtraj/mdtraj\n  license: LGPL-2.1-or-later\n  license_file: LICENSE\n  summary: A modern, open library for the analysis of molecular dynamics trajectories\n  description: |\n    MDTraj is a python library that allows users to manipulate molecular dynamics\n    (MD) trajectories and perform a variety of analyses, including fast RMSD,\n    solvent accessible surface area, hydrogen bonding, etc. A highlight of MDTraj\n    is the wide variety of molecular dynamics trajectory file formats which are\n    supported, including RCSB pdb, GROMACS xtc, tng, and trr, CHARMM / NAMD dcd, AMBER\n    binpos, AMBER NetCDF, AMBER mdcrd, TINKER arc and MDTraj HDF5.\n  doc_url: http://mdtraj.org/\n  dev_url: https://github.com/mdtraj/mdtraj\n\nextra:\n  recipe-maintainers:\n    - marscher\n    - mattwthompson\n    - sroet\n    - jeremyleung521\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -584,8 +584,8 @@
    "elements": []
   }
  },
- "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.2.tar.gz",
- "version": "1.10.2",
+ "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.3.tar.gz",
+ "version": "1.10.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/mdtraj.json"
  },
@@ -617,7 +617,7 @@
   },
   "package": {
    "name": "mdtraj",
-   "version": "1.10.2"
+   "version": "1.10.3"
   },
   "requirements": {
    "build": [
@@ -653,8 +653,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8108bd42792b653f96c9352956f1100ccebbe21b0fe598b05a7a85c39704136f",
-   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.2.tar.gz"
+   "sha256": "d14a35009263725b784c436a8ac63fb6ceeb2bb366a526715dac6590d21025e5",
+   "url": "https://pypi.org/packages/source/m/mdtraj/mdtraj-1.10.3.tar.gz"
   },
   "test": {
    "commands": [
