@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,34 +36,33 @@
   },
   "package": {
    "name": "nomad-camels-driver-pid",
-   "version": "0.1.4"
+   "version": "0.1.6"
   },
   "requirements": {
    "host": [
-    "python 3.9.6",
+    "python 3.10",
     "setuptools >=61.0",
     "pip"
    ],
    "run": [
-    "python >=3.9.6",
+    "python >=3.10",
+    "nomad-camels >=0.2.4",
     "simple-pid"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "060fb6944107981e82de6ebaa46318e72d92ed896e6606e2ae5c610d1c6ede93",
-   "url": "https://pypi.org/packages/source/n/nomad-camels-driver-PID/nomad_camels_driver_PID-0.1.4.tar.gz"
+   "sha256": "b4ebef2507df0f9f6ccc2857e83ae1c9533827ff69fab8ec4ac40358c7dd33c5",
+   "url": "https://pypi.org/packages/source/n/nomad-camels-driver-PID/nomad_camels_driver_PID-0.1.6.tar.gz"
   },
   "test": {
-   "commands": [
-    "pip check"
-   ],
+   "commands": null,
    "imports": [
     "nomad_camels_driver_PID"
    ],
    "requires": [
     "pip",
-    "python 3.9.6"
+    "python 3.10"
    ]
   }
  },
@@ -83,6 +82,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "nomad-camels",
     "python",
     "simple-pid"
    ]
@@ -104,7 +104,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -114,34 +114,33 @@
   },
   "package": {
    "name": "nomad-camels-driver-pid",
-   "version": "0.1.4"
+   "version": "0.1.6"
   },
   "requirements": {
    "host": [
-    "python 3.9.6",
+    "python 3.10",
     "setuptools >=61.0",
     "pip"
    ],
    "run": [
-    "python >=3.9.6",
+    "python >=3.10",
+    "nomad-camels >=0.2.4",
     "simple-pid"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "060fb6944107981e82de6ebaa46318e72d92ed896e6606e2ae5c610d1c6ede93",
-   "url": "https://pypi.org/packages/source/n/nomad-camels-driver-PID/nomad_camels_driver_PID-0.1.4.tar.gz"
+   "sha256": "b4ebef2507df0f9f6ccc2857e83ae1c9533827ff69fab8ec4ac40358c7dd33c5",
+   "url": "https://pypi.org/packages/source/n/nomad-camels-driver-PID/nomad_camels_driver_PID-0.1.6.tar.gz"
   },
   "test": {
-   "commands": [
-    "pip check"
-   ],
+   "commands": null,
    "imports": [
     "nomad_camels_driver_PID"
    ],
    "requires": [
     "pip",
-    "python 3.9.6"
+    "python 3.10"
    ]
   }
  },
@@ -159,10 +158,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/nomad-camels-driver-pid.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.9.6' %}\n{% set name = \"nomad-camels-driver-PID\" %}\n{% set version = \"0.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nomad_camels_driver_PID-{{ version }}.tar.gz\n  sha256: 060fb6944107981e82de6ebaa46318e72d92ed896e6606e2ae5c610d1c6ede93\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 2\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - simple-pid\n\ntest:\n  imports:\n    - nomad_camels_driver_PID\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/FAU-LAP/CAMELS_drivers\n  summary: This package provides everything to run a PID Controller with.\n  license: LGPL-2.1-or-later\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set python_min = \"3.10\" %}\n{% set name = \"nomad-camels-driver-PID\" %}\n{% set version = \"0.1.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nomad_camels_driver_PID-{{ version }}.tar.gz\n  sha256: b4ebef2507df0f9f6ccc2857e83ae1c9533827ff69fab8ec4ac40358c7dd33c5\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - nomad-camels >=0.2.4\n    - simple-pid\n\ntest:\n  imports:\n    - nomad_camels_driver_PID\n  commands:\n    # - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/FAU-LAP/CAMELS_drivers\n  summary: This package provides everything to run a PID Controller with.\n  license: LGPL-2.1-or-later\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
+   "nomad-camels",
    "pip",
    "python",
    "setuptools",
@@ -185,6 +185,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "nomad-camels",
     "python",
     "simple-pid"
    ]
@@ -207,14 +208,15 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9.6",
+    "python 3.10",
     "setuptools >=61.0"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.9.6",
+    "nomad-camels >=0.2.4",
+    "python >=3.10",
     "simple-pid"
    ]
   },
@@ -222,12 +224,12 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9.6"
+    "python 3.10"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/n/nomad-camels-driver-PID/nomad_camels_driver_PID-0.1.4.tar.gz",
- "version": "0.1.4",
+ "url": "https://pypi.org/packages/source/n/nomad-camels-driver-PID/nomad_camels_driver_PID-0.1.6.tar.gz",
+ "version": "0.1.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/nomad-camels-driver-pid.json"
  }
