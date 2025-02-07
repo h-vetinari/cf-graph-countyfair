@@ -29,7 +29,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "4",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . --no-deps --ignore-installed -vv "
    ]
@@ -43,7 +43,7 @@
   },
   "package": {
    "name": "deepforest",
-   "version": "1.5.0"
+   "version": "1.5.2"
   },
   "requirements": {
    "host": [
@@ -97,8 +97,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "df884047a7c2a7118eec3a5e6ba0c0d574a9923383cd454799dad19d9330b78c",
-   "url": "https://pypi.org/packages/source/d/deepforest/deepforest-1.5.0.tar.gz"
+   "sha256": "a7f987aef5e85812da324a8023c92e1e3c7fcb5a0143c6f8383c247da67fad23",
+   "url": "https://pypi.org/packages/source/d/deepforest/deepforest-1.5.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -192,7 +192,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "4",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . --no-deps --ignore-installed -vv "
    ]
@@ -206,7 +206,7 @@
   },
   "package": {
    "name": "deepforest",
-   "version": "1.5.0"
+   "version": "1.5.2"
   },
   "requirements": {
    "host": [
@@ -260,8 +260,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "df884047a7c2a7118eec3a5e6ba0c0d574a9923383cd454799dad19d9330b78c",
-   "url": "https://pypi.org/packages/source/d/deepforest/deepforest-1.5.0.tar.gz"
+   "sha256": "a7f987aef5e85812da324a8023c92e1e3c7fcb5a0143c6f8383c247da67fad23",
+   "url": "https://pypi.org/packages/source/d/deepforest/deepforest-1.5.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -290,7 +290,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/deepforest.json"
  },
- "raw_meta_yaml": "{% set name = \"deepforest\" %}\n{% set version = \"1.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: df884047a7c2a7118eec3a5e6ba0c0d574a9923383cd454799dad19d9330b78c\n\nbuild:\n  noarch: python\n  number: 4\n  script:\n    - '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip >=20.1\n    - numpy\n  run:\n    - aiohttp\n    - aiolimiter\n    - albumentations >=1.0.0\n    - docformatter\n    - docutils <0.18\n    - geopandas\n    - h5py\n    - huggingface_hub >=0.25.0\n    - imagecodecs\n    - matplotlib\n    - nbmake\n    - nbqa\n    - nbsphinx\n    - {{ pin_compatible('numpy') }}\n    - numpydoc\n    - opencv >=4.5.4\n    - pandas\n    - pillow >6.2.0\n    - pip\n    - pycocotools\n    - pydata-sphinx-theme\n    - pygments\n    - pytest\n    - pytest-profiling\n    - python >={{ python_min }}\n    - pytorch\n    - pytorch-lightning >=1.5.8\n    - rasterio\n    - recommonmark\n    - rtree\n    - safetensors\n    - setuptools <59.6.0\n    - slidingwindow\n    - sphinx\n    - sphinx-design\n    - sphinx-markdown-tables\n    - sphinx_rtd_theme\n    - supervision\n    - torchvision >=0.13\n    - tqdm\n    - xmltodict\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - deepforest\n    - deepforest.main\n  commands:\n    - echo \"No tests run on feedstock PR\"\n\nabout:\n  home: https://github.com/weecology/DeepForest\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Package for Tree Crown Detection in Airborne RGB imagery\n  description: |\n    DeepForest is a python package for training and predicting individual\n    tree crowns from airborne RGB imagery. DeepForest comes with a prebuilt\n    model trained on data from the National Ecological Observation Network.\n    Users can extend this model by annotating and training custom models\n    starting from the prebuilt model.\n\n    DeepForest es un paquete de python para la predicci\u00F3n\n    de coronas de \u00E1rboles individuales basada en modelos entrenados\n    con im\u00E1genes remotas RVA ( RGB, por sus siglas en ingl\u00E9s).\n    DeepForest viene con un modelo entrenado con datos prove\u00EDdos por la\n    Red Nacional de Observatorios Ecol\u00F3gicos (NEON, por sus siglas en ingl\u00E9s).\n    Los usuarios pueden ampliar este modelo pre-construido por anotaci\u00F3n\n    de etiquetas y entrenamiento con datos locales. La documentaci\u00F3n de\n    DeepForest est\u00E1 escrita en ingl\u00E9s, sin embargo, agradecer\u00EDamos\n    contribuciones con fin de hacerla accesible en otros idiomas.\n  doc_url: https://deepforest.readthedocs.io/en/latest/\n  dev_url: https://github.com/weecology/DeepForest\n\nextra:\n  recipe-maintainers:\n    - bw4sz\n    - henrykironde\n    - ethanwhite\n",
+ "raw_meta_yaml": "{% set name = \"deepforest\" %}\n{% set version = \"1.5.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a7f987aef5e85812da324a8023c92e1e3c7fcb5a0143c6f8383c247da67fad23\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip >=20.1\n    - numpy\n  run:\n    - aiohttp\n    - aiolimiter\n    - albumentations >=1.0.0\n    - docformatter\n    - docutils <0.18\n    - geopandas\n    - h5py\n    - huggingface_hub >=0.25.0\n    - imagecodecs\n    - matplotlib\n    - nbmake\n    - nbqa\n    - nbsphinx\n    - {{ pin_compatible('numpy') }}\n    - numpydoc\n    - opencv >=4.5.4\n    - pandas\n    - pillow >6.2.0\n    - pip\n    - pycocotools\n    - pydata-sphinx-theme\n    - pygments\n    - pytest\n    - pytest-profiling\n    - python >={{ python_min }}\n    - pytorch\n    - pytorch-lightning >=1.5.8\n    - rasterio\n    - recommonmark\n    - rtree\n    - safetensors\n    - setuptools <59.6.0\n    - slidingwindow\n    - sphinx\n    - sphinx-design\n    - sphinx-markdown-tables\n    - sphinx_rtd_theme\n    - supervision\n    - torchvision >=0.13\n    - tqdm\n    - xmltodict\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - deepforest\n    - deepforest.main\n  commands:\n    - echo \"No tests run on feedstock PR\"\n\nabout:\n  home: https://github.com/weecology/DeepForest\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Package for Tree Crown Detection in Airborne RGB imagery\n  description: |\n    DeepForest is a python package for training and predicting individual\n    tree crowns from airborne RGB imagery. DeepForest comes with a prebuilt\n    model trained on data from the National Ecological Observation Network.\n    Users can extend this model by annotating and training custom models\n    starting from the prebuilt model.\n\n    DeepForest es un paquete de python para la predicci\u00F3n\n    de coronas de \u00E1rboles individuales basada en modelos entrenados\n    con im\u00E1genes remotas RVA ( RGB, por sus siglas en ingl\u00E9s).\n    DeepForest viene con un modelo entrenado con datos prove\u00EDdos por la\n    Red Nacional de Observatorios Ecol\u00F3gicos (NEON, por sus siglas en ingl\u00E9s).\n    Los usuarios pueden ampliar este modelo pre-construido por anotaci\u00F3n\n    de etiquetas y entrenamiento con datos locales. La documentaci\u00F3n de\n    DeepForest est\u00E1 escrita en ingl\u00E9s, sin embargo, agradecer\u00EDamos\n    contribuciones con fin de hacerla accesible en otros idiomas.\n  doc_url: https://deepforest.readthedocs.io/en/latest/\n  dev_url: https://github.com/weecology/DeepForest\n\nextra:\n  recipe-maintainers:\n    - bw4sz\n    - henrykironde\n    - ethanwhite\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -470,8 +470,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/deepforest/deepforest-1.5.0.tar.gz",
- "version": "1.5.0",
+ "url": "https://pypi.org/packages/source/d/deepforest/deepforest-1.5.2.tar.gz",
+ "version": "1.5.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/deepforest.json"
  }
