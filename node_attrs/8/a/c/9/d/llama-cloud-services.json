@@ -1,1 +1,268 @@
-{}
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "llama-cloud-services",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://docs.cloud.llamaindex.ai",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Tailored SDK clients for LlamaCloud services."
+  },
+  "build": {
+   "entry_points": [
+    "llama-parse = llama_cloud_services.parse.cli.main:parse"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "llama-cloud-services",
+   "version": "0.6.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "poetry-core",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "llama-index-core >=0.11.0",
+    "llama-cloud >=0.1.11,<0.2.0",
+    "pydantic !=2.10",
+    "click >=8.1.7,<9.0.0",
+    "python-dotenv >=1.0.1,<2.0.0",
+    "eval-type-backport >=0.2.0,<0.3.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9c1ed2849f8ba7374df16bdfda69bed145eb4a425b546048f5e751c48efe293a",
+   "url": "https://pypi.org/packages/source/l/llama-cloud-services/llama_cloud_services-0.6.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "llama-parse --help"
+   ],
+   "imports": [
+    "llama_cloud_services"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click",
+    "eval-type-backport",
+    "llama-cloud",
+    "llama-index-core",
+    "pydantic",
+    "python",
+    "python-dotenv"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://docs.cloud.llamaindex.ai",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Tailored SDK clients for LlamaCloud services."
+  },
+  "build": {
+   "entry_points": [
+    "llama-parse = llama_cloud_services.parse.cli.main:parse"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "llama-cloud-services",
+   "version": "0.6.0"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9",
+    "poetry-core",
+    "pip"
+   ],
+   "run": [
+    "python >=3.9",
+    "llama-index-core >=0.11.0",
+    "llama-cloud >=0.1.11,<0.2.0",
+    "pydantic !=2.10",
+    "click >=8.1.7,<9.0.0",
+    "python-dotenv >=1.0.1,<2.0.0",
+    "eval-type-backport >=0.2.0,<0.3.0"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "9c1ed2849f8ba7374df16bdfda69bed145eb4a425b546048f5e751c48efe293a",
+   "url": "https://pypi.org/packages/source/l/llama-cloud-services/llama_cloud_services-0.6.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "llama-parse --help"
+   ],
+   "imports": [
+    "llama_cloud_services"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "name": "llama-cloud-services",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "llama-cloud-services"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/llama-cloud-services.json"
+ },
+ "raw_meta_yaml": "{% set name = \"llama-cloud-services\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/llama_cloud_services-{{ version }}.tar.gz\n  sha256: 9c1ed2849f8ba7374df16bdfda69bed145eb4a425b546048f5e751c48efe293a\n\nbuild:\n  noarch: python\n  entry_points:\n    - llama-parse = llama_cloud_services.parse.cli.main:parse\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }}\n    - llama-index-core >=0.11.0\n    - llama-cloud >=0.1.11,<0.2.0\n    - pydantic !=2.10\n    - click >=8.1.7,<9.0.0\n    - python-dotenv >=1.0.1,<2.0.0\n    - eval-type-backport >=0.2.0,<0.3.0\n\ntest:\n  imports:\n    - llama_cloud_services\n  commands:\n    - pip check\n    - llama-parse --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Tailored SDK clients for LlamaCloud services.\n  home: https://docs.cloud.llamaindex.ai\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "click",
+   "eval-type-backport",
+   "llama-cloud",
+   "llama-index-core",
+   "pip",
+   "poetry-core",
+   "pydantic",
+   "python",
+   "python-dotenv"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click",
+    "eval-type-backport",
+    "llama-cloud",
+    "llama-index-core",
+    "pydantic",
+    "python",
+    "python-dotenv"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python 3.9"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "click >=8.1.7,<9.0.0",
+    "eval-type-backport >=0.2.0,<0.3.0",
+    "llama-cloud >=0.1.11,<0.2.0",
+    "llama-index-core >=0.11.0",
+    "pydantic !=2.10",
+    "python >=3.9",
+    "python-dotenv >=1.0.1,<2.0.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/l/llama-cloud-services/llama_cloud_services-0.6.0.tar.gz",
+ "version": "0.6.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/llama-cloud-services.json"
+ }
+}
