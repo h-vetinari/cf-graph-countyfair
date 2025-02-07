@@ -16,8 +16,8 @@
    "tooling_branch_name": "main"
   },
   "provider": {
-   "linux_aarch64": "default",
-   "linux_ppc64le": "default"
+   "linux_aarch64": "azure",
+   "linux_ppc64le": "azure"
   },
   "test": "native_and_emulated"
  },
@@ -29,15 +29,15 @@
    "doc_url": "https://zlib.net/pigz/pigz.pdf",
    "home": "https://zlib.net/pigz/",
    "license": "Zlib",
-   "license_family": "other",
    "license_file": "README",
    "summary": "Parallel implementation of gzip"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "epruesse",
     "mfansler",
     "martin-g"
@@ -50,6 +50,7 @@
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ],
    "host": [
@@ -73,6 +74,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -97,15 +99,15 @@
    "doc_url": "https://zlib.net/pigz/pigz.pdf",
    "home": "https://zlib.net/pigz/",
    "license": "Zlib",
-   "license_family": "other",
    "license_file": "README",
    "summary": "Parallel implementation of gzip"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "epruesse",
     "mfansler",
     "martin-g"
@@ -118,6 +120,7 @@
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ],
    "host": [
@@ -141,6 +144,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -165,15 +169,15 @@
    "doc_url": "https://zlib.net/pigz/pigz.pdf",
    "home": "https://zlib.net/pigz/",
    "license": "Zlib",
-   "license_family": "other",
    "license_file": "README",
    "summary": "Parallel implementation of gzip"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "epruesse",
     "mfansler",
     "martin-g"
@@ -186,6 +190,7 @@
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ],
    "host": [
@@ -209,6 +214,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -233,15 +239,15 @@
    "doc_url": "https://zlib.net/pigz/pigz.pdf",
    "home": "https://zlib.net/pigz/",
    "license": "Zlib",
-   "license_family": "other",
    "license_file": "README",
    "summary": "Parallel implementation of gzip"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "epruesse",
     "mfansler",
     "martin-g"
@@ -254,13 +260,19 @@
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make",
     "m2w64_c_compiler_stub",
-    "posix"
+    "m2w64_c_stdlib_stub",
+    "base",
+    "filesystem",
+    "sed",
+    "coreutils",
+    "zip",
+    "pkg-config"
    ],
    "host": [
-    "zlib",
-    "pthreads-win32"
+    "zlib"
    ]
   },
   "schema_version": 0,
@@ -282,15 +294,15 @@
    "doc_url": "https://zlib.net/pigz/pigz.pdf",
    "home": "https://zlib.net/pigz/",
    "license": "Zlib",
-   "license_family": "other",
    "license_file": "README",
    "summary": "Parallel implementation of gzip"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "epruesse",
     "mfansler",
     "martin-g"
@@ -303,6 +315,7 @@
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ],
    "host": [
@@ -326,6 +339,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -350,15 +364,15 @@
    "doc_url": "https://zlib.net/pigz/pigz.pdf",
    "home": "https://zlib.net/pigz/",
    "license": "Zlib",
-   "license_family": "other",
    "license_file": "README",
    "summary": "Parallel implementation of gzip"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "epruesse",
     "mfansler",
     "martin-g"
@@ -371,6 +385,7 @@
   "requirements": {
    "build": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ],
    "host": [
@@ -394,6 +409,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "make"
    ]
   },
@@ -430,15 +446,21 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pigz.json"
  },
- "raw_meta_yaml": "{% set version = \"2.8\" %}\n{% set sha256 = \"2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706\" %}\n\npackage:\n  name: pigz\n  version: {{ version }}\n\nsource:\n  url: https://github.com/madler/pigz/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}        # [unix]\n    - {{ compiler(\"m2w64_c\") }}  # [win]\n    - posix                      # [win]\n    - make                       # [unix]\n  host:\n    - pthreads-win32             # [win]\n    - zlib\n\ntest:\n  commands:\n    - pigz -h\n    - unpigz -h\n\nabout:\n  home: https://zlib.net/pigz/\n  license: Zlib\n  license_family: other\n  license_file: README\n  summary: Parallel implementation of gzip\n  description: |\n    pigz, which stands for parallel implementation of gzip, is a fully functional\n    replacement for gzip that exploits multiple processors and multiple cores\n    to the hilt when compressing data.\n  doc_url: https://zlib.net/pigz/pigz.pdf\n\nextra:\n  recipe-maintainers:\n    - epruesse\n    - mfansler \n    - martin-g\n",
+ "raw_meta_yaml": "{% set version = \"2.8\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: pigz\n  version: {{ version }}\n\nsource:\n  url: https://github.com/madler/pigz/archive/v{{ version }}.tar.gz\n  sha256: 2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}        # [unix]\n    - {{ stdlib(\"c\") }}          # [unix]\n    - {{ compiler(\"m2w64_c\") }}  # [win]\n    - {{ stdlib(\"m2w64_c\") }}    # [win]\n    - make\n    - {{ posix }}base            # [win]\n    - {{ posix }}filesystem      # [win]\n    - {{ posix }}sed             # [win]\n    - {{ posix }}coreutils       # [win]\n    - {{ posix }}zip             # [win]\n    - {{ posix }}pkg-config      # [win]\n  host:\n    - zlib\n\ntest:\n  commands:\n    - pigz -h\n    - unpigz -h\n\nabout:\n  home: https://zlib.net/pigz/\n  license: Zlib\n  license_file: README\n  summary: Parallel implementation of gzip\n  description: |\n    pigz, which stands for parallel implementation of gzip, is a fully functional\n    replacement for gzip that exploits multiple processors and multiple cores\n    to the hilt when compressing data.\n  doc_url: https://zlib.net/pigz/pigz.pdf\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n    - epruesse\n    - mfansler \n    - martin-g\n",
  "req": {
   "__set__": true,
   "elements": [
+   "base",
    "c_compiler_stub",
+   "c_stdlib_stub",
+   "coreutils",
+   "filesystem",
    "m2w64_c_compiler_stub",
+   "m2w64_c_stdlib_stub",
    "make",
-   "posix",
-   "pthreads-win32",
+   "pkg-config",
+   "sed",
+   "zip",
    "zlib"
   ]
  },
@@ -446,24 +468,32 @@
   "build": {
    "__set__": true,
    "elements": [
+    "base",
     "c_compiler_stub",
+    "c_stdlib_stub",
+    "coreutils",
+    "filesystem",
     "m2w64_c_compiler_stub",
+    "m2w64_c_stdlib_stub",
     "make",
-    "posix"
+    "pkg-config",
+    "sed",
+    "zip"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "pthreads-win32",
+    "c_stdlib_stub",
     "zlib"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "test": {
@@ -476,16 +506,22 @@
   "build": {
    "__set__": true,
    "elements": [
+    "base",
     "c_compiler_stub",
+    "c_stdlib_stub",
+    "coreutils",
+    "filesystem",
     "m2w64_c_compiler_stub",
+    "m2w64_c_stdlib_stub",
     "make",
-    "posix"
+    "pkg-config",
+    "sed",
+    "zip"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
-    "pthreads-win32",
     "zlib"
    ]
   },
@@ -509,15 +545,15 @@
    "doc_url": "https://zlib.net/pigz/pigz.pdf",
    "home": "https://zlib.net/pigz/",
    "license": "Zlib",
-   "license_family": "other",
    "license_file": "README",
    "summary": "Parallel implementation of gzip"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
+    "danielnachun",
     "epruesse",
     "mfansler",
     "martin-g"
@@ -530,10 +566,16 @@
   "requirements": {
    "build": [
     "m2w64_c_compiler_stub",
-    "posix"
+    "m2w64_c_stdlib_stub",
+    "make",
+    "base",
+    "filesystem",
+    "sed",
+    "coreutils",
+    "zip",
+    "pkg-config"
    ],
    "host": [
-    "pthreads-win32",
     "zlib"
    ]
   },
@@ -553,14 +595,20 @@
   "build": {
    "__set__": true,
    "elements": [
+    "base",
+    "coreutils",
+    "filesystem",
     "m2w64_c_compiler_stub",
-    "posix"
+    "m2w64_c_stdlib_stub",
+    "make",
+    "pkg-config",
+    "sed",
+    "zip"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
-    "pthreads-win32",
     "zlib"
    ]
   },
