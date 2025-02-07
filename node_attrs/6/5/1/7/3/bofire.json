@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "bofire",
-   "version": "0.0.16"
+   "version": "0.0.17"
   },
   "requirements": {
    "host": [
@@ -47,19 +47,20 @@
     "pip"
    ],
    "run": [
+    "formulaic ==1.0.1",
     "typing_extensions",
     "python >=3.10",
     "numpy",
     "pandas",
     "pydantic >=2.5",
-    "scipy >=1.7,<1.15",
+    "scipy >=1.7",
     "typing-extensions"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4bffe990d6701b86bb71d9f04e2e253bd72fd48b7b80b6ab54693b169e730e20",
-   "url": "https://pypi.org/packages/source/b/bofire/bofire-0.0.16.tar.gz"
+   "sha256": "71f159ed524e41dd50dbe770f83d3a7c4989e14d3ae43e20d0707075a6b20013",
+   "url": "https://pypi.org/packages/source/b/bofire/bofire-0.0.17.tar.gz"
   },
   "test": {
    "commands": [
@@ -92,6 +93,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "formulaic",
     "numpy",
     "pandas",
     "pydantic",
@@ -128,7 +130,7 @@
   },
   "package": {
    "name": "bofire",
-   "version": "0.0.16"
+   "version": "0.0.17"
   },
   "requirements": {
    "host": [
@@ -139,19 +141,20 @@
     "pip"
    ],
    "run": [
+    "formulaic ==1.0.1",
     "typing_extensions",
     "python >=3.10",
     "numpy",
     "pandas",
     "pydantic >=2.5",
-    "scipy >=1.7,<1.15",
+    "scipy >=1.7",
     "typing-extensions"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4bffe990d6701b86bb71d9f04e2e253bd72fd48b7b80b6ab54693b169e730e20",
-   "url": "https://pypi.org/packages/source/b/bofire/bofire-0.0.16.tar.gz"
+   "sha256": "71f159ed524e41dd50dbe770f83d3a7c4989e14d3ae43e20d0707075a6b20013",
+   "url": "https://pypi.org/packages/source/b/bofire/bofire-0.0.17.tar.gz"
   },
   "test": {
    "commands": [
@@ -180,10 +183,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/bofire.json"
  },
- "raw_meta_yaml": "{% set name = \"bofire\" %}\n{% set version = \"0.0.16\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bofire-{{ version }}.tar.gz\n  sha256: 4bffe990d6701b86bb71d9f04e2e253bd72fd48b7b80b6ab54693b169e730e20\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - setuptools-scm\n    - wheel\n    - pip\n  run:\n    - typing_extensions\n    - python >={{ python_min }}\n    - numpy\n    - pandas\n    - pydantic >=2.5\n    - scipy >=1.7,<1.15\n    - typing-extensions\n\ntest:\n  imports:\n    - bofire\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Experimental design and (multi-objective) bayesian optimization.\n  home: https://github.com/experimental-design/bofire\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"bofire\" %}\n{% set version = \"0.0.17\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bofire-{{ version }}.tar.gz\n  sha256: 71f159ed524e41dd50dbe770f83d3a7c4989e14d3ae43e20d0707075a6b20013\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - setuptools-scm\n    - wheel\n    - pip\n  run:\n    - formulaic ==1.0.1\n    - typing_extensions\n    - python >={{ python_min }}\n    - numpy\n    - pandas\n    - pydantic >=2.5\n    - scipy >=1.7\n    - typing-extensions\n\ntest:\n  imports:\n    - bofire\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Experimental design and (multi-objective) bayesian optimization.\n  home: https://github.com/experimental-design/bofire\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
+   "formulaic",
    "numpy",
    "pandas",
    "pip",
@@ -215,6 +219,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "formulaic",
     "numpy",
     "pandas",
     "pydantic",
@@ -251,11 +256,12 @@
   "run": {
    "__set__": true,
    "elements": [
+    "formulaic ==1.0.1",
     "numpy",
     "pandas",
     "pydantic >=2.5",
     "python >=3.10",
-    "scipy >=1.7,<1.15",
+    "scipy >=1.7",
     "typing-extensions",
     "typing_extensions"
    ]
@@ -268,8 +274,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/b/bofire/bofire-0.0.16.tar.gz",
- "version": "0.0.16",
+ "url": "https://pypi.org/packages/source/b/bofire/bofire-0.0.17.tar.gz",
+ "version": "0.0.17",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/bofire.json"
  }
