@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "${{ PYTHON }} -m pip install ."
   },
   "extra": {
@@ -138,7 +138,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "${{ PYTHON }} -m pip install ."
   },
   "extra": {
@@ -223,7 +223,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/trafilatura.json"
  },
- "raw_meta_yaml": "context:\n  version: 2.0.0\n\npackage:\n  name: trafilatura\n  version: ${{ version }}\n\nsource:\n- url: https://pypi.org/packages/source/t/trafilatura/trafilatura-${{ version }}.tar.gz\n  sha256: ceb7094a6ecc97e72fea73c7dba36714c5c5b577b6470e4520dca893706d6247\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install .\n  python:\n    entry_points:\n    - trafilatura  =  trafilatura.cli:main\n\nrequirements:\n  host:\n  - python ${{ python_min }}.*\n  - setuptools\n  - pip\n  run:\n  - python >=${{ python_min }}\n  - certifi\n  - charset-normalizer >=3.4.0\n  - courlan >=1.3.2\n  - htmldate >=1.9.2\n  - justext >=3.0.1\n  - lxml >=5.3.0\n  - urllib3 <3,>=1.26\n\ntests:\n- python:\n    imports:\n    - trafilatura\n    pip_check: true\n- script:\n    - trafilatura --help\n\nabout:\n  summary: 'Python & Command-line tool to gather text and metadata on the Web: Crawling, scraping, extraction, output as CSV, JSON, HTML, MD, TXT, XML.'\n  homepage: https://github.com/adbar/trafilatura\n  description:\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n  - moritzwilksch\n",
+ "raw_meta_yaml": "context:\n  version: 2.0.0\n\npackage:\n  name: trafilatura\n  version: ${{ version }}\n\nsource:\n- url: https://pypi.org/packages/source/t/trafilatura/trafilatura-${{ version }}.tar.gz\n  sha256: ceb7094a6ecc97e72fea73c7dba36714c5c5b577b6470e4520dca893706d6247\n\nbuild:\n  number: 1\n  noarch: python\n  script: ${{ PYTHON }} -m pip install .\n  python:\n    entry_points:\n    - trafilatura  =  trafilatura.cli:main\n\nrequirements:\n  host:\n  - python ${{ python_min }}.*\n  - setuptools\n  - pip\n  run:\n  - python >=${{ python_min }}\n  - certifi\n  - charset-normalizer >=3.4.0\n  - courlan >=1.3.2\n  - htmldate >=1.9.2\n  - justext >=3.0.1\n  - lxml >=5.3.0\n  - urllib3 <3,>=1.26\n\ntests:\n- python:\n    imports:\n    - trafilatura\n    pip_check: true\n- script:\n    - trafilatura --help\n\nabout:\n  summary: 'Python & Command-line tool to gather text and metadata on the Web: Crawling, scraping, extraction, output as CSV, JSON, HTML, MD, TXT, XML.'\n  homepage: https://github.com/adbar/trafilatura\n  description:\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n  - moritzwilksch\n",
  "req": {
   "__set__": true,
   "elements": [
