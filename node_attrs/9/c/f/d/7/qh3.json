@@ -20,12 +20,16 @@
   "about": {
    "home": "https://github.com/jawah/qh3",
    "license": "BSD-3-Clause",
-   "license_file": "LICENSE",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
    "summary": "A lightway and fast implementation of QUIC and HTTP/3"
   },
   "build": {
    "number": "0",
    "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "export AWS_LC_SYS_CMAKE_BUILDER=1",
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
    ]
@@ -37,7 +41,7 @@
   },
   "package": {
    "name": "qh3",
-   "version": "1.4.0"
+   "version": "1.4.1"
   },
   "requirements": {
    "build": [
@@ -46,7 +50,8 @@
     "cxx_compiler_stub",
     "rust_compiler_stub",
     "cmake",
-    "make"
+    "make",
+    "cargo-bundle-licenses"
    ],
    "host": [
     "python",
@@ -60,8 +65,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d0af3d1a9a3b68118824becb8bc7ff5c33369eb8fdeeca490e616c9083c059d6",
-   "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.0.tar.gz"
+   "sha256": "8f46957590f4cd0ef8c39ee0e71a2c1ca7daaa6b43447354b99545f2159cab90",
+   "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -81,6 +86,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "cmake",
     "cxx_compiler_stub",
     "make",
@@ -113,12 +119,16 @@
   "about": {
    "home": "https://github.com/jawah/qh3",
    "license": "BSD-3-Clause",
-   "license_file": "LICENSE",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
    "summary": "A lightway and fast implementation of QUIC and HTTP/3"
   },
   "build": {
    "number": "0",
    "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "export AWS_LC_SYS_CMAKE_BUILDER=1",
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
     "export OPENSSL_DIR=$PREFIX"
@@ -131,7 +141,7 @@
   },
   "package": {
    "name": "qh3",
-   "version": "1.4.0"
+   "version": "1.4.1"
   },
   "requirements": {
    "build": [
@@ -141,6 +151,7 @@
     "rust_compiler_stub",
     "cmake",
     "make",
+    "cargo-bundle-licenses",
     "nasm"
    ],
    "host": [
@@ -156,8 +167,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d0af3d1a9a3b68118824becb8bc7ff5c33369eb8fdeeca490e616c9083c059d6",
-   "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.0.tar.gz"
+   "sha256": "8f46957590f4cd0ef8c39ee0e71a2c1ca7daaa6b43447354b99545f2159cab90",
+   "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -176,12 +187,16 @@
   "about": {
    "home": "https://github.com/jawah/qh3",
    "license": "BSD-3-Clause",
-   "license_file": "LICENSE",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
    "summary": "A lightway and fast implementation of QUIC and HTTP/3"
   },
   "build": {
    "number": "0",
    "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "export OPENSSL_DIR=$PREFIX",
     "export AWS_LC_SYS_CMAKE_BUILDER=1",
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
@@ -194,7 +209,7 @@
   },
   "package": {
    "name": "qh3",
-   "version": "1.4.0"
+   "version": "1.4.1"
   },
   "requirements": {
    "build": [
@@ -203,7 +218,8 @@
     "cxx_compiler_stub",
     "rust_compiler_stub",
     "cmake",
-    "make"
+    "make",
+    "cargo-bundle-licenses"
    ],
    "host": [
     "python",
@@ -217,8 +233,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d0af3d1a9a3b68118824becb8bc7ff5c33369eb8fdeeca490e616c9083c059d6",
-   "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.0.tar.gz"
+   "sha256": "8f46957590f4cd0ef8c39ee0e71a2c1ca7daaa6b43447354b99545f2159cab90",
+   "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -238,6 +254,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "cmake",
     "cxx_compiler_stub",
     "make",
@@ -281,12 +298,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/qh3.json"
  },
- "raw_meta_yaml": "{% set name = \"qh3\" %}\n{% set version = \"1.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qh3-{{ version }}.tar.gz\n  sha256: d0af3d1a9a3b68118824becb8bc7ff5c33369eb8fdeeca490e616c9083c059d6\n\nbuild:\n  skip: true  # [py<37]\n  script:\n    - export OPENSSL_DIR=$PREFIX  # [osx]\n    - export AWS_LC_SYS_CMAKE_BUILDER=1\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  build:\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('rust') }}\n    - cmake\n    - make\n    - nasm  # [win]\n  host:\n    - python\n    - maturin >=1.2,<2.0\n    - pip\n    - openssl  # [osx]\n    - clangdev  # [linux]\n  run:\n    - python\n\ntest:\n  imports:\n    - qh3\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/jawah/qh3\n  summary: A lightway and fast implementation of QUIC and HTTP/3\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"qh3\" %}\n{% set version = \"1.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qh3-{{ version }}.tar.gz\n  sha256: 8f46957590f4cd0ef8c39ee0e71a2c1ca7daaa6b43447354b99545f2159cab90\n\nbuild:\n  skip: true  # [py<37]\n  script:\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n    - export OPENSSL_DIR=$PREFIX  # [osx]\n    - export AWS_LC_SYS_CMAKE_BUILDER=1\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  build:\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('rust') }}\n    - cmake\n    - make\n    - nasm  # [win]\n    - cargo-bundle-licenses\n  host:\n    - python\n    - maturin >=1.2,<2.0\n    - pip\n    - openssl  # [osx]\n    - clangdev  # [linux]\n  run:\n    - python\n\ntest:\n  imports:\n    - qh3\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/jawah/qh3\n  summary: A lightway and fast implementation of QUIC and HTTP/3\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cargo-bundle-licenses",
    "clangdev",
    "cmake",
    "cxx_compiler_stub",
@@ -305,6 +323,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "cmake",
     "cxx_compiler_stub",
     "make",
@@ -348,6 +367,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "cmake",
     "cxx_compiler_stub",
     "make",
@@ -378,8 +398,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.0.tar.gz",
- "version": "1.4.0",
+ "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.1.tar.gz",
+ "version": "1.4.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/qh3.json"
  },
@@ -387,12 +407,16 @@
   "about": {
    "home": "https://github.com/jawah/qh3",
    "license": "BSD-3-Clause",
-   "license_file": "LICENSE",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
    "summary": "A lightway and fast implementation of QUIC and HTTP/3"
   },
   "build": {
    "number": "0",
    "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "export AWS_LC_SYS_CMAKE_BUILDER=1",
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
    ]
@@ -404,7 +428,7 @@
   },
   "package": {
    "name": "qh3",
-   "version": "1.4.0"
+   "version": "1.4.1"
   },
   "requirements": {
    "build": [
@@ -414,7 +438,8 @@
     "rust_compiler_stub",
     "cmake",
     "make",
-    "nasm"
+    "nasm",
+    "cargo-bundle-licenses"
    ],
    "host": [
     "python",
@@ -427,8 +452,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d0af3d1a9a3b68118824becb8bc7ff5c33369eb8fdeeca490e616c9083c059d6",
-   "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.0.tar.gz"
+   "sha256": "8f46957590f4cd0ef8c39ee0e71a2c1ca7daaa6b43447354b99545f2159cab90",
+   "url": "https://pypi.org/packages/source/q/qh3/qh3-1.4.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -448,6 +473,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "cmake",
     "cxx_compiler_stub",
     "make",
