@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "django-browser-reload",
-   "version": "1.17.0"
+   "version": "1.18.0"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3667939cde0eee1a6d698dbe3b78cf10b573dabc4e711fb7933f1ba91fb98da4",
-   "url": "https://pypi.org/packages/source/d/django-browser-reload/django_browser_reload-1.17.0.tar.gz"
+   "sha256": "c5f0b134723cbf2a0dc9ae1ee1d38e42db28fe23c74cdee613ba3ef286d04735",
+   "url": "https://pypi.org/packages/source/d/django-browser-reload/django_browser_reload-1.18.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -105,7 +105,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -115,7 +115,7 @@
   },
   "package": {
    "name": "django-browser-reload",
-   "version": "1.17.0"
+   "version": "1.18.0"
   },
   "requirements": {
    "host": [
@@ -131,8 +131,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3667939cde0eee1a6d698dbe3b78cf10b573dabc4e711fb7933f1ba91fb98da4",
-   "url": "https://pypi.org/packages/source/d/django-browser-reload/django_browser_reload-1.17.0.tar.gz"
+   "sha256": "c5f0b134723cbf2a0dc9ae1ee1d38e42db28fe23c74cdee613ba3ef286d04735",
+   "url": "https://pypi.org/packages/source/d/django-browser-reload/django_browser_reload-1.18.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/django-browser-reload.json"
  },
- "raw_meta_yaml": "{% set name = \"django-browser-reload\" %}\n{% set version = \"1.17.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 3667939cde0eee1a6d698dbe3b78cf10b573dabc4e711fb7933f1ba91fb98da4\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - asgiref >=3.6\n    - django >=4.2\n\ntest:\n  imports:\n    - django_browser_reload\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/adamchainz/django-browser-reload\n  summary: Automatically reload your browser in development.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"django-browser-reload\" %}\n{% set version = \"1.18.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: c5f0b134723cbf2a0dc9ae1ee1d38e42db28fe23c74cdee613ba3ef286d04735\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - asgiref >=3.6\n    - django >=4.2\n\ntest:\n  imports:\n    - django_browser_reload\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/adamchainz/django-browser-reload\n  summary: Automatically reload your browser in development.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -231,8 +231,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/django-browser-reload/django_browser_reload-1.17.0.tar.gz",
- "version": "1.17.0",
+ "url": "https://pypi.org/packages/source/d/django-browser-reload/django_browser_reload-1.18.0.tar.gz",
+ "version": "1.18.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/django-browser-reload.json"
  }
