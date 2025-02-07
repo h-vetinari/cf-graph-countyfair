@@ -1,1 +1,703 @@
-{}
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "mg5amcnlo",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "MadGraph5_aMC@NLO is a framework that aims at providing all the elements\nnecessary for SM and BSM phenomenology, such as the computations of cross\nsections, the generation of hard events and their matching with event\ngenerators, and the use of a variety of tools relevant to event manipulation\nand analysis.\nProcesses can be simulated to LO accuracy for any user-defined Lagrangian,\nand the NLO accuracy in the case of models that support this kind of calculations\n&mdash; prominent among these are QCD and EW corrections to SM processes.\nMatrix elements at the tree- and one-loop-level can also be obtained.\n\nMadGraph5_aMC@NLO is the new version of both MadGraph5 and aMC@NLO that unifies\nthe LO and NLO lines of development of automated tools within the MadGraph family.\nAs such, the code allows one to simulate processes in virtually all configurations\nof interest, in particular for hadronic and e+e- colliders; starting from version\n3.2.0, the latter include Initial State Radiation and beamstrahlung effects.\n",
+   "dev_url": "https://github.com/mg5amcnlo/mg5amcnlo",
+   "home": "https://github.com/mg5amcnlo/mg5amcnlo",
+   "license": "LicenseRef-NCSA",
+   "license_family": "OTHER",
+   "license_file": "source/LICENSE",
+   "summary": "MadGraph5_aMC@NLO"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "rm -r source/.github",
+    "rm -r source/tests",
+    "rm -r source/vendor/CutTools",
+    "rm source/.bzrignore",
+    "rm source/.gitignore",
+    "rm source/code-notes",
+    "rm source/README",
+    "rm source/UpdateNotes.txt",
+    "rm source/vendor/DiscreteSampler/check",
+    "find source -type f -exec grep -Il '#!/usr/bin/perl -w' {} + | xargs sed -i 's|#!/usr/bin/perl -w|#!/usr/bin/env perl -w|g'",
+    "cp -a source $PREFIX/MG5_aMC",
+    "cp $RECIPE_DIR/mg5_configuration.txt .",
+    "sed -i \"s|REPLACE_WITH_PREFIX|$PREFIX|g\" mg5_configuration.txt",
+    "sed -i \"s|REPLACE_WITH_BASENAME_FC|$(basename $FC)|g\" mg5_configuration.txt",
+    "sed -i \"s|REPLACE_WITH_BASENAME_GXX|$(basename $GXX)|g\" mg5_configuration.txt",
+    "mv mg5_configuration.txt $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "mkdir -p $PREFIX/bin",
+    "ln -s $PREFIX/MG5_aMC/bin/mg5_aMC $PREFIX/bin/mg5_aMC",
+    "mkdir -p $PREFIX/share/mg5_aMC",
+    "ln -s $PREFIX/MG5_aMC/proc_card.dat $PREFIX/share/mg5_aMC/proc_card.dat",
+    "echo \"exit\" | mg5_aMC",
+    "rm py.py"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "matthewfeickert"
+   ]
+  },
+  "package": {
+   "name": "mg5amcnlo",
+   "version": "3.5.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "sed",
+    "grep"
+   ],
+   "host": [
+    "python",
+    "six",
+    "ply",
+    "fastjet-cxx",
+    "emela",
+    "lhapdf"
+   ],
+   "run": [
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "tar",
+    "perl",
+    "python",
+    "six",
+    "numpy",
+    "fastjet-contrib",
+    "emela",
+    "lhapdf",
+    "pythia8",
+    "ply",
+    "oneloop",
+    "ninja-hep-ph",
+    "collier",
+    "ghostscript"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "test -d $PREFIX/MG5_aMC",
+    "test -d $PREFIX/MG5_aMC/aloha",
+    "test -d $PREFIX/MG5_aMC/bin",
+    "test -d $PREFIX/MG5_aMC/HELAS",
+    "test -d $PREFIX/MG5_aMC/input",
+    "test -d $PREFIX/MG5_aMC/madgraph",
+    "test -d $PREFIX/MG5_aMC/MadSpin",
+    "test -d $PREFIX/MG5_aMC/mg5decay",
+    "test -d $PREFIX/MG5_aMC/models",
+    "test -d $PREFIX/MG5_aMC/PLUGIN",
+    "test -d $PREFIX/MG5_aMC/Template",
+    "test -d $PREFIX/MG5_aMC/vendor",
+    "test -f $PREFIX/MG5_aMC/proc_card.dat",
+    "test -f $PREFIX/MG5_aMC/VERSION",
+    "test -f $PREFIX/bin/mg5_aMC",
+    "test -f $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "test -f $PREFIX/MG5_aMC/madgraph/LICENSE",
+    "echo -e \"\\n# Checking mg5_configuration.txt\"",
+    "cat $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "mg5_aMC --help",
+    "echo \"exit\" | mg5_aMC",
+    "mg5_aMC $RECIPE_DIR/tutorial.mg5"
+   ],
+   "files": [
+    "$RECIPE_DIR/tutorial.mg5"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "grep",
+    "sed"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "emela",
+    "fastjet-cxx",
+    "lhapdf",
+    "ply",
+    "python",
+    "six"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "collier",
+    "cxx_compiler_stub",
+    "emela",
+    "fastjet-contrib",
+    "fortran_compiler_stub",
+    "ghostscript",
+    "lhapdf",
+    "make",
+    "ninja-hep-ph",
+    "numpy",
+    "oneloop",
+    "perl",
+    "ply",
+    "pythia8",
+    "python",
+    "six",
+    "tar"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "MadGraph5_aMC@NLO is a framework that aims at providing all the elements\nnecessary for SM and BSM phenomenology, such as the computations of cross\nsections, the generation of hard events and their matching with event\ngenerators, and the use of a variety of tools relevant to event manipulation\nand analysis.\nProcesses can be simulated to LO accuracy for any user-defined Lagrangian,\nand the NLO accuracy in the case of models that support this kind of calculations\n&mdash; prominent among these are QCD and EW corrections to SM processes.\nMatrix elements at the tree- and one-loop-level can also be obtained.\n\nMadGraph5_aMC@NLO is the new version of both MadGraph5 and aMC@NLO that unifies\nthe LO and NLO lines of development of automated tools within the MadGraph family.\nAs such, the code allows one to simulate processes in virtually all configurations\nof interest, in particular for hadronic and e+e- colliders; starting from version\n3.2.0, the latter include Initial State Radiation and beamstrahlung effects.\n",
+   "dev_url": "https://github.com/mg5amcnlo/mg5amcnlo",
+   "home": "https://github.com/mg5amcnlo/mg5amcnlo",
+   "license": "LicenseRef-NCSA",
+   "license_family": "OTHER",
+   "license_file": "source/LICENSE",
+   "summary": "MadGraph5_aMC@NLO"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "rm -r source/.github",
+    "rm -r source/tests",
+    "rm -r source/vendor/CutTools",
+    "rm source/.bzrignore",
+    "rm source/.gitignore",
+    "rm source/code-notes",
+    "rm source/README",
+    "rm source/UpdateNotes.txt",
+    "rm source/vendor/DiscreteSampler/check",
+    "find source -type f -exec grep -Il '#!/usr/bin/perl -w' {} + | xargs sed -i 's|#!/usr/bin/perl -w|#!/usr/bin/env perl -w|g'",
+    "cp -a source $PREFIX/MG5_aMC",
+    "cp $RECIPE_DIR/mg5_configuration.txt .",
+    "sed -i \"s|REPLACE_WITH_PREFIX|$PREFIX|g\" mg5_configuration.txt",
+    "sed -i \"s|REPLACE_WITH_BASENAME_FC|$(basename $FC)|g\" mg5_configuration.txt",
+    "sed -i \"s|REPLACE_WITH_BASENAME_GXX|$(basename $GXX)|g\" mg5_configuration.txt",
+    "mv mg5_configuration.txt $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "mkdir -p $PREFIX/bin",
+    "ln -s $PREFIX/MG5_aMC/bin/mg5_aMC $PREFIX/bin/mg5_aMC",
+    "mkdir -p $PREFIX/share/mg5_aMC",
+    "ln -s $PREFIX/MG5_aMC/proc_card.dat $PREFIX/share/mg5_aMC/proc_card.dat",
+    "echo \"exit\" | mg5_aMC",
+    "rm py.py"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "matthewfeickert"
+   ]
+  },
+  "package": {
+   "name": "mg5amcnlo",
+   "version": "3.5.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "sed",
+    "grep"
+   ],
+   "host": [
+    "python",
+    "six",
+    "ply",
+    "fastjet-cxx",
+    "emela",
+    "lhapdf"
+   ],
+   "run": [
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "tar",
+    "perl",
+    "python",
+    "six",
+    "numpy",
+    "fastjet-contrib",
+    "emela",
+    "lhapdf",
+    "pythia8",
+    "ply",
+    "oneloop",
+    "ninja-hep-ph",
+    "collier",
+    "ghostscript"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "test -d $PREFIX/MG5_aMC",
+    "test -d $PREFIX/MG5_aMC/aloha",
+    "test -d $PREFIX/MG5_aMC/bin",
+    "test -d $PREFIX/MG5_aMC/HELAS",
+    "test -d $PREFIX/MG5_aMC/input",
+    "test -d $PREFIX/MG5_aMC/madgraph",
+    "test -d $PREFIX/MG5_aMC/MadSpin",
+    "test -d $PREFIX/MG5_aMC/mg5decay",
+    "test -d $PREFIX/MG5_aMC/models",
+    "test -d $PREFIX/MG5_aMC/PLUGIN",
+    "test -d $PREFIX/MG5_aMC/Template",
+    "test -d $PREFIX/MG5_aMC/vendor",
+    "test -f $PREFIX/MG5_aMC/proc_card.dat",
+    "test -f $PREFIX/MG5_aMC/VERSION",
+    "test -f $PREFIX/bin/mg5_aMC",
+    "test -f $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "test -f $PREFIX/MG5_aMC/madgraph/LICENSE",
+    "echo -e \"\\n# Checking mg5_configuration.txt\"",
+    "cat $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "mg5_aMC --help",
+    "echo \"exit\" | mg5_aMC",
+    "mg5_aMC $RECIPE_DIR/tutorial.mg5"
+   ],
+   "files": [
+    "$RECIPE_DIR/tutorial.mg5"
+   ]
+  }
+ },
+ "name": "mg5amcnlo",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "MadGraph5_aMC@NLO is a framework that aims at providing all the elements\nnecessary for SM and BSM phenomenology, such as the computations of cross\nsections, the generation of hard events and their matching with event\ngenerators, and the use of a variety of tools relevant to event manipulation\nand analysis.\nProcesses can be simulated to LO accuracy for any user-defined Lagrangian,\nand the NLO accuracy in the case of models that support this kind of calculations\n&mdash; prominent among these are QCD and EW corrections to SM processes.\nMatrix elements at the tree- and one-loop-level can also be obtained.\n\nMadGraph5_aMC@NLO is the new version of both MadGraph5 and aMC@NLO that unifies\nthe LO and NLO lines of development of automated tools within the MadGraph family.\nAs such, the code allows one to simulate processes in virtually all configurations\nof interest, in particular for hadronic and e+e- colliders; starting from version\n3.2.0, the latter include Initial State Radiation and beamstrahlung effects.\n",
+   "dev_url": "https://github.com/mg5amcnlo/mg5amcnlo",
+   "home": "https://github.com/mg5amcnlo/mg5amcnlo",
+   "license": "LicenseRef-NCSA",
+   "license_family": "OTHER",
+   "license_file": "source/LICENSE",
+   "summary": "MadGraph5_aMC@NLO"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "rm -r source/.github",
+    "rm -r source/tests",
+    "rm -r source/vendor/CutTools",
+    "rm source/.bzrignore",
+    "rm source/.gitignore",
+    "rm source/code-notes",
+    "rm source/README",
+    "rm source/UpdateNotes.txt",
+    "rm source/vendor/DiscreteSampler/check",
+    "find source -type f -exec grep -Il '#!/usr/bin/perl -w' {} + | xargs sed -i 's|#!/usr/bin/perl -w|#!/usr/bin/env perl -w|g'",
+    "cp -a source $PREFIX/MG5_aMC",
+    "cp $RECIPE_DIR/mg5_configuration.txt .",
+    "sed -i \"s|REPLACE_WITH_PREFIX|$PREFIX|g\" mg5_configuration.txt",
+    "sed -i \"s|REPLACE_WITH_BASENAME_FC|$(basename $FC)|g\" mg5_configuration.txt",
+    "sed -i \"s|REPLACE_WITH_BASENAME_GXX|$(basename $GXX)|g\" mg5_configuration.txt",
+    "mv mg5_configuration.txt $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "mkdir -p $PREFIX/bin",
+    "ln -s $PREFIX/MG5_aMC/bin/mg5_aMC $PREFIX/bin/mg5_aMC",
+    "mkdir -p $PREFIX/share/mg5_aMC",
+    "ln -s $PREFIX/MG5_aMC/proc_card.dat $PREFIX/share/mg5_aMC/proc_card.dat",
+    "echo \"exit\" | mg5_aMC",
+    "rm py.py"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "matthewfeickert"
+   ]
+  },
+  "package": {
+   "name": "mg5amcnlo",
+   "version": "3.5.7"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "sed",
+    "grep"
+   ],
+   "host": [
+    "python",
+    "six",
+    "ply",
+    "fastjet-cxx",
+    "emela",
+    "lhapdf"
+   ],
+   "run": [
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "tar",
+    "perl",
+    "python",
+    "six",
+    "numpy",
+    "fastjet-contrib",
+    "emela",
+    "lhapdf",
+    "pythia8",
+    "ply",
+    "oneloop",
+    "collier",
+    "ghostscript"
+   ]
+  },
+  "schema_version": 0,
+  "source": [
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   },
+   {
+    "folder": "source",
+    "patches": [
+     "allow-for-shared-libraries.patch"
+    ],
+    "sha256": "ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e",
+    "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz"
+   }
+  ],
+  "test": {
+   "commands": [
+    "test -d $PREFIX/MG5_aMC",
+    "test -d $PREFIX/MG5_aMC/aloha",
+    "test -d $PREFIX/MG5_aMC/bin",
+    "test -d $PREFIX/MG5_aMC/HELAS",
+    "test -d $PREFIX/MG5_aMC/input",
+    "test -d $PREFIX/MG5_aMC/madgraph",
+    "test -d $PREFIX/MG5_aMC/MadSpin",
+    "test -d $PREFIX/MG5_aMC/mg5decay",
+    "test -d $PREFIX/MG5_aMC/models",
+    "test -d $PREFIX/MG5_aMC/PLUGIN",
+    "test -d $PREFIX/MG5_aMC/Template",
+    "test -d $PREFIX/MG5_aMC/vendor",
+    "test -f $PREFIX/MG5_aMC/proc_card.dat",
+    "test -f $PREFIX/MG5_aMC/VERSION",
+    "test -f $PREFIX/bin/mg5_aMC",
+    "test -f $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "test -f $PREFIX/MG5_aMC/madgraph/LICENSE",
+    "echo -e \"\\n# Checking mg5_configuration.txt\"",
+    "cat $PREFIX/MG5_aMC/input/mg5_configuration.txt",
+    "mg5_aMC --help",
+    "echo \"exit\" | mg5_aMC",
+    "mg5_aMC $RECIPE_DIR/tutorial.mg5"
+   ],
+   "files": [
+    "$RECIPE_DIR/tutorial.mg5"
+   ]
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "grep",
+    "sed"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "emela",
+    "fastjet-cxx",
+    "lhapdf",
+    "ply",
+    "python",
+    "six"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "collier",
+    "cxx_compiler_stub",
+    "emela",
+    "fastjet-contrib",
+    "fortran_compiler_stub",
+    "ghostscript",
+    "lhapdf",
+    "make",
+    "numpy",
+    "oneloop",
+    "perl",
+    "ply",
+    "pythia8",
+    "python",
+    "six",
+    "tar"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "mg5amcnlo"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/mg5amcnlo.json"
+ },
+ "raw_meta_yaml": "{% set name = \"mg5amcnlo\" %}\n{% set version = \"3.5.7\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/{{ version }}/MG5_aMC_v{{ version }}.tar.gz\n    sha256: ca3e027f078438318bd4143a102aebc2d51358f537b5d52bbc574fe49a6a901e\n    folder: source\n    patches:\n      # FIXME: mg5amcnlo assumes that ninja and collier are only static libraries\n      - allow-for-shared-libraries.patch\n\nbuild:\n  # FIXME: mg5amcnlo doesn't support Python 3.12 yet\n  skip: true  # [py<37 or py>311 or win]\n  number: 0\n  script:\n    # Remove unnecessary files\n    - rm -r source/.github\n    - rm -r source/tests\n    - rm -r source/vendor/CutTools\n    - rm source/.bzrignore\n    - rm source/.gitignore\n    - rm source/code-notes\n    - rm source/README\n    - rm source/UpdateNotes.txt\n    # FIXME: Remove prebuilt binary added in tarball\n    - rm source/vendor/DiscreteSampler/check\n\n    # Fix bugs\n    # FIXME: Use user space perl instead of system perl\n    - find source -type f -exec grep -Il '#!/usr/bin/perl -w' {} + | xargs sed -i 's|#!/usr/bin/perl -w|#!/usr/bin/env perl -w|g'\n\n    # Need to use -a to preserve symlinks\n    - cp -a source $PREFIX/MG5_aMC\n\n    # TODO: Add MG5aMC_PY8_interface\n    # https://github.com/mg5amcnlo/MG5aMC_PY8_interface\n\n    # Build configuration file be replacing placeholder values with PREFIX\n    - cp $RECIPE_DIR/mg5_configuration.txt .\n    - sed -i \"s|REPLACE_WITH_PREFIX|$PREFIX|g\" mg5_configuration.txt\n    - sed -i \"s|REPLACE_WITH_BASENAME_FC|$(basename $FC)|g\" mg5_configuration.txt\n    - sed -i \"s|REPLACE_WITH_BASENAME_GXX|$(basename $GXX)|g\" mg5_configuration.txt\n    - mv mg5_configuration.txt $PREFIX/MG5_aMC/input/mg5_configuration.txt\n\n    # Setup links\n    - mkdir -p $PREFIX/bin\n    - ln -s $PREFIX/MG5_aMC/bin/mg5_aMC $PREFIX/bin/mg5_aMC\n    - mkdir -p $PREFIX/share/mg5_aMC\n    - ln -s $PREFIX/MG5_aMC/proc_card.dat $PREFIX/share/mg5_aMC/proc_card.dat\n\n    # Generate initial files\n    # conda-build intentionally compiles .pyc files, so keep those.\n    # c.f. https://docs.conda.io/projects/conda-build/en/stable/resources/define-metadata.html#skip-compiling-some-py-files-into-pyc-files\n    - echo \"exit\" | mg5_aMC\n    - rm py.py\n\nrequirements:\n  build:\n    - {{ stdlib('c') }}\n    # Compilers needed to set names in mg5_configuration.txt and will be\n    # used in the future along with make when bugs with Pythia8 are fixed\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    # - make\n    - sed\n    - grep\n  host:\n    - python\n    - six\n    - ply\n    - fastjet-cxx\n    - emela\n    - lhapdf\n  run:\n    # mg5amcnlo is a code generator and so requires a build system at runtime\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - make\n    - tar\n    - perl\n    - python\n    - six\n    - numpy\n    - fastjet-contrib\n    - emela\n    - lhapdf\n    - pythia8\n    - ply\n    - oneloop\n    # ninja-hep-ph uses libquadmath and so does not support macOS\n    - ninja-hep-ph  # [linux]\n    - collier\n    - ghostscript\n\ntest:\n  files:\n    - $RECIPE_DIR/tutorial.mg5\n  commands:\n    - test -d $PREFIX/MG5_aMC\n    - test -d $PREFIX/MG5_aMC/aloha\n    - test -d $PREFIX/MG5_aMC/bin\n    - test -d $PREFIX/MG5_aMC/HELAS\n    - test -d $PREFIX/MG5_aMC/input\n    - test -d $PREFIX/MG5_aMC/madgraph\n    - test -d $PREFIX/MG5_aMC/MadSpin\n    - test -d $PREFIX/MG5_aMC/mg5decay\n    - test -d $PREFIX/MG5_aMC/models\n    - test -d $PREFIX/MG5_aMC/PLUGIN\n    - test -d $PREFIX/MG5_aMC/Template\n    - test -d $PREFIX/MG5_aMC/vendor\n\n    - test -f $PREFIX/MG5_aMC/proc_card.dat\n    - test -f $PREFIX/MG5_aMC/VERSION\n    - test -f $PREFIX/bin/mg5_aMC\n    - test -f $PREFIX/MG5_aMC/input/mg5_configuration.txt\n    - test -f $PREFIX/MG5_aMC/madgraph/LICENSE\n\n    - echo -e \"\\n# Checking mg5_configuration.txt\"\n    - cat $PREFIX/MG5_aMC/input/mg5_configuration.txt\n\n    - mg5_aMC --help\n\n    - echo \"exit\" | mg5_aMC\n\n    - mg5_aMC $RECIPE_DIR/tutorial.mg5\n\nabout:\n  home: https://github.com/mg5amcnlo/mg5amcnlo\n  summary: 'MadGraph5_aMC@NLO'\n  description: |\n    MadGraph5_aMC@NLO is a framework that aims at providing all the elements\n    necessary for SM and BSM phenomenology, such as the computations of cross\n    sections, the generation of hard events and their matching with event\n    generators, and the use of a variety of tools relevant to event manipulation\n    and analysis.\n    Processes can be simulated to LO accuracy for any user-defined Lagrangian,\n    and the NLO accuracy in the case of models that support this kind of calculations\n    &mdash; prominent among these are QCD and EW corrections to SM processes.\n    Matrix elements at the tree- and one-loop-level can also be obtained.\n\n    MadGraph5_aMC@NLO is the new version of both MadGraph5 and aMC@NLO that unifies\n    the LO and NLO lines of development of automated tools within the MadGraph family.\n    As such, the code allows one to simulate processes in virtually all configurations\n    of interest, in particular for hadronic and e+e- colliders; starting from version\n    3.2.0, the latter include Initial State Radiation and beamstrahlung effects.\n  # modified University of Illinois/NCSA license\n  license: LicenseRef-NCSA\n  license_family: OTHER\n  license_file: source/LICENSE\n  dev_url: https://github.com/mg5amcnlo/mg5amcnlo\n\nextra:\n  recipe-maintainers:\n    - matthewfeickert\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "c_stdlib_stub",
+   "collier",
+   "cxx_compiler_stub",
+   "emela",
+   "fastjet-contrib",
+   "fastjet-cxx",
+   "fortran_compiler_stub",
+   "ghostscript",
+   "grep",
+   "lhapdf",
+   "make",
+   "ninja-hep-ph",
+   "numpy",
+   "oneloop",
+   "perl",
+   "ply",
+   "pythia8",
+   "python",
+   "sed",
+   "six",
+   "tar"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "grep",
+    "sed"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "emela",
+    "fastjet-cxx",
+    "fortran_compiler_stub",
+    "lhapdf",
+    "ply",
+    "python",
+    "six"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "collier",
+    "cxx_compiler_stub",
+    "emela",
+    "fastjet-contrib",
+    "fortran_compiler_stub",
+    "ghostscript",
+    "lhapdf",
+    "make",
+    "ninja-hep-ph",
+    "numpy",
+    "oneloop",
+    "perl",
+    "ply",
+    "pythia8",
+    "python",
+    "six",
+    "tar"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "grep",
+    "sed"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "emela",
+    "fastjet-cxx",
+    "lhapdf",
+    "ply",
+    "python",
+    "six"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "collier",
+    "cxx_compiler_stub",
+    "emela",
+    "fastjet-contrib",
+    "fortran_compiler_stub",
+    "ghostscript",
+    "lhapdf",
+    "make",
+    "ninja-hep-ph",
+    "numpy",
+    "oneloop",
+    "perl",
+    "ply",
+    "pythia8",
+    "python",
+    "six",
+    "tar"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "url": "https://github.com/hep-packaging-coordination/mg5amcnlo-release-mirror/releases/download/3.5.7/MG5_aMC_v3.5.7.tar.gz",
+ "version": "3.5.7",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/mg5amcnlo.json"
+ }
+}
