@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "xradar",
-   "version": "0.8.0"
+   "version": "0.9.0"
   },
   "requirements": {
    "host": [
@@ -61,8 +61,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f1593ecf0aa874168f4f046bb9a291de44b29403475a8d945d60af2a62d820c3",
-   "url": "https://pypi.org/packages/source/x/xradar/xradar-0.8.0.tar.gz"
+   "sha256": "0b1a314b116d5323f24c4afdf48065e53c07b8936ccfdfdea04555db5fe62009",
+   "url": "https://pypi.org/packages/source/x/xradar/xradar-0.9.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -127,7 +127,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -138,7 +138,7 @@
   },
   "package": {
    "name": "xradar",
-   "version": "0.8.0"
+   "version": "0.9.0"
   },
   "requirements": {
    "host": [
@@ -166,8 +166,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f1593ecf0aa874168f4f046bb9a291de44b29403475a8d945d60af2a62d820c3",
-   "url": "https://pypi.org/packages/source/x/xradar/xradar-0.8.0.tar.gz"
+   "sha256": "0b1a314b116d5323f24c4afdf48065e53c07b8936ccfdfdea04555db5fe62009",
+   "url": "https://pypi.org/packages/source/x/xradar/xradar-0.9.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -196,7 +196,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/xradar.json"
  },
- "raw_meta_yaml": "{% set name = \"xradar\" %}\n{% set version = \"0.8.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xradar-{{ version }}.tar.gz\n  sha256: f1593ecf0aa874168f4f046bb9a291de44b29403475a8d945d60af2a62d820c3\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools_scm\n  run:\n    - python >={{ python_min }}\n    - packaging\n    - cmweather\n    - dask\n    - h5netcdf\n    - h5py\n    - lat_lon_parser\n    - numpy\n    - netcdf4\n    - python-dateutil\n    - scipy\n    - xarray >=2024.10.0\n    - xmltodict\n    - pyproj\n\ntest:\n  imports:\n    - xradar\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/openradar/xradar\n  summary: Xradar includes all the tools to get your weather radar into the xarray data model.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - mgrover1\n",
+ "raw_meta_yaml": "{% set name = \"xradar\" %}\n{% set version = \"0.9.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xradar-{{ version }}.tar.gz\n  sha256: 0b1a314b116d5323f24c4afdf48065e53c07b8936ccfdfdea04555db5fe62009\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools_scm\n  run:\n    - python >={{ python_min }}\n    - packaging\n    - cmweather\n    - dask\n    - h5netcdf\n    - h5py\n    - lat_lon_parser\n    - numpy\n    - netcdf4\n    - python-dateutil\n    - scipy\n    - xarray >=2024.10.0\n    - xmltodict\n    - pyproj\n\ntest:\n  imports:\n    - xradar\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/openradar/xradar\n  summary: Xradar includes all the tools to get your weather radar into the xarray data model.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - mgrover1\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -302,8 +302,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/x/xradar/xradar-0.8.0.tar.gz",
- "version": "0.8.0",
+ "url": "https://pypi.org/packages/source/x/xradar/xradar-0.9.0.tar.gz",
+ "version": "0.9.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/xradar.json"
  }
