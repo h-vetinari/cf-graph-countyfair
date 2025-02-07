@@ -31,42 +31,47 @@
   "extra": {
    "recipe-maintainers": [
     "michalchromcak",
-    "skzhang1"
+    "skzhang1",
+    "thewchan"
    ]
   },
   "package": {
    "name": "flaml",
-   "version": "2.1.2"
+   "version": "2.3.3"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
-    "numpy >=1.17.0rc1",
-    "lightgbm >=2.3.1",
-    "xgboost >=0.90",
-    "scipy >=1.4.1",
-    "pandas >=1.1.4",
-    "scikit-learn >=0.24",
-    "python >=3.6"
+    "python >=3.9",
+    "numpy >=1.17"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "33102862a21c63d004f78e1349ccd55753e3534bfcdcb6e65a08562c14d69e44",
-   "url": "https://pypi.io/packages/source/F/FLAML/FLAML-2.1.2.tar.gz"
+   "sha256": "f3237d3e4970b93800ff175389362a8de6d68af4bc333c211931791e9b26debe",
+   "url": "https://pypi.org/packages/source/f/flaml/flaml-2.3.3.tar.gz"
   },
   "test": {
    "commands": [
+    "pip check",
     "pytest -m conda"
+   ],
+   "imports": [
+    "flaml"
    ],
    "requires": [
     "pip",
     "pytest",
     "pandas >=1.1.4",
-    "scikit-learn >=0.24"
+    "lightgbm >=2.3.1",
+    "xgboost >=0.90,<3.0.0",
+    "scipy >=1.4.1",
+    "scikit-learn >=1.0.0",
+    "python 3.9"
    ],
    "source_files": [
     "test/test_conda_distribution.py"
@@ -82,28 +87,28 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "lightgbm",
     "numpy",
-    "pandas",
-    "python",
-    "scikit-learn",
-    "scipy",
-    "xgboost"
+    "python"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
+    "lightgbm",
     "pandas",
     "pip",
     "pytest",
-    "scikit-learn"
+    "python",
+    "scikit-learn",
+    "scipy",
+    "xgboost"
    ]
   }
  },
@@ -122,42 +127,47 @@
   "extra": {
    "recipe-maintainers": [
     "michalchromcak",
-    "skzhang1"
+    "skzhang1",
+    "thewchan"
    ]
   },
   "package": {
    "name": "flaml",
-   "version": "2.1.2"
+   "version": "2.3.3"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
-    "numpy >=1.17.0rc1",
-    "lightgbm >=2.3.1",
-    "xgboost >=0.90",
-    "scipy >=1.4.1",
-    "pandas >=1.1.4",
-    "scikit-learn >=0.24",
-    "python >=3.6"
+    "python >=3.9",
+    "numpy >=1.17"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "33102862a21c63d004f78e1349ccd55753e3534bfcdcb6e65a08562c14d69e44",
-   "url": "https://pypi.io/packages/source/F/FLAML/FLAML-2.1.2.tar.gz"
+   "sha256": "f3237d3e4970b93800ff175389362a8de6d68af4bc333c211931791e9b26debe",
+   "url": "https://pypi.org/packages/source/f/flaml/flaml-2.3.3.tar.gz"
   },
   "test": {
    "commands": [
+    "pip check",
     "pytest -m conda"
+   ],
+   "imports": [
+    "flaml"
    ],
    "requires": [
     "pip",
     "pytest",
     "pandas >=1.1.4",
-    "scikit-learn >=0.24"
+    "lightgbm >=2.3.1",
+    "xgboost >=0.90,<3.0.0",
+    "scipy >=1.4.1",
+    "scikit-learn >=1.0.0",
+    "python 3.9"
    ],
    "source_files": [
     "test/test_conda_distribution.py"
@@ -178,18 +188,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/flaml.json"
  },
- "raw_meta_yaml": "{% set name = \"FLAML\" %}\n{% set version = \"2.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 33102862a21c63d004f78e1349ccd55753e3534bfcdcb6e65a08562c14d69e44\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - numpy >=1.17.0rc1\n    - lightgbm >=2.3.1\n    - xgboost >=0.90\n    - scipy >=1.4.1\n    - pandas >=1.1.4\n    - scikit-learn >=0.24\n    - python >=3.6\n\ntest:\n  requires:\n    - pip\n    - pytest\n    - pandas >=1.1.4\n    - scikit-learn >=0.24\n  source_files:\n    # list all conda related test files here\n    # note: keep the conda related tests directly in the test folder, so that bundling to tar.gz includes them\n    # or just extend the test_conda_distribution.py file with more tests (and make sure to mark it as conda)\n    - test/test_conda_distribution.py\n  commands:\n    - pytest -m conda\n\nabout:\n  home: https://github.com/microsoft/FLAML\n  summary: A fast and lightweight autoML system\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - michalchromcak\n    - skzhang1\n",
+ "raw_meta_yaml": "{% set name = \"flaml\" %}\n{% set version = \"2.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f3237d3e4970b93800ff175389362a8de6d68af4bc333c211931791e9b26debe\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.17\n\ntest:\n  requires:\n    - pip\n    - pytest\n    - pandas >=1.1.4\n    - lightgbm >=2.3.1\n    - xgboost >=0.90,<3.0.0\n    - scipy >=1.4.1\n    - scikit-learn >=1.0.0\n    - python {{ python_min }}\n  source_files:\n    # list all conda related test files here\n    # note: keep the conda related tests directly in the test folder, so that bundling to tar.gz includes them\n    # or just extend the test_conda_distribution.py file with more tests (and make sure to mark it as conda)\n    - test/test_conda_distribution.py\n  commands:\n    - pip check\n    - pytest -m conda\n  imports:\n    - flaml\n\nabout:\n  home: https://github.com/microsoft/FLAML\n  summary: A fast and lightweight autoML system\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - michalchromcak\n    - skzhang1\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
-   "lightgbm",
    "numpy",
-   "pandas",
    "pip",
    "python",
-   "scikit-learn",
-   "scipy",
-   "xgboost"
+   "setuptools"
   ]
  },
  "requirements": {
@@ -201,28 +207,28 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "lightgbm",
     "numpy",
-    "pandas",
-    "python",
-    "scikit-learn",
-    "scipy",
-    "xgboost"
+    "python"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
+    "lightgbm",
     "pandas",
     "pip",
     "pytest",
-    "scikit-learn"
+    "python",
+    "scikit-learn",
+    "scipy",
+    "xgboost"
    ]
   }
  },
@@ -236,33 +242,33 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "lightgbm >=2.3.1",
-    "numpy >=1.17.0rc1",
-    "pandas >=1.1.4",
-    "python >=3.6",
-    "scikit-learn >=0.24",
-    "scipy >=1.4.1",
-    "xgboost >=0.90"
+    "numpy >=1.17",
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
+    "lightgbm >=2.3.1",
     "pandas >=1.1.4",
     "pip",
     "pytest",
-    "scikit-learn >=0.24"
+    "python 3.9",
+    "scikit-learn >=1.0.0",
+    "scipy >=1.4.1",
+    "xgboost >=0.90,<3.0.0"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/F/FLAML/FLAML-2.1.2.tar.gz",
- "version": "2.1.2",
+ "url": "https://pypi.org/packages/source/f/flaml/flaml-2.3.3.tar.gz",
+ "version": "2.3.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/flaml.json"
  }
