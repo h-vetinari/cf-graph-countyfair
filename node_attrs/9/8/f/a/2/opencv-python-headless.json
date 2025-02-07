@@ -31,7 +31,7 @@
     "/lib64/libm.so.6",
     "/lib64/libpthread.so.0"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -149,7 +149,7 @@
     "/lib64/libm.so.6",
     "/lib64/libpthread.so.0"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -221,7 +221,7 @@
    "summary": "Wrapper package for OpenCV python bindings."
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -328,7 +328,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/opencv-python-headless.json"
  },
- "raw_meta_yaml": "{% set name = \"opencv-python-headless\" %}\n{% set version = \"4.11.0.86\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/opencv-python-headless-{{ version }}.tar.gz\n  sha256: 996eb282ca4b43ec6a3972414de0e2331f5d9cda2b41091a49739c19fb843798\n\nbuild:\n  skip: true  # [win]\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n  missing_dso_whitelist:  # [linux]\n    - /lib64/ld-linux-x86-64.so.2  # [linux]\n    - /lib64/libc.so.6  # [linux]\n    - /lib64/libdl.so.2  # [linux]\n    - /lib64/libm.so.6  # [linux]\n    - /lib64/libpthread.so.0  # [linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [not win]\n    - {{ compiler('cxx') }}  # [not win]\n    - {{ stdlib('c') }}  # [not win]\n    - cmake\n    - make  # [unix]\n  host:\n    - python\n    - sysroot_linux-64  # [linux]\n    - libgcc-ng  # [linux]\n    - numpy ==1.13.3  # [py==36]\n    - numpy ==1.17.0  # [py==37]\n    - numpy ==1.17.5  # [py==38]\n    - numpy ==1.19.3  # [py<39 and linux]\n    - numpy ==1.21.0  # [py<39 and darwin]\n    - numpy >=2.0.0  # [py>=39]\n    - packaging\n    - pip\n    - scikit-build >=0.14.0\n    - setuptools >=59.2.0  # [py<312]\n    - setuptools <70.0.0  # [py>=312]\n  run:\n    - cmake\n    - python\n    - sysroot_linux-64  # [linux]\n    - libgcc-ng  # [linux]\n    - numpy >=1.13.3  # [py<37]\n    - numpy >=1.21.0  # [py<=39 and osx]\n    - numpy >=1.21.2  # [py>=310]\n    - numpy >=1.21.4  # [py>=310 and osx]\n    - numpy >=1.23.5  # [py>=311]\n    - numpy >=1.26.0  # [py>=312]\n    - numpy >=1.19.3  # [py>=36 and linux]\n    - numpy >=1.17.0  # [py>=37]\n    - numpy >=1.17.3  # [py>=38]\n    - numpy >=1.19.3  # [py>=39]\n\ntest:\n  imports:\n    - cv2\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/opencv/opencv-python\n  summary: Wrapper package for OpenCV python bindings.\n  license: MIT AND Apache-2.0\n  license_file:\n    - LICENSE-3RD-PARTY.txt\n    - LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - nilchia\n",
+ "raw_meta_yaml": "{% set name = \"opencv-python-headless\" %}\n{% set version = \"4.11.0.86\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/opencv-python-headless-{{ version }}.tar.gz\n  sha256: 996eb282ca4b43ec6a3972414de0e2331f5d9cda2b41091a49739c19fb843798\n\nbuild:\n  skip: true  # [win]\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n  missing_dso_whitelist:  # [linux]\n    - /lib64/ld-linux-x86-64.so.2  # [linux]\n    - /lib64/libc.so.6  # [linux]\n    - /lib64/libdl.so.2  # [linux]\n    - /lib64/libm.so.6  # [linux]\n    - /lib64/libpthread.so.0  # [linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [not win]\n    - {{ compiler('cxx') }}  # [not win]\n    - {{ stdlib('c') }}  # [not win]\n    - cmake\n    - make  # [unix]\n  host:\n    - python\n    - sysroot_linux-64  # [linux]\n    - libgcc-ng  # [linux]\n    - numpy ==1.13.3  # [py==36]\n    - numpy ==1.17.0  # [py==37]\n    - numpy ==1.17.5  # [py==38]\n    - numpy ==1.19.3  # [py<39 and linux]\n    - numpy ==1.21.0  # [py<39 and darwin]\n    - numpy >=2.0.0  # [py>=39]\n    - packaging\n    - pip\n    - scikit-build >=0.14.0\n    - setuptools >=59.2.0  # [py<312]\n    - setuptools <70.0.0  # [py>=312]\n  run:\n    - cmake\n    - python\n    - sysroot_linux-64  # [linux]\n    - libgcc-ng  # [linux]\n    - numpy >=1.13.3  # [py<37]\n    - numpy >=1.21.0  # [py<=39 and osx]\n    - numpy >=1.21.2  # [py>=310]\n    - numpy >=1.21.4  # [py>=310 and osx]\n    - numpy >=1.23.5  # [py>=311]\n    - numpy >=1.26.0  # [py>=312]\n    - numpy >=1.19.3  # [py>=36 and linux]\n    - numpy >=1.17.0  # [py>=37]\n    - numpy >=1.17.3  # [py>=38]\n    - numpy >=1.19.3  # [py>=39]\n\ntest:\n  imports:\n    - cv2\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/opencv/opencv-python\n  summary: Wrapper package for OpenCV python bindings.\n  license: MIT AND Apache-2.0\n  license_file:\n    - LICENSE-3RD-PARTY.txt\n    - LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - nilchia\n",
  "req": {
   "__set__": true,
   "elements": [
