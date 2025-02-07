@@ -28,7 +28,7 @@
     "django-upgrade = django_upgrade.main:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "django-upgrade",
-   "version": "1.22.2"
+   "version": "1.23.0"
   },
   "requirements": {
    "host": [
@@ -53,8 +53,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8643abdde2961e3c60173ebee84f48371ffbec5181095a38cac080947af0d2ae",
-   "url": "https://pypi.org/packages/source/d/django-upgrade/django_upgrade-1.22.2.tar.gz"
+   "sha256": "5705f7e247068f82a34b82fb74890f256e4d1ed676c539707b731471d2bb11ac",
+   "url": "https://pypi.org/packages/source/d/django-upgrade/django_upgrade-1.23.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -110,7 +110,7 @@
     "django-upgrade = django_upgrade.main:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -120,7 +120,7 @@
   },
   "package": {
    "name": "django-upgrade",
-   "version": "1.22.2"
+   "version": "1.23.0"
   },
   "requirements": {
    "host": [
@@ -135,8 +135,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8643abdde2961e3c60173ebee84f48371ffbec5181095a38cac080947af0d2ae",
-   "url": "https://pypi.org/packages/source/d/django-upgrade/django_upgrade-1.22.2.tar.gz"
+   "sha256": "5705f7e247068f82a34b82fb74890f256e4d1ed676c539707b731471d2bb11ac",
+   "url": "https://pypi.org/packages/source/d/django-upgrade/django_upgrade-1.23.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -166,7 +166,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/django-upgrade.json"
  },
- "raw_meta_yaml": "{% set name = \"django-upgrade\" %}\n{% set version = \"1.22.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 8643abdde2961e3c60173ebee84f48371ffbec5181095a38cac080947af0d2ae\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - django-upgrade = django_upgrade.main:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - tokenize-rt >=4.1\n\ntest:\n  imports:\n    - django_upgrade\n  commands:\n    - pip check\n    - django-upgrade --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/adamchainz/django-upgrade\n  summary: Automatically upgrade your Django projects.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"django-upgrade\" %}\n{% set version = \"1.23.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 5705f7e247068f82a34b82fb74890f256e4d1ed676c539707b731471d2bb11ac\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - django-upgrade = django_upgrade.main:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - tokenize-rt >=4.1\n\ntest:\n  imports:\n    - django_upgrade\n  commands:\n    - pip check\n    - django-upgrade --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/adamchainz/django-upgrade\n  summary: Automatically upgrade your Django projects.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -233,8 +233,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/django-upgrade/django_upgrade-1.22.2.tar.gz",
- "version": "1.22.2",
+ "url": "https://pypi.org/packages/source/d/django-upgrade/django_upgrade-1.23.0.tar.gz",
+ "version": "1.23.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/django-upgrade.json"
  }
