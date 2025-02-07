@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -32,36 +32,28 @@
   },
   "package": {
    "name": "decoupler-py",
-   "version": "1.8.0"
+   "version": "1.9.2"
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python 3.10",
     "pip",
     "poetry"
    ],
    "run": [
-    "python >=3.9",
-    "numba",
-    "tqdm",
-    "anndata",
-    "typing-extensions",
+    "python >=3.10",
     "scikit-learn",
-    "omnipath",
-    "adjustText",
-    "scanpy",
-    "seaborn",
-    "pandas",
-    "scipy",
-    "numpy <2.0.0",
-    "typing_extensions",
-    "python-igraph >=0.10.0"
+    "igraph",
+    "adjusttext >=1.1.1",
+    "pydeseq2 <0.5.0",
+    "marsilea >=0.4.5",
+    "scanpy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4f6cda3fb2c807ff8681f1d15c3167e14f3a419378b4446c8ede3b60d40afb74",
-   "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.8.0.tar.gz"
+   "sha256": "9b3f75673311635fd30228273f953cc2b3d3886bcebff83abadfc9200951a7f9",
+   "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.9.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -73,7 +65,7 @@
    "requires": [
     "pip",
     "poetry",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -94,20 +86,12 @@
    "__set__": true,
    "elements": [
     "adjusttext",
-    "anndata",
-    "numba",
-    "numpy",
-    "omnipath",
-    "pandas",
+    "igraph",
+    "marsilea",
+    "pydeseq2",
     "python",
-    "python-igraph",
     "scanpy",
-    "scikit-learn",
-    "scipy",
-    "seaborn",
-    "tqdm",
-    "typing-extensions",
-    "typing_extensions"
+    "scikit-learn"
    ]
   },
   "test": {
@@ -128,7 +112,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -138,36 +122,28 @@
   },
   "package": {
    "name": "decoupler-py",
-   "version": "1.8.0"
+   "version": "1.9.2"
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python 3.10",
     "pip",
     "poetry"
    ],
    "run": [
-    "python >=3.9",
-    "numba",
-    "tqdm",
-    "anndata",
-    "typing-extensions",
+    "python >=3.10",
     "scikit-learn",
-    "omnipath",
-    "adjustText",
-    "scanpy",
-    "seaborn",
-    "pandas",
-    "scipy",
-    "numpy <2.0.0",
-    "typing_extensions",
-    "python-igraph >=0.10.0"
+    "igraph",
+    "adjusttext >=1.1.1",
+    "pydeseq2 <0.5.0",
+    "marsilea >=0.4.5",
+    "scanpy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4f6cda3fb2c807ff8681f1d15c3167e14f3a419378b4446c8ede3b60d40afb74",
-   "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.8.0.tar.gz"
+   "sha256": "9b3f75673311635fd30228273f953cc2b3d3886bcebff83abadfc9200951a7f9",
+   "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.9.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -179,7 +155,7 @@
    "requires": [
     "pip",
     "poetry",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -197,27 +173,19 @@
  "pr_info": {
   "__lazy_json__": "pr_info/decoupler-py.json"
  },
- "raw_meta_yaml": "{% set name = \"decoupler\" %}\n{% set conda_package_name = \"decoupler-py\" %}\n{% set version = \"1.8.0\" %}\n\npackage:\n  name: {{ conda_package_name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/decoupler-{{ version }}.tar.gz\n  sha256: 4f6cda3fb2c807ff8681f1d15c3167e14f3a419378b4446c8ede3b60d40afb74\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - poetry\n  run:\n    - python >={{ python_min }}\n    - numba\n    - tqdm\n    - anndata\n    - typing-extensions\n    - scikit-learn\n    - omnipath\n    - adjustText\n    - scanpy\n    - seaborn\n    - pandas\n    - scipy\n    - numpy <2.0.0\n    - typing_extensions\n    - python-igraph >=0.10.0\n\ntest:\n  imports:\n    - decoupler\n  commands:\n    - pip check\n  requires:\n    - pip\n    - poetry\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/saezlab/decoupler-py\n  summary: Ensemble of methods to perform enrichment analysis from omics data\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - PauBadiaM\n",
+ "raw_meta_yaml": "{% set name = \"decoupler\" %}\n{% set conda_package_name = \"decoupler-py\" %}\n{% set version = \"1.9.2\" %}\n\npackage:\n  name: {{ conda_package_name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/decoupler-{{ version }}.tar.gz\n  sha256: 9b3f75673311635fd30228273f953cc2b3d3886bcebff83abadfc9200951a7f9\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - poetry\n  run:\n    - python >={{ python_min }}\n    - scikit-learn\n    - igraph\n    - adjusttext >=1.1.1\n    - pydeseq2 <0.5.0\n    - marsilea >=0.4.5\n    - scanpy\n\ntest:\n  imports:\n    - decoupler\n  commands:\n    - pip check\n  requires:\n    - pip\n    - poetry\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/saezlab/decoupler-py\n  summary: Ensemble of methods to perform enrichment analysis from omics data\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - PauBadiaM\n",
  "req": {
   "__set__": true,
   "elements": [
    "adjusttext",
-   "anndata",
-   "numba",
-   "numpy",
-   "omnipath",
-   "pandas",
+   "igraph",
+   "marsilea",
    "pip",
    "poetry",
+   "pydeseq2",
    "python",
-   "python-igraph",
    "scanpy",
-   "scikit-learn",
-   "scipy",
-   "seaborn",
-   "tqdm",
-   "typing-extensions",
-   "typing_extensions"
+   "scikit-learn"
   ]
  },
  "requirements": {
@@ -237,20 +205,12 @@
    "__set__": true,
    "elements": [
     "adjusttext",
-    "anndata",
-    "numba",
-    "numpy",
-    "omnipath",
-    "pandas",
+    "igraph",
+    "marsilea",
+    "pydeseq2",
     "python",
-    "python-igraph",
     "scanpy",
-    "scikit-learn",
-    "scipy",
-    "seaborn",
-    "tqdm",
-    "typing-extensions",
-    "typing_extensions"
+    "scikit-learn"
    ]
   },
   "test": {
@@ -273,27 +233,19 @@
    "elements": [
     "pip",
     "poetry",
-    "python 3.9"
+    "python 3.10"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "adjustText",
-    "anndata",
-    "numba",
-    "numpy <2.0.0",
-    "omnipath",
-    "pandas",
-    "python >=3.9",
-    "python-igraph >=0.10.0",
+    "adjusttext >=1.1.1",
+    "igraph",
+    "marsilea >=0.4.5",
+    "pydeseq2 <0.5.0",
+    "python >=3.10",
     "scanpy",
-    "scikit-learn",
-    "scipy",
-    "seaborn",
-    "tqdm",
-    "typing-extensions",
-    "typing_extensions"
+    "scikit-learn"
    ]
   },
   "test": {
@@ -301,12 +253,12 @@
    "elements": [
     "pip",
     "poetry",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.8.0.tar.gz",
- "version": "1.8.0",
+ "url": "https://pypi.org/packages/source/d/decoupler/decoupler-1.9.2.tar.gz",
+ "version": "1.9.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/decoupler-py.json"
  }
