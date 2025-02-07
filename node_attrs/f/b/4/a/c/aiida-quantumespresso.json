@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -43,7 +43,7 @@
      "host": [
       "flit-core >=3.4,<4",
       "pip",
-      "python >=3.8"
+      "python 3.9"
      ],
      "run": [
       "aiida-core.atomic_tools ~=2.3",
@@ -54,7 +54,7 @@
       "numpy",
       "packaging",
       "pydantic ~=2.0",
-      "python >=3.8",
+      "python >=3.9",
       "qe-tools ~=2.0",
       "xmlschema ~=2.0"
      ],
@@ -87,6 +87,9 @@
     "test": {
      "commands": [
       "which pw.x"
+     ],
+     "requires": [
+      "python 3.9"
      ]
     }
    }
@@ -142,7 +145,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -156,7 +160,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -176,7 +180,7 @@
      "host": [
       "flit-core >=3.4,<4",
       "pip",
-      "python >=3.8"
+      "python 3.9"
      ],
      "run": [
       "aiida-core.atomic_tools ~=2.3",
@@ -187,7 +191,7 @@
       "numpy",
       "packaging",
       "pydantic ~=2.0",
-      "python >=3.8",
+      "python >=3.9",
       "qe-tools ~=2.0",
       "xmlschema ~=2.0"
      ],
@@ -220,6 +224,9 @@
     "test": {
      "commands": [
       "which pw.x"
+     ],
+     "requires": [
+      "python 3.9"
      ]
     }
    }
@@ -256,7 +263,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/aiida-quantumespresso.json"
  },
- "raw_meta_yaml": "{% set name = \"aiida-quantumespresso\" %}\n{% set version = \"4.7.0\" %}\n{% set build = 0 %}\n{% set name_code = name + \".code\" %}\n\npackage:\n  name: {{ name|lower }}.meta\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: ed9f5d0c5af99c3df8f2294e7fc3a5666c3919608b8a62cf4f6cf455c172034f\n\nbuild:\n  number: {{ build }}\n  noarch: python\n\nrequirements:\n  run:\n    - {{ pin_subpackage(name, exact=True) }}\n    - {{ pin_subpackage(name_code, exact=True) }}\n\noutputs:\n\n  - name: {{ name }}\n    build:\n      noarch: python\n      script: 'python -m pip install . --no-deps --ignore-installed -vvv '\n    requirements:\n      host:\n        - flit-core >=3.4,<4\n        - pip\n        - python >=3.8\n      run:\n        - aiida-core.atomic_tools ~=2.3\n        - aiida-pseudo ~=1.1\n        - click ~=8.0\n        - importlib_resources\n        - jsonschema\n        - numpy\n        - packaging\n        - pydantic ~=2.0\n        - python >=3.8\n        - qe-tools ~=2.0\n        - xmlschema ~=2.0\n      run_constrained:\n        - {{ name_code }} =={{ version }}\n    test:\n      imports:\n        - aiida_quantumespresso\n      commands:\n        - pip check\n      requires:\n        - pip\n\n  - name: {{ name_code }}\n    build:\n      noarch: python\n    requirements:\n      run:\n        - qe >=6.6,<=7.2\n    test:\n      commands:\n        - which pw.x\n\nabout:\n  home: https://pypi.org/project/aiida-quantumespresso/\n  summary: The official AiiDA plugin for Quantum ESPRESSO\n  dev_url: https://github.com/aiidateam/aiida-quantumespresso\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - chrisjsewell\n    - mbercx\n    - sphuber\n",
+ "raw_meta_yaml": "{% set name = \"aiida-quantumespresso\" %}\n{% set version = \"4.7.0\" %}\n{% set build = 1 %}\n{% set name_code = name + \".code\" %}\n\npackage:\n  name: {{ name|lower }}.meta\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: ed9f5d0c5af99c3df8f2294e7fc3a5666c3919608b8a62cf4f6cf455c172034f\n\nbuild:\n  number: {{ build }}\n  noarch: python\n\nrequirements:\n  run:\n    - {{ pin_subpackage(name, exact=True) }}\n    - {{ pin_subpackage(name_code, exact=True) }}\n\noutputs:\n\n  - name: {{ name }}\n    build:\n      noarch: python\n      script: 'python -m pip install . --no-deps --ignore-installed -vvv '\n    requirements:\n      host:\n        - flit-core >=3.4,<4\n        - pip\n        - python {{ python_min }}\n      run:\n        - aiida-core.atomic_tools ~=2.3\n        - aiida-pseudo ~=1.1\n        - click ~=8.0\n        - importlib_resources\n        - jsonschema\n        - numpy\n        - packaging\n        - pydantic ~=2.0\n        - python >={{ python_min }}\n        - qe-tools ~=2.0\n        - xmlschema ~=2.0\n      run_constrained:\n        - {{ name_code }} =={{ version }}\n    test:\n      imports:\n        - aiida_quantumespresso\n      commands:\n        - pip check\n      requires:\n        - pip\n\n  - name: {{ name_code }}\n    build:\n      noarch: python\n    requirements:\n      run:\n        - qe >=6.6,<=7.2\n    test:\n      requires:\n        - python {{ python_min }}\n      commands:\n        - which pw.x\n\nabout:\n  home: https://pypi.org/project/aiida-quantumespresso/\n  summary: The official AiiDA plugin for Quantum ESPRESSO\n  dev_url: https://github.com/aiidateam/aiida-quantumespresso\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - chrisjsewell\n    - mbercx\n    - sphuber\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -313,7 +320,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -328,7 +336,7 @@
    "elements": [
     "flit-core >=3.4,<4",
     "pip",
-    "python >=3.8"
+    "python 3.9"
    ]
   },
   "run": {
@@ -344,7 +352,7 @@
     "numpy",
     "packaging",
     "pydantic ~=2.0",
-    "python >=3.8",
+    "python >=3.9",
     "qe >=6.6,<=7.2",
     "qe-tools ~=2.0",
     "xmlschema ~=2.0"
@@ -353,7 +361,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
