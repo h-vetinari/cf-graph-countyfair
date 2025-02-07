@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "std-uritemplate",
-   "version": "2.0.1"
+   "version": "2.0.2"
   },
   "requirements": {
    "host": [
@@ -52,8 +52,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f4684ae050167e237ed5819423139893e0b5b7f08dc6b7467bba3fdd64608be8",
-   "url": "https://pypi.org/packages/source/s/std-uritemplate/std_uritemplate-2.0.1.tar.gz"
+   "sha256": "16e6b75d13803ddb81ba7b5fd1414698103b5c5c2fca1fb03dbc98f9fca80a92",
+   "url": "https://pypi.org/packages/source/s/std-uritemplate/std_uritemplate-2.0.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -117,7 +117,7 @@
   },
   "package": {
    "name": "std-uritemplate",
-   "version": "2.0.1"
+   "version": "2.0.2"
   },
   "requirements": {
    "host": [
@@ -131,8 +131,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f4684ae050167e237ed5819423139893e0b5b7f08dc6b7467bba3fdd64608be8",
-   "url": "https://pypi.org/packages/source/s/std-uritemplate/std_uritemplate-2.0.1.tar.gz"
+   "sha256": "16e6b75d13803ddb81ba7b5fd1414698103b5c5c2fca1fb03dbc98f9fca80a92",
+   "url": "https://pypi.org/packages/source/s/std-uritemplate/std_uritemplate-2.0.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/std-uritemplate.json"
  },
- "raw_meta_yaml": "{% set name = \"std-uritemplate\" %}\n{% set version = \"2.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/std_uritemplate-{{ version }}.tar.gz\n  sha256: f4684ae050167e237ed5819423139893e0b5b7f08dc6b7467bba3fdd64608be8\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - stduritemplate\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/std-uritemplate/std-uritemplate\n  summary: std-uritemplate implementation for Python\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  dev_url: https://github.com/std-uritemplate/std-uritemplate\n  doc_url: https://github.com/std-uritemplate/std-uritemplate/blob/main/Readme.md\n\nextra:\n  recipe-maintainers:\n    - xylar\n",
+ "raw_meta_yaml": "{% set name = \"std-uritemplate\" %}\n{% set version = \"2.0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/std_uritemplate-{{ version }}.tar.gz\n  sha256: 16e6b75d13803ddb81ba7b5fd1414698103b5c5c2fca1fb03dbc98f9fca80a92\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - stduritemplate\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/std-uritemplate/std-uritemplate\n  summary: std-uritemplate implementation for Python\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  dev_url: https://github.com/std-uritemplate/std-uritemplate\n  doc_url: https://github.com/std-uritemplate/std-uritemplate/blob/main/Readme.md\n\nextra:\n  recipe-maintainers:\n    - xylar\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -225,8 +225,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/std-uritemplate/std_uritemplate-2.0.1.tar.gz",
- "version": "2.0.1",
+ "url": "https://pypi.org/packages/source/s/std-uritemplate/std_uritemplate-2.0.2.tar.gz",
+ "version": "2.0.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/std-uritemplate.json"
  }
