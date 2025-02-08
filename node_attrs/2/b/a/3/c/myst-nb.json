@@ -8,6 +8,7 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -18,25 +19,17 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "doc_url": "https://myst-nb.readthedocs.io",
+   "doc_url": "https://myst-nb.readthedocs.io/",
    "home": "https://github.com/executablebooks/MyST-NB",
    "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
    "summary": "A Jupyter Notebook Sphinx reader built on top of the MyST markdown parser."
   },
   "build": {
-   "entry_points": [
-    "mystnb-docutils-html = myst_nb.docutils_:cli_html",
-    "mystnb-docutils-html5 = myst_nb.docutils_:cli_html5",
-    "mystnb-docutils-latex = myst_nb.docutils_:cli_latex",
-    "mystnb-docutils-pseudoxml = myst_nb.docutils_:cli_pseudoxml",
-    "mystnb-docutils-xml = myst_nb.docutils_:cli_xml",
-    "mystnb-quickstart = myst_nb.cli:quickstart",
-    "mystnb-to-jupyter = myst_nb.cli:md_to_nb"
-   ],
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv --no-deps --ignore-installed --no-build-isolation"
+   "number": "0",
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -44,14 +37,68 @@
     "conda-forge/jupyter-book"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "myst-nb",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*",
+      "flit-core >=3.4,<4"
+     ],
+     "run": [
+      "importlib-metadata",
+      "ipykernel",
+      "ipython",
+      "jupyter-cache >=0.5",
+      "myst-parser >=1.0.0",
+      "nbclient",
+      "nbformat >=5.0",
+      "python >=3.9",
+      "pyyaml",
+      "sphinx >=5",
+      "typing_extensions"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "myst_nb",
+        "myst_nb.ext.glue"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "mystnb-docutils-html --help",
+       "mystnb-docutils-html5 --help",
+       "mystnb-docutils-latex --help",
+       "mystnb-docutils-pseudoxml --help",
+       "mystnb-docutils-xml --help",
+       "mystnb-quickstart --help",
+       "mystnb-to-jupyter --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "myst-nb",
-   "version": "1.1.2"
+   "version": "1.2.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "flit-core >=3.4,<4"
    ],
    "run": [
@@ -68,30 +115,10 @@
     "typing_extensions"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "961b4005657029ca89892a4c75edbf0856c54ceaf6172368b46bf7676c1f7700",
-   "url": "https://pypi.org/packages/source/m/myst-nb/myst_nb-1.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "mystnb-docutils-html --help",
-    "mystnb-docutils-html5 --help",
-    "mystnb-docutils-latex --help",
-    "mystnb-docutils-pseudoxml --help",
-    "mystnb-docutils-xml --help",
-    "mystnb-quickstart --help",
-    "mystnb-to-jupyter --help"
-   ],
-   "imports": [
-    "myst_nb",
-    "myst_nb.ext.glue"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+   "sha256": "af459ec753b341952182b45b0a80b4776cebf80c9ee6aaca2a3f4027b440c9de",
+   "url": "https://pypi.org/packages/source/m/myst-nb/myst_nb-1.2.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -133,25 +160,17 @@
  },
  "meta_yaml": {
   "about": {
-   "doc_url": "https://myst-nb.readthedocs.io",
+   "doc_url": "https://myst-nb.readthedocs.io/",
    "home": "https://github.com/executablebooks/MyST-NB",
    "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
    "summary": "A Jupyter Notebook Sphinx reader built on top of the MyST markdown parser."
   },
   "build": {
-   "entry_points": [
-    "mystnb-docutils-html = myst_nb.docutils_:cli_html",
-    "mystnb-docutils-html5 = myst_nb.docutils_:cli_html5",
-    "mystnb-docutils-latex = myst_nb.docutils_:cli_latex",
-    "mystnb-docutils-pseudoxml = myst_nb.docutils_:cli_pseudoxml",
-    "mystnb-docutils-xml = myst_nb.docutils_:cli_xml",
-    "mystnb-quickstart = myst_nb.cli:quickstart",
-    "mystnb-to-jupyter = myst_nb.cli:md_to_nb"
-   ],
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv --no-deps --ignore-installed --no-build-isolation"
+   "number": "0",
+   "script": "${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -159,14 +178,68 @@
     "conda-forge/jupyter-book"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "myst-nb",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*",
+      "flit-core >=3.4,<4"
+     ],
+     "run": [
+      "importlib-metadata",
+      "ipykernel",
+      "ipython",
+      "jupyter-cache >=0.5",
+      "myst-parser >=1.0.0",
+      "nbclient",
+      "nbformat >=5.0",
+      "python >=3.9",
+      "pyyaml",
+      "sphinx >=5",
+      "typing_extensions"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "myst_nb",
+        "myst_nb.ext.glue"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "mystnb-docutils-html --help",
+       "mystnb-docutils-html5 --help",
+       "mystnb-docutils-latex --help",
+       "mystnb-docutils-pseudoxml --help",
+       "mystnb-docutils-xml --help",
+       "mystnb-quickstart --help",
+       "mystnb-to-jupyter --help"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "myst-nb",
-   "version": "1.1.2"
+   "version": "1.2.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "flit-core >=3.4,<4"
    ],
    "run": [
@@ -183,30 +256,10 @@
     "typing_extensions"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "961b4005657029ca89892a4c75edbf0856c54ceaf6172368b46bf7676c1f7700",
-   "url": "https://pypi.org/packages/source/m/myst-nb/myst_nb-1.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "mystnb-docutils-html --help",
-    "mystnb-docutils-html5 --help",
-    "mystnb-docutils-latex --help",
-    "mystnb-docutils-pseudoxml --help",
-    "mystnb-docutils-xml --help",
-    "mystnb-quickstart --help",
-    "mystnb-to-jupyter --help"
-   ],
-   "imports": [
-    "myst_nb",
-    "myst_nb.ext.glue"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+   "sha256": "af459ec753b341952182b45b0a80b4776cebf80c9ee6aaca2a3f4027b440c9de",
+   "url": "https://pypi.org/packages/source/m/myst-nb/myst_nb-1.2.0.tar.gz"
   }
  },
  "name": "myst-nb",
@@ -223,7 +276,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/myst-nb.json"
  },
- "raw_meta_yaml": "{% set version = \"1.1.2\" %}\n\npackage:\n  name: myst-nb\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/m/myst-nb/myst_nb-{{ version }}.tar.gz\n  sha256: 961b4005657029ca89892a4c75edbf0856c54ceaf6172368b46bf7676c1f7700\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --no-build-isolation\n  entry_points:\n    - mystnb-docutils-html = myst_nb.docutils_:cli_html\n    - mystnb-docutils-html5 = myst_nb.docutils_:cli_html5\n    - mystnb-docutils-latex = myst_nb.docutils_:cli_latex\n    - mystnb-docutils-pseudoxml = myst_nb.docutils_:cli_pseudoxml\n    - mystnb-docutils-xml = myst_nb.docutils_:cli_xml\n    - mystnb-quickstart = myst_nb.cli:quickstart\n    - mystnb-to-jupyter = myst_nb.cli:md_to_nb\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - flit-core >=3.4,<4\n  run:\n    - importlib-metadata\n    - ipykernel\n    - ipython\n    - jupyter-cache >=0.5\n    - myst-parser >=1.0.0\n    - nbclient\n    - nbformat >=5.0\n    - python >={{ python_min }}\n    - pyyaml\n    - sphinx >=5\n    - typing_extensions\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - myst_nb\n    - myst_nb.ext.glue\n  commands:\n    - pip check\n    - mystnb-docutils-html --help\n    - mystnb-docutils-html5 --help\n    - mystnb-docutils-latex --help\n    - mystnb-docutils-pseudoxml --help\n    - mystnb-docutils-xml --help\n    - mystnb-quickstart --help\n    - mystnb-to-jupyter --help\n\nabout:\n  home: https://github.com/executablebooks/MyST-NB\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: A Jupyter Notebook Sphinx reader built on top of the MyST markdown parser.\n  doc_url: https://myst-nb.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - mmcky\n    - conda-forge/jupyter-book\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 1.2.0\n\npackage:\n  name: myst-nb\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/m/myst-nb/myst_nb-${{ version }}.tar.gz\n  sha256: af459ec753b341952182b45b0a80b4776cebf80c9ee6aaca2a3f4027b440c9de\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --no-build-isolation\n  python:\n    entry_points:\n      - mystnb-docutils-html = myst_nb.docutils_:cli_html\n      - mystnb-docutils-html5 = myst_nb.docutils_:cli_html5\n      - mystnb-docutils-latex = myst_nb.docutils_:cli_latex\n      - mystnb-docutils-pseudoxml = myst_nb.docutils_:cli_pseudoxml\n      - mystnb-docutils-xml = myst_nb.docutils_:cli_xml\n      - mystnb-quickstart = myst_nb.cli:quickstart\n      - mystnb-to-jupyter = myst_nb.cli:md_to_nb\n\nrequirements:\n  host:\n    - pip\n    - python ${{ python_min }}.*\n    - flit-core >=3.4,<4\n  run:\n    - importlib-metadata\n    - ipykernel\n    - ipython\n    - jupyter-cache >=0.5\n    - myst-parser >=1.0.0\n    - nbclient\n    - nbformat >=5.0\n    - python >=${{ python_min }}\n    - pyyaml\n    - sphinx >=5\n    - typing_extensions\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports:\n        - myst_nb\n        - myst_nb.ext.glue\n  - requirements:\n      run:\n        - python ${{ python_min }}.*\n    script:\n      - mystnb-docutils-html --help\n      - mystnb-docutils-html5 --help\n      - mystnb-docutils-latex --help\n      - mystnb-docutils-pseudoxml --help\n      - mystnb-docutils-xml --help\n      - mystnb-quickstart --help\n      - mystnb-to-jupyter --help\n\nabout:\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: A Jupyter Notebook Sphinx reader built on top of the MyST markdown parser.\n  homepage: https://github.com/executablebooks/MyST-NB\n  documentation: https://myst-nb.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - mmcky\n    - conda-forge/jupyter-book\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -290,7 +343,7 @@
    "elements": [
     "flit-core >=3.4,<4",
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ]
   },
   "run": {
@@ -313,12 +366,12 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/m/myst-nb/myst_nb-1.1.2.tar.gz",
- "version": "1.1.2",
+ "url": "https://pypi.org/packages/source/m/myst-nb/myst_nb-1.2.0.tar.gz",
+ "version": "1.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/myst-nb.json"
  }
