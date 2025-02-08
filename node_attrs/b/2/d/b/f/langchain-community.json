@@ -28,9 +28,9 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv",
-   "string": "pymin39_h1234567_1"
+   "string": "pymin39_h1234567_0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -47,37 +47,37 @@
   },
   "package": {
    "name": "langchain-community",
-   "version": "0.3.16"
+   "version": "0.3.17"
   },
   "requirements": {
    "host": [
     "python 3.12",
-    "poetry-core >=1.0.0",
+    "pdm-backend",
     "pip",
     "python 3.9"
    ],
    "run": [
-    "langchain >=0.3.16,<0.4.0",
+    "langchain <1.0.0,>=0.3.18",
     "python >=3.12",
-    "langchain-core >=0.3.32,<0.4.0",
-    "sqlalchemy >=1.4,<3",
-    "requests >=2.0.0,<3.0.0",
+    "langchain-core <1.0.0,>=0.3.34",
+    "sqlalchemy <3,>=1.4",
+    "requests <3,>=2",
     "pyyaml >=5.3",
-    "numpy >=1.22.4,<3",
-    "aiohttp >=3.8.3,<4.0.0",
-    "tenacity >=8.1.0,!=8.4.0,<10",
-    "dataclasses-json >=0.5.7,<0.7",
-    "pydantic-settings >=2.4.0,<3.0.0",
-    "langsmith >=0.1.125,<0.4",
-    "httpx-sse >=0.4.0,<0.5.0",
+    "numpy <2,>=1.26.4",
+    "aiohttp <4.0.0,>=3.8.3",
+    "tenacity !=8.4.0,<10,>=8.1.0",
+    "dataclasses-json <0.7,>=0.5.7",
+    "pydantic-settings <3.0.0,>=2.4.0",
+    "langsmith <0.4,>=0.1.125",
+    "httpx-sse <1.0.0,>=0.4.0",
     "python >=3.9,<3.12a0",
     "numpy >=1.22.4,<2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "825709bc328e294942b045d0b7f55053e8e88f7f943576306d778cf56417126c",
-   "url": "https://pypi.org/packages/source/l/langchain-community/langchain_community-0.3.16.tar.gz"
+   "sha256": "d8547a3d4f8307950be88ca638cd6ab1abe2440d0012e401a172ba4a39aa8044",
+   "url": "https://pypi.org/packages/source/l/langchain-community/langchain_community-0.3.17.tar.gz"
   },
   "test": {
    "commands": [
@@ -101,8 +101,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "pdm-backend",
     "pip",
-    "poetry-core",
     "python"
    ]
   },
@@ -143,9 +143,9 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv",
-   "string": "pymin39_h1234567_1"
+   "string": "pymin39_h1234567_0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -162,37 +162,37 @@
   },
   "package": {
    "name": "langchain-community",
-   "version": "0.3.16"
+   "version": "0.3.17"
   },
   "requirements": {
    "host": [
     "python 3.12",
-    "poetry-core >=1.0.0",
+    "pdm-backend",
     "pip",
     "python 3.9"
    ],
    "run": [
-    "langchain >=0.3.16,<0.4.0",
+    "langchain <1.0.0,>=0.3.18",
     "python >=3.12",
-    "langchain-core >=0.3.32,<0.4.0",
-    "sqlalchemy >=1.4,<3",
-    "requests >=2.0.0,<3.0.0",
+    "langchain-core <1.0.0,>=0.3.34",
+    "sqlalchemy <3,>=1.4",
+    "requests <3,>=2",
     "pyyaml >=5.3",
-    "numpy >=1.22.4,<3",
-    "aiohttp >=3.8.3,<4.0.0",
-    "tenacity >=8.1.0,!=8.4.0,<10",
-    "dataclasses-json >=0.5.7,<0.7",
-    "pydantic-settings >=2.4.0,<3.0.0",
-    "langsmith >=0.1.125,<0.4",
-    "httpx-sse >=0.4.0,<0.5.0",
+    "numpy <2,>=1.26.4",
+    "aiohttp <4.0.0,>=3.8.3",
+    "tenacity !=8.4.0,<10,>=8.1.0",
+    "dataclasses-json <0.7,>=0.5.7",
+    "pydantic-settings <3.0.0,>=2.4.0",
+    "langsmith <0.4,>=0.1.125",
+    "httpx-sse <1.0.0,>=0.4.0",
     "python >=3.9,<3.12a0",
     "numpy >=1.22.4,<2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "825709bc328e294942b045d0b7f55053e8e88f7f943576306d778cf56417126c",
-   "url": "https://pypi.org/packages/source/l/langchain-community/langchain_community-0.3.16.tar.gz"
+   "sha256": "d8547a3d4f8307950be88ca638cd6ab1abe2440d0012e401a172ba4a39aa8044",
+   "url": "https://pypi.org/packages/source/l/langchain-community/langchain_community-0.3.17.tar.gz"
   },
   "test": {
    "commands": [
@@ -222,7 +222,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/langchain-community.json"
  },
- "raw_meta_yaml": "{% set name = \"langchain-community\" %}\n{% set version = \"0.3.16\" %}\n{% set build = \"1\" %}\n{% set python_max = \",<3.12a0\" if python_min == \"3.9\" else \"\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_community-{{ version }}.tar.gz\n  sha256: 825709bc328e294942b045d0b7f55053e8e88f7f943576306d778cf56417126c\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: {{ build }}\n  string: \"pymin{{ python_min|replace('.', '') }}_h{{ PKG_HASH }}_{{ build }}\"\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - langchain >=0.3.16,<0.4.0\n    - python >={{ python_min }}{{ python_max }}\n    - langchain-core >=0.3.32,<0.4.0\n    - sqlalchemy >=1.4,<3\n    - requests >=2.0.0,<3.0.0\n    - pyyaml >=5.3\n    {% if python_max == \"\" %}\n    - numpy >=1.22.4,<3\n    {% else %}\n    - numpy >=1.22.4,<2\n    {% endif %}\n    - aiohttp >=3.8.3,<4.0.0\n    - tenacity >=8.1.0,!=8.4.0,<10\n    - dataclasses-json >=0.5.7,<0.7\n    - pydantic-settings >=2.4.0,<3.0.0\n    - langsmith >=0.1.125,<0.4\n    - httpx-sse >=0.4.0,<0.5.0\n\ntest:\n  imports:\n    - langchain_community\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/langchain-ai/langchain\n  summary: Community contributed LangChain integrations.\n  doc_url: https://api.python.langchain.com/en/stable/community_api_reference.html\n  dev_url: https://github.com/langchain-ai/langchain/tree/master/libs/community\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - dlqqq\n    - 3coins\n    - pavelzw\n    - hinthornw\n    - baskaryan\n    - hwchase17\n    - efriis\n    - agola11\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"langchain-community\" %}\n{% set version = \"0.3.17\" %}\n{% set build = 0 %}\n{% set python_max = \",<3.12a0\" if python_min == \"3.9\" else \"\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/langchain_community-{{ version }}.tar.gz\n  sha256: d8547a3d4f8307950be88ca638cd6ab1abe2440d0012e401a172ba4a39aa8044\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: {{ build }}\n  string: \"pymin{{ python_min|replace('.', '') }}_h{{ PKG_HASH }}_{{ build }}\"\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pdm-backend\n    - pip\n  run:\n    - langchain <1.0.0,>=0.3.18\n    - python >={{ python_min }}{{ python_max }}\n    - langchain-core <1.0.0,>=0.3.34\n    - sqlalchemy <3,>=1.4\n    - requests <3,>=2\n    - pyyaml >=5.3\n    {% if python_max == \"\" %}\n    - numpy <2,>=1.26.4\n    {% else %}\n    - numpy >=1.22.4,<2\n    {% endif %}\n    - aiohttp <4.0.0,>=3.8.3\n    - tenacity !=8.4.0,<10,>=8.1.0\n    - dataclasses-json <0.7,>=0.5.7\n    - pydantic-settings <3.0.0,>=2.4.0\n    - langsmith <0.4,>=0.1.125\n    - httpx-sse <1.0.0,>=0.4.0\n\ntest:\n  imports:\n    - langchain_community\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/langchain-ai/langchain\n  summary: Community contributed LangChain integrations.\n  doc_url: https://api.python.langchain.com/en/stable/community_api_reference.html\n  dev_url: https://github.com/langchain-ai/langchain/tree/master/libs/community\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - dlqqq\n    - 3coins\n    - pavelzw\n    - hinthornw\n    - baskaryan\n    - hwchase17\n    - efriis\n    - agola11\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -233,8 +233,8 @@
    "langchain-core",
    "langsmith",
    "numpy",
+   "pdm-backend",
    "pip",
-   "poetry-core",
    "pydantic-settings",
    "python",
    "pyyaml",
@@ -251,8 +251,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "pdm-backend",
     "pip",
-    "poetry-core",
     "python"
    ]
   },
@@ -291,8 +291,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "pdm-backend",
     "pip",
-    "poetry-core >=1.0.0",
     "python 3.12",
     "python 3.9"
    ]
@@ -300,21 +300,21 @@
   "run": {
    "__set__": true,
    "elements": [
-    "aiohttp >=3.8.3,<4.0.0",
-    "dataclasses-json >=0.5.7,<0.7",
-    "httpx-sse >=0.4.0,<0.5.0",
-    "langchain >=0.3.16,<0.4.0",
-    "langchain-core >=0.3.32,<0.4.0",
-    "langsmith >=0.1.125,<0.4",
+    "aiohttp <4.0.0,>=3.8.3",
+    "dataclasses-json <0.7,>=0.5.7",
+    "httpx-sse <1.0.0,>=0.4.0",
+    "langchain <1.0.0,>=0.3.18",
+    "langchain-core <1.0.0,>=0.3.34",
+    "langsmith <0.4,>=0.1.125",
+    "numpy <2,>=1.26.4",
     "numpy >=1.22.4,<2",
-    "numpy >=1.22.4,<3",
-    "pydantic-settings >=2.4.0,<3.0.0",
+    "pydantic-settings <3.0.0,>=2.4.0",
     "python >=3.12",
     "python >=3.9,<3.12a0",
     "pyyaml >=5.3",
-    "requests >=2.0.0,<3.0.0",
-    "sqlalchemy >=1.4,<3",
-    "tenacity >=8.1.0,!=8.4.0,<10"
+    "requests <3,>=2",
+    "sqlalchemy <3,>=1.4",
+    "tenacity !=8.4.0,<10,>=8.1.0"
    ]
   },
   "test": {
@@ -326,8 +326,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/l/langchain-community/langchain_community-0.3.16.tar.gz",
- "version": "0.3.16",
+ "url": "https://pypi.org/packages/source/l/langchain-community/langchain_community-0.3.17.tar.gz",
+ "version": "0.3.17",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/langchain-community.json"
  }
