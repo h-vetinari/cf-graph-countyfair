@@ -2,6 +2,10 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "automerge": true,
+   "inspection": "update-grayskull"
+  },
   "conda_build": {
    "error_overlinking": true
   },
@@ -23,7 +27,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -46,7 +50,7 @@
     "__win",
     "python >=3.9",
     "pywin32 >=223",
-    "httpx >0.16,<0.28"
+    "httpx >0.16,<0.29"
    ]
   },
   "schema_version": 0,
@@ -77,7 +81,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/httpx-negotiate-sspi.json"
  },
- "raw_meta_yaml": "{% set name = \"httpx-negotiate-sspi\" %}\n{% set version = \"0.28.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/httpx_negotiate_sspi-{{ version }}.tar.gz\n  sha256: 140bedfe08e1282974af28663bc02a205e4dc64e304df34aecc405be375ebda6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry >=1.0\n    - poetry-core\n    - pip\n  run:\n    - __unix  # [unix]\n    - __win  # [win]\n    - python >={{ python_min }}\n    - pywin32 >=223  # [win]\n    - httpx >0.16,<0.28\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - httpx_negotiate_sspi  # [win]\n\nabout:\n  home: https://github.com/rob-blackbourn/httpx-negotiate-sspi\n  summary: SSPI authentication for httpx\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - dhirschfeld\n",
+ "raw_meta_yaml": "{% set name = \"httpx-negotiate-sspi\" %}\n{% set version = \"0.28.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/httpx_negotiate_sspi-{{ version }}.tar.gz\n  sha256: 140bedfe08e1282974af28663bc02a205e4dc64e304df34aecc405be375ebda6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry >=1.0\n    - poetry-core\n    - pip\n  run:\n    - __unix  # [unix]\n    - __win  # [win]\n    - python >={{ python_min }}\n    - pywin32 >=223  # [win]\n    - httpx >0.16,<0.29\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - httpx_negotiate_sspi  # [win]\n\nabout:\n  home: https://github.com/rob-blackbourn/httpx-negotiate-sspi\n  summary: SSPI authentication for httpx\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - dhirschfeld\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -139,7 +143,7 @@
    "__set__": true,
    "elements": [
     "__win",
-    "httpx >0.16,<0.28",
+    "httpx >0.16,<0.29",
     "python >=3.9",
     "pywin32 >=223"
    ]
@@ -165,7 +169,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -188,7 +192,7 @@
     "__win",
     "python >=3.9",
     "pywin32 >=223",
-    "httpx >0.16,<0.28"
+    "httpx >0.16,<0.29"
    ]
   },
   "schema_version": 0,
