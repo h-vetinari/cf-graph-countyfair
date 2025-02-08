@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "flask-openapi3",
-   "version": "4.0.3"
+   "version": "4.1.0"
   },
   "requirements": {
    "host": [
@@ -52,8 +52,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e7932284263083eeb1f35c6657f6a4d1bb98be76f18f0509bd230e67f9854467",
-   "url": "https://pypi.org/packages/source/f/flask-openapi3/flask_openapi3-4.0.3.tar.gz"
+   "sha256": "1f5efdbfeca3785d3389d1772127df9e0578130f12612ca3d2d04c90e3f8f4b4",
+   "url": "https://pypi.org/packages/source/f/flask-openapi3/flask_openapi3-4.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -110,7 +110,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -120,7 +120,7 @@
   },
   "package": {
    "name": "flask-openapi3",
-   "version": "4.0.3"
+   "version": "4.1.0"
   },
   "requirements": {
    "host": [
@@ -136,8 +136,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e7932284263083eeb1f35c6657f6a4d1bb98be76f18f0509bd230e67f9854467",
-   "url": "https://pypi.org/packages/source/f/flask-openapi3/flask_openapi3-4.0.3.tar.gz"
+   "sha256": "1f5efdbfeca3785d3389d1772127df9e0578130f12612ca3d2d04c90e3f8f4b4",
+   "url": "https://pypi.org/packages/source/f/flask-openapi3/flask_openapi3-4.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -166,7 +166,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/flask-openapi3.json"
  },
- "raw_meta_yaml": "{% set name = \"flask-openapi3\" %}\n{% set version = \"4.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flask_openapi3-{{ version }}.tar.gz\n  sha256: e7932284263083eeb1f35c6657f6a4d1bb98be76f18f0509bd230e67f9854467\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - Flask >=2.0\n    - pydantic >=2.0\n\ntest:\n  imports:\n    - flask_openapi3\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/luolingchun/flask-openapi3\n  summary: Generate REST API and OpenAPI documentation for your Flask project.\n  description: Generate REST API and OpenAPI documentation for your Flask project.\n  doc_url: https://luolingchun.github.io/flask-openapi3/\n  license: MIT\n  license_file:\n    - LICENSE.rst\n\nextra:\n  recipe-maintainers:\n    - luolingchun\n",
+ "raw_meta_yaml": "{% set name = \"flask-openapi3\" %}\n{% set version = \"4.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flask_openapi3-{{ version }}.tar.gz\n  sha256: 1f5efdbfeca3785d3389d1772127df9e0578130f12612ca3d2d04c90e3f8f4b4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - Flask >=2.0\n    - pydantic >=2.0\n\ntest:\n  imports:\n    - flask_openapi3\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/luolingchun/flask-openapi3\n  summary: Generate REST API and OpenAPI documentation for your Flask project.\n  description: Generate REST API and OpenAPI documentation for your Flask project.\n  doc_url: https://luolingchun.github.io/flask-openapi3/\n  license: MIT\n  license_file:\n    - LICENSE.rst\n\nextra:\n  recipe-maintainers:\n    - luolingchun\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -236,8 +236,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/f/flask-openapi3/flask_openapi3-4.0.3.tar.gz",
- "version": "4.0.3",
+ "url": "https://pypi.org/packages/source/f/flask-openapi3/flask_openapi3-4.1.0.tar.gz",
+ "version": "4.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/flask-openapi3.json"
  }
