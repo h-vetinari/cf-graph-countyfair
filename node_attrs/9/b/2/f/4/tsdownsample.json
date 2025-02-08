@@ -31,7 +31,7 @@
    "summary": "Time series downsampling in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -118,7 +118,7 @@
    "summary": "Time series downsampling in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -175,7 +175,7 @@
    "summary": "Time series downsampling in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -262,7 +262,7 @@
    "summary": "Time series downsampling in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -353,7 +353,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tsdownsample.json"
  },
- "raw_meta_yaml": "{% set name = \"tsdownsample\" %}\n{% set version = \"0.1.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tsdownsample-{{ version }}.tar.gz\n  sha256: cc2e2fc0031a5fb75c0f5204b498e86eae0333bcc19da481c0859f1943690f3b\n\nbuild:\n  skip: true  # [py<37 or win]\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  build:\n    - python                                   # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}       # [build_platform != target_platform]\n    - crossenv                                 # [build_platform != target_platform]\n    - maturin >=0.14,<0.15                     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('rust') }}\n  host:\n    - python\n    - maturin >=0.14,<0.15\n    - pip\n  run:\n    - python\n    - numpy\n\n\ntest:\n  imports:\n    - tsdownsample\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/predict-idlab/tsdownsample\n  summary: Time series downsampling in Rust\n  license: MIT\n  license_file:\n    - LICENSE\n    - downsample_rs/LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"tsdownsample\" %}\n{% set version = \"0.1.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tsdownsample-{{ version }}.tar.gz\n  sha256: cc2e2fc0031a5fb75c0f5204b498e86eae0333bcc19da481c0859f1943690f3b\n\nbuild:\n  skip: true  # [py<37 or win]\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  build:\n    - python                                   # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}       # [build_platform != target_platform]\n    - crossenv                                 # [build_platform != target_platform]\n    - maturin >=0.14,<0.15                     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('rust') }}\n  host:\n    - python\n    - maturin >=0.14,<0.15\n    - pip\n  run:\n    - python\n    - numpy\n\n\ntest:\n  imports:\n    - tsdownsample\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/predict-idlab/tsdownsample\n  summary: Time series downsampling in Rust\n  license: MIT\n  license_file:\n    - LICENSE\n    - downsample_rs/LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
