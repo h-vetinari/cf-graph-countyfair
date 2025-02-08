@@ -24,12 +24,15 @@
    "home": "https://github.com/ropensci/jsonvalidate",
    "license": "MIT",
    "license_family": "MIT",
-   "license_file": "LICENSE",
+   "license_file": [
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
    "summary": "Uses the node library 'is-my-json-valid' or 'ajv' to validate 'JSON' against a 'JSON' schema.  Drafts 04, 06 and 07 of 'JSON' schema are supported."
   },
   "build": {
    "noarch": "generic",
-   "number": "3",
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -43,25 +46,27 @@
   },
   "package": {
    "name": "r-jsonvalidate",
-   "version": "1.3.2"
+   "version": "1.5.0"
   },
   "requirements": {
    "build": [],
    "host": [
     "r-base",
+    "r-r6",
     "r-v8"
    ],
    "run": [
     "r-base",
+    "r-r6",
     "r-v8"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2b6c08bfa9ba043151a41d914b24b776583a140ee93a448191d5d0af46aadb57",
+   "sha256": "3429eb6f049905f9ce7869b9c30c57135ba64b28a12f7d24593428e9d7651f04",
    "url": [
-    "https://cran.r-project.org/src/contrib/jsonvalidate_1.3.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/jsonvalidate/jsonvalidate_1.3.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/jsonvalidate_1.5.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/jsonvalidate/jsonvalidate_1.5.0.tar.gz"
    ]
   },
   "test": {
@@ -79,6 +84,7 @@
    "__set__": true,
    "elements": [
     "r-base",
+    "r-r6",
     "r-v8"
    ]
   },
@@ -86,6 +92,7 @@
    "__set__": true,
    "elements": [
     "r-base",
+    "r-r6",
     "r-v8"
    ]
   },
@@ -99,12 +106,15 @@
    "home": "https://github.com/ropensci/jsonvalidate",
    "license": "MIT",
    "license_family": "MIT",
-   "license_file": "LICENSE",
+   "license_file": [
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
    "summary": "Uses the node library 'is-my-json-valid' or 'ajv' to validate 'JSON' against a 'JSON' schema.  Drafts 04, 06 and 07 of 'JSON' schema are supported."
   },
   "build": {
    "noarch": "generic",
-   "number": "3",
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -118,25 +128,27 @@
   },
   "package": {
    "name": "r-jsonvalidate",
-   "version": "1.3.2"
+   "version": "1.5.0"
   },
   "requirements": {
    "build": [],
    "host": [
     "r-base",
+    "r-r6",
     "r-v8"
    ],
    "run": [
     "r-base",
+    "r-r6",
     "r-v8"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2b6c08bfa9ba043151a41d914b24b776583a140ee93a448191d5d0af46aadb57",
+   "sha256": "3429eb6f049905f9ce7869b9c30c57135ba64b28a12f7d24593428e9d7651f04",
    "url": [
-    "https://cran.r-project.org/src/contrib/jsonvalidate_1.3.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/jsonvalidate/jsonvalidate_1.3.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/jsonvalidate_1.5.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/jsonvalidate/jsonvalidate_1.5.0.tar.gz"
    ]
   },
   "test": {
@@ -159,11 +171,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/r-jsonvalidate.json"
  },
- "raw_meta_yaml": "{% set version = \"1.3.2\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-jsonvalidate\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/jsonvalidate_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/jsonvalidate/jsonvalidate_{{ version }}.tar.gz\n  sha256: 2b6c08bfa9ba043151a41d914b24b776583a140ee93a448191d5d0af46aadb57\n\nbuild:\n  number: 3\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-v8\n  run:\n    - r-base\n    - r-v8\n\ntest:\n  commands:\n    - $R -e \"library('jsonvalidate')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('jsonvalidate')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/ropensci/jsonvalidate\n  license: MIT\n  summary: Uses the node library 'is-my-json-valid' or 'ajv' to validate 'JSON' against a 'JSON' schema.  Drafts 04, 06 and 07 of 'JSON' schema are supported.\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - xhochy\n\n# Package: jsonvalidate\n# Title: Validate 'JSON'\n# Version: 1.1.0\n# Authors@R: c(person(\"Rich\", \"FitzJohn\", role = c(\"aut\", \"cre\"), email = \"rich.fitzjohn@gmail.com\"), person(\"Ian\", \"Lyttle\", role = \"ctb\"), person(\"Kara\", \"Woo\", role = \"ctb\"), person(\"Mathias\", \"Buus\", role = \"cph\"), person(\"Evgeny\", \"Poberezkin\", role = \"cph\"))\n# Maintainer: Rich FitzJohn <rich.fitzjohn@gmail.com>\n# Description: Uses the node library 'is-my-json-valid' or 'ajv' to validate 'JSON' against a 'JSON' schema.  Drafts 04, 06 and 07 of 'JSON' schema are supported.\n# License: MIT + file LICENSE\n# LazyData: true\n# URL: https://github.com/ropensci/jsonvalidate\n# BugReports: https://github.com/ropensci/jsonvalidate/issues\n# Imports: V8\n# Suggests: knitr, rmarkdown, testthat\n# RoxygenNote: 6.1.1\n# VignetteBuilder: knitr\n# Encoding: UTF-8\n# NeedsCompilation: no\n# Packaged: 2019-06-25 07:13:19 UTC; rfitzjoh\n# Author: Rich FitzJohn [aut, cre], Ian Lyttle [ctb], Kara Woo [ctb], Mathias Buus [cph], Evgeny Poberezkin [cph]\n# Repository: CRAN\n# Date/Publication: 2019-06-25 09:00:03 UTC\n",
+ "raw_meta_yaml": "{% set version = \"1.5.0\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-jsonvalidate\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/jsonvalidate_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/jsonvalidate/jsonvalidate_{{ version }}.tar.gz\n  sha256: 3429eb6f049905f9ce7869b9c30c57135ba64b28a12f7d24593428e9d7651f04\n\nbuild:\n  number: 0\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-r6\n    - r-v8\n  run:\n    - r-base\n    - r-r6\n    - r-v8\n\ntest:\n  commands:\n    - $R -e \"library('jsonvalidate')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('jsonvalidate')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/ropensci/jsonvalidate\n  license: MIT\n  summary: Uses the node library 'is-my-json-valid' or 'ajv' to validate 'JSON' against a 'JSON' schema.  Drafts 04, 06 and 07 of 'JSON' schema are supported.\n  license_family: MIT\n  license_file:\n    - '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT'\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - xhochy\n\n# Package: jsonvalidate\n# Title: Validate 'JSON'\n# Version: 1.1.0\n# Authors@R: c(person(\"Rich\", \"FitzJohn\", role = c(\"aut\", \"cre\"), email = \"rich.fitzjohn@gmail.com\"), person(\"Ian\", \"Lyttle\", role = \"ctb\"), person(\"Kara\", \"Woo\", role = \"ctb\"), person(\"Mathias\", \"Buus\", role = \"cph\"), person(\"Evgeny\", \"Poberezkin\", role = \"cph\"))\n# Maintainer: Rich FitzJohn <rich.fitzjohn@gmail.com>\n# Description: Uses the node library 'is-my-json-valid' or 'ajv' to validate 'JSON' against a 'JSON' schema.  Drafts 04, 06 and 07 of 'JSON' schema are supported.\n# License: MIT + file LICENSE\n# LazyData: true\n# URL: https://github.com/ropensci/jsonvalidate\n# BugReports: https://github.com/ropensci/jsonvalidate/issues\n# Imports: V8\n# Suggests: knitr, rmarkdown, testthat\n# RoxygenNote: 6.1.1\n# VignetteBuilder: knitr\n# Encoding: UTF-8\n# NeedsCompilation: no\n# Packaged: 2019-06-25 07:13:19 UTC; rfitzjoh\n# Author: Rich FitzJohn [aut, cre], Ian Lyttle [ctb], Kara Woo [ctb], Mathias Buus [cph], Evgeny Poberezkin [cph]\n# Repository: CRAN\n# Date/Publication: 2019-06-25 09:00:03 UTC\n",
  "req": {
   "__set__": true,
   "elements": [
    "r-base",
+   "r-r6",
    "r-v8"
   ]
  },
@@ -176,6 +189,7 @@
    "__set__": true,
    "elements": [
     "r-base",
+    "r-r6",
     "r-v8"
    ]
   },
@@ -183,6 +197,7 @@
    "__set__": true,
    "elements": [
     "r-base",
+    "r-r6",
     "r-v8"
    ]
   },
@@ -201,6 +216,7 @@
    "__set__": true,
    "elements": [
     "r-base",
+    "r-r6",
     "r-v8"
    ]
   },
@@ -208,6 +224,7 @@
    "__set__": true,
    "elements": [
     "r-base",
+    "r-r6",
     "r-v8"
    ]
   },
@@ -217,10 +234,10 @@
   }
  },
  "url": [
-  "https://cran.r-project.org/src/contrib/jsonvalidate_1.3.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/jsonvalidate/jsonvalidate_1.3.2.tar.gz"
+  "https://cran.r-project.org/src/contrib/jsonvalidate_1.5.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/jsonvalidate/jsonvalidate_1.5.0.tar.gz"
  ],
- "version": "1.3.2",
+ "version": "1.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/r-jsonvalidate.json"
  }
