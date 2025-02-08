@@ -26,17 +26,18 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "sodre"
+    "sodre",
+    "davner"
    ]
   },
   "package": {
    "name": "marshmallow-jsonapi",
-   "version": "0.21.2"
+   "version": "0.24.0"
   },
   "requirements": {
    "host": [
@@ -51,8 +52,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "83e33b41e8f411d34a4b515c39f10192919a9d4f7eeccd4d6b49a4030a163374",
-   "url": "https://pypi.org/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.21.2.tar.gz"
+   "sha256": "bd88c0ac0e2ddeb0a3ceb86229963b9f828d898041f29d92a68f585a1feb37b5",
+   "url": "https://pypi.org/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.24.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -108,17 +109,18 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "sodre"
+    "sodre",
+    "davner"
    ]
   },
   "package": {
    "name": "marshmallow-jsonapi",
-   "version": "0.21.2"
+   "version": "0.24.0"
   },
   "requirements": {
    "host": [
@@ -133,8 +135,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "83e33b41e8f411d34a4b515c39f10192919a9d4f7eeccd4d6b49a4030a163374",
-   "url": "https://pypi.org/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.21.2.tar.gz"
+   "sha256": "bd88c0ac0e2ddeb0a3ceb86229963b9f828d898041f29d92a68f585a1feb37b5",
+   "url": "https://pypi.org/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.24.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -163,7 +165,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/marshmallow-jsonapi.json"
  },
- "raw_meta_yaml": "{% set name = \"marshmallow-jsonapi\" %}\n{% set version = \"0.21.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 83e33b41e8f411d34a4b515c39f10192919a9d4f7eeccd4d6b49a4030a163374\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - marshmallow >=2.8.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - marshmallow_jsonapi\n  commands:\n    - pip check\n\nabout:\n  home: http://github.com/marshmallow-code/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'JSON API 1.0 formatting with marshmallow'\n\n  description: |\n      marshmallow-jsonapi provides a simple way to produce JSON API-compliant data in any Python web framework.\n\n  doc_url: http://{{ name }}.readthedocs.io/\n  dev_url: https://github.com/marshmallow-code/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "raw_meta_yaml": "{% set name = \"marshmallow-jsonapi\" %}\n{% set version = \"0.24.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bd88c0ac0e2ddeb0a3ceb86229963b9f828d898041f29d92a68f585a1feb37b5\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - marshmallow >=2.8.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - marshmallow_jsonapi\n  commands:\n    - pip check\n\nabout:\n  home: http://github.com/marshmallow-code/marshmallow-jsonapi\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'JSON API 1.0 formatting with marshmallow'\n\n  description: |\n      marshmallow-jsonapi provides a simple way to produce JSON API-compliant data in any Python web framework.\n\n  doc_url: http://marshmallow-jsonapi.readthedocs.io/\n  dev_url: https://github.com/marshmallow-code/marshmallow-jsonapi\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - davner\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -230,8 +232,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.21.2.tar.gz",
- "version": "0.21.2",
+ "url": "https://pypi.org/packages/source/m/marshmallow-jsonapi/marshmallow-jsonapi-0.24.0.tar.gz",
+ "version": "0.24.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/marshmallow-jsonapi.json"
  }
