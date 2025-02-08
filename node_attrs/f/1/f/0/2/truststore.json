@@ -5,6 +5,7 @@
   "conda_build": {
    "error_overlinking": true
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -19,22 +20,50 @@
    "doc_url": "https://truststore.readthedocs.io/en/latest/",
    "home": "https://github.com/sethmlarson/truststore",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE",
    "summary": "Verify certificates using native system trust stores"
   },
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "${{ PYTHON }} -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
     "wolfv"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "truststore",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python >=3.10",
+      "flit-core >=3.2,<4",
+      "pip"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "truststore"
+       ],
+       "python_version": "3.10.*"
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "truststore",
-   "version": "0.10.0"
+   "version": "0.10.1"
   },
   "requirements": {
    "host": [
@@ -46,21 +75,10 @@
     "python >=3.10"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "5da347c665714fdfbd46f738c823fe9f0d8775e41ac5fb94f325749091187896",
-   "url": "https://pypi.io/packages/source/t/truststore/truststore-0.10.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "truststore"
-   ],
-   "requires": [
-    "pip"
-   ]
+   "sha256": "eda021616b59021812e800fa0a071e51b266721bef3ce092db8a699e21c63539",
+   "url": "https://pypi.org/packages/source/t/truststore/truststore-0.10.1.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -95,22 +113,50 @@
    "doc_url": "https://truststore.readthedocs.io/en/latest/",
    "home": "https://github.com/sethmlarson/truststore",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE",
    "summary": "Verify certificates using native system trust stores"
   },
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "${{ PYTHON }} -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
     "wolfv"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "truststore",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python >=3.10",
+      "flit-core >=3.2,<4",
+      "pip"
+     ],
+     "run": [
+      "python >=3.10"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "truststore"
+       ],
+       "python_version": "3.10.*"
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "truststore",
-   "version": "0.10.0"
+   "version": "0.10.1"
   },
   "requirements": {
    "host": [
@@ -122,21 +168,10 @@
     "python >=3.10"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "5da347c665714fdfbd46f738c823fe9f0d8775e41ac5fb94f325749091187896",
-   "url": "https://pypi.io/packages/source/t/truststore/truststore-0.10.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "truststore"
-   ],
-   "requires": [
-    "pip"
-   ]
+   "sha256": "eda021616b59021812e800fa0a071e51b266721bef3ce092db8a699e21c63539",
+   "url": "https://pypi.org/packages/source/t/truststore/truststore-0.10.1.tar.gz"
   }
  },
  "name": "truststore",
@@ -153,7 +188,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/truststore.json"
  },
- "raw_meta_yaml": "{% set name = \"truststore\" %}\n{% set version = \"0.10.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/truststore-{{ version }}.tar.gz\n  sha256: 5da347c665714fdfbd46f738c823fe9f0d8775e41ac5fb94f325749091187896\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.10\n    - flit-core >=3.2,<4\n    - pip\n  run:\n    - python >=3.10\n\ntest:\n  imports:\n    - truststore\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/sethmlarson/truststore\n  summary: Verify certificates using native system trust stores\n  dev_url: https://github.com/sethmlarson/truststore\n  doc_url: https://truststore.readthedocs.io/en/latest/\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - wolfv\n",
+ "raw_meta_yaml": "context:\n  name: truststore\n  version: \"0.10.1\"\n  python_min: \"3.10\"\n\npackage:\n  name: truststore\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/truststore-${{ version }}.tar.gz\n  sha256: eda021616b59021812e800fa0a071e51b266721bef3ce092db8a699e21c63539\n\nbuild:\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=${{ python_min }}\n    - flit-core >=3.2,<4\n    - pip\n  run:\n    - python >=${{ python_min }}\n\ntests:\n  - python:\n      imports: \n        - truststore\n      python_version: \"${{ python_min }}.*\"\n\nabout:\n  homepage: https://github.com/sethmlarson/truststore\n  summary: Verify certificates using native system trust stores\n  repository: https://github.com/sethmlarson/truststore\n  documentation: https://truststore.readthedocs.io/en/latest/\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - wolfv\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -215,8 +250,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/t/truststore/truststore-0.10.0.tar.gz",
- "version": "0.10.0",
+ "url": "https://pypi.org/packages/source/t/truststore/truststore-0.10.1.tar.gz",
+ "version": "0.10.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/truststore.json"
  }
