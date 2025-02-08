@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "pip install . --no-deps --ignore-installed -vv"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "hg-git",
-   "version": "1.1.4"
+   "version": "1.2.0"
   },
   "requirements": {
    "host": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5c5f6f02dbd42b9c913f83b166ff37fc00368dd7b9b7bcdade3aa0cae5dce5e5",
-   "url": "https://pypi.org/packages/source/h/hg-git/hg_git-1.1.4.tar.gz"
+   "sha256": "3ebfab364a81b9b565b100b2a9de6676bf03df9ec5cd27772aecf911679ecfc3",
+   "url": "https://pypi.org/packages/source/h/hg-git/hg_git-1.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -113,7 +113,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "pip install . --no-deps --ignore-installed -vv"
   },
   "extra": {
@@ -123,7 +123,7 @@
   },
   "package": {
    "name": "hg-git",
-   "version": "1.1.4"
+   "version": "1.2.0"
   },
   "requirements": {
    "host": [
@@ -140,8 +140,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5c5f6f02dbd42b9c913f83b166ff37fc00368dd7b9b7bcdade3aa0cae5dce5e5",
-   "url": "https://pypi.org/packages/source/h/hg-git/hg_git-1.1.4.tar.gz"
+   "sha256": "3ebfab364a81b9b565b100b2a9de6676bf03df9ec5cd27772aecf911679ecfc3",
+   "url": "https://pypi.org/packages/source/h/hg-git/hg_git-1.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -171,7 +171,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/hg-git.json"
  },
- "raw_meta_yaml": "{% set name = \"hg-git\" %}\n{% set version = \"1.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 5c5f6f02dbd42b9c913f83b166ff37fc00368dd7b9b7bcdade3aa0cae5dce5e5\n\nbuild:\n  number: 1\n  noarch: python\n  script: pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools-scm\n  run:\n    - python >={{ python_min }}\n    - mercurial\n    - dulwich >=0.21.6,<0.23.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - hggit\n  commands:\n    - hg version -v\n    - hg debuginstall\n    - hg help -e hggit --config \"extensions.hggit=\"\n\nabout:\n  home: https://wiki.mercurial-scm.org/HgGit\n  license: GPL-2.0-or-later\n  license_family: GPL2\n  license_file: COPYING\n  summary: Push to and pull from a Git repository using Mercurial\n  doc_url: https://wiki.mercurial-scm.org/HgGit\n  dev_url: https://foss.heptapod.net/mercurial/hg-git/\n\nextra:\n  recipe-maintainers:\n    - paugier\n",
+ "raw_meta_yaml": "{% set name = \"hg-git\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 3ebfab364a81b9b565b100b2a9de6676bf03df9ec5cd27772aecf911679ecfc3\n\nbuild:\n  number: 0\n  noarch: python\n  script: pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools-scm\n  run:\n    - python >={{ python_min }}\n    - mercurial\n    - dulwich >=0.21.6,<0.23.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - hggit\n  commands:\n    - hg version -v\n    - hg debuginstall\n    - hg help -e hggit --config \"extensions.hggit=\"\n\nabout:\n  home: https://wiki.mercurial-scm.org/HgGit\n  license: GPL-2.0-or-later\n  license_family: GPL2\n  license_file: COPYING\n  summary: Push to and pull from a Git repository using Mercurial\n  doc_url: https://wiki.mercurial-scm.org/HgGit\n  dev_url: https://foss.heptapod.net/mercurial/hg-git/\n\nextra:\n  recipe-maintainers:\n    - paugier\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -242,8 +242,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/h/hg-git/hg_git-1.1.4.tar.gz",
- "version": "1.1.4",
+ "url": "https://pypi.org/packages/source/h/hg-git/hg_git-1.2.0.tar.gz",
+ "version": "1.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/hg-git.json"
  }
