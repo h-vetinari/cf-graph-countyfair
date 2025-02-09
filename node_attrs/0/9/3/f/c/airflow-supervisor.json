@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "airflow-supervisor",
-   "version": "1.0.1"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -63,8 +63,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "431578669d25972e5c1ae4e65f724d86fb155f0b6b900ae127f796a476b25801",
-   "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.0.1.tar.gz"
+   "sha256": "ae9a03e34b75477cef5e06e62182adcbd88d144c70d8753b913c64775b948ae4",
+   "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -137,7 +137,7 @@
   },
   "package": {
    "name": "airflow-supervisor",
-   "version": "1.0.1"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -163,8 +163,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "431578669d25972e5c1ae4e65f724d86fb155f0b6b900ae127f796a476b25801",
-   "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.0.1.tar.gz"
+   "sha256": "ae9a03e34b75477cef5e06e62182adcbd88d144c70d8753b913c64775b948ae4",
+   "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -193,7 +193,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/airflow-supervisor.json"
  },
- "raw_meta_yaml": "{% set name = \"airflow-supervisor\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-{{ version }}.tar.gz\n  sha256: 431578669d25972e5c1ae4e65f724d86fb155f0b6b900ae127f796a476b25801\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - colorlog\n    - hydra-core\n    - jinja2\n    - omegaconf\n    - pydantic >=2\n    - rich\n    - typer\n  run_constrained:\n    - airflow-config >=0.1.2\n    - airflow-ha >=1\n    - apache-airflow >=2.8,<3\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - airflow_supervisor\n\nabout:\n  home: https://github.com/airflow-laminar/airflow-supervisor\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Supervisor operators and configuration for long-running tasks\n  description: Supervisor operators and configuration for long-running tasks\n  dev_url: https://github.com/airflow-laminar/airflow-supervisor\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
+ "raw_meta_yaml": "{% set name = \"airflow-supervisor\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-{{ version }}.tar.gz\n  sha256: ae9a03e34b75477cef5e06e62182adcbd88d144c70d8753b913c64775b948ae4\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - colorlog\n    - hydra-core\n    - jinja2\n    - omegaconf\n    - pydantic >=2\n    - rich\n    - typer\n  run_constrained:\n    - airflow-config >=0.1.2\n    - airflow-ha >=1\n    - apache-airflow >=2.8,<3\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - airflow_supervisor\n\nabout:\n  home: https://github.com/airflow-laminar/airflow-supervisor\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Supervisor operators and configuration for long-running tasks\n  description: Supervisor operators and configuration for long-running tasks\n  dev_url: https://github.com/airflow-laminar/airflow-supervisor\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -278,8 +278,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.0.1.tar.gz",
- "version": "1.0.1",
+ "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.1.0.tar.gz",
+ "version": "1.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/airflow-supervisor.json"
  }
