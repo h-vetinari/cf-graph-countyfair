@@ -9,7 +9,7 @@
    "linux_64": "linux_64",
    "linux_aarch64": "linux_aarch64",
    "osx_64": "osx_64",
-   "osx_arm64": "osx_64",
+   "osx_arm64": "osx_arm64",
    "win_64": "win_64"
   },
   "conda_build": {
@@ -56,12 +56,11 @@
   },
   "package": {
    "name": "moonrepo-moon",
-   "version": "1.31.3"
+   "version": "1.32.2"
   },
   "requirements": {
    "build": [
     "rust_compiler_stub",
-    "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
     "make"
@@ -69,8 +68,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1dbaa927103560cf67fc1d052333928ec4cb4c908e111427a4afcd864d734adc",
-   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.31.3.tar.gz"
+   "sha256": "7efa00c757653e4d6c1d105ccc28cb1875eafc63cba01d001d43d4324baa1302",
+   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.32.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -82,7 +81,6 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
     "make",
@@ -126,22 +124,20 @@
   },
   "package": {
    "name": "moonrepo-moon",
-   "version": "1.31.3"
+   "version": "1.32.2"
   },
   "requirements": {
    "build": [
     "rust_compiler_stub",
-    "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
-    "make",
-    "vs2019_win-64"
+    "make"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1dbaa927103560cf67fc1d052333928ec4cb4c908e111427a4afcd864d734adc",
-   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.31.3.tar.gz"
+   "sha256": "7efa00c757653e4d6c1d105ccc28cb1875eafc63cba01d001d43d4324baa1302",
+   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.32.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -174,21 +170,19 @@
   },
   "package": {
    "name": "moonrepo-moon",
-   "version": "1.31.3"
+   "version": "1.32.2"
   },
   "requirements": {
    "build": [
     "rust_compiler_stub",
-    "c_compiler_stub",
     "c_stdlib_stub",
-    "cargo-bundle-licenses",
-    "make"
+    "cargo-bundle-licenses"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1dbaa927103560cf67fc1d052333928ec4cb4c908e111427a4afcd864d734adc",
-   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.31.3.tar.gz"
+   "sha256": "7efa00c757653e4d6c1d105ccc28cb1875eafc63cba01d001d43d4324baa1302",
+   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.32.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -200,10 +194,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
-    "make",
     "rust_compiler_stub"
    ]
   },
@@ -244,21 +236,19 @@
   },
   "package": {
    "name": "moonrepo-moon",
-   "version": "1.31.3"
+   "version": "1.32.2"
   },
   "requirements": {
    "build": [
     "rust_compiler_stub",
-    "c_compiler_stub",
     "c_stdlib_stub",
-    "cargo-bundle-licenses",
-    "make"
+    "cargo-bundle-licenses"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1dbaa927103560cf67fc1d052333928ec4cb4c908e111427a4afcd864d734adc",
-   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.31.3.tar.gz"
+   "sha256": "7efa00c757653e4d6c1d105ccc28cb1875eafc63cba01d001d43d4324baa1302",
+   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.32.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -270,10 +260,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
-    "make",
     "rust_compiler_stub"
    ]
   },
@@ -306,44 +294,36 @@
  "pr_info": {
   "__lazy_json__": "pr_info/moonrepo-moon.json"
  },
- "raw_meta_yaml": "{% set name = \"moonrepo-moon\" %}\n{% set version = \"1.31.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/moonrepo/moon/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 1dbaa927103560cf67fc1d052333928ec4cb4c908e111427a4afcd864d734adc\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}              # [not win]\n    - {{ stdlib(\"c\") }}                # [not win]\n    - vs2019_win-64                    # [win]\n    - cargo-bundle-licenses\n    - make\n\ntest:\n  commands:\n    - moon --help\n\nabout:\n  home: https://moonrepo.dev/\n  summary: 'Build system for managing codebases'\n  description: |\n    A task runner and monorepo management tool for the web ecosystem, written in Rust.\n    Supports JavaScript, TypeScript, Rust, Go, Ruby, and more <https://moonrepo.dev/docs#supported-languages>\n  license: MIT\n  license_family: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  doc_url: https://moonrepo.dev/docs\n  dev_url: https://github.com/moonrepo/moon\n\nextra:\n  recipe-maintainers:\n    - corker\n",
+ "raw_meta_yaml": "{% set name = \"moonrepo-moon\" %}\n{% set version = \"1.32.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/moonrepo/moon/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 7efa00c757653e4d6c1d105ccc28cb1875eafc63cba01d001d43d4324baa1302\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n    - make                             # [linux]\n\ntest:\n  commands:\n    - moon --help\n\nabout:\n  home: https://moonrepo.dev/\n  summary: 'Build system for managing codebases'\n  description: |\n    A task runner and monorepo management tool for the web ecosystem, written in Rust.\n    Supports JavaScript, TypeScript, Rust, Go, Ruby, and more <https://moonrepo.dev/docs#supported-languages>\n  license: MIT\n  license_family: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n  doc_url: https://moonrepo.dev/docs\n  dev_url: https://github.com/moonrepo/moon\n\nextra:\n  recipe-maintainers:\n    - corker\n",
  "req": {
   "__set__": true,
   "elements": [
-   "c_compiler_stub",
    "c_stdlib_stub",
    "cargo-bundle-licenses",
    "make",
-   "rust_compiler_stub",
-   "vs2019_win-64"
+   "rust_compiler_stub"
   ]
  },
  "requirements": {
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
     "make",
-    "rust_compiler_stub",
-    "vs2019_win-64"
+    "rust_compiler_stub"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub",
-    "c_stdlib_stub",
-    "vc"
+    "c_stdlib_stub"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub",
-    "c_stdlib_stub",
-    "vc"
+    "c_stdlib_stub"
    ]
   },
   "test": {
@@ -356,12 +336,10 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
     "make",
-    "rust_compiler_stub",
-    "vs2019_win-64"
+    "rust_compiler_stub"
    ]
   },
   "host": {
@@ -377,8 +355,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.31.3.tar.gz",
- "version": "1.31.3",
+ "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.32.2.tar.gz",
+ "version": "1.32.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/moonrepo-moon.json"
  },
@@ -406,20 +384,19 @@
   },
   "package": {
    "name": "moonrepo-moon",
-   "version": "1.31.3"
+   "version": "1.32.2"
   },
   "requirements": {
    "build": [
     "rust_compiler_stub",
-    "vs2019_win-64",
-    "cargo-bundle-licenses",
-    "make"
+    "c_stdlib_stub",
+    "cargo-bundle-licenses"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1dbaa927103560cf67fc1d052333928ec4cb4c908e111427a4afcd864d734adc",
-   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.31.3.tar.gz"
+   "sha256": "7efa00c757653e4d6c1d105ccc28cb1875eafc63cba01d001d43d4324baa1302",
+   "url": "https://github.com/moonrepo/moon/archive/refs/tags/v1.32.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -431,10 +408,9 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_stdlib_stub",
     "cargo-bundle-licenses",
-    "make",
-    "rust_compiler_stub",
-    "vs2019_win-64"
+    "rust_compiler_stub"
    ]
   },
   "host": {
