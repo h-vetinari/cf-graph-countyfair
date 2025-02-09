@@ -37,11 +37,11 @@
    "summary": "ParaView is an open-source, multi-platform data analysis and visualization application based on Visualization Toolkit (VTK)."
   },
   "build": {
-   "number": "107",
+   "number": "108",
    "run_exports": [
     "paraview"
    ],
-   "string": "py39h1234567_107_qt",
+   "string": "py39h1234567_108_qt",
    "track_features": null
   },
   "extra": {
@@ -61,13 +61,12 @@
     "ninja",
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
+    "cxx_compiler_stub"
    ],
    "host": [
     "libgl-devel",
     "libegl-devel",
-    "libopengl-devel",
+    "libglvnd-devel",
     "python",
     "hdf5",
     "libpng",
@@ -93,13 +92,15 @@
     "icu",
     "proj",
     "libharu",
+    "mesalib",
     "glew",
     "qt6-main"
    ],
    "run": [
     "python",
     "numpy",
-    "matplotlib-base"
+    "matplotlib-base",
+    "libgl"
    ]
   },
   "schema_version": 0,
@@ -139,7 +140,6 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "fortran_compiler_stub",
     "ninja",
     "pkg-config"
    ]
@@ -160,11 +160,11 @@
     "libcurl",
     "libegl-devel",
     "libgl-devel",
+    "libglvnd-devel",
     "libharu",
     "libjpeg-turbo",
     "liblzma-devel",
     "libnetcdf",
-    "libopengl-devel",
     "libpng",
     "libprotobuf",
     "libtheora",
@@ -172,6 +172,7 @@
     "libxml2",
     "libzip",
     "lz4-c",
+    "mesalib",
     "proj",
     "pugixml",
     "python",
@@ -182,6 +183,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "libgl",
     "matplotlib-base",
     "numpy",
     "python"
@@ -201,11 +203,11 @@
    "summary": "ParaView is an open-source, multi-platform data analysis and visualization application based on Visualization Toolkit (VTK)."
   },
   "build": {
-   "number": "107",
+   "number": "108",
    "run_exports": [
     "paraview"
    ],
-   "string": "py39h1234567_107_qt",
+   "string": "py39h1234567_108_qt",
    "track_features": null
   },
   "extra": {
@@ -225,13 +227,12 @@
     "ninja",
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
+    "cxx_compiler_stub"
    ],
    "host": [
     "libgl-devel",
     "libegl-devel",
-    "libopengl-devel",
+    "libglvnd-devel",
     "python",
     "hdf5",
     "libpng",
@@ -257,13 +258,15 @@
     "icu",
     "proj",
     "libharu",
+    "mesalib",
     "glew",
     "qt6-main"
    ],
    "run": [
     "python",
     "numpy",
-    "matplotlib-base"
+    "matplotlib-base",
+    "libgl"
    ]
   },
   "schema_version": 0,
@@ -303,7 +306,6 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "fortran_compiler_stub",
     "ninja",
     "pkg-config"
    ]
@@ -324,11 +326,11 @@
     "libcurl",
     "libegl-devel",
     "libgl-devel",
+    "libglvnd-devel",
     "libharu",
     "libjpeg-turbo",
     "liblzma-devel",
     "libnetcdf",
-    "libopengl-devel",
     "libpng",
     "libprotobuf",
     "libtheora",
@@ -336,6 +338,7 @@
     "libxml2",
     "libzip",
     "lz4-c",
+    "mesalib",
     "proj",
     "pugixml",
     "python",
@@ -346,6 +349,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "libgl",
     "matplotlib-base",
     "numpy",
     "python"
@@ -365,11 +369,11 @@
    "summary": "ParaView is an open-source, multi-platform data analysis and visualization application based on Visualization Toolkit (VTK)."
   },
   "build": {
-   "number": "107",
+   "number": "108",
    "run_exports": [
     "paraview"
    ],
-   "string": "py39h1234567_107_qt",
+   "string": "py39h1234567_108_qt",
    "track_features": null
   },
   "extra": {
@@ -389,13 +393,12 @@
     "ninja",
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "fortran_compiler_stub"
+    "cxx_compiler_stub"
    ],
    "host": [
     "libgl-devel",
     "libegl-devel",
-    "libopengl-devel",
+    "libglvnd-devel",
     "python",
     "hdf5",
     "libpng",
@@ -421,13 +424,15 @@
     "icu",
     "proj",
     "libharu",
+    "mesalib",
     "glew",
     "qt6-main"
    ],
    "run": [
     "python",
     "numpy",
-    "matplotlib-base"
+    "matplotlib-base",
+    "libgl"
    ]
   },
   "schema_version": 0,
@@ -470,11 +475,11 @@
    "summary": "ParaView is an open-source, multi-platform data analysis and visualization application based on Visualization Toolkit (VTK)."
   },
   "build": {
-   "number": "107",
+   "number": "108",
    "run_exports": [
     "paraview"
    ],
-   "string": "py39h1234567_107_qt",
+   "string": "py39h1234567_108_qt",
    "track_features": null
   },
   "extra": {
@@ -497,6 +502,8 @@
     "cxx_compiler_stub"
    ],
    "host": [
+    "glew",
+    "qt6-main",
     "python",
     "hdf5",
     "libpng",
@@ -509,7 +516,6 @@
     "lz4-c",
     "expat",
     "libnetcdf",
-    "glew",
     "double-conversion",
     "jsoncpp",
     "liblzma-devel",
@@ -518,7 +524,6 @@
     "pugixml",
     "libtheora",
     "gl2ps",
-    "qt6-main",
     "libzip",
     "libcurl",
     "icu",
@@ -626,11 +631,11 @@
    "summary": "ParaView is an open-source, multi-platform data analysis and visualization application based on Visualization Toolkit (VTK)."
   },
   "build": {
-   "number": "107",
+   "number": "108",
    "run_exports": [
     "paraview"
    ],
-   "string": "py39h1234567_107_qt",
+   "string": "py39h1234567_108_qt",
    "track_features": null
   },
   "extra": {
@@ -653,6 +658,8 @@
     "cxx_compiler_stub"
    ],
    "host": [
+    "glew",
+    "qt6-main",
     "python",
     "hdf5",
     "libpng",
@@ -665,7 +672,6 @@
     "lz4-c",
     "expat",
     "libnetcdf",
-    "glew",
     "double-conversion",
     "jsoncpp",
     "liblzma-devel",
@@ -674,7 +680,6 @@
     "pugixml",
     "libtheora",
     "gl2ps",
-    "qt6-main",
     "libzip",
     "libcurl",
     "icu",
@@ -790,7 +795,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/paraview.json"
  },
- "raw_meta_yaml": "{% set version = \"5.13.2\" %}\n{% set maj_min = \".\".join(version.split(\".\")[:2]) %}\n{% set build_num = 7 %}\n\npackage:\n  name: paraview\n  version: {{ version }}\n\nsource:\n  url: https://paraview.org/files/v{{ maj_min }}/ParaView-v{{ version }}.tar.xz\n  md5: c1c3883e0cab2d132e8a4d43f29873e9\n\n  patches:\n    # https://gitlab.kitware.com/cmake/cmake/-/issues/25079\n    # vtkSMUndoStack.cxx.obj : error LNK2001: unresolved external symbol \"private: void __cdecl absl::lts_20230125::log_internal::LogMessage::CopyToEncodedBuffer\n    - absl.patch\n\n    # https://gitlab.kitware.com/vtk/vtk/-/merge_requests/11486\n    - vtk_py313.patch\n\n    # https://gitlab.kitware.com/paraview/paraview/-/issues/22806\n    - ldflags.patch\n\n{% if build_variant == \"qt\" %}\n{% set build_num = build_num + 100 %}\n{% endif %}\n\nbuild:\n  number: {{ build_num }}\n  string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build_num }}_{{ build_variant }}\n  track_features:\n    - paraview-egl  # [build_variant == \"egl\"]\n  run_exports:\n    - {{ pin_subpackage('paraview', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - libprotobuf                            # [build_platform != target_platform]\n    - curl                                   # [build_platform != target_platform]\n    - qt6-main                               # [build_platform != target_platform]\n    - cmake\n    - pkg-config\n    - ninja\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}  # [build_variant == \"egl\"]\n  host:\n    - libgl-devel                        # [linux]\n    - libegl-devel                       # [linux]\n    - libopengl-devel                    # [linux]\n    - python\n    - hdf5\n    - libpng\n    - libjpeg-turbo\n    - libtiff\n    - libxml2\n    - zlib\n    - freetype\n    - libprotobuf\n    - lz4-c\n    - expat\n    - libnetcdf\n    - glew  # [build_variant == \"qt\"]\n    - double-conversion\n    - jsoncpp\n    - liblzma-devel\n    - cgns\n    - libboost-headers\n    - pugixml\n    - libtheora\n    - gl2ps\n    - qt6-main  # [build_variant == \"qt\"]\n    - libzip\n    - libcurl\n    - icu\n    - proj\n    - libharu\n    - liblzma-devel\n  run:\n    - python\n    - numpy\n    - matplotlib-base  # [unix]\n\ntest:\n  imports:\n    - paraview\n    - paraview.collaboration\n    - paraview.coprocessing\n    - paraview.numeric\n    - paraview.numpy_support\n    - paraview.python_view\n    - paraview.servermanager\n    - paraview.simple\n    - paraview.util\n\n  commands:\n    - python -c \"from paraview.simple import VisItNek5000Reader\"  # [linux]\n    - python -c \"from paraview.simple import Xdmf3ReaderS\"\n    - pvpython --version\n    - paraview --version  # [not linux]\n\nabout:\n  home: http://www.paraview.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: Copyright.txt\n  summary: ParaView is an open-source, multi-platform data analysis and visualization application based on Visualization Toolkit (VTK).\n\nextra:\n  recipe-maintainers:\n    - bgruening\n    - jschueller\n",
+ "raw_meta_yaml": "{% set version = \"5.13.2\" %}\n{% set maj_min = \".\".join(version.split(\".\")[:2]) %}\n{% set build_num = 8 %}\n\n# TODO: drop this line after next version bump\n{% set build_num = build_num + 100 %}  # [build_variant == \"qt\"]\n\npackage:\n  name: paraview\n  version: {{ version }}\n\nsource:\n  url: https://paraview.org/files/v{{ maj_min }}/ParaView-v{{ version }}.tar.xz\n  md5: c1c3883e0cab2d132e8a4d43f29873e9\n\n  patches:\n    # https://gitlab.kitware.com/cmake/cmake/-/issues/25079\n    # vtkSMUndoStack.cxx.obj : error LNK2001: unresolved external symbol \"private: void __cdecl absl::lts_20230125::log_internal::LogMessage::CopyToEncodedBuffer\n    - absl.patch\n\n    # https://gitlab.kitware.com/vtk/vtk/-/merge_requests/11486\n    - vtk_py313.patch\n\n    # https://gitlab.kitware.com/paraview/paraview/-/issues/22806\n    - ldflags.patch\n\nbuild:\n  number: {{ build_num }}\n  string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build_num }}_{{ build_variant }}\n  track_features:\n    - paraview-egl  # [build_variant == \"egl\"]\n    - paraview-osmesa  # [build_variant == \"osmesa\"]\n  run_exports:\n    - {{ pin_subpackage('paraview', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - libprotobuf                            # [build_platform != target_platform]\n    - curl                                   # [build_platform != target_platform]\n    - qt6-main                               # [build_platform != target_platform]\n    - cmake\n    - pkg-config\n    - ninja\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - libgl-devel  # [linux and build_variant != \"osmesa\"]\n    - libegl-devel  # [build_variant == \"egl\"]\n    - libglvnd-devel  # [linux and build_variant != \"osmesa\"]\n    - mesalib  # [build_variant == \"osmesa\"]\n    - glew  # [build_variant == \"qt\"]\n    - qt6-main  # [build_variant == \"qt\"]\n    - python\n    - hdf5\n    - libpng\n    - libjpeg-turbo\n    - libtiff\n    - libxml2\n    - zlib\n    - freetype\n    - libprotobuf\n    - lz4-c\n    - expat\n    - libnetcdf\n    - double-conversion\n    - jsoncpp\n    - liblzma-devel\n    - cgns\n    - libboost-headers\n    - pugixml\n    - libtheora\n    - gl2ps\n    - libzip\n    - libcurl\n    - icu\n    - proj\n    - libharu\n    - liblzma-devel\n  run:\n    - python\n    - numpy\n    - matplotlib-base  # [unix]\n    # because of gl2ps module\n    - libgl  # [linux and build_variant == \"osmesa\"]\n\ntest:\n  imports:\n    - paraview\n    - paraview.collaboration\n    - paraview.coprocessing\n    - paraview.numeric\n    - paraview.numpy_support\n    - paraview.python_view\n    - paraview.servermanager\n    - paraview.simple\n    - paraview.util\n\n  commands:\n    - python -c \"from paraview.simple import VisItNek5000Reader\"  # [linux]\n    - python -c \"from paraview.simple import Xdmf3ReaderS\"\n    - pvpython --version\n    - paraview --version  # [not linux]\n\nabout:\n  home: http://www.paraview.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: Copyright.txt\n  summary: ParaView is an open-source, multi-platform data analysis and visualization application based on Visualization Toolkit (VTK).\n\nextra:\n  recipe-maintainers:\n    - bgruening\n    - jschueller\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -801,7 +806,6 @@
    "cxx_compiler_stub",
    "double-conversion",
    "expat",
-   "fortran_compiler_stub",
    "freetype",
    "gl2ps",
    "glew",
@@ -811,12 +815,13 @@
    "libboost-headers",
    "libcurl",
    "libegl-devel",
+   "libgl",
    "libgl-devel",
+   "libglvnd-devel",
    "libharu",
    "libjpeg-turbo",
    "liblzma-devel",
    "libnetcdf",
-   "libopengl-devel",
    "libpng",
    "libprotobuf",
    "libtheora",
@@ -825,6 +830,7 @@
    "libzip",
    "lz4-c",
    "matplotlib-base",
+   "mesalib",
    "ninja",
    "numpy",
    "pkg-config",
@@ -843,7 +849,6 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "fortran_compiler_stub",
     "ninja",
     "pkg-config"
    ]
@@ -857,7 +862,6 @@
     "cxx_compiler_stub",
     "double-conversion",
     "expat",
-    "fortran_compiler_stub",
     "freetype",
     "gl2ps",
     "glew",
@@ -868,11 +872,11 @@
     "libcurl",
     "libegl-devel",
     "libgl-devel",
+    "libglvnd-devel",
     "libharu",
     "libjpeg-turbo",
     "liblzma-devel",
     "libnetcdf",
-    "libopengl-devel",
     "libpng",
     "libprotobuf",
     "libtheora",
@@ -880,6 +884,7 @@
     "libxml2",
     "libzip",
     "lz4-c",
+    "mesalib",
     "proj",
     "pugixml",
     "python",
@@ -893,7 +898,7 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
-    "fortran_compiler_stub",
+    "libgl",
     "matplotlib-base",
     "numpy",
     "python"
@@ -913,7 +918,6 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "fortran_compiler_stub",
     "ninja",
     "pkg-config"
    ]
@@ -934,11 +938,11 @@
     "libcurl",
     "libegl-devel",
     "libgl-devel",
+    "libglvnd-devel",
     "libharu",
     "libjpeg-turbo",
     "liblzma-devel",
     "libnetcdf",
-    "libopengl-devel",
     "libpng",
     "libprotobuf",
     "libtheora",
@@ -946,6 +950,7 @@
     "libxml2",
     "libzip",
     "lz4-c",
+    "mesalib",
     "proj",
     "pugixml",
     "python",
@@ -956,6 +961,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "libgl",
     "matplotlib-base",
     "numpy",
     "python"
@@ -980,11 +986,11 @@
    "summary": "ParaView is an open-source, multi-platform data analysis and visualization application based on Visualization Toolkit (VTK)."
   },
   "build": {
-   "number": "107",
+   "number": "108",
    "run_exports": [
     "paraview"
    ],
-   "string": "py39h1234567_107_qt",
+   "string": "py39h1234567_108_qt",
    "track_features": null
   },
   "extra": {
@@ -1007,6 +1013,8 @@
     "cxx_compiler_stub"
    ],
    "host": [
+    "glew",
+    "qt6-main",
     "python",
     "hdf5",
     "libpng",
@@ -1019,7 +1027,6 @@
     "lz4-c",
     "expat",
     "libnetcdf",
-    "glew",
     "double-conversion",
     "jsoncpp",
     "liblzma-devel",
@@ -1028,7 +1035,6 @@
     "pugixml",
     "libtheora",
     "gl2ps",
-    "qt6-main",
     "libzip",
     "libcurl",
     "icu",
