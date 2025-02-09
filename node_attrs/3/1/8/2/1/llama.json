@@ -45,7 +45,7 @@
   },
   "package": {
    "name": "llama",
-   "version": "1.11.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "build": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8df1a97a4f123a81e20f5344ed1c0f6f390776c5934cb9c3f38ff82f69bd7898",
-   "url": "https://github.com/antonmedv/llama/archive/v1.11.0.tar.gz"
+   "sha256": "81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4",
+   "url": "https://github.com/antonmedv/llama/archive/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -107,7 +107,7 @@
   },
   "package": {
    "name": "llama",
-   "version": "1.11.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "build": [
@@ -117,8 +117,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8df1a97a4f123a81e20f5344ed1c0f6f390776c5934cb9c3f38ff82f69bd7898",
-   "url": "https://github.com/antonmedv/llama/archive/v1.11.0.tar.gz"
+   "sha256": "81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4",
+   "url": "https://github.com/antonmedv/llama/archive/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -169,7 +169,7 @@
   },
   "package": {
    "name": "llama",
-   "version": "1.11.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "build": [
@@ -179,8 +179,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8df1a97a4f123a81e20f5344ed1c0f6f390776c5934cb9c3f38ff82f69bd7898",
-   "url": "https://github.com/antonmedv/llama/archive/v1.11.0.tar.gz"
+   "sha256": "81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4",
+   "url": "https://github.com/antonmedv/llama/archive/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -231,7 +231,7 @@
   },
   "package": {
    "name": "llama",
-   "version": "1.11.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "build": [
@@ -241,8 +241,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8df1a97a4f123a81e20f5344ed1c0f6f390776c5934cb9c3f38ff82f69bd7898",
-   "url": "https://github.com/antonmedv/llama/archive/v1.11.0.tar.gz"
+   "sha256": "81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4",
+   "url": "https://github.com/antonmedv/llama/archive/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -275,7 +275,7 @@
   },
   "package": {
    "name": "llama",
-   "version": "1.11.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "build": [
@@ -285,8 +285,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8df1a97a4f123a81e20f5344ed1c0f6f390776c5934cb9c3f38ff82f69bd7898",
-   "url": "https://github.com/antonmedv/llama/archive/v1.11.0.tar.gz"
+   "sha256": "81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4",
+   "url": "https://github.com/antonmedv/llama/archive/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -337,7 +337,7 @@
   },
   "package": {
    "name": "llama",
-   "version": "1.11.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "build": [
@@ -347,8 +347,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8df1a97a4f123a81e20f5344ed1c0f6f390776c5934cb9c3f38ff82f69bd7898",
-   "url": "https://github.com/antonmedv/llama/archive/v1.11.0.tar.gz"
+   "sha256": "81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4",
+   "url": "https://github.com/antonmedv/llama/archive/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -396,7 +396,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/llama.json"
  },
- "raw_meta_yaml": "{% set name = \"llama\" %}\n{% set version = \"1.11.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/antonmedv/llama/archive/v{{ version }}.tar.gz\n  sha256: 8df1a97a4f123a81e20f5344ed1c0f6f390776c5934cb9c3f38ff82f69bd7898\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('go-nocgo') }}\n    - go-licenses\n\ntest:\n  requires:\n    - m2-grep  # [win]\n  commands:\n    - 'llama --help 2>&1 | grep -q \"Usage: walk\"'\n\nabout:\n  home: https://github.com/antonmedv/llama\n  license: MIT\n  license_file:\n    - LICENSE\n    - license-files/\n  summary: Terminal file manager\n  dev_url: https://github.com/antonmedv/llama\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
+ "raw_meta_yaml": "{% set name = \"llama\" %}\n{% set version = \"1.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/antonmedv/llama/archive/v{{ version }}.tar.gz\n  sha256: 81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('go-nocgo') }}\n    - go-licenses\n\ntest:\n  requires:\n    - m2-grep  # [win]\n  commands:\n    - 'llama --help 2>&1 | grep -q \"Usage: walk\"'\n\nabout:\n  home: https://github.com/antonmedv/llama\n  license: MIT\n  license_file:\n    - LICENSE\n    - license-files/\n  summary: Terminal file manager\n  dev_url: https://github.com/antonmedv/llama\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -451,8 +451,8 @@
    ]
   }
  },
- "url": "https://github.com/antonmedv/llama/archive/v1.11.0.tar.gz",
- "version": "1.11.0",
+ "url": "https://github.com/antonmedv/llama/archive/v1.12.0.tar.gz",
+ "version": "1.12.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/llama.json"
  },
@@ -477,7 +477,7 @@
   },
   "package": {
    "name": "llama",
-   "version": "1.11.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "build": [
@@ -487,8 +487,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8df1a97a4f123a81e20f5344ed1c0f6f390776c5934cb9c3f38ff82f69bd7898",
-   "url": "https://github.com/antonmedv/llama/archive/v1.11.0.tar.gz"
+   "sha256": "81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4",
+   "url": "https://github.com/antonmedv/llama/archive/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
