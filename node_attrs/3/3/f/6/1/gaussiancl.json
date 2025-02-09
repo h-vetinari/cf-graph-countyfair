@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "gaussiancl",
-   "version": "2023.1"
+   "version": "2023.1.post0"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "775ca7c5276f171cc3b3dc4c8a7c043ce547dcbdbd2d3093b5b0b93ba1382c8a",
-   "url": "https://pypi.org/packages/source/g/gaussiancl/gaussiancl-2023.1.tar.gz"
+   "sha256": "7dc6aacf47b8f981afc50648450e88c83e7c88b689d3304c7da1ff916c0a1815",
+   "url": "https://pypi.org/packages/source/g/gaussiancl/gaussiancl-2023.1.post0.tar.gz"
   },
   "test": {
    "commands": [
@@ -104,7 +104,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "gaussiancl",
-   "version": "2023.1"
+   "version": "2023.1.post0"
   },
   "requirements": {
    "host": [
@@ -132,8 +132,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "775ca7c5276f171cc3b3dc4c8a7c043ce547dcbdbd2d3093b5b0b93ba1382c8a",
-   "url": "https://pypi.org/packages/source/g/gaussiancl/gaussiancl-2023.1.tar.gz"
+   "sha256": "7dc6aacf47b8f981afc50648450e88c83e7c88b689d3304c7da1ff916c0a1815",
+   "url": "https://pypi.org/packages/source/g/gaussiancl/gaussiancl-2023.1.post0.tar.gz"
   },
   "test": {
    "commands": [
@@ -162,7 +162,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/gaussiancl.json"
  },
- "raw_meta_yaml": "{% set name = \"gaussiancl\" %}\n{% set version = \"2023.1\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gaussiancl-{{ version }}.tar.gz\n  sha256: 775ca7c5276f171cc3b3dc4c8a7c043ce547dcbdbd2d3093b5b0b93ba1382c8a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - transformcl >=2022.7.28\n\ntest:\n  imports:\n    - gaussiancl\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/cltools/gaussiancl\n  summary: angular power spectra for transformed Gaussian random fields\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ntessore\n    - paddyroddy\n    - Saransh-cpp\n",
+ "raw_meta_yaml": "{% set name = \"gaussiancl\" %}\n{% set version = \"2023.1.post0\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gaussiancl-{{ version }}.tar.gz\n  sha256: 7dc6aacf47b8f981afc50648450e88c83e7c88b689d3304c7da1ff916c0a1815\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - transformcl >=2022.7.28\n\ntest:\n  imports:\n    - gaussiancl\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/cltools/gaussiancl\n  summary: angular power spectra for transformed Gaussian random fields\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ntessore\n    - paddyroddy\n    - Saransh-cpp\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -232,8 +232,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/gaussiancl/gaussiancl-2023.1.tar.gz",
- "version": "2023.1",
+ "url": "https://pypi.org/packages/source/g/gaussiancl/gaussiancl-2023.1.post0.tar.gz",
+ "version": "2023.1.post0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/gaussiancl.json"
  }
