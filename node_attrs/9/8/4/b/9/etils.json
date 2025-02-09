@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "etils",
-   "version": "1.10.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "host": [
@@ -47,8 +47,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "47fab05eb152caaa13773c90e0b7a089f8eab8ead11ba5fc5a96717d9b246165",
-   "url": "https://github.com/google/etils/archive/refs/tags/v1.10.0.tar.gz"
+   "sha256": "fa18f90dbf744cef5a56966219daab0b6337314c4af00bc8c66e0cd07ac4c21f",
+   "url": "https://github.com/google/etils/archive/refs/tags/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -99,7 +99,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -110,7 +110,7 @@
   },
   "package": {
    "name": "etils",
-   "version": "1.10.0"
+   "version": "1.12.0"
   },
   "requirements": {
    "host": [
@@ -124,8 +124,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "47fab05eb152caaa13773c90e0b7a089f8eab8ead11ba5fc5a96717d9b246165",
-   "url": "https://github.com/google/etils/archive/refs/tags/v1.10.0.tar.gz"
+   "sha256": "fa18f90dbf744cef5a56966219daab0b6337314c4af00bc8c66e0cd07ac4c21f",
+   "url": "https://github.com/google/etils/archive/refs/tags/v1.12.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -154,7 +154,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/etils.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.10' %}\n{% set name = \"etils\" %}\n{% set version = \"1.10.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/google/etils/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 47fab05eb152caaa13773c90e0b7a089f8eab8ead11ba5fc5a96717d9b246165\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - flit-core >=3.8,<4\n  run:\n    - python >={{ python_min }}\n\n\ntest:\n  imports:\n    - etils\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/etils/\n  summary: Collection of common python utils\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ngam\n    - traversaro\n",
+ "raw_meta_yaml": "{% set python_min = \"3.10\" %}\n{% set name = \"etils\" %}\n{% set version = \"1.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/google/etils/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: fa18f90dbf744cef5a56966219daab0b6337314c4af00bc8c66e0cd07ac4c21f\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - flit-core >=3.8,<4\n  run:\n    - python >={{ python_min }}\n\n\ntest:\n  imports:\n    - etils\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/etils/\n  summary: Collection of common python utils\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ngam\n    - traversaro\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -218,8 +218,8 @@
    ]
   }
  },
- "url": "https://github.com/google/etils/archive/refs/tags/v1.10.0.tar.gz",
- "version": "1.10.0",
+ "url": "https://github.com/google/etils/archive/refs/tags/v1.12.0.tar.gz",
+ "version": "1.12.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/etils.json"
  }
