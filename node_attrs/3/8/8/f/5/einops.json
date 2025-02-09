@@ -30,7 +30,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -41,7 +41,7 @@
   },
   "package": {
    "name": "einops",
-   "version": "0.8.0"
+   "version": "0.8.1"
   },
   "requirements": {
    "host": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "63486517fed345712a8385c100cb279108d9d47e6ae59099b07657e983deae85",
-   "url": "https://pypi.org/packages/source/e/einops/einops-0.8.0.tar.gz"
+   "sha256": "de5d960a7a761225532e0f1959e5315ebeafc0cd43394732f103ca44b9837e84",
+   "url": "https://pypi.org/packages/source/e/einops/einops-0.8.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +112,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -123,7 +123,7 @@
   },
   "package": {
    "name": "einops",
-   "version": "0.8.0"
+   "version": "0.8.1"
   },
   "requirements": {
    "host": [
@@ -137,8 +137,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "63486517fed345712a8385c100cb279108d9d47e6ae59099b07657e983deae85",
-   "url": "https://pypi.org/packages/source/e/einops/einops-0.8.0.tar.gz"
+   "sha256": "de5d960a7a761225532e0f1959e5315ebeafc0cd43394732f103ca44b9837e84",
+   "url": "https://pypi.org/packages/source/e/einops/einops-0.8.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -168,7 +168,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/einops.json"
  },
- "raw_meta_yaml": "{% set name = \"einops\" %}\n{% set version = \"0.8.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 63486517fed345712a8385c100cb279108d9d47e6ae59099b07657e983deae85\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - hatchling >=1.10.0\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - einops\n    - einops.layers\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/arogozhnikov/einops\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A new flavour of deep learning operations.\n  description: |\n    Flexible and powerful tensor operations for readable and reliable code.\n    Supports numpy, pytorch, tensorflow, and others.\n  doc_url: https://github.com/arogozhnikov/einops\n  dev_url: https://github.com/arogozhnikov/einops\n\nextra:\n  recipe-maintainers:\n    - maresb\n    - asford\n",
+ "raw_meta_yaml": "{% set name = \"einops\" %}\n{% set version = \"0.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: de5d960a7a761225532e0f1959e5315ebeafc0cd43394732f103ca44b9837e84\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - hatchling >=1.10.0\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - einops\n    - einops.layers\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/arogozhnikov/einops\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A new flavour of deep learning operations.\n  description: |\n    Flexible and powerful tensor operations for readable and reliable code.\n    Supports numpy, pytorch, tensorflow, and others.\n  doc_url: https://github.com/arogozhnikov/einops\n  dev_url: https://github.com/arogozhnikov/einops\n\nextra:\n  recipe-maintainers:\n    - maresb\n    - asford\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -232,8 +232,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/e/einops/einops-0.8.0.tar.gz",
- "version": "0.8.0",
+ "url": "https://pypi.org/packages/source/e/einops/einops-0.8.1.tar.gz",
+ "version": "0.8.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/einops.json"
  }
