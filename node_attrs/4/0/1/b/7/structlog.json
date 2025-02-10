@@ -15,6 +15,7 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
+   "dev_url": "https://github.com/hynek/structlog",
    "home": "http://www.structlog.org",
    "license": "Apache-2.0 OR MIT",
    "license_file": [
@@ -25,18 +26,19 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra": {
    "recipe-maintainers": [
     "vamega",
-    "aldanor"
+    "aldanor",
+    "synapticarbors"
    ]
   },
   "package": {
    "name": "structlog",
-   "version": "24.4.0"
+   "version": "25.1.0"
   },
   "requirements": {
    "host": [
@@ -44,24 +46,28 @@
     "pip",
     "hatchling",
     "hatch-vcs",
-    "hatch-fancy-pypi-readme"
+    "hatch-fancy-pypi-readme >=22.8.0"
    ],
    "run": [
-    "python >=3.9"
+    "python >=3.9",
+    "typing-extensions"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "structlog-24.4.0.tar.gz",
-   "sha256": "bd10527942dae90e8c44f0e1a170062b3a1787e1139a633508da5eb1ca426cd1",
-   "url": "https://github.com/hynek/structlog/archive/24.4.0.zip"
+   "sha256": "2ef2a572e0e27f09664965d31a576afe64e46ac6084ef5cec3c2b8cd6e4e3ad3",
+   "url": "https://pypi.org/packages/source/s/structlog/structlog-25.1.0.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "structlog"
    ],
    "requires": [
-    "python 3.9"
+    "python 3.9",
+    "pip"
    ]
   }
  },
@@ -83,18 +89,21 @@
   "run": {
    "__set__": true,
    "elements": [
-    "python"
+    "python",
+    "typing-extensions"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
+    "pip",
     "python"
    ]
   }
  },
  "meta_yaml": {
   "about": {
+   "dev_url": "https://github.com/hynek/structlog",
    "home": "http://www.structlog.org",
    "license": "Apache-2.0 OR MIT",
    "license_file": [
@@ -105,18 +114,19 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra": {
    "recipe-maintainers": [
     "vamega",
-    "aldanor"
+    "aldanor",
+    "synapticarbors"
    ]
   },
   "package": {
    "name": "structlog",
-   "version": "24.4.0"
+   "version": "25.1.0"
   },
   "requirements": {
    "host": [
@@ -124,24 +134,28 @@
     "pip",
     "hatchling",
     "hatch-vcs",
-    "hatch-fancy-pypi-readme"
+    "hatch-fancy-pypi-readme >=22.8.0"
    ],
    "run": [
-    "python >=3.9"
+    "python >=3.9",
+    "typing-extensions"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "structlog-24.4.0.tar.gz",
-   "sha256": "bd10527942dae90e8c44f0e1a170062b3a1787e1139a633508da5eb1ca426cd1",
-   "url": "https://github.com/hynek/structlog/archive/24.4.0.zip"
+   "sha256": "2ef2a572e0e27f09664965d31a576afe64e46ac6084ef5cec3c2b8cd6e4e3ad3",
+   "url": "https://pypi.org/packages/source/s/structlog/structlog-25.1.0.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "structlog"
    ],
    "requires": [
-    "python 3.9"
+    "python 3.9",
+    "pip"
    ]
   }
  },
@@ -159,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/structlog.json"
  },
- "raw_meta_yaml": "{% set version = \"24.4.0\" %}\n{% set sha256 = \"bd10527942dae90e8c44f0e1a170062b3a1787e1139a633508da5eb1ca426cd1\" %}\n\npackage:\n  name: structlog\n  version: {{ version }}\n\nsource:\n  fn: structlog-{{ version }}.tar.gz\n  url: https://github.com/hynek/structlog/archive/{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n    - hatch-vcs\n    - hatch-fancy-pypi-readme\n\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - structlog\n\nabout:\n  home: http://www.structlog.org\n  license: Apache-2.0 OR MIT\n  summary: Structured Logging for Python\n  license_file:\n    - LICENSE-MIT\n    - LICENSE-APACHE\n\nextra:\n  recipe-maintainers:\n    - vamega\n    - aldanor\n",
+ "raw_meta_yaml": "{% set name = \"structlog\" %}\n{% set version = \"25.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/structlog-{{ version }}.tar.gz\n  sha256: 2ef2a572e0e27f09664965d31a576afe64e46ac6084ef5cec3c2b8cd6e4e3ad3\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n    - hatch-vcs\n    - hatch-fancy-pypi-readme >=22.8.0\n\n  run:\n    - python >={{ python_min }}\n    - typing-extensions\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - structlog\n  commands:\n    - pip check\n\nabout:\n  home: http://www.structlog.org\n  license: Apache-2.0 OR MIT\n  summary: Structured Logging for Python\n  license_file:\n    - LICENSE-MIT\n    - LICENSE-APACHE\n  dev_url: https://github.com/hynek/structlog\n\nextra:\n  recipe-maintainers:\n    - vamega\n    - aldanor\n    - synapticarbors\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -167,7 +181,8 @@
    "hatch-vcs",
    "hatchling",
    "pip",
-   "python"
+   "python",
+   "typing-extensions"
   ]
  },
  "requirements": {
@@ -188,12 +203,14 @@
   "run": {
    "__set__": true,
    "elements": [
-    "python"
+    "python",
+    "typing-extensions"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
+    "pip",
     "python"
    ]
   }
@@ -207,7 +224,7 @@
   "host": {
    "__set__": true,
    "elements": [
-    "hatch-fancy-pypi-readme",
+    "hatch-fancy-pypi-readme >=22.8.0",
     "hatch-vcs",
     "hatchling",
     "pip",
@@ -217,18 +234,20 @@
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.9"
+    "python >=3.9",
+    "typing-extensions"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
+    "pip",
     "python 3.9"
    ]
   }
  },
- "url": "https://github.com/hynek/structlog/archive/24.4.0.zip",
- "version": "24.4.0",
+ "url": "https://pypi.org/packages/source/s/structlog/structlog-25.1.0.tar.gz",
+ "version": "25.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/structlog.json"
  }
