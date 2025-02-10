@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "rerankers",
-   "version": "0.6.1"
+   "version": "0.7.0"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "36569dbb4499eaf1ba52b3fb6bf0781f2259e28acc2b58d8a68986e0dd2a88e0",
-   "url": "https://pypi.org/packages/source/r/rerankers/rerankers-0.6.1.tar.gz"
+   "sha256": "0a223c476b66c9bb617ed116d16933af667dd67c9a1daca43ffa1a5ae0632d8e",
+   "url": "https://pypi.org/packages/source/r/rerankers/rerankers-0.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -115,7 +115,7 @@
   },
   "package": {
    "name": "rerankers",
-   "version": "0.6.1"
+   "version": "0.7.0"
   },
   "requirements": {
    "host": [
@@ -131,8 +131,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "36569dbb4499eaf1ba52b3fb6bf0781f2259e28acc2b58d8a68986e0dd2a88e0",
-   "url": "https://pypi.org/packages/source/r/rerankers/rerankers-0.6.1.tar.gz"
+   "sha256": "0a223c476b66c9bb617ed116d16933af667dd67c9a1daca43ffa1a5ae0632d8e",
+   "url": "https://pypi.org/packages/source/r/rerankers/rerankers-0.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/rerankers.json"
  },
- "raw_meta_yaml": "{% set name = \"rerankers\" %}\n{% set version = \"0.6.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rerankers-{{ version }}.tar.gz\n  sha256: 36569dbb4499eaf1ba52b3fb6bf0781f2259e28acc2b58d8a68986e0dd2a88e0\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pydantic\n    - tqdm\n\ntest:\n  imports:\n    - rerankers\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/answerdotai/rerankers\n  summary: A unified API for various document re-ranking models.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"rerankers\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rerankers-{{ version }}.tar.gz\n  sha256: 0a223c476b66c9bb617ed116d16933af667dd67c9a1daca43ffa1a5ae0632d8e\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pydantic\n    - tqdm\n\ntest:\n  imports:\n    - rerankers\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/answerdotai/rerankers\n  summary: A unified API for various document re-ranking models.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -231,8 +231,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/r/rerankers/rerankers-0.6.1.tar.gz",
- "version": "0.6.1",
+ "url": "https://pypi.org/packages/source/r/rerankers/rerankers-0.7.0.tar.gz",
+ "version": "0.7.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/rerankers.json"
  }
