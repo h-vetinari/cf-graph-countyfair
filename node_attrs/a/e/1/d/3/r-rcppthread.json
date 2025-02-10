@@ -14,8 +14,11 @@
    "tooling_branch_name": "main"
   },
   "provider": {
+   "linux_aarch64": "azure",
+   "linux_ppc64le": "azure",
    "win": "azure"
-  }
+  },
+  "test": "native_and_emulated"
  },
  "feedstock_name": "r-rcppthread",
  "hash_type": "sha256",
@@ -75,6 +78,170 @@
   }
  },
  "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "r-base"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/tnagler/RcppThread",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary": "Provides a C++11-style thread class and thread pool that can safely be interrupted from R."
+  },
+  "build": {
+   "number": "0",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-rcppthread",
+   "version": "2.2.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host": [
+    "r-base"
+   ],
+   "run": [
+    "r-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "44835bae083ff89924e27856674868901c895537b24c4f7c11850defa8058d37",
+   "url": [
+    "https://cran.r-project.org/src/contrib/RcppThread_2.2.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/RcppThread/RcppThread_2.2.0.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('RcppThread')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "r-base"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "home": "https://github.com/tnagler/RcppThread",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary": "Provides a C++11-style thread class and thread pool that can safely be interrupted from R."
+  },
+  "build": {
+   "number": "0",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-rcppthread",
+   "version": "2.2.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host": [
+    "r-base"
+   ],
+   "run": [
+    "r-base"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "44835bae083ff89924e27856674868901c895537b24c4f7c11850defa8058d37",
+   "url": [
+    "https://cran.r-project.org/src/contrib/RcppThread_2.2.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/RcppThread/RcppThread_2.2.0.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('RcppThread')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
    "elements": [
@@ -256,6 +423,8 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
   "win_64"
  ],
@@ -356,6 +525,10 @@
   }
  },
  "url": [
+  "https://cran.r-project.org/src/contrib/RcppThread_2.2.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/RcppThread/RcppThread_2.2.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/RcppThread_2.2.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/RcppThread/RcppThread_2.2.0.tar.gz",
   "https://cran.r-project.org/src/contrib/RcppThread_2.2.0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/RcppThread/RcppThread_2.2.0.tar.gz",
   "https://cran.r-project.org/src/contrib/RcppThread_2.2.0.tar.gz",
