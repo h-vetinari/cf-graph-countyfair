@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "qdoas",
-   "version": "3.6.11"
+   "version": "3.7.0"
   },
   "requirements": {
    "build": [
@@ -55,6 +55,8 @@
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
+    "glibmm",
     "qt-main",
     "qwt"
    ],
@@ -63,14 +65,16 @@
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
+    "glibmm",
     "qt-main",
     "qwt"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2d59cd645b6b31549d53445389b7bfcab2138cb4bc3d61daee85bb4070b13d1d",
-   "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.6.11.tar.gz"
+   "sha256": "882233664948bee8300440d55d5805bb2462e8499e61cda571f8a715479f8a67",
+   "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -96,10 +100,12 @@
    "elements": [
     "coda",
     "eigen",
+    "glibmm",
     "hdf4",
     "hdf5",
     "libboost-headers",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -108,9 +114,11 @@
    "__set__": true,
    "elements": [
     "coda",
+    "glibmm",
     "hdf4",
     "hdf5",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -143,7 +151,7 @@
   },
   "package": {
    "name": "qdoas",
-   "version": "3.6.11"
+   "version": "3.7.0"
   },
   "requirements": {
    "build": [
@@ -162,6 +170,8 @@
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
+    "glibmm",
     "qt-main",
     "qwt"
    ],
@@ -170,14 +180,16 @@
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
+    "glibmm",
     "qt-main",
     "qwt"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2d59cd645b6b31549d53445389b7bfcab2138cb4bc3d61daee85bb4070b13d1d",
-   "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.6.11.tar.gz"
+   "sha256": "882233664948bee8300440d55d5805bb2462e8499e61cda571f8a715479f8a67",
+   "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -209,7 +221,7 @@
   },
   "package": {
    "name": "qdoas",
-   "version": "3.6.11"
+   "version": "3.7.0"
   },
   "requirements": {
    "build": [
@@ -227,6 +239,8 @@
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
+    "glibmm",
     "qt-main",
     "qwt"
    ],
@@ -235,14 +249,16 @@
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
+    "glibmm",
     "qt-main",
     "qwt"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2d59cd645b6b31549d53445389b7bfcab2138cb4bc3d61daee85bb4070b13d1d",
-   "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.6.11.tar.gz"
+   "sha256": "882233664948bee8300440d55d5805bb2462e8499e61cda571f8a715479f8a67",
+   "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -267,10 +283,12 @@
    "elements": [
     "coda",
     "eigen",
+    "glibmm",
     "hdf4",
     "hdf5",
     "libboost-headers",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -279,9 +297,11 @@
    "__set__": true,
    "elements": [
     "coda",
+    "glibmm",
     "hdf4",
     "hdf5",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -306,7 +326,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/qdoas.json"
  },
- "raw_meta_yaml": "{% set name = \"qdoas\" %}\n{% set version = \"3.6.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 2d59cd645b6b31549d53445389b7bfcab2138cb4bc3d61daee85bb4070b13d1d\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n    - {{ cdt('libxext') }}     # [linux]\n    - cmake\n    - make  # [not win]\n    - pkg-config\n  host:\n    - libboost-headers\n    - coda >=2.24.2\n    - eigen\n    - hdf4\n    - hdf5 >=1.14.2\n    - libnetcdf\n    - qt-main\n    - qwt\n  run:\n    - coda >=2.24.2\n    - hdf4\n    - hdf5 >=1.14.2\n    - libnetcdf\n    - qt-main\n    - qwt\n\ntest:\n  commands:\n    - doas_cl\n\nabout:\n  home: https://uv-vis.aeronomie.be/software/QDOAS/\n  summary: 'Application to perform DOAS retrievals of trace gases from spectral measurements'\n  description: |\n    QDOAS is a cross-platform application based on the long experience of BIRA-IASB\n    (Royal Belgian Institute for Space Aeronomy) in the development and improvement of algorithms\n    for the retrieval of trace gases from UV-Visible spectral measurements (satellite, ground-based,\n    mobile or aircraft-based instruments) using the DOAS (Differential Optical Absorption Spectroscopy).\n    This software evolves along with the measurement techniques in DOAS. It has been extensively\n    validated in different intercomparison campaigns. The friendly user interface, flexibility and the\n    robustness of the algorithms largely contribute to QDOAS success in the world.\n  license: BSD-3-Clause-Clear\n  license_family: BSD\n  license_file: LICENSE\n  doc_url: https://uv-vis.aeronomie.be/software/QDOAS/QDOAS_manual.pdf\n  dev_url: https://github.com/UVVIS-BIRA-IASB/qdoas\n\nextra:\n  recipe-maintainers:\n    - jonasv85\n    - svniemeijer\n    - tdanckaert\n",
+ "raw_meta_yaml": "{% set name = \"qdoas\" %}\n{% set version = \"3.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 882233664948bee8300440d55d5805bb2462e8499e61cda571f8a715479f8a67\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n    - {{ cdt('libxext') }}     # [linux]\n    - cmake\n    - make  # [not win]\n    - pkg-config\n  host:\n    - libboost-headers\n    - coda >=2.24.2\n    - eigen\n    - hdf4\n    - hdf5 >=1.14.2\n    - libnetcdf\n    - libxmlpp\n    - glibmm\n    - qt-main\n    - qwt\n  run:\n    - coda >=2.24.2\n    - hdf4\n    - hdf5 >=1.14.2\n    - libnetcdf\n    - libxmlpp\n    - glibmm\n    - qt-main\n    - qwt\n\ntest:\n  commands:\n    - doas_cl\n\nabout:\n  home: https://uv-vis.aeronomie.be/software/QDOAS/\n  summary: 'Application to perform DOAS retrievals of trace gases from spectral measurements'\n  description: |\n    QDOAS is a cross-platform application based on the long experience of BIRA-IASB\n    (Royal Belgian Institute for Space Aeronomy) in the development and improvement of algorithms\n    for the retrieval of trace gases from UV-Visible spectral measurements (satellite, ground-based,\n    mobile or aircraft-based instruments) using the DOAS (Differential Optical Absorption Spectroscopy).\n    This software evolves along with the measurement techniques in DOAS. It has been extensively\n    validated in different intercomparison campaigns. The friendly user interface, flexibility and the\n    robustness of the algorithms largely contribute to QDOAS success in the world.\n  license: BSD-3-Clause-Clear\n  license_family: BSD\n  license_file: LICENSE\n  doc_url: https://uv-vis.aeronomie.be/software/QDOAS/QDOAS_manual.pdf\n  dev_url: https://github.com/UVVIS-BIRA-IASB/qdoas\n\nextra:\n  recipe-maintainers:\n    - jonasv85\n    - svniemeijer\n    - tdanckaert\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -317,10 +337,12 @@
    "coda",
    "cxx_compiler_stub",
    "eigen",
+   "glibmm",
    "hdf4",
    "hdf5",
    "libboost-headers",
    "libnetcdf",
+   "libxmlpp",
    "make",
    "pkg-config",
    "qt-main",
@@ -348,10 +370,12 @@
     "coda",
     "cxx_compiler_stub",
     "eigen",
+    "glibmm",
     "hdf4",
     "hdf5",
     "libboost-headers",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -363,9 +387,11 @@
     "c_stdlib_stub",
     "coda",
     "cxx_compiler_stub",
+    "glibmm",
     "hdf4",
     "hdf5",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -394,10 +420,12 @@
    "elements": [
     "coda >=2.24.2",
     "eigen",
+    "glibmm",
     "hdf4",
     "hdf5 >=1.14.2",
     "libboost-headers",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -406,9 +434,11 @@
    "__set__": true,
    "elements": [
     "coda >=2.24.2",
+    "glibmm",
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -418,8 +448,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.6.11.tar.gz",
- "version": "3.6.11",
+ "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.7.0.tar.gz",
+ "version": "3.7.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/qdoas.json"
  },
@@ -446,7 +476,7 @@
   },
   "package": {
    "name": "qdoas",
-   "version": "3.6.11"
+   "version": "3.7.0"
   },
   "requirements": {
    "build": [
@@ -463,6 +493,8 @@
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
+    "glibmm",
     "qt-main",
     "qwt"
    ],
@@ -471,14 +503,16 @@
     "hdf4",
     "hdf5 >=1.14.2",
     "libnetcdf",
+    "libxmlpp",
+    "glibmm",
     "qt-main",
     "qwt"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2d59cd645b6b31549d53445389b7bfcab2138cb4bc3d61daee85bb4070b13d1d",
-   "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.6.11.tar.gz"
+   "sha256": "882233664948bee8300440d55d5805bb2462e8499e61cda571f8a715479f8a67",
+   "url": "https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/3.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -502,10 +536,12 @@
    "elements": [
     "coda",
     "eigen",
+    "glibmm",
     "hdf4",
     "hdf5",
     "libboost-headers",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
@@ -514,9 +550,11 @@
    "__set__": true,
    "elements": [
     "coda",
+    "glibmm",
     "hdf4",
     "hdf5",
     "libnetcdf",
+    "libxmlpp",
     "qt-main",
     "qwt"
    ]
