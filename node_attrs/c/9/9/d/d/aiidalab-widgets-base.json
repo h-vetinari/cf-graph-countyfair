@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "aiidalab-widgets-base",
-   "version": "2.3.0a3"
+   "version": "2.3.0"
   },
   "requirements": {
    "host": [
@@ -49,7 +49,7 @@
     "aiida-core >=2.1,<3",
     "aiidalab >=21.11.2",
     "ansi2html >=1.6,<2.dev0",
-    "ase >=3.18,<4.dev0,<3.23",
+    "ase >=3.18,<4.dev0",
     "bokeh >=2.0,<3.dev0",
     "humanfriendly >=10.0,<11.dev0",
     "ipytree >=0.2,<1.dev0",
@@ -60,13 +60,14 @@
     "nglview >=3.0,<4.dev0",
     "spglib >=1.14,<3",
     "vapory >=0.1.2,<0.2.dev0",
-    "pandas >=2.1,<3.dev0"
+    "pandas >=2.1,<3.dev0",
+    "ipython >=7.33"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "35ba7594a0aedb723b5f099ae40760196795da8af87fb3583942c7d470fcbcd9",
-   "url": "https://pypi.org/packages/source/a/aiidalab-widgets-base/aiidalab_widgets_base-2.3.0a3.tar.gz"
+   "sha256": "91c6821e3714dc70e92282f242d374a34d6f849f8938481b397050ef38e992ed",
+   "url": "https://pypi.org/packages/source/a/aiidalab-widgets-base/aiidalab_widgets_base-2.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -104,6 +105,7 @@
     "ase",
     "bokeh",
     "humanfriendly",
+    "ipython",
     "ipytree",
     "ipywidgets",
     "nglview",
@@ -146,7 +148,7 @@
   },
   "package": {
    "name": "aiidalab-widgets-base",
-   "version": "2.3.0a3"
+   "version": "2.3.0"
   },
   "requirements": {
    "host": [
@@ -161,7 +163,7 @@
     "aiida-core >=2.1,<3",
     "aiidalab >=21.11.2",
     "ansi2html >=1.6,<2.dev0",
-    "ase >=3.18,<4.dev0,<3.23",
+    "ase >=3.18,<4.dev0",
     "bokeh >=2.0,<3.dev0",
     "humanfriendly >=10.0,<11.dev0",
     "ipytree >=0.2,<1.dev0",
@@ -172,13 +174,14 @@
     "nglview >=3.0,<4.dev0",
     "spglib >=1.14,<3",
     "vapory >=0.1.2,<0.2.dev0",
-    "pandas >=2.1,<3.dev0"
+    "pandas >=2.1,<3.dev0",
+    "ipython >=7.33"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "35ba7594a0aedb723b5f099ae40760196795da8af87fb3583942c7d470fcbcd9",
-   "url": "https://pypi.org/packages/source/a/aiidalab-widgets-base/aiidalab_widgets_base-2.3.0a3.tar.gz"
+   "sha256": "91c6821e3714dc70e92282f242d374a34d6f849f8938481b397050ef38e992ed",
+   "url": "https://pypi.org/packages/source/a/aiidalab-widgets-base/aiidalab_widgets_base-2.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -207,7 +210,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/aiidalab-widgets-base.json"
  },
- "raw_meta_yaml": "{% set name = \"aiidalab-widgets-base\" %}\n{% set version = \"2.3.0a3\" %}\n{% set python_min = \"3.9\" %}\n{% set sha256 = \"35ba7594a0aedb723b5f099ae40760196795da8af87fb3583942c7d470fcbcd9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aiidalab_widgets_base-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  # We can only support linux because of 'povray' dependency\n  # https://github.com/conda-forge/povray-feedstock/blob/a0b75ca48b7767ba4f5b4bb0c5ff2d4a15b85f71/recipe/meta.yaml#L14\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pycifrw >=4.4,<5.dev0\n    - aiida-core >=2.1,<3\n    - aiidalab >=21.11.2\n    - ansi2html >=1.6,<2.dev0\n    - ase >=3.18,<4.dev0,<3.23\n    - bokeh >=2.0,<3.dev0\n    - humanfriendly >=10.0,<11.dev0\n    - ipytree >=0.2,<1.dev0\n    - traitlets >=5.4,<6.dev0\n    - ipywidgets >=7.7,<8.dev0\n    - widgetsnbextension <3.6.3\n    - pymysql >=0.9,<1.dev0\n    - nglview >=3.0,<4.dev0\n    - spglib >=1.14,<3\n    - vapory >=0.1.2,<0.2.dev0\n    - pandas >=2.1,<3.dev0\n\ntest:\n  imports:\n    - aiidalab_widgets_base\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/aiidalab/aiidalab-widgets-base\n  summary: Reusable widgets for AiiDAlab applications.\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - unkcpz\n    - danielhollas\n    - yakutovicha\n",
+ "raw_meta_yaml": "{% set name = \"aiidalab-widgets-base\" %}\n{% set version = \"2.3.0\" %}\n{% set python_min = \"3.9\" %}\n{% set sha256 = \"91c6821e3714dc70e92282f242d374a34d6f849f8938481b397050ef38e992ed\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aiidalab_widgets_base-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  # We can only support linux because of 'povray' dependency\n  # https://github.com/conda-forge/povray-feedstock/blob/a0b75ca48b7767ba4f5b4bb0c5ff2d4a15b85f71/recipe/meta.yaml#L14\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pycifrw >=4.4,<5.dev0\n    - aiida-core >=2.1,<3\n    - aiidalab >=21.11.2\n    - ansi2html >=1.6,<2.dev0\n    - ase >=3.18,<4.dev0\n    - bokeh >=2.0,<3.dev0\n    - humanfriendly >=10.0,<11.dev0\n    - ipytree >=0.2,<1.dev0\n    - traitlets >=5.4,<6.dev0\n    - ipywidgets >=7.7,<8.dev0\n    - widgetsnbextension <3.6.3\n    - pymysql >=0.9,<1.dev0\n    - nglview >=3.0,<4.dev0\n    - spglib >=1.14,<3\n    - vapory >=0.1.2,<0.2.dev0\n    - pandas >=2.1,<3.dev0\n    - ipython >=7.33\n\ntest:\n  imports:\n    - aiidalab_widgets_base\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/aiidalab/aiidalab-widgets-base\n  summary: Reusable widgets for AiiDAlab applications.\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - unkcpz\n    - danielhollas\n    - yakutovicha\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -217,6 +220,7 @@
    "ase",
    "bokeh",
    "humanfriendly",
+   "ipython",
    "ipytree",
    "ipywidgets",
    "nglview",
@@ -256,6 +260,7 @@
     "ase",
     "bokeh",
     "humanfriendly",
+    "ipython",
     "ipytree",
     "ipywidgets",
     "nglview",
@@ -298,9 +303,10 @@
     "aiida-core >=2.1,<3",
     "aiidalab >=21.11.2",
     "ansi2html >=1.6,<2.dev0",
-    "ase >=3.18,<4.dev0,<3.23",
+    "ase >=3.18,<4.dev0",
     "bokeh >=2.0,<3.dev0",
     "humanfriendly >=10.0,<11.dev0",
+    "ipython >=7.33",
     "ipytree >=0.2,<1.dev0",
     "ipywidgets >=7.7,<8.dev0",
     "nglview >=3.0,<4.dev0",
@@ -322,8 +328,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/aiidalab-widgets-base/aiidalab_widgets_base-2.3.0a3.tar.gz",
- "version": "2.3.0a3",
+ "url": "https://pypi.org/packages/source/a/aiidalab-widgets-base/aiidalab_widgets_base-2.3.0.tar.gz",
+ "version": "2.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/aiidalab-widgets-base.json"
  }
