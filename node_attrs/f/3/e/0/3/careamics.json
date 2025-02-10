@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "careamics",
-   "version": "0.0.6"
+   "version": "0.0.9"
   },
   "requirements": {
    "host": [
@@ -48,8 +48,8 @@
    "run": [
     "python >=3.9",
     "numpy <2.0.0",
-    "pytorch >=2.0,<=2.5.1",
-    "torchvision <=0.20.1",
+    "pytorch >=2.0,<=2.6.0",
+    "torchvision <=0.21.0",
     "bioimageio.core ==0.7",
     "tifffile <=2025.1.10",
     "psutil <=6.1.1",
@@ -57,16 +57,16 @@
     "pytorch-lightning >=2.2,<=2.5",
     "pyyaml <=6.0.2,!=6.0.0",
     "typer >=0.12.3,<=0.15.1",
-    "scikit-image <=0.25.0",
+    "scikit-image <=0.25.1",
     "zarr <3.0.0",
     "pillow <=11.1.0",
-    "matplotlib-base <=3.9.0"
+    "matplotlib-base <=3.10.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d91e29531d3631ecc172541faa1b0e2159b881992bb3d8217f6b7405a45d8180",
-   "url": "https://pypi.org/packages/source/c/careamics/careamics-0.0.6.tar.gz"
+   "sha256": "df3bfbb2e791bfd1e322956733c68e72108375c9e4ab53156431984620d8cbea",
+   "url": "https://pypi.org/packages/source/c/careamics/careamics-0.0.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -146,7 +146,7 @@
   },
   "package": {
    "name": "careamics",
-   "version": "0.0.6"
+   "version": "0.0.9"
   },
   "requirements": {
    "host": [
@@ -158,8 +158,8 @@
    "run": [
     "python >=3.9",
     "numpy <2.0.0",
-    "pytorch >=2.0,<=2.5.1",
-    "torchvision <=0.20.1",
+    "pytorch >=2.0,<=2.6.0",
+    "torchvision <=0.21.0",
     "bioimageio.core ==0.7",
     "tifffile <=2025.1.10",
     "psutil <=6.1.1",
@@ -167,16 +167,16 @@
     "pytorch-lightning >=2.2,<=2.5",
     "pyyaml <=6.0.2,!=6.0.0",
     "typer >=0.12.3,<=0.15.1",
-    "scikit-image <=0.25.0",
+    "scikit-image <=0.25.1",
     "zarr <3.0.0",
     "pillow <=11.1.0",
-    "matplotlib-base <=3.9.0"
+    "matplotlib-base <=3.10.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d91e29531d3631ecc172541faa1b0e2159b881992bb3d8217f6b7405a45d8180",
-   "url": "https://pypi.org/packages/source/c/careamics/careamics-0.0.6.tar.gz"
+   "sha256": "df3bfbb2e791bfd1e322956733c68e72108375c9e4ab53156431984620d8cbea",
+   "url": "https://pypi.org/packages/source/c/careamics/careamics-0.0.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -205,7 +205,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/careamics.json"
  },
- "raw_meta_yaml": "{% set name = \"careamics\" %}\n{% set version = \"0.0.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/careamics-{{ version }}.tar.gz\n  sha256: d91e29531d3631ecc172541faa1b0e2159b881992bb3d8217f6b7405a45d8180\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - hatchling\n    - hatch-vcs\n  run:\n    - python >={{ python_min }}\n    - numpy <2.0.0\n    - pytorch >=2.0,<=2.5.1\n    - torchvision <=0.20.1\n    - bioimageio.core ==0.7\n    - tifffile <=2025.1.10\n    - psutil <=6.1.1\n    - pydantic >=2.5,<2.11\n    - pytorch-lightning >=2.2,<=2.5\n    - pyyaml <=6.0.2,!=6.0.0\n    - typer >=0.12.3,<=0.15.1\n    - scikit-image <=0.25.0\n    - zarr <3.0.0\n    - pillow <=11.1.0\n    - matplotlib-base <=3.9.0\n\ntest:\n  imports:\n    - careamics\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://careamics.github.io\n  summary: Deep-learning library for running N2V and friends.\n  description: |\n    CAREamics is a PyTorch library aimed at simplifying the use of Noise2Void and its many \n    variants and cousins (CARE, Noise2Noise, N2V2, P(P)N2V, HDN, MicroSplit etc.).\n  license: BSD-3-Clause\n  license_file: LICENSE\n  dev_url: https://github.com/CAREamics/careamics\n  doc_url: https://careamics.github.io\n  doc_source_url: https://github.com/CAREamics/careamics.github.io\n\nextra:\n  recipe-maintainers:\n    - jdeschamps\n",
+ "raw_meta_yaml": "{% set name = \"careamics\" %}\n{% set version = \"0.0.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/careamics-{{ version }}.tar.gz\n  sha256: df3bfbb2e791bfd1e322956733c68e72108375c9e4ab53156431984620d8cbea\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - hatchling\n    - hatch-vcs\n  run:\n    - python >={{ python_min }}\n    - numpy <2.0.0\n    - pytorch >=2.0,<=2.6.0\n    - torchvision <=0.21.0\n    - bioimageio.core ==0.7\n    - tifffile <=2025.1.10\n    - psutil <=6.1.1\n    - pydantic >=2.5,<2.11\n    - pytorch-lightning >=2.2,<=2.5\n    - pyyaml <=6.0.2,!=6.0.0\n    - typer >=0.12.3,<=0.15.1\n    - scikit-image <=0.25.1\n    - zarr <3.0.0\n    - pillow <=11.1.0\n    - matplotlib-base <=3.10.0\n\ntest:\n  imports:\n    - careamics\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://careamics.github.io\n  summary: Deep-learning library for running N2V and friends.\n  description: |\n    CAREamics is a PyTorch library aimed at simplifying the use of Noise2Void and its many \n    variants and cousins (CARE, Noise2Noise, N2V2, P(P)N2V, HDN, MicroSplit etc.).\n  license: BSD-3-Clause\n  license_file: LICENSE\n  dev_url: https://github.com/CAREamics/careamics\n  doc_url: https://careamics.github.io\n  doc_source_url: https://github.com/CAREamics/careamics.github.io\n\nextra:\n  recipe-maintainers:\n    - jdeschamps\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -290,18 +290,18 @@
    "__set__": true,
    "elements": [
     "bioimageio.core ==0.7",
-    "matplotlib-base <=3.9.0",
+    "matplotlib-base <=3.10.0",
     "numpy <2.0.0",
     "pillow <=11.1.0",
     "psutil <=6.1.1",
     "pydantic >=2.5,<2.11",
     "python >=3.9",
-    "pytorch >=2.0,<=2.5.1",
+    "pytorch >=2.0,<=2.6.0",
     "pytorch-lightning >=2.2,<=2.5",
     "pyyaml <=6.0.2,!=6.0.0",
-    "scikit-image <=0.25.0",
+    "scikit-image <=0.25.1",
     "tifffile <=2025.1.10",
-    "torchvision <=0.20.1",
+    "torchvision <=0.21.0",
     "typer >=0.12.3,<=0.15.1",
     "zarr <3.0.0"
    ]
@@ -314,8 +314,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/careamics/careamics-0.0.6.tar.gz",
- "version": "0.0.6",
+ "url": "https://pypi.org/packages/source/c/careamics/careamics-0.0.9.tar.gz",
+ "version": "0.0.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/careamics.json"
  }
