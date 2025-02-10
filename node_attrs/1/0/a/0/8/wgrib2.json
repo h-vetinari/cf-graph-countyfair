@@ -13,6 +13,10 @@
    "branch_name": "main",
    "tooling_branch_name": "main"
   },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
+  },
   "test": "native_and_emulated"
  },
  "feedstock_name": "wgrib2",
@@ -86,6 +90,222 @@
   }
  },
  "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "g2clib",
+    "jasper",
+    "libaec",
+    "libnetcdf",
+    "libpng",
+    "mysql-devel",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "g2clib",
+    "jasper",
+    "libaec",
+    "libnetcdf",
+    "libpng",
+    "mysql-libs",
+    "zlib"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "home": "http://www.cpc.ncep.noaa.gov/products/wesley/wgrib2",
+   "license": "GPL-2.0-or-later",
+   "license_file": "wgrib2/LICENSE-wgrib2",
+   "summary": "Utility to read and write grib2 files"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": true,
+   "number": "5"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "zklaus",
+    "ocefpaf",
+    "akrherz"
+   ]
+  },
+  "package": {
+   "name": "wgrib2",
+   "version": "3.1.3"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ],
+   "host": [
+    "g2clib",
+    "mysql-devel",
+    "libaec",
+    "libnetcdf",
+    "libpng",
+    "zlib",
+    "jasper"
+   ],
+   "run": [
+    "g2clib",
+    "mysql-libs",
+    "libaec",
+    "libnetcdf",
+    "libpng",
+    "zlib",
+    "jasper"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "wgrib2_nolib.tgz",
+   "patches": [
+    "no_proj.patch",
+    "jasper4.patch"
+   ],
+   "sha256": "79ee6e3aa15f90cc1a03ece9ba8ade7ded11017ede09ff658ea7b3b3e077801c",
+   "url": "https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2_nolib.tgz.v3.1.3"
+  },
+  "test": {
+   "commands": [
+    "wgrib2 file.grib2 -netcdf out.nc"
+   ],
+   "files": [
+    "file.grib2"
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "g2clib",
+    "jasper",
+    "libaec",
+    "libnetcdf",
+    "libpng",
+    "mysql-devel",
+    "zlib"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "g2clib",
+    "jasper",
+    "libaec",
+    "libnetcdf",
+    "libpng",
+    "mysql-libs",
+    "zlib"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "home": "http://www.cpc.ncep.noaa.gov/products/wesley/wgrib2",
+   "license": "GPL-2.0-or-later",
+   "license_file": "wgrib2/LICENSE-wgrib2",
+   "summary": "Utility to read and write grib2 files"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": true,
+   "number": "5"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "zklaus",
+    "ocefpaf",
+    "akrherz"
+   ]
+  },
+  "package": {
+   "name": "wgrib2",
+   "version": "3.1.3"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ],
+   "host": [
+    "g2clib",
+    "mysql-devel",
+    "libaec",
+    "libnetcdf",
+    "libpng",
+    "zlib",
+    "jasper"
+   ],
+   "run": [
+    "g2clib",
+    "mysql-libs",
+    "libaec",
+    "libnetcdf",
+    "libpng",
+    "zlib",
+    "jasper"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "fn": "wgrib2_nolib.tgz",
+   "patches": [
+    "no_proj.patch",
+    "jasper4.patch"
+   ],
+   "sha256": "79ee6e3aa15f90cc1a03ece9ba8ade7ded11017ede09ff658ea7b3b3e077801c",
+   "url": "https://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2_nolib.tgz.v3.1.3"
+  },
+  "test": {
+   "commands": [
+    "wgrib2 file.grib2 -netcdf out.nc"
+   ],
+   "files": [
+    "file.grib2"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
    "elements": [
@@ -419,6 +639,8 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
   "osx_arm64"
  ],
