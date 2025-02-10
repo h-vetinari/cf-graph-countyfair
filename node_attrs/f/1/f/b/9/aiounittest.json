@@ -2,9 +2,13 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -15,17 +19,20 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "The aiounittest is a helper library to ease of your pain (and boilerplate),\nwhen writing a test of the asynchronous code (asyncio). You can test:\n\n- synchronous code (same as the unittest.TestCase)\n- asynchronous code, it supports syntax with async/await (Python 3.5+) and\n  asyncio.coroutine/yield from (Python 3.4)\n\nIn the Python 3.8 (release note) and newer consider to use the\nunittest.IsolatedAsyncioTestCase. Builtin unittest module is now\nasyncio-featured.\n",
+   "description": "The aiounittest is a helper library to ease of your pain (and boilerplate),\nwhen writing a test of the asynchronous code (asyncio). You can test:\n\n- synchronous code (same as the unittest.TestCase)\n- asynchronous code, it supports syntax with async/await (Python 3.5+) and\nasyncio.coroutine/yield from (Python 3.4)\n\nIn the Python 3.8 (release note) and newer consider to use the\nunittest.IsolatedAsyncioTestCase. Builtin unittest module is now\nasyncio-featured.",
    "home": "https://github.com/kwarunek/aiounittest",
    "license": "MIT",
-   "license_file": "LICENSE",
+   "license_family": "MIT",
+   "license_file": "dist/LICENSE",
    "summary": "Test asyncio code more easily."
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": [
-    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+    "cp src/requirements.txt dist || copy src/requirements.txt dist",
+    "cd dist",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
    ]
   },
   "extra": {
@@ -33,37 +40,69 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "aiounittest",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "wrapt"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "aiounittest"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "src/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest-cov",
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "cd src",
+       "coverage run --source=aiounittest --branch -m pytest -vv --tb=long --color=yes",
+       "coverage report --show-missing --skip-covered --fail-under=95"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "aiounittest",
-   "version": "1.4.2"
+   "version": "1.4.3"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9.*"
    ],
    "run": [
     "python >=3.9",
     "wrapt"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "1478ec8013c70046569cdc76d541083ca7da362e6513cf29c7ecb51330229bdb",
-   "url": "https://pypi.org/packages/source/a/aiounittest/aiounittest-1.4.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "aiounittest"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+   "sha256": "dfe3af30aa0e08fa6c3a3621f78b0b2e5658fe56c370db709f002407a1027dbf",
+   "url": "https://pypi.io/packages/source/a/aiounittest/aiounittest-1.4.3.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -75,8 +114,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run": {
@@ -90,23 +128,27 @@
    "__set__": true,
    "elements": [
     "pip",
+    "pytest-cov",
     "python"
    ]
   }
  },
  "meta_yaml": {
   "about": {
-   "description": "The aiounittest is a helper library to ease of your pain (and boilerplate),\nwhen writing a test of the asynchronous code (asyncio). You can test:\n\n- synchronous code (same as the unittest.TestCase)\n- asynchronous code, it supports syntax with async/await (Python 3.5+) and\n  asyncio.coroutine/yield from (Python 3.4)\n\nIn the Python 3.8 (release note) and newer consider to use the\nunittest.IsolatedAsyncioTestCase. Builtin unittest module is now\nasyncio-featured.\n",
+   "description": "The aiounittest is a helper library to ease of your pain (and boilerplate),\nwhen writing a test of the asynchronous code (asyncio). You can test:\n\n- synchronous code (same as the unittest.TestCase)\n- asynchronous code, it supports syntax with async/await (Python 3.5+) and\nasyncio.coroutine/yield from (Python 3.4)\n\nIn the Python 3.8 (release note) and newer consider to use the\nunittest.IsolatedAsyncioTestCase. Builtin unittest module is now\nasyncio-featured.",
    "home": "https://github.com/kwarunek/aiounittest",
    "license": "MIT",
-   "license_file": "LICENSE",
+   "license_family": "MIT",
+   "license_file": "dist/LICENSE",
    "summary": "Test asyncio code more easily."
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": [
-    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+    "cp src/requirements.txt dist || copy src/requirements.txt dist",
+    "cd dist",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
    ]
   },
   "extra": {
@@ -114,37 +156,69 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "aiounittest",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*"
+     ],
+     "run": [
+      "python >=3.9",
+      "wrapt"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "aiounittest"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "src/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest-cov",
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "cd src",
+       "coverage run --source=aiounittest --branch -m pytest -vv --tb=long --color=yes",
+       "coverage report --show-missing --skip-covered --fail-under=95"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "aiounittest",
-   "version": "1.4.2"
+   "version": "1.4.3"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9.*"
    ],
    "run": [
     "python >=3.9",
     "wrapt"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "1478ec8013c70046569cdc76d541083ca7da362e6513cf29c7ecb51330229bdb",
-   "url": "https://pypi.org/packages/source/a/aiounittest/aiounittest-1.4.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "aiounittest"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+   "sha256": "dfe3af30aa0e08fa6c3a3621f78b0b2e5658fe56c370db709f002407a1027dbf",
+   "url": "https://pypi.io/packages/source/a/aiounittest/aiounittest-1.4.3.tar.gz"
   }
  },
  "name": "aiounittest",
@@ -161,13 +235,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/aiounittest.json"
  },
- "raw_meta_yaml": "{% set version = \"1.4.2\" %}\n\npackage:\n  name: aiounittest\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/aiounittest/aiounittest-{{ version }}.tar.gz\n  sha256: 1478ec8013c70046569cdc76d541083ca7da362e6513cf29c7ecb51330229bdb\n\nbuild:\n  number: 1\n  noarch: python\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - wrapt\n\ntest:\n  imports:\n    - aiounittest\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/kwarunek/aiounittest\n  summary: Test asyncio code more easily.\n  license: MIT\n  license_file: LICENSE\n  description: |\n    The aiounittest is a helper library to ease of your pain (and boilerplate),\n    when writing a test of the asynchronous code (asyncio). You can test:\n\n    - synchronous code (same as the unittest.TestCase)\n    - asynchronous code, it supports syntax with async/await (Python 3.5+) and\n      asyncio.coroutine/yield from (Python 3.4)\n\n    In the Python 3.8 (release note) and newer consider to use the\n    unittest.IsolatedAsyncioTestCase. Builtin unittest module is now\n    asyncio-featured.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: \"1.4.3\"\n\npackage:\n  name: aiounittest\n  version: ${{ version }}\n\nsource:\n  - url: https://pypi.io/packages/source/a/aiounittest/aiounittest-${{ version }}.tar.gz\n    sha256: dfe3af30aa0e08fa6c3a3621f78b0b2e5658fe56c370db709f002407a1027dbf\n    target_directory: dist\n  # TODO: maybe remove after https://github.com/kwarunek/aiounittest/pull/27\n  - url: https://github.com/kwarunek/aiounittest/archive/refs/tags/${{ version }}.tar.gz\n    sha256: 25752ec67087f5bd4af5d9ec10c9d7c0dbfe64820610f66044a2191c922d380b\n    target_directory: src\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - cp src/requirements.txt dist || copy src/requirements.txt dist\n    - cd dist\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n\nrequirements:\n  host:\n    - pip\n    - python ${{ python_min }}.*\n  run:\n    - python >=${{ python_min }}\n    - wrapt\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: aiounittest\n  - files:\n      source:\n        - src/tests/\n    requirements:\n      run:\n        - pytest-cov\n        - python ${{ python_min }}.*\n    script:\n      - cd src\n      - coverage run --source=aiounittest --branch -m pytest -vv --tb=long --color=yes\n      - coverage report --show-missing --skip-covered --fail-under=95\n\nabout:\n  summary: Test asyncio code more easily.\n  license: MIT\n  license_file: dist/LICENSE\n  homepage: https://github.com/kwarunek/aiounittest\n  description: |\n    The aiounittest is a helper library to ease of your pain (and boilerplate),\n    when writing a test of the asynchronous code (asyncio). You can test:\n\n    - synchronous code (same as the unittest.TestCase)\n    - asynchronous code, it supports syntax with async/await (Python 3.5+) and\n    asyncio.coroutine/yield from (Python 3.4)\n\n    In the Python 3.8 (release note) and newer consider to use the\n    unittest.IsolatedAsyncioTestCase. Builtin unittest module is now\n    asyncio-featured.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
    "python",
-   "setuptools",
    "wrapt"
   ]
  },
@@ -180,8 +253,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run": {
@@ -195,6 +267,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "pytest-cov",
     "python"
    ]
   }
@@ -209,8 +282,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9.*"
    ]
   },
   "run": {
@@ -224,12 +296,13 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "pytest-cov",
+    "python 3.9.*"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/aiounittest/aiounittest-1.4.2.tar.gz",
- "version": "1.4.2",
+ "url": "https://pypi.io/packages/source/a/aiounittest/aiounittest-1.4.3.tar.gz",
+ "version": "1.4.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/aiounittest.json"
  }
