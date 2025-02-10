@@ -5,12 +5,7 @@
   "bot": {
    "abi_migration_branches": [
     "dev"
-   ],
-   "version_updates": {
-    "exclude": [
-     "3.0.11-1"
-    ]
-   }
+   ]
   },
   "build_platform": {
    "linux_aarch64": "linux_64",
@@ -25,9 +20,10 @@
    "branch_name": "main",
    "tooling_branch_name": "main"
   },
-  "provider": {
-   "linux_aarch64": "default",
-   "linux_ppc64le": "default"
+  "linter": {
+   "skip": [
+    "lint_noarch_selectors"
+   ]
   },
   "test": "native_and_emulated"
  },
@@ -50,11 +46,12 @@
     "cygdb = Cython.Debugger.Cygdb:main"
    ],
    "noarch": "python",
-   "number": "103",
+   "number": "100",
    "script": [
     "PYTHON -m pip install . --no-deps -vv",
     "export NO_CYTHON_COMPILE=true"
    ],
+   "skip": true,
    "track_features": [
     "cython_no_compile"
    ]
@@ -72,7 +69,7 @@
   },
   "package": {
    "name": "cython",
-   "version": "3.0.11"
+   "version": "3.0.12"
   },
   "requirements": {
    "build": [
@@ -84,17 +81,17 @@
     "python",
     "pip",
     "setuptools",
-    "python >=3.8"
+    "python 3.9"
    ],
    "run": [
     "python",
-    "python >=3.8"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2ec7d66d23d6da2328fb24f5c1bec6c63a59ec2e91027766ab904f417e1078aa",
-   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.11.tar.gz"
+   "sha256": "a156fff948c2013f2c8c398612c018e2b52314fdf0228af8fbdb5585e13699c2",
+   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.12.tar.gz"
   },
   "test": {
    "commands": [
@@ -104,6 +101,7 @@
     "fib.pyx"
    ],
    "requires": [
+    "python 3.9",
     "setuptools"
    ]
   }
@@ -134,6 +132,7 @@
   "test": {
    "__set__": true,
    "elements": [
+    "python",
     "setuptools"
    ]
   }
@@ -154,7 +153,7 @@
     "cythonize = Cython.Build.Cythonize:main",
     "cygdb = Cython.Debugger.Cygdb:main"
    ],
-   "number": "3",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . --no-deps -vv"
    ],
@@ -173,7 +172,7 @@
   },
   "package": {
    "name": "cython",
-   "version": "3.0.11"
+   "version": "3.0.12"
   },
   "requirements": {
    "build": [
@@ -192,8 +191,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2ec7d66d23d6da2328fb24f5c1bec6c63a59ec2e91027766ab904f417e1078aa",
-   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.11.tar.gz"
+   "sha256": "a156fff948c2013f2c8c398612c018e2b52314fdf0228af8fbdb5585e13699c2",
+   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.12.tar.gz"
   },
   "test": {
    "commands": [
@@ -249,7 +248,7 @@
     "cythonize = Cython.Build.Cythonize:main",
     "cygdb = Cython.Debugger.Cygdb:main"
    ],
-   "number": "3",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . --no-deps -vv"
    ],
@@ -268,7 +267,7 @@
   },
   "package": {
    "name": "cython",
-   "version": "3.0.11"
+   "version": "3.0.12"
   },
   "requirements": {
    "build": [
@@ -287,8 +286,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2ec7d66d23d6da2328fb24f5c1bec6c63a59ec2e91027766ab904f417e1078aa",
-   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.11.tar.gz"
+   "sha256": "a156fff948c2013f2c8c398612c018e2b52314fdf0228af8fbdb5585e13699c2",
+   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.12.tar.gz"
   },
   "test": {
    "commands": [
@@ -345,11 +344,12 @@
     "cygdb = Cython.Debugger.Cygdb:main"
    ],
    "noarch": "python",
-   "number": "3",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . --no-deps -vv",
     "export NO_CYTHON_COMPILE=true"
    ],
+   "skip": true,
    "track_features": null
   },
   "extra": {
@@ -365,7 +365,7 @@
   },
   "package": {
    "name": "cython",
-   "version": "3.0.11"
+   "version": "3.0.12"
   },
   "requirements": {
    "build": [
@@ -377,17 +377,17 @@
     "python",
     "pip",
     "setuptools",
-    "python >=3.8"
+    "python 3.9"
    ],
    "run": [
     "python",
-    "python >=3.8"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2ec7d66d23d6da2328fb24f5c1bec6c63a59ec2e91027766ab904f417e1078aa",
-   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.11.tar.gz"
+   "sha256": "a156fff948c2013f2c8c398612c018e2b52314fdf0228af8fbdb5585e13699c2",
+   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.12.tar.gz"
   },
   "test": {
    "commands": [
@@ -416,7 +416,7 @@
     "cythonize = Cython.Build.Cythonize:main",
     "cygdb = Cython.Debugger.Cygdb:main"
    ],
-   "number": "3",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . --no-deps -vv"
    ],
@@ -435,7 +435,7 @@
   },
   "package": {
    "name": "cython",
-   "version": "3.0.11"
+   "version": "3.0.12"
   },
   "requirements": {
    "build": [
@@ -454,8 +454,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2ec7d66d23d6da2328fb24f5c1bec6c63a59ec2e91027766ab904f417e1078aa",
-   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.11.tar.gz"
+   "sha256": "a156fff948c2013f2c8c398612c018e2b52314fdf0228af8fbdb5585e13699c2",
+   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.12.tar.gz"
   },
   "test": {
    "commands": [
@@ -511,7 +511,7 @@
     "cythonize = Cython.Build.Cythonize:main",
     "cygdb = Cython.Debugger.Cygdb:main"
    ],
-   "number": "3",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . --no-deps -vv"
    ],
@@ -530,7 +530,7 @@
   },
   "package": {
    "name": "cython",
-   "version": "3.0.11"
+   "version": "3.0.12"
   },
   "requirements": {
    "build": [
@@ -549,8 +549,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2ec7d66d23d6da2328fb24f5c1bec6c63a59ec2e91027766ab904f417e1078aa",
-   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.11.tar.gz"
+   "sha256": "a156fff948c2013f2c8c398612c018e2b52314fdf0228af8fbdb5585e13699c2",
+   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.12.tar.gz"
   },
   "test": {
    "commands": [
@@ -608,7 +608,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cython.json"
  },
- "raw_meta_yaml": "{% set version = \"3.0.11\" %}\n{% set build_num = 3 %}\n{% if use_noarch == \"True\" %}\n{%   set build_num = build_num + 100 %}\n{% endif %}\n\npackage:\n  name: cython\n  version: {{ version }}\n\nsource:\n  url: https://github.com/cython/cython/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 2ec7d66d23d6da2328fb24f5c1bec6c63a59ec2e91027766ab904f417e1078aa\n\nbuild:\n  number: {{ build_num }}\n  skip: true       # [use_noarch and not linux64]\n  noarch: python   # [use_noarch]\n  script:\n    - export NO_CYTHON_COMPILE=true                   # [use_noarch]\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n  track_features:\n    - cython_no_compile    # [use_noarch]\n  entry_points:\n    - cython = Cython.Compiler.Main:setuptools_main\n    - cythonize = Cython.Build.Cythonize:main\n    - cygdb = Cython.Debugger.Cygdb:main\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - python >=3.8  # [use_noarch]\n    - python        # [not use_noarch]\n    - pip\n    - setuptools\n  run:\n    - python >=3.8  # [use_noarch]\n    - python        # [not use_noarch]\n\ntest:\n  requires:\n    - setuptools  # [py>=312 or use_noarch]\n  commands:\n    - cython --version\n  files:\n    - fib.pyx\n\nabout:\n  home: http://www.cython.org/\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: The Cython compiler for writing C extensions for the Python language\n  description: |\n    Cython is an optimising static compiler for both the Python programming\n    language and the extended Cython programming language. It makes writing C\n    extensions for Python as easy as Python itself.\n  doc_url: https://docs.cython.org\n  dev_url: https://github.com/cython/cython\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - ocefpaf\n    - synapticarbors\n    - isuruf\n    - scopatz\n    - h-vetinari\n",
+ "raw_meta_yaml": "{% set version = \"3.0.12\" %}\n{% set build_num = 0 %}\n{% if use_noarch == \"True\" %}\n{%   set build_num = build_num + 100 %}\n{% endif %}\n\npackage:\n  name: cython\n  version: {{ version }}\n\nsource:\n  url: https://github.com/cython/cython/archive/refs/tags/{{ version }}.tar.gz\n  sha256: a156fff948c2013f2c8c398612c018e2b52314fdf0228af8fbdb5585e13699c2\n\nbuild:\n  number: {{ build_num }}\n  skip: true       # [use_noarch and not linux64]\n  skip: true       # [use_noarch and not is_python_min]\n  noarch: python   # [use_noarch]\n  script:\n    - export NO_CYTHON_COMPILE=true                   # [use_noarch]\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n  track_features:\n    - cython_no_compile    # [use_noarch]\n  entry_points:\n    - cython = Cython.Compiler.Main:setuptools_main\n    - cythonize = Cython.Build.Cythonize:main\n    - cygdb = Cython.Debugger.Cygdb:main\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - python {{ python_min }}    # [use_noarch]\n    - python                     # [not use_noarch]\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}  # [use_noarch]\n    - python                     # [not use_noarch]\n\ntest:\n  requires:\n    - python {{ python_min }}    # [use_noarch]\n    - setuptools                 # [py>=312 or use_noarch]\n  commands:\n    - cython --version\n  files:\n    - fib.pyx\n\nabout:\n  home: http://www.cython.org/\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: The Cython compiler for writing C extensions for the Python language\n  description: |\n    Cython is an optimising static compiler for both the Python programming\n    language and the extended Cython programming language. It makes writing C\n    extensions for Python as easy as Python itself.\n  doc_url: https://docs.cython.org\n  dev_url: https://github.com/cython/cython\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - ocefpaf\n    - synapticarbors\n    - isuruf\n    - scopatz\n    - h-vetinari\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -669,7 +669,7 @@
    "elements": [
     "pip",
     "python",
-    "python >=3.8",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -677,7 +677,7 @@
    "__set__": true,
    "elements": [
     "python",
-    "python >=3.8"
+    "python >=3.9"
    ]
   },
   "test": {
@@ -685,8 +685,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/cython/cython/archive/refs/tags/3.0.11.tar.gz",
- "version": "3.0.11",
+ "url": "https://github.com/cython/cython/archive/refs/tags/3.0.12.tar.gz",
+ "version": "3.0.12",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cython.json"
  },
@@ -706,7 +706,7 @@
     "cythonize = Cython.Build.Cythonize:main",
     "cygdb = Cython.Debugger.Cygdb:main"
    ],
-   "number": "3",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . --no-deps -vv"
    ],
@@ -725,7 +725,7 @@
   },
   "package": {
    "name": "cython",
-   "version": "3.0.11"
+   "version": "3.0.12"
   },
   "requirements": {
    "build": [
@@ -744,8 +744,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "2ec7d66d23d6da2328fb24f5c1bec6c63a59ec2e91027766ab904f417e1078aa",
-   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.11.tar.gz"
+   "sha256": "a156fff948c2013f2c8c398612c018e2b52314fdf0228af8fbdb5585e13699c2",
+   "url": "https://github.com/cython/cython/archive/refs/tags/3.0.12.tar.gz"
   },
   "test": {
    "commands": [
