@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "geoclide",
-   "version": "1.1.1"
+   "version": "1.2.0"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c0f7f46360bda08e37998173e9607dc2ef46eb2bb9e015682a38eda455195584",
-   "url": "https://pypi.org/packages/source/g/geoclide/geoclide-1.1.1.tar.gz"
+   "sha256": "9234399bcb57c3f77f3998a0beb63f53c26df8de6bef9ff560b2faaac57aaac6",
+   "url": "https://pypi.org/packages/source/g/geoclide/geoclide-1.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -118,7 +118,7 @@
   },
   "package": {
    "name": "geoclide",
-   "version": "1.1.1"
+   "version": "1.2.0"
   },
   "requirements": {
    "host": [
@@ -135,8 +135,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c0f7f46360bda08e37998173e9607dc2ef46eb2bb9e015682a38eda455195584",
-   "url": "https://pypi.org/packages/source/g/geoclide/geoclide-1.1.1.tar.gz"
+   "sha256": "9234399bcb57c3f77f3998a0beb63f53c26df8de6bef9ff560b2faaac57aaac6",
+   "url": "https://pypi.org/packages/source/g/geoclide/geoclide-1.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -165,7 +165,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/geoclide.json"
  },
- "raw_meta_yaml": "{% set name = \"geoclide\" %}\n{% set version = \"1.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geoclide-{{ version }}.tar.gz\n  sha256: c0f7f46360bda08e37998173e9607dc2ef46eb2bb9e015682a38eda455195584\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - xarray\n    - pytest\n\ntest:\n  imports:\n    - geoclide\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/hygeos/geoclide\n  summary: The python package for geometric calculations in the three-dimentional Euclidian space\n  license: LicenseRef-HYGEOS-geoclide\n  license_url: https://github.com/hygeos/geoclide/blob/main/LICENSE.txt\n  license_file: LICENSE.txt\n  dev_url: https://github.com/hygeos/geoclide\n  \nextra:\n  recipe-maintainers:\n    - Mustapha-hygeos\n",
+ "raw_meta_yaml": "{% set name = \"geoclide\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geoclide-{{ version }}.tar.gz\n  sha256: 9234399bcb57c3f77f3998a0beb63f53c26df8de6bef9ff560b2faaac57aaac6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - xarray\n    - pytest\n\ntest:\n  imports:\n    - geoclide\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/hygeos/geoclide\n  summary: The python package for geometric calculations in the three-dimentional Euclidian space\n  license: LicenseRef-HYGEOS-geoclide\n  license_url: https://github.com/hygeos/geoclide/blob/main/LICENSE.txt\n  license_file: LICENSE.txt\n  dev_url: https://github.com/hygeos/geoclide\n  \nextra:\n  recipe-maintainers:\n    - Mustapha-hygeos\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -238,8 +238,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/geoclide/geoclide-1.1.1.tar.gz",
- "version": "1.1.1",
+ "url": "https://pypi.org/packages/source/g/geoclide/geoclide-1.2.0.tar.gz",
+ "version": "1.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/geoclide.json"
  }
