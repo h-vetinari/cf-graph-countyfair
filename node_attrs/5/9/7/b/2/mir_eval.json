@@ -15,9 +15,9 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "dev_url": "https://github.com/craffel/mir_eval",
-   "doc_url": "http://craffel.github.io/mir_eval/",
-   "home": "https://github.com/craffel/mir_eval",
+   "dev_url": "https://github.com/mir-evaluation/mir_eval",
+   "doc_url": "http://mir-evaluation.github.io/mir_eval/",
+   "home": "https://github.com/mir-evaluation/mir_eval",
    "license": "MIT",
    "license_family": "MIT",
    "license_file": "LICENSE.txt",
@@ -32,34 +32,39 @@
    "recipe-maintainers": [
     "oblute",
     "rluria14",
-    "ndmaxar"
+    "ndmaxar",
+    "bmcfee"
    ]
   },
   "package": {
    "name": "mir_eval",
-   "version": "0.6"
+   "version": "0.7"
   },
   "requirements": {
    "host": [
     "pip",
-    "python"
+    "python 3.7",
+    "setuptools >=48"
    ],
    "run": [
     "future",
-    "numpy >=1.7.0",
-    "python",
+    "numpy >=1.7.0, <1.24.0",
+    "python >=3.7",
     "scipy >=1.0.0",
     "six"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f87310e326ad9f80ba65e3f0d1ced2013a2845016fc51d7af56c79195668d216",
-   "url": "https://pypi.io/packages/source/m/mir_eval/mir_eval-0.6.tar.gz"
+   "sha256": "e1febaa5766c65a7545c2a170b241490f47a98987370b1e06742424c5debe65e",
+   "url": "https://pypi.org/packages/source/m/mir_eval/mir_eval-0.7.tar.gz"
   },
   "test": {
    "imports": [
     "mir_eval"
+   ],
+   "requires": [
+    "python 3.7"
    ]
   }
  },
@@ -72,7 +77,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -87,14 +93,16 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
   "about": {
-   "dev_url": "https://github.com/craffel/mir_eval",
-   "doc_url": "http://craffel.github.io/mir_eval/",
-   "home": "https://github.com/craffel/mir_eval",
+   "dev_url": "https://github.com/mir-evaluation/mir_eval",
+   "doc_url": "http://mir-evaluation.github.io/mir_eval/",
+   "home": "https://github.com/mir-evaluation/mir_eval",
    "license": "MIT",
    "license_family": "MIT",
    "license_file": "LICENSE.txt",
@@ -109,34 +117,39 @@
    "recipe-maintainers": [
     "oblute",
     "rluria14",
-    "ndmaxar"
+    "ndmaxar",
+    "bmcfee"
    ]
   },
   "package": {
    "name": "mir_eval",
-   "version": "0.6"
+   "version": "0.7"
   },
   "requirements": {
    "host": [
     "pip",
-    "python"
+    "python 3.7",
+    "setuptools >=48"
    ],
    "run": [
     "future",
-    "numpy >=1.7.0",
-    "python",
+    "numpy >=1.7.0, <1.24.0",
+    "python >=3.7",
     "scipy >=1.0.0",
     "six"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f87310e326ad9f80ba65e3f0d1ced2013a2845016fc51d7af56c79195668d216",
-   "url": "https://pypi.io/packages/source/m/mir_eval/mir_eval-0.6.tar.gz"
+   "sha256": "e1febaa5766c65a7545c2a170b241490f47a98987370b1e06742424c5debe65e",
+   "url": "https://pypi.org/packages/source/m/mir_eval/mir_eval-0.7.tar.gz"
   },
   "test": {
    "imports": [
     "mir_eval"
+   ],
+   "requires": [
+    "python 3.7"
    ]
   }
  },
@@ -154,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/mir_eval.json"
  },
- "raw_meta_yaml": "{% set name = \"mir_eval\" %}\n{% set version = \"0.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f87310e326ad9f80ba65e3f0d1ced2013a2845016fc51d7af56c79195668d216\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install .  -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - future\n    - numpy >=1.7.0\n    - python\n    - scipy >=1.0.0\n    - six\n\ntest:\n  imports:\n    - mir_eval\n\nabout:\n  home: https://github.com/craffel/mir_eval\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: \"Common metrics for common audio/music processing tasks.\"\n  doc_url: http://craffel.github.io/mir_eval/\n  dev_url: https://github.com/craffel/mir_eval\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n",
+ "raw_meta_yaml": "{% set name = \"mir_eval\" %}\n{% set version = \"0.7\" %}\n{% set python_min = \"3.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e1febaa5766c65a7545c2a170b241490f47a98987370b1e06742424c5debe65e\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install .  -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools >=48\n  run:\n    - future\n    - numpy >=1.7.0, <1.24.0\n    - python >={{ python_min }}\n    - scipy >=1.0.0\n    - six\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - mir_eval\n\nabout:\n  home: https://github.com/mir-evaluation/mir_eval\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: \"Common metrics for common audio/music processing tasks.\"\n  doc_url: http://mir-evaluation.github.io/mir_eval/\n  dev_url: https://github.com/mir-evaluation/mir_eval\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n    - bmcfee\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -163,6 +176,7 @@
    "pip",
    "python",
    "scipy",
+   "setuptools",
    "six"
   ]
  },
@@ -175,7 +189,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -190,7 +205,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -203,26 +220,29 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python 3.7",
+    "setuptools >=48"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "future",
-    "numpy >=1.7.0",
-    "python",
+    "numpy >=1.7.0, <1.24.0",
+    "python >=3.7",
     "scipy >=1.0.0",
     "six"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.7"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/m/mir_eval/mir_eval-0.6.tar.gz",
- "version": "0.6",
+ "url": "https://pypi.org/packages/source/m/mir_eval/mir_eval-0.7.tar.gz",
+ "version": "0.7",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/mir_eval.json"
  }
