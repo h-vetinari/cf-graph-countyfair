@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "rule-engine",
-   "version": "4.5.2"
+   "version": "4.5.3"
   },
   "requirements": {
    "host": [
@@ -49,8 +49,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a4e58467f0b86838af2065ade3ac784acb334a833d0dcd348507df4b46b8c460",
-   "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.2.tar.gz"
+   "sha256": "3d0215230ef0bdeb4e047331705dc772746d41161874b3639959ec76e327632f",
+   "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -114,7 +114,7 @@
   },
   "package": {
    "name": "rule-engine",
-   "version": "4.5.2"
+   "version": "4.5.3"
   },
   "requirements": {
    "host": [
@@ -130,8 +130,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a4e58467f0b86838af2065ade3ac784acb334a833d0dcd348507df4b46b8c460",
-   "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.2.tar.gz"
+   "sha256": "3d0215230ef0bdeb4e047331705dc772746d41161874b3639959ec76e327632f",
+   "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -160,7 +160,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/rule-engine.json"
  },
- "raw_meta_yaml": "{% set name = \"rule-engine\" %}\n{% set version = \"4.5.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: a4e58467f0b86838af2065ade3ac784acb334a833d0dcd348507df4b46b8c460\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - ply >=3.9\n    - python >={{ python_min }}\n    - python-dateutil >=2.7,<3\n\ntest:\n  imports:\n    - rule_engine\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zeroSteiner/rule-engine\n  summary: A lightweight, optionally typed expression language with a custom grammar for matching arbitrary Python objects.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - drbixx\n    - teake\n",
+ "raw_meta_yaml": "{% set name = \"rule-engine\" %}\n{% set version = \"4.5.3\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 3d0215230ef0bdeb4e047331705dc772746d41161874b3639959ec76e327632f\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - ply >=3.9\n    - python >={{ python_min }}\n    - python-dateutil >=2.7,<3\n\ntest:\n  imports:\n    - rule_engine\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zeroSteiner/rule-engine\n  summary: A lightweight, optionally typed expression language with a custom grammar for matching arbitrary Python objects.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - drbixx\n    - teake\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -230,8 +230,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.2.tar.gz",
- "version": "4.5.2",
+ "url": "https://pypi.org/packages/source/r/rule-engine/rule_engine-4.5.3.tar.gz",
+ "version": "4.5.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/rule-engine.json"
  }
