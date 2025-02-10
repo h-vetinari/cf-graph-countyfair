@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -116,7 +116,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -179,7 +179,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/multiscale-spatial-image.json"
  },
- "raw_meta_yaml": "{% set name = \"multiscale-spatial-image\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/multiscale_spatial_image-{{ version }}.tar.gz\n  sha256: 0b3a5aae1cabc5bb6b742b9ee583b82fcf4219479725abca5ff0a4e3e5536c06\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python 3.10\n  run:\n    - dask-core\n    - dask-image\n    # - itk-filtering >=5.3.0  # Optional dependency\n    - numpy\n    - python >=3.10\n    - spatial-image >=0.2.1\n    - xarray >=2023.12.0\n    - xarray-datatree >=0.0.5\n    - zarr  # Used but not declared\n\ntest:\n  imports:\n    - multiscale_spatial_image\n  commands:\n    - pip list\n    - pip check\n  requires:\n    - python 3.10\n    - pip\n\nabout:\n  home: https://pypi.org/project/multiscale-spatial-image\n  summary: Generate a multiscale, chunked, multi-dimensional spatial image data structure that can be serialized to OME-NGFF.\n  license: Apache-2.0\n  license_file: LICENSE\n  dev_url: https://github.com/spatial-image/multiscale-spatial-image\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - LucaMarconato\n",
+ "raw_meta_yaml": "{% set name = \"multiscale-spatial-image\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/multiscale_spatial_image-{{ version }}.tar.gz\n  sha256: 0b3a5aae1cabc5bb6b742b9ee583b82fcf4219479725abca5ff0a4e3e5536c06\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 2\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - dask-core\n    - dask-image\n    # - itk-filtering >=5.3.0  # Optional dependency\n    - numpy\n    - python >={{ python_min }}\n    - spatial-image >=0.2.1\n    - xarray >=2023.12.0\n    - xarray-datatree >=0.0.5\n    - zarr  # Used but not declared\n\ntest:\n  imports:\n    - multiscale_spatial_image\n  commands:\n    - pip list\n    - pip check\n  requires:\n    - python 3.10\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/multiscale-spatial-image\n  summary: Generate a multiscale, chunked, multi-dimensional spatial image data structure that can be serialized to OME-NGFF.\n  license: Apache-2.0\n  license_file: LICENSE\n  dev_url: https://github.com/spatial-image/multiscale-spatial-image\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - LucaMarconato\n",
  "req": {
   "__set__": true,
   "elements": [
