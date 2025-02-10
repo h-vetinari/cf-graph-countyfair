@@ -28,7 +28,7 @@
     "sqllineage = sqllineage.cli:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "sqllineage",
-   "version": "1.5.3"
+   "version": "1.5.4"
   },
   "requirements": {
    "host": [
@@ -49,15 +49,15 @@
    "run": [
     "networkx >=2.4",
     "python >=3.9",
-    "sqlparse ==0.5.0",
-    "sqlfluff ==3.0.5",
+    "sqlparse ==0.5.3",
+    "sqlfluff ==3.3.1",
     "sqlalchemy >=2.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0a9abd4f5902c9159ac2088eb56c7cec6feda903a933fe4de8cf6aeb4ad445fb",
-   "url": "https://pypi.org/packages/source/s/sqllineage/sqllineage-1.5.3.tar.gz"
+   "sha256": "b8062396cd665a82ae68265396dbf4df41131aaf8896d28c5120ff359f7f375f",
+   "url": "https://pypi.org/packages/source/s/sqllineage/sqllineage-1.5.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -117,7 +117,7 @@
     "sqllineage = sqllineage.cli:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -127,7 +127,7 @@
   },
   "package": {
    "name": "sqllineage",
-   "version": "1.5.3"
+   "version": "1.5.4"
   },
   "requirements": {
    "host": [
@@ -138,15 +138,15 @@
    "run": [
     "networkx >=2.4",
     "python >=3.9",
-    "sqlparse ==0.5.0",
-    "sqlfluff ==3.0.5",
+    "sqlparse ==0.5.3",
+    "sqlfluff ==3.3.1",
     "sqlalchemy >=2.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0a9abd4f5902c9159ac2088eb56c7cec6feda903a933fe4de8cf6aeb4ad445fb",
-   "url": "https://pypi.org/packages/source/s/sqllineage/sqllineage-1.5.3.tar.gz"
+   "sha256": "b8062396cd665a82ae68265396dbf4df41131aaf8896d28c5120ff359f7f375f",
+   "url": "https://pypi.org/packages/source/s/sqllineage/sqllineage-1.5.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -177,7 +177,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sqllineage.json"
  },
- "raw_meta_yaml": "{% set name = \"sqllineage\" %}\n{% set version = \"1.5.3\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqllineage-{{ version }}.tar.gz\n  sha256: 0a9abd4f5902c9159ac2088eb56c7cec6feda903a933fe4de8cf6aeb4ad445fb\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - sqllineage = sqllineage.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - networkx >=2.4\n    - python >={{ python_min }}\n    - sqlparse ==0.5.0\n    - sqlfluff ==3.0.5\n    - sqlalchemy >=2.0.0\n\ntest:\n  imports:\n    - sqllineage\n    - sqllineage.core\n  commands:\n    - pip check\n    - sqllineage --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/reata/sqllineage\n  summary: SQL Lineage Analysis Tool powered by Python\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"sqllineage\" %}\n{% set version = \"1.5.4\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqllineage-{{ version }}.tar.gz\n  sha256: b8062396cd665a82ae68265396dbf4df41131aaf8896d28c5120ff359f7f375f\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - sqllineage = sqllineage.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - networkx >=2.4\n    - python >={{ python_min }}\n    - sqlparse ==0.5.3\n    - sqlfluff ==3.3.1\n    - sqlalchemy >=2.0.0\n\ntest:\n  imports:\n    - sqllineage\n    - sqllineage.core\n  commands:\n    - pip check\n    - sqllineage --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/reata/sqllineage\n  summary: SQL Lineage Analysis Tool powered by Python\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -241,8 +241,8 @@
     "networkx >=2.4",
     "python >=3.9",
     "sqlalchemy >=2.0.0",
-    "sqlfluff ==3.0.5",
-    "sqlparse ==0.5.0"
+    "sqlfluff ==3.3.1",
+    "sqlparse ==0.5.3"
    ]
   },
   "test": {
@@ -253,8 +253,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/sqllineage/sqllineage-1.5.3.tar.gz",
- "version": "1.5.3",
+ "url": "https://pypi.org/packages/source/s/sqllineage/sqllineage-1.5.4.tar.gz",
+ "version": "1.5.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sqllineage.json"
  }
