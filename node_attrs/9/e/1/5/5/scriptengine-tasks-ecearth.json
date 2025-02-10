@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -37,11 +37,11 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "scriptengine >=0.8.1",
     "pyyaml >=5.1",
     "matplotlib-base >=3.1",
@@ -55,7 +55,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "d319b185b592297e7c14ef7a84072991ee51f03dd3742b96c9354d6f493fae11",
-   "url": "https://pypi.io/packages/source/s/scriptengine-tasks-ecearth/scriptengine-tasks-ecearth-0.6.3.tar.gz"
+   "url": "https://pypi.org/packages/source/s/scriptengine-tasks-ecearth/scriptengine-tasks-ecearth-0.6.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -63,7 +63,8 @@
     "se --help"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -96,7 +97,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -109,7 +111,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -124,11 +126,11 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "scriptengine >=0.8.1",
     "pyyaml >=5.1",
     "matplotlib-base >=3.1",
@@ -142,7 +144,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "d319b185b592297e7c14ef7a84072991ee51f03dd3742b96c9354d6f493fae11",
-   "url": "https://pypi.io/packages/source/s/scriptengine-tasks-ecearth/scriptengine-tasks-ecearth-0.6.3.tar.gz"
+   "url": "https://pypi.org/packages/source/s/scriptengine-tasks-ecearth/scriptengine-tasks-ecearth-0.6.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -150,7 +152,8 @@
     "se --help"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -168,7 +171,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/scriptengine-tasks-ecearth.json"
  },
- "raw_meta_yaml": "{% set name = \"scriptengine-tasks-ecearth\" %}\n{% set version = \"0.6.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/scriptengine-tasks-ecearth-{{ version }}.tar.gz\n  sha256: d319b185b592297e7c14ef7a84072991ee51f03dd3742b96c9354d6f493fae11\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - scriptengine >=0.8.1\n    - pyyaml >=5.1\n    - matplotlib-base >=3.1\n    - numpy >=1.18\n    - imageio >=2.18\n    - scitools-iris !=3.2.0,!=3.2.0.post0,>=3.1\n    - cartopy >=0.20\n    - python-redmine\n\ntest:\n  commands:\n    - pip check\n    - se --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/uwefladrich/scriptengine-tasks-ecearth\n  summary: ScriptEngine tasks for use with the EC-Earth climate model\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - uwefladrich\n    - valentinaschueller\n",
+ "raw_meta_yaml": "{% set name = \"scriptengine-tasks-ecearth\" %}\n{% set version = \"0.6.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scriptengine-tasks-ecearth-{{ version }}.tar.gz\n  sha256: d319b185b592297e7c14ef7a84072991ee51f03dd3742b96c9354d6f493fae11\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - scriptengine >=0.8.1\n    - pyyaml >=5.1\n    - matplotlib-base >=3.1\n    - numpy >=1.18\n    - imageio >=2.18\n    - scitools-iris !=3.2.0,!=3.2.0.post0,>=3.1\n    - cartopy >=0.20\n    - python-redmine\n\ntest:\n  commands:\n    - pip check\n    - se --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/uwefladrich/scriptengine-tasks-ecearth\n  summary: ScriptEngine tasks for use with the EC-Earth climate model\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - uwefladrich\n    - valentinaschueller\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -213,7 +216,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -227,7 +231,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7"
+    "python 3.9"
    ]
   },
   "run": {
@@ -237,7 +241,7 @@
     "imageio >=2.18",
     "matplotlib-base >=3.1",
     "numpy >=1.18",
-    "python >=3.7",
+    "python >=3.9",
     "python-redmine",
     "pyyaml >=5.1",
     "scitools-iris !=3.2.0,!=3.2.0.post0,>=3.1",
@@ -247,11 +251,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/s/scriptengine-tasks-ecearth/scriptengine-tasks-ecearth-0.6.3.tar.gz",
+ "url": "https://pypi.org/packages/source/s/scriptengine-tasks-ecearth/scriptengine-tasks-ecearth-0.6.3.tar.gz",
  "version": "0.6.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/scriptengine-tasks-ecearth.json"
