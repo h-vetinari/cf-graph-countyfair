@@ -29,7 +29,7 @@
     "skypy = skypy.pipeline.scripts.skypy:main"
    ],
    "noarch": "python",
-   "number": "3",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "skypy",
-   "version": "0.5.4"
+   "version": "0.5.5"
   },
   "requirements": {
    "host": [
@@ -53,13 +53,13 @@
     "numpy",
     "python >=3.9",
     "pyyaml",
-    "scipy <=1.14"
+    "scipy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7106db578cd5d10f73c0660984bed3defce5e208418697f9c9bfae625c3bd55b",
-   "url": "https://pypi.org/packages/source/s/skypy/skypy-0.5.4.tar.gz"
+   "sha256": "d6d7041030576d23c323575568da03f77d63c780749c53392683652d72932ee4",
+   "url": "https://pypi.org/packages/source/s/skypy/skypy-0.5.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -133,7 +133,7 @@
     "skypy = skypy.pipeline.scripts.skypy:main"
    ],
    "noarch": "python",
-   "number": "3",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -143,7 +143,7 @@
   },
   "package": {
    "name": "skypy",
-   "version": "0.5.4"
+   "version": "0.5.5"
   },
   "requirements": {
    "host": [
@@ -157,13 +157,13 @@
     "numpy",
     "python >=3.9",
     "pyyaml",
-    "scipy <=1.14"
+    "scipy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7106db578cd5d10f73c0660984bed3defce5e208418697f9c9bfae625c3bd55b",
-   "url": "https://pypi.org/packages/source/s/skypy/skypy-0.5.4.tar.gz"
+   "sha256": "d6d7041030576d23c323575568da03f77d63c780749c53392683652d72932ee4",
+   "url": "https://pypi.org/packages/source/s/skypy/skypy-0.5.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -200,7 +200,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/skypy.json"
  },
- "raw_meta_yaml": "{% set name = \"skypy\" %}\n{% set version = \"0.5.4\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/skypy-{{ version }}.tar.gz\n  sha256: 7106db578cd5d10f73c0660984bed3defce5e208418697f9c9bfae625c3bd55b\n\nbuild:\n  number: 3\n  noarch: python\n  entry_points:\n    - skypy = skypy.pipeline.scripts.skypy:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm\n  run:\n    - astropy-base >=4\n    - networkx\n    - numpy\n    - python >={{ python_min }}\n    - pyyaml\n    - scipy <=1.14\n\ntest:\n  imports:\n    - skypy\n    - skypy.galaxies\n    - skypy.pipeline\n    - skypy.utils\n  commands:\n    - pip check\n    - skypy --help\n    - pytest --pyargs skypy\n  requires:\n    - pip\n    - pytest-astropy\n    - pytest-rerunfailures\n    - speclite >=0.14\n    - python {{ python_min }}\n\nabout:\n  home: http://skypy.info\n  doc_url: https://skypy.readthedocs.io\n  dev_url: https://github.com/skypyproject/skypy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: A package for modelling the Universe.\n  description: |\n    This package contains methods for modelling the Universe, galaxies and the\n    Milky Way. Also included are methods for generating observed data.\n\nextra:\n  recipe-maintainers:\n    - rrjbca\n",
+ "raw_meta_yaml": "{% set name = \"skypy\" %}\n{% set version = \"0.5.5\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/skypy-{{ version }}.tar.gz\n  sha256: d6d7041030576d23c323575568da03f77d63c780749c53392683652d72932ee4\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - skypy = skypy.pipeline.scripts.skypy:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm\n  run:\n    - astropy-base >=4\n    - networkx\n    - numpy\n    - python >={{ python_min }}\n    - pyyaml\n    - scipy\n\ntest:\n  imports:\n    - skypy\n    - skypy.galaxies\n    - skypy.pipeline\n    - skypy.utils\n  commands:\n    - pip check\n    - skypy --help\n    - pytest --pyargs skypy\n  requires:\n    - pip\n    - pytest-astropy\n    - pytest-rerunfailures\n    - speclite >=0.14\n    - python {{ python_min }}\n\nabout:\n  home: http://skypy.info\n  doc_url: https://skypy.readthedocs.io\n  dev_url: https://github.com/skypyproject/skypy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: A package for modelling the Universe.\n  description: |\n    This package contains methods for modelling the Universe, galaxies and the\n    Milky Way. Also included are methods for generating observed data.\n\nextra:\n  recipe-maintainers:\n    - rrjbca\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -271,7 +271,7 @@
     "numpy",
     "python >=3.9",
     "pyyaml",
-    "scipy <=1.14"
+    "scipy"
    ]
   },
   "test": {
@@ -285,8 +285,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/skypy/skypy-0.5.4.tar.gz",
- "version": "0.5.4",
+ "url": "https://pypi.org/packages/source/s/skypy/skypy-0.5.5.tar.gz",
+ "version": "0.5.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/skypy.json"
  }
