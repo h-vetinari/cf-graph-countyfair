@@ -34,14 +34,13 @@
   },
   "package": {
    "name": "daops",
-   "version": "0.12.0"
+   "version": "0.13.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "pip",
-    "setuptools",
-    "pytest-runner"
+    "flit-core >=3.9,<4.0",
+    "pip"
    ],
    "run": [
     "python >=3.9",
@@ -67,8 +66,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0f3be08df5a2cc701f645269cb0aedb6ab2144a77820dbdc9532ca1d4e02e43c",
-   "url": "https://pypi.org/packages/source/d/daops/daops-0.12.0.tar.gz"
+   "sha256": "3bbee5d081f3abf8682187aa9287f25e9963024ed7ec10030d4e644b5ca1f139",
+   "url": "https://pypi.org/packages/source/d/daops/daops-0.13.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -92,10 +91,9 @@
   "host": {
    "__set__": true,
    "elements": [
+    "flit-core",
     "pip",
-    "pytest-runner",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run": {
@@ -151,14 +149,13 @@
   },
   "package": {
    "name": "daops",
-   "version": "0.12.0"
+   "version": "0.13.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "pip",
-    "setuptools",
-    "pytest-runner"
+    "flit-core >=3.9,<4.0",
+    "pip"
    ],
    "run": [
     "python >=3.9",
@@ -184,8 +181,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0f3be08df5a2cc701f645269cb0aedb6ab2144a77820dbdc9532ca1d4e02e43c",
-   "url": "https://pypi.org/packages/source/d/daops/daops-0.12.0.tar.gz"
+   "sha256": "3bbee5d081f3abf8682187aa9287f25e9963024ed7ec10030d4e644b5ca1f139",
+   "url": "https://pypi.org/packages/source/d/daops/daops-0.13.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -215,7 +212,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/daops.json"
  },
- "raw_meta_yaml": "{% set name = \"daops\" %}\n{% set version = \"0.12.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/daops-{{ version }}.tar.gz\n  sha256: 0f3be08df5a2cc701f645269cb0aedb6ab2144a77820dbdc9532ca1d4e02e43c\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - pytest-runner\n  run:\n    - python >={{ python_min }}\n    - clisops >=0.12.1,<0.15.0\n    - dask >=2.6.0\n    - elasticsearch >=7.9.1\n    - cftime >=1.4.1\n    - netcdf4 >=1.4\n    - numba\n    - numpy >=1.16\n    - roocs-utils >=0.6.4\n    - roocs-grids >=0.1.2\n    - sparse >=0.8.0\n    - xarray >=0.21,<2023.3.0 # https://github.com/pydata/xarray/issues/7794\n    - xesmf >=0.8.2\n    - intake >=0.7.0,<2.0\n    - loguru >=0.5.3\n    - fsspec\n    - aiohttp\n    - zarr ==2.13.3\n    - zstandard\n\n\ntest:\n  imports:\n    - daops\n    - daops.data_utils\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/roocs/daops\n  summary: daops - data-aware operations\n  license: BSD-3-Clause\n  license_file: LICENSE\n\n  description: |\n    The daops library (pronounced \"day-ops\") provides a python interface to a\n    set of operations suitable for working with climate simulation outputs.\n    It is typically used with ESGF data sets that are described in NetCDF files.\n    daops is unique in that it accesses a store of fixes defined for data sets\n    that are irregular when compared with others in their population.\n\nextra:\n  recipe-maintainers:\n    - ellesmith88\n    - cehbrecht\n",
+ "raw_meta_yaml": "{% set name = \"daops\" %}\n{% set version = \"0.13.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/daops-{{ version }}.tar.gz\n  sha256: 3bbee5d081f3abf8682187aa9287f25e9963024ed7ec10030d4e644b5ca1f139\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - flit-core >=3.9,<4.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - clisops >=0.12.1,<0.15.0\n    - dask >=2.6.0\n    - elasticsearch >=7.9.1\n    - cftime >=1.4.1\n    - netcdf4 >=1.4\n    - numba\n    - numpy >=1.16\n    - roocs-utils >=0.6.4\n    - roocs-grids >=0.1.2\n    - sparse >=0.8.0\n    - xarray >=0.21,<2023.3.0 # https://github.com/pydata/xarray/issues/7794\n    - xesmf >=0.8.2\n    - intake >=0.7.0,<2.0\n    - loguru >=0.5.3\n    - fsspec\n    - aiohttp\n    - zarr ==2.13.3\n    - zstandard\n\n\ntest:\n  imports:\n    - daops\n    - daops.data_utils\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/roocs/daops\n  summary: daops - data-aware operations\n  license: BSD-3-Clause\n  license_file: LICENSE\n\n  description: |\n    The daops library (pronounced \"day-ops\") provides a python interface to a\n    set of operations suitable for working with climate simulation outputs.\n    It is typically used with ESGF data sets that are described in NetCDF files.\n    daops is unique in that it accesses a store of fixes defined for data sets\n    that are irregular when compared with others in their population.\n\nextra:\n  recipe-maintainers:\n    - ellesmith88\n    - cehbrecht\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -224,6 +221,7 @@
    "clisops",
    "dask",
    "elasticsearch",
+   "flit-core",
    "fsspec",
    "intake",
    "loguru",
@@ -231,11 +229,9 @@
    "numba",
    "numpy",
    "pip",
-   "pytest-runner",
    "python",
    "roocs-grids",
    "roocs-utils",
-   "setuptools",
    "sparse",
    "xarray",
    "xesmf",
@@ -251,10 +247,9 @@
   "host": {
    "__set__": true,
    "elements": [
+    "flit-core",
     "pip",
-    "pytest-runner",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run": {
@@ -298,10 +293,9 @@
   "host": {
    "__set__": true,
    "elements": [
+    "flit-core >=3.9,<4.0",
     "pip",
-    "pytest-runner",
-    "python 3.9",
-    "setuptools"
+    "python 3.9"
    ]
   },
   "run": {
@@ -336,8 +330,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/daops/daops-0.12.0.tar.gz",
- "version": "0.12.0",
+ "url": "https://pypi.org/packages/source/d/daops/daops-0.13.0.tar.gz",
+ "version": "0.13.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/daops.json"
  }
