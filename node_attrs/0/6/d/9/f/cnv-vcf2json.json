@@ -24,7 +24,7 @@
     "cnv-vcf2json = vcf_converter.cnv_vcf2json:cnv_vcf2json"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -38,18 +38,18 @@
   },
   "requirements": {
    "host": [
-    "python >=3.6",
+    "python 3.9",
     "pip"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "jsonschema"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "7aee4cab8a028f8c9d1076152ea992d9b53528e050b3087da20641193f0e25ad",
-   "url": "https://pypi.io/packages/source/c/cnv-vcf2json/cnv_vcf2json-1.1.0.tar.gz"
+   "url": "https://pypi.org/packages/source/c/cnv-vcf2json/cnv_vcf2json-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -60,7 +60,8 @@
     "vcf_converter"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -86,7 +87,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -101,7 +103,7 @@
     "cnv-vcf2json = vcf_converter.cnv_vcf2json:cnv_vcf2json"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -115,18 +117,18 @@
   },
   "requirements": {
    "host": [
-    "python >=3.6",
+    "python 3.9",
     "pip"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "jsonschema"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "7aee4cab8a028f8c9d1076152ea992d9b53528e050b3087da20641193f0e25ad",
-   "url": "https://pypi.io/packages/source/c/cnv-vcf2json/cnv_vcf2json-1.1.0.tar.gz"
+   "url": "https://pypi.org/packages/source/c/cnv-vcf2json/cnv_vcf2json-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -137,7 +139,8 @@
     "vcf_converter"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -155,7 +158,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cnv-vcf2json.json"
  },
- "raw_meta_yaml": "{% set name = \"cnv-vcf2json\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cnv_vcf2json-{{ version }}.tar.gz\n  sha256: 7aee4cab8a028f8c9d1076152ea992d9b53528e050b3087da20641193f0e25ad\n\nbuild:\n  entry_points:\n    - cnv-vcf2json = vcf_converter.cnv_vcf2json:cnv_vcf2json\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - jsonschema\n\ntest:\n  imports:\n    - vcf_converter\n  commands:\n    - pip check\n    - cnv-vcf2json --help\n  requires:\n    - pip\n\nabout:\n  summary: Converts the structural variants VCF file into JSON file\n  license: CC-BY-NC-4.0\n  home: https://pypi.org/project/cnv-vcf2json/\n\nextra:\n  recipe-maintainers:\n    - khaled196\n",
+ "raw_meta_yaml": "{% set name = \"cnv-vcf2json\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cnv_vcf2json-{{ version }}.tar.gz\n  sha256: 7aee4cab8a028f8c9d1076152ea992d9b53528e050b3087da20641193f0e25ad\n\nbuild:\n  entry_points:\n    - cnv-vcf2json = vcf_converter.cnv_vcf2json:cnv_vcf2json\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - jsonschema\n\ntest:\n  imports:\n    - vcf_converter\n  commands:\n    - pip check\n    - cnv-vcf2json --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Converts the structural variants VCF file into JSON file\n  license: CC-BY-NC-4.0\n  home: https://pypi.org/project/cnv-vcf2json/\n\nextra:\n  recipe-maintainers:\n    - khaled196\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -186,7 +189,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -200,24 +204,25 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6"
+    "python 3.9"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "jsonschema",
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/c/cnv-vcf2json/cnv_vcf2json-1.1.0.tar.gz",
+ "url": "https://pypi.org/packages/source/c/cnv-vcf2json/cnv_vcf2json-1.1.0.tar.gz",
  "version": "1.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cnv-vcf2json.json"
