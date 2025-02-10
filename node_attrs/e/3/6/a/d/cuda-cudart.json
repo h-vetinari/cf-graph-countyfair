@@ -14,11 +14,6 @@
    "branch_name": "main",
    "tooling_branch_name": "main"
   },
-  "os_version": {
-   "linux_64": "cos7",
-   "linux_aarch64": "cos7",
-   "linux_ppc64le": "cos7"
-  },
   "provider": {
    "linux_aarch64": "default",
    "linux_ppc64le": "default"
@@ -37,7 +32,7 @@
    "summary": "CUDA Runtime Native Libraries"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "feedstock-name": "cuda-cudart",
@@ -68,8 +63,7 @@
      "build": [
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "c_stdlib_stub",
-      "patchelf <0.18.0"
+      "c_stdlib_stub"
      ],
      "host": [
       "cuda-version 12.8"
@@ -384,6 +378,13 @@
    "name": "cuda-cudart-split",
    "version": "12.8.57"
   },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "patchelf <0.18.0",
+    "cf-nvidia-tools"
+   ]
+  },
   "schema_version": 0,
   "source": {
    "sha256": "5bd3ac35ea8e8ab880e595d5054ee373abf6d9e53dcb8cef0a5c75358dbc0ae2",
@@ -396,6 +397,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cxx_compiler_stub",
     "patchelf"
    ]
@@ -438,7 +440,7 @@
    "summary": "CUDA Runtime Native Libraries"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "feedstock-name": "cuda-cudart",
@@ -470,8 +472,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "arm-variant * sbsa",
-      "c_stdlib_stub",
-      "patchelf <0.18.0"
+      "c_stdlib_stub"
      ],
      "host": [
       "cuda-version 12.8"
@@ -803,15 +804,378 @@
       "test -f $PREFIX/targets/x64/lib/stubs/libcuda.so"
      ]
     }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime architecture dependent libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime architecture dependent libraries"
+    },
+    "build": {
+     "binary_relocation": false,
+     "noarch": "generic"
+    },
+    "files": [
+     "targets/x64/lib/libcu*.so.*"
+    ],
+    "name": "cuda-cudart_linux-aarch64",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/targets/x64/lib/libcudart.so.12",
+      "test -f $PREFIX/targets/x64/lib/libcudart.so.12.8.57"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "binary_relocation": false
+    },
+    "files": [
+     "lib/libcu*.so.*"
+    ],
+    "name": "cuda-cudart",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8",
+      "cuda-cudart_linux-aarch64"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-cudart_linux-aarch64"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcudart.so.12",
+      "test -L $PREFIX/lib/libcudart.so.12.8.57",
+      "test -L $PREFIX/targets/x64/lib/libcudart.so.12",
+      "test -f $PREFIX/targets/x64/lib/libcudart.so.12.8.57",
+      "bash test-rpath.sh"
+     ],
+     "files": [
+      "test-rpath.sh"
+     ],
+     "requires": [
+      "patchelf"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "run_exports": [
+      "cuda-cudart"
+     ]
+    },
+    "files": [
+     "lib/libcu*.so",
+     "lib/pkgconfig"
+    ],
+    "name": "cuda-cudart-dev",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-cudart",
+      "cuda-cudart-dev_linux-aarch64",
+      "cuda-cudart-static"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcudart.so",
+      "test -f $PREFIX/lib/pkgconfig/cuda-*.pc",
+      "test -f $PREFIX/lib/pkgconfig/cudart-*.pc"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "noarch": "generic",
+     "run_exports": [
+      "cuda-cudart"
+     ]
+    },
+    "files": [
+     "targets/x64/include",
+     "targets/x64/lib/*.so"
+    ],
+    "name": "cuda-cudart-dev_linux-aarch64",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-cudart-static_linux-aarch64",
+      "cuda-cccl_linux-aarch64",
+      "cuda-cudart_linux-aarch64"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/targets/x64/include/cuda.h",
+      "test -f $PREFIX/targets/x64/include/cuda_runtime.h",
+      "test -f $PREFIX/targets/x64/include/cuda_runtime_api.h",
+      "test -f $PREFIX/targets/x64/include/cooperative_groups/memcpy_async.h",
+      "test -f $PREFIX/targets/x64/include/cooperative_groups/details/async.h",
+      "test -L $PREFIX/targets/x64/lib/libcudart.so"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "files": [
+     "lib/*.a"
+    ],
+    "name": "cuda-cudart-static",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-cudart-static_linux-aarch64"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcudart_static.a",
+      "test -L $PREFIX/lib/libcudadevrt.a",
+      "test -L $PREFIX/lib/libculibos.a"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "noarch": "generic"
+    },
+    "files": [
+     "targets/x64/lib/*.a"
+    ],
+    "name": "cuda-cudart-static_linux-aarch64",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/targets/x64/lib/libcudart_static.a",
+      "test -f $PREFIX/targets/x64/lib/libcudadevrt.a",
+      "test -f $PREFIX/targets/x64/lib/libculibos.a"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": null,
+    "files": [
+     "lib/stubs/libcuda.so"
+    ],
+    "name": "cuda-driver-dev",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-driver-dev_linux-aarch64"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/stubs/libcuda.so"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "binary_relocation": false,
+     "noarch": "generic"
+    },
+    "files": [
+     "targets/x64/lib/stubs/libcuda.so"
+    ],
+    "name": "cuda-driver-dev_linux-aarch64",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/targets/x64/lib/stubs/libcuda.so"
+     ]
+    }
    }
   ],
   "package": {
    "name": "cuda-cudart-split",
    "version": "12.8.57"
   },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "patchelf <0.18.0",
+    "cf-nvidia-tools"
+   ]
+  },
   "schema_version": 0,
   "source": {
-   "sha256": "b94814dacc8e4e69c8909ac08ae9f8d6831c1a141358a6e9f60583481a49ae2b",
+   "sha256": "45a6f64522329448d75e9c6adcd625994fe85f6aff9befe0dd43468aa65cb00a",
    "url": "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/windows-x86_64/cuda_cudart-windows-x86_64-12.8.57-archive.zip"
   }
  },
@@ -822,6 +1186,7 @@
     "arm-variant",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cxx_compiler_stub",
     "patchelf"
    ]
@@ -864,7 +1229,7 @@
    "summary": "CUDA Runtime Native Libraries"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "feedstock-name": "cuda-cudart",
@@ -895,8 +1260,7 @@
      "build": [
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "c_stdlib_stub",
-      "patchelf <0.18.0"
+      "c_stdlib_stub"
      ],
      "host": [
       "cuda-version 12.8"
@@ -1229,8 +1593,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "arm-variant * sbsa",
-      "c_stdlib_stub",
-      "patchelf <0.18.0"
+      "c_stdlib_stub"
      ],
      "host": [
       "cuda-version 12.8"
@@ -1555,6 +1918,362 @@
      ],
      "run_constrained": [
       "arm-variant * sbsa"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/targets/x64/lib/stubs/libcuda.so"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime architecture dependent libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime architecture dependent libraries"
+    },
+    "build": {
+     "binary_relocation": false,
+     "noarch": "generic"
+    },
+    "files": [
+     "targets/x64/lib/libcu*.so.*"
+    ],
+    "name": "cuda-cudart_linux-aarch64",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/targets/x64/lib/libcudart.so.12",
+      "test -f $PREFIX/targets/x64/lib/libcudart.so.12.8.57"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "binary_relocation": false
+    },
+    "files": [
+     "lib/libcu*.so.*"
+    ],
+    "name": "cuda-cudart",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8",
+      "cuda-cudart_linux-aarch64"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-cudart_linux-aarch64"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcudart.so.12",
+      "test -L $PREFIX/lib/libcudart.so.12.8.57",
+      "test -L $PREFIX/targets/x64/lib/libcudart.so.12",
+      "test -f $PREFIX/targets/x64/lib/libcudart.so.12.8.57",
+      "bash test-rpath.sh"
+     ],
+     "files": [
+      "test-rpath.sh"
+     ],
+     "requires": [
+      "patchelf"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "run_exports": [
+      "cuda-cudart"
+     ]
+    },
+    "files": [
+     "lib/libcu*.so",
+     "lib/pkgconfig"
+    ],
+    "name": "cuda-cudart-dev",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-cudart",
+      "cuda-cudart-dev_linux-aarch64",
+      "cuda-cudart-static"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcudart.so",
+      "test -f $PREFIX/lib/pkgconfig/cuda-*.pc",
+      "test -f $PREFIX/lib/pkgconfig/cudart-*.pc"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "noarch": "generic",
+     "run_exports": [
+      "cuda-cudart"
+     ]
+    },
+    "files": [
+     "targets/x64/include",
+     "targets/x64/lib/*.so"
+    ],
+    "name": "cuda-cudart-dev_linux-aarch64",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-cudart-static_linux-aarch64",
+      "cuda-cccl_linux-aarch64",
+      "cuda-cudart_linux-aarch64"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/targets/x64/include/cuda.h",
+      "test -f $PREFIX/targets/x64/include/cuda_runtime.h",
+      "test -f $PREFIX/targets/x64/include/cuda_runtime_api.h",
+      "test -f $PREFIX/targets/x64/include/cooperative_groups/memcpy_async.h",
+      "test -f $PREFIX/targets/x64/include/cooperative_groups/details/async.h",
+      "test -L $PREFIX/targets/x64/lib/libcudart.so"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "files": [
+     "lib/*.a"
+    ],
+    "name": "cuda-cudart-static",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-cudart-static_linux-aarch64"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/libcudart_static.a",
+      "test -L $PREFIX/lib/libcudadevrt.a",
+      "test -L $PREFIX/lib/libculibos.a"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "noarch": "generic"
+    },
+    "files": [
+     "targets/x64/lib/*.a"
+    ],
+    "name": "cuda-cudart-static_linux-aarch64",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f $PREFIX/targets/x64/lib/libcudart_static.a",
+      "test -f $PREFIX/targets/x64/lib/libcudadevrt.a",
+      "test -f $PREFIX/targets/x64/lib/libculibos.a"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": null,
+    "files": [
+     "lib/stubs/libcuda.so"
+    ],
+    "name": "cuda-driver-dev",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version",
+      "cuda-driver-dev_linux-aarch64"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -L $PREFIX/lib/stubs/libcuda.so"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "CUDA Runtime Native Libraries\n",
+     "doc_url": "https://docs.nvidia.com/cuda/index.html",
+     "home": "https://developer.nvidia.com/cuda-toolkit",
+     "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+     "license_file": "LICENSE",
+     "license_url": "https://docs.nvidia.com/cuda/eula/index.html",
+     "summary": "CUDA Runtime Native Libraries"
+    },
+    "build": {
+     "binary_relocation": false,
+     "noarch": "generic"
+    },
+    "files": [
+     "targets/x64/lib/stubs/libcuda.so"
+    ],
+    "name": "cuda-driver-dev_linux-aarch64",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "arm-variant * tegra",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "cuda-version 12.8"
+     ],
+     "run": [
+      "cuda-version"
+     ],
+     "run_constrained": [
+      "arm-variant * tegra"
      ]
     },
     "test": {
@@ -1882,6 +2601,13 @@
    "name": "cuda-cudart-split",
    "version": "12.8.57"
   },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "patchelf <0.18.0",
+    "cf-nvidia-tools"
+   ]
+  },
   "schema_version": 0,
   "source": {
    "sha256": "2c7aa62a195d79229d4381c8bd0174a30502cf3d8124c6e94ee50a7fc8a1e9f4",
@@ -1919,13 +2645,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cuda-cudart.json"
  },
- "raw_meta_yaml": "{% set name = \"cuda-cudart\" %}\n{% set version = \"12.8.57\" %}\n{% set cuda_version = \"12.8\" %}\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-ppc64le\" %}  # [ppc64le]\n{% set platform = \"linux-sbsa\" %}  # [aarch64]\n{% set platform = \"windows-x86_64\" %}  # [win]\n{% set target_name = \"x86_64-linux\" %}  # [linux64]\n{% set target_name = \"ppc64le-linux\" %}  # [ppc64le]\n{% set target_name = \"sbsa-linux\" %}  # [aarch64]\n{% set target_name = \"x64\" %}  # [win]\n{% set extension = \"tar.xz\" %}  # [not win]\n{% set extension = \"zip\" %}  # [win]\n\npackage:\n  name: cuda-cudart-split\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/{{ platform }}/cuda_cudart-{{ platform }}-{{ version }}-archive.{{ extension }}\n  sha256: 5bd3ac35ea8e8ab880e595d5054ee373abf6d9e53dcb8cef0a5c75358dbc0ae2  # [linux64]\n  sha256: b94814dacc8e4e69c8909ac08ae9f8d6831c1a141358a6e9f60583481a49ae2b  # [aarch64]\n  sha256: 2c7aa62a195d79229d4381c8bd0174a30502cf3d8124c6e94ee50a7fc8a1e9f4  # [win]\n\nbuild:\n  number: 0\n  skip: true  # [osx or ppc64le]\n\noutputs:\n  - name: cuda-cudart_{{ target_platform }}\n    build:\n      noarch: generic\n      binary_relocation: false\n    files:                                         # [linux]\n      - targets/{{ target_name }}/lib/libcu*.so.*  # [linux]\n      # Windows DLLs are not needed at compile time\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n        - patchelf <0.18.0                      # [linux]\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcudart.so.{{ version.split(\".\")[0] }}  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcudart.so.{{ version }}                # [linux]\n        - if exist %LIBRARY_BIN%\\cudart64_{{ version.split(\".\")[0] }}.dll exit 1                  # [win]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime architecture dependent libraries\n      description: |\n        CUDA Runtime architecture dependent libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart\n    build:\n      binary_relocation: false\n      missing_dso_whitelist:                             # [win]\n        - \"*/api-ms-win-core-libraryloader-*.dll\"        # [win]\n        - \"*/api-ms-win-security-systemfunctions-*.dll\"  # [win]\n    files:\n      - lib/libcu*.so.*                            # [linux]\n      - Library\\bin\\cudart*.dll                    # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n        - {{ pin_subpackage(\"cuda-cudart_\" + target_platform, exact=True) }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - {{ pin_subpackage(\"cuda-cudart_\" + target_platform, exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      requires:\n        - patchelf  # [linux]\n      files:\n        - test-rpath.sh\n      commands:\n        - test -L $PREFIX/lib/libcudart.so.{{ version.split(\".\")[0] }}                            # [linux]\n        - test -L $PREFIX/lib/libcudart.so.{{ version }}                                          # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcudart.so.{{ version.split(\".\")[0] }}  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcudart.so.{{ version }}                # [linux]\n        - bash test-rpath.sh                                                                      # [linux]\n        - if not exist %LIBRARY_BIN%\\cudart64_{{ version.split(\".\")[0] }}.dll exit 1              # [win]\n\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart-dev\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"cuda-cudart\", max_pin=\"x\") }}\n    files:             # [linux]\n      - lib/libcu*.so  # [linux]\n      - lib/pkgconfig  # [linux]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - {{ pin_subpackage(\"cuda-cudart\", exact=True) }}\n        - {{ pin_subpackage(\"cuda-cudart-dev_\" + target_platform, exact=True) }}\n        - {{ pin_subpackage(\"cuda-cudart-static\", exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libcudart.so           # [linux]\n        - test -f $PREFIX/lib/pkgconfig/cuda-*.pc    # [linux]\n        - test -f $PREFIX/lib/pkgconfig/cudart-*.pc  # [linux]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart-dev_{{ target_platform }}\n    build:\n      noarch: generic\n      run_exports:\n        - {{ pin_subpackage(\"cuda-cudart\", max_pin=\"x\") }}\n    files:\n      - targets/{{ target_name }}/include                               # [linux]\n      - targets/{{ target_name }}/lib/*.so                              # [linux]\n      - Library\\include                                                 # [win]\n      - Library\\lib\\cuda.lib                                            # [win]\n      - Library\\lib\\cudadevrt.lib                                       # [win]\n      - Library\\lib\\cudart.lib                                          # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - cuda-cudart-static_{{ target_platform }}\n        - cuda-cccl_{{ target_platform }}\n        - cuda-cudart_{{ target_platform }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/targets/{{ target_name }}/include/cuda.h                              # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cuda_runtime.h                      # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cuda_runtime_api.h                  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cooperative_groups/memcpy_async.h   # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cooperative_groups/details/async.h  # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcudart.so                            # [linux]\n        - if not exist %LIBRARY_INC%\\cuda.h exit 1                                              # [win]\n        - if not exist %LIBRARY_INC%\\cuda_runtime.h exit 1                                      # [win]\n        - if not exist %LIBRARY_INC%\\cuda_runtime_api.h exit 1                                  # [win]\n        - if not exist %LIBRARY_LIB%\\cuda.lib exit 1                                            # [win]\n        - if not exist %LIBRARY_LIB%\\cudadevrt.lib exit 1                                       # [win]\n        - if not exist %LIBRARY_LIB%\\cudart.lib exit 1                                          # [win]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart-static\n    files:       # [linux]\n      - lib/*.a  # [linux]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - {{ pin_subpackage(\"cuda-cudart-static_\" + target_platform, exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libcudart_static.a  # [linux]\n        - test -L $PREFIX/lib/libcudadevrt.a      # [linux]\n        - test -L $PREFIX/lib/libculibos.a        # [linux]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart-static_{{ target_platform }}\n    build:\n      noarch: generic\n    files:\n      - targets/{{ target_name }}/lib/*.a  # [linux]\n      - Library\\lib\\cudart_static.lib      # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcudart_static.a  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcudadevrt.a      # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libculibos.a        # [linux]\n        - if not exist %LIBRARY_LIB%\\cudart_static.lib exit 1               # [win]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-driver-dev\n    build:\n      skip: True  # [not linux]\n    files:\n      - lib/stubs/libcuda.so\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - cuda-driver-dev_{{ target_platform }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/stubs/libcuda.so\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-driver-dev_{{ target_platform }}\n    build:\n      skip: True  # [not linux]\n      noarch: generic\n      binary_relocation: false\n    files:\n      - targets/{{ target_name }}/lib/stubs/libcuda.so\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/targets/{{ target_name }}/lib/stubs/libcuda.so\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\nabout:\n  home: https://developer.nvidia.com/cuda-toolkit\n  license_file: LICENSE\n  license: LicenseRef-NVIDIA-End-User-License-Agreement\n  license_url: https://docs.nvidia.com/cuda/eula/index.html\n  summary: CUDA Runtime Native Libraries\n  description: |\n    CUDA Runtime Native Libraries\n  doc_url: https://docs.nvidia.com/cuda/index.html\n\nextra:\n  feedstock-name: cuda-cudart\n  recipe-maintainers:\n    - conda-forge/cuda\n",
+ "raw_meta_yaml": "{% set name = \"cuda-cudart\" %}\n{% set version = \"12.8.57\" %}\n{% set cuda_version = \"12.8\" %}\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-ppc64le\" %}  # [ppc64le]\n{% set platform = \"linux-sbsa\" %}  # [aarch64 and arm_variant_type==\"sbsa\"]\n{% set platform = \"linux-aarch64\" %}  # [aarch64 and arm_variant_type==\"tegra\"]\n{% set platform = \"windows-x86_64\" %}  # [win]\n{% set target_name = \"x86_64-linux\" %}  # [linux64]\n{% set target_name = \"ppc64le-linux\" %}  # [ppc64le]\n{% set target_name = \"sbsa-linux\" %}  # [aarch64 and arm_variant_type==\"sbsa\"]\n{% set target_name = \"aarch64-linux\" %}  # [aarch64 and arm_variant_type==\"tegra\"]\n{% set target_name = \"x64\" %}  # [win]\n{% set extension = \"tar.xz\" %}  # [not win]\n{% set extension = \"zip\" %}  # [win]\n\npackage:\n  name: cuda-cudart-split\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/{{ platform }}/cuda_cudart-{{ platform }}-{{ version }}-archive.{{ extension }}\n  sha256: 5bd3ac35ea8e8ab880e595d5054ee373abf6d9e53dcb8cef0a5c75358dbc0ae2  # [linux64]\n  sha256: b94814dacc8e4e69c8909ac08ae9f8d6831c1a141358a6e9f60583481a49ae2b  # [aarch64 and arm_variant_type==\"sbsa\"]\n  sha256: 45a6f64522329448d75e9c6adcd625994fe85f6aff9befe0dd43468aa65cb00a  # [aarch64 and arm_variant_type==\"tegra\"]\n  sha256: 2c7aa62a195d79229d4381c8bd0174a30502cf3d8124c6e94ee50a7fc8a1e9f4  # [win]\n\nbuild:\n  number: 1\n  skip: true  # [osx or ppc64le]\n\nrequirements:\n  build:\n    - {{ stdlib(\"c\") }}\n    - patchelf <0.18.0  # [linux]\n    - cf-nvidia-tools   # [linux]\n\noutputs:\n  - name: cuda-cudart_{{ target_platform }}\n    build:\n      noarch: generic\n      binary_relocation: false\n    files:                                         # [linux]\n      - targets/{{ target_name }}/lib/libcu*.so.*  # [linux]\n      # Windows DLLs are not needed at compile time\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcudart.so.{{ version.split(\".\")[0] }}  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcudart.so.{{ version }}                # [linux]\n        - if exist %LIBRARY_BIN%\\cudart64_{{ version.split(\".\")[0] }}.dll exit 1                  # [win]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime architecture dependent libraries\n      description: |\n        CUDA Runtime architecture dependent libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart\n    build:\n      binary_relocation: false\n      missing_dso_whitelist:                             # [win]\n        - \"*/api-ms-win-core-libraryloader-*.dll\"        # [win]\n        - \"*/api-ms-win-security-systemfunctions-*.dll\"  # [win]\n    files:\n      - lib/libcu*.so.*                            # [linux]\n      - Library\\bin\\cudart*.dll                    # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n        - {{ pin_subpackage(\"cuda-cudart_\" + target_platform, exact=True) }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - {{ pin_subpackage(\"cuda-cudart_\" + target_platform, exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      requires:\n        - patchelf  # [linux]\n      files:\n        - test-rpath.sh\n      commands:\n        - test -L $PREFIX/lib/libcudart.so.{{ version.split(\".\")[0] }}                            # [linux]\n        - test -L $PREFIX/lib/libcudart.so.{{ version }}                                          # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcudart.so.{{ version.split(\".\")[0] }}  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcudart.so.{{ version }}                # [linux]\n        - bash test-rpath.sh                                                                      # [linux]\n        - if not exist %LIBRARY_BIN%\\cudart64_{{ version.split(\".\")[0] }}.dll exit 1              # [win]\n\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart-dev\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"cuda-cudart\", max_pin=\"x\") }}\n    files:             # [linux]\n      - lib/libcu*.so  # [linux]\n      - lib/pkgconfig  # [linux]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - {{ pin_subpackage(\"cuda-cudart\", exact=True) }}\n        - {{ pin_subpackage(\"cuda-cudart-dev_\" + target_platform, exact=True) }}\n        - {{ pin_subpackage(\"cuda-cudart-static\", exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libcudart.so           # [linux]\n        - test -f $PREFIX/lib/pkgconfig/cuda-*.pc    # [linux]\n        - test -f $PREFIX/lib/pkgconfig/cudart-*.pc  # [linux]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart-dev_{{ target_platform }}\n    build:\n      noarch: generic\n      run_exports:\n        - {{ pin_subpackage(\"cuda-cudart\", max_pin=\"x\") }}\n    files:\n      - targets/{{ target_name }}/include                               # [linux]\n      - targets/{{ target_name }}/lib/*.so                              # [linux]\n      - Library\\include                                                 # [win]\n      - Library\\lib\\cuda.lib                                            # [win]\n      - Library\\lib\\cudadevrt.lib                                       # [win]\n      - Library\\lib\\cudart.lib                                          # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - cuda-cudart-static_{{ target_platform }}\n        - cuda-cccl_{{ target_platform }}\n        - cuda-cudart_{{ target_platform }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/targets/{{ target_name }}/include/cuda.h                              # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cuda_runtime.h                      # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cuda_runtime_api.h                  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cooperative_groups/memcpy_async.h   # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/include/cooperative_groups/details/async.h  # [linux]\n        - test -L $PREFIX/targets/{{ target_name }}/lib/libcudart.so                            # [linux]\n        - if not exist %LIBRARY_INC%\\cuda.h exit 1                                              # [win]\n        - if not exist %LIBRARY_INC%\\cuda_runtime.h exit 1                                      # [win]\n        - if not exist %LIBRARY_INC%\\cuda_runtime_api.h exit 1                                  # [win]\n        - if not exist %LIBRARY_LIB%\\cuda.lib exit 1                                            # [win]\n        - if not exist %LIBRARY_LIB%\\cudadevrt.lib exit 1                                       # [win]\n        - if not exist %LIBRARY_LIB%\\cudart.lib exit 1                                          # [win]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart-static\n    files:       # [linux]\n      - lib/*.a  # [linux]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - {{ pin_subpackage(\"cuda-cudart-static_\" + target_platform, exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libcudart_static.a  # [linux]\n        - test -L $PREFIX/lib/libcudadevrt.a      # [linux]\n        - test -L $PREFIX/lib/libculibos.a        # [linux]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-cudart-static_{{ target_platform }}\n    build:\n      noarch: generic\n    files:\n      - targets/{{ target_name }}/lib/*.a  # [linux]\n      - Library\\lib\\cudart_static.lib      # [win]\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcudart_static.a  # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libcudadevrt.a      # [linux]\n        - test -f $PREFIX/targets/{{ target_name }}/lib/libculibos.a        # [linux]\n        - if not exist %LIBRARY_LIB%\\cudart_static.lib exit 1               # [win]\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-driver-dev\n    build:\n      skip: True  # [not linux]\n    files:\n      - lib/stubs/libcuda.so\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n        - cuda-driver-dev_{{ target_platform }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/stubs/libcuda.so\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\n  - name: cuda-driver-dev_{{ target_platform }}\n    build:\n      skip: True  # [not linux]\n      noarch: generic\n      binary_relocation: false\n    files:\n      - targets/{{ target_name }}/lib/stubs/libcuda.so\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"cxx\") }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_version }}\n      run:\n        - {{ pin_compatible(\"cuda-version\", max_pin=\"x.x\") }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/targets/{{ target_name }}/lib/stubs/libcuda.so\n    about:\n      home: https://developer.nvidia.com/cuda-toolkit\n      license_file: LICENSE\n      license: LicenseRef-NVIDIA-End-User-License-Agreement\n      license_url: https://docs.nvidia.com/cuda/eula/index.html\n      summary: CUDA Runtime Native Libraries\n      description: |\n        CUDA Runtime Native Libraries\n      doc_url: https://docs.nvidia.com/cuda/index.html\n\nabout:\n  home: https://developer.nvidia.com/cuda-toolkit\n  license_file: LICENSE\n  license: LicenseRef-NVIDIA-End-User-License-Agreement\n  license_url: https://docs.nvidia.com/cuda/eula/index.html\n  summary: CUDA Runtime Native Libraries\n  description: |\n    CUDA Runtime Native Libraries\n  doc_url: https://docs.nvidia.com/cuda/index.html\n\nextra:\n  feedstock-name: cuda-cudart\n  recipe-maintainers:\n    - conda-forge/cuda\n",
  "req": {
   "__set__": true,
   "elements": [
    "arm-variant",
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cf-nvidia-tools",
    "cuda-cccl_linux-64",
    "cuda-cccl_linux-aarch64",
    "cuda-cccl_win-64",
@@ -1955,6 +2682,7 @@
     "arm-variant",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cxx_compiler_stub",
     "patchelf"
    ]
@@ -2010,8 +2738,10 @@
    "__set__": true,
    "elements": [
     "arm-variant * sbsa",
+    "arm-variant * tegra",
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cf-nvidia-tools",
     "cxx_compiler_stub",
     "patchelf <0.18.0"
    ]
@@ -2071,7 +2801,7 @@
    "summary": "CUDA Runtime Native Libraries"
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "feedstock-name": "cuda-cudart",
@@ -2398,6 +3128,11 @@
   "package": {
    "name": "cuda-cudart-split",
    "version": "12.8.57"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub"
+   ]
   },
   "schema_version": 0,
   "source": {
