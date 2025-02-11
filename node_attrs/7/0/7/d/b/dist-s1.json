@@ -1,1 +1,286 @@
-{}
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "dist-s1",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/opera-adt/dist-s1",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "The workflow to generate the DIST-S1 product"
+  },
+  "build": {
+   "entry_points": [
+    "dist-s1 = dist_s1.__main__:cli"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cmarshak",
+    "taliboliver"
+   ]
+  },
+  "package": {
+   "name": "dist-s1",
+   "version": "0.0.3"
+  },
+  "requirements": {
+   "host": [
+    "python 3.12",
+    "setuptools >=64.0",
+    "setuptools-scm >=6.2",
+    "pip"
+   ],
+   "run": [
+    "python >=3.12",
+    "numpy",
+    "asf_search",
+    "geopandas",
+    "rasterio",
+    "pyyaml",
+    "dist_s1_enumerator"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "fb56ca1cd997be9521321a884ef34b1386c9b90fbef375a5b29d9267731fa032",
+   "url": "https://pypi.org/packages/source/d/dist-s1/dist_s1-0.0.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "dist-s1 --help"
+   ],
+   "imports": [
+    "dist_s1"
+   ],
+   "requires": [
+    "pip",
+    "python 3.12",
+    "pyyaml",
+    "dist_s1_enumerator"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "asf_search",
+    "dist_s1_enumerator",
+    "geopandas",
+    "numpy",
+    "python",
+    "pyyaml",
+    "rasterio"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "dist_s1_enumerator",
+    "pip",
+    "python",
+    "pyyaml"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/opera-adt/dist-s1",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE",
+   "summary": "The workflow to generate the DIST-S1 product"
+  },
+  "build": {
+   "entry_points": [
+    "dist-s1 = dist_s1.__main__:cli"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cmarshak",
+    "taliboliver"
+   ]
+  },
+  "package": {
+   "name": "dist-s1",
+   "version": "0.0.3"
+  },
+  "requirements": {
+   "host": [
+    "python 3.12",
+    "setuptools >=64.0",
+    "setuptools-scm >=6.2",
+    "pip"
+   ],
+   "run": [
+    "python >=3.12",
+    "numpy",
+    "asf_search",
+    "geopandas",
+    "rasterio",
+    "pyyaml",
+    "dist_s1_enumerator"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "fb56ca1cd997be9521321a884ef34b1386c9b90fbef375a5b29d9267731fa032",
+   "url": "https://pypi.org/packages/source/d/dist-s1/dist_s1-0.0.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "dist-s1 --help"
+   ],
+   "imports": [
+    "dist_s1"
+   ],
+   "requires": [
+    "pip",
+    "python 3.12",
+    "pyyaml",
+    "dist_s1_enumerator"
+   ]
+  }
+ },
+ "name": "dist-s1",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "dist-s1"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/dist-s1.json"
+ },
+ "raw_meta_yaml": "{% set name = \"dist-s1\" %}\n{% set version = \"0.0.3\" %}\n{% set python_min = \"3.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dist_s1-{{ version }}.tar.gz\n  sha256: fb56ca1cd997be9521321a884ef34b1386c9b90fbef375a5b29d9267731fa032\n\nbuild:\n  entry_points:\n    - dist-s1 = dist_s1.__main__:cli\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64.0\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - asf_search\n    - geopandas\n    - rasterio\n    - pyyaml\n    - dist_s1_enumerator\n\ntest:\n  imports:\n    - dist_s1\n  commands:\n    - pip check\n    - dist-s1 --help\n  requires:\n    - pip\n    - python {{ python_min }}\n    - pyyaml\n    - dist_s1_enumerator\n\nabout:\n  home: https://github.com/opera-adt/dist-s1\n  summary: The workflow to generate the DIST-S1 product\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - cmarshak\n    - taliboliver\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "asf_search",
+   "dist_s1_enumerator",
+   "geopandas",
+   "numpy",
+   "pip",
+   "python",
+   "pyyaml",
+   "rasterio",
+   "setuptools",
+   "setuptools-scm"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "asf_search",
+    "dist_s1_enumerator",
+    "geopandas",
+    "numpy",
+    "python",
+    "pyyaml",
+    "rasterio"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "dist_s1_enumerator",
+    "pip",
+    "python",
+    "pyyaml"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.12",
+    "setuptools >=64.0",
+    "setuptools-scm >=6.2"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "asf_search",
+    "dist_s1_enumerator",
+    "geopandas",
+    "numpy",
+    "python >=3.12",
+    "pyyaml",
+    "rasterio"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "dist_s1_enumerator",
+    "pip",
+    "python 3.12",
+    "pyyaml"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/d/dist-s1/dist_s1-0.0.3.tar.gz",
+ "version": "0.0.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/dist-s1.json"
+ }
+}
