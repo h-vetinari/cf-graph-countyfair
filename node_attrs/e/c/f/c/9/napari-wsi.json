@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "napari-wsi",
-   "version": "1.0.0"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -43,14 +43,17 @@
     "python 3.11"
    ],
    "run": [
+    "colorspacious >=1.1.2",
     "dask >=2025.1",
     "magicgui >=0.10",
     "numpy >=1.26",
     "openslide >=4.0",
     "openslide-python >=1.4",
+    "pandas >=2.0",
     "pillow >=11.1",
     "python >=3.11",
     "rasterio >=1.4",
+    "shapely >=2.0",
     "universal_pathlib >=0.2",
     "wsidicom >=0.22",
     "zarr >=3.0"
@@ -58,8 +61,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "98f5962c81f363196fc4b964c34acf645ca57ebae998452f9eca5bd0fb6da776",
-   "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.0.0.tar.gz"
+   "sha256": "0839da85aa6f71e907ec2029065cc6e49d965b5b0f3e102c704afed7f67b0385",
+   "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -91,14 +94,17 @@
   "run": {
    "__set__": true,
    "elements": [
+    "colorspacious",
     "dask",
     "magicgui",
     "numpy",
     "openslide",
     "openslide-python",
+    "pandas",
     "pillow",
     "python",
     "rasterio",
+    "shapely",
     "universal_pathlib",
     "wsidicom",
     "zarr"
@@ -121,7 +127,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -133,7 +139,7 @@
   },
   "package": {
    "name": "napari-wsi",
-   "version": "1.0.0"
+   "version": "1.1.0"
   },
   "requirements": {
    "host": [
@@ -142,14 +148,17 @@
     "python 3.11"
    ],
    "run": [
+    "colorspacious >=1.1.2",
     "dask >=2025.1",
     "magicgui >=0.10",
     "numpy >=1.26",
     "openslide >=4.0",
     "openslide-python >=1.4",
+    "pandas >=2.0",
     "pillow >=11.1",
     "python >=3.11",
     "rasterio >=1.4",
+    "shapely >=2.0",
     "universal_pathlib >=0.2",
     "wsidicom >=0.22",
     "zarr >=3.0"
@@ -157,8 +166,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "98f5962c81f363196fc4b964c34acf645ca57ebae998452f9eca5bd0fb6da776",
-   "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.0.0.tar.gz"
+   "sha256": "0839da85aa6f71e907ec2029065cc6e49d965b5b0f3e102c704afed7f67b0385",
+   "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -188,20 +197,23 @@
  "pr_info": {
   "__lazy_json__": "pr_info/napari-wsi.json"
  },
- "raw_meta_yaml": "{% set python_min = \"3.11\" %}\n{% set name = \"napari-wsi\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari_wsi-{{ version }}.tar.gz\n  sha256: 98f5962c81f363196fc4b964c34acf645ca57ebae998452f9eca5bd0fb6da776\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - hatchling\n    - python {{ python_min }}\n  run:\n    - dask >=2025.1\n    - magicgui >=0.10\n    - numpy >=1.26\n    - openslide >=4.0\n    - openslide-python >=1.4\n    - pillow >=11.1\n    - python >={{ python_min }}\n    - rasterio >=1.4\n    - universal_pathlib >=0.2\n    - wsidicom >=0.22\n    - zarr >=3.0\n\ntest:\n  imports:\n    - napari_wsi\n  commands:\n    - pip list\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/AstraZeneca/napari-wsi\n  summary: A plugin to read whole slide images within napari.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - jaimergp\n    - pmplewa\n",
+ "raw_meta_yaml": "{% set python_min = \"3.11\" %}\n{% set name = \"napari-wsi\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari_wsi-{{ version }}.tar.gz\n  sha256: 0839da85aa6f71e907ec2029065cc6e49d965b5b0f3e102c704afed7f67b0385\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - hatchling\n    - python {{ python_min }}\n  run:\n    - colorspacious >=1.1.2\n    - dask >=2025.1\n    - magicgui >=0.10\n    - numpy >=1.26\n    - openslide >=4.0\n    - openslide-python >=1.4\n    - pandas >=2.0\n    - pillow >=11.1\n    - python >={{ python_min }}\n    - rasterio >=1.4\n    - shapely >=2.0\n    - universal_pathlib >=0.2\n    - wsidicom >=0.22\n    - zarr >=3.0\n\ntest:\n  imports:\n    - napari_wsi\n  commands:\n    - pip list\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/AstraZeneca/napari-wsi\n  summary: A plugin to read whole slide images within napari.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - jaimergp\n    - pmplewa\n",
  "req": {
   "__set__": true,
   "elements": [
+   "colorspacious",
    "dask",
    "hatchling",
    "magicgui",
    "numpy",
    "openslide",
    "openslide-python",
+   "pandas",
    "pillow",
    "pip",
    "python",
    "rasterio",
+   "shapely",
    "universal_pathlib",
    "wsidicom",
    "zarr"
@@ -223,14 +235,17 @@
   "run": {
    "__set__": true,
    "elements": [
+    "colorspacious",
     "dask",
     "magicgui",
     "numpy",
     "openslide",
     "openslide-python",
+    "pandas",
     "pillow",
     "python",
     "rasterio",
+    "shapely",
     "universal_pathlib",
     "wsidicom",
     "zarr"
@@ -261,14 +276,17 @@
   "run": {
    "__set__": true,
    "elements": [
+    "colorspacious >=1.1.2",
     "dask >=2025.1",
     "magicgui >=0.10",
     "numpy >=1.26",
     "openslide >=4.0",
     "openslide-python >=1.4",
+    "pandas >=2.0",
     "pillow >=11.1",
     "python >=3.11",
     "rasterio >=1.4",
+    "shapely >=2.0",
     "universal_pathlib >=0.2",
     "wsidicom >=0.22",
     "zarr >=3.0"
@@ -282,8 +300,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.0.0.tar.gz",
- "version": "1.0.0",
+ "url": "https://pypi.org/packages/source/n/napari-wsi/napari_wsi-1.1.0.tar.gz",
+ "version": "1.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/napari-wsi.json"
  }
