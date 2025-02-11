@@ -28,15 +28,17 @@
     "fparser2=fparser.scripts.fparser2:main"
    ],
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
+   "number": "2",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv ",
+   "script_env": [
+    "SETUPTOOLS_SCM_PRETEND_VERSION=0.2.0"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
     "arporter",
     "matthewrmshin",
-    "MatthewHambley",
-    "rupertford"
+    "MatthewHambley"
    ]
   },
   "package": {
@@ -46,8 +48,10 @@
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
-    "setuptools"
+    "setuptools",
+    "setuptools-scm",
+    "setuptools_scm_git_archive",
+    "python 3.9"
    ],
    "run": [
     "python >=3.9"
@@ -60,7 +64,8 @@
   },
   "test": {
    "commands": [
-    "fparser2 --help"
+    "fparser2 --help",
+    "python -c \"import fparser; print(fparser.__version__); assert fparser.__version__ == '0.2.0'\""
    ],
    "imports": [
     "fparser",
@@ -86,7 +91,9 @@
    "elements": [
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools-scm",
+    "setuptools_scm_git_archive"
    ]
   },
   "run": {
@@ -117,15 +124,17 @@
     "fparser2=fparser.scripts.fparser2:main"
    ],
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
+   "number": "2",
+   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv ",
+   "script_env": [
+    "SETUPTOOLS_SCM_PRETEND_VERSION=0.2.0"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
     "arporter",
     "matthewrmshin",
-    "MatthewHambley",
-    "rupertford"
+    "MatthewHambley"
    ]
   },
   "package": {
@@ -135,8 +144,10 @@
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
-    "setuptools"
+    "setuptools",
+    "setuptools-scm",
+    "setuptools_scm_git_archive",
+    "python 3.9"
    ],
    "run": [
     "python >=3.9"
@@ -149,7 +160,8 @@
   },
   "test": {
    "commands": [
-    "fparser2 --help"
+    "fparser2 --help",
+    "python -c \"import fparser; print(fparser.__version__); assert fparser.__version__ == '0.2.0'\""
    ],
    "imports": [
     "fparser",
@@ -179,13 +191,15 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fparser.json"
  },
- "raw_meta_yaml": "{% set name = \"fparser\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3901d31c104062c4e532248286929e7405e43b79a6a85815146a176673e69c82\n\nbuild:\n  entry_points:\n    - fparser2=fparser.scripts.fparser2:main\n  noarch: python\n  number: 1\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fparser\n    - fparser.common\n    - fparser.common.tests\n    - fparser.one\n    - fparser.one.tests\n    - fparser.scripts\n    - fparser.two\n  commands:\n    - fparser2 --help\n\nabout:\n  home: https://github.com/stfc/fparser\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Modern Fortran Parser\n  doc_url: https://github.com/stfc/fparser\n  dev_url: https://github.com/stfc/fparser\n\nextra:\n  recipe-maintainers:\n    - arporter\n    - matthewrmshin\n    - MatthewHambley\n    - rupertford\n",
+ "raw_meta_yaml": "{% set name = \"fparser\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3901d31c104062c4e532248286929e7405e43b79a6a85815146a176673e69c82\n\nbuild:\n  entry_points:\n    - fparser2=fparser.scripts.fparser2:main\n  noarch: python\n  number: 2\n  script_env:\n    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - setuptools-scm\n    - setuptools_scm_git_archive\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fparser\n    - fparser.common\n    - fparser.common.tests\n    - fparser.one\n    - fparser.one.tests\n    - fparser.scripts\n    - fparser.two\n  commands:\n    - fparser2 --help\n    # check the version\n    - python -c \"import fparser; print(fparser.__version__); assert fparser.__version__ == '{{ version }}'\"\n\n\nabout:\n  home: https://github.com/stfc/fparser\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Modern Fortran Parser\n  doc_url: https://github.com/stfc/fparser\n  dev_url: https://github.com/stfc/fparser\n\nextra:\n  recipe-maintainers:\n    - arporter\n    - matthewrmshin\n    - MatthewHambley\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
    "python",
-   "setuptools"
+   "setuptools",
+   "setuptools-scm",
+   "setuptools_scm_git_archive"
   ]
  },
  "requirements": {
@@ -198,7 +212,9 @@
    "elements": [
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools-scm",
+    "setuptools_scm_git_archive"
    ]
   },
   "run": {
@@ -225,7 +241,9 @@
    "elements": [
     "pip",
     "python 3.9",
-    "setuptools"
+    "setuptools",
+    "setuptools-scm",
+    "setuptools_scm_git_archive"
    ]
   },
   "run": {
