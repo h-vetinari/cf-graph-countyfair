@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "llama-utils",
-   "version": "0.2.0"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -53,8 +53,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4dce62a62584cb0391a6d16b9fba8a912dfe5ab5de546847ac6f6db94f89a79e",
-   "url": "https://github.com/Serapieum-of-alex/llama-utils/archive/0.2.0.tar.gz"
+   "sha256": "ba303344ce8e90d944667ae421cc1f6be0a4844e879e34cffc4e6708b61ae158",
+   "url": "https://github.com/Serapieum-of-alex/llama-utils/archive/0.3.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -117,7 +117,7 @@
   },
   "package": {
    "name": "llama-utils",
-   "version": "0.2.0"
+   "version": "0.3.0"
   },
   "requirements": {
    "host": [
@@ -133,8 +133,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4dce62a62584cb0391a6d16b9fba8a912dfe5ab5de546847ac6f6db94f89a79e",
-   "url": "https://github.com/Serapieum-of-alex/llama-utils/archive/0.2.0.tar.gz"
+   "sha256": "ba303344ce8e90d944667ae421cc1f6be0a4844e879e34cffc4e6708b61ae158",
+   "url": "https://github.com/Serapieum-of-alex/llama-utils/archive/0.3.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -159,7 +159,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/llama-utils.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.12' %}\n{% set name = \"llama-utils\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Serapieum-of-alex/llama-utils/archive/{{ version }}.tar.gz\n  sha256: 4dce62a62584cb0391a6d16b9fba8a912dfe5ab5de546847ac6f6db94f89a79e\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation \n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry\n    - pip\n  run:\n    - python >={{ python_min }}\n    - llama-index >=0.12.12\n    - pandas >=2.2.3\n\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - llama_utils\n\nabout:\n  home: https://github.com/Serapieum-of-alex/llama-utils\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n  summary: llama-index utility package\n  description: |\n    llama-index utility package.\n  dev_url: https://github.com/Serapieum-of-alex/llama-utils\n  doc_url: https://serapieum-of-alex.github.io/llama-utils\n  doc_source_url: https://github.com/Serapieum-of-alex/llama-utils/main/README.md\n\nextra:\n  recipe-maintainers:\n    - MAfarrag\n",
+ "raw_meta_yaml": "{% set python_min = '3.12' %}\n{% set name = \"llama-utils\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Serapieum-of-alex/llama-utils/archive/{{ version }}.tar.gz\n  sha256: ba303344ce8e90d944667ae421cc1f6be0a4844e879e34cffc4e6708b61ae158\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation \n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry\n    - pip\n  run:\n    - python >={{ python_min }}\n    - llama-index >=0.12.12\n    - pandas >=2.2.3\n\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - llama_utils\n\nabout:\n  home: https://github.com/Serapieum-of-alex/llama-utils\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n  summary: llama-index utility package\n  description: |\n    llama-index utility package.\n  dev_url: https://github.com/Serapieum-of-alex/llama-utils\n  doc_url: https://serapieum-of-alex.github.io/llama-utils\n  doc_source_url: https://github.com/Serapieum-of-alex/llama-utils/main/README.md\n\nextra:\n  recipe-maintainers:\n    - MAfarrag\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -227,8 +227,8 @@
    ]
   }
  },
- "url": "https://github.com/Serapieum-of-alex/llama-utils/archive/0.2.0.tar.gz",
- "version": "0.2.0",
+ "url": "https://github.com/Serapieum-of-alex/llama-utils/archive/0.3.0.tar.gz",
+ "version": "0.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/llama-utils.json"
  }
