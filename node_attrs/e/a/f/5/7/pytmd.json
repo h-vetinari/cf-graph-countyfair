@@ -25,10 +25,10 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv",
    "script_env": [
-    "SETUPTOOLS_SCM_PRETEND_VERSION=2.2.0"
+    "SETUPTOOLS_SCM_PRETEND_VERSION=2.2.1"
    ]
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "pytmd",
-   "version": "2.2.0"
+   "version": "2.2.1"
   },
   "requirements": {
    "host": [
@@ -73,8 +73,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b18aba6d2d78e69a17b3cf1937acc5524e8795af250e29585c920a5443c4af7d",
-   "url": "https://pypi.org/packages/source/p/pyTMD/pytmd-2.2.0.tar.gz"
+   "sha256": "3d1ffd86b3028f3bbf33f640d533aa8cbe0c418080c92021ea5e3936b72aafda",
+   "url": "https://pypi.org/packages/source/p/pyTMD/pytmd-2.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -148,10 +148,10 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv",
    "script_env": [
-    "SETUPTOOLS_SCM_PRETEND_VERSION=2.2.0"
+    "SETUPTOOLS_SCM_PRETEND_VERSION=2.2.1"
    ]
   },
   "extra": {
@@ -162,7 +162,7 @@
   },
   "package": {
    "name": "pytmd",
-   "version": "2.2.0"
+   "version": "2.2.1"
   },
   "requirements": {
    "host": [
@@ -196,8 +196,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b18aba6d2d78e69a17b3cf1937acc5524e8795af250e29585c920a5443c4af7d",
-   "url": "https://pypi.org/packages/source/p/pyTMD/pytmd-2.2.0.tar.gz"
+   "sha256": "3d1ffd86b3028f3bbf33f640d533aa8cbe0c418080c92021ea5e3936b72aafda",
+   "url": "https://pypi.org/packages/source/p/pyTMD/pytmd-2.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -226,7 +226,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pytmd.json"
  },
- "raw_meta_yaml": "{% set name = \"pyTMD\" %}\n{% set version = \"2.2.0\" %}\n{% set sha256 = \"b18aba6d2d78e69a17b3cf1937acc5524e8795af250e29585c920a5443c4af7d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  noarch: python\n  script_env:\n    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools-scm\n    - setuptools\n  run:\n    - cartopy\n    - gdal\n    - h5py\n    - ipyleaflet\n    - ipywidgets\n    - jplephem\n    - lxml\n    - matplotlib-base\n    - mpi4py\n    - netcdf4\n    - numpy\n    - pandas\n    - pyproj\n    - python >={{ python_min }}\n    - python-dateutil\n    - pyyaml\n    - scipy >=1.10.1\n    - setuptools-scm\n    - setuptools\n    - timescale >=0.0.3\n\ntest:\n  imports:\n    - pyTMD\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tsutterley/pyTMD\n  summary: Tide Model Driver to read OTIS, GOT and FES formatted tidal solutions and make tidal predictions\n  license: MIT\n  license_file: LICENSE\n  description: |\n    Python-based tidal prediction software that reads OTIS, GOT and FES formatted\n    tidal solutions for predicting ocean and load tides and can use IERS conventions\n    for calculating radial pole tide displacements\n  doc_url: https://pytmd.readthedocs.io/\n  dev_url: https://github.com/tsutterley/pyTMD\n\nextra:\n  recipe-maintainers:\n    - tsutterley\n    - mrsiegfried\n",
+ "raw_meta_yaml": "{% set name = \"pyTMD\" %}\n{% set version = \"2.2.1\" %}\n{% set sha256 = \"3d1ffd86b3028f3bbf33f640d533aa8cbe0c418080c92021ea5e3936b72aafda\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script_env:\n    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools-scm\n    - setuptools\n  run:\n    - cartopy\n    - gdal\n    - h5py\n    - ipyleaflet\n    - ipywidgets\n    - jplephem\n    - lxml\n    - matplotlib-base\n    - mpi4py\n    - netcdf4\n    - numpy\n    - pandas\n    - pyproj\n    - python >={{ python_min }}\n    - python-dateutil\n    - pyyaml\n    - scipy >=1.10.1\n    - setuptools-scm\n    - setuptools\n    - timescale >=0.0.3\n\ntest:\n  imports:\n    - pyTMD\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/tsutterley/pyTMD\n  summary: Tide Model Driver to read OTIS, GOT and FES formatted tidal solutions and make tidal predictions\n  license: MIT\n  license_file: LICENSE\n  description: |\n    Python-based tidal prediction software that reads OTIS, GOT and FES formatted\n    tidal solutions for predicting ocean and load tides and can use IERS conventions\n    for calculating radial pole tide displacements\n  doc_url: https://pytmd.readthedocs.io/\n  dev_url: https://github.com/tsutterley/pyTMD\n\nextra:\n  recipe-maintainers:\n    - tsutterley\n    - mrsiegfried\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -348,8 +348,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pyTMD/pytmd-2.2.0.tar.gz",
- "version": "2.2.0",
+ "url": "https://pypi.org/packages/source/p/pyTMD/pytmd-2.2.1.tar.gz",
+ "version": "2.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pytmd.json"
  }
