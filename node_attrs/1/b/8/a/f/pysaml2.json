@@ -27,7 +27,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "pysaml2",
-   "version": "7.5.0"
+   "version": "7.5.2"
   },
   "requirements": {
    "host": [
@@ -50,7 +50,7 @@
     "importlib-resources",
     "cryptography >=3.1",
     "defusedxml",
-    "pyopenssl",
+    "pyopenssl <24.3.0",
     "python >=3.9",
     "python-dateutil",
     "pytz",
@@ -63,8 +63,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f36871d4e5ee857c6b85532e942550d2cf90ea4ee943d75eb681044bbc4f54f7",
-   "url": "https://pypi.org/packages/source/p/pysaml2/pysaml2-7.5.0.tar.gz"
+   "sha256": "529fd58107c49a9fd0e98fe545094072262d6533c6acf1124102eab170797de2",
+   "url": "https://pypi.org/packages/source/p/pysaml2/pysaml2-7.5.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -128,7 +128,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -138,7 +138,7 @@
   },
   "package": {
    "name": "pysaml2",
-   "version": "7.5.0"
+   "version": "7.5.2"
   },
   "requirements": {
    "host": [
@@ -151,7 +151,7 @@
     "importlib-resources",
     "cryptography >=3.1",
     "defusedxml",
-    "pyopenssl",
+    "pyopenssl <24.3.0",
     "python >=3.9",
     "python-dateutil",
     "pytz",
@@ -164,8 +164,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f36871d4e5ee857c6b85532e942550d2cf90ea4ee943d75eb681044bbc4f54f7",
-   "url": "https://pypi.org/packages/source/p/pysaml2/pysaml2-7.5.0.tar.gz"
+   "sha256": "529fd58107c49a9fd0e98fe545094072262d6533c6acf1124102eab170797de2",
+   "url": "https://pypi.org/packages/source/p/pysaml2/pysaml2-7.5.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -194,7 +194,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pysaml2.json"
  },
- "raw_meta_yaml": "{% set name = \"pysaml2\" %}\n{% set version = \"7.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pysaml2-{{ version }}.tar.gz\n  sha256: f36871d4e5ee857c6b85532e942550d2cf90ea4ee943d75eb681044bbc4f54f7\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n  run:\n    - importlib-metadata >=1.7.0\n    - importlib-resources\n    - cryptography >=3.1\n    - defusedxml\n    - pyopenssl\n    - python >={{ python_min }}\n    - python-dateutil\n    - pytz\n    - requests >=2.0.0,<3.0.0\n    - six\n    - importlib_resources\n    - xmlschema >=2.0.0,<3.0.0\n    - setuptools\n\ntest:\n  imports:\n    - saml2\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://idpy.org\n  dev_url: https://github.com/IdentityPython/pysaml2\n  summary: Python implementation of SAML Version 2 Standard\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
+ "raw_meta_yaml": "{% set name = \"pysaml2\" %}\n{% set version = \"7.5.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pysaml2-{{ version }}.tar.gz\n  sha256: 529fd58107c49a9fd0e98fe545094072262d6533c6acf1124102eab170797de2\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n  run:\n    - importlib-metadata >=1.7.0\n    - importlib-resources\n    - cryptography >=3.1\n    - defusedxml\n    - pyopenssl <24.3.0\n    - python >={{ python_min }}\n    - python-dateutil\n    - pytz\n    - requests >=2.0.0,<3.0.0\n    - six\n    - importlib_resources\n    - xmlschema >=2.0.0,<3.0.0\n    - setuptools\n\ntest:\n  imports:\n    - saml2\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://idpy.org\n  dev_url: https://github.com/IdentityPython/pysaml2\n  summary: Python implementation of SAML Version 2 Standard\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -276,7 +276,7 @@
     "importlib-metadata >=1.7.0",
     "importlib-resources",
     "importlib_resources",
-    "pyopenssl",
+    "pyopenssl <24.3.0",
     "python >=3.9",
     "python-dateutil",
     "pytz",
@@ -294,8 +294,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pysaml2/pysaml2-7.5.0.tar.gz",
- "version": "7.5.0",
+ "url": "https://pypi.org/packages/source/p/pysaml2/pysaml2-7.5.2.tar.gz",
+ "version": "7.5.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pysaml2.json"
  }
