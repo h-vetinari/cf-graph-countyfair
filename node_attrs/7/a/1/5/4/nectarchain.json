@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "nectarchain",
-   "version": "0.1.9"
+   "version": "0.2.1"
   },
   "requirements": {
    "host": [
@@ -45,7 +45,10 @@
     "python >=3.9",
     "ctapipe =0.19",
     "ctapipe-io-nectarcam",
+    "lmfit",
     "pandas",
+    "pyqt",
+    "pyqtgraph",
     "scipy =1.11.4",
     "zeo",
     "zodb"
@@ -53,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b5e7094adc8177fda84529d228ef54b81d90dc23395de2d4c3f6357377f2e737",
-   "url": "https://pypi.org/packages/source/n/nectarchain/nectarchain-0.1.9.tar.gz"
+   "sha256": "29dec11e47910635834db7883730f33a1a1ecc1e8fd92fe3bf3b5a4052150e98",
+   "url": "https://pypi.org/packages/source/n/nectarchain/nectarchain-0.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -88,7 +91,10 @@
    "elements": [
     "ctapipe",
     "ctapipe-io-nectarcam",
+    "lmfit",
     "pandas",
+    "pyqt",
+    "pyqtgraph",
     "python",
     "scipy",
     "zeo",
@@ -112,7 +118,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -122,7 +128,7 @@
   },
   "package": {
    "name": "nectarchain",
-   "version": "0.1.9"
+   "version": "0.2.1"
   },
   "requirements": {
    "host": [
@@ -135,7 +141,10 @@
     "python >=3.9",
     "ctapipe =0.19",
     "ctapipe-io-nectarcam",
+    "lmfit",
     "pandas",
+    "pyqt",
+    "pyqtgraph",
     "scipy =1.11.4",
     "zeo",
     "zodb"
@@ -143,8 +152,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b5e7094adc8177fda84529d228ef54b81d90dc23395de2d4c3f6357377f2e737",
-   "url": "https://pypi.org/packages/source/n/nectarchain/nectarchain-0.1.9.tar.gz"
+   "sha256": "29dec11e47910635834db7883730f33a1a1ecc1e8fd92fe3bf3b5a4052150e98",
+   "url": "https://pypi.org/packages/source/n/nectarchain/nectarchain-0.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -173,14 +182,17 @@
  "pr_info": {
   "__lazy_json__": "pr_info/nectarchain.json"
  },
- "raw_meta_yaml": "{% set name = \"nectarchain\" %}\n{% set version = \"0.1.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nectarchain-{{ version }}.tar.gz\n  sha256: b5e7094adc8177fda84529d228ef54b81d90dc23395de2d4c3f6357377f2e737\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64.0.3\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - ctapipe =0.19\n    - ctapipe-io-nectarcam\n    - pandas\n    - scipy =1.11.4\n    - zeo\n    - zodb\n\ntest:\n  imports:\n    - nectarchain\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/cta-observatory/nectarchain\n  summary: Analysis chain for the CTA MSTN NectarCAM prototype\n  license: BSD-3-Clause\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - jlenain\n",
+ "raw_meta_yaml": "{% set name = \"nectarchain\" %}\n{% set version = \"0.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nectarchain-{{ version }}.tar.gz\n  sha256: 29dec11e47910635834db7883730f33a1a1ecc1e8fd92fe3bf3b5a4052150e98\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64.0.3\n    - setuptools-scm >=3.4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - ctapipe =0.19\n    - ctapipe-io-nectarcam\n    - lmfit\n    - pandas\n    - pyqt\n    - pyqtgraph\n    - scipy =1.11.4\n    - zeo\n    - zodb\n\ntest:\n  imports:\n    - nectarchain\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/cta-observatory/nectarchain\n  summary: Analysis chain for the CTA MSTN NectarCAM prototype\n  license: BSD-3-Clause\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - jlenain\n",
  "req": {
   "__set__": true,
   "elements": [
    "ctapipe",
    "ctapipe-io-nectarcam",
+   "lmfit",
    "pandas",
    "pip",
+   "pyqt",
+   "pyqtgraph",
    "python",
    "scipy",
    "setuptools",
@@ -208,7 +220,10 @@
    "elements": [
     "ctapipe",
     "ctapipe-io-nectarcam",
+    "lmfit",
     "pandas",
+    "pyqt",
+    "pyqtgraph",
     "python",
     "scipy",
     "zeo",
@@ -243,7 +258,10 @@
    "elements": [
     "ctapipe =0.19",
     "ctapipe-io-nectarcam",
+    "lmfit",
     "pandas",
+    "pyqt",
+    "pyqtgraph",
     "python >=3.9",
     "scipy =1.11.4",
     "zeo",
@@ -258,8 +276,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/n/nectarchain/nectarchain-0.1.9.tar.gz",
- "version": "0.1.9",
+ "url": "https://pypi.org/packages/source/n/nectarchain/nectarchain-0.2.1.tar.gz",
+ "version": "0.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/nectarchain.json"
  }
