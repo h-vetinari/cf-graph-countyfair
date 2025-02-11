@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "kepmodel",
-   "version": "1.0.7"
+   "version": "1.0.8"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "47bf36ca2a0e4fff8f7e932b5aa7822bf8d4a45a5c68333bf03f44cd197d61a4",
-   "url": "https://pypi.org/packages/source/k/kepmodel/kepmodel-1.0.7.tar.gz"
+   "sha256": "1ac4e4beac481630d404283d06fe35e70a9d9f640de111e390f3767910244c04",
+   "url": "https://pypi.org/packages/source/k/kepmodel/kepmodel-1.0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -114,7 +114,7 @@
   },
   "package": {
    "name": "kepmodel",
-   "version": "1.0.7"
+   "version": "1.0.8"
   },
   "requirements": {
    "host": [
@@ -132,8 +132,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "47bf36ca2a0e4fff8f7e932b5aa7822bf8d4a45a5c68333bf03f44cd197d61a4",
-   "url": "https://pypi.org/packages/source/k/kepmodel/kepmodel-1.0.7.tar.gz"
+   "sha256": "1ac4e4beac481630d404283d06fe35e70a9d9f640de111e390f3767910244c04",
+   "url": "https://pypi.org/packages/source/k/kepmodel/kepmodel-1.0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/kepmodel.json"
  },
- "raw_meta_yaml": "{% set name = \"kepmodel\" %}\n{% set version = \"1.0.7\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kepmodel-{{ version }}.tar.gz\n  sha256: 47bf36ca2a0e4fff8f7e932b5aa7822bf8d4a45a5c68333bf03f44cd197d61a4\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.8\n    - setuptools >=61.0\n  run:\n    - kepderiv >=1.0\n    - numpy >=1.16\n    - python >=3.8\n    - scipy >=1.2\n    - spleaf >=2.0\n\ntest:\n  imports:\n    - kepmodel\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.unige.ch/delisle/kepmodel\n  summary: Keplerian system model.\n  license: EUPL-1.2\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jbdelisle\n",
+ "raw_meta_yaml": "{% set name = \"kepmodel\" %}\n{% set version = \"1.0.8\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kepmodel-{{ version }}.tar.gz\n  sha256: 1ac4e4beac481630d404283d06fe35e70a9d9f640de111e390f3767910244c04\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.8\n    - setuptools >=61.0\n  run:\n    - kepderiv >=1.0\n    - numpy >=1.16\n    - python >=3.8\n    - scipy >=1.2\n    - spleaf >=2.0\n\ntest:\n  imports:\n    - kepmodel\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.unige.ch/delisle/kepmodel\n  summary: Keplerian system model.\n  license: EUPL-1.2\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jbdelisle\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -235,8 +235,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/k/kepmodel/kepmodel-1.0.7.tar.gz",
- "version": "1.0.7",
+ "url": "https://pypi.org/packages/source/k/kepmodel/kepmodel-1.0.8.tar.gz",
+ "version": "1.0.8",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/kepmodel.json"
  }
