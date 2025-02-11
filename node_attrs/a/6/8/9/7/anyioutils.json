@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "anyioutils",
-   "version": "0.5.0"
+   "version": "0.6.2"
   },
   "requirements": {
    "host": [
@@ -44,13 +44,14 @@
    ],
    "run": [
     "python >=3.9",
-    "anyio"
+    "anyio >=4.8.0,<5.0.0",
+    "exceptiongroup"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "69800442408763121e35d5466df09bf2e397e65499e57f333cd6ca5a9051355f",
-   "url": "https://pypi.org/packages/source/a/anyioutils/anyioutils-0.5.0.tar.gz"
+   "sha256": "f370137137884aeb19def8ca2af162d814ef193c746ce7cbd0677ed8d38f2364",
+   "url": "https://pypi.org/packages/source/a/anyioutils/anyioutils-0.6.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -82,6 +83,7 @@
    "__set__": true,
    "elements": [
     "anyio",
+    "exceptiongroup",
     "python"
    ]
   },
@@ -114,7 +116,7 @@
   },
   "package": {
    "name": "anyioutils",
-   "version": "0.5.0"
+   "version": "0.6.2"
   },
   "requirements": {
    "host": [
@@ -124,13 +126,14 @@
    ],
    "run": [
     "python >=3.9",
-    "anyio"
+    "anyio >=4.8.0,<5.0.0",
+    "exceptiongroup"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "69800442408763121e35d5466df09bf2e397e65499e57f333cd6ca5a9051355f",
-   "url": "https://pypi.org/packages/source/a/anyioutils/anyioutils-0.5.0.tar.gz"
+   "sha256": "f370137137884aeb19def8ca2af162d814ef193c746ce7cbd0677ed8d38f2364",
+   "url": "https://pypi.org/packages/source/a/anyioutils/anyioutils-0.6.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,11 +162,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/anyioutils.json"
  },
- "raw_meta_yaml": "{% set name = \"anyioutils\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 69800442408763121e35d5466df09bf2e397e65499e57f333cd6ca5a9051355f\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - hatchling\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - anyio\n\ntest:\n  imports:\n    - anyioutils\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/davidbrochart/anyioutils\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Utility classes and functions for AnyIO\n  dev_url: https://github.com/davidbrochart/anyioutils\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
+ "raw_meta_yaml": "{% set name = \"anyioutils\" %}\n{% set version = \"0.6.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f370137137884aeb19def8ca2af162d814ef193c746ce7cbd0677ed8d38f2364\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - hatchling\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - anyio >=4.8.0,<5.0.0\n    - exceptiongroup\n\ntest:\n  imports:\n    - anyioutils\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/davidbrochart/anyioutils\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Utility classes and functions for AnyIO\n  dev_url: https://github.com/davidbrochart/anyioutils\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
  "req": {
   "__set__": true,
   "elements": [
    "anyio",
+   "exceptiongroup",
    "hatchling",
    "pip",
    "python"
@@ -186,6 +190,7 @@
    "__set__": true,
    "elements": [
     "anyio",
+    "exceptiongroup",
     "python"
    ]
   },
@@ -214,7 +219,8 @@
   "run": {
    "__set__": true,
    "elements": [
-    "anyio",
+    "anyio >=4.8.0,<5.0.0",
+    "exceptiongroup",
     "python >=3.9"
    ]
   },
@@ -226,8 +232,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/anyioutils/anyioutils-0.5.0.tar.gz",
- "version": "0.5.0",
+ "url": "https://pypi.org/packages/source/a/anyioutils/anyioutils-0.6.2.tar.gz",
+ "version": "0.6.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/anyioutils.json"
  }
