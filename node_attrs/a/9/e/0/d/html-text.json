@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "inspection": "hint-all"
+  },
   "conda_build": {
    "error_overlinking": true
   },
@@ -22,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -32,7 +35,7 @@
   },
   "package": {
    "name": "html-text",
-   "version": "0.6.2"
+   "version": "0.7.0"
   },
   "requirements": {
    "host": [
@@ -48,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "81455b4de5430cf63ce7c45a870fb8629e79ca8518e240f172d62409c2f2ff72",
-   "url": "https://pypi.org/packages/source/h/html-text/html_text-0.6.2.tar.gz"
+   "sha256": "3dcb7006945d8ff06b4be639678f633a06ea70bc494163d256066995e1eb9182",
+   "url": "https://pypi.org/packages/source/h/html-text/html_text-0.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -102,7 +105,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -112,7 +115,7 @@
   },
   "package": {
    "name": "html-text",
-   "version": "0.6.2"
+   "version": "0.7.0"
   },
   "requirements": {
    "host": [
@@ -128,8 +131,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "81455b4de5430cf63ce7c45a870fb8629e79ca8518e240f172d62409c2f2ff72",
-   "url": "https://pypi.org/packages/source/h/html-text/html_text-0.6.2.tar.gz"
+   "sha256": "3dcb7006945d8ff06b4be639678f633a06ea70bc494163d256066995e1eb9182",
+   "url": "https://pypi.org/packages/source/h/html-text/html_text-0.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -158,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/html-text.json"
  },
- "raw_meta_yaml": "{% set name = \"html-text\" %}\n{% set version = \"0.6.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/html_text-{{ version }}.tar.gz\n  sha256: 81455b4de5430cf63ce7c45a870fb8629e79ca8518e240f172d62409c2f2ff72\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - lxml\n    - lxml-html-clean\n\ntest:\n  imports:\n    - html_text\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zytedata/html-text\n  summary: Extract text from HTML\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"html-text\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/html_text-{{ version }}.tar.gz\n  sha256: 3dcb7006945d8ff06b4be639678f633a06ea70bc494163d256066995e1eb9182\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - lxml\n    - lxml-html-clean\n\ntest:\n  imports:\n    - html_text\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zytedata/html-text\n  summary: Extract text from HTML\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -228,8 +231,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/h/html-text/html_text-0.6.2.tar.gz",
- "version": "0.6.2",
+ "url": "https://pypi.org/packages/source/h/html-text/html_text-0.7.0.tar.gz",
+ "version": "0.7.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/html-text.json"
  }
