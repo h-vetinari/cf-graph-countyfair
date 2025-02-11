@@ -31,7 +31,7 @@
     "serve=sagemaker_pytorch_serving_container.serving:main"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -49,16 +49,17 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=2.7,<3.7"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
-    "python >=2.7,<3.7",
+    "python >=3.9",
     "numpy >=1.16.4",
     "pillow >=6.2.0",
     "retrying >=1.3.3",
     "sagemaker_containers",
     "six >=1.12.0",
-    "pytorch-cpu",
+    "pytorch",
     "requests-mock >=1.6.0",
     "sagemaker-inference-toolkit"
    ]
@@ -71,6 +72,9 @@
   "test": {
    "imports": [
     "sagemaker_pytorch_serving_container"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -83,7 +87,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -92,7 +97,7 @@
     "numpy",
     "pillow",
     "python",
-    "pytorch-cpu",
+    "pytorch",
     "requests-mock",
     "retrying",
     "sagemaker-inference-toolkit",
@@ -102,7 +107,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -120,7 +127,7 @@
     "serve=sagemaker_pytorch_serving_container.serving:main"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -138,16 +145,17 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=2.7,<3.7"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
-    "python >=2.7,<3.7",
+    "python >=3.9",
     "numpy >=1.16.4",
     "pillow >=6.2.0",
     "retrying >=1.3.3",
     "sagemaker_containers",
     "six >=1.12.0",
-    "pytorch-cpu",
+    "pytorch",
     "requests-mock >=1.6.0",
     "sagemaker-inference-toolkit"
    ]
@@ -160,6 +168,9 @@
   "test": {
    "imports": [
     "sagemaker_pytorch_serving_container"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -177,7 +188,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sagemaker-pytorch-serving-container.json"
  },
- "raw_meta_yaml": "{% set name = \"sagemaker-pytorch-serving-container\" %}\n{% set version = \"2.0.25\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/aws/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 0a6eb94e3b2989461ee2e5e55ece411a14979d25651594c48fb708d66dc527fb\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - serve=sagemaker_pytorch_serving_container.serving:main\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=2.7,<3.7\n  run:\n    - python >=2.7,<3.7\n    - numpy >=1.16.4\n    - pillow >=6.2.0\n    - retrying >=1.3.3\n    - sagemaker_containers\n    - six >=1.12.0\n    - pytorch-cpu\n    - requests-mock >=1.6.0\n    - sagemaker-inference-toolkit\ntest:\n  imports:\n    - sagemaker_pytorch_serving_container\n\nabout:\n  home: https://github.com/aws/sagemaker-pytorch-serving-container/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Open source library for creating PyTorch containers to run on Amazon SageMaker.\n  doc_url: https://sagemaker.readthedocs.io/en/stable/using_pytorch.html\n  dev_url: https://github.com/aws/sagemaker-pytorch-serving-container/\n\nextra:\n  recipe-maintainers:\n    - mxr-conda\n    - rluria14\n    - benhuff\n    - oblute\n",
+ "raw_meta_yaml": "{% set name = \"sagemaker-pytorch-serving-container\" %}\n{% set version = \"2.0.25\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/aws/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 0a6eb94e3b2989461ee2e5e55ece411a14979d25651594c48fb708d66dc527fb\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - serve=sagemaker_pytorch_serving_container.serving:main\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.16.4\n    - pillow >=6.2.0\n    - retrying >=1.3.3\n    - sagemaker_containers\n    - six >=1.12.0\n    - pytorch\n    - requests-mock >=1.6.0\n    - sagemaker-inference-toolkit\ntest:\n  imports:\n    - sagemaker_pytorch_serving_container\n  requires:\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/aws/sagemaker-pytorch-serving-container/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Open source library for creating PyTorch containers to run on Amazon SageMaker.\n  doc_url: https://sagemaker.readthedocs.io/en/stable/using_pytorch.html\n  dev_url: https://github.com/aws/sagemaker-pytorch-serving-container/\n\nextra:\n  recipe-maintainers:\n    - mxr-conda\n    - rluria14\n    - benhuff\n    - oblute\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -185,11 +196,12 @@
    "pillow",
    "pip",
    "python",
-   "pytorch-cpu",
+   "pytorch",
    "requests-mock",
    "retrying",
    "sagemaker-inference-toolkit",
    "sagemaker_containers",
+   "setuptools",
    "six"
   ]
  },
@@ -202,7 +214,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -211,7 +224,7 @@
     "numpy",
     "pillow",
     "python",
-    "pytorch-cpu",
+    "pytorch",
     "requests-mock",
     "retrying",
     "sagemaker-inference-toolkit",
@@ -221,7 +234,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -234,7 +249,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=2.7,<3.7"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -242,8 +258,8 @@
    "elements": [
     "numpy >=1.16.4",
     "pillow >=6.2.0",
-    "python >=2.7,<3.7",
-    "pytorch-cpu",
+    "python >=3.9",
+    "pytorch",
     "requests-mock >=1.6.0",
     "retrying >=1.3.3",
     "sagemaker-inference-toolkit",
@@ -253,7 +269,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
  "url": "https://github.com/aws/sagemaker-pytorch-serving-container/archive/v2.0.25.tar.gz",
