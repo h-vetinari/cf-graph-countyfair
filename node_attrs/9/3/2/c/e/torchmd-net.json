@@ -16,7 +16,8 @@
    "automerge": true
   },
   "build_platform": {
-   "linux_aarch64": "linux_aarch64"
+   "linux_aarch64": "linux_aarch64",
+   "osx_arm64": "osx_64"
   },
   "conda_build": {
    "error_overlinking": true
@@ -48,12 +49,12 @@
     "torchmd-train = torchmdnet.scripts.train:main"
    ],
    "missing_dso_whitelist": null,
-   "number": "1",
+   "number": "2",
    "rpaths": [
     "lib/",
     "SP_DIR/torch/lib"
    ],
-   "string": "cuda118py39h1234567_1"
+   "string": "cpu_py39h1234567_2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -72,10 +73,9 @@
    "build": [
     "cxx_compiler_stub",
     "c_stdlib_stub",
-    "pytorch =*=cpu*",
     "cuda_compiler_stub",
+    "cuda-version 11.8",
     "cuda-version 12.6",
-    "pytorch =*=cuda*",
     "cuda-cudart-dev",
     "cuda-driver-dev",
     "libcufft-dev",
@@ -83,18 +83,17 @@
     "libcublas-dev",
     "cuda-nvrtc-dev",
     "libcusparse-dev",
-    "libcusolver-dev",
-    "cuda-version 11.8"
+    "libcusolver-dev"
    ],
    "host": [
     "python",
     "setuptools",
     "pip",
-    "pytorch =*=cpu*",
     "pytorch =*=cuda*",
+    "cuda-version 11.8",
     "cuda-version 12.6",
     "cuda-cudart-dev",
-    "cuda-version 11.8"
+    "pytorch =*=cpu*"
    ],
    "run": [
     "python",
@@ -106,8 +105,8 @@
     "cuda-cudart"
    ],
    "run_constrained": [
-    "pytorch =*=cpu*",
-    "pytorch =*=cuda*"
+    "pytorch =*=cuda*",
+    "pytorch =*=cpu*"
    ]
   },
   "schema_version": 0,
@@ -151,8 +150,7 @@
     "libcufft-dev",
     "libcurand-dev",
     "libcusolver-dev",
-    "libcusparse-dev",
-    "pytorch"
+    "libcusparse-dev"
    ]
   },
   "host": {
@@ -202,12 +200,12 @@
     "torchmd-train = torchmdnet.scripts.train:main"
    ],
    "missing_dso_whitelist": null,
-   "number": "1",
+   "number": "2",
    "rpaths": [
     "lib/",
     "SP_DIR/torch/lib"
    ],
-   "string": "cuda126py39h1234567_1"
+   "string": "cpu_py39h1234567_2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -226,10 +224,8 @@
    "build": [
     "cxx_compiler_stub",
     "c_stdlib_stub",
-    "pytorch =*=cpu*",
     "cuda_compiler_stub",
     "cuda-version 12.6",
-    "pytorch =*=cuda*",
     "cuda-cudart-dev",
     "cuda-driver-dev",
     "libcufft-dev",
@@ -243,10 +239,10 @@
     "python",
     "setuptools",
     "pip",
-    "pytorch =*=cpu*",
     "pytorch =*=cuda*",
     "cuda-version 12.6",
-    "cuda-cudart-dev"
+    "cuda-cudart-dev",
+    "pytorch =*=cpu*"
    ],
    "run": [
     "python",
@@ -258,8 +254,8 @@
     "cuda-cudart"
    ],
    "run_constrained": [
-    "pytorch =*=cpu*",
-    "pytorch =*=cuda*"
+    "pytorch =*=cuda*",
+    "pytorch =*=cpu*"
    ]
   },
   "schema_version": 0,
@@ -303,8 +299,7 @@
     "libcufft-dev",
     "libcurand-dev",
     "libcusolver-dev",
-    "libcusparse-dev",
-    "pytorch"
+    "libcusparse-dev"
    ]
   },
   "host": {
@@ -358,12 +353,12 @@
     "*/torch_cpu.dll",
     "*/c10_cuda.dll"
    ],
-   "number": "1",
+   "number": "2",
    "rpaths": [
     "lib/",
     "SP_DIR/torch/lib"
    ],
-   "string": "cpu_py39h1234567_1"
+   "string": "cuda126py39h1234567_2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -382,10 +377,9 @@
    "build": [
     "cxx_compiler_stub",
     "c_stdlib_stub",
-    "pytorch =*=cpu*",
     "cuda_compiler_stub",
+    "cuda-version 11.8",
     "cuda-version 12.6",
-    "pytorch =*=cuda*",
     "cuda-cudart-dev",
     "cuda-driver-dev",
     "libcufft-dev",
@@ -394,17 +388,18 @@
     "cuda-nvrtc-dev",
     "libcusparse-dev",
     "libcusolver-dev",
-    "cuda-version 11.8"
+    "pytorch =*=cpu*",
+    "pytorch =*=cuda*"
    ],
    "host": [
     "python",
     "setuptools",
     "pip",
-    "pytorch =*=cpu*",
     "pytorch =*=cuda*",
+    "cuda-version 11.8",
     "cuda-version 12.6",
     "cuda-cudart-dev",
-    "cuda-version 11.8"
+    "pytorch =*=cpu*"
    ],
    "run": [
     "python",
@@ -416,8 +411,8 @@
     "cuda-cudart"
    ],
    "run_constrained": [
-    "pytorch =*=cpu*",
-    "pytorch =*=cuda*"
+    "pytorch =*=cuda*",
+    "pytorch =*=cpu*"
    ]
   },
   "schema_version": 0,
@@ -463,12 +458,12 @@
     "torchmd-train = torchmdnet.scripts.train:main"
    ],
    "missing_dso_whitelist": null,
-   "number": "1",
+   "number": "2",
    "rpaths": [
     "lib/",
     "SP_DIR/torch/lib"
    ],
-   "string": "cpu_py39h1234567_1"
+   "string": "cpu_py39h1234567_2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -486,8 +481,7 @@
   "requirements": {
    "build": [
     "cxx_compiler_stub",
-    "c_stdlib_stub",
-    "pytorch =*=cpu*"
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
@@ -538,8 +532,128 @@
    "__set__": true,
    "elements": [
     "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "pytorch",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "h5py",
+    "lightning",
+    "python",
+    "pytorch_geometric",
+    "torchmetrics",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "clang",
+    "pip",
+    "pytest"
+   ]
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "TorchMD-NET provides state-of-the-art neural networks potentials (NNPs) and a mechanism to train them. It offers efficient and fast implementations of several NNPs and it is integrated in GPU-accelerated molecular dynamics code like ACEMD, OpenMM and TorchMD. TorchMD-NET exposes its NNPs as PyTorch modules.\n",
+   "dev_url": "https://github.com/torchmd/torchmd-net",
+   "doc_url": "https://github.com/torchmd/torchmd-net",
+   "home": "https://github.com/torchmd/torchmd-net",
+   "license": "MIT",
+   "license_file": "README.md",
+   "summary": "State of the art Pytorch Neural Network Potentials (NNPs)"
+  },
+  "build": {
+   "entry_points": [
+    "torchmd-train = torchmdnet.scripts.train:main"
+   ],
+   "missing_dso_whitelist": null,
+   "number": "2",
+   "rpaths": [
+    "lib/",
+    "SP_DIR/torch/lib"
+   ],
+   "string": "cpu_py39h1234567_2"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "sef43",
+    "stefdoerr",
+    "RaulPPelaez",
+    "raimis",
+    "giadefa"
+   ]
+  },
+  "package": {
+   "name": "torchmd-net",
+   "version": "2.4.6"
+  },
+  "requirements": {
+   "build": [
     "cxx_compiler_stub",
-    "pytorch"
+    "c_stdlib_stub"
+   ],
+   "host": [
+    "python",
+    "setuptools",
+    "pip",
+    "pytorch =*=cpu*"
+   ],
+   "run": [
+    "python",
+    "h5py",
+    "pytorch_geometric",
+    "lightning",
+    "torchmetrics",
+    "tqdm"
+   ],
+   "run_constrained": [
+    "pytorch =*=cpu*"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "8bcd2474e08c5bc85fd6bde0f2b1ecea60a34be45d06b9df321d1408ad5a4aad",
+   "url": "https://github.com/torchmd/torchmd-net/archive/2.4.6.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "torchmd-train --help",
+    "pytest -v -s tests/test_model_utils.py",
+    "pytest -v -s tests/test_module.py -k \"test_dummy_train\""
+   ],
+   "imports": [
+    "torchmdnet"
+   ],
+   "requires": [
+    "pip",
+    "pytest",
+    "clang"
+   ],
+   "source_files": [
+    "tests",
+    "examples"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
    ]
   },
   "host": {
@@ -582,12 +696,13 @@
   "linux_64",
   "linux_aarch64",
   "osx_64",
+  "osx_arm64",
   "win_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/torchmd-net.json"
  },
- "raw_meta_yaml": "{% set version = \"2.4.6\" %}\n# see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion\n{% set torch_proc_type = \"cuda\" if cuda_compiler_version != \"None\" else \"cpu\" %}\n\npackage:\n  name: torchmd-net\n  version: {{ version }}\n\nsource:\n  url: https://github.com/torchmd/torchmd-net/archive/{{ version }}.tar.gz\n  sha256: 8bcd2474e08c5bc85fd6bde0f2b1ecea60a34be45d06b9df321d1408ad5a4aad\n\nbuild:\n  # Currently there is no pytorch 2.5.1 for Windows and CUDA 11.8. Only 12+. Same for aarch64.\n  skip: true  # [(win or aarch64) and (cuda_compiler_version == '11.8')]\n  entry_points:\n    - torchmd-train = torchmdnet.scripts.train:main\n  number: 1\n  string: cuda{{ cuda_compiler_version | replace('.', '') }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != \"None\"]\n  string: cpu_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version == \"None\"]\n  rpaths:\n    - lib/\n    - {{ SP_DIR }}/torch/lib\n  missing_dso_whitelist:\n    - \"*/c10.dll\"         # [win]\n    - \"*/torch_cpu.dll\"   # [win]\n    - \"*/c10_cuda.dll\"    # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cuda') }}                    # [cuda_compiler_version not in (undefined, 'None')]\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version not in (undefined, 'None')]\n    - python                                    # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}        # [build_platform != target_platform]\n    - pytorch =*={{ torch_proc_type }}*\n    - cuda-cudart-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cuda-driver-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\") and linux]\n    - libcufft-dev                              # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcurand-dev                             # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcublas-dev                             # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cuda-nvrtc-dev                            # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcusparse-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcusolver-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  host:\n    - python\n    - setuptools\n    - pip\n    - pytorch =*={{ torch_proc_type }}*\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version not in (undefined, 'None')]\n    - cuda-cudart-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run:\n    - python\n    - h5py\n    - pytorch_geometric\n    - lightning\n    - torchmetrics\n    - tqdm\n    - cuda-cudart                               # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run_constrained:\n    - pytorch =*={{ torch_proc_type }}*\n\ntest:\n  imports:\n    - torchmdnet\n  commands:\n    - pip check\n    - torchmd-train --help\n    - pytest -v -s tests/test_model_utils.py\n    - pytest -v -s tests/test_module.py -k \"test_dummy_train\"\n  requires:\n    - pip\n    - pytest\n    # Needed by pytorch for the compile functionality\n    - gxx  # [linux]\n    - clang  # [osx]\n  source_files:\n    - tests\n    - examples\n\nabout:\n  home: https://github.com/torchmd/torchmd-net\n  license: MIT\n  license_file: README.md\n  summary: 'State of the art Pytorch Neural Network Potentials (NNPs)'\n  description: |\n    TorchMD-NET provides state-of-the-art neural networks potentials (NNPs) and a mechanism to train them. It offers efficient and fast implementations of several NNPs and it is integrated in GPU-accelerated molecular dynamics code like ACEMD, OpenMM and TorchMD. TorchMD-NET exposes its NNPs as PyTorch modules.\n  doc_url: https://github.com/torchmd/torchmd-net\n  dev_url: https://github.com/torchmd/torchmd-net\n\nextra:\n  recipe-maintainers:\n    - sef43\n    - stefdoerr\n    - RaulPPelaez\n    - raimis\n    - giadefa\n",
+ "raw_meta_yaml": "{% set version = \"2.4.6\" %}\n# see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion\n{% set torch_proc_type = \"cuda\" if cuda_compiler_version != \"None\" else \"cpu\" %}\n\npackage:\n  name: torchmd-net\n  version: {{ version }}\n\nsource:\n  url: https://github.com/torchmd/torchmd-net/archive/{{ version }}.tar.gz\n  sha256: 8bcd2474e08c5bc85fd6bde0f2b1ecea60a34be45d06b9df321d1408ad5a4aad\n\nbuild:\n  # Currently there is no pytorch 2.5.1 for Windows and CUDA 11.8. Only 12+. Same for aarch64.\n  skip: true  # [(win or aarch64) and (cuda_compiler_version == '11.8')]\n  entry_points:\n    - torchmd-train = torchmdnet.scripts.train:main\n  number: 2\n  string: cuda{{ cuda_compiler_version | replace('.', '') }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != \"None\"]\n  string: cpu_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version == \"None\"]\n  rpaths:\n    - lib/\n    - {{ SP_DIR }}/torch/lib\n  missing_dso_whitelist:\n    - \"*/c10.dll\"         # [win]\n    - \"*/torch_cpu.dll\"   # [win]\n    - \"*/c10_cuda.dll\"    # [win]\n\nrequirements:\n  build:\n    - python                                    # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}        # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cuda') }}                    # [cuda_compiler_version not in (undefined, 'None')]\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version not in (undefined, 'None')]\n    - pytorch                                   # [build_platform != target_platform]\n    - pytorch =*={{ torch_proc_type }}*         # [(build_platform != target_platform) or win]\n    - cuda-cudart-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cuda-driver-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\") and linux]\n    - libcufft-dev                              # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcurand-dev                             # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcublas-dev                             # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cuda-nvrtc-dev                            # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcusparse-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcusolver-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  host:\n    - python\n    - setuptools\n    - pip\n    - pytorch =*={{ torch_proc_type }}*\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version not in (undefined, 'None')]\n    - cuda-cudart-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run:\n    - python\n    - h5py\n    - pytorch_geometric\n    - lightning\n    - torchmetrics\n    - tqdm\n    - cuda-cudart                               # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run_constrained:\n    - pytorch =*={{ torch_proc_type }}*\n\ntest:\n  imports:\n    - torchmdnet\n  commands:\n    - pip check\n    - torchmd-train --help\n    - pytest -v -s tests/test_model_utils.py\n    - pytest -v -s tests/test_module.py -k \"test_dummy_train\"\n  requires:\n    - pip\n    - pytest\n    # Needed by pytorch for the compile functionality\n    - gxx  # [linux]\n    - clang  # [osx]\n  source_files:\n    - tests\n    - examples\n\nabout:\n  home: https://github.com/torchmd/torchmd-net\n  license: MIT\n  license_file: README.md\n  summary: 'State of the art Pytorch Neural Network Potentials (NNPs)'\n  description: |\n    TorchMD-NET provides state-of-the-art neural networks potentials (NNPs) and a mechanism to train them. It offers efficient and fast implementations of several NNPs and it is integrated in GPU-accelerated molecular dynamics code like ACEMD, OpenMM and TorchMD. TorchMD-NET exposes its NNPs as PyTorch modules.\n  doc_url: https://github.com/torchmd/torchmd-net\n  dev_url: https://github.com/torchmd/torchmd-net\n\nextra:\n  recipe-maintainers:\n    - sef43\n    - stefdoerr\n    - RaulPPelaez\n    - raimis\n    - giadefa\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -756,12 +871,12 @@
     "*/torch_cpu.dll",
     "*/c10_cuda.dll"
    ],
-   "number": "1",
+   "number": "2",
    "rpaths": [
     "lib/",
     "SP_DIR/torch/lib"
    ],
-   "string": "cpu_py39h1234567_1"
+   "string": "cuda126py39h1234567_2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -780,6 +895,7 @@
    "build": [
     "cxx_compiler_stub",
     "c_stdlib_stub",
+    "pytorch =*=cpu*",
     "cuda_compiler_stub",
     "cuda-version 12.6",
     "pytorch =*=cuda*",
@@ -789,17 +905,16 @@
     "libcublas-dev",
     "cuda-nvrtc-dev",
     "libcusparse-dev",
-    "libcusolver-dev",
-    "pytorch =*=cpu*"
+    "libcusolver-dev"
    ],
    "host": [
     "python",
     "setuptools",
     "pip",
+    "pytorch =*=cpu*",
     "pytorch =*=cuda*",
     "cuda-version 12.6",
-    "cuda-cudart-dev",
-    "pytorch =*=cpu*"
+    "cuda-cudart-dev"
    ],
    "run": [
     "python",
@@ -811,8 +926,8 @@
     "cuda-cudart"
    ],
    "run_constrained": [
-    "pytorch =*=cuda*",
-    "pytorch =*=cpu*"
+    "pytorch =*=cpu*",
+    "pytorch =*=cuda*"
    ]
   },
   "schema_version": 0,
