@@ -35,12 +35,12 @@
   },
   "package": {
    "name": "django-select2",
-   "version": "8.2.3"
+   "version": "8.3.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.10",
     "setuptools",
     "setuptools_scm",
     "flit >=3.2",
@@ -50,22 +50,22 @@
     "django-appconf >=0.6.0"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10",
     "django >=3.2",
     "django-appconf >=0.6.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1de547c89ee2f005f1d461f76db89b440897939fcea894db8ba756b6f1ad36c1",
-   "url": "https://pypi.org/packages/source/d/django-select2/django_select2-8.2.3.tar.gz"
+   "sha256": "9975a74f13f20468d07deae027672045f58e0d6d1983c305805ba40b16a0f0ec",
+   "url": "https://pypi.org/packages/source/d/django-select2/django_select2-8.3.0.tar.gz"
   },
   "test": {
    "imports": [
     "django_select2"
    ],
    "requires": [
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -125,12 +125,12 @@
   },
   "package": {
    "name": "django-select2",
-   "version": "8.2.3"
+   "version": "8.3.0"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.10",
     "setuptools",
     "setuptools_scm",
     "flit >=3.2",
@@ -140,22 +140,22 @@
     "django-appconf >=0.6.0"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10",
     "django >=3.2",
     "django-appconf >=0.6.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1de547c89ee2f005f1d461f76db89b440897939fcea894db8ba756b6f1ad36c1",
-   "url": "https://pypi.org/packages/source/d/django-select2/django_select2-8.2.3.tar.gz"
+   "sha256": "9975a74f13f20468d07deae027672045f58e0d6d1983c305805ba40b16a0f0ec",
+   "url": "https://pypi.org/packages/source/d/django-select2/django_select2-8.3.0.tar.gz"
   },
   "test": {
    "imports": [
     "django_select2"
    ],
    "requires": [
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -173,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/django-select2.json"
  },
- "raw_meta_yaml": "{% set name = \"django-select2\" %}\n{% set version = \"8.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 1de547c89ee2f005f1d461f76db89b440897939fcea894db8ba756b6f1ad36c1\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - setuptools_scm\n    - flit >=3.2\n    - flit-scm\n    - wheel\n    - django >=3.2\n    - django-appconf >=0.6.0\n  run:\n    - python >={{ python_min }}\n    - django >=3.2\n    - django-appconf >=0.6.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - django_select2\n\nabout:\n  home: https://pypi.org/project/django-select2/\n  summary: django-select2, select2 driven Django Widgets.\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/codingjoe/django-select2\n  doc_url: https://django-select2.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - swainn\n    - gagelarsen\n",
+ "raw_meta_yaml": "{% set name = \"django-select2\" %}\n{% set version = \"8.3.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 9975a74f13f20468d07deae027672045f58e0d6d1983c305805ba40b16a0f0ec\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - setuptools_scm\n    - flit >=3.2\n    - flit-scm\n    - wheel\n    - django >=3.2\n    - django-appconf >=0.6.0\n  run:\n    - python >={{ python_min }}\n    - django >=3.2\n    - django-appconf >=0.6.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - django_select2\n\nabout:\n  home: https://pypi.org/project/django-select2/\n  summary: django-select2, select2 driven Django Widgets.\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/codingjoe/django-select2\n  doc_url: https://django-select2.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - swainn\n    - gagelarsen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -236,7 +236,7 @@
     "flit >=3.2",
     "flit-scm",
     "pip",
-    "python 3.9",
+    "python 3.10",
     "setuptools",
     "setuptools_scm",
     "wheel"
@@ -247,18 +247,18 @@
    "elements": [
     "django >=3.2",
     "django-appconf >=0.6.0",
-    "python >=3.9"
+    "python >=3.10"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/django-select2/django_select2-8.2.3.tar.gz",
- "version": "8.2.3",
+ "url": "https://pypi.org/packages/source/d/django-select2/django_select2-8.3.0.tar.gz",
+ "version": "8.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/django-select2.json"
  }
