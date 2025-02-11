@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "kedro-boot",
-   "version": "0.2.3"
+   "version": "0.2.4"
   },
   "requirements": {
    "host": [
@@ -46,13 +46,13 @@
    ],
    "run": [
     "python >=3.9",
-    "kedro >=0.19.1,<0.20.0"
+    "kedro >=0.19.1,<0.20"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "80c27c65a9c89162028a9d4bb4711e538b9f897a5e38adfbdfaef0464acfc2e7",
-   "url": "https://github.com/takikadiri/kedro-boot/archive/0.2.3.tar.gz"
+   "sha256": "4a4d7be924af6dab8530e30afe283aa65dc2f3b89c08734f40271218c35d0526",
+   "url": "https://github.com/takikadiri/kedro-boot/archive/0.2.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -114,7 +114,7 @@
   },
   "package": {
    "name": "kedro-boot",
-   "version": "0.2.3"
+   "version": "0.2.4"
   },
   "requirements": {
    "host": [
@@ -124,13 +124,13 @@
    ],
    "run": [
     "python >=3.9",
-    "kedro >=0.19.1,<0.20.0"
+    "kedro >=0.19.1,<0.20"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "80c27c65a9c89162028a9d4bb4711e538b9f897a5e38adfbdfaef0464acfc2e7",
-   "url": "https://github.com/takikadiri/kedro-boot/archive/0.2.3.tar.gz"
+   "sha256": "4a4d7be924af6dab8530e30afe283aa65dc2f3b89c08734f40271218c35d0526",
+   "url": "https://github.com/takikadiri/kedro-boot/archive/0.2.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,7 +159,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/kedro-boot.json"
  },
- "raw_meta_yaml": "{% set name = \"kedro-boot\" %}\n{% set version = \"0.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/takikadiri/kedro-boot/archive/{{ version }}.tar.gz\n  sha256: 80c27c65a9c89162028a9d4bb4711e538b9f897a5e38adfbdfaef0464acfc2e7\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - kedro >=0.19.1,<0.20.0\n\ntest:\n  imports:\n    - kedro_boot\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/takikadiri/kedro-boot\n  summary: A kedro plugin that streamlines the integration between Kedro projects and external applications, making it easier for you to develop production-ready data science applications.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
+ "raw_meta_yaml": "{% set name = \"kedro-boot\" %}\n{% set version = \"0.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/takikadiri/kedro-boot/archive/{{ version }}.tar.gz\n  sha256: 4a4d7be924af6dab8530e30afe283aa65dc2f3b89c08734f40271218c35d0526\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - kedro >=0.19.1,<0.20\n\ntest:\n  imports:\n    - kedro_boot\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/takikadiri/kedro-boot\n  summary: A kedro plugin that streamlines the integration between Kedro projects and external applications, making it easier for you to develop production-ready data science applications.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -214,7 +214,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "kedro >=0.19.1,<0.20.0",
+    "kedro >=0.19.1,<0.20",
     "python >=3.9"
    ]
   },
@@ -226,8 +226,8 @@
    ]
   }
  },
- "url": "https://github.com/takikadiri/kedro-boot/archive/0.2.3.tar.gz",
- "version": "0.2.3",
+ "url": "https://github.com/takikadiri/kedro-boot/archive/0.2.4.tar.gz",
+ "version": "0.2.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/kedro-boot.json"
  }
