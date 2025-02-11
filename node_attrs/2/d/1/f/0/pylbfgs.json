@@ -24,7 +24,7 @@
    "summary": "LBFGS and OWL-QN optimization algorithms"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,23 +38,24 @@
   },
   "requirements": {
    "build": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
     "pip",
+    "setuptools",
     "cython <3",
     "numpy"
    ],
    "run": [
-    "python",
-    "numpy"
+    "python"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "01b05e381eafaba873453222af527eeb29b2b44771c4523917bd956403e6ceb7",
-   "url": "https://pypi.io/packages/source/P/PyLBFGS/PyLBFGS-0.2.0.15.tar.gz"
+   "url": "https://pypi.org/packages/source/P/PyLBFGS/PyLBFGS-0.2.0.15.tar.gz"
   },
   "test": {
    "imports": [
@@ -66,7 +67,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -75,13 +77,13 @@
     "cython",
     "numpy",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "numpy",
     "python"
    ]
   },
@@ -101,7 +103,7 @@
    "summary": "LBFGS and OWL-QN optimization algorithms"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -115,23 +117,24 @@
   },
   "requirements": {
    "build": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
     "pip",
+    "setuptools",
     "cython <3",
     "numpy"
    ],
    "run": [
-    "python",
-    "numpy"
+    "python"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "01b05e381eafaba873453222af527eeb29b2b44771c4523917bd956403e6ceb7",
-   "url": "https://pypi.io/packages/source/P/PyLBFGS/PyLBFGS-0.2.0.15.tar.gz"
+   "url": "https://pypi.org/packages/source/P/PyLBFGS/PyLBFGS-0.2.0.15.tar.gz"
   },
   "test": {
    "imports": [
@@ -151,7 +154,7 @@
    "summary": "LBFGS and OWL-QN optimization algorithms"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -165,23 +168,24 @@
   },
   "requirements": {
    "build": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
     "pip",
+    "setuptools",
     "cython <3",
     "numpy"
    ],
    "run": [
-    "python",
-    "numpy"
+    "python"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "01b05e381eafaba873453222af527eeb29b2b44771c4523917bd956403e6ceb7",
-   "url": "https://pypi.io/packages/source/P/PyLBFGS/PyLBFGS-0.2.0.15.tar.gz"
+   "url": "https://pypi.org/packages/source/P/PyLBFGS/PyLBFGS-0.2.0.15.tar.gz"
   },
   "test": {
    "imports": [
@@ -193,7 +197,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -202,13 +207,13 @@
     "cython",
     "numpy",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "numpy",
     "python"
    ]
   },
@@ -231,39 +236,44 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pylbfgs.json"
  },
- "raw_meta_yaml": "{% set name = \"PyLBFGS\" %}\n{% set version = \"0.2.0.15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 01b05e381eafaba873453222af527eeb29b2b44771c4523917bd956403e6ceb7\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - cython <3\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - lbfgs\n\nabout:\n  home: https://github.com/dedupeio/pylbfgs\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: LBFGS and OWL-QN optimization algorithms\n  doc_url: https://github.com/dedupeio/pylbfgs\n  dev_url: https://github.com/dedupeio/pylbfgs\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
+ "raw_meta_yaml": "{% set name = \"PyLBFGS\" %}\n{% set version = \"0.2.0.15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 01b05e381eafaba873453222af527eeb29b2b44771c4523917bd956403e6ceb7\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - cython <3\n    - numpy\n  run:\n    - python\n\ntest:\n  imports:\n    - lbfgs\n\nabout:\n  home: https://github.com/dedupeio/pylbfgs\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: LBFGS and OWL-QN optimization algorithms\n  doc_url: https://github.com/dedupeio/pylbfgs\n  dev_url: https://github.com/dedupeio/pylbfgs\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "cython",
    "numpy",
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cython",
     "numpy",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "numpy",
+    "c_stdlib_stub",
     "python"
    ]
   },
@@ -277,7 +287,8 @@
   "build": {
    "__set__": true,
    "elements": [
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -286,13 +297,13 @@
     "cython <3",
     "numpy",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "numpy",
     "python"
    ]
   },
@@ -301,7 +312,7 @@
    "elements": []
   }
  },
- "url": "https://pypi.io/packages/source/P/PyLBFGS/PyLBFGS-0.2.0.15.tar.gz",
+ "url": "https://pypi.org/packages/source/P/PyLBFGS/PyLBFGS-0.2.0.15.tar.gz",
  "version": "0.2.0.15",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pylbfgs.json"
