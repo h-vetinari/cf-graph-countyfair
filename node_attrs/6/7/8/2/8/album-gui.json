@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,11 +40,11 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.7"
+    "python 3.9"
    ],
    "run": [
     "pip",
-    "python >=3.7",
+    "python >=3.9",
     "album >=0.9.2",
     "pyqt >=5.15.6",
     "pywin32-on-windows >=0.1.0"
@@ -53,7 +53,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "605beaccffc6795cbc0101cf5a88b1190ee610fc8bd226ba93c2c4413bcb5efd",
-   "url": "https://pypi.io/packages/source/a/album-gui/album-gui-0.4.4.tar.gz"
+   "url": "https://pypi.org/packages/source/a/album-gui/album-gui-0.4.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -64,7 +64,8 @@
     "album.gui"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -93,7 +94,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -109,7 +111,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -124,11 +126,11 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.7"
+    "python 3.9"
    ],
    "run": [
     "pip",
-    "python >=3.7",
+    "python >=3.9",
     "album >=0.9.2",
     "pyqt >=5.15.6",
     "pywin32-on-windows >=0.1.0"
@@ -137,7 +139,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "605beaccffc6795cbc0101cf5a88b1190ee610fc8bd226ba93c2c4413bcb5efd",
-   "url": "https://pypi.io/packages/source/a/album-gui/album-gui-0.4.4.tar.gz"
+   "url": "https://pypi.org/packages/source/a/album-gui/album-gui-0.4.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -148,7 +150,8 @@
     "album.gui"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -166,7 +169,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/album-gui.json"
  },
- "raw_meta_yaml": "{% set name = \"album-gui\" %}\n{% set version = \"0.4.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 605beaccffc6795cbc0101cf5a88b1190ee610fc8bd226ba93c2c4413bcb5efd\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n  run:\n    - pip\n    - python >=3.7\n    - album >=0.9.2\n    - pyqt >=5.15.6\n    - pywin32-on-windows >=0.1.0\n\ntest:\n  imports:\n    - album.gui\n  commands:\n    - pip list\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://album.solutions\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Album is a framework for unifying computational tools across frameworks, languages, and environments. This package provides a graphical user interface for Album.\n  doc_url: https://docs.album.solutions\n  dev_url: https://gitlab.com/album-app/album-gui\n\nextra:\n  recipe-maintainers:\n    - frauzufall\n",
+ "raw_meta_yaml": "{% set name = \"album-gui\" %}\n{% set version = \"0.4.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 605beaccffc6795cbc0101cf5a88b1190ee610fc8bd226ba93c2c4413bcb5efd\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - pip\n    - python >={{ python_min }}\n    - album >=0.9.2\n    - pyqt >=5.15.6\n    - pywin32-on-windows >=0.1.0\n\ntest:\n  imports:\n    - album.gui\n  commands:\n    - pip list\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://album.solutions\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Album is a framework for unifying computational tools across frameworks, languages, and environments. This package provides a graphical user interface for Album.\n  doc_url: https://docs.album.solutions\n  dev_url: https://gitlab.com/album-app/album-gui\n\nextra:\n  recipe-maintainers:\n    - frauzufall\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -202,7 +205,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -216,7 +220,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7"
+    "python 3.9"
    ]
   },
   "run": {
@@ -225,18 +229,19 @@
     "album >=0.9.2",
     "pip",
     "pyqt >=5.15.6",
-    "python >=3.7",
+    "python >=3.9",
     "pywin32-on-windows >=0.1.0"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/a/album-gui/album-gui-0.4.4.tar.gz",
+ "url": "https://pypi.org/packages/source/a/album-gui/album-gui-0.4.4.tar.gz",
  "version": "0.4.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/album-gui.json"
