@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv",
    "script_env": [
     "PYTHONIOENCODING=utf8"
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "goes2go",
-   "version": "2024.7.0"
+   "version": "2025.2.0"
   },
   "requirements": {
    "host": [
@@ -64,8 +64,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1cef2b7d22e4643d7ed3c27c2faa4f5cc96380835d208b6d9c7b8b1c42a3cbeb",
-   "url": "https://pypi.org/packages/source/g/goes2go/goes2go-2024.7.0.tar.gz"
+   "sha256": "92cae8a78868b2a3b59c945315184ad82f7ff880552ba9575ac7c9b5d2ab4045",
+   "url": "https://pypi.org/packages/source/g/goes2go/goes2go-2025.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -131,7 +131,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv",
    "script_env": [
     "PYTHONIOENCODING=utf8"
@@ -144,7 +144,7 @@
   },
   "package": {
    "name": "goes2go",
-   "version": "2024.7.0"
+   "version": "2025.2.0"
   },
   "requirements": {
    "host": [
@@ -169,8 +169,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1cef2b7d22e4643d7ed3c27c2faa4f5cc96380835d208b6d9c7b8b1c42a3cbeb",
-   "url": "https://pypi.org/packages/source/g/goes2go/goes2go-2024.7.0.tar.gz"
+   "sha256": "92cae8a78868b2a3b59c945315184ad82f7ff880552ba9575ac7c9b5d2ab4045",
+   "url": "https://pypi.org/packages/source/g/goes2go/goes2go-2025.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -199,7 +199,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/goes2go.json"
  },
- "raw_meta_yaml": "{% set name = \"goes2go\" %}\n{% set version = \"2024.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1cef2b7d22e4643d7ed3c27c2faa4f5cc96380835d208b6d9c7b8b1c42a3cbeb\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  script_env:\n    - PYTHONIOENCODING=utf8\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - setuptools_scm\n\n  run:\n    - cartopy\n    - h5netcdf\n    - metpy\n    - netcdf4\n    - numpy\n    - pandas\n    - python >={{ python_min }}\n    - pygrib\n    - s3fs\n    - toml\n    - xarray\n\ntest:\n  commands:\n    - pip check\n  imports:\n    - goes2go\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/blaylockbk/goes2go\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Retrieve GOES-East/West data from AWS. RGB recipes included!\n  description: |\n    GOES-East and GOES-West satellite data are made available on Amazon Web\n    Services through NOAA's Big Data Program. `goes2go` is a python package\n    that makes it easy to find and download the files you need to your local\n    computer. Some additional helpers are provided that make working with GOES\n    data easy and fun, such as recipes for RGB composites.\n  doc_url: https://goes2go.readthedocs.io/\n  dev_url: https://github.com/blaylockbk/goes2go\n\nextra:\n  recipe-maintainers:\n    - blaylockbk\n",
+ "raw_meta_yaml": "{% set name = \"goes2go\" %}\n{% set version = \"2025.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 92cae8a78868b2a3b59c945315184ad82f7ff880552ba9575ac7c9b5d2ab4045\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  script_env:\n    - PYTHONIOENCODING=utf8\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - setuptools_scm\n\n  run:\n    - cartopy\n    - h5netcdf\n    - metpy\n    - netcdf4\n    - numpy\n    - pandas\n    - python >={{ python_min }}\n    - pygrib\n    - s3fs\n    - toml\n    - xarray\n\ntest:\n  commands:\n    - pip check\n  imports:\n    - goes2go\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/blaylockbk/goes2go\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Retrieve GOES-East/West data from AWS. RGB recipes included!\n  description: |\n    GOES-East and GOES-West satellite data are made available on Amazon Web\n    Services through NOAA's Big Data Program. `goes2go` is a python package\n    that makes it easy to find and download the files you need to your local\n    computer. Some additional helpers are provided that make working with GOES\n    data easy and fun, such as recipes for RGB composites.\n  doc_url: https://goes2go.readthedocs.io/\n  dev_url: https://github.com/blaylockbk/goes2go\n\nextra:\n  recipe-maintainers:\n    - blaylockbk\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -296,8 +296,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/goes2go/goes2go-2024.7.0.tar.gz",
- "version": "2024.7.0",
+ "url": "https://pypi.org/packages/source/g/goes2go/goes2go-2025.2.0.tar.gz",
+ "version": "2025.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/goes2go.json"
  }
