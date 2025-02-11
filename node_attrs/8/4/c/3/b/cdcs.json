@@ -40,15 +40,16 @@
   },
   "package": {
    "name": "cdcs",
-   "version": "0.2.3"
+   "version": "0.2.4"
   },
   "requirements": {
    "host": [
-    "python >=3.7",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "pandas",
     "requests",
     "ipython",
@@ -57,12 +58,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b040ed1b7133072e7a78b6bb8c3443f5316095de974ed9456cacc0c9b6578bd7",
-   "url": "https://pypi.io/packages/source/c/cdcs/cdcs-0.2.3.tar.gz"
+   "sha256": "a05b44b97f9427d0e31497353a5a008ab07a98740d02abb47aada379ae3d3362",
+   "url": "https://pypi.org/packages/source/c/cdcs/cdcs-0.2.4.tar.gz"
   },
   "test": {
    "imports": [
     "cdcs"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -75,7 +79,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -90,7 +95,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -115,15 +122,16 @@
   },
   "package": {
    "name": "cdcs",
-   "version": "0.2.3"
+   "version": "0.2.4"
   },
   "requirements": {
    "host": [
-    "python >=3.7",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "pandas",
     "requests",
     "ipython",
@@ -132,12 +140,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b040ed1b7133072e7a78b6bb8c3443f5316095de974ed9456cacc0c9b6578bd7",
-   "url": "https://pypi.io/packages/source/c/cdcs/cdcs-0.2.3.tar.gz"
+   "sha256": "a05b44b97f9427d0e31497353a5a008ab07a98740d02abb47aada379ae3d3362",
+   "url": "https://pypi.org/packages/source/c/cdcs/cdcs-0.2.4.tar.gz"
   },
   "test": {
    "imports": [
     "cdcs"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -155,7 +166,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cdcs.json"
  },
- "raw_meta_yaml": "{% set name = \"cdcs\" %}\n{% set version = \"0.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b040ed1b7133072e7a78b6bb8c3443f5316095de974ed9456cacc0c9b6578bd7\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - pandas\n    - requests\n    - ipython\n    - tqdm\n\ntest:\n  imports:\n    - cdcs\n\nabout:\n  home: https://github.com/usnistgov/pycdcs\n  license: NIST-PD\n  license_file: LICENSE.TXT\n  summary: Python API client for performing REST calls to configurable data curation system (CDCS) databases\n  description: |\n    Python API client for performing REST calls to configurable data curation system (CDCS) databases\n  doc_url: https://github.com/usnistgov/pycdcs\n  dev_url: https://github.com/usnistgov/pycdcs\n\nextra:\n  recipe-maintainers:\n    - lmhale99\n",
+ "raw_meta_yaml": "{% set name = \"cdcs\" %}\n{% set version = \"0.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a05b44b97f9427d0e31497353a5a008ab07a98740d02abb47aada379ae3d3362\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - pandas\n    - requests\n    - ipython\n    - tqdm\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - cdcs\n\nabout:\n  home: https://github.com/usnistgov/pycdcs\n  license: NIST-PD\n  license_file: LICENSE.TXT\n  summary: Python API client for performing REST calls to configurable data curation system (CDCS) databases\n  description: |\n    Python API client for performing REST calls to configurable data curation system (CDCS) databases\n  doc_url: https://github.com/usnistgov/pycdcs\n  dev_url: https://github.com/usnistgov/pycdcs\n\nextra:\n  recipe-maintainers:\n    - lmhale99\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -164,6 +175,7 @@
    "pip",
    "python",
    "requests",
+   "setuptools",
    "tqdm"
   ]
  },
@@ -176,7 +188,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -191,7 +204,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -204,7 +219,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.7"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -212,18 +228,20 @@
    "elements": [
     "ipython",
     "pandas",
-    "python >=3.7",
+    "python >=3.9",
     "requests",
     "tqdm"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/c/cdcs/cdcs-0.2.3.tar.gz",
- "version": "0.2.3",
+ "url": "https://pypi.org/packages/source/c/cdcs/cdcs-0.2.4.tar.gz",
+ "version": "0.2.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cdcs.json"
  }
