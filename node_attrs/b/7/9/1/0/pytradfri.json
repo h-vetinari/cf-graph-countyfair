@@ -29,7 +29,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "pytradfri",
-   "version": "13.0.0"
+   "version": "14.0.0"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c6677b5f2189518a2ed83b5d3aa92dce5fc4cfdbba530904fbebf2c6aee93411",
-   "url": "https://pypi.org/packages/source/p/pytradfri/pytradfri-13.0.0.tar.gz"
+   "sha256": "05dca2680b6b47e559c8ab321db595805769ffa6b7170a8d1a3bdf1d3442714f",
+   "url": "https://pypi.org/packages/source/p/pytradfri/pytradfri-14.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +112,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -122,7 +122,7 @@
   },
   "package": {
    "name": "pytradfri",
-   "version": "13.0.0"
+   "version": "14.0.0"
   },
   "requirements": {
    "host": [
@@ -137,8 +137,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c6677b5f2189518a2ed83b5d3aa92dce5fc4cfdbba530904fbebf2c6aee93411",
-   "url": "https://pypi.org/packages/source/p/pytradfri/pytradfri-13.0.0.tar.gz"
+   "sha256": "05dca2680b6b47e559c8ab321db595805769ffa6b7170a8d1a3bdf1d3442714f",
+   "url": "https://pypi.org/packages/source/p/pytradfri/pytradfri-14.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -168,7 +168,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pytradfri.json"
  },
- "raw_meta_yaml": "{% set name = \"pytradfri\" %}\n{% set version = \"13.0.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pytradfri-{{ version }}.tar.gz\n  sha256: c6677b5f2189518a2ed83b5d3aa92dce5fc4cfdbba530904fbebf2c6aee93411\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - pydantic\n\ntest:\n  imports:\n    - pytradfri\n    - pytradfri.api\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/home-assistant-libs/pytradfri\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: IKEA Tr\u00E5dfri/Tradfri API. Control and observe your lights from Python.\n  description: |\n    Python package to communicate with the IKEA Tr\u00E5dfri (Tradfri)\n    ZigBee Gateway compatible with ZigBee Light Link products. By\n    using this library you can communicate with the gateway and\n    control IKEA's lights and wall plugs.\n  doc_url: https://github.com/home-assistant-libs/pytradfri\n  dev_url: https://github.com/home-assistant-libs/pytradfri\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"pytradfri\" %}\n{% set version = \"14.0.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pytradfri-{{ version }}.tar.gz\n  sha256: 05dca2680b6b47e559c8ab321db595805769ffa6b7170a8d1a3bdf1d3442714f\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - pydantic\n\ntest:\n  imports:\n    - pytradfri\n    - pytradfri.api\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/home-assistant-libs/pytradfri\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: IKEA Tr\u00E5dfri/Tradfri API. Control and observe your lights from Python.\n  description: |\n    Python package to communicate with the IKEA Tr\u00E5dfri (Tradfri)\n    ZigBee Gateway compatible with ZigBee Light Link products. By\n    using this library you can communicate with the gateway and\n    control IKEA's lights and wall plugs.\n  doc_url: https://github.com/home-assistant-libs/pytradfri\n  dev_url: https://github.com/home-assistant-libs/pytradfri\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -235,8 +235,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pytradfri/pytradfri-13.0.0.tar.gz",
- "version": "13.0.0",
+ "url": "https://pypi.org/packages/source/p/pytradfri/pytradfri-14.0.0.tar.gz",
+ "version": "14.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pytradfri.json"
  }
