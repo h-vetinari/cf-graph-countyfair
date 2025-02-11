@@ -43,7 +43,7 @@
   },
   "package": {
    "name": "coderedcms",
-   "version": "4.1.0"
+   "version": "4.1.1"
   },
   "requirements": {
    "host": [
@@ -58,7 +58,7 @@
     "django-bootstrap5 ==24.3",
     "django >=4.2,<6.0",
     "geocoder ==1.38.*",
-    "icalendar ==6.0.*",
+    "icalendar ==6.1.*",
     "python-tzdata",
     "wagtail >=6.3,<7.0",
     "wagtail-cache >=2.4,<3",
@@ -67,8 +67,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a1873256eb829071875332d9ff5089c090f95facd78e1d85dac7e20be35cedf9",
-   "url": "https://pypi.org/packages/source/c/coderedcms/coderedcms-4.1.0.tar.gz"
+   "sha256": "f6c07d3f5860585695736b3f4f7efefd08c40166c51d2723e5ec53ca2c404130",
+   "url": "https://pypi.org/packages/source/c/coderedcms/coderedcms-4.1.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -147,7 +147,7 @@
   },
   "package": {
    "name": "coderedcms",
-   "version": "4.1.0"
+   "version": "4.1.1"
   },
   "requirements": {
    "host": [
@@ -162,7 +162,7 @@
     "django-bootstrap5 ==24.3",
     "django >=4.2,<6.0",
     "geocoder ==1.38.*",
-    "icalendar ==6.0.*",
+    "icalendar ==6.1.*",
     "python-tzdata",
     "wagtail >=6.3,<7.0",
     "wagtail-cache >=2.4,<3",
@@ -171,8 +171,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a1873256eb829071875332d9ff5089c090f95facd78e1d85dac7e20be35cedf9",
-   "url": "https://pypi.org/packages/source/c/coderedcms/coderedcms-4.1.0.tar.gz"
+   "sha256": "f6c07d3f5860585695736b3f4f7efefd08c40166c51d2723e5ec53ca2c404130",
+   "url": "https://pypi.org/packages/source/c/coderedcms/coderedcms-4.1.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -202,7 +202,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/coderedcms.json"
  },
- "raw_meta_yaml": "{% set name = \"coderedcms\" %}\n{% set version = \"4.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coderedcms-{{ version }}.tar.gz\n  sha256: a1873256eb829071875332d9ff5089c090f95facd78e1d85dac7e20be35cedf9\n\nbuild:\n  entry_points:\n    - coderedcms=coderedcms.bin.coderedcms:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - beautifulsoup4 >=4.8,<4.13\n    - django-eventtools ==1.0.*\n    - django-bootstrap5 ==24.3\n    - django >=4.2,<6.0\n    - geocoder ==1.38.*\n    - icalendar ==6.0.*\n# icalendar 6.0.1 requires tzdata, which is not installed\n    - python-tzdata\n    - wagtail >=6.3,<7.0\n    - wagtail-cache >=2.4,<3\n    - wagtail-seo >=2.5,<3\n\ntest:\n  imports:\n    - coderedcms\n  commands:\n    - pip check\n    - coderedcms help\n  requires:\n    - python {{ python_min }}  \n    - pip\n\nabout:\n  home: https://github.com/coderedcorp/coderedcms\n  summary: Wagtail-based CMS by CodeRed for building marketing websites.\n  license: MIT AND BSD-3-Clause\n  license_file:\n    - LICENSE.txt\n    - coderedcms/wagtail_flexible_forms/LICENSE\n    - coderedcms/static/coderedcms/vendor/bootstrap/LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
+ "raw_meta_yaml": "{% set name = \"coderedcms\" %}\n{% set version = \"4.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coderedcms-{{ version }}.tar.gz\n  sha256: f6c07d3f5860585695736b3f4f7efefd08c40166c51d2723e5ec53ca2c404130\n\nbuild:\n  entry_points:\n    - coderedcms=coderedcms.bin.coderedcms:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - beautifulsoup4 >=4.8,<4.13\n    - django-eventtools ==1.0.*\n    - django-bootstrap5 ==24.3\n    - django >=4.2,<6.0\n    - geocoder ==1.38.*\n    - icalendar ==6.1.*\n# icalendar 6.0.1 requires tzdata, which is not installed\n    - python-tzdata\n    - wagtail >=6.3,<7.0\n    - wagtail-cache >=2.4,<3\n    - wagtail-seo >=2.5,<3\n\ntest:\n  imports:\n    - coderedcms\n  commands:\n    - pip check\n    - coderedcms help\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/coderedcorp/coderedcms\n  summary: Wagtail-based CMS by CodeRed for building marketing websites.\n  license: MIT AND BSD-3-Clause\n  license_file:\n    - LICENSE.txt\n    - coderedcms/wagtail_flexible_forms/LICENSE\n    - coderedcms/static/coderedcms/vendor/bootstrap/LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -280,7 +280,7 @@
     "django-bootstrap5 ==24.3",
     "django-eventtools ==1.0.*",
     "geocoder ==1.38.*",
-    "icalendar ==6.0.*",
+    "icalendar ==6.1.*",
     "python >=3.9",
     "python-tzdata",
     "wagtail >=6.3,<7.0",
@@ -296,8 +296,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/coderedcms/coderedcms-4.1.0.tar.gz",
- "version": "4.1.0",
+ "url": "https://pypi.org/packages/source/c/coderedcms/coderedcms-4.1.1.tar.gz",
+ "version": "4.1.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/coderedcms.json"
  }
