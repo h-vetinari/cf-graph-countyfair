@@ -29,7 +29,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -52,8 +52,8 @@
     "setuptools-scm"
    ],
    "run": [
-    "python >=3.10,<3.12",
-    "gempy-engine >=2024.2.0,<2024.3.dev0"
+    "python >=3.10",
+    "gempy-engine >=2024.2.0,<2024.3.dev"
    ]
   },
   "schema_version": 0,
@@ -116,7 +116,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -139,8 +139,8 @@
     "setuptools-scm"
    ],
    "run": [
-    "python >=3.10,<3.12",
-    "gempy-engine >=2024.2.0,<2024.3.dev0"
+    "python >=3.10",
+    "gempy-engine >=2024.2.0,<2024.3.dev"
    ]
   },
   "schema_version": 0,
@@ -175,7 +175,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/gempy.json"
  },
- "raw_meta_yaml": "{% set name = \"gempy\" %}\n{% set version = \"2024.2.0.2\" %}\n{% set python_min = \"3.10\" %}\n{% set python_max = \"3.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gempy-{{ version }}.tar.gz\n  sha256: e01abba7026078234b3cecd6102257cb4dd6e3426614728c70deaa7be48f8533\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools-scm\n  run:\n    - python >={{ python_min }},<{{ python_max }}\n    - gempy-engine >=2024.2.0,<2024.3.dev0\n\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - gempy\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/gempy-project/gempy\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  license_family: LGPL\n  summary: Open-source, implicit 3D structural geological modeling in Python for uncertainty analysis\n\n  description: |\n    GemPy is an open-source, Python-based 3-D structural geological modeling software,\n    which allows the implicit (i.e. automatic) creation of complex geological models\n    from interface and orientation data. It also offers support for stochastic modeling\n    to adress parameter and model uncertainties\n  doc_url: https://docs.gempy.org/\n  dev_url: https://github.com/gempy-project/gempy\n\nextra:\n  recipe-maintainers:\n    - sebhmg\n    - SophieCurinier\n    - Leguark\n    - AndrewAnnex\n",
+ "raw_meta_yaml": "{% set name = \"gempy\" %}\n{% set version = \"2024.2.0.2\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gempy-{{ version }}.tar.gz\n  sha256: e01abba7026078234b3cecd6102257cb4dd6e3426614728c70deaa7be48f8533\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - setuptools-scm\n  run:\n    - python >={{ python_min }}\n    - gempy-engine >=2024.2.0,<2024.3.dev\n\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - gempy\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/gempy-project/gempy\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  license_family: LGPL\n  summary: Open-source, implicit 3D structural geological modeling in Python for uncertainty analysis\n\n  description: |\n    GemPy is an open-source, Python-based 3-D structural geological modeling software,\n    which allows the implicit (i.e. automatic) creation of complex geological models\n    from interface and orientation data. It also offers support for stochastic modeling\n    to adress parameter and model uncertainties\n  doc_url: https://docs.gempy.org/\n  dev_url: https://github.com/gempy-project/gempy\n\nextra:\n  recipe-maintainers:\n    - sebhmg\n    - SophieCurinier\n    - Leguark\n    - AndrewAnnex\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -233,8 +233,8 @@
   "run": {
    "__set__": true,
    "elements": [
-    "gempy-engine >=2024.2.0,<2024.3.dev0",
-    "python >=3.10,<3.12"
+    "gempy-engine >=2024.2.0,<2024.3.dev",
+    "python >=3.10"
    ]
   },
   "test": {
