@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,24 +33,24 @@
   },
   "package": {
    "name": "reacton",
-   "version": "1.9.0"
+   "version": "1.9.1"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "hatch"
    ],
    "run": [
     "ipywidgets",
-    "python >=3.6",
+    "python >=3.9",
     "typing_extensions >=4.1.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "36b2d1eefc8d4d3ccce74ce1a78cb502b948eadb27758702acb9a7f9f46fd7fb",
-   "url": "https://pypi.org/packages/source/r/reacton/reacton-1.9.0.tar.gz"
+   "sha256": "035acb0dce9fb14c9604d5410d2f838cc5792046ed116266b8d56665c2fb638b",
+   "url": "https://pypi.org/packages/source/r/reacton/reacton-1.9.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -60,7 +60,8 @@
     "reacton"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -88,7 +89,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -101,7 +103,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -112,24 +114,24 @@
   },
   "package": {
    "name": "reacton",
-   "version": "1.9.0"
+   "version": "1.9.1"
   },
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "hatch"
    ],
    "run": [
     "ipywidgets",
-    "python >=3.6",
+    "python >=3.9",
     "typing_extensions >=4.1.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "36b2d1eefc8d4d3ccce74ce1a78cb502b948eadb27758702acb9a7f9f46fd7fb",
-   "url": "https://pypi.org/packages/source/r/reacton/reacton-1.9.0.tar.gz"
+   "sha256": "035acb0dce9fb14c9604d5410d2f838cc5792046ed116266b8d56665c2fb638b",
+   "url": "https://pypi.org/packages/source/r/reacton/reacton-1.9.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -139,7 +141,8 @@
     "reacton"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -157,7 +160,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/reacton.json"
  },
- "raw_meta_yaml": "{% set name = \"reacton\" %}\n{% set version = \"1.9.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/reacton-{{ version }}.tar.gz\n  sha256: 36b2d1eefc8d4d3ccce74ce1a78cb502b948eadb27758702acb9a7f9f46fd7fb\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - hatch\n  run:\n    - ipywidgets\n    - python >=3.6\n    - typing_extensions >=4.1.1\n\ntest:\n  imports:\n    - reacton\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/reacton/\n  summary: Write ipywidgets like React\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n    - mariobuikhuizen\n",
+ "raw_meta_yaml": "{% set name = \"reacton\" %}\n{% set version = \"1.9.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/reacton-{{ version }}.tar.gz\n  sha256: 035acb0dce9fb14c9604d5410d2f838cc5792046ed116266b8d56665c2fb638b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - hatch\n  run:\n    - ipywidgets\n    - python >={{ python_min }}\n    - typing_extensions >=4.1.1\n\ntest:\n  imports:\n    - reacton\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/reacton/\n  summary: Write ipywidgets like React\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n    - mariobuikhuizen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -192,7 +195,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -207,26 +211,27 @@
    "elements": [
     "hatch",
     "pip",
-    "python >=3.6"
+    "python 3.9"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "ipywidgets",
-    "python >=3.6",
+    "python >=3.9",
     "typing_extensions >=4.1.1"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/r/reacton/reacton-1.9.0.tar.gz",
- "version": "1.9.0",
+ "url": "https://pypi.org/packages/source/r/reacton/reacton-1.9.1.tar.gz",
+ "version": "1.9.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/reacton.json"
  }
