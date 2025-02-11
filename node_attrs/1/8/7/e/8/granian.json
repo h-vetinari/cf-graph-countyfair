@@ -11,6 +11,7 @@
   "conda_build": {
    "error_overlinking": true
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -25,14 +26,16 @@
    "dev_url": "https://github.com/emmett-framework/granian",
    "home": "https://github.com/emmett-framework/granian",
    "license": "BSD-3-Clause",
-   "license_file": [
-    "LICENSE",
-    "THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "LICENSE",
    "summary": "A Rust HTTP server for Python applications"
   },
   "build": {
-   "number": "0"
+   "number": "0",
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
   },
   "extra": {
    "feedstock-name": "granian",
@@ -43,15 +46,7 @@
   },
   "outputs": [
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -62,9 +57,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -73,111 +68,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -188,9 +211,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -199,111 +222,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -314,9 +365,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -325,111 +376,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -440,9 +519,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -451,111 +530,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -566,9 +673,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -577,110 +684,166 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    }
   ],
   "package": {
    "name": "granian",
-   "version": "1.7.5"
+   "version": "1.7.6"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "make"
+   ],
+   "host": [
+    "pip",
+    "python",
+    "maturin >=1.1.0,<2",
+    "jemalloc"
+   ],
+   "run": [
+    "python",
+    "click >=8.0.0",
+    "uvloop >=0.18.0"
+   ]
+  },
+  "schema_version": 1,
   "source": {
-   "sha256": "10dcca902d581d45555ae0f4e178996c9bc71006ea66258499b626cc9b76ce02",
-   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.5.tar.gz"
+   "sha256": "5e36d28b947b2c18bc7dc61072b3aa67c28b28d871f55a4daabea8eb6300e50e",
+   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.6.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -721,6 +884,7 @@
    "elements": [
     "httpx",
     "pip",
+    "psutil",
     "pytest",
     "pytest-asyncio",
     "sniffio",
@@ -733,14 +897,16 @@
    "dev_url": "https://github.com/emmett-framework/granian",
    "home": "https://github.com/emmett-framework/granian",
    "license": "BSD-3-Clause",
-   "license_file": [
-    "LICENSE",
-    "THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "LICENSE",
    "summary": "A Rust HTTP server for Python applications"
   },
   "build": {
-   "number": "0"
+   "number": "0",
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
   },
   "extra": {
    "feedstock-name": "granian",
@@ -751,15 +917,7 @@
   },
   "outputs": [
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -770,9 +928,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -781,111 +939,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -896,9 +1082,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -907,111 +1093,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -1022,9 +1236,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -1033,111 +1247,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -1148,9 +1390,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -1159,111 +1401,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -1274,9 +1544,9 @@
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -1285,111 +1555,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -1397,12 +1695,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -1411,111 +1712,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -1523,12 +1852,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -1537,111 +1869,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -1649,12 +2009,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -1663,111 +2026,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -1775,12 +2166,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -1789,111 +2183,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -1901,12 +2323,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -1915,111 +2340,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -2027,12 +2480,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -2041,111 +2497,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -2153,12 +2637,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -2167,111 +2654,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -2279,12 +2794,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -2293,111 +2811,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -2405,12 +2951,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -2419,111 +2968,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -2531,12 +3108,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -2545,725 +3125,954 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    }
   ],
   "package": {
    "name": "granian",
-   "version": "1.7.5"
+   "version": "1.7.6"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "make",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.1.0,<2"
+   ],
+   "host": [
+    "pip",
+    "python",
+    "maturin >=1.1.0,<2",
+    "jemalloc"
+   ],
+   "run": [
+    "python",
+    "click >=8.0.0",
+    "uvloop >=0.18.0"
+   ]
+  },
+  "schema_version": 1,
   "source": {
-   "sha256": "10dcca902d581d45555ae0f4e178996c9bc71006ea66258499b626cc9b76ce02",
-   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.5.tar.gz"
+   "sha256": "5e36d28b947b2c18bc7dc61072b3aa67c28b28d871f55a4daabea8eb6300e50e",
+   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.6.tar.gz"
   }
  },
  "name": "granian",
@@ -3272,14 +4081,16 @@
    "dev_url": "https://github.com/emmett-framework/granian",
    "home": "https://github.com/emmett-framework/granian",
    "license": "BSD-3-Clause",
-   "license_file": [
-    "LICENSE",
-    "THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "LICENSE",
    "summary": "A Rust HTTP server for Python applications"
   },
   "build": {
-   "number": "0"
+   "number": "0",
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
   },
   "extra": {
    "feedstock-name": "granian",
@@ -3290,15 +4101,7 @@
   },
   "outputs": [
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -3306,12 +4109,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -3320,111 +4126,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -3432,12 +4266,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -3446,111 +4283,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -3558,12 +4423,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -3572,111 +4440,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -3684,12 +4580,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -3698,111 +4597,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -3810,12 +4737,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -3824,110 +4754,169 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    }
   ],
   "package": {
    "name": "granian",
-   "version": "1.7.5"
+   "version": "1.7.6"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.1.0,<2",
+    "make"
+   ],
+   "host": [
+    "pip",
+    "python",
+    "maturin >=1.1.0,<2",
+    "jemalloc"
+   ],
+   "run": [
+    "python",
+    "click >=8.0.0",
+    "uvloop >=0.18.0"
+   ]
+  },
+  "schema_version": 1,
   "source": {
-   "sha256": "10dcca902d581d45555ae0f4e178996c9bc71006ea66258499b626cc9b76ce02",
-   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.5.tar.gz"
+   "sha256": "5e36d28b947b2c18bc7dc61072b3aa67c28b28d871f55a4daabea8eb6300e50e",
+   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.6.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -3937,7 +4926,10 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
     "make",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -3968,6 +4960,7 @@
    "elements": [
     "httpx",
     "pip",
+    "psutil",
     "pytest",
     "pytest-asyncio",
     "sniffio",
@@ -3980,14 +4973,16 @@
    "dev_url": "https://github.com/emmett-framework/granian",
    "home": "https://github.com/emmett-framework/granian",
    "license": "BSD-3-Clause",
-   "license_file": [
-    "LICENSE",
-    "THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "LICENSE",
    "summary": "A Rust HTTP server for Python applications"
   },
   "build": {
-   "number": "0"
+   "number": "0",
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
   },
   "extra": {
    "feedstock-name": "granian",
@@ -3998,15 +4993,7 @@
   },
   "outputs": [
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -4014,12 +5001,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -4028,111 +5018,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -4140,12 +5158,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -4154,111 +5175,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -4266,12 +5315,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -4280,111 +5332,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -4392,12 +5472,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -4406,111 +5489,139 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
@@ -4518,12 +5629,15 @@
       "rust_compiler_stub",
       "c_stdlib_stub",
       "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
       "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip",
       "jemalloc"
      ],
      "run": [
@@ -4532,110 +5646,169 @@
       "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    }
   ],
   "package": {
    "name": "granian",
-   "version": "1.7.5"
+   "version": "1.7.6"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.1.0,<2",
+    "make"
+   ],
+   "host": [
+    "pip",
+    "python",
+    "maturin >=1.1.0,<2",
+    "jemalloc"
+   ],
+   "run": [
+    "python",
+    "click >=8.0.0",
+    "uvloop >=0.18.0"
+   ]
+  },
+  "schema_version": 1,
   "source": {
-   "sha256": "10dcca902d581d45555ae0f4e178996c9bc71006ea66258499b626cc9b76ce02",
-   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.5.tar.gz"
+   "sha256": "5e36d28b947b2c18bc7dc61072b3aa67c28b28d871f55a4daabea8eb6300e50e",
+   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.6.tar.gz"
   }
  },
  "osx_arm64_requirements": {
@@ -4645,7 +5818,10 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
     "make",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -4676,6 +5852,7 @@
    "elements": [
     "httpx",
     "pip",
+    "psutil",
     "pytest",
     "pytest-asyncio",
     "sniffio",
@@ -4702,7 +5879,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/granian.json"
  },
- "raw_meta_yaml": "{% set version = \"1.7.5\" %}\n\n# handle undefined PYTHON in `noarch: generic` outputs\n{% if PYTHON is not defined %}{% set PYTHON = \"$PYTHON\" %}{% endif %}   # [unix]\n{% if PYTHON is not defined %}{% set PYTHON = \"%PYTHON%\" %}{% endif %}  # [win]\n\npackage:\n  name: granian\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/g/granian/granian-{{ version }}.tar.gz\n  sha256: 10dcca902d581d45555ae0f4e178996c9bc71006ea66258499b626cc9b76ce02\n\nbuild:\n  number: 0\n\noutputs:\n  - name: granian\n    build:\n      script:\n        - |-\n          {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n        - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n      entry_points:\n        - granian = granian:cli.cli\n    requirements:\n      build:\n        - {{ compiler(\"c\") }}\n        - {{ compiler(\"rust\") }}\n        - {{ stdlib(\"c\") }}\n        - cargo-bundle-licenses\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n        - maturin >=1.1.0,<2                  # [build_platform != target_platform]\n        - python                              # [build_platform != target_platform]\n        # for the jemalloc-sys crate\n        - make                                # [unix]\n      host:\n        - python\n        - maturin >=1.1.0,<2\n        - pip\n        - jemalloc                            # [unix]\n      run:\n        - python\n        - click >=8.0.0\n        - uvloop >=0.18.0  # [not win]\n    test:\n      imports:\n        - granian\n      commands:\n        - pip check\n        - granian --help\n      requires:\n        - pip\n\n  - name: granian-with-pname\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"granian\", max_pin=\"x.x.x\") }}\n        - setproctitle >=1.3.3,<1.4\n    test:\n      imports:\n        - granian\n      commands:\n        - pip check\n        - granian --help\n      requires:\n        - pip\n\n  - name: granian-with-reload\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"granian\", max_pin=\"x.x.x\") }}\n        - watchfiles >=0.21,<1.0\n    test:\n      imports:\n        - granian\n      commands:\n        - pip check\n        - granian --help\n      requires:\n        - pip\n\n  - name: granian-with-all\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(\"granian\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"granian-with-pname\", max_pin=\"x.x.x\") }}\n        - {{ pin_subpackage(\"granian-with-reload\", max_pin=\"x.x.x\") }}\n    test:\n      source_files:\n        - tests\n      requires:\n        - httpx >=0.25.0,<0.26\n        - pip\n        - pytest >=7.4.2,<7.5\n        - pytest-asyncio >=0.21.1,<0.22\n        # does not solve for py3.13 \n        # - websockets >=11,<12\n        - websockets\n        - sniffio >=1.3,<2\n      imports:\n        - granian\n      commands:\n        - pip check\n        - granian --help\n        - pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\"\n\nabout:\n  home: https://github.com/emmett-framework/granian\n  summary: A Rust HTTP server for Python applications\n  dev_url: https://github.com/emmett-framework/granian\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  feedstock-name: granian\n  recipe-maintainers:\n    - thewchan\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 1.7.6\n  maturin_version: \">=1.1.0,<2\"\n\nrecipe:\n  name: granian\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/g/granian/granian-${{ version }}.tar.gz\n  sha256: 5e36d28b947b2c18bc7dc61072b3aa67c28b28d871f55a4daabea8eb6300e50e\n\nbuild:\n  number: 0\n\noutputs:\n  - package:\n      name: granian\n    build:\n      script:\n        - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n        - |-\n          ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n      python:\n        # version_independent: true\n        entry_points:\n          - granian = granian:cli.cli\n    requirements:\n      build:\n        - ${{ compiler(\"c\") }}\n        - ${{ compiler(\"rust\") }}\n        - ${{ stdlib(\"c\") }}\n        - cargo-bundle-licenses\n        - if: build_platform != target_platform\n          then:\n            - python\n            - cross-python_${{ target_platform }}\n            - maturin ${{ maturin_version }}\n        - if: unix\n          then:\n            # for the jemalloc-sys crate\n            - make\n      host:\n        - pip\n        - python\n        # - python-abi3\n        - maturin >=1.1.0,<2\n        - if: unix\n          then:\n            - jemalloc\n      run:\n        - python\n        - click >=8.0.0\n        - if: unix\n          then:\n            - uvloop >=0.18.0\n      run_constraints:\n        - setproctitle >=1.3.3,<1.4\n        - watchfiles >=0.21,<2.0\n    tests:\n      - python:\n          pip_check: true\n          imports: granian\n      - requirements:\n          run:\n            - pip\n        script:\n          - pip check\n          - granian --help\n\n  - package:\n      name: granian-with-pname\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"granian\", upper_bound=\"x.x.x\") }}\n        - setproctitle\n    tests:\n      - python:\n          pip_check: true\n          imports: granian\n      - requirements:\n          run:\n            - pip\n        script:\n          - pip check\n          - granian --help\n\n  - package:\n      name: granian-with-reload\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"granian\", upper_bound=\"x.x.x\") }}\n        - watchfiles\n    tests:\n      - python:\n          pip_check: true\n          imports: granian\n      - requirements:\n          run:\n            - pip\n        script:\n          - pip check\n          - granian --help\n\n  - package:\n      name: granian-with-all\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - ${{ pin_subpackage(\"granian\", upper_bound=\"x.x.x\") }}\n        - ${{ pin_subpackage(\"granian-with-pname\", upper_bound=\"x.x.x\") }}\n        - ${{ pin_subpackage(\"granian-with-reload\", upper_bound=\"x.x.x\") }}\n    tests:\n      - python:\n          pip_check: true\n          imports: granian\n      - files:\n          source:\n            - tests/\n          recipe:\n            - run_test.py\n        requirements:\n          run:\n            - httpx >=0.25.0,<0.26\n            - pytest >=7.4.2,<7.5\n            - pytest-asyncio >=0.21.1,<0.22\n            - websockets\n            - sniffio >=1.3,<2\n            - psutil\n        script:\n          - granian --help\n          # windows tests pass, but fail on cleanup due to:\n          #\n          #   failed to remove directory `work\\test`: Access is denied. (os error 5)\n          #\n          - if: unix\n            then:\n              - python run_test.py\n\nabout:\n  homepage: https://github.com/emmett-framework/granian\n  summary: A Rust HTTP server for Python applications\n  repository: https://github.com/emmett-framework/granian\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  feedstock-name: granian\n  recipe-maintainers:\n    - thewchan\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -4710,6 +5887,7 @@
    "c_stdlib_stub",
    "cargo-bundle-licenses",
    "click",
+   "cross-python_linux-64",
    "granian",
    "granian-with-pname",
    "granian-with-reload",
@@ -4731,7 +5909,10 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
     "make",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -4766,6 +5947,7 @@
    "elements": [
     "httpx",
     "pip",
+    "psutil",
     "pytest",
     "pytest-asyncio",
     "sniffio",
@@ -4781,7 +5963,10 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
     "make",
+    "maturin >=1.1.0,<2",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -4802,9 +5987,9 @@
     "granian-with-pname",
     "granian-with-reload",
     "python",
-    "setproctitle >=1.3.3,<1.4",
+    "setproctitle",
     "uvloop >=0.18.0",
-    "watchfiles >=0.21,<1.0"
+    "watchfiles"
    ]
   },
   "test": {
@@ -4812,6 +5997,7 @@
    "elements": [
     "httpx >=0.25.0,<0.26",
     "pip",
+    "psutil",
     "pytest >=7.4.2,<7.5",
     "pytest-asyncio >=0.21.1,<0.22",
     "sniffio >=1.3,<2",
@@ -4819,8 +6005,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/granian/granian-1.7.5.tar.gz",
- "version": "1.7.5",
+ "url": "https://pypi.org/packages/source/g/granian/granian-1.7.6.tar.gz",
+ "version": "1.7.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/granian.json"
  },
@@ -4829,14 +6015,16 @@
    "dev_url": "https://github.com/emmett-framework/granian",
    "home": "https://github.com/emmett-framework/granian",
    "license": "BSD-3-Clause",
-   "license_file": [
-    "LICENSE",
-    "THIRDPARTY.yml"
-   ],
+   "license_family": "BSD-3-Clause",
+   "license_file": "LICENSE",
    "summary": "A Rust HTTP server for Python applications"
   },
   "build": {
-   "number": "0"
+   "number": "0",
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+   ]
   },
   "extra": {
    "feedstock-name": "granian",
@@ -4847,629 +6035,822 @@
   },
   "outputs": [
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "entry_points": [
-      "granian = granian:cli.cli"
-     ],
-     "script": [
-      "$PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
-      "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
-     ]
-    },
+    "build": null,
     "name": "granian",
     "requirements": {
      "build": [
       "c_compiler_stub",
       "rust_compiler_stub",
       "c_stdlib_stub",
-      "cargo-bundle-licenses"
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.1.0,<2",
+      "make"
      ],
      "host": [
+      "pip",
       "python",
       "maturin >=1.1.0,<2",
-      "pip"
+      "jemalloc"
      ],
      "run": [
       "python",
-      "click >=8.0.0"
+      "click >=8.0.0",
+      "uvloop >=0.18.0"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
-    },
-    "name": "granian-with-pname",
-    "requirements": {
-     "run": [
-      "granian",
-      "setproctitle >=1.3.3,<1.4"
-     ]
-    },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
-   },
-   {
-    "build": {
-     "noarch": "generic"
-    },
+    "build": null,
     "name": "granian-with-reload",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
-      "watchfiles >=0.21,<1.0"
+      "watchfiles"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help"
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "pip"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
    },
    {
-    "build": {
-     "noarch": "generic"
+    "build": null,
+    "name": "granian-with-pname",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "granian",
+      "setproctitle"
+     ]
     },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "pip"
+       ]
+      },
+      "script": [
+       "pip check",
+       "granian --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
     "name": "granian-with-all",
     "requirements": {
+     "build": [],
+     "host": [],
      "run": [
       "granian",
       "granian-with-pname",
       "granian-with-reload"
      ]
     },
-    "test": {
-     "commands": [
-      "pip check",
-      "granian --help",
-      "pytest -vv --tb=long --color=yes -k \"not (test_reject or (test_rsgi and test_body_stream_req) or (test_scope and workers))\""
-     ],
-     "imports": [
-      "granian"
-     ],
-     "requires": [
-      "httpx >=0.25.0,<0.26",
-      "pip",
-      "pytest >=7.4.2,<7.5",
-      "pytest-asyncio >=0.21.1,<0.22",
-      "websockets",
-      "sniffio >=1.3,<2"
-     ],
-     "source_files": [
-      "tests"
-     ]
-    }
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "granian"
+       ]
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "httpx >=0.25.0,<0.26",
+        "pytest >=7.4.2,<7.5",
+        "pytest-asyncio >=0.21.1,<0.22",
+        "websockets",
+        "sniffio >=1.3,<2",
+        "psutil"
+       ]
+      },
+      "script": [
+       "granian --help",
+       "python run_test.py"
+      ]
+     }
+    ]
    }
   ],
   "package": {
    "name": "granian",
-   "version": "1.7.5"
+   "version": "1.7.6"
   },
-  "schema_version": 0,
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "rust_compiler_stub",
+    "c_stdlib_stub",
+    "cargo-bundle-licenses",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.1.0,<2",
+    "make"
+   ],
+   "host": [
+    "pip",
+    "python",
+    "maturin >=1.1.0,<2",
+    "jemalloc"
+   ],
+   "run": [
+    "python",
+    "click >=8.0.0",
+    "uvloop >=0.18.0"
+   ]
+  },
+  "schema_version": 1,
   "source": {
-   "sha256": "10dcca902d581d45555ae0f4e178996c9bc71006ea66258499b626cc9b76ce02",
-   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.5.tar.gz"
+   "sha256": "5e36d28b947b2c18bc7dc61072b3aa67c28b28d871f55a4daabea8eb6300e50e",
+   "url": "https://pypi.org/packages/source/g/granian/granian-1.7.6.tar.gz"
   }
  },
  "win_64_requirements": {
@@ -5479,12 +6860,17 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "make",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "jemalloc",
     "maturin",
     "pip",
     "python"
@@ -5499,6 +6885,7 @@
     "granian-with-reload",
     "python",
     "setproctitle",
+    "uvloop",
     "watchfiles"
    ]
   },
@@ -5507,6 +6894,7 @@
    "elements": [
     "httpx",
     "pip",
+    "psutil",
     "pytest",
     "pytest-asyncio",
     "sniffio",
