@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "click-loglevel",
-   "version": "0.5.1"
+   "version": "0.6.0"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6bfcb27435e1b859cc08d479a1b32cd8518f83b4d313cfe7d7142ee62b841cf4",
-   "url": "https://pypi.org/packages/source/c/click-loglevel/click_loglevel-0.5.1.tar.gz"
+   "sha256": "d582e62c373c43d98759942d07647a9299c50c5c290d6b0ac3a17ed1ecbb6eba",
+   "url": "https://pypi.org/packages/source/c/click-loglevel/click_loglevel-0.6.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -61,9 +61,12 @@
     "click_loglevel"
    ],
    "requires": [
+    "anyio",
+    "asyncclick",
     "pytest",
     "pytest-cov",
-    "python 3.9"
+    "python 3.9",
+    "trio"
    ],
    "source_files": [
     "test",
@@ -94,9 +97,12 @@
   "test": {
    "__set__": true,
    "elements": [
+    "anyio",
+    "asyncclick",
     "pytest",
     "pytest-cov",
-    "python"
+    "python",
+    "trio"
    ]
   }
  },
@@ -122,7 +128,7 @@
   },
   "package": {
    "name": "click-loglevel",
-   "version": "0.5.1"
+   "version": "0.6.0"
   },
   "requirements": {
    "host": [
@@ -137,8 +143,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6bfcb27435e1b859cc08d479a1b32cd8518f83b4d313cfe7d7142ee62b841cf4",
-   "url": "https://pypi.org/packages/source/c/click-loglevel/click_loglevel-0.5.1.tar.gz"
+   "sha256": "d582e62c373c43d98759942d07647a9299c50c5c290d6b0ac3a17ed1ecbb6eba",
+   "url": "https://pypi.org/packages/source/c/click-loglevel/click_loglevel-0.6.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -148,9 +154,12 @@
     "click_loglevel"
    ],
    "requires": [
+    "anyio",
+    "asyncclick",
     "pytest",
     "pytest-cov",
-    "python 3.9"
+    "python 3.9",
+    "trio"
    ],
    "source_files": [
     "test",
@@ -172,7 +181,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/click-loglevel.json"
  },
- "raw_meta_yaml": "{% set name = \"click-loglevel\" %}\n{% set version = \"0.5.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 6bfcb27435e1b859cc08d479a1b32cd8518f83b4d313cfe7d7142ee62b841cf4\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - click >=8\n\ntest:\n  requires:\n    - pytest\n    - pytest-cov\n    - python {{ python_min }}\n  source_files:\n    - test\n    - tox.ini\n  imports:\n    - click_loglevel\n  commands:\n    - python -m pytest -vv test\n\nabout:\n  home: https://github.com/jwodder/click-loglevel\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Log level parameter type for Click\n  description: |\n    `click-loglevel` provides a `LogLevel` parameter type for use in Click\n    programs that wish to let the user set the logging level.  It accepts all\n    of the `logging` log level names (`CRITICAL`, `ERROR`, `WARNING`, `INFO`,\n    `DEBUG`, and `NOTSET`, all case insensitive), and converts them into their\n    corresponding numeric values.  It also accepts integer values and leaves\n    them as-is.  Custom log levels are also supported.\n  dev_url: https://github.com/jwodder/click-loglevel\n\nextra:\n  recipe-maintainers:\n    - jwodder\n",
+ "raw_meta_yaml": "{% set name = \"click-loglevel\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: d582e62c373c43d98759942d07647a9299c50c5c290d6b0ac3a17ed1ecbb6eba\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - click >=8\n\ntest:\n  requires:\n    - anyio\n    - asyncclick\n    - pytest\n    - pytest-cov\n    - python {{ python_min }}\n    - trio\n  source_files:\n    - test\n    - tox.ini\n  imports:\n    - click_loglevel\n  commands:\n    - python -m pytest -vv test\n\nabout:\n  home: https://github.com/jwodder/click-loglevel\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Log level parameter type for Click\n  description: |\n    `click-loglevel` provides a `LogLevel` parameter type for use in Click\n    programs that wish to let the user set the logging level.  It accepts all\n    of the `logging` log level names (`CRITICAL`, `ERROR`, `WARNING`, `INFO`,\n    `DEBUG`, and `NOTSET`, all case insensitive), and converts them into their\n    corresponding numeric values.  It also accepts integer values and leaves\n    them as-is.  Custom log levels are also supported.\n  dev_url: https://github.com/jwodder/click-loglevel\n\nextra:\n  recipe-maintainers:\n    - jwodder\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -205,9 +214,12 @@
   "test": {
    "__set__": true,
    "elements": [
+    "anyio",
+    "asyncclick",
     "pytest",
     "pytest-cov",
-    "python"
+    "python",
+    "trio"
    ]
   }
  },
@@ -235,14 +247,17 @@
   "test": {
    "__set__": true,
    "elements": [
+    "anyio",
+    "asyncclick",
     "pytest",
     "pytest-cov",
-    "python 3.9"
+    "python 3.9",
+    "trio"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/click-loglevel/click_loglevel-0.5.1.tar.gz",
- "version": "0.5.1",
+ "url": "https://pypi.org/packages/source/c/click-loglevel/click_loglevel-0.6.0.tar.gz",
+ "version": "0.6.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/click-loglevel.json"
  }
