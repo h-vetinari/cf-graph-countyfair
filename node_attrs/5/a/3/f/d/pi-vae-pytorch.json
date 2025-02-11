@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "pi-vae-pytorch",
-   "version": "1.0.0rc1"
+   "version": "1.0.0rc2"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5ed240208ba8b3fc848033900f50b22aa60d8ce5b31c6cd059567b0060e467a9",
-   "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc1.tar.gz"
+   "sha256": "2d3f0c2e81dcdaf1eaadc4ad34b94f0c208978e713b06850834a6f279b66a5de",
+   "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc2.tar.gz"
   },
   "test": {
    "commands": [
@@ -108,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -118,7 +118,7 @@
   },
   "package": {
    "name": "pi-vae-pytorch",
-   "version": "1.0.0rc1"
+   "version": "1.0.0rc2"
   },
   "requirements": {
    "host": [
@@ -134,8 +134,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5ed240208ba8b3fc848033900f50b22aa60d8ce5b31c6cd059567b0060e467a9",
-   "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc1.tar.gz"
+   "sha256": "2d3f0c2e81dcdaf1eaadc4ad34b94f0c208978e713b06850834a6f279b66a5de",
+   "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc2.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,7 +164,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pi-vae-pytorch.json"
  },
- "raw_meta_yaml": "{% set name = \"pi-vae-pytorch\" %}\n{% set version = \"1.0.0rc1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pi_vae_pytorch-{{ version }}.tar.gz\n  sha256: 5ed240208ba8b3fc848033900f50b22aa60d8ce5b31c6cd059567b0060e467a9\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pytorch\n\ntest:\n  imports:\n    - pi_vae_pytorch\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/mmcinnestaylor/pi-vae-pytorch\n  summary: A Pytorch implementation of Poisson Identifiable Variational Autoencoder (pi-VAE)\n  description: Poisson Identifiable VAE (pi-VAE) is used to construct latent variable models of neural activity while simultaneously modeling the relation between the latent and task variables (non-neural variables, e.g. sensory, motor, and other externally observable states).\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/mmcinnestaylor/pi-vae-pytorch\n  doc_url: https://mmcinnestaylor.github.io/pi-vae-pytorch\n\nextra:\n  recipe-maintainers:\n    - mmcinnestaylor\n",
+ "raw_meta_yaml": "{% set name = \"pi-vae-pytorch\" %}\n{% set version = \"1.0.0rc2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pi_vae_pytorch-{{ version }}.tar.gz\n  sha256: 2d3f0c2e81dcdaf1eaadc4ad34b94f0c208978e713b06850834a6f279b66a5de\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-scm >=8\n    - pip\n  run:\n    - python >={{ python_min }}\n    - pytorch\n\ntest:\n  imports:\n    - pi_vae_pytorch\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/mmcinnestaylor/pi-vae-pytorch\n  summary: A Pytorch implementation of Poisson Identifiable Variational Autoencoder (pi-VAE)\n  description: Poisson Identifiable VAE (pi-VAE) is used to construct latent variable models of neural activity while simultaneously modeling the relation between the latent and task variables (non-neural variables, e.g. sensory, motor, and other externally observable states).\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/mmcinnestaylor/pi-vae-pytorch\n  doc_url: https://mmcinnestaylor.github.io/pi-vae-pytorch\n\nextra:\n  recipe-maintainers:\n    - mmcinnestaylor\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -234,8 +234,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc1.tar.gz",
- "version": "1.0.0rc1",
+ "url": "https://pypi.org/packages/source/p/pi-vae-pytorch/pi_vae_pytorch-1.0.0rc2.tar.gz",
+ "version": "1.0.0rc2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pi-vae-pytorch.json"
  }
