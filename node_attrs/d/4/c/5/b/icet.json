@@ -28,7 +28,7 @@
    "summary": "icet \u2014 A Pythonic approach to cluster expansions"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -51,7 +51,8 @@
    "host": [
     "pip",
     "python",
-    "pybind11"
+    "pybind11",
+    "setuptools"
    ],
    "run": [
     "ase",
@@ -67,7 +68,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "9c9ac9053532c58772add8e4948879f3302ea16099d6bcb2865816963ed8cc86",
-   "url": "https://pypi.io/packages/source/i/icet/icet-3.0.tar.gz"
+   "url": "https://pypi.org/packages/source/i/icet/icet-3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -95,7 +96,8 @@
    "elements": [
     "pip",
     "pybind11",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -130,7 +132,7 @@
    "summary": "icet \u2014 A Pythonic approach to cluster expansions"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -153,7 +155,8 @@
    "host": [
     "pip",
     "python",
-    "pybind11"
+    "pybind11",
+    "setuptools"
    ],
    "run": [
     "ase",
@@ -169,7 +172,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "9c9ac9053532c58772add8e4948879f3302ea16099d6bcb2865816963ed8cc86",
-   "url": "https://pypi.io/packages/source/i/icet/icet-3.0.tar.gz"
+   "url": "https://pypi.org/packages/source/i/icet/icet-3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -196,7 +199,7 @@
    "summary": "icet \u2014 A Pythonic approach to cluster expansions"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -219,7 +222,8 @@
    "host": [
     "pip",
     "python",
-    "pybind11"
+    "pybind11",
+    "setuptools"
    ],
    "run": [
     "ase",
@@ -235,7 +239,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "9c9ac9053532c58772add8e4948879f3302ea16099d6bcb2865816963ed8cc86",
-   "url": "https://pypi.io/packages/source/i/icet/icet-3.0.tar.gz"
+   "url": "https://pypi.org/packages/source/i/icet/icet-3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -263,7 +267,8 @@
    "elements": [
     "pip",
     "pybind11",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -301,7 +306,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/icet.json"
  },
- "raw_meta_yaml": "{% set name = \"icet\" %}\n{% set version = \"3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9c9ac9053532c58772add8e4948879f3302ea16099d6bcb2865816963ed8cc86\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py<=38]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - python\n    - pybind11\n  run:\n    - ase\n    - numba\n    - numpy\n    - pandas >=0.23\n    - python\n    - scipy\n    - spglib >1.12.0\n    - trainstation >=0.2\n\ntest:\n  imports:\n    - icet\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://icet.materialsmodeling.org\n  license: MPL-2.0\n  license_family: OTHER\n  license_file: LICENSE.txt\n  summary: icet \u2014 A Pythonic approach to cluster expansions\n\n  description: |\n    icet is a tool for the construction and sampling of alloy cluster \n    expansions.\n  doc_url: https://icet.materialsmodeling.org\n  dev_url: https://gitlab.com/materials-modeling/icet\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - erhart1\n    - rozyczko\n",
+ "raw_meta_yaml": "{% set name = \"icet\" %}\n{% set version = \"3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9c9ac9053532c58772add8e4948879f3302ea16099d6bcb2865816963ed8cc86\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py<=38]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - python\n    - pybind11\n    - setuptools\n  run:\n    - ase\n    - numba\n    - numpy\n    - pandas >=0.23\n    - python\n    - scipy\n    - spglib >1.12.0\n    - trainstation >=0.2\n\ntest:\n  imports:\n    - icet\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://icet.materialsmodeling.org\n  license: MPL-2.0\n  license_family: OTHER\n  license_file: LICENSE.txt\n  summary: icet \u2014 A Pythonic approach to cluster expansions\n\n  description: |\n    icet is a tool for the construction and sampling of alloy cluster \n    expansions.\n  doc_url: https://icet.materialsmodeling.org\n  dev_url: https://gitlab.com/materials-modeling/icet\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - erhart1\n    - rozyczko\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -316,6 +321,7 @@
    "pybind11",
    "python",
    "scipy",
+   "setuptools",
    "spglib",
    "trainstation"
   ]
@@ -337,7 +343,8 @@
     "cxx_compiler_stub",
     "pip",
     "pybind11",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -378,7 +385,8 @@
    "elements": [
     "pip",
     "pybind11",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -401,7 +409,7 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/i/icet/icet-3.0.tar.gz",
+ "url": "https://pypi.org/packages/source/i/icet/icet-3.0.tar.gz",
  "version": "3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/icet.json"
@@ -418,7 +426,7 @@
    "summary": "icet \u2014 A Pythonic approach to cluster expansions"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -441,7 +449,8 @@
    "host": [
     "pip",
     "python",
-    "pybind11"
+    "pybind11",
+    "setuptools"
    ],
    "run": [
     "ase",
@@ -457,7 +466,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "9c9ac9053532c58772add8e4948879f3302ea16099d6bcb2865816963ed8cc86",
-   "url": "https://pypi.io/packages/source/i/icet/icet-3.0.tar.gz"
+   "url": "https://pypi.org/packages/source/i/icet/icet-3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -485,7 +494,8 @@
    "elements": [
     "pip",
     "pybind11",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
