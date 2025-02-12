@@ -27,7 +27,7 @@
    "summary": "The portable Python dataframe library"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -44,24 +44,19 @@
      "noarch": "python",
      "script": [
       "find . -iname \"snapshots\" | xargs rm -r && python -m pip install . -vv --no-deps"
-     ],
-     "script_env": [
-      "POETRY_DYNAMIC_VERSIONING_BYPASS=9.5.0"
      ]
     },
     "name": "ibis-framework-core",
     "requirements": {
      "host": [
       "pip",
-      "poetry-core >=1.0.0",
-      "poetry-dynamic-versioning >=0.18.0",
+      "hatchling",
       "python 3.10"
      ],
      "run": [
       "atpublic >=2.3",
       "bidict >=0.22.1",
       "filelock >=3.7.0,<4",
-      "multipledispatch >=0.6,<2",
       "numpy >=1.23.2,<3",
       "packaging >=21.3",
       "pandas >=1.5.3,<3",
@@ -71,24 +66,27 @@
       "python >=3.10",
       "python-graphviz >=0.16",
       "regex >=2021.7.6",
-      "rich >=12.4.4",
+      "rich >=12.4.4,<14",
       "pytz >=2022.7",
       "python-dateutil >=2.8.2",
-      "sqlglot >=23.4,<25.21",
+      "sqlglot >=23.4,<26.4",
       "toolz >=0.11,<1",
       "typing-extensions >=4.3.0"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
-      "ibis",
-      "ibis.backends.pandas"
+      "ibis"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -96,23 +94,31 @@
     },
     "name": "ibis-framework",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "python-duckdb <1.2,>=0.8.1",
-      "pins <1,>=0.8.3",
-      "fsspec <2024.9.1",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "python-duckdb >=0.10,<2",
+      "pins >=0.8.3,<1",
+      "fsspec"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.duckdb"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -120,21 +126,29 @@
     },
     "name": "ibis-clickhouse",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "clickhouse-connect >=0.5.23",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "clickhouse-connect >=0.5.23"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.clickhouse"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -142,21 +156,29 @@
     },
     "name": "ibis-impala",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "impyla >=0.17",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "impyla >=0.17"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.impala"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -164,21 +186,29 @@
     },
     "name": "ibis-mysql",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "pymysql >=1",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "mysqlclient >=2.2.4"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.mysql"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -186,21 +216,29 @@
     },
     "name": "ibis-postgres",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "psycopg2 >=2.8.4",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "psycopg >=3.2.0,<4"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.postgres"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -208,22 +246,30 @@
     },
     "name": "ibis-pyspark",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
+      "ibis-framework-core",
       "pyspark >=3.3.3",
-      "setuptools",
-      "ibis-framework-core"
+      "packaging >=21.3,<25"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.pyspark"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -231,21 +277,29 @@
     },
     "name": "ibis-sqlite",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "regex >=2021.7.6",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "regex >=2021.7.6"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.sqlite"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -253,21 +307,29 @@
     },
     "name": "ibis-datafusion",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "datafusion >=0.6",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "datafusion >=0.6"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.datafusion"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -275,45 +337,31 @@
     },
     "name": "ibis-duckdb",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "python-duckdb >=0.8.1",
-      "pins >=0.8.3",
-      "fsspec <2024.9.1",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "python-duckdb >=0.10",
+      "pins >=0.8.3,<1",
+      "fsspec"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.duckdb"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "ibis-pandas",
-    "requirements": {
-     "run": [
-      "python-duckdb >=0.8.1",
-      "ibis-framework-core"
-     ]
-    },
-    "test": {
-     "imports": [
-      "ibis",
-      "ibis.backends.pandas"
-     ],
-     "requires": [
-      "python 3.10"
-     ]
-    },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -321,21 +369,29 @@
     },
     "name": "ibis-mssql",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "pyodbc >=4.0.39",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "pyodbc >=4.0.39"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.mssql"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -343,24 +399,32 @@
     },
     "name": "ibis-bigquery",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
+      "ibis-framework-core",
       "db-dtypes >=0.3.0,<2",
       "google-cloud-bigquery >=3,<4",
       "google-cloud-bigquery-storage >=2,<3",
-      "pydata-google-auth >=1.4.0",
-      "ibis-framework-core"
+      "pydata-google-auth >=1.4.0,<2"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.bigquery"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -368,21 +432,29 @@
     },
     "name": "ibis-trino",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "trino-python-client >=0.321",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "trino-python-client >=0.321"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.trino"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -390,21 +462,29 @@
     },
     "name": "ibis-snowflake",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "snowflake-connector-python >=3.0.2",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "snowflake-connector-python >=3.0.2"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.snowflake"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -412,21 +492,29 @@
     },
     "name": "ibis-polars",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "polars >=1"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.polars"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -434,21 +522,29 @@
     },
     "name": "ibis-druid",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "pydruid >=0.6.7"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.druid"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -456,21 +552,29 @@
     },
     "name": "ibis-oracle",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "oracledb >=1.3.1"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.oracle"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -478,21 +582,29 @@
     },
     "name": "ibis-exasol",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "pyexasol >=0.25.2"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.exasol"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -500,21 +612,32 @@
     },
     "name": "ibis-flink",
     "requirements": {
+     "commands": [
+      "pip check"
+     ],
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "apache-flink"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.flink"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -522,26 +645,97 @@
     },
     "name": "ibis-risingwave",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
-      "psycopg2 >=2.8.4"
+      "psycopg2 >=2.8.4,<3"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.risingwave"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "ibis-athena",
+    "requirements": {
+     "host": [
+      "python 3.10"
+     ],
+     "run": [
+      "python >=3.10",
+      "ibis-framework-core",
+      "pyathena >=3.11.0,<4",
+      "packaging >=21.3,<25",
+      "fsspec",
+      "s3fs"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "ibis",
+      "ibis.backends.athena"
+     ],
+     "requires": [
+      "python 3.10",
+      "pip"
+     ]
+    },
+    "version": "10.0.0"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "ibis-databricks",
+    "requirements": {
+     "host": [
+      "python 3.10"
+     ],
+     "run": [
+      "python >=3.10",
+      "ibis-framework-core",
+      "databricks-sql-connector >=4.0.0,<5"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "ibis",
+      "ibis.backends.databricks"
+     ],
+     "requires": [
+      "python 3.10",
+      "pip"
+     ]
+    },
+    "version": "10.0.0"
    }
   ],
   "package": {
    "name": "ibis-framework-ext",
-   "version": "9.5.0"
+   "version": "10.0.0"
   },
   "requirements": {
    "host": [
@@ -550,8 +744,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1c8a29277e63ee0dfc289bc8f550164b5e3bdaec1b76b62436c37d331bb4ef84",
-   "url": "https://pypi.org/packages/source/i/ibis-framework/ibis_framework-9.5.0.tar.gz"
+   "sha256": "c312f1590053d9eb35ce91d31216d21ec66fea4d519b6bb19001b3b30e3e7b3f",
+   "url": "https://pypi.org/packages/source/i/ibis-framework/ibis_framework-10.0.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -562,9 +756,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
-    "poetry-dynamic-versioning",
     "python"
    ]
   },
@@ -575,6 +768,7 @@
     "atpublic",
     "bidict",
     "clickhouse-connect",
+    "databricks-sql-connector",
     "datafusion",
     "db-dtypes",
     "filelock",
@@ -583,7 +777,7 @@
     "google-cloud-bigquery-storage",
     "ibis-framework-core",
     "impyla",
-    "multipledispatch",
+    "mysqlclient",
     "numpy",
     "oracledb",
     "packaging",
@@ -591,13 +785,14 @@
     "parsy",
     "pins",
     "polars",
+    "psycopg",
     "psycopg2",
     "pyarrow",
     "pyarrow-hotfix",
+    "pyathena",
     "pydata-google-auth",
     "pydruid",
     "pyexasol",
-    "pymysql",
     "pyodbc",
     "pyspark",
     "python",
@@ -607,7 +802,7 @@
     "pytz",
     "regex",
     "rich",
-    "setuptools",
+    "s3fs",
     "snowflake-connector-python",
     "sqlglot",
     "toolz",
@@ -618,6 +813,7 @@
   "test": {
    "__set__": true,
    "elements": [
+    "pip",
     "python"
    ]
   }
@@ -631,7 +827,7 @@
    "summary": "The portable Python dataframe library"
   },
   "build": {
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
@@ -648,24 +844,19 @@
      "noarch": "python",
      "script": [
       "find . -iname \"snapshots\" | xargs rm -r && python -m pip install . -vv --no-deps"
-     ],
-     "script_env": [
-      "POETRY_DYNAMIC_VERSIONING_BYPASS=9.5.0"
      ]
     },
     "name": "ibis-framework-core",
     "requirements": {
      "host": [
       "pip",
-      "poetry-core >=1.0.0",
-      "poetry-dynamic-versioning >=0.18.0",
+      "hatchling",
       "python 3.10"
      ],
      "run": [
       "atpublic >=2.3",
       "bidict >=0.22.1",
       "filelock >=3.7.0,<4",
-      "multipledispatch >=0.6,<2",
       "numpy >=1.23.2,<3",
       "packaging >=21.3",
       "pandas >=1.5.3,<3",
@@ -675,24 +866,27 @@
       "python >=3.10",
       "python-graphviz >=0.16",
       "regex >=2021.7.6",
-      "rich >=12.4.4",
+      "rich >=12.4.4,<14",
       "pytz >=2022.7",
       "python-dateutil >=2.8.2",
-      "sqlglot >=23.4,<25.21",
+      "sqlglot >=23.4,<26.4",
       "toolz >=0.11,<1",
       "typing-extensions >=4.3.0"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
-      "ibis",
-      "ibis.backends.pandas"
+      "ibis"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -700,23 +894,31 @@
     },
     "name": "ibis-framework",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "python-duckdb <1.2,>=0.8.1",
-      "pins <1,>=0.8.3",
-      "fsspec <2024.9.1",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "python-duckdb >=0.10,<2",
+      "pins >=0.8.3,<1",
+      "fsspec"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.duckdb"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -724,21 +926,29 @@
     },
     "name": "ibis-clickhouse",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "clickhouse-connect >=0.5.23",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "clickhouse-connect >=0.5.23"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.clickhouse"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -746,21 +956,29 @@
     },
     "name": "ibis-impala",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "impyla >=0.17",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "impyla >=0.17"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.impala"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -768,21 +986,29 @@
     },
     "name": "ibis-mysql",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "pymysql >=1",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "mysqlclient >=2.2.4"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.mysql"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -790,21 +1016,29 @@
     },
     "name": "ibis-postgres",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "psycopg2 >=2.8.4",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "psycopg >=3.2.0,<4"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.postgres"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -812,22 +1046,30 @@
     },
     "name": "ibis-pyspark",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
+      "ibis-framework-core",
       "pyspark >=3.3.3",
-      "setuptools",
-      "ibis-framework-core"
+      "packaging >=21.3,<25"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.pyspark"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -835,21 +1077,29 @@
     },
     "name": "ibis-sqlite",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "regex >=2021.7.6",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "regex >=2021.7.6"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.sqlite"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -857,21 +1107,29 @@
     },
     "name": "ibis-datafusion",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "datafusion >=0.6",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "datafusion >=0.6"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.datafusion"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -879,45 +1137,31 @@
     },
     "name": "ibis-duckdb",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "python-duckdb >=0.8.1",
-      "pins >=0.8.3",
-      "fsspec <2024.9.1",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "python-duckdb >=0.10",
+      "pins >=0.8.3,<1",
+      "fsspec"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.duckdb"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
-   },
-   {
-    "build": {
-     "noarch": "python"
-    },
-    "name": "ibis-pandas",
-    "requirements": {
-     "run": [
-      "python-duckdb >=0.8.1",
-      "ibis-framework-core"
-     ]
-    },
-    "test": {
-     "imports": [
-      "ibis",
-      "ibis.backends.pandas"
-     ],
-     "requires": [
-      "python 3.10"
-     ]
-    },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -925,21 +1169,29 @@
     },
     "name": "ibis-mssql",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "pyodbc >=4.0.39",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "pyodbc >=4.0.39"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.mssql"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -947,24 +1199,32 @@
     },
     "name": "ibis-bigquery",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
+      "ibis-framework-core",
       "db-dtypes >=0.3.0,<2",
       "google-cloud-bigquery >=3,<4",
       "google-cloud-bigquery-storage >=2,<3",
-      "pydata-google-auth >=1.4.0",
-      "ibis-framework-core"
+      "pydata-google-auth >=1.4.0,<2"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.bigquery"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -972,21 +1232,29 @@
     },
     "name": "ibis-trino",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "trino-python-client >=0.321",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "trino-python-client >=0.321"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.trino"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -994,21 +1262,29 @@
     },
     "name": "ibis-snowflake",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
-      "snowflake-connector-python >=3.0.2",
-      "ibis-framework-core"
+      "python >=3.10",
+      "ibis-framework-core",
+      "snowflake-connector-python >=3.0.2"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.snowflake"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -1016,21 +1292,29 @@
     },
     "name": "ibis-polars",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "polars >=1"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.polars"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -1038,21 +1322,29 @@
     },
     "name": "ibis-druid",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "pydruid >=0.6.7"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.druid"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -1060,21 +1352,29 @@
     },
     "name": "ibis-oracle",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "oracledb >=1.3.1"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.oracle"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -1082,21 +1382,29 @@
     },
     "name": "ibis-exasol",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "pyexasol >=0.25.2"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.exasol"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -1104,21 +1412,32 @@
     },
     "name": "ibis-flink",
     "requirements": {
+     "commands": [
+      "pip check"
+     ],
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
       "apache-flink"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.flink"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
    },
    {
     "build": {
@@ -1126,26 +1445,97 @@
     },
     "name": "ibis-risingwave",
     "requirements": {
+     "host": [
+      "python 3.10"
+     ],
      "run": [
+      "python >=3.10",
       "ibis-framework-core",
-      "psycopg2 >=2.8.4"
+      "psycopg2 >=2.8.4,<3"
      ]
     },
     "test": {
+     "commands": [
+      "pip check"
+     ],
      "imports": [
       "ibis",
       "ibis.backends.risingwave"
      ],
      "requires": [
-      "python 3.10"
+      "python 3.10",
+      "pip"
      ]
     },
-    "version": "9.5.0"
+    "version": "10.0.0"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "ibis-athena",
+    "requirements": {
+     "host": [
+      "python 3.10"
+     ],
+     "run": [
+      "python >=3.10",
+      "ibis-framework-core",
+      "pyathena >=3.11.0,<4",
+      "packaging >=21.3,<25",
+      "fsspec",
+      "s3fs"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "ibis",
+      "ibis.backends.athena"
+     ],
+     "requires": [
+      "python 3.10",
+      "pip"
+     ]
+    },
+    "version": "10.0.0"
+   },
+   {
+    "build": {
+     "noarch": "python"
+    },
+    "name": "ibis-databricks",
+    "requirements": {
+     "host": [
+      "python 3.10"
+     ],
+     "run": [
+      "python >=3.10",
+      "ibis-framework-core",
+      "databricks-sql-connector >=4.0.0,<5"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check"
+     ],
+     "imports": [
+      "ibis",
+      "ibis.backends.databricks"
+     ],
+     "requires": [
+      "python 3.10",
+      "pip"
+     ]
+    },
+    "version": "10.0.0"
    }
   ],
   "package": {
    "name": "ibis-framework-ext",
-   "version": "9.5.0"
+   "version": "10.0.0"
   },
   "requirements": {
    "host": [
@@ -1154,16 +1544,18 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1c8a29277e63ee0dfc289bc8f550164b5e3bdaec1b76b62436c37d331bb4ef84",
-   "url": "https://pypi.org/packages/source/i/ibis-framework/ibis_framework-9.5.0.tar.gz"
+   "sha256": "c312f1590053d9eb35ce91d31216d21ec66fea4d519b6bb19001b3b30e3e7b3f",
+   "url": "https://pypi.org/packages/source/i/ibis-framework/ibis_framework-10.0.0.tar.gz"
   }
  },
  "name": "ibis-framework-ext",
  "outputs_names": {
   "__set__": true,
   "elements": [
+   "ibis-athena",
    "ibis-bigquery",
    "ibis-clickhouse",
+   "ibis-databricks",
    "ibis-datafusion",
    "ibis-druid",
    "ibis-duckdb",
@@ -1175,7 +1567,6 @@
    "ibis-mssql",
    "ibis-mysql",
    "ibis-oracle",
-   "ibis-pandas",
    "ibis-polars",
    "ibis-postgres",
    "ibis-pyspark",
@@ -1192,7 +1583,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ibis-framework.json"
  },
- "raw_meta_yaml": "{% set name = \"ibis-framework\" %}\n{% set version = \"9.5.0\" %}\n\npackage:\n  name: {{ name }}-ext\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace(\"-\", \"_\") }}-{{ version }}.tar.gz\n  sha256: 1c8a29277e63ee0dfc289bc8f550164b5e3bdaec1b76b62436c37d331bb4ef84\n\nbuild:\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n\noutputs:\n  - name: {{ name }}-core\n    version: {{ version }}\n\n    build:\n      noarch: python\n      script:\n        - find . -iname \"snapshots\" | xargs rm -r && python -m pip install . -vv --no-deps\n      script_env:\n        - POETRY_DYNAMIC_VERSIONING_BYPASS={{ version }}\n\n    requirements:\n      host:\n        - pip\n        - poetry-core >=1.0.0\n        - poetry-dynamic-versioning >=0.18.0\n        - python {{ python_min }}\n\n      run:\n        - atpublic >=2.3\n        - bidict >=0.22.1\n        - filelock >=3.7.0,<4\n        - multipledispatch >=0.6,<2\n        - numpy >=1.23.2,<3\n        - packaging >=21.3\n        - pandas >=1.5.3,<3\n        - parsy >=2\n        - pyarrow >=10.0.1\n        - pyarrow-hotfix >=0.4\n        - python >={{ python_min }}\n        - python-graphviz >=0.16\n        - regex >=2021.7.6\n        - rich >=12.4.4\n        - pytz >=2022.7\n        - python-dateutil >=2.8.2\n        - sqlglot >=23.4,<25.21\n        - toolz >=0.11,<1\n        - typing-extensions >=4.3.0\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.pandas\n\n  - name: {{ name }}\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - python-duckdb <1.2,>=0.8.1\n        - pins <1,>=0.8.3\n        - fsspec <2024.9.1\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        # - typing_extensions <5,>=4.3.0\n        # - trino-python-client <1,>=0.321\n        # - toolz <1,>=0.11\n        # - sqlglot <25.2,>=23.4\n        # - snowflake-connector-python !=3.3.0b1,<4,>=3.0.2\n        # - shapely <3,>=2\n        # - rich <14,>=12.4.4\n        # - regex >=2021.7.6\n        # - pytz >=2022.7\n        # - python-graphviz <1,>=0.16\n        # - python-dateutil <3,>=2.8.2\n        # - pyspark <4,>=3\n        # - pyodbc <6,>=4.0.39\n        # - pymysql <2,>=1\n        # - pyexasol <1,>=0.25.2\n        # - pydruid <1,>=0.6.7\n        # - pydata-google-auth <2,>=1.4.0\n        # - pyarrow-hotfix <1,>=0.4\n        # - pyarrow <17,>=10.0.1\n        # - psycopg2 <3,>=2.8.4\n        # - polars <1,>=0.20.17\n        # - parsy <3,>=2\n        # - pandas <3,>=1.5.3\n        # - packaging <25,>=21.3\n        # - oracledb <3,>=1.3.1\n        # - numpy <2,>=1.23.2\n        # - impyla <1,>=0.17\n        # - google-cloud-bigquery-storage <3,>=2\n        # - google-cloud-bigquery <4,>=3\n        # - geopandas <1,>=0.6\n        # - deltalake <1,>=0.9.0\n        # - db-dtypes <2,>=0.3\n        # - datafusion <39,>=0.6\n        # - dask-core <2024.3.0,>=2022.9.1\n        # - clickhouse-connect <1,>=0.5.23\n        # - black <25,>=22.1.0\n        # - bidict <1,>=0.22.1\n        # - atpublic <5,>=2.3\n        # - typing_extensions <5,>=4.3.0\n        # - trino-python-client <1,>=0.321\n        # - toolz <1,>=0.11\n        # - sqlglot <25.7,>=23.4\n        # - snowflake-connector-python !=3.3.0b1,<4,>=3.0.2\n        # - shapely <3,>=2\n        # - rich <14,>=12.4.4\n        # - regex >=2021.7.6\n        # - pytz >=2022.7\n        # - python-graphviz <1,>=0.16\n        # - python-dateutil <3,>=2.8.2\n        # - pyspark <4,>=3.3.3\n        # - pyproj <4,>=3.3.0\n        # - pyodbc <6,>=4.0.39\n        # - pymysql <2,>=1\n        # - pyexasol <1,>=0.25.2\n        # - pydruid <1,>=0.6.7\n        # - pydata-google-auth <2,>=1.4.0\n        # - pyarrow-hotfix <1,>=0.4\n        # - pyarrow <18,>=10.0.1\n        # - psycopg2 <3,>=2.8.4\n        # - polars <2,>=1\n        # - parsy <3,>=2\n        # - pandas <3,>=1.5.3\n        # - packaging <25,>=21.3\n        # - oracledb <3,>=1.3.1\n        # - numpy <3,>=1.23.2\n        # - impyla <1,>=0.17\n        # - google-cloud-bigquery-storage <3,>=2\n        # - google-cloud-bigquery <4,>=3\n        # - geopandas <2,>=0.6\n        # - geoarrow-types <1,>=0.2\n        # - deltalake <1,>=0.9.0\n        # - db-dtypes <2,>=0.3\n        # - datafusion <40,>=0.6\n        # - dask-core <2024.3.0,>=2022.9.1\n        # - clickhouse-connect <1,>=0.5.23\n        # - black <25,>=22.1.0\n        # - atpublic <5,>=2.3\n        # - typing_extensions <5,>=4.3.0\n        # - trino-python-client <1,>=0.321\n        # - toolz <1,>=0.11\n        # - sqlglot <25.21,>=23.4\n        # - snowflake-connector-python !=3.3.0b1,<4,>=3.0.2\n        # - shapely <3,>=2\n        # - rich <14,>=12.4.4\n        # - regex >=2021.7.6\n        # - pytz >=2022.7\n        # - python-graphviz <1,>=0.16\n        # - python-dateutil <3,>=2.8.2\n        # - pyspark <4,>=3.3.3\n        # - pyproj <4,>=3.3.0\n        # - pyodbc <6,>=4.0.39\n        # - pymysql <2,>=1\n        # - pyexasol <1,>=0.25.2\n        # - pydruid <1,>=0.6.7\n        # - pydata-google-auth <2,>=1.4.0\n        # - pyarrow-hotfix <1,>=0.4\n        # - pyarrow <18,>=10.0.1\n        # - psycopg2 <3,>=2.8.4\n        # - polars <2,>=1\n        # - parsy <3,>=2\n        # - pandas <3,>=1.5.3\n        # - packaging <25,>=21.3\n        # - oracledb <3,>=1.3.1\n        # - numpy <3,>=1.23.2\n        # - impyla <1,>=0.17\n        # - google-cloud-bigquery-storage <3,>=2\n        # - google-cloud-bigquery <4,>=3\n        # - geopandas <2,>=0.6\n        # - geoarrow-types <1,>=0.2\n        # - deltalake <1,>=0.9.0\n        # - db-dtypes <2,>=0.3\n        # - datafusion <41,>=0.6\n        # - dask-core <2024.3.0,>=2022.9.1\n        # - clickhouse-connect <1,>=0.5.23\n        # - black <25,>=22.1.0\n        # - atpublic <6,>=2.3\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.duckdb\n\n\n  - name: ibis-clickhouse\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - clickhouse-connect >=0.5.23\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.clickhouse\n\n  - name: ibis-impala\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - impyla >=0.17\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.impala\n\n  - name: ibis-mysql\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - pymysql >=1\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.mysql\n\n  - name: ibis-postgres\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - psycopg2 >=2.8.4\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.postgres\n\n  - name: ibis-pyspark\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - pyspark >=3.3.3\n        - setuptools\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.pyspark\n\n  - name: ibis-sqlite\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - regex >=2021.7.6\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.sqlite\n\n  - name: ibis-datafusion\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - datafusion >=0.6\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.datafusion\n\n  - name: ibis-duckdb\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - python-duckdb >=0.8.1\n        - pins >=0.8.3\n        - fsspec <2024.9.1\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.duckdb\n\n  - name: ibis-pandas\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - python-duckdb >=0.8.1\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.pandas\n\n  - name: ibis-mssql\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - pyodbc >=4.0.39\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.mssql\n\n\n  - name: ibis-bigquery\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - db-dtypes >=0.3.0,<2\n        - google-cloud-bigquery >=3,<4\n        - google-cloud-bigquery-storage >=2,<3\n        - pydata-google-auth >=1.4.0\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.bigquery\n\n  - name: ibis-trino\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - trino-python-client >=0.321\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.trino\n\n  - name: ibis-snowflake\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - snowflake-connector-python >=3.0.2\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.snowflake\n\n  - name: ibis-polars\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - polars >=1\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.polars\n\n  - name: ibis-druid\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - pydruid >=0.6.7\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.druid\n\n  - name: ibis-oracle\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - oracledb >=1.3.1\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.oracle\n\n  - name: ibis-exasol\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - pyexasol >=0.25.2\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.exasol\n\n  - name: ibis-flink\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - apache-flink\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.flink\n\n  - name: ibis-risingwave\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      run:\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - psycopg2 >=2.8.4\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - ibis\n        - ibis.backends.risingwave\n\n\nabout:\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  home: http://www.ibis-project.org\n  summary: The portable Python dataframe library\n\nextra:\n  recipe-maintainers:\n    - jreback\n    - xmnlab\n    - datapythonista\n    - cpcloud\n    - gforsyth\n",
+ "raw_meta_yaml": "{% set name = \"ibis-framework\" %}\n{% set version = \"10.0.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name }}-ext\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace(\"-\", \"_\") }}-{{ version }}.tar.gz\n  sha256: c312f1590053d9eb35ce91d31216d21ec66fea4d519b6bb19001b3b30e3e7b3f\n\nbuild:\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n\noutputs:\n  - name: {{ name }}-core\n    version: {{ version }}\n\n    build:\n      noarch: python\n      script:\n        - find . -iname \"snapshots\" | xargs rm -r && python -m pip install . -vv --no-deps\n\n    requirements:\n      host:\n        - pip\n        - hatchling\n        - python {{ python_min }}\n\n      run:\n        - atpublic >=2.3\n        - bidict >=0.22.1\n        - filelock >=3.7.0,<4\n        - numpy >=1.23.2,<3\n        - packaging >=21.3\n        - pandas >=1.5.3,<3\n        - parsy >=2\n        - pyarrow >=10.0.1\n        - pyarrow-hotfix >=0.4\n        - python >={{ python_min }}\n        - python-graphviz >=0.16\n        - regex >=2021.7.6\n        - rich >=12.4.4,<14\n        - pytz >=2022.7\n        - python-dateutil >=2.8.2\n        - sqlglot >=23.4,<26.4\n        - toolz >=0.11,<1\n        - typing-extensions >=4.3.0\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n      commands:\n        - pip check\n\n\n  - name: {{ name }}\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - python-duckdb >=0.10,<2\n        - pins >=0.8.3,<1\n        - fsspec\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.duckdb\n      commands:\n        - pip check\n\n\n  - name: ibis-clickhouse\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - clickhouse-connect >=0.5.23\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.clickhouse\n      commands:\n        - pip check\n\n\n  - name: ibis-impala\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - impyla >=0.17\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.impala\n      commands:\n        - pip check\n\n\n  - name: ibis-mysql\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - mysqlclient >=2.2.4\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.mysql\n      commands:\n        - pip check\n\n\n  - name: ibis-postgres\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - psycopg >=3.2.0,<4\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.postgres\n      commands:\n        - pip check\n\n\n  - name: ibis-pyspark\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - pyspark >=3.3.3\n        - packaging >=21.3,<25\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.pyspark\n      commands:\n        - pip check\n\n\n  - name: ibis-sqlite\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - regex >=2021.7.6\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.sqlite\n      commands:\n        - pip check\n\n\n  - name: ibis-datafusion\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - datafusion >=0.6\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.datafusion\n      commands:\n        - pip check\n\n\n  - name: ibis-duckdb\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - python-duckdb >=0.10\n        - pins >=0.8.3,<1\n        - fsspec\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.duckdb\n      commands:\n        - pip check\n\n\n  - name: ibis-mssql\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - pyodbc >=4.0.39\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.mssql\n      commands:\n        - pip check\n\n\n  - name: ibis-bigquery\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - db-dtypes >=0.3.0,<2\n        - google-cloud-bigquery >=3,<4\n        - google-cloud-bigquery-storage >=2,<3\n        - pydata-google-auth >=1.4.0,<2\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.bigquery\n      commands:\n        - pip check\n\n\n  - name: ibis-trino\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - trino-python-client >=0.321\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.trino\n      commands:\n        - pip check\n\n\n  - name: ibis-snowflake\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - snowflake-connector-python >=3.0.2\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.snowflake\n      commands:\n        - pip check\n\n\n  - name: ibis-polars\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - polars >=1\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.polars\n      commands:\n        - pip check\n\n\n  - name: ibis-druid\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - pydruid >=0.6.7\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.druid\n      commands:\n        - pip check\n\n\n  - name: ibis-oracle\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - oracledb >=1.3.1\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.oracle\n      commands:\n        - pip check\n\n\n  - name: ibis-exasol\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - pyexasol >=0.25.2\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.exasol\n      commands:\n        - pip check\n\n\n  - name: ibis-flink\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - apache-flink\n      commands:\n        - pip check\n\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.flink\n      commands:\n        - pip check\n\n\n  - name: ibis-risingwave\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - psycopg2 >=2.8.4,<3\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.risingwave\n      commands:\n        - pip check\n\n\n  - name: ibis-athena\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - pyathena >=3.11.0,<4\n        - packaging >=21.3,<25\n        - fsspec\n        - s3fs\n   \n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.athena\n      commands:\n        - pip check\n\n\n  - name: ibis-databricks\n    version: {{ version }}\n\n    build:\n      noarch: python\n\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(name + '-core', exact=True) }}\n        - databricks-sql-connector >=4.0.0,<5\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - ibis\n        - ibis.backends.databricks\n      commands:\n        - pip check\n\n\nabout:\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  home: http://www.ibis-project.org\n  summary: The portable Python dataframe library\n\nextra:\n  recipe-maintainers:\n    - jreback\n    - xmnlab\n    - datapythonista\n    - cpcloud\n    - gforsyth\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -1200,15 +1591,17 @@
    "atpublic",
    "bidict",
    "clickhouse-connect",
+   "databricks-sql-connector",
    "datafusion",
    "db-dtypes",
    "filelock",
    "fsspec",
    "google-cloud-bigquery",
    "google-cloud-bigquery-storage",
+   "hatchling",
    "ibis-framework-core",
    "impyla",
-   "multipledispatch",
+   "mysqlclient",
    "numpy",
    "oracledb",
    "packaging",
@@ -1216,16 +1609,15 @@
    "parsy",
    "pins",
    "pip",
-   "poetry-core",
-   "poetry-dynamic-versioning",
    "polars",
+   "psycopg",
    "psycopg2",
    "pyarrow",
    "pyarrow-hotfix",
+   "pyathena",
    "pydata-google-auth",
    "pydruid",
    "pyexasol",
-   "pymysql",
    "pyodbc",
    "pyspark",
    "python",
@@ -1235,7 +1627,7 @@
    "pytz",
    "regex",
    "rich",
-   "setuptools",
+   "s3fs",
    "snowflake-connector-python",
    "sqlglot",
    "toolz",
@@ -1251,9 +1643,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
-    "poetry-dynamic-versioning",
     "python"
    ]
   },
@@ -1264,6 +1655,7 @@
     "atpublic",
     "bidict",
     "clickhouse-connect",
+    "databricks-sql-connector",
     "datafusion",
     "db-dtypes",
     "filelock",
@@ -1272,7 +1664,7 @@
     "google-cloud-bigquery-storage",
     "ibis-framework-core",
     "impyla",
-    "multipledispatch",
+    "mysqlclient",
     "numpy",
     "oracledb",
     "packaging",
@@ -1280,13 +1672,14 @@
     "parsy",
     "pins",
     "polars",
+    "psycopg",
     "psycopg2",
     "pyarrow",
     "pyarrow-hotfix",
+    "pyathena",
     "pydata-google-auth",
     "pydruid",
     "pyexasol",
-    "pymysql",
     "pyodbc",
     "pyspark",
     "python",
@@ -1296,7 +1689,7 @@
     "pytz",
     "regex",
     "rich",
-    "setuptools",
+    "s3fs",
     "snowflake-connector-python",
     "sqlglot",
     "toolz",
@@ -1307,6 +1700,7 @@
   "test": {
    "__set__": true,
    "elements": [
+    "pip",
     "python"
    ]
   }
@@ -1320,9 +1714,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core >=1.0.0",
-    "poetry-dynamic-versioning >=0.18.0",
     "python 3.10"
    ]
   },
@@ -1333,43 +1726,45 @@
     "atpublic >=2.3",
     "bidict >=0.22.1",
     "clickhouse-connect >=0.5.23",
+    "databricks-sql-connector >=4.0.0,<5",
     "datafusion >=0.6",
     "db-dtypes >=0.3.0,<2",
     "filelock >=3.7.0,<4",
-    "fsspec <2024.9.1",
+    "fsspec",
     "google-cloud-bigquery >=3,<4",
     "google-cloud-bigquery-storage >=2,<3",
     "ibis-framework-core",
     "impyla >=0.17",
-    "multipledispatch >=0.6,<2",
+    "mysqlclient >=2.2.4",
     "numpy >=1.23.2,<3",
     "oracledb >=1.3.1",
     "packaging >=21.3",
+    "packaging >=21.3,<25",
     "pandas >=1.5.3,<3",
     "parsy >=2",
-    "pins <1,>=0.8.3",
-    "pins >=0.8.3",
+    "pins >=0.8.3,<1",
     "polars >=1",
-    "psycopg2 >=2.8.4",
+    "psycopg >=3.2.0,<4",
+    "psycopg2 >=2.8.4,<3",
     "pyarrow >=10.0.1",
     "pyarrow-hotfix >=0.4",
-    "pydata-google-auth >=1.4.0",
+    "pyathena >=3.11.0,<4",
+    "pydata-google-auth >=1.4.0,<2",
     "pydruid >=0.6.7",
     "pyexasol >=0.25.2",
-    "pymysql >=1",
     "pyodbc >=4.0.39",
     "pyspark >=3.3.3",
     "python >=3.10",
     "python-dateutil >=2.8.2",
-    "python-duckdb <1.2,>=0.8.1",
-    "python-duckdb >=0.8.1",
+    "python-duckdb >=0.10",
+    "python-duckdb >=0.10,<2",
     "python-graphviz >=0.16",
     "pytz >=2022.7",
     "regex >=2021.7.6",
-    "rich >=12.4.4",
-    "setuptools",
+    "rich >=12.4.4,<14",
+    "s3fs",
     "snowflake-connector-python >=3.0.2",
-    "sqlglot >=23.4,<25.21",
+    "sqlglot >=23.4,<26.4",
     "toolz >=0.11,<1",
     "trino-python-client >=0.321",
     "typing-extensions >=4.3.0"
@@ -1378,12 +1773,13 @@
   "test": {
    "__set__": true,
    "elements": [
+    "pip",
     "python 3.10"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/i/ibis-framework/ibis_framework-9.5.0.tar.gz",
- "version": "9.5.0",
+ "url": "https://pypi.org/packages/source/i/ibis-framework/ibis_framework-10.0.0.tar.gz",
+ "version": "10.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ibis-framework.json"
  }
