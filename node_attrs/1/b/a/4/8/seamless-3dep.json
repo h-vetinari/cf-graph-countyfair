@@ -18,7 +18,9 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "home": "https://github.com/hyriver/seamless-3dep",
+   "dev_url": "https://github.com/hyriver/seamless-3dep",
+   "doc_url": "https://seamless-3dep.readthedocs.io",
+   "home": "https://seamless-3dep.readthedocs.io",
    "license": "MIT",
    "license_file": "LICENSE",
    "summary": "Streamlined Access to USGS 3DEP Topographic Data"
@@ -35,7 +37,7 @@
   },
   "package": {
    "name": "seamless-3dep",
-   "version": "0.3.0"
+   "version": "0.3.1"
   },
   "requirements": {
    "host": [
@@ -46,16 +48,15 @@
    ],
    "run": [
     "python >=3.9",
-    "aiofiles",
-    "aiohttp >=3.8.3",
+    "tiny-retriever >=0.1.1",
     "libgdal-core",
     "rasterio"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "865e609a0e6d45f93ae107d78a29674107f3048f5aa4df9e4d22ea03483fd7c3",
-   "url": "https://pypi.org/packages/source/s/seamless-3dep/seamless_3dep-0.3.0.tar.gz"
+   "sha256": "4044515c1b8deed9a87b6de51d46fc56f5879a248f9a0d2219a55d946902d6dd",
+   "url": "https://pypi.org/packages/source/s/seamless-3dep/seamless_3dep-0.3.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -87,11 +88,10 @@
   "run": {
    "__set__": true,
    "elements": [
-    "aiofiles",
-    "aiohttp",
     "libgdal-core",
     "python",
-    "rasterio"
+    "rasterio",
+    "tiny-retriever"
    ]
   },
   "test": {
@@ -104,7 +104,9 @@
  },
  "meta_yaml": {
   "about": {
-   "home": "https://github.com/hyriver/seamless-3dep",
+   "dev_url": "https://github.com/hyriver/seamless-3dep",
+   "doc_url": "https://seamless-3dep.readthedocs.io",
+   "home": "https://seamless-3dep.readthedocs.io",
    "license": "MIT",
    "license_file": "LICENSE",
    "summary": "Streamlined Access to USGS 3DEP Topographic Data"
@@ -121,7 +123,7 @@
   },
   "package": {
    "name": "seamless-3dep",
-   "version": "0.3.0"
+   "version": "0.3.1"
   },
   "requirements": {
    "host": [
@@ -132,16 +134,15 @@
    ],
    "run": [
     "python >=3.9",
-    "aiofiles",
-    "aiohttp >=3.8.3",
+    "tiny-retriever >=0.1.1",
     "libgdal-core",
     "rasterio"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "865e609a0e6d45f93ae107d78a29674107f3048f5aa4df9e4d22ea03483fd7c3",
-   "url": "https://pypi.org/packages/source/s/seamless-3dep/seamless_3dep-0.3.0.tar.gz"
+   "sha256": "4044515c1b8deed9a87b6de51d46fc56f5879a248f9a0d2219a55d946902d6dd",
+   "url": "https://pypi.org/packages/source/s/seamless-3dep/seamless_3dep-0.3.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -170,18 +171,17 @@
  "pr_info": {
   "__lazy_json__": "pr_info/seamless-3dep.json"
  },
- "raw_meta_yaml": "{% set name = \"seamless-3dep\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/seamless_3dep-{{ version }}.tar.gz\n  sha256: 865e609a0e6d45f93ae107d78a29674107f3048f5aa4df9e4d22ea03483fd7c3\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatch-vcs\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - aiofiles\n    - aiohttp >=3.8.3\n    - libgdal-core\n    - rasterio\n\ntest:\n  imports:\n    - seamless_3dep\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Streamlined Access to USGS 3DEP Topographic Data\n  license: MIT\n  license_file: LICENSE\n  home: https://github.com/hyriver/seamless-3dep\n\nextra:\n  recipe-maintainers:\n    - cheginit\n",
+ "raw_meta_yaml": "{% set name = \"seamless-3dep\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/seamless_3dep-{{ version }}.tar.gz\n  sha256: 4044515c1b8deed9a87b6de51d46fc56f5879a248f9a0d2219a55d946902d6dd\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatch-vcs\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - tiny-retriever >=0.1.1\n    - libgdal-core\n    - rasterio\n\ntest:\n  imports:\n    - seamless_3dep\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Streamlined Access to USGS 3DEP Topographic Data\n  license: MIT\n  license_file: LICENSE\n  home: https://seamless-3dep.readthedocs.io\n  doc_url: https://seamless-3dep.readthedocs.io\n  dev_url: https://github.com/hyriver/seamless-3dep\n\nextra:\n  recipe-maintainers:\n    - cheginit\n",
  "req": {
   "__set__": true,
   "elements": [
-   "aiofiles",
-   "aiohttp",
    "hatch-vcs",
    "hatchling",
    "libgdal-core",
    "pip",
    "python",
-   "rasterio"
+   "rasterio",
+   "tiny-retriever"
   ]
  },
  "requirements": {
@@ -201,11 +201,10 @@
   "run": {
    "__set__": true,
    "elements": [
-    "aiofiles",
-    "aiohttp",
     "libgdal-core",
     "python",
-    "rasterio"
+    "rasterio",
+    "tiny-retriever"
    ]
   },
   "test": {
@@ -234,11 +233,10 @@
   "run": {
    "__set__": true,
    "elements": [
-    "aiofiles",
-    "aiohttp >=3.8.3",
     "libgdal-core",
     "python >=3.9",
-    "rasterio"
+    "rasterio",
+    "tiny-retriever >=0.1.1"
    ]
   },
   "test": {
@@ -249,8 +247,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/seamless-3dep/seamless_3dep-0.3.0.tar.gz",
- "version": "0.3.0",
+ "url": "https://pypi.org/packages/source/s/seamless-3dep/seamless_3dep-0.3.1.tar.gz",
+ "version": "0.3.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/seamless-3dep.json"
  }
