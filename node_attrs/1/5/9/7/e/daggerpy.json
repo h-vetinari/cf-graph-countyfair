@@ -24,7 +24,7 @@
    "entry_points": [
     "dagger=dagger.cli:main"
    ],
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -34,12 +34,13 @@
   },
   "package": {
    "name": "daggerpy",
-   "version": "0.0.13"
+   "version": "0.0.16"
   },
   "requirements": {
    "build": [
     "cxx_compiler_stub",
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
@@ -60,8 +61,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c432594bd0aa3f3287ee43c006715c7f08e7910e5dfcf023c4de58af07d7f29b",
-   "url": "https://pypi.io/packages/source/d/daggerpy/daggerpy-0.0.13.tar.gz"
+   "sha256": "9f13c17b5f482221697c668090435ce6ffe589ae54df9d130f88f0a642db3066",
+   "url": "https://pypi.org/packages/source/d/daggerpy/daggerpy-0.0.16.tar.gz"
   },
   "test": {
    "commands": [
@@ -80,6 +81,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub"
    ]
   },
@@ -123,7 +125,7 @@
    "entry_points": [
     "dagger=dagger.cli:main"
    ],
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -133,12 +135,13 @@
   },
   "package": {
    "name": "daggerpy",
-   "version": "0.0.13"
+   "version": "0.0.16"
   },
   "requirements": {
    "build": [
     "cxx_compiler_stub",
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
@@ -159,8 +162,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c432594bd0aa3f3287ee43c006715c7f08e7910e5dfcf023c4de58af07d7f29b",
-   "url": "https://pypi.io/packages/source/d/daggerpy/daggerpy-0.0.13.tar.gz"
+   "sha256": "9f13c17b5f482221697c668090435ce6ffe589ae54df9d130f88f0a642db3066",
+   "url": "https://pypi.org/packages/source/d/daggerpy/daggerpy-0.0.16.tar.gz"
   },
   "test": {
    "commands": [
@@ -186,7 +189,7 @@
    "entry_points": [
     "dagger=dagger.cli:main"
    ],
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -196,12 +199,13 @@
   },
   "package": {
    "name": "daggerpy",
-   "version": "0.0.13"
+   "version": "0.0.16"
   },
   "requirements": {
    "build": [
     "cxx_compiler_stub",
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
@@ -222,8 +226,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c432594bd0aa3f3287ee43c006715c7f08e7910e5dfcf023c4de58af07d7f29b",
-   "url": "https://pypi.io/packages/source/d/daggerpy/daggerpy-0.0.13.tar.gz"
+   "sha256": "9f13c17b5f482221697c668090435ce6ffe589ae54df9d130f88f0a642db3066",
+   "url": "https://pypi.org/packages/source/d/daggerpy/daggerpy-0.0.16.tar.gz"
   },
   "test": {
    "commands": [
@@ -242,6 +246,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub"
    ]
   },
@@ -289,11 +294,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/daggerpy.json"
  },
- "raw_meta_yaml": "{% set name = \"daggerpy\" %}\n{% set version = \"0.0.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/daggerpy-{{ version }}.tar.gz\n  sha256: c432594bd0aa3f3287ee43c006715c7f08e7910e5dfcf023c4de58af07d7f29b\n\nbuild:\n  skip: true  # [py2k]\n  entry_points:\n    - dagger=dagger.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pybind11\n    - numpy <=1.50\n    - xtensor\n    - xtensor-python\n    - pip\n  run:\n    - python\n    - click >=7.0\n    - pybind11\n    - numpy <=1.50\n    - xtensor\n    - xtensor-python\n\ntest:\n  imports:\n    - dagger\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/bgailleton/DAGGER\n  summary: DAG tools to process numerical topography and landscape evolution models\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - bgailleton\n",
+ "raw_meta_yaml": "{% set name = \"daggerpy\" %}\n{% set version = \"0.0.16\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/daggerpy-{{ version }}.tar.gz\n  sha256: 9f13c17b5f482221697c668090435ce6ffe589ae54df9d130f88f0a642db3066\n\nbuild:\n  skip: true  # [py2k]\n  entry_points:\n    - dagger=dagger.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - pybind11\n    - numpy <=1.50\n    - xtensor\n    - xtensor-python\n    - pip\n  run:\n    - python\n    - click >=7.0\n    - pybind11\n    - numpy <=1.50\n    - xtensor\n    - xtensor-python\n\ntest:\n  imports:\n    - dagger\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/bgailleton/DAGGER\n  summary: DAG tools to process numerical topography and landscape evolution models\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - bgailleton\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "click",
    "cxx_compiler_stub",
    "numpy",
@@ -309,6 +315,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub"
    ]
   },
@@ -316,6 +323,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "numpy",
     "pip",
@@ -329,6 +337,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "click",
     "cxx_compiler_stub",
     "numpy",
@@ -351,6 +360,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub"
    ]
   },
@@ -383,8 +393,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/d/daggerpy/daggerpy-0.0.13.tar.gz",
- "version": "0.0.13",
+ "url": "https://pypi.org/packages/source/d/daggerpy/daggerpy-0.0.16.tar.gz",
+ "version": "0.0.16",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/daggerpy.json"
  },
@@ -399,7 +409,7 @@
    "entry_points": [
     "dagger=dagger.cli:main"
    ],
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -409,12 +419,13 @@
   },
   "package": {
    "name": "daggerpy",
-   "version": "0.0.13"
+   "version": "0.0.16"
   },
   "requirements": {
    "build": [
     "cxx_compiler_stub",
-    "c_compiler_stub"
+    "c_compiler_stub",
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
@@ -435,8 +446,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c432594bd0aa3f3287ee43c006715c7f08e7910e5dfcf023c4de58af07d7f29b",
-   "url": "https://pypi.io/packages/source/d/daggerpy/daggerpy-0.0.13.tar.gz"
+   "sha256": "9f13c17b5f482221697c668090435ce6ffe589ae54df9d130f88f0a642db3066",
+   "url": "https://pypi.org/packages/source/d/daggerpy/daggerpy-0.0.16.tar.gz"
   },
   "test": {
    "commands": [
@@ -455,6 +466,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub"
    ]
   },
