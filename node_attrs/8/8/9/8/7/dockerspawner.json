@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install --no-deps --ignore-installed --no-cache-dir -vv ."
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "dockerspawner",
-   "version": "13.0.0"
+   "version": "14.0.0"
   },
   "requirements": {
    "host": [
@@ -47,13 +47,13 @@
     "python >=3.9",
     "docker-py",
     "escapism",
-    "jupyterhub-base >=2.3.1"
+    "jupyterhub-base >=4.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3ce95367d96e4bdc10fefb7dc3c54c7d312a1b383f0e17c1e3978f7ef9f28ada",
-   "url": "https://pypi.org/packages/source/d/dockerspawner/dockerspawner-13.0.0.tar.gz"
+   "sha256": "5641d4763ecc78c1b1c3c7621bfe88c055596893e43be7f66ee0dccac06c1d2a",
+   "url": "https://pypi.org/packages/source/d/dockerspawner/dockerspawner-14.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -108,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install --no-deps --ignore-installed --no-cache-dir -vv ."
   },
   "extra": {
@@ -120,7 +120,7 @@
   },
   "package": {
    "name": "dockerspawner",
-   "version": "13.0.0"
+   "version": "14.0.0"
   },
   "requirements": {
    "host": [
@@ -132,13 +132,13 @@
     "python >=3.9",
     "docker-py",
     "escapism",
-    "jupyterhub-base >=2.3.1"
+    "jupyterhub-base >=4.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3ce95367d96e4bdc10fefb7dc3c54c7d312a1b383f0e17c1e3978f7ef9f28ada",
-   "url": "https://pypi.org/packages/source/d/dockerspawner/dockerspawner-13.0.0.tar.gz"
+   "sha256": "5641d4763ecc78c1b1c3c7621bfe88c055596893e43be7f66ee0dccac06c1d2a",
+   "url": "https://pypi.org/packages/source/d/dockerspawner/dockerspawner-14.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -167,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/dockerspawner.json"
  },
- "raw_meta_yaml": "{% set name = \"dockerspawner\" %}\n{% set version = \"13.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3ce95367d96e4bdc10fefb7dc3c54c7d312a1b383f0e17c1e3978f7ef9f28ada\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed --no-cache-dir -vv .\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - docker-py\n    - escapism\n    - jupyterhub-base >=2.3.1\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - dockerspawner\n  commands:\n    - pip check\n    \n\nabout:\n  home: https://github.com/jupyterhub/dockerspawner\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Spawns JupyterHub single user servers in Docker containers '\n\nextra:\n  recipe-maintainers:\n    - dhirschfeld\n    - rzillman\n    - minrk\n",
+ "raw_meta_yaml": "{% set name = \"dockerspawner\" %}\n{% set version = \"14.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5641d4763ecc78c1b1c3c7621bfe88c055596893e43be7f66ee0dccac06c1d2a\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed --no-cache-dir -vv .\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - docker-py\n    - escapism\n    - jupyterhub-base >=4.0.0\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - dockerspawner\n  commands:\n    - pip check\n\n\nabout:\n  home: https://github.com/jupyterhub/dockerspawner\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Spawns JupyterHub single user servers in Docker containers '\n\nextra:\n  recipe-maintainers:\n    - dhirschfeld\n    - rzillman\n    - minrk\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -228,7 +228,7 @@
    "elements": [
     "docker-py",
     "escapism",
-    "jupyterhub-base >=2.3.1",
+    "jupyterhub-base >=4.0.0",
     "python >=3.9"
    ]
   },
@@ -240,8 +240,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/dockerspawner/dockerspawner-13.0.0.tar.gz",
- "version": "13.0.0",
+ "url": "https://pypi.org/packages/source/d/dockerspawner/dockerspawner-14.0.0.tar.gz",
+ "version": "14.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/dockerspawner.json"
  }
