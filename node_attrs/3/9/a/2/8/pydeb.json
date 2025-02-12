@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
   "conda_build": {
    "error_overlinking": true
   },
@@ -9,7 +12,8 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
-  }
+  },
+  "test": "native_and_emulated"
  },
  "feedstock_name": "pydeb",
  "hash_type": "sha256",
@@ -258,6 +262,98 @@
    ]
   }
  },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "description": "pydeb is a Python package for building and analyzing Dynamic Energy Budget\nmodels. It supports phylogenetic inference of DEB models for new species,\nsimulation of growth, reproduction and survival, and Bayesian inference\nwith the Adaptive Metropolis algorithm. It is designed for high performance\nand can analyze 100,000 parameter sets in under 2 minutes on most\nworkstations.\n",
+   "home": "https://github.com/jornbr/pydeb",
+   "license": "GPL-2.0-only",
+   "license_family": "GPL",
+   "license_file": "LICENSE",
+   "summary": "Dynamic Energy Budget models in Python"
+  },
+  "build": {
+   "entry_points": [
+    "pydeb = pydeb.__main__:main"
+   ],
+   "number": "2",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jornbr"
+   ]
+  },
+  "package": {
+   "name": "pydeb",
+   "version": "0.10.1"
+  },
+  "requirements": {
+   "build": [
+    "c_stdlib_stub",
+    "c_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "cython",
+    "pip",
+    "setuptools",
+    "setuptools_scm",
+    "numpy"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "4794dcc77d4bb1106ff94d1dca5821b20bb0bd754ad09bef7563b29f43277321",
+   "url": "https://github.com/jornbr/pydeb/releases/download/v0.10.1/pydeb.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check",
+    "pydeb -v"
+   ],
+   "imports": [
+    "pydeb"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools_scm"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
  "outputs_names": {
   "__set__": true,
   "elements": [
@@ -268,6 +364,7 @@
  "platforms": [
   "linux_64",
   "osx_64",
+  "osx_arm64",
   "win_64"
  ],
  "pr_info": {
