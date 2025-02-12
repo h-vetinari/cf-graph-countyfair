@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "pyxdsm",
-   "version": "2.3.0"
+   "version": "2.3.1"
   },
   "requirements": {
    "host": [
@@ -40,14 +40,14 @@
     "python 3.9"
    ],
    "run": [
-    "numpy >=1.16",
+    "numpy >=1.21",
     "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "cdf71c3bded2445495ce572d67f1f9535b503eabac76a9b89e96e52ae41671b5",
-   "url": "https://github.com/mdolab/pyXDSM/archive/refs/tags/v2.3.0.tar.gz"
+   "sha256": "e2a4bf676630f5179ba553313b8ed6049cb7e7748b19a7b707c7111db56996b9",
+   "url": "https://github.com/mdolab/pyXDSM/archive/refs/tags/v2.3.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -98,7 +98,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps"
   },
   "extra": {
@@ -108,7 +108,7 @@
   },
   "package": {
    "name": "pyxdsm",
-   "version": "2.3.0"
+   "version": "2.3.1"
   },
   "requirements": {
    "host": [
@@ -116,14 +116,14 @@
     "python 3.9"
    ],
    "run": [
-    "numpy >=1.16",
+    "numpy >=1.21",
     "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "cdf71c3bded2445495ce572d67f1f9535b503eabac76a9b89e96e52ae41671b5",
-   "url": "https://github.com/mdolab/pyXDSM/archive/refs/tags/v2.3.0.tar.gz"
+   "sha256": "e2a4bf676630f5179ba553313b8ed6049cb7e7748b19a7b707c7111db56996b9",
+   "url": "https://github.com/mdolab/pyXDSM/archive/refs/tags/v2.3.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -152,7 +152,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyxdsm.json"
  },
- "raw_meta_yaml": "{% set name = \"pyXDSM\" %}\n{% set version = \"2.3.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mdolab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: cdf71c3bded2445495ce572d67f1f9535b503eabac76a9b89e96e52ae41671b5\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - numpy >=1.16\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pyxdsm\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mdolab/pyXDSM\n  summary: Python script to generate PDF XDSM diagrams using TikZ and LaTeX\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - AntoineD\n",
+ "raw_meta_yaml": "{% set name = \"pyXDSM\" %}\n{% set version = \"2.3.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mdolab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: e2a4bf676630f5179ba553313b8ed6049cb7e7748b19a7b707c7111db56996b9\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - numpy >=1.21\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pyxdsm\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mdolab/pyXDSM\n  summary: Python script to generate PDF XDSM diagrams using TikZ and LaTeX\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - AntoineD\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -204,7 +204,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "numpy >=1.16",
+    "numpy >=1.21",
     "python >=3.9"
    ]
   },
@@ -216,8 +216,8 @@
    ]
   }
  },
- "url": "https://github.com/mdolab/pyXDSM/archive/refs/tags/v2.3.0.tar.gz",
- "version": "2.3.0",
+ "url": "https://github.com/mdolab/pyXDSM/archive/refs/tags/v2.3.1.tar.gz",
+ "version": "2.3.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyxdsm.json"
  }
