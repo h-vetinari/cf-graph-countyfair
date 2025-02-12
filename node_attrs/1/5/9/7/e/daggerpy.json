@@ -45,7 +45,7 @@
    "host": [
     "python",
     "pybind11",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "xtensor",
     "xtensor-python",
     "pip"
@@ -54,7 +54,7 @@
     "python",
     "click >=7.0",
     "pybind11",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "xtensor",
     "xtensor-python"
    ]
@@ -146,7 +146,7 @@
    "host": [
     "python",
     "pybind11",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "xtensor",
     "xtensor-python",
     "pip"
@@ -155,7 +155,7 @@
     "python",
     "click >=7.0",
     "pybind11",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "xtensor",
     "xtensor-python"
    ]
@@ -210,7 +210,7 @@
    "host": [
     "python",
     "pybind11",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "xtensor",
     "xtensor-python",
     "pip"
@@ -219,7 +219,7 @@
     "python",
     "click >=7.0",
     "pybind11",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "xtensor",
     "xtensor-python"
    ]
@@ -285,7 +285,7 @@
    "daggerpy"
   ]
  },
- "parsing_error": "feedstock parsing error: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error RuntimeError raised:\n'conda build error: SystemExit(\"Error: bad character '>=' in package version dependency 'numpy'\\nPerhaps you meant 'numpy >=2'\")\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 905, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 998, in _parse_meta_yaml_impl\n    cfg_as_dict.update(conda_build.environ.get_dict(m=m))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 365, in get_dict\n    d.update(python_vars(m, prefix, escape_backslash))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 437, in python_vars\n    deps = [str(ms.name) for ms in metadata.ms_depends(build_or_host)]\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1650, in ms_depends\n    sys.exit(msg)\nSystemExit: Error: bad character '>=' in package version dependency 'numpy'\nPerhaps you meant 'numpy >=2'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 909, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 998, in _parse_meta_yaml_impl\n    cfg_as_dict.update(conda_build.environ.get_dict(m=m))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 365, in get_dict\n    d.update(python_vars(m, prefix, escape_backslash))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 437, in python_vars\n    deps = [str(ms.name) for ms in metadata.ms_depends(build_or_host)]\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1650, in ms_depends\n    sys.exit(msg)\nSystemExit: Error: bad character '>=' in package version dependency 'numpy'\nPerhaps you meant 'numpy >=2'\n'\nTraceback (most recent call last):\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/make_graph.py\", line 102, in try_load_feedstock\n    data = load_feedstock(name, attrs.data, mark_not_archived=mark_not_archived)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 705, in load_feedstock\n    return load_feedstock_containerized(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 657, in load_feedstock_containerized\n    data = run_container_operation(\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/micromamba/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/container_utils.py\", line 264, in run_container_operation\n    raise ContainerRuntimeError(\nconda_forge_feedstock_ops.container_utils.ContainerRuntimeError: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error RuntimeError raised:\n'conda build error: SystemExit(\"Error: bad character '>=' in package version dependency 'numpy'\\nPerhaps you meant 'numpy >=2'\")\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 905, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 998, in _parse_meta_yaml_impl\n    cfg_as_dict.update(conda_build.environ.get_dict(m=m))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 365, in get_dict\n    d.update(python_vars(m, prefix, escape_backslash))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 437, in python_vars\n    deps = [str(ms.name) for ms in metadata.ms_depends(build_or_host)]\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1650, in ms_depends\n    sys.exit(msg)\nSystemExit: Error: bad character '>=' in package version dependency 'numpy'\nPerhaps you meant 'numpy >=2'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 909, in parse_meta_yaml_local\n    return _run(use_orig_cbc_path=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 892, in _run\n    return _parse_meta_yaml_impl(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/autotick-bot/conda_forge_tick/utils.py\", line 998, in _parse_meta_yaml_impl\n    cfg_as_dict.update(conda_build.environ.get_dict(m=m))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 365, in get_dict\n    d.update(python_vars(m, prefix, escape_backslash))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/environ.py\", line 437, in python_vars\n    deps = [str(ms.name) for ms in metadata.ms_depends(build_or_host)]\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/envs/cf-scripts/lib/python3.11/site-packages/conda_build/metadata.py\", line 1650, in ms_depends\n    sys.exit(msg)\nSystemExit: Error: bad character '>=' in package version dependency 'numpy'\nPerhaps you meant 'numpy >=2'\n'\n",
+ "parsing_error": false,
  "platforms": [
   "linux_64",
   "osx_64",
@@ -294,7 +294,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/daggerpy.json"
  },
- "raw_meta_yaml": "{% set name = \"daggerpy\" %}\n{% set version = \"0.0.16\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/daggerpy-{{ version }}.tar.gz\n  sha256: 9f13c17b5f482221697c668090435ce6ffe589ae54df9d130f88f0a642db3066\n\nbuild:\n  skip: true  # [py2k]\n  entry_points:\n    - dagger=dagger.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - pybind11\n    - numpy <=1.50\n    - xtensor\n    - xtensor-python\n    - pip\n  run:\n    - python\n    - click >=7.0\n    - pybind11\n    - numpy <=1.50\n    - xtensor\n    - xtensor-python\n\ntest:\n  imports:\n    - dagger\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/bgailleton/DAGGER\n  summary: DAG tools to process numerical topography and landscape evolution models\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - bgailleton\n",
+ "raw_meta_yaml": "{% set name = \"daggerpy\" %}\n{% set version = \"0.0.16\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/daggerpy-{{ version }}.tar.gz\n  sha256: 9f13c17b5f482221697c668090435ce6ffe589ae54df9d130f88f0a642db3066\n\nbuild:\n  skip: true  # [py2k]\n  entry_points:\n    - dagger=dagger.cli:main\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - pybind11\n    - numpy >=2.0\n    - xtensor\n    - xtensor-python\n    - pip\n  run:\n    - python\n    - click >=7.0\n    - pybind11\n    - numpy >=2.0\n    - xtensor\n    - xtensor-python\n\ntest:\n  imports:\n    - dagger\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/bgailleton/DAGGER\n  summary: DAG tools to process numerical topography and landscape evolution models\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - bgailleton\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -367,7 +367,7 @@
   "host": {
    "__set__": true,
    "elements": [
-    "numpy <=1.50",
+    "numpy >=2.0",
     "pip",
     "pybind11",
     "python",
@@ -379,7 +379,7 @@
    "__set__": true,
    "elements": [
     "click >=7.0",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "pybind11",
     "python",
     "xtensor",
@@ -430,7 +430,7 @@
    "host": [
     "python",
     "pybind11",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "xtensor",
     "xtensor-python",
     "pip"
@@ -439,7 +439,7 @@
     "python",
     "click >=7.0",
     "pybind11",
-    "numpy <=1.50",
+    "numpy >=2.0",
     "xtensor",
     "xtensor-python"
    ]
