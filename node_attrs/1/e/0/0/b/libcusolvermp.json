@@ -32,7 +32,7 @@
    "summary": "NVIDIA cuSOLVERMp is a high-performance, distributed-memory, GPU-accelerated library that provides tools for the solution of dense linear systems and eigenvalue problems."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cp -rv include $PREFIX",
     "cp -rv lib $PREFIX"
@@ -87,7 +87,7 @@
     "test": {
      "commands": [
       "test -L $PREFIX/lib/libcusolverMp.so.0",
-      "test -f $PREFIX/lib/libcusolverMp.so.0.5.1.0"
+      "test -f $PREFIX/lib/libcusolverMp.so.0.6.0.0"
      ]
     }
    },
@@ -118,12 +118,12 @@
   ],
   "package": {
    "name": "libcusolvermp-split",
-   "version": "0.5.1.690"
+   "version": "0.6.0.712"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ea12f900a6a01e5ed6d4907d15e01ed017c903d9fae4c0da5798a7e71c90db66",
-   "url": "https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/linux-sbsa/libcusolvermp-linux-sbsa-0.5.1.690_cuda12-archive.tar.xz"
+   "sha256": "f5e6fc4b959ba61bf30165deb1a7ea71f2d0d897191bfa63e8518b13fb424cc3",
+   "url": "https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/linux-sbsa/libcusolvermp-linux-sbsa-0.6.0.712_cuda12-archive.tar.xz"
   }
  },
  "linux_64_requirements": {
@@ -173,7 +173,7 @@
    "summary": "NVIDIA cuSOLVERMp is a high-performance, distributed-memory, GPU-accelerated library that provides tools for the solution of dense linear systems and eigenvalue problems."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cp -rv include $PREFIX",
     "cp -rv lib $PREFIX"
@@ -231,7 +231,7 @@
     "test": {
      "commands": [
       "test -L $PREFIX/lib/libcusolverMp.so.0",
-      "test -f $PREFIX/lib/libcusolverMp.so.0.5.1.0"
+      "test -f $PREFIX/lib/libcusolverMp.so.0.6.0.0"
      ]
     }
    },
@@ -264,12 +264,12 @@
   ],
   "package": {
    "name": "libcusolvermp-split",
-   "version": "0.5.1.690"
+   "version": "0.6.0.712"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "16799e30ff56e1eac31e35a4e94bc0971ef98b6352c9f278fd28954e384c7181",
-   "url": "https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/linux-sbsa/libcusolvermp-linux-sbsa-0.5.1.690_cuda12-archive.tar.xz"
+   "sha256": "da4d80bde80fecda905461c11b0516f4af73e77d1ae680c7822d766208b59e4e",
+   "url": "https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/linux-sbsa/libcusolvermp-linux-sbsa-0.6.0.712_cuda12-archive.tar.xz"
   }
  },
  "linux_aarch64_requirements": {
@@ -320,7 +320,7 @@
    "summary": "NVIDIA cuSOLVERMp is a high-performance, distributed-memory, GPU-accelerated library that provides tools for the solution of dense linear systems and eigenvalue problems."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cp -rv include $PREFIX",
     "cp -rv lib $PREFIX"
@@ -375,7 +375,7 @@
     "test": {
      "commands": [
       "test -L $PREFIX/lib/libcusolverMp.so.0",
-      "test -f $PREFIX/lib/libcusolverMp.so.0.5.1.0"
+      "test -f $PREFIX/lib/libcusolverMp.so.0.6.0.0"
      ]
     }
    },
@@ -448,7 +448,7 @@
     "test": {
      "commands": [
       "test -L $PREFIX/lib/libcusolverMp.so.0",
-      "test -f $PREFIX/lib/libcusolverMp.so.0.5.1.0"
+      "test -f $PREFIX/lib/libcusolverMp.so.0.6.0.0"
      ]
     }
    },
@@ -481,12 +481,12 @@
   ],
   "package": {
    "name": "libcusolvermp-split",
-   "version": "0.5.1.690"
+   "version": "0.6.0.712"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "16799e30ff56e1eac31e35a4e94bc0971ef98b6352c9f278fd28954e384c7181",
-   "url": "https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/linux-sbsa/libcusolvermp-linux-sbsa-0.5.1.690_cuda12-archive.tar.xz"
+   "sha256": "da4d80bde80fecda905461c11b0516f4af73e77d1ae680c7822d766208b59e4e",
+   "url": "https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/linux-sbsa/libcusolvermp-linux-sbsa-0.6.0.712_cuda12-archive.tar.xz"
   }
  },
  "name": "libcusolvermp-split",
@@ -505,7 +505,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/libcusolvermp.json"
  },
- "raw_meta_yaml": "{% set version = \"0.5.1.690\" %}\n{% set libcal_version = \"0.4.4.50\" %}\n{% set lib_version = version.split(\".\")[0]+\".\"+version.split(\".\")[1]+\".\"+version.split(\".\")[2]+\".0\" %}\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-sbsa\" %}    # [aarch64]\n{% set extension = \"tar.xz\" %}\n\n{% set cuda_major = environ.get(\"cuda_compiler_version\", \"12.6\").split(\".\")[0] %}\n{% set soname = version.split(\".\")[0] %}\n\npackage:\n  name: libcusolvermp-split\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/{{ platform }}/libcusolvermp-{{ platform }}-{{ version }}_cuda{{ cuda_major }}-archive.{{ extension }}\n  sha256: ea12f900a6a01e5ed6d4907d15e01ed017c903d9fae4c0da5798a7e71c90db66  # [linux64]\n  sha256: 16799e30ff56e1eac31e35a4e94bc0971ef98b6352c9f278fd28954e384c7181  # [aarch64]\n\nbuild:\n  number: 1\n  skip: true  # [not (linux64 or aarch64)]\n  skip: true  # [cuda_compiler_version in (None, \"None\") or (cuda_compiler_version or \"\").startswith(\"11\")]\n  script:\n    - cp -rv include $PREFIX\n    - cp -rv lib $PREFIX\n\noutputs:\n  - name: libcusolvermp{{ soname }}\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"libcusolvermp\" ~ soname, max_pin=\"x\") }}\n      ignore_run_exports_from:\n        # Ignore `cuda-version` constraint as this supports CUDA Enhanced Compatibility.\n        - {{ compiler(\"cuda\") }}\n        - libcusolver-dev\n        - cuda-cudart-dev\n        - libcublas-dev\n    files:\n      - lib/libcusolverMp.so.*\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_compiler_version }}\n        - libcusolver-dev\n        - cuda-cudart-dev\n        - libcublas-dev\n        - libcal {{ libcal_version }}\n      run:\n        - {{ pin_compatible(\"libcal\", exact=True) }}\n        - {{ pin_compatible(\"cuda-version\", min_pin=\"x\", max_pin=\"x\") }}\n        - libcusolver\n        - cuda-cudart\n        - libcublas\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libcusolverMp.so.{{ soname }}\n        - test -f $PREFIX/lib/libcusolverMp.so.{{ lib_version }}\n\n  - name: libcusolvermp-dev\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"libcusolvermp\" ~ soname, max_pin=\"x\") }}\n    files:\n      - lib/libcusolverMp.so\n      - include/cusolverMp.h\n    requirements:\n      run:\n        - {{ pin_subpackage(\"libcusolvermp\" ~ soname, exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/include/cusolverMp.h\n        - test -L $PREFIX/lib/libcusolverMp.so\n\nabout:\n  home: https://docs.nvidia.com/cuda/cusolvermp/\n  license: LicenseRef-NVIDIA-End-User-License-Agreement\n  license_file: LICENSE\n  license_url: https://docs.nvidia.com/cuda/cusolvermp/license/index.html\n  summary: NVIDIA cuSOLVERMp is a high-performance, distributed-memory, GPU-accelerated library that provides tools for the solution of dense linear systems and eigenvalue problems.\n  description: |\n    NVIDIA cuSOLVERMp is a high-performance, distributed-memory, GPU-accelerated library that provides tools for the solution of dense linear systems and eigenvalue problems. \n    cuSOLVERMp is compatible with 2D block-cyclic data layout and provides ScaLAPACK-like C APIs.\n    A companion library, CAL, contains utilities to manage communicators and to synchronize processes in a safe way.\n  doc_url: https://docs.nvidia.com/cuda/cusolvermp/\n\nextra:\n  feedstock-name: libcusolvermp\n  recipe-maintainers:\n    - conda-forge/cuda\n",
+ "raw_meta_yaml": "{% set version = \"0.6.0.712\" %}\n{% set libcal_version = \"0.4.4.50\" %}\n{% set lib_version = version.split(\".\")[0]+\".\"+version.split(\".\")[1]+\".\"+version.split(\".\")[2]+\".0\" %}\n{% set platform = \"linux-x86_64\" %}  # [linux64]\n{% set platform = \"linux-sbsa\" %}    # [aarch64]\n{% set extension = \"tar.xz\" %}\n\n{% set cuda_major = environ.get(\"cuda_compiler_version\", \"12.6\").split(\".\")[0] %}\n{% set soname = version.split(\".\")[0] %}\n\npackage:\n  name: libcusolvermp-split\n  version: {{ version }}\n\nsource:\n  url: https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/{{ platform }}/libcusolvermp-{{ platform }}-{{ version }}_cuda{{ cuda_major }}-archive.{{ extension }}\n  sha256: f5e6fc4b959ba61bf30165deb1a7ea71f2d0d897191bfa63e8518b13fb424cc3  # [linux64]\n  sha256: da4d80bde80fecda905461c11b0516f4af73e77d1ae680c7822d766208b59e4e  # [aarch64]\n\nbuild:\n  number: 0\n  skip: true  # [not (linux64 or aarch64)]\n  skip: true  # [cuda_compiler_version in (None, \"None\") or (cuda_compiler_version or \"\").startswith(\"11\")]\n  script:\n    - cp -rv include $PREFIX\n    - cp -rv lib $PREFIX\n\noutputs:\n  - name: libcusolvermp{{ soname }}\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"libcusolvermp\" ~ soname, max_pin=\"x\") }}\n      ignore_run_exports_from:\n        # Ignore `cuda-version` constraint as this supports CUDA Enhanced Compatibility.\n        - {{ compiler(\"cuda\") }}\n        - libcusolver-dev\n        - cuda-cudart-dev\n        - libcublas-dev\n    files:\n      - lib/libcusolverMp.so.*\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n        - {{ stdlib(\"c\") }}\n      host:\n        - cuda-version {{ cuda_compiler_version }}\n        - libcusolver-dev\n        - cuda-cudart-dev\n        - libcublas-dev\n        - libcal {{ libcal_version }}\n      run:\n        - {{ pin_compatible(\"libcal\", exact=True) }}\n        - {{ pin_compatible(\"cuda-version\", min_pin=\"x\", max_pin=\"x\") }}\n        - libcusolver\n        - cuda-cudart\n        - libcublas\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -L $PREFIX/lib/libcusolverMp.so.{{ soname }}\n        - test -f $PREFIX/lib/libcusolverMp.so.{{ lib_version }}\n\n  - name: libcusolvermp-dev\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"libcusolvermp\" ~ soname, max_pin=\"x\") }}\n    files:\n      - lib/libcusolverMp.so\n      - include/cusolverMp.h\n    requirements:\n      run:\n        - {{ pin_subpackage(\"libcusolvermp\" ~ soname, exact=True) }}\n      run_constrained:\n        - arm-variant * {{ arm_variant_type }}  # [aarch64]\n    test:\n      commands:\n        - test -f $PREFIX/include/cusolverMp.h\n        - test -L $PREFIX/lib/libcusolverMp.so\n\nabout:\n  home: https://docs.nvidia.com/cuda/cusolvermp/\n  license: LicenseRef-NVIDIA-End-User-License-Agreement\n  license_file: LICENSE\n  license_url: https://docs.nvidia.com/cuda/cusolvermp/license/index.html\n  summary: NVIDIA cuSOLVERMp is a high-performance, distributed-memory, GPU-accelerated library that provides tools for the solution of dense linear systems and eigenvalue problems.\n  description: |\n    NVIDIA cuSOLVERMp is a high-performance, distributed-memory, GPU-accelerated library that provides tools for the solution of dense linear systems and eigenvalue problems. \n    cuSOLVERMp is compatible with 2D block-cyclic data layout and provides ScaLAPACK-like C APIs.\n    A companion library, CAL, contains utilities to manage communicators and to synchronize processes in a safe way.\n  doc_url: https://docs.nvidia.com/cuda/cusolvermp/\n\nextra:\n  feedstock-name: libcusolvermp\n  recipe-maintainers:\n    - conda-forge/cuda\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -608,8 +608,8 @@
    "elements": []
   }
  },
- "url": "https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/linux-sbsa/libcusolvermp-linux-sbsa-0.5.1.690_cuda12-archive.tar.xz",
- "version": "0.5.1.690",
+ "url": "https://developer.download.nvidia.com/compute/cusolvermp/redist/libcusolvermp/linux-sbsa/libcusolvermp-linux-sbsa-0.6.0.712_cuda12-archive.tar.xz",
+ "version": "0.6.0.712",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/libcusolvermp.json"
  }
