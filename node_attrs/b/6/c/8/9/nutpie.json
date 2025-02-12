@@ -46,7 +46,7 @@
   },
   "package": {
    "name": "nutpie",
-   "version": "0.13.2"
+   "version": "0.13.3"
   },
   "requirements": {
    "build": [
@@ -80,8 +80,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f14282e2ac045c67a9b262a865b02a243178c55b541b236b21dfcb0c3678bcea",
-   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.2.tar.gz"
+   "sha256": "7ffaa5aeb1947fa12928dd34d50c2d12ded263ae5e21e3a26a3b5fcdf3050503",
+   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -176,7 +176,7 @@
   },
   "package": {
    "name": "nutpie",
-   "version": "0.13.2"
+   "version": "0.13.3"
   },
   "requirements": {
    "build": [
@@ -210,8 +210,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f14282e2ac045c67a9b262a865b02a243178c55b541b236b21dfcb0c3678bcea",
-   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.2.tar.gz"
+   "sha256": "7ffaa5aeb1947fa12928dd34d50c2d12ded263ae5e21e3a26a3b5fcdf3050503",
+   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -264,7 +264,7 @@
   },
   "package": {
    "name": "nutpie",
-   "version": "0.13.2"
+   "version": "0.13.3"
   },
   "requirements": {
    "build": [
@@ -298,8 +298,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f14282e2ac045c67a9b262a865b02a243178c55b541b236b21dfcb0c3678bcea",
-   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.2.tar.gz"
+   "sha256": "7ffaa5aeb1947fa12928dd34d50c2d12ded263ae5e21e3a26a3b5fcdf3050503",
+   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -394,7 +394,7 @@
   },
   "package": {
    "name": "nutpie",
-   "version": "0.13.2"
+   "version": "0.13.3"
   },
   "requirements": {
    "build": [
@@ -428,8 +428,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f14282e2ac045c67a9b262a865b02a243178c55b541b236b21dfcb0c3678bcea",
-   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.2.tar.gz"
+   "sha256": "7ffaa5aeb1947fa12928dd34d50c2d12ded263ae5e21e3a26a3b5fcdf3050503",
+   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -511,7 +511,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/nutpie.json"
  },
- "raw_meta_yaml": "{% set name = \"nutpie\" %}\n{% set version = \"0.13.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nutpie-{{ version }}.tar.gz\n  sha256: f14282e2ac045c67a9b262a865b02a243178c55b541b236b21dfcb0c3678bcea\n\nbuild:\n  number: 0\n  skip: true  # [py<310]\n  ignore_run_exports_from:\n    - libclang\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - maturin >=1.1,<2.0                     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('rust') }}\n    - libclang\n    - clang\n    - cargo-bundle-licenses\n  host:\n    - python\n    - setuptools\n    - pip\n    - numpy\n    - maturin >=1.1,<2.0\n  run:\n    - python\n    - pyarrow-core >=12.0.0\n    - pandas >=2.0\n    - xarray >=2023.06.0\n    - arviz >=0.15.0\n    - {{ pin_compatible('numpy') }}\n  run_constrained:\n    - pymc-base >=5.5.0\n    - pytensor-base >=2.8.11\n    - numba >=0.57\n\ntest:\n  imports:\n    - nutpie\n  requires:\n    - pip\n    - pytest\n    - pymc-base\n    - numba\n    - jax  # [not win]\n  commands:\n    - pip check\n    - pytest tests/test_pymc.py  # [not win]\n    - pytest tests/test_pymc.py -k \"not jax\"  # [win]\n  source_files:\n    - tests\n\nabout:\n  home: https://github.com/pymc-devs/nutpie\n  summary: Sample Stan or PyMC models\n  description: |\n    nutpie implements NUTS, an advanced gradient based sampler\n    for posterior distributions, with an easy to use interface.\n  license: MIT\n  license_family: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - twiecki\n    - aseyboldt\n    - maresb\n    - lucianopaz\n    - ferrine\n",
+ "raw_meta_yaml": "{% set name = \"nutpie\" %}\n{% set version = \"0.13.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nutpie-{{ version }}.tar.gz\n  sha256: 7ffaa5aeb1947fa12928dd34d50c2d12ded263ae5e21e3a26a3b5fcdf3050503\n\nbuild:\n  number: 0\n  skip: true  # [py<310]\n  ignore_run_exports_from:\n    - libclang\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - maturin >=1.1,<2.0                     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('rust') }}\n    - libclang\n    - clang\n    - cargo-bundle-licenses\n  host:\n    - python\n    - setuptools\n    - pip\n    - numpy\n    - maturin >=1.1,<2.0\n  run:\n    - python\n    - pyarrow-core >=12.0.0\n    - pandas >=2.0\n    - xarray >=2023.06.0\n    - arviz >=0.15.0\n    - {{ pin_compatible('numpy') }}\n  run_constrained:\n    - pymc-base >=5.5.0\n    - pytensor-base >=2.8.11\n    - numba >=0.57\n\ntest:\n  imports:\n    - nutpie\n  requires:\n    - pip\n    - pytest\n    - pymc-base\n    - numba\n    - jax  # [not win]\n  commands:\n    - pip check\n    - pytest tests/test_pymc.py  # [not win]\n    - pytest tests/test_pymc.py -k \"not jax\"  # [win]\n  source_files:\n    - tests\n\nabout:\n  home: https://github.com/pymc-devs/nutpie\n  summary: Sample Stan or PyMC models\n  description: |\n    nutpie implements NUTS, an advanced gradient based sampler\n    for posterior distributions, with an easy to use interface.\n  license: MIT\n  license_family: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - twiecki\n    - aseyboldt\n    - maresb\n    - lucianopaz\n    - ferrine\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -625,8 +625,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.2.tar.gz",
- "version": "0.13.2",
+ "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.3.tar.gz",
+ "version": "0.13.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/nutpie.json"
  },
@@ -659,7 +659,7 @@
   },
   "package": {
    "name": "nutpie",
-   "version": "0.13.2"
+   "version": "0.13.3"
   },
   "requirements": {
    "build": [
@@ -693,8 +693,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f14282e2ac045c67a9b262a865b02a243178c55b541b236b21dfcb0c3678bcea",
-   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.2.tar.gz"
+   "sha256": "7ffaa5aeb1947fa12928dd34d50c2d12ded263ae5e21e3a26a3b5fcdf3050503",
+   "url": "https://pypi.io/packages/source/n/nutpie/nutpie-0.13.3.tar.gz"
   },
   "test": {
    "commands": [
