@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "tsml-eval",
-   "version": "0.4.0"
+   "version": "0.5.0"
   },
   "requirements": {
    "host": [
@@ -46,18 +46,19 @@
    ],
    "run": [
     "python >=3.9,<3.13",
-    "aeon >=0.9.0,<0.10.0",
-    "tsml >=0.4.0,<0.5.0",
-    "scikit-learn >=1.0.0,<=1.6.0",
+    "aeon >=1.0.0,<1.1.0",
+    "tsml >=0.6.1,<0.7.0",
+    "scikit-learn >=1.0.0,<=1.7.0",
     "matplotlib-base",
+    "seaborn",
     "gpustat",
     "psutil"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "96377e825144e2d7a6d7a0c5330797543b452ff6c650249b53b8145f3b83fb0e",
-   "url": "https://pypi.org/packages/source/t/tsml-eval/tsml_eval-0.4.0.tar.gz"
+   "sha256": "387b29f67d6e3990cbc88f199c18cc803508b993e9d24e293286a61dc00d2a5d",
+   "url": "https://pypi.org/packages/source/t/tsml-eval/tsml_eval-0.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -97,6 +98,7 @@
     "psutil",
     "python",
     "scikit-learn",
+    "seaborn",
     "tsml"
    ]
   },
@@ -118,7 +120,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -128,7 +130,7 @@
   },
   "package": {
    "name": "tsml-eval",
-   "version": "0.4.0"
+   "version": "0.5.0"
   },
   "requirements": {
    "host": [
@@ -141,18 +143,19 @@
    ],
    "run": [
     "python >=3.9,<3.13",
-    "aeon >=0.9.0,<0.10.0",
-    "tsml >=0.4.0,<0.5.0",
-    "scikit-learn >=1.0.0,<=1.6.0",
+    "aeon >=1.0.0,<1.1.0",
+    "tsml >=0.6.1,<0.7.0",
+    "scikit-learn >=1.0.0,<=1.7.0",
     "matplotlib-base",
+    "seaborn",
     "gpustat",
     "psutil"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "96377e825144e2d7a6d7a0c5330797543b452ff6c650249b53b8145f3b83fb0e",
-   "url": "https://pypi.org/packages/source/t/tsml-eval/tsml_eval-0.4.0.tar.gz"
+   "sha256": "387b29f67d6e3990cbc88f199c18cc803508b993e9d24e293286a61dc00d2a5d",
+   "url": "https://pypi.org/packages/source/t/tsml-eval/tsml_eval-0.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -181,7 +184,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tsml-eval.json"
  },
- "raw_meta_yaml": "{% set name = \"tsml-eval\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 96377e825144e2d7a6d7a0c5330797543b452ff6c650249b53b8145f3b83fb0e\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61\n    - wheel\n    - toml\n    - python-build\n    - pip\n  run:\n    - python >={{ python_min }},<3.13\n    - aeon >=0.9.0,<0.10.0\n    - tsml >=0.4.0,<0.5.0\n    - scikit-learn >=1.0.0,<=1.6.0\n    - matplotlib-base\n    - gpustat\n    - psutil\n\ntest:\n  imports:\n    - tsml_eval\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/time-series-machine-learning/tsml-eval/\n  dev_url: https://github.com/time-series-machine-learning/\n  summary: A package for benchmarking time series machine learning tools.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MatthewMiddlehurst\n",
+ "raw_meta_yaml": "{% set name = \"tsml-eval\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 387b29f67d6e3990cbc88f199c18cc803508b993e9d24e293286a61dc00d2a5d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61\n    - wheel\n    - toml\n    - python-build\n    - pip\n  run:\n    - python >={{ python_min }},<3.13\n    - aeon >=1.0.0,<1.1.0\n    - tsml >=0.6.1,<0.7.0\n    - scikit-learn >=1.0.0,<=1.7.0\n    - matplotlib-base\n    - seaborn\n    - gpustat\n    - psutil\n\ntest:\n  imports:\n    - tsml_eval\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/time-series-machine-learning/tsml-eval/\n  dev_url: https://github.com/time-series-machine-learning/\n  summary: A package for benchmarking time series machine learning tools.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MatthewMiddlehurst\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -193,6 +196,7 @@
    "python",
    "python-build",
    "scikit-learn",
+   "seaborn",
    "setuptools",
    "toml",
    "tsml",
@@ -224,6 +228,7 @@
     "psutil",
     "python",
     "scikit-learn",
+    "seaborn",
     "tsml"
    ]
   },
@@ -255,13 +260,14 @@
   "run": {
    "__set__": true,
    "elements": [
-    "aeon >=0.9.0,<0.10.0",
+    "aeon >=1.0.0,<1.1.0",
     "gpustat",
     "matplotlib-base",
     "psutil",
     "python >=3.9,<3.13",
-    "scikit-learn >=1.0.0,<=1.6.0",
-    "tsml >=0.4.0,<0.5.0"
+    "scikit-learn >=1.0.0,<=1.7.0",
+    "seaborn",
+    "tsml >=0.6.1,<0.7.0"
    ]
   },
   "test": {
@@ -272,8 +278,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/tsml-eval/tsml_eval-0.4.0.tar.gz",
- "version": "0.4.0",
+ "url": "https://pypi.org/packages/source/t/tsml-eval/tsml_eval-0.5.0.tar.gz",
+ "version": "0.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/tsml-eval.json"
  }
