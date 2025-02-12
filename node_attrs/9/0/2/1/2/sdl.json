@@ -29,7 +29,7 @@
    "summary": "Simple DirectMedia Layer\n"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "sdl"
    ]
@@ -38,7 +38,8 @@
    "recipe-maintainers": [
     "seanyen",
     "traversaro",
-    "Tobias-Fischer"
+    "Tobias-Fischer",
+    "ymontmarin"
    ]
   },
   "package": {
@@ -49,11 +50,17 @@
    "build": [
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
    "host": [
-    "sdl2"
+    "sdl2",
+    "libglu",
+    "libgl-devel",
+    "libopengl",
+    "xorg-libx11",
+    "xorg-libxext"
    ],
    "run": [
     "sdl2"
@@ -82,6 +89,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -90,7 +98,12 @@
   "host": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "libgl-devel",
+    "libglu",
+    "libopengl",
+    "sdl2",
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "run": {
@@ -114,7 +127,7 @@
    "summary": "Simple DirectMedia Layer\n"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "sdl"
    ]
@@ -123,7 +136,8 @@
    "recipe-maintainers": [
     "seanyen",
     "traversaro",
-    "Tobias-Fischer"
+    "Tobias-Fischer",
+    "ymontmarin"
    ]
   },
   "package": {
@@ -134,11 +148,17 @@
    "build": [
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
    "host": [
-    "sdl2"
+    "sdl2",
+    "libglu",
+    "libgl-devel",
+    "libopengl",
+    "xorg-libx11",
+    "xorg-libxext"
    ],
    "run": [
     "sdl2"
@@ -167,6 +187,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -175,7 +196,12 @@
   "host": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "libgl-devel",
+    "libglu",
+    "libopengl",
+    "sdl2",
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "run": {
@@ -199,7 +225,7 @@
    "summary": "Simple DirectMedia Layer\n"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "sdl"
    ]
@@ -208,7 +234,8 @@
    "recipe-maintainers": [
     "seanyen",
     "traversaro",
-    "Tobias-Fischer"
+    "Tobias-Fischer",
+    "ymontmarin"
    ]
   },
   "package": {
@@ -219,11 +246,17 @@
    "build": [
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
    "host": [
-    "sdl2"
+    "sdl2",
+    "libglu",
+    "libgl-devel",
+    "libopengl",
+    "xorg-libx11",
+    "xorg-libxext"
    ],
    "run": [
     "sdl2"
@@ -252,6 +285,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -260,7 +294,12 @@
   "host": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "libgl-devel",
+    "libglu",
+    "libopengl",
+    "sdl2",
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "run": {
@@ -284,7 +323,7 @@
    "summary": "Simple DirectMedia Layer\n"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "sdl"
    ]
@@ -293,7 +332,8 @@
    "recipe-maintainers": [
     "seanyen",
     "traversaro",
-    "Tobias-Fischer"
+    "Tobias-Fischer",
+    "ymontmarin"
    ]
   },
   "package": {
@@ -304,11 +344,17 @@
    "build": [
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
    "host": [
-    "sdl2"
+    "sdl2",
+    "libglu",
+    "libgl-devel",
+    "libopengl",
+    "xorg-libx11",
+    "xorg-libxext"
    ],
    "run": [
     "sdl2"
@@ -362,7 +408,7 @@
    "summary": "Simple DirectMedia Layer\n"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "sdl"
    ]
@@ -371,7 +417,8 @@
    "recipe-maintainers": [
     "seanyen",
     "traversaro",
-    "Tobias-Fischer"
+    "Tobias-Fischer",
+    "ymontmarin"
    ]
   },
   "package": {
@@ -382,6 +429,7 @@
    "build": [
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -415,6 +463,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -447,7 +496,7 @@
    "summary": "Simple DirectMedia Layer\n"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "sdl"
    ]
@@ -456,7 +505,8 @@
    "recipe-maintainers": [
     "seanyen",
     "traversaro",
-    "Tobias-Fischer"
+    "Tobias-Fischer",
+    "ymontmarin"
    ]
   },
   "package": {
@@ -467,6 +517,7 @@
    "build": [
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -500,6 +551,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -542,15 +594,21 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sdl.json"
  },
- "raw_meta_yaml": "{% set name = \"sdl\" %}\n{% set version = \"1.2.68\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/libsdl-org/sdl12-compat/archive/release-{{ version }}.tar.gz\n    sha256: 63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d\n\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake\n    - ninja\n\n  host:\n    - sdl2\n  run:\n    - sdl2\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/SDL/SDL.h  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\SDL\\\\SDL.h exit 1  # [win]\n    - pkg-config --exists --print-errors --debug sdl  # [not win]\n    - pkg-config --validate --print-errors --debug sdl  # [not win]\n  requires:\n    - pkg-config\n\nabout:\n  home: https://www.libsdl.org/index.php\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: |\n    Simple DirectMedia Layer\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - traversaro\n    - Tobias-Fischer\n",
+ "raw_meta_yaml": "{% set name = \"sdl\" %}\n{% set version = \"1.2.68\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/libsdl-org/sdl12-compat/archive/release-{{ version }}.tar.gz\n    sha256: 63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d\n\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - ninja\n  host:\n    - sdl2\n    - libglu              # [linux]\n    - libgl-devel         # [linux]\n    - libopengl           # [linux]\n    - xorg-libx11         # [linux]\n    - xorg-libxext        # [linux]\n  run:\n    - sdl2\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/SDL/SDL.h  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\SDL\\\\SDL.h exit 1  # [win]\n    - pkg-config --exists --print-errors --debug sdl  # [not win]\n    - pkg-config --validate --print-errors --debug sdl  # [not win]\n  requires:\n    - pkg-config\n\nabout:\n  home: https://www.libsdl.org/index.php\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: |\n    Simple DirectMedia Layer\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - traversaro\n    - Tobias-Fischer\n    - ymontmarin\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
+   "c_stdlib_stub",
    "cmake",
    "cxx_compiler_stub",
+   "libgl-devel",
+   "libglu",
+   "libopengl",
    "ninja",
-   "sdl2"
+   "sdl2",
+   "xorg-libx11",
+   "xorg-libxext"
   ]
  },
  "requirements": {
@@ -558,6 +616,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -567,14 +626,21 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
-    "sdl2"
+    "libgl-devel",
+    "libglu",
+    "libopengl",
+    "sdl2",
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cxx_compiler_stub",
     "sdl2"
    ]
@@ -592,6 +658,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
@@ -600,7 +667,12 @@
   "host": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "libgl-devel",
+    "libglu",
+    "libopengl",
+    "sdl2",
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "run": {
@@ -629,7 +701,7 @@
    "summary": "Simple DirectMedia Layer\n"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "sdl"
    ]
@@ -638,7 +710,8 @@
    "recipe-maintainers": [
     "seanyen",
     "traversaro",
-    "Tobias-Fischer"
+    "Tobias-Fischer",
+    "ymontmarin"
    ]
   },
   "package": {
@@ -649,6 +722,7 @@
    "build": [
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "ninja"
    ],
@@ -680,6 +754,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
+    "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
     "ninja"
