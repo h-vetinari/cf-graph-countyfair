@@ -30,6 +30,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "apcamargo",
     "seantycho",
     "mfisher87",
     "rushirajnenuji"
@@ -111,6 +112,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "apcamargo",
     "seantycho",
     "mfisher87",
     "rushirajnenuji"
@@ -162,7 +164,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/coloraide.json"
  },
- "raw_meta_yaml": "{% set name = \"coloraide\" %}\n{% set version = \"4.2.1\" %}\n{% set sha256 = \"277f6bc22000fdab8d6973051fd4df9441687bff4483051633e31e4c445e4492\" %}\n{% set build_number = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coloraide-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: {{ build_number }}\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling >=0.21.1\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - coloraide\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/coloraide/\n  summary: A color library for Python.\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  doc_url: https://facelessuser.github.io/coloraide/\n  dev_url: https://github.com/facelessuser/coloraide\n\nextra:\n  recipe-maintainers:\n    - seantycho\n    - mfisher87\n    - rushirajnenuji\n",
+ "raw_meta_yaml": "{% set name = \"coloraide\" %}\n{% set version = \"4.2.1\" %}\n{% set sha256 = \"277f6bc22000fdab8d6973051fd4df9441687bff4483051633e31e4c445e4492\" %}\n{% set build_number = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coloraide-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: {{ build_number }}\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling >=0.21.1\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - coloraide\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/coloraide/\n  summary: A color library for Python.\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  doc_url: https://facelessuser.github.io/coloraide/\n  dev_url: https://github.com/facelessuser/coloraide\n\nextra:\n  recipe-maintainers:\n    - apcamargo\n    - seantycho\n    - mfisher87\n    - rushirajnenuji\n",
  "req": {
   "__set__": true,
   "elements": [
