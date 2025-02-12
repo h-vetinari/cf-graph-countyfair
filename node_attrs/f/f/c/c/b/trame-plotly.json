@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "trame-plotly",
-   "version": "3.0.2"
+   "version": "3.1.0"
   },
   "requirements": {
    "host": [
@@ -49,13 +49,14 @@
    ],
    "run": [
     "python >=3.9",
-    "trame-client"
+    "trame-client",
+    "plotly >=6.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bb472ace64c9c2e65bb7c535c0567a35bfc3711588759731c36b2d7f6e3434b9",
-   "url": "https://pypi.org/packages/source/t/trame-plotly/trame-plotly-3.0.2.tar.gz"
+   "sha256": "32304b12366b6adab2272d020a257b9b44a0adccc6b6d652826405c730a01906",
+   "url": "https://pypi.org/packages/source/t/trame-plotly/trame-plotly-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -87,6 +88,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "plotly",
     "python",
     "trame-client"
    ]
@@ -108,7 +110,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -122,7 +124,7 @@
   },
   "package": {
    "name": "trame-plotly",
-   "version": "3.0.2"
+   "version": "3.1.0"
   },
   "requirements": {
    "host": [
@@ -132,13 +134,14 @@
    ],
    "run": [
     "python >=3.9",
-    "trame-client"
+    "trame-client",
+    "plotly >=6.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bb472ace64c9c2e65bb7c535c0567a35bfc3711588759731c36b2d7f6e3434b9",
-   "url": "https://pypi.org/packages/source/t/trame-plotly/trame-plotly-3.0.2.tar.gz"
+   "sha256": "32304b12366b6adab2272d020a257b9b44a0adccc6b6d652826405c730a01906",
+   "url": "https://pypi.org/packages/source/t/trame-plotly/trame-plotly-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -168,11 +171,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/trame-plotly.json"
  },
- "raw_meta_yaml": "{% set name = \"trame-plotly\" %}\n{% set version = \"3.0.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/trame-plotly-{{ version }}.tar.gz\n  sha256: bb472ace64c9c2e65bb7c535c0567a35bfc3711588759731c36b2d7f6e3434b9\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - trame-client\n\ntest:\n  imports:\n    - trame\n    - trame.modules\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/trame-plotly/\n  summary: Plotly figure widget for trame\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - larsoner\n    - banesullivan\n    - jourdain\n    - psavery\n    - kwrobot\n",
+ "raw_meta_yaml": "{% set name = \"trame-plotly\" %}\n{% set version = \"3.1.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/trame-plotly-{{ version }}.tar.gz\n  sha256: 32304b12366b6adab2272d020a257b9b44a0adccc6b6d652826405c730a01906\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - trame-client\n    - plotly >=6.0.0\n\ntest:\n  imports:\n    - trame\n    - trame.modules\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/trame-plotly/\n  summary: Plotly figure widget for trame\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - larsoner\n    - banesullivan\n    - jourdain\n    - psavery\n    - kwrobot\n",
  "req": {
   "__set__": true,
   "elements": [
    "pip",
+   "plotly",
    "python",
    "setuptools",
    "trame-client"
@@ -194,6 +198,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "plotly",
     "python",
     "trame-client"
    ]
@@ -223,6 +228,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "plotly >=6.0.0",
     "python >=3.9",
     "trame-client"
    ]
@@ -235,8 +241,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/trame-plotly/trame-plotly-3.0.2.tar.gz",
- "version": "3.0.2",
+ "url": "https://pypi.org/packages/source/t/trame-plotly/trame-plotly-3.1.0.tar.gz",
+ "version": "3.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/trame-plotly.json"
  }
