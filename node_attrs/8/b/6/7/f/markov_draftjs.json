@@ -30,7 +30,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -42,7 +42,7 @@
   },
   "package": {
    "name": "markov_draftjs",
-   "version": "0.2.0"
+   "version": "2.0.0"
   },
   "requirements": {
    "host": [
@@ -56,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "aad60a213eba9ed6c572c7a9cd35ead47875759f789e57334a75b345ffcb919e",
-   "url": "https://pypi.org/packages/source/m/markov_draftjs/markov_draftjs-0.2.0.tar.gz"
+   "sha256": "392288751affb0fa4769e6d8e92e07108fec8be19b7b3823e384c6c49cc921e1",
+   "url": "https://pypi.org/packages/source/m/markov_draftjs/markov_draftjs-2.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +112,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -124,7 +124,7 @@
   },
   "package": {
    "name": "markov_draftjs",
-   "version": "0.2.0"
+   "version": "2.0.0"
   },
   "requirements": {
    "host": [
@@ -138,8 +138,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "aad60a213eba9ed6c572c7a9cd35ead47875759f789e57334a75b345ffcb919e",
-   "url": "https://pypi.org/packages/source/m/markov_draftjs/markov_draftjs-0.2.0.tar.gz"
+   "sha256": "392288751affb0fa4769e6d8e92e07108fec8be19b7b3823e384c6c49cc921e1",
+   "url": "https://pypi.org/packages/source/m/markov_draftjs/markov_draftjs-2.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -168,7 +168,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/markov_draftjs.json"
  },
- "raw_meta_yaml": "{% set name = \"markov_draftjs\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/markov_draftjs-{{ version }}.tar.gz\n  sha256: aad60a213eba9ed6c572c7a9cd35ead47875759f789e57334a75b345ffcb919e\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - markov_draftjs\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/thibaudcolas/markov_draftjs\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Draft.js sample content generated with Markov chains of Project Gutenberg books.'\n  description: \n    Draft.js sample content generated with Markov chains of Project Gutenberg books.\n  doc_url: https://github.com/thibaudcolas/markov_draftjs\n  dev_url: https://github.com/thibaudcolas/markov_draftjs\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - rxm7706\n    - sannykr\n",
+ "raw_meta_yaml": "{% set name = \"markov_draftjs\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/markov_draftjs-{{ version }}.tar.gz\n  sha256: 392288751affb0fa4769e6d8e92e07108fec8be19b7b3823e384c6c49cc921e1\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - markov_draftjs\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/thibaudcolas/markov_draftjs\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Draft.js sample content generated with Markov chains of Project Gutenberg books.'\n  description: Draft.js sample content generated with Markov chains of Project Gutenberg books.\n  doc_url: https://github.com/thibaudcolas/markov_draftjs\n  dev_url: https://github.com/thibaudcolas/markov_draftjs\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - rxm7706\n    - sannykr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -232,8 +232,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/m/markov_draftjs/markov_draftjs-0.2.0.tar.gz",
- "version": "0.2.0",
+ "url": "https://pypi.org/packages/source/m/markov_draftjs/markov_draftjs-2.0.0.tar.gz",
+ "version": "2.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/markov_draftjs.json"
  }
