@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "eth-keyfile",
-   "version": "0.9.0"
+   "version": "0.9.1"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8621c35e83cbc05909d2f23dbb8a87633918733caea553ae0e298f6a06291526",
-   "url": "https://pypi.org/packages/source/e/eth-keyfile/eth_keyfile-0.9.0.tar.gz"
+   "sha256": "c7a8bc6af4527d1ab2eb1d1b949d59925252e17663eaf90087da121327b51df6",
+   "url": "https://pypi.org/packages/source/e/eth-keyfile/eth_keyfile-0.9.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -118,7 +118,7 @@
   },
   "package": {
    "name": "eth-keyfile",
-   "version": "0.9.0"
+   "version": "0.9.1"
   },
   "requirements": {
    "host": [
@@ -137,8 +137,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8621c35e83cbc05909d2f23dbb8a87633918733caea553ae0e298f6a06291526",
-   "url": "https://pypi.org/packages/source/e/eth-keyfile/eth_keyfile-0.9.0.tar.gz"
+   "sha256": "c7a8bc6af4527d1ab2eb1d1b949d59925252e17663eaf90087da121327b51df6",
+   "url": "https://pypi.org/packages/source/e/eth-keyfile/eth_keyfile-0.9.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -167,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/eth-keyfile.json"
  },
- "raw_meta_yaml": "{% set name = \"eth-keyfile\" %}\n{% set version = \"0.9.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 8621c35e83cbc05909d2f23dbb8a87633918733caea553ae0e298f6a06291526\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - python {{ python_min }}\n    - setuptools-markdown\n  run:\n    - eth-keys >=0.4.0\n    - eth-utils >=2.0.0\n    - py_ecc >=5.2.0\n    - pycryptodome >=3.6.6,<4.0.0\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - eth_keyfile\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ethereum/eth-keyfile\n  summary: A library for handling the encrypted keyfiles used to store ethereum private keys.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - step21\n",
+ "raw_meta_yaml": "{% set name = \"eth-keyfile\" %}\n{% set version = \"0.9.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: c7a8bc6af4527d1ab2eb1d1b949d59925252e17663eaf90087da121327b51df6\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - python {{ python_min }}\n    - setuptools-markdown\n  run:\n    - eth-keys >=0.4.0\n    - eth-utils >=2.0.0\n    - py_ecc >=5.2.0\n    - pycryptodome >=3.6.6,<4.0.0\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - eth_keyfile\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ethereum/eth-keyfile\n  summary: A library for handling the encrypted keyfiles used to store ethereum private keys.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - step21\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -246,8 +246,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/e/eth-keyfile/eth_keyfile-0.9.0.tar.gz",
- "version": "0.9.0",
+ "url": "https://pypi.org/packages/source/e/eth-keyfile/eth_keyfile-0.9.1.tar.gz",
+ "version": "0.9.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/eth-keyfile.json"
  }
