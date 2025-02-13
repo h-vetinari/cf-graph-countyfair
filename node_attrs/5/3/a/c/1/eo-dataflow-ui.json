@@ -29,7 +29,7 @@
   },
   "package": {
    "name": "eo-dataflow-ui",
-   "version": "2.2.0"
+   "version": "2.2.4"
   },
   "requirements": {
    "build": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b223c40911672e3adc0adfa424fc4c6348d4e5fd824032632cf6012462ec5a43",
-   "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.0/eo-dataflow-ui-2.2.0.tar.gz"
+   "sha256": "415d33100ed05ab5b4874e7d25143b5c82907e9c5bfbf2001ebebedd5337cc0e",
+   "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.4/eo-dataflow-ui-2.2.4.tar.gz"
   },
   "test": {
    "imports": [
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "eo-dataflow-ui",
-   "version": "2.2.0"
+   "version": "2.2.4"
   },
   "requirements": {
    "build": [
@@ -141,8 +141,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b223c40911672e3adc0adfa424fc4c6348d4e5fd824032632cf6012462ec5a43",
-   "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.0/eo-dataflow-ui-2.2.0.tar.gz"
+   "sha256": "415d33100ed05ab5b4874e7d25143b5c82907e9c5bfbf2001ebebedd5337cc0e",
+   "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.4/eo-dataflow-ui-2.2.4.tar.gz"
   },
   "test": {
    "imports": [
@@ -170,7 +170,7 @@
   },
   "package": {
    "name": "eo-dataflow-ui",
-   "version": "2.2.0"
+   "version": "2.2.4"
   },
   "requirements": {
    "build": [
@@ -195,8 +195,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b223c40911672e3adc0adfa424fc4c6348d4e5fd824032632cf6012462ec5a43",
-   "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.0/eo-dataflow-ui-2.2.0.tar.gz"
+   "sha256": "415d33100ed05ab5b4874e7d25143b5c82907e9c5bfbf2001ebebedd5337cc0e",
+   "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.4/eo-dataflow-ui-2.2.4.tar.gz"
   },
   "test": {
    "imports": [
@@ -253,7 +253,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/eo-dataflow-ui.json"
  },
- "raw_meta_yaml": "{% set name = \"eo-dataflow-ui\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/{{ version }}/eo-dataflow-ui-{{ version }}.tar.gz\n  sha256: b223c40911672e3adc0adfa424fc4c6348d4e5fd824032632cf6012462ec5a43\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - poetry\n    - poetry-dynamic-versioning\n    - pip\n  run:\n    - python\n    - django >=1.11,<2.0\n    - lxml >=4.4.1\n    - celery <5\n    - simplejson >=3,<4\n    - requests <3.0.0\n    - ruamel.yaml >=0.16.13\n\ntest:\n  imports:\n    - eo_dataflow_ui\n\nabout:\n  home: https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: Web UI for monitoring and administering the eo-dataflow manager.\n\nextra:\n  recipe-maintainers:\n    - 2x38\n    - marie59\n",
+ "raw_meta_yaml": "{% set name = \"eo-dataflow-ui\" %}\n{% set version = \"2.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/{{ version }}/eo-dataflow-ui-{{ version }}.tar.gz\n  sha256: 415d33100ed05ab5b4874e7d25143b5c82907e9c5bfbf2001ebebedd5337cc0e\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - poetry\n    - poetry-dynamic-versioning\n    - pip\n  run:\n    - python\n    - django >=1.11,<2.0\n    - lxml >=4.4.1\n    - celery <5\n    - simplejson >=3,<4\n    - requests <3.0.0\n    - ruamel.yaml >=0.16.13\n\ntest:\n  imports:\n    - eo_dataflow_ui\n\nabout:\n  home: https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: Web UI for monitoring and administering the eo-dataflow manager.\n\nextra:\n  recipe-maintainers:\n    - 2x38\n    - marie59\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -344,8 +344,8 @@
    "elements": []
   }
  },
- "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.0/eo-dataflow-ui-2.2.0.tar.gz",
- "version": "2.2.0",
+ "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.4/eo-dataflow-ui-2.2.4.tar.gz",
+ "version": "2.2.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/eo-dataflow-ui.json"
  },
@@ -368,7 +368,7 @@
   },
   "package": {
    "name": "eo-dataflow-ui",
-   "version": "2.2.0"
+   "version": "2.2.4"
   },
   "requirements": {
    "build": [
@@ -393,8 +393,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b223c40911672e3adc0adfa424fc4c6348d4e5fd824032632cf6012462ec5a43",
-   "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.0/eo-dataflow-ui-2.2.0.tar.gz"
+   "sha256": "415d33100ed05ab5b4874e7d25143b5c82907e9c5bfbf2001ebebedd5337cc0e",
+   "url": "https://gitlab.ifremer.fr/eo-dataflow/eo-dataflow-ui/-/archive/2.2.4/eo-dataflow-ui-2.2.4.tar.gz"
   },
   "test": {
    "imports": [
