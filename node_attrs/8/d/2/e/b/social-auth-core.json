@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "social-auth-core",
-   "version": "4.5.4"
+   "version": "4.5.5"
   },
   "requirements": {
    "host": [
@@ -56,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d3dbeb0999ffd0e68aa4bd73f2ac698a18133fd11b3fc890e1366f18c8889fac",
-   "url": "https://pypi.org/packages/source/s/social-auth-core/social-auth-core-4.5.4.tar.gz"
+   "sha256": "a45760c996a79998d77fdf602334782479e16ad1d4d31dfd2f9567f02f1f249d",
+   "url": "https://pypi.org/packages/source/s/social-auth-core/social_auth_core-4.5.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -126,7 +126,7 @@
   },
   "package": {
    "name": "social-auth-core",
-   "version": "4.5.4"
+   "version": "4.5.5"
   },
   "requirements": {
    "host": [
@@ -147,8 +147,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d3dbeb0999ffd0e68aa4bd73f2ac698a18133fd11b3fc890e1366f18c8889fac",
-   "url": "https://pypi.org/packages/source/s/social-auth-core/social-auth-core-4.5.4.tar.gz"
+   "sha256": "a45760c996a79998d77fdf602334782479e16ad1d4d31dfd2f9567f02f1f249d",
+   "url": "https://pypi.org/packages/source/s/social-auth-core/social_auth_core-4.5.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -178,7 +178,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/social-auth-core.json"
  },
- "raw_meta_yaml": "{% set version = \"4.5.4\" %}\n\npackage:\n  name: social-auth-core\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/s/social-auth-core/social-auth-core-{{ version }}.tar.gz\n  sha256: d3dbeb0999ffd0e68aa4bd73f2ac698a18133fd11b3fc890e1366f18c8889fac\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - cryptography >=1.4\n    - defusedxml >=0.5.0rc1\n    - oauthlib >=1.0.3\n    - pyjwt >=2.0.0\n    - python >={{ python_min }}\n    - python3-openid >=3.0.10\n    - requests >=2.9.1\n    - requests-oauthlib >=0.6.1\n\n\ntest:\n  imports:\n    - social_core\n    - social_core.backends\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\n\nabout:\n  home: https://github.com/python-social-auth/social-core\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Python social authentication made simple\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml": "{% set version = \"4.5.5\" %}\n\npackage:\n  name: social-auth-core\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/s/social-auth-core/social_auth_core-{{ version }}.tar.gz\n  sha256: a45760c996a79998d77fdf602334782479e16ad1d4d31dfd2f9567f02f1f249d\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - cryptography >=1.4\n    - defusedxml >=0.5.0rc1\n    - oauthlib >=1.0.3\n    - pyjwt >=2.0.0\n    - python >={{ python_min }}\n    - python3-openid >=3.0.10\n    - requests >=2.9.1\n    - requests-oauthlib >=0.6.1\n\n\ntest:\n  imports:\n    - social_core\n    - social_core.backends\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\n\nabout:\n  home: https://github.com/python-social-auth/social-core\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Python social authentication made simple\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -263,8 +263,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/social-auth-core/social-auth-core-4.5.4.tar.gz",
- "version": "4.5.4",
+ "url": "https://pypi.org/packages/source/s/social-auth-core/social_auth_core-4.5.5.tar.gz",
+ "version": "4.5.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/social-auth-core.json"
  }
