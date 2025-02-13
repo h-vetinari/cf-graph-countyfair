@@ -27,6 +27,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "criou-cg",
     "marie59"
    ]
   },
@@ -118,6 +119,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "criou-cg",
     "marie59"
    ]
   },
@@ -171,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/felyx-report.json"
  },
- "raw_meta_yaml": "{% set name = \"felyx-report\" %}\n{% set version = \"1.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/felyx/felyx_report/-/archive/{{ version }}/felyx_report-{{ version }}.tar.gz\n  sha256: c9d821944a6387231acaf0d2b7467923a014fc8b2db55afed3cb5c8ed36cf67f\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  noarch: python\n  entry_points:\n    - felyx-report = felyx_report.cli.main:felyx_monitoring_report\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n  run:\n    - python >=3.6\n    - elasticsearch >=7.17.0,<7.18\n    - pyarrow >=7.0.0,<8.0\n    - pydantic >=1.9.0,<2.0\n    - numpy >=1.22.2,<1.23\n    - pandas >=1.4.1,<1.5\n    - pyyaml >=6.0,<7.0\n    - shapely >=1.8.0,<1.9\n    - xarray >=0.19,<1.0\n    - jinja2 >=3.0.3,<3.1\n    - netcdf4 >=1.5.4,<1.6\n    \ntest:\n  imports:\n    - felyx_report\n    \nabout:\n  home: https://gitlab.ifremer.fr/felyx/felyx_report\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: Produce monitoring report from data processed by Felyx processor\n\nextra:\n  recipe-maintainers:\n    - marie59\n",
+ "raw_meta_yaml": "{% set name = \"felyx-report\" %}\n{% set version = \"1.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/felyx/felyx_report/-/archive/{{ version }}/felyx_report-{{ version }}.tar.gz\n  sha256: c9d821944a6387231acaf0d2b7467923a014fc8b2db55afed3cb5c8ed36cf67f\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  noarch: python\n  entry_points:\n    - felyx-report = felyx_report.cli.main:felyx_monitoring_report\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n  run:\n    - python >=3.6\n    - elasticsearch >=7.17.0,<7.18\n    - pyarrow >=7.0.0,<8.0\n    - pydantic >=1.9.0,<2.0\n    - numpy >=1.22.2,<1.23\n    - pandas >=1.4.1,<1.5\n    - pyyaml >=6.0,<7.0\n    - shapely >=1.8.0,<1.9\n    - xarray >=0.19,<1.0\n    - jinja2 >=3.0.3,<3.1\n    - netcdf4 >=1.5.4,<1.6\n    \ntest:\n  imports:\n    - felyx_report\n    \nabout:\n  home: https://gitlab.ifremer.fr/felyx/felyx_report\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: Produce monitoring report from data processed by Felyx processor\n\nextra:\n  recipe-maintainers:\n    - criou-cg\n    - marie59\n",
  "req": {
   "__set__": true,
   "elements": [
