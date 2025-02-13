@@ -17,7 +17,7 @@
   "about": {
    "home": "https://pypi.org/project/cnv-vcf2json/",
    "license": "CC-BY-NC-4.0",
-   "summary": "Converts the structural variants VCF file into JSON file"
+   "summary": "Converts the CNVkit structural variants VCF file into JSON format"
   },
   "build": {
    "entry_points": [
@@ -39,7 +39,8 @@
   "requirements": {
    "host": [
     "python 3.9",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.9",
@@ -74,7 +75,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -96,7 +98,7 @@
   "about": {
    "home": "https://pypi.org/project/cnv-vcf2json/",
    "license": "CC-BY-NC-4.0",
-   "summary": "Converts the structural variants VCF file into JSON file"
+   "summary": "Converts the CNVkit structural variants VCF file into JSON format"
   },
   "build": {
    "entry_points": [
@@ -118,7 +120,8 @@
   "requirements": {
    "host": [
     "python 3.9",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.9",
@@ -158,13 +161,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cnv-vcf2json.json"
  },
- "raw_meta_yaml": "{% set name = \"cnv-vcf2json\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cnv_vcf2json-{{ version }}.tar.gz\n  sha256: 7a1fc7bde137e7d2dc766aeda21b446373c32129af1d5259304dae24b5f857e5\n\nbuild:\n  entry_points:\n    - cnv-vcf2json = vcf_converter.cnv_vcf2json:cnv_vcf2json\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - jsonschema\n\ntest:\n  imports:\n    - vcf_converter\n  commands:\n    - pip check\n    - cnv-vcf2json --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Converts the structural variants VCF file into JSON file\n  license: CC-BY-NC-4.0\n  home: https://pypi.org/project/cnv-vcf2json/\n\nextra:\n  recipe-maintainers:\n    - khaled196\n",
+ "raw_meta_yaml": "{% set name = \"cnv-vcf2json\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cnv_vcf2json-{{ version }}.tar.gz\n  sha256: 7a1fc7bde137e7d2dc766aeda21b446373c32129af1d5259304dae24b5f857e5\n\nbuild:\n  entry_points:\n    - cnv-vcf2json = vcf_converter.cnv_vcf2json:cnv_vcf2json\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - jsonschema\n\ntest:\n  imports:\n    - vcf_converter\n  commands:\n    - pip check\n    - cnv-vcf2json --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Converts the CNVkit structural variants VCF file into JSON format\n  license: CC-BY-NC-4.0\n  home: https://pypi.org/project/cnv-vcf2json/\n\nextra:\n  recipe-maintainers:\n    - khaled196\n",
  "req": {
   "__set__": true,
   "elements": [
    "jsonschema",
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -176,7 +180,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -204,7 +209,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
