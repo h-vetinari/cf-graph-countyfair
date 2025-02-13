@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -32,13 +32,14 @@
   },
   "package": {
    "name": "deprecation-alias",
-   "version": "0.3.3"
+   "version": "0.4.0"
   },
   "requirements": {
    "host": [
+    "hatchling",
+    "hatch-requirements-txt",
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9"
    ],
    "run": [
     "deprecation >=2.1.0",
@@ -48,8 +49,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e73266d4c866c040079d7a047f92ac2cd468b4608032486df1ffd7ef147e6515",
-   "url": "https://pypi.org/packages/source/d/deprecation-alias/deprecation-alias-0.3.3.tar.gz"
+   "sha256": "a58d2e74491c7834e9d318788da60272fa2f81aeb814b4055a4ba90a0a41740f",
+   "url": "https://pypi.org/packages/source/d/deprecation-alias/deprecation_alias-0.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -72,9 +73,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-requirements-txt",
+    "hatchling",
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run": {
@@ -102,7 +104,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -112,13 +114,14 @@
   },
   "package": {
    "name": "deprecation-alias",
-   "version": "0.3.3"
+   "version": "0.4.0"
   },
   "requirements": {
    "host": [
+    "hatchling",
+    "hatch-requirements-txt",
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9"
    ],
    "run": [
     "deprecation >=2.1.0",
@@ -128,8 +131,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e73266d4c866c040079d7a047f92ac2cd468b4608032486df1ffd7ef147e6515",
-   "url": "https://pypi.org/packages/source/d/deprecation-alias/deprecation-alias-0.3.3.tar.gz"
+   "sha256": "a58d2e74491c7834e9d318788da60272fa2f81aeb814b4055a4ba90a0a41740f",
+   "url": "https://pypi.org/packages/source/d/deprecation-alias/deprecation_alias-0.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -158,15 +161,16 @@
  "pr_info": {
   "__lazy_json__": "pr_info/deprecation-alias.json"
  },
- "raw_meta_yaml": "{% set name = \"deprecation-alias\" %}\n{% set version = \"0.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/deprecation-alias-{{ version }}.tar.gz\n  sha256: e73266d4c866c040079d7a047f92ac2cd468b4608032486df1ffd7ef147e6515\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - deprecation >=2.1.0\n    - packaging >=20.4\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - deprecation_alias\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/domdfcoding/deprecation-alias\n  summary: A wrapper around 'deprecation' providing support for deprecated aliases.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - domdfcoding\n",
+ "raw_meta_yaml": "{% set name = \"deprecation-alias\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: a58d2e74491c7834e9d318788da60272fa2f81aeb814b4055a4ba90a0a41740f\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - hatchling\n    - hatch-requirements-txt\n    - pip\n    - python {{ python_min }}\n  run:\n    - deprecation >=2.1.0\n    - packaging >=20.4\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - deprecation_alias\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/domdfcoding/deprecation-alias\n  summary: A wrapper around 'deprecation' providing support for deprecated aliases.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - domdfcoding\n",
  "req": {
   "__set__": true,
   "elements": [
    "deprecation",
+   "hatch-requirements-txt",
+   "hatchling",
    "packaging",
    "pip",
-   "python",
-   "setuptools"
+   "python"
   ]
  },
  "requirements": {
@@ -177,9 +181,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-requirements-txt",
+    "hatchling",
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run": {
@@ -207,9 +212,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-requirements-txt",
+    "hatchling",
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9"
    ]
   },
   "run": {
@@ -228,8 +234,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/deprecation-alias/deprecation-alias-0.3.3.tar.gz",
- "version": "0.3.3",
+ "url": "https://pypi.org/packages/source/d/deprecation-alias/deprecation_alias-0.4.0.tar.gz",
+ "version": "0.4.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/deprecation-alias.json"
  }
