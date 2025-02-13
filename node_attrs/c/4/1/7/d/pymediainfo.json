@@ -42,7 +42,7 @@
   },
   "package": {
    "name": "pymediainfo",
-   "version": "7.0.0"
+   "version": "7.0.1"
   },
   "requirements": {
    "build": [],
@@ -59,8 +59,8 @@
   "schema_version": 0,
   "source": {
    "patches": null,
-   "sha256": "b78e979e42e50a714f439452679c53d9e99b6f35a25542837aee97886d06dd45",
-   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.0.tar.gz"
+   "sha256": "0d5df59ecc615e24c56f303b8f651579c6accab7265715e5d429186d7ba21514",
+   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -129,7 +129,7 @@
   },
   "package": {
    "name": "pymediainfo",
-   "version": "7.0.0"
+   "version": "7.0.1"
   },
   "requirements": {
    "build": [],
@@ -148,8 +148,8 @@
    "patches": [
     "no-accented-filename-under-win.patch"
    ],
-   "sha256": "b78e979e42e50a714f439452679c53d9e99b6f35a25542837aee97886d06dd45",
-   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.0.tar.gz"
+   "sha256": "0d5df59ecc615e24c56f303b8f651579c6accab7265715e5d429186d7ba21514",
+   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -191,7 +191,7 @@
   },
   "package": {
    "name": "pymediainfo",
-   "version": "7.0.0"
+   "version": "7.0.1"
   },
   "requirements": {
    "build": [],
@@ -208,8 +208,8 @@
   "schema_version": 0,
   "source": {
    "patches": null,
-   "sha256": "b78e979e42e50a714f439452679c53d9e99b6f35a25542837aee97886d06dd45",
-   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.0.tar.gz"
+   "sha256": "0d5df59ecc615e24c56f303b8f651579c6accab7265715e5d429186d7ba21514",
+   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -278,7 +278,7 @@
   },
   "package": {
    "name": "pymediainfo",
-   "version": "7.0.0"
+   "version": "7.0.1"
   },
   "requirements": {
    "build": [],
@@ -295,8 +295,8 @@
   "schema_version": 0,
   "source": {
    "patches": null,
-   "sha256": "b78e979e42e50a714f439452679c53d9e99b6f35a25542837aee97886d06dd45",
-   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.0.tar.gz"
+   "sha256": "0d5df59ecc615e24c56f303b8f651579c6accab7265715e5d429186d7ba21514",
+   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -359,7 +359,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pymediainfo.json"
  },
- "raw_meta_yaml": "{% set name = \"pymediainfo\" %}\n{% set version = \"7.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b78e979e42e50a714f439452679c53d9e99b6f35a25542837aee97886d06dd45\n  patches:\n    - no-accented-filename-under-win.patch  # [win]\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python\n    - pdm-backend\n    - pip\n  run:\n    - python\n    - libmediainfo\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - pymediainfo\n  requires:\n    - pip\n    - pytest\n  commands:\n    - pip check\n    - pytest tests\n\nabout:\n  home: https://github.com/sbraz/pymediainfo\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A Python wrapper around the MediaInfo library\n\n  doc_url: https://pymediainfo.readthedocs.io/\n  dev_url: https://github.com/sbraz/pymediainfo\n\nextra:\n  recipe-maintainers:\n    - anjos\n    - sodre\n",
+ "raw_meta_yaml": "{% set name = \"pymediainfo\" %}\n{% set version = \"7.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0d5df59ecc615e24c56f303b8f651579c6accab7265715e5d429186d7ba21514\n  patches:\n    - no-accented-filename-under-win.patch  # [win]\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python\n    - pdm-backend\n    - pip\n  run:\n    - python\n    - libmediainfo\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - pymediainfo\n  requires:\n    - pip\n    - pytest\n  commands:\n    - pip check\n    - pytest tests\n\nabout:\n  home: https://github.com/sbraz/pymediainfo\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A Python wrapper around the MediaInfo library\n\n  doc_url: https://pymediainfo.readthedocs.io/\n  dev_url: https://github.com/sbraz/pymediainfo\n\nextra:\n  recipe-maintainers:\n    - anjos\n    - sodre\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -426,8 +426,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.0.tar.gz",
- "version": "7.0.0",
+ "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.1.tar.gz",
+ "version": "7.0.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pymediainfo.json"
  },
@@ -453,7 +453,7 @@
   },
   "package": {
    "name": "pymediainfo",
-   "version": "7.0.0"
+   "version": "7.0.1"
   },
   "requirements": {
    "build": [],
@@ -472,8 +472,8 @@
    "patches": [
     "no-accented-filename-under-win.patch"
    ],
-   "sha256": "b78e979e42e50a714f439452679c53d9e99b6f35a25542837aee97886d06dd45",
-   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.0.tar.gz"
+   "sha256": "0d5df59ecc615e24c56f303b8f651579c6accab7265715e5d429186d7ba21514",
+   "url": "https://pypi.org/packages/source/p/pymediainfo/pymediainfo-7.0.1.tar.gz"
   },
   "test": {
    "commands": [
