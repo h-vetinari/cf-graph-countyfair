@@ -37,34 +37,28 @@
   },
   "package": {
    "name": "airflow-supervisor",
-   "version": "1.1.0"
+   "version": "1.2.2"
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python 3.11",
     "pip",
     "hatchling"
    ],
    "run": [
-    "python >=3.9",
-    "colorlog",
-    "hydra-core",
-    "jinja2",
-    "omegaconf",
-    "pydantic >=2",
-    "rich",
-    "typer"
-   ],
-   "run_constrained": [
+    "python >=3.11",
     "airflow-config >=0.1.2",
+    "airflow-common-operators >=0.2.0,<0.3",
     "airflow-ha >=1",
-    "apache-airflow >=2.8,<3"
+    "apache-airflow >=2.8,<3",
+    "apache-airflow-providers-ssh",
+    "supervisor-pydantic >=1.1,<1.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ae9a03e34b75477cef5e06e62182adcbd88d144c70d8753b913c64775b948ae4",
-   "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.1.0.tar.gz"
+   "sha256": "39f9753ac287b382e9a8f6f8aef63e8e739598900ddee3800d1cac72499a3829",
+   "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.2.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -74,7 +68,7 @@
     "airflow_supervisor"
    ],
    "requires": [
-    "python 3.9",
+    "python 3.11",
     "pip"
    ]
   }
@@ -95,14 +89,13 @@
   "run": {
    "__set__": true,
    "elements": [
-    "colorlog",
-    "hydra-core",
-    "jinja2",
-    "omegaconf",
-    "pydantic",
+    "airflow-common-operators",
+    "airflow-config",
+    "airflow-ha",
+    "apache-airflow",
+    "apache-airflow-providers-ssh",
     "python",
-    "rich",
-    "typer"
+    "supervisor-pydantic"
    ]
   },
   "test": {
@@ -137,34 +130,28 @@
   },
   "package": {
    "name": "airflow-supervisor",
-   "version": "1.1.0"
+   "version": "1.2.2"
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python 3.11",
     "pip",
     "hatchling"
    ],
    "run": [
-    "python >=3.9",
-    "colorlog",
-    "hydra-core",
-    "jinja2",
-    "omegaconf",
-    "pydantic >=2",
-    "rich",
-    "typer"
-   ],
-   "run_constrained": [
+    "python >=3.11",
     "airflow-config >=0.1.2",
+    "airflow-common-operators >=0.2.0,<0.3",
     "airflow-ha >=1",
-    "apache-airflow >=2.8,<3"
+    "apache-airflow >=2.8,<3",
+    "apache-airflow-providers-ssh",
+    "supervisor-pydantic >=1.1,<1.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ae9a03e34b75477cef5e06e62182adcbd88d144c70d8753b913c64775b948ae4",
-   "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.1.0.tar.gz"
+   "sha256": "39f9753ac287b382e9a8f6f8aef63e8e739598900ddee3800d1cac72499a3829",
+   "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.2.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -174,7 +161,7 @@
     "airflow_supervisor"
    ],
    "requires": [
-    "python 3.9",
+    "python 3.11",
     "pip"
    ]
   }
@@ -193,20 +180,19 @@
  "pr_info": {
   "__lazy_json__": "pr_info/airflow-supervisor.json"
  },
- "raw_meta_yaml": "{% set name = \"airflow-supervisor\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-{{ version }}.tar.gz\n  sha256: ae9a03e34b75477cef5e06e62182adcbd88d144c70d8753b913c64775b948ae4\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - colorlog\n    - hydra-core\n    - jinja2\n    - omegaconf\n    - pydantic >=2\n    - rich\n    - typer\n  run_constrained:\n    - airflow-config >=0.1.2\n    - airflow-ha >=1\n    - apache-airflow >=2.8,<3\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - airflow_supervisor\n\nabout:\n  home: https://github.com/airflow-laminar/airflow-supervisor\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Supervisor operators and configuration for long-running tasks\n  description: Supervisor operators and configuration for long-running tasks\n  dev_url: https://github.com/airflow-laminar/airflow-supervisor\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
+ "raw_meta_yaml": "{% set name = \"airflow-supervisor\" %}\n{% set version = \"1.2.2\" %}\n{% set python_min = \"3.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-{{ version }}.tar.gz\n  sha256: 39f9753ac287b382e9a8f6f8aef63e8e739598900ddee3800d1cac72499a3829\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - airflow-config >=0.1.2\n    - airflow-common-operators >=0.2.0,<0.3\n    - airflow-ha >=1\n    - apache-airflow >=2.8,<3\n    - apache-airflow-providers-ssh\n    - supervisor-pydantic >=1.1,<1.2\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  commands:\n    - pip check\n  imports:\n    - airflow_supervisor\n\nabout:\n  home: https://github.com/airflow-laminar/airflow-supervisor\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Supervisor operators and configuration for long-running tasks\n  description: Supervisor operators and configuration for long-running tasks\n  dev_url: https://github.com/airflow-laminar/airflow-supervisor\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
  "req": {
   "__set__": true,
   "elements": [
-   "colorlog",
+   "airflow-common-operators",
+   "airflow-config",
+   "airflow-ha",
+   "apache-airflow",
+   "apache-airflow-providers-ssh",
    "hatchling",
-   "hydra-core",
-   "jinja2",
-   "omegaconf",
    "pip",
-   "pydantic",
    "python",
-   "rich",
-   "typer"
+   "supervisor-pydantic"
   ]
  },
  "requirements": {
@@ -225,14 +211,13 @@
   "run": {
    "__set__": true,
    "elements": [
-    "colorlog",
-    "hydra-core",
-    "jinja2",
-    "omegaconf",
-    "pydantic",
+    "airflow-common-operators",
+    "airflow-config",
+    "airflow-ha",
+    "apache-airflow",
+    "apache-airflow-providers-ssh",
     "python",
-    "rich",
-    "typer"
+    "supervisor-pydantic"
    ]
   },
   "test": {
@@ -254,32 +239,31 @@
    "elements": [
     "hatchling",
     "pip",
-    "python 3.9"
+    "python 3.11"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "colorlog",
-    "hydra-core",
-    "jinja2",
-    "omegaconf",
-    "pydantic >=2",
-    "python >=3.9",
-    "rich",
-    "typer"
+    "airflow-common-operators >=0.2.0,<0.3",
+    "airflow-config >=0.1.2",
+    "airflow-ha >=1",
+    "apache-airflow >=2.8,<3",
+    "apache-airflow-providers-ssh",
+    "python >=3.11",
+    "supervisor-pydantic >=1.1,<1.2"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.11"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.1.0.tar.gz",
- "version": "1.1.0",
+ "url": "https://pypi.org/packages/source/a/airflow-supervisor/airflow_supervisor-1.2.2.tar.gz",
+ "version": "1.2.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/airflow-supervisor.json"
  }
