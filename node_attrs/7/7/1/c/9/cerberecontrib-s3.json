@@ -29,6 +29,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "erwanbodere",
     "criou-cg",
     "cso2943",
     "marie59"
@@ -103,6 +104,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "erwanbodere",
     "criou-cg",
     "cso2943",
     "marie59"
@@ -149,7 +151,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cerberecontrib-s3.json"
  },
- "raw_meta_yaml": "{% set name = \"cerberecontrib-s3\" %}\n{% set version = \"1.1\" %}\n\npackage: \n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v{{ version }}/cerberecontrib-s3-NOV-FE-1187-DT-115_v{{ version }}.tar.gz\n  sha256: d6001d8c27f1833665bd8d4ca13f0d45a6ffa61a306f49a650da8cb38993f165\n  \nbuild:\n  number: 0\n  noarch: python\n  script: \n  - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n  run:\n    - python >=3.8\n    - cerbere >=2.1.1\n    - gdal\n    - lxml \n \ntest:\n  imports:\n    - cerberecontrib_s3\n    \nabout:\n  home: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3\n  license: GPL-3.0-or-later\n  license_file: LICENSE.txt\n  summary: Companion package of cerbere for Copernicus Sentinel-3 products.\n\nextra:\n  recipe-maintainers:\n    - criou-cg\n    - cso2943\n    - marie59\n",
+ "raw_meta_yaml": "{% set name = \"cerberecontrib-s3\" %}\n{% set version = \"1.1\" %}\n\npackage: \n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v{{ version }}/cerberecontrib-s3-NOV-FE-1187-DT-115_v{{ version }}.tar.gz\n  sha256: d6001d8c27f1833665bd8d4ca13f0d45a6ffa61a306f49a650da8cb38993f165\n  \nbuild:\n  number: 0\n  noarch: python\n  script: \n  - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n  run:\n    - python >=3.8\n    - cerbere >=2.1.1\n    - gdal\n    - lxml \n \ntest:\n  imports:\n    - cerberecontrib_s3\n    \nabout:\n  home: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3\n  license: GPL-3.0-or-later\n  license_file: LICENSE.txt\n  summary: Companion package of cerbere for Copernicus Sentinel-3 products.\n\nextra:\n  recipe-maintainers:\n    - erwanbodere\n    - criou-cg\n    - cso2943\n    - marie59\n",
  "req": {
   "__set__": true,
   "elements": [
