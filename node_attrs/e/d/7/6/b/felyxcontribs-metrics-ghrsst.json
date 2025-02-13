@@ -24,6 +24,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "cso2943",
     "criou-cg",
     "erwanbodere",
     "marie59"
@@ -96,6 +97,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "cso2943",
     "criou-cg",
     "erwanbodere",
     "marie59"
@@ -142,7 +144,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/felyxcontribs-metrics-ghrsst.json"
  },
- "raw_meta_yaml": "{% set name = \"felyxcontribs-metrics-ghrsst\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_ghrsst/-/archive/{{ version }}/felyxcontribs_metrics_ghrsst-{{ version }}.tar.gz\n  sha256: 68791fba4dea34de94646e8aa338e1407c8c7eff0f2f572969ac3ab371cc602d\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n\n  run:\n    - python >=3.8\n    - virtualenv >=20.13.3,<20.14\n    \ntest:\n  imports:\n    - felyxcontribs_metrics_ghrsst\n\nabout:\n  home: https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_ghrsst\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: felyx extensions for ghrsst metrics.\n\nextra:\n  recipe-maintainers:\n    - criou-cg\n    - erwanbodere\n    - marie59\n",
+ "raw_meta_yaml": "{% set name = \"felyxcontribs-metrics-ghrsst\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_ghrsst/-/archive/{{ version }}/felyxcontribs_metrics_ghrsst-{{ version }}.tar.gz\n  sha256: 68791fba4dea34de94646e8aa338e1407c8c7eff0f2f572969ac3ab371cc602d\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n\n  run:\n    - python >=3.8\n    - virtualenv >=20.13.3,<20.14\n    \ntest:\n  imports:\n    - felyxcontribs_metrics_ghrsst\n\nabout:\n  home: https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_ghrsst\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: felyx extensions for ghrsst metrics.\n\nextra:\n  recipe-maintainers:\n    - cso2943\n    - criou-cg\n    - erwanbodere\n    - marie59\n",
  "req": {
   "__set__": true,
   "elements": [
