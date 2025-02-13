@@ -15,7 +15,7 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "home": "https://github.com/manahl/pytest-plugins",
+   "home": "https://github.com/man-group/pytest-plugins",
    "license": "MIT",
    "license_family": "MIT",
    "license_file": "LICENSE.txt",
@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -38,26 +38,28 @@
   "requirements": {
    "host": [
     "pip",
-    "python",
-    "setuptools",
+    "python 3.9",
+    "setuptools <72",
     "setuptools-git"
    ],
    "run": [
     "gprof2dot",
     "pytest",
-    "python",
-    "setuptools",
+    "python >=3.9",
     "six"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "93938f147662225d2b8bd5af89587b979652426a8a6ffd7e73ec4a23e24b7f29",
-   "url": "https://pypi.io/packages/source/p/pytest-profiling/pytest-profiling-1.7.0.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pytest-profiling/pytest-profiling-1.7.0.tar.gz"
   },
   "test": {
    "imports": [
     "pytest_profiling"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -81,18 +83,19 @@
     "gprof2dot",
     "pytest",
     "python",
-    "setuptools",
     "six"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
   "about": {
-   "home": "https://github.com/manahl/pytest-plugins",
+   "home": "https://github.com/man-group/pytest-plugins",
    "license": "MIT",
    "license_family": "MIT",
    "license_file": "LICENSE.txt",
@@ -100,7 +103,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -115,26 +118,28 @@
   "requirements": {
    "host": [
     "pip",
-    "python",
-    "setuptools",
+    "python 3.9",
+    "setuptools <72",
     "setuptools-git"
    ],
    "run": [
     "gprof2dot",
     "pytest",
-    "python",
-    "setuptools",
+    "python >=3.9",
     "six"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "93938f147662225d2b8bd5af89587b979652426a8a6ffd7e73ec4a23e24b7f29",
-   "url": "https://pypi.io/packages/source/p/pytest-profiling/pytest-profiling-1.7.0.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pytest-profiling/pytest-profiling-1.7.0.tar.gz"
   },
   "test": {
    "imports": [
     "pytest_profiling"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -152,7 +157,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pytest-profiling.json"
  },
- "raw_meta_yaml": "{% set name = \"pytest-profiling\" %}\n{% set version = \"1.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 93938f147662225d2b8bd5af89587b979652426a8a6ffd7e73ec4a23e24b7f29\n\nbuild:\n  number: 1\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n    - setuptools-git\n  run:\n    - gprof2dot\n    - pytest\n    - python\n    - setuptools\n    - six\n\ntest:\n  imports:\n    - pytest_profiling\n\nabout:\n  home: https://github.com/manahl/pytest-plugins\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Profiling plugin for py.test\n\nextra:\n  recipe-maintainers:\n    - pmgrafe\n",
+ "raw_meta_yaml": "{% set name = \"pytest-profiling\" %}\n{% set version = \"1.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 93938f147662225d2b8bd5af89587b979652426a8a6ffd7e73ec4a23e24b7f29\n\nbuild:\n  number: 2\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools <72\n    - setuptools-git\n  run:\n    - gprof2dot\n    - pytest\n    - python >={{ python_min }}\n    - six\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pytest_profiling\n\nabout:\n  home: https://github.com/man-group/pytest-plugins\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Profiling plugin for py.test\n\nextra:\n  recipe-maintainers:\n    - pmgrafe\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -185,13 +190,14 @@
     "gprof2dot",
     "pytest",
     "python",
-    "setuptools",
     "six"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -204,8 +210,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python",
-    "setuptools",
+    "python 3.9",
+    "setuptools <72",
     "setuptools-git"
    ]
   },
@@ -214,17 +220,18 @@
    "elements": [
     "gprof2dot",
     "pytest",
-    "python",
-    "setuptools",
+    "python >=3.9",
     "six"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pytest-profiling/pytest-profiling-1.7.0.tar.gz",
+ "url": "https://pypi.org/packages/source/p/pytest-profiling/pytest-profiling-1.7.0.tar.gz",
  "version": "1.7.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pytest-profiling.json"
