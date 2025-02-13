@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "openmm-xtb",
-   "version": "0.2"
+   "version": "0.3"
   },
   "requirements": {
    "build": [
@@ -64,7 +64,7 @@
   },
   "schema_version": 0,
   "source": {
-   "git_rev": "52d4373",
+   "git_rev": "cf09e2c",
    "git_url": "https://github.com/openmm/openmm-xtb.git"
   },
   "test": {
@@ -131,7 +131,7 @@
   },
   "package": {
    "name": "openmm-xtb",
-   "version": "0.2"
+   "version": "0.3"
   },
   "requirements": {
    "build": [
@@ -159,7 +159,7 @@
   },
   "schema_version": 0,
   "source": {
-   "git_rev": "52d4373",
+   "git_rev": "cf09e2c",
    "git_url": "https://github.com/openmm/openmm-xtb.git"
   },
   "test": {
@@ -191,7 +191,7 @@
   },
   "package": {
    "name": "openmm-xtb",
-   "version": "0.2"
+   "version": "0.3"
   },
   "requirements": {
    "build": [
@@ -219,7 +219,7 @@
   },
   "schema_version": 0,
   "source": {
-   "git_rev": "52d4373",
+   "git_rev": "cf09e2c",
    "git_url": "https://github.com/openmm/openmm-xtb.git"
   },
   "test": {
@@ -287,7 +287,7 @@
   },
   "package": {
    "name": "openmm-xtb",
-   "version": "0.2"
+   "version": "0.3"
   },
   "requirements": {
    "build": [
@@ -314,7 +314,7 @@
   },
   "schema_version": 0,
   "source": {
-   "git_rev": "52d4373",
+   "git_rev": "cf09e2c",
    "git_url": "https://github.com/openmm/openmm-xtb.git"
   },
   "test": {
@@ -375,7 +375,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/openmm-xtb.json"
  },
- "raw_meta_yaml": "{% set name = \"openmm-xtb\" %}\n{% set version = \"0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/openmm/{{ name }}.git\n  git_rev: \"52d4373\"\n\nbuild:\n  number: 0\n  skip: true  # [win or py<310]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - swig                                   # [build_platform != target_platform]\n    - openmm >=8.1.1                         # [build_platform != target_platform]\n    - cmake\n    - make\n    - conda-build  # [osx]\n  host:\n    - python\n    - pip\n    - openmm >=8.1.1\n    - xtb\n    - swig                                   # [not arm64]\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - {{ pin_compatible('openmm', min_pin='x.x', max_pin='x.x') }}\n    - {{ pin_compatible('xtb', min_pin='x.x', max_pin='x.x') }}\n\ntest:\n  imports:\n    - openmmxtb\n  commands: |\n    cd ${PREFIX}/share/openmm-xtb/tests\n    set +e\n    for f in Test*; do\n      if ! [[ $f =~ py$ ]]; then\n        ./${f}\n      else\n        python $f\n      fi\n      ((exitcode+=$?))\n    done\n    exit $exitcode\n\n\nabout:\n  home: https://github.com/openmm/openmm-xtb\n  license: MIT\n  license_file: README.md\n  summary: 'A connection between OpenMM and XTB'\n  description: |\n    This project provides a connection between OpenMM and XTB.\n    It lets you compute forces and energies with the semi-empirical\n    quantum chemistry methods provided by XTB.\n  doc_url: https://github.com/openmm/openmm-xtb\n  dev_url: https://github.com/openmm/openmm-xtb\n\nextra:\n  recipe-maintainers:\n    - RaulPPelaez\n    - peastman\n",
+ "raw_meta_yaml": "{% set name = \"openmm-xtb\" %}\n{% set version = \"0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/openmm/{{ name }}.git\n  git_rev: \"cf09e2c\"\n\nbuild:\n  number: 0\n  skip: true  # [win or py<310]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - swig                                   # [build_platform != target_platform]\n    - openmm >=8.1.1                         # [build_platform != target_platform]\n    - cmake\n    - make\n    - conda-build  # [osx]\n  host:\n    - python\n    - pip\n    - openmm >=8.1.1\n    - xtb\n    - swig                                   # [not arm64]\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - {{ pin_compatible('openmm', min_pin='x.x', max_pin='x.x') }}\n    - {{ pin_compatible('xtb', min_pin='x.x', max_pin='x.x') }}\n\ntest:\n  imports:\n    - openmmxtb\n  commands: |\n    cd ${PREFIX}/share/openmm-xtb/tests\n    set +e\n    for f in Test*; do\n      if ! [[ $f =~ py$ ]]; then\n        ./${f}\n      else\n        python $f\n      fi\n      ((exitcode+=$?))\n    done\n    exit $exitcode\n\n\nabout:\n  home: https://github.com/openmm/openmm-xtb\n  license: MIT\n  license_file: README.md\n  summary: 'A connection between OpenMM and XTB'\n  description: |\n    This project provides a connection between OpenMM and XTB.\n    It lets you compute forces and energies with the semi-empirical\n    quantum chemistry methods provided by XTB.\n  doc_url: https://github.com/openmm/openmm-xtb\n  dev_url: https://github.com/openmm/openmm-xtb\n\nextra:\n  recipe-maintainers:\n    - RaulPPelaez\n    - peastman\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -475,7 +475,7 @@
   }
  },
  "url": null,
- "version": "0.2",
+ "version": "0.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/openmm-xtb.json"
  }
