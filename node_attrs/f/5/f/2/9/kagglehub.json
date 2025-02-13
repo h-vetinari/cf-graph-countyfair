@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "kagglehub",
-   "version": "0.3.6"
+   "version": "0.3.8"
   },
   "requirements": {
    "host": [
@@ -52,8 +52,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3e9485f8ff59d87d1055f1cb22369ffd943826492ff586368ba1934a58c11291",
-   "url": "https://pypi.org/packages/source/k/kagglehub/kagglehub-0.3.6.tar.gz"
+   "sha256": "db9202a58afc2d55ebcc799f2850562bcd832d2a487dc57b87b7e242fe9d098c",
+   "url": "https://pypi.org/packages/source/k/kagglehub/kagglehub-0.3.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -107,7 +107,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -117,7 +117,7 @@
   },
   "package": {
    "name": "kagglehub",
-   "version": "0.3.6"
+   "version": "0.3.8"
   },
   "requirements": {
    "host": [
@@ -134,8 +134,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3e9485f8ff59d87d1055f1cb22369ffd943826492ff586368ba1934a58c11291",
-   "url": "https://pypi.org/packages/source/k/kagglehub/kagglehub-0.3.6.tar.gz"
+   "sha256": "db9202a58afc2d55ebcc799f2850562bcd832d2a487dc57b87b7e242fe9d098c",
+   "url": "https://pypi.org/packages/source/k/kagglehub/kagglehub-0.3.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,7 +164,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/kagglehub.json"
  },
- "raw_meta_yaml": "{% set name = \"kagglehub\" %}\n{% set version = \"0.3.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kagglehub-{{ version }}.tar.gz\n  sha256: 3e9485f8ff59d87d1055f1cb22369ffd943826492ff586368ba1934a58c11291\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - requests\n    - tqdm\n    - packaging\n\ntest:\n  imports:\n    - kagglehub\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/Kaggle/kagglehub\n  summary: Access Kaggle resources anywhere\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ngam\n",
+ "raw_meta_yaml": "{% set name = \"kagglehub\" %}\n{% set version = \"0.3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kagglehub-{{ version }}.tar.gz\n  sha256: db9202a58afc2d55ebcc799f2850562bcd832d2a487dc57b87b7e242fe9d098c\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - requests\n    - tqdm\n    - packaging\n\ntest:\n  imports:\n    - kagglehub\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/Kaggle/kagglehub\n  summary: Access Kaggle resources anywhere\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ngam\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -237,8 +237,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/k/kagglehub/kagglehub-0.3.6.tar.gz",
- "version": "0.3.6",
+ "url": "https://pypi.org/packages/source/k/kagglehub/kagglehub-0.3.8.tar.gz",
+ "version": "0.3.8",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/kagglehub.json"
  }
