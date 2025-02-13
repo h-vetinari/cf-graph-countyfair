@@ -27,34 +27,36 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "saibhargav1508"
+    "saibhargav1508",
+    "nisharai1"
    ]
   },
   "package": {
    "name": "robotframework-appiumlibrary",
-   "version": "1.5.0.6"
+   "version": "2.1.0"
   },
   "requirements": {
    "host": [
     "pip",
     "pytest-runner",
-    "python"
+    "python 3.12",
+    "setuptools"
    ],
    "run": [
-    "appium-python-client >=0.28",
+    "appium-python-client >=2.7.1,<4.0.0",
     "decorator >=3.3.2",
     "docutils >=0.8.1",
     "kitchen >=1.2.4",
-    "python",
+    "python >=3.12",
     "robotframework >=2.6.0",
-    "selenium >=2.47.1",
+    "selenium >=4.0,<=4.16",
     "six >=1.10.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7171a81705bbfa0091c1cf6518277681752386c860efc6dd98c85d74970ad2a6",
-   "url": "https://pypi.io/packages/source/r/robotframework-appiumlibrary/robotframework-appiumlibrary-1.5.0.6.tar.gz"
+   "sha256": "d01b1ed21e79996a790ffb7ad475862f6e9427770a9c88314065b1c59ce2d52c",
+   "url": "https://pypi.org/packages/source/r/robotframework-appiumlibrary/robotframework-appiumlibrary-2.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -65,7 +67,8 @@
     "AppiumLibrary.keywords"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.12"
    ]
   }
  },
@@ -79,7 +82,8 @@
    "elements": [
     "pip",
     "pytest-runner",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -98,7 +102,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -116,34 +121,36 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "saibhargav1508"
+    "saibhargav1508",
+    "nisharai1"
    ]
   },
   "package": {
    "name": "robotframework-appiumlibrary",
-   "version": "1.5.0.6"
+   "version": "2.1.0"
   },
   "requirements": {
    "host": [
     "pip",
     "pytest-runner",
-    "python"
+    "python 3.12",
+    "setuptools"
    ],
    "run": [
-    "appium-python-client >=0.28",
+    "appium-python-client >=2.7.1,<4.0.0",
     "decorator >=3.3.2",
     "docutils >=0.8.1",
     "kitchen >=1.2.4",
-    "python",
+    "python >=3.12",
     "robotframework >=2.6.0",
-    "selenium >=2.47.1",
+    "selenium >=4.0,<=4.16",
     "six >=1.10.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7171a81705bbfa0091c1cf6518277681752386c860efc6dd98c85d74970ad2a6",
-   "url": "https://pypi.io/packages/source/r/robotframework-appiumlibrary/robotframework-appiumlibrary-1.5.0.6.tar.gz"
+   "sha256": "d01b1ed21e79996a790ffb7ad475862f6e9427770a9c88314065b1c59ce2d52c",
+   "url": "https://pypi.org/packages/source/r/robotframework-appiumlibrary/robotframework-appiumlibrary-2.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -154,7 +161,8 @@
     "AppiumLibrary.keywords"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.12"
    ]
   }
  },
@@ -172,7 +180,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/robotframework-appiumlibrary.json"
  },
- "raw_meta_yaml": "{% set name = \"robotframework-appiumlibrary\" %}\n{% set version = \"1.5.0.6\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robotframework-appiumlibrary-{{ version }}.tar.gz\n  sha256: 7171a81705bbfa0091c1cf6518277681752386c860efc6dd98c85d74970ad2a6\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - pytest-runner\n    - python\n  run:\n    - appium-python-client >=0.28\n    - decorator >=3.3.2\n    - docutils >=0.8.1\n    - kitchen >=1.2.4\n    - python\n    - robotframework >=2.6.0\n    - selenium >=2.47.1\n    - six >=1.10.0\n\ntest:\n  imports:\n    - AppiumLibrary\n    - AppiumLibrary.keywords\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/serhatbolsu/robotframework-appiumlibrary\n  summary: Robot Framework Mobile app testing library for Appium Client Android & iOS & Web\n  license: Apache-2.0\n  license_file: LICENSE.txt\nextra:\n  recipe-maintainers:\n    - saibhargav1508\n",
+ "raw_meta_yaml": "{% set python_min = '3.12' %}\n{% set name = \"robotframework-appiumlibrary\" %}\n{% set version = \"2.1.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/robotframework-appiumlibrary-{{ version }}.tar.gz\n  sha256: d01b1ed21e79996a790ffb7ad475862f6e9427770a9c88314065b1c59ce2d52c\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - pytest-runner\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - appium-python-client >=2.7.1,<4.0.0\n    - decorator >=3.3.2\n    - docutils >=0.8.1\n    - kitchen >=1.2.4\n    - python >={{ python_min }}\n    - robotframework >=2.6.0\n    - selenium >=4.0,<=4.16\n    - six >=1.10.0\n\ntest:\n  imports:\n    - AppiumLibrary\n    - AppiumLibrary.keywords\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/serhatbolsu/robotframework-appiumlibrary\n  summary: Robot Framework Mobile app testing library for Appium Client Android & iOS & Web\n  license: Apache-2.0\n  license_file: LICENSE.txt \nextra:\n  recipe-maintainers:\n    - saibhargav1508\n    - nisharai1\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -185,6 +193,7 @@
    "python",
    "robotframework",
    "selenium",
+   "setuptools",
    "six"
   ]
  },
@@ -198,7 +207,8 @@
    "elements": [
     "pip",
     "pytest-runner",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -217,7 +227,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -232,31 +243,33 @@
    "elements": [
     "pip",
     "pytest-runner",
-    "python"
+    "python 3.12",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "appium-python-client >=0.28",
+    "appium-python-client >=2.7.1,<4.0.0",
     "decorator >=3.3.2",
     "docutils >=0.8.1",
     "kitchen >=1.2.4",
-    "python",
+    "python >=3.12",
     "robotframework >=2.6.0",
-    "selenium >=2.47.1",
+    "selenium >=4.0,<=4.16",
     "six >=1.10.0"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.12"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/r/robotframework-appiumlibrary/robotframework-appiumlibrary-1.5.0.6.tar.gz",
- "version": "1.5.0.6",
+ "url": "https://pypi.org/packages/source/r/robotframework-appiumlibrary/robotframework-appiumlibrary-2.1.0.tar.gz",
+ "version": "2.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/robotframework-appiumlibrary.json"
  }
