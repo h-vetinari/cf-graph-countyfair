@@ -27,7 +27,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,7 +40,7 @@
   },
   "package": {
    "name": "roocs-utils",
-   "version": "0.6.9"
+   "version": "0.7.0"
   },
   "requirements": {
    "host": [
@@ -65,8 +65,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4bd74117e42969fdfb2df953fd54c09dea1fa5de0ab8c43895b881e886120170",
-   "url": "https://pypi.org/packages/source/r/roocs-utils/roocs_utils-0.6.9.tar.gz"
+   "sha256": "1cbedc1e5fcac227327f2bfedf0e93040aeba184ae9c7e2c8684c0d1f2c18324",
+   "url": "https://pypi.org/packages/source/r/roocs-utils/roocs_utils-0.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -133,7 +133,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -146,7 +146,7 @@
   },
   "package": {
    "name": "roocs-utils",
-   "version": "0.6.9"
+   "version": "0.7.0"
   },
   "requirements": {
    "host": [
@@ -171,8 +171,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4bd74117e42969fdfb2df953fd54c09dea1fa5de0ab8c43895b881e886120170",
-   "url": "https://pypi.org/packages/source/r/roocs-utils/roocs_utils-0.6.9.tar.gz"
+   "sha256": "1cbedc1e5fcac227327f2bfedf0e93040aeba184ae9c7e2c8684c0d1f2c18324",
+   "url": "https://pypi.org/packages/source/r/roocs-utils/roocs_utils-0.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -201,7 +201,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/roocs-utils.json"
  },
- "raw_meta_yaml": "{% set name = \"roocs-utils\" %}\n{% set package_name = \"roocs_utils\" %}\n{% set version = \"0.6.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ package_name }}-{{ version }}.tar.gz\n  sha256: 4bd74117e42969fdfb2df953fd54c09dea1fa5de0ab8c43895b881e886120170\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - aiohttp\n    - cf_xarray >=0.3.1\n    - cftime\n    - dask >=2.6\n    - fsspec\n    - netCDF4 >=1.4\n    - numpy >=1.16\n    - python-dateutil >=2.8.1\n    - xarray >=0.15\n    - zarr\n    - zstandard\n\ntest:\n  imports:\n    - roocs_utils\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/roocs/roocs-utils/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  license_url: https://github.com/roocs/roocs-utils/blob/master/LICENSE\n  summary: A package containing common components for the roocs project\n  dev_url: https://github.com/roocs/roocs-utils/\n  doc_url: https://roocs-utils.readthedocs.io/\n  doc_source_url: https://github.com/roocs/roocs-utils/blob/master/README.rst\n\nextra:\n  recipe-maintainers:\n    - ellesmith88\n    - agstephens\n    - cehbrecht\n    - Zeitsperre\n",
+ "raw_meta_yaml": "{% set name = \"roocs-utils\" %}\n{% set package_name = \"roocs_utils\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ package_name }}-{{ version }}.tar.gz\n  sha256: 1cbedc1e5fcac227327f2bfedf0e93040aeba184ae9c7e2c8684c0d1f2c18324\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - aiohttp\n    - cf_xarray >=0.3.1\n    - cftime\n    - dask >=2.6\n    - fsspec\n    - netCDF4 >=1.4\n    - numpy >=1.16\n    - python-dateutil >=2.8.1\n    - xarray >=0.15\n    - zarr\n    - zstandard\n\ntest:\n  imports:\n    - roocs_utils\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/roocs/roocs-utils/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  license_url: https://github.com/roocs/roocs-utils/blob/master/LICENSE\n  summary: A package containing common components for the roocs project\n  dev_url: https://github.com/roocs/roocs-utils/\n  doc_url: https://roocs-utils.readthedocs.io/\n  doc_source_url: https://github.com/roocs/roocs-utils/blob/master/README.rst\n\nextra:\n  recipe-maintainers:\n    - ellesmith88\n    - agstephens\n    - cehbrecht\n    - Zeitsperre\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -298,8 +298,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/r/roocs-utils/roocs_utils-0.6.9.tar.gz",
- "version": "0.6.9",
+ "url": "https://pypi.org/packages/source/r/roocs-utils/roocs_utils-0.7.0.tar.gz",
+ "version": "0.7.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/roocs-utils.json"
  }
