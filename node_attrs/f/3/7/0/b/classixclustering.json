@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "classixclustering",
-   "version": "1.2.8"
+   "version": "1.2.9"
   },
   "requirements": {
    "build": [
@@ -54,13 +54,14 @@
     "requests",
     "numpy",
     "scipy ==1.7.0",
-    "matplotlib-base"
+    "matplotlib-base",
+    "scikit-learn>=0.20"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "d86478d1c92a0df1ffdaa837f744048cfcbbf2d4e6fb9b06cebe44c1eb3bf0e3",
-   "url": "https://pypi.org/packages/source/c/classixclustering/classixclustering-1.2.8.tar.gz"
+   "url": "https://pypi.org/packages/source/c/classixclustering/classixclustering-1.2.9.tar.gz"
   },
   "test": {
    "imports": [
@@ -96,6 +97,7 @@
     "pandas",
     "python",
     "requests",
+    "scikit-learn",
     "scipy"
    ]
   },
@@ -128,7 +130,7 @@
   },
   "package": {
    "name": "classixclustering",
-   "version": "1.2.8"
+   "version": "1.2.9"
   },
   "requirements": {
    "build": [
@@ -147,13 +149,14 @@
     "requests",
     "numpy",
     "scipy ==1.7.0",
-    "matplotlib-base"
+    "matplotlib-base",
+    "scikit-learn>=0.20"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "d86478d1c92a0df1ffdaa837f744048cfcbbf2d4e6fb9b06cebe44c1eb3bf0e3",
-   "url": "https://pypi.org/packages/source/c/classixclustering/classixclustering-1.2.8.tar.gz"
+   "url": "https://pypi.org/packages/source/c/classixclustering/classixclustering-1.2.9.tar.gz"
   },
   "test": {
    "imports": [
@@ -178,7 +181,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/classixclustering.json"
  },
- "raw_meta_yaml": "{% set name = \"classixclustering\" %}\n{% set version = \"1.2.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d86478d1c92a0df1ffdaa837f744048cfcbbf2d4e6fb9b06cebe44c1eb3bf0e3\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python {{ python_min }}\n    - pip\n    - numpy\n    - cython\n\n  run:\n    - python >={{ python_min }}\n    - pandas\n    - requests\n    - {{ pin_compatible('numpy') }}\n    - scipy ==1.7.0\n    - matplotlib-base\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - classix\n\nabout:\n  home: https://github.com/nla-group/classix\n  summary: CLASSIX is a fast and explainable clustering algorithm based on sorting.\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/nla-group/classix\n\nextra:\n  recipe-maintainers:\n    - guettel\n    - chenxinye\n",
+ "raw_meta_yaml": "{% set name = \"classixclustering\" %}\n{% set version = \"1.2.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d86478d1c92a0df1ffdaa837f744048cfcbbf2d4e6fb9b06cebe44c1eb3bf0e3\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python {{ python_min }}\n    - pip\n    - numpy\n    - cython\n\n  run:\n    - python >={{ python_min }}\n    - pandas\n    - requests\n    - {{ pin_compatible('numpy') }}\n    - scipy ==1.7.0\n    - matplotlib-base\n    - scikit-learn>=0.20\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - classix\n\nabout:\n  home: https://github.com/nla-group/classix\n  summary: CLASSIX is a fast and explainable clustering algorithm based on sorting.\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/nla-group/classix\n\nextra:\n  recipe-maintainers:\n    - guettel\n    - chenxinye\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -191,6 +194,7 @@
    "pip",
    "python",
    "requests",
+   "scikit-learn",
    "scipy"
   ]
  },
@@ -223,6 +227,7 @@
     "pandas",
     "python",
     "requests",
+    "scikit-learn",
     "scipy"
    ]
   },
@@ -259,6 +264,7 @@
     "pandas",
     "python >=3.9",
     "requests",
+    "scikit-learn>=0.20",
     "scipy ==1.7.0"
    ]
   },
@@ -269,8 +275,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/classixclustering/classixclustering-1.2.8.tar.gz",
- "version": "1.2.8",
+ "url": "https://pypi.org/packages/source/c/classixclustering/classixclustering-1.2.9.tar.gz",
+ "version": "1.2.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/classixclustering.json"
  }
