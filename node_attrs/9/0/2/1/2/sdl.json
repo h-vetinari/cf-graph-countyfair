@@ -2,7 +2,16 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "abi_migration_branches": [
+    "v1.2",
+    "v2"
+   ],
+   "automerge": true
+  },
   "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
    "osx_arm64": "osx_64"
   },
   "conda_build": {
@@ -23,28 +32,30 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "home": "https://www.libsdl.org/index.php",
-   "license": "BSD-3-Clause",
+   "description": "Simple DirectMedia Layer (SDL for short) is a cross-platform library designed\nto make it easy to write multi-media software, such as games and emulators.\n",
+   "dev_url": "https://github.com/libsdl-org/SDL",
+   "doc_url": "https://wiki.libsdl.org/SDL3/FrontPage",
+   "home": "https://www.libsdl.org/",
+   "license": "Zlib",
    "license_file": "LICENSE.txt",
-   "summary": "Simple DirectMedia Layer\n"
+   "summary": "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "run_exports": [
-    "sdl"
+    "sdl3"
    ]
   },
   "extra": {
    "recipe-maintainers": [
-    "seanyen",
     "traversaro",
-    "Tobias-Fischer",
-    "ymontmarin"
+    "ymontmarin",
+    "ManifoldFR"
    ]
   },
   "package": {
-   "name": "sdl",
-   "version": "1.2.68"
+   "name": "sdl3",
+   "version": "3.2.4"
   },
   "requirements": {
    "build": [
@@ -52,32 +63,43 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "ninja"
+    "make",
+    "pkg-config"
    ],
    "host": [
-    "sdl2",
-    "libglu",
+    "libusb",
+    "libvulkan-loader",
+    "dbus",
+    "jack",
+    "pulseaudio",
+    "wayland",
+    "libdrm",
+    "libudev",
+    "liburing",
+    "libunwind",
+    "libxkbcommon",
     "libgl-devel",
-    "libopengl",
+    "libegl-devel",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxcursor",
+    "xorg-libxscrnsaver"
    ],
    "run": [
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "schema_version": 0,
-  "source": [
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   }
-  ],
+  "source": {
+   "sha256": "2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0",
+   "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.4/SDL3-3.2.4.tar.gz"
+  },
   "test": {
    "commands": [
-    "test -f ${PREFIX}/include/SDL/SDL.h",
-    "pkg-config --exists --print-errors --debug sdl",
-    "pkg-config --validate --print-errors --debug sdl"
+    "pkg-config --modversion sdl3",
+    "test -f ${PREFIX}/include/SDL3/SDL.h"
    ],
    "requires": [
     "pkg-config"
@@ -92,24 +114,38 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "ninja"
+    "make",
+    "pkg-config"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "dbus",
+    "jack",
+    "libdrm",
+    "libegl-devel",
     "libgl-devel",
-    "libglu",
-    "libopengl",
-    "sdl2",
+    "libudev",
+    "libunwind",
+    "liburing",
+    "libusb",
+    "libvulkan-loader",
+    "libxkbcommon",
+    "pulseaudio",
+    "wayland",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxcursor",
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxscrnsaver"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "test": {
@@ -121,28 +157,30 @@
  },
  "linux_aarch64_meta_yaml": {
   "about": {
-   "home": "https://www.libsdl.org/index.php",
-   "license": "BSD-3-Clause",
+   "description": "Simple DirectMedia Layer (SDL for short) is a cross-platform library designed\nto make it easy to write multi-media software, such as games and emulators.\n",
+   "dev_url": "https://github.com/libsdl-org/SDL",
+   "doc_url": "https://wiki.libsdl.org/SDL3/FrontPage",
+   "home": "https://www.libsdl.org/",
+   "license": "Zlib",
    "license_file": "LICENSE.txt",
-   "summary": "Simple DirectMedia Layer\n"
+   "summary": "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "run_exports": [
-    "sdl"
+    "sdl3"
    ]
   },
   "extra": {
    "recipe-maintainers": [
-    "seanyen",
     "traversaro",
-    "Tobias-Fischer",
-    "ymontmarin"
+    "ymontmarin",
+    "ManifoldFR"
    ]
   },
   "package": {
-   "name": "sdl",
-   "version": "1.2.68"
+   "name": "sdl3",
+   "version": "3.2.4"
   },
   "requirements": {
    "build": [
@@ -150,32 +188,42 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "ninja"
+    "make",
+    "pkg-config"
    ],
    "host": [
-    "sdl2",
-    "libglu",
+    "libusb",
+    "libvulkan-loader",
+    "dbus",
+    "jack",
+    "pulseaudio",
+    "wayland",
+    "libdrm",
+    "libudev",
+    "liburing",
+    "libunwind",
+    "libxkbcommon",
     "libgl-devel",
-    "libopengl",
+    "libegl-devel",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxcursor"
    ],
    "run": [
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "schema_version": 0,
-  "source": [
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   }
-  ],
+  "source": {
+   "sha256": "2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0",
+   "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.4/SDL3-3.2.4.tar.gz"
+  },
   "test": {
    "commands": [
-    "test -f ${PREFIX}/include/SDL/SDL.h",
-    "pkg-config --exists --print-errors --debug sdl",
-    "pkg-config --validate --print-errors --debug sdl"
+    "pkg-config --modversion sdl3",
+    "test -f ${PREFIX}/include/SDL3/SDL.h"
    ],
    "requires": [
     "pkg-config"
@@ -190,24 +238,37 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "ninja"
+    "make",
+    "pkg-config"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "dbus",
+    "jack",
+    "libdrm",
+    "libegl-devel",
     "libgl-devel",
-    "libglu",
-    "libopengl",
-    "sdl2",
+    "libudev",
+    "libunwind",
+    "liburing",
+    "libusb",
+    "libvulkan-loader",
+    "libxkbcommon",
+    "pulseaudio",
+    "wayland",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxcursor",
+    "xorg-libxext",
+    "xorg-libxfixes"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "test": {
@@ -219,28 +280,30 @@
  },
  "linux_ppc64le_meta_yaml": {
   "about": {
-   "home": "https://www.libsdl.org/index.php",
-   "license": "BSD-3-Clause",
+   "description": "Simple DirectMedia Layer (SDL for short) is a cross-platform library designed\nto make it easy to write multi-media software, such as games and emulators.\n",
+   "dev_url": "https://github.com/libsdl-org/SDL",
+   "doc_url": "https://wiki.libsdl.org/SDL3/FrontPage",
+   "home": "https://www.libsdl.org/",
+   "license": "Zlib",
    "license_file": "LICENSE.txt",
-   "summary": "Simple DirectMedia Layer\n"
+   "summary": "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "run_exports": [
-    "sdl"
+    "sdl3"
    ]
   },
   "extra": {
    "recipe-maintainers": [
-    "seanyen",
     "traversaro",
-    "Tobias-Fischer",
-    "ymontmarin"
+    "ymontmarin",
+    "ManifoldFR"
    ]
   },
   "package": {
-   "name": "sdl",
-   "version": "1.2.68"
+   "name": "sdl3",
+   "version": "3.2.4"
   },
   "requirements": {
    "build": [
@@ -248,32 +311,42 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "ninja"
+    "make",
+    "pkg-config"
    ],
    "host": [
-    "sdl2",
-    "libglu",
+    "libusb",
+    "libvulkan-loader",
+    "dbus",
+    "jack",
+    "pulseaudio",
+    "wayland",
+    "libdrm",
+    "libudev",
+    "liburing",
+    "libunwind",
+    "libxkbcommon",
     "libgl-devel",
-    "libopengl",
+    "libegl-devel",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxcursor"
    ],
    "run": [
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "schema_version": 0,
-  "source": [
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   }
-  ],
+  "source": {
+   "sha256": "2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0",
+   "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.4/SDL3-3.2.4.tar.gz"
+  },
   "test": {
    "commands": [
-    "test -f ${PREFIX}/include/SDL/SDL.h",
-    "pkg-config --exists --print-errors --debug sdl",
-    "pkg-config --validate --print-errors --debug sdl"
+    "pkg-config --modversion sdl3",
+    "test -f ${PREFIX}/include/SDL3/SDL.h"
    ],
    "requires": [
     "pkg-config"
@@ -288,24 +361,37 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "ninja"
+    "make",
+    "pkg-config"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "dbus",
+    "jack",
+    "libdrm",
+    "libegl-devel",
     "libgl-devel",
-    "libglu",
-    "libopengl",
-    "sdl2",
+    "libudev",
+    "libunwind",
+    "liburing",
+    "libusb",
+    "libvulkan-loader",
+    "libxkbcommon",
+    "pulseaudio",
+    "wayland",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxcursor",
+    "xorg-libxext",
+    "xorg-libxfixes"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "test": {
@@ -317,28 +403,30 @@
  },
  "meta_yaml": {
   "about": {
-   "home": "https://www.libsdl.org/index.php",
-   "license": "BSD-3-Clause",
+   "description": "Simple DirectMedia Layer (SDL for short) is a cross-platform library designed\nto make it easy to write multi-media software, such as games and emulators.\n",
+   "dev_url": "https://github.com/libsdl-org/SDL",
+   "doc_url": "https://wiki.libsdl.org/SDL3/FrontPage",
+   "home": "https://www.libsdl.org/",
+   "license": "Zlib",
    "license_file": "LICENSE.txt",
-   "summary": "Simple DirectMedia Layer\n"
+   "summary": "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "run_exports": [
-    "sdl"
+    "sdl3"
    ]
   },
   "extra": {
    "recipe-maintainers": [
-    "seanyen",
     "traversaro",
-    "Tobias-Fischer",
-    "ymontmarin"
+    "ymontmarin",
+    "ManifoldFR"
    ]
   },
   "package": {
-   "name": "sdl",
-   "version": "1.2.68"
+   "name": "sdl3",
+   "version": "3.2.4"
   },
   "requirements": {
    "build": [
@@ -346,84 +434,77 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
+    "make",
+    "pkg-config",
     "ninja"
    ],
    "host": [
-    "sdl2",
-    "libglu",
+    "libusb",
+    "libvulkan-loader",
+    "dbus",
+    "jack",
+    "pulseaudio",
+    "wayland",
+    "libdrm",
+    "libudev",
+    "liburing",
+    "libunwind",
+    "libxkbcommon",
     "libgl-devel",
-    "libopengl",
+    "libegl-devel",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxcursor",
+    "xorg-libxscrnsaver"
    ],
    "run": [
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "schema_version": 0,
-  "source": [
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   },
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   },
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   },
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   },
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   },
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   }
-  ],
+  "source": {
+   "sha256": "2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0",
+   "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.4/SDL3-3.2.4.tar.gz"
+  },
   "test": {
    "commands": [
-    "test -f ${PREFIX}/include/SDL/SDL.h",
-    "pkg-config --exists --print-errors --debug sdl",
-    "pkg-config --validate --print-errors --debug sdl",
-    "if not exist %PREFIX%\\\\Library\\\\include\\\\SDL\\\\SDL.h exit 1"
+    "pkg-config --modversion sdl3",
+    "test -f ${PREFIX}/include/SDL3/SDL.h"
    ],
    "requires": [
     "pkg-config"
    ]
   }
  },
- "name": "sdl",
+ "name": "sdl3",
  "osx_64_meta_yaml": {
   "about": {
-   "home": "https://www.libsdl.org/index.php",
-   "license": "BSD-3-Clause",
+   "description": "Simple DirectMedia Layer (SDL for short) is a cross-platform library designed\nto make it easy to write multi-media software, such as games and emulators.\n",
+   "dev_url": "https://github.com/libsdl-org/SDL",
+   "doc_url": "https://wiki.libsdl.org/SDL3/FrontPage",
+   "home": "https://www.libsdl.org/",
+   "license": "Zlib",
    "license_file": "LICENSE.txt",
-   "summary": "Simple DirectMedia Layer\n"
+   "summary": "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "run_exports": [
-    "sdl"
+    "sdl3"
    ]
   },
   "extra": {
    "recipe-maintainers": [
-    "seanyen",
     "traversaro",
-    "Tobias-Fischer",
-    "ymontmarin"
+    "ymontmarin",
+    "ManifoldFR"
    ]
   },
   "package": {
-   "name": "sdl",
-   "version": "1.2.68"
+   "name": "sdl3",
+   "version": "3.2.4"
   },
   "requirements": {
    "build": [
@@ -431,27 +512,25 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "ninja"
+    "make",
+    "pkg-config"
    ],
    "host": [
-    "sdl2"
+    "libusb",
+    "libvulkan-loader",
+    "dbus"
    ],
-   "run": [
-    "sdl2"
-   ]
+   "run": []
   },
   "schema_version": 0,
-  "source": [
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   }
-  ],
+  "source": {
+   "sha256": "2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0",
+   "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.4/SDL3-3.2.4.tar.gz"
+  },
   "test": {
    "commands": [
-    "test -f ${PREFIX}/include/SDL/SDL.h",
-    "pkg-config --exists --print-errors --debug sdl",
-    "pkg-config --validate --print-errors --debug sdl"
+    "pkg-config --modversion sdl3",
+    "test -f ${PREFIX}/include/SDL3/SDL.h"
    ],
    "requires": [
     "pkg-config"
@@ -466,20 +545,21 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "ninja"
+    "make",
+    "pkg-config"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "dbus",
+    "libusb",
+    "libvulkan-loader"
    ]
   },
   "run": {
    "__set__": true,
-   "elements": [
-    "sdl2"
-   ]
+   "elements": []
   },
   "test": {
    "__set__": true,
@@ -490,28 +570,30 @@
  },
  "osx_arm64_meta_yaml": {
   "about": {
-   "home": "https://www.libsdl.org/index.php",
-   "license": "BSD-3-Clause",
+   "description": "Simple DirectMedia Layer (SDL for short) is a cross-platform library designed\nto make it easy to write multi-media software, such as games and emulators.\n",
+   "dev_url": "https://github.com/libsdl-org/SDL",
+   "doc_url": "https://wiki.libsdl.org/SDL3/FrontPage",
+   "home": "https://www.libsdl.org/",
+   "license": "Zlib",
    "license_file": "LICENSE.txt",
-   "summary": "Simple DirectMedia Layer\n"
+   "summary": "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "run_exports": [
-    "sdl"
+    "sdl3"
    ]
   },
   "extra": {
    "recipe-maintainers": [
-    "seanyen",
     "traversaro",
-    "Tobias-Fischer",
-    "ymontmarin"
+    "ymontmarin",
+    "ManifoldFR"
    ]
   },
   "package": {
-   "name": "sdl",
-   "version": "1.2.68"
+   "name": "sdl3",
+   "version": "3.2.4"
   },
   "requirements": {
    "build": [
@@ -519,27 +601,25 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "ninja"
+    "make",
+    "pkg-config"
    ],
    "host": [
-    "sdl2"
+    "libusb",
+    "libvulkan-loader",
+    "dbus"
    ],
-   "run": [
-    "sdl2"
-   ]
+   "run": []
   },
   "schema_version": 0,
-  "source": [
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   }
-  ],
+  "source": {
+   "sha256": "2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0",
+   "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.4/SDL3-3.2.4.tar.gz"
+  },
   "test": {
    "commands": [
-    "test -f ${PREFIX}/include/SDL/SDL.h",
-    "pkg-config --exists --print-errors --debug sdl",
-    "pkg-config --validate --print-errors --debug sdl"
+    "pkg-config --modversion sdl3",
+    "test -f ${PREFIX}/include/SDL3/SDL.h"
    ],
    "requires": [
     "pkg-config"
@@ -554,20 +634,21 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "ninja"
+    "make",
+    "pkg-config"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "dbus",
+    "libusb",
+    "libvulkan-loader"
    ]
   },
   "run": {
    "__set__": true,
-   "elements": [
-    "sdl2"
-   ]
+   "elements": []
   },
   "test": {
    "__set__": true,
@@ -579,7 +660,7 @@
  "outputs_names": {
   "__set__": true,
   "elements": [
-   "sdl"
+   "sdl3"
   ]
  },
  "parsing_error": false,
@@ -594,7 +675,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sdl.json"
  },
- "raw_meta_yaml": "{% set name = \"sdl\" %}\n{% set version = \"1.2.68\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/libsdl-org/sdl12-compat/archive/release-{{ version }}.tar.gz\n    sha256: 63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d\n\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - ninja\n  host:\n    - sdl2\n    - libglu              # [linux]\n    - libgl-devel         # [linux]\n    - libopengl           # [linux]\n    - xorg-libx11         # [linux]\n    - xorg-libxext        # [linux]\n  run:\n    - sdl2\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/SDL/SDL.h  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\SDL\\\\SDL.h exit 1  # [win]\n    - pkg-config --exists --print-errors --debug sdl  # [not win]\n    - pkg-config --validate --print-errors --debug sdl  # [not win]\n  requires:\n    - pkg-config\n\nabout:\n  home: https://www.libsdl.org/index.php\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: |\n    Simple DirectMedia Layer\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - traversaro\n    - Tobias-Fischer\n    - ymontmarin\n",
+ "raw_meta_yaml": "{% set name = \"sdl3\" %}\n{% set version = \"3.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/libsdl-org/SDL/releases/download/release-{{ version }}/SDL3-{{ version }}.tar.gz\n  sha256: 2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage(name|lower, max_pin='x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - make                # [not win]\n    - ninja               # [win]\n    - pkg-config\n  host:\n    - libusb\n    - libvulkan-loader\n    - dbus                # [not win]\n    - jack                # [linux]\n    - pulseaudio          # [linux]\n    - wayland             # [linux]\n    - libdrm              # [linux]\n    - libudev             # [linux]\n    - liburing            # [linux]\n    - libunwind           # [linux]\n    - libxkbcommon        # [linux]\n    - libgl-devel         # [linux]\n    - libegl-devel        # [linux]\n    - xorg-libx11         # [linux]\n    - xorg-libxext        # [linux]\n    - xorg-libxfixes      # [linux]\n    - xorg-libxcursor     # [linux]\n    - xorg-libxscrnsaver  # [linux and x86_64]\n  run:\n    - xorg-libx11         # [linux]\n    - xorg-libxext        # [linux]\n\ntest:\n  requires:\n    - pkg-config\n  commands:\n    - pkg-config --modversion {{ name }}\n    - test -f ${PREFIX}/include/SDL3/SDL.h  # [not win]\n\nabout:\n  home: https://www.libsdl.org/\n  summary: Low-level access to audio, keyboard, mouse, joystick, and graphics\n  description: |\n    Simple DirectMedia Layer (SDL for short) is a cross-platform library designed\n    to make it easy to write multi-media software, such as games and emulators.\n  license: Zlib\n  license_file: LICENSE.txt\n  doc_url: https://wiki.libsdl.org/SDL3/FrontPage\n  dev_url: https://github.com/libsdl-org/SDL\n\nextra:\n  recipe-maintainers:\n    - traversaro\n    - ymontmarin\n    - ManifoldFR\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -602,13 +683,27 @@
    "c_stdlib_stub",
    "cmake",
    "cxx_compiler_stub",
+   "dbus",
+   "jack",
+   "libdrm",
+   "libegl-devel",
    "libgl-devel",
-   "libglu",
-   "libopengl",
+   "libudev",
+   "libunwind",
+   "liburing",
+   "libusb",
+   "libvulkan-loader",
+   "libxkbcommon",
+   "make",
    "ninja",
-   "sdl2",
+   "pkg-config",
+   "pulseaudio",
+   "wayland",
    "xorg-libx11",
-   "xorg-libxext"
+   "xorg-libxcursor",
+   "xorg-libxext",
+   "xorg-libxfixes",
+   "xorg-libxscrnsaver"
   ]
  },
  "requirements": {
@@ -619,7 +714,9 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "ninja"
+    "make",
+    "ninja",
+    "pkg-config"
    ]
   },
   "host": {
@@ -628,12 +725,24 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
+    "dbus",
+    "jack",
+    "libdrm",
+    "libegl-devel",
     "libgl-devel",
-    "libglu",
-    "libopengl",
-    "sdl2",
+    "libudev",
+    "libunwind",
+    "liburing",
+    "libusb",
+    "libvulkan-loader",
+    "libxkbcommon",
+    "pulseaudio",
+    "wayland",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxcursor",
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxscrnsaver"
    ]
   },
   "run": {
@@ -642,7 +751,8 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "test": {
@@ -661,24 +771,39 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "ninja"
+    "make",
+    "ninja",
+    "pkg-config"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "dbus",
+    "jack",
+    "libdrm",
+    "libegl-devel",
     "libgl-devel",
-    "libglu",
-    "libopengl",
-    "sdl2",
+    "libudev",
+    "libunwind",
+    "liburing",
+    "libusb",
+    "libvulkan-loader",
+    "libxkbcommon",
+    "pulseaudio",
+    "wayland",
     "xorg-libx11",
-    "xorg-libxext"
+    "xorg-libxcursor",
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxscrnsaver"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "xorg-libx11",
+    "xorg-libxext"
    ]
   },
   "test": {
@@ -688,35 +813,37 @@
    ]
   }
  },
- "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz",
- "version": "1.2.68",
+ "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.4/SDL3-3.2.4.tar.gz",
+ "version": "3.2.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sdl.json"
  },
  "win_64_meta_yaml": {
   "about": {
-   "home": "https://www.libsdl.org/index.php",
-   "license": "BSD-3-Clause",
+   "description": "Simple DirectMedia Layer (SDL for short) is a cross-platform library designed\nto make it easy to write multi-media software, such as games and emulators.\n",
+   "dev_url": "https://github.com/libsdl-org/SDL",
+   "doc_url": "https://wiki.libsdl.org/SDL3/FrontPage",
+   "home": "https://www.libsdl.org/",
+   "license": "Zlib",
    "license_file": "LICENSE.txt",
-   "summary": "Simple DirectMedia Layer\n"
+   "summary": "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "run_exports": [
-    "sdl"
+    "sdl3"
    ]
   },
   "extra": {
    "recipe-maintainers": [
-    "seanyen",
     "traversaro",
-    "Tobias-Fischer",
-    "ymontmarin"
+    "ymontmarin",
+    "ManifoldFR"
    ]
   },
   "package": {
-   "name": "sdl",
-   "version": "1.2.68"
+   "name": "sdl3",
+   "version": "3.2.4"
   },
   "requirements": {
    "build": [
@@ -724,25 +851,23 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "ninja"
+    "ninja",
+    "pkg-config"
    ],
    "host": [
-    "sdl2"
+    "libusb",
+    "libvulkan-loader"
    ],
-   "run": [
-    "sdl2"
-   ]
+   "run": []
   },
   "schema_version": 0,
-  "source": [
-   {
-    "sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
-    "url": "https://github.com/libsdl-org/sdl12-compat/archive/release-1.2.68.tar.gz"
-   }
-  ],
+  "source": {
+   "sha256": "2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0",
+   "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.4/SDL3-3.2.4.tar.gz"
+  },
   "test": {
    "commands": [
-    "if not exist %PREFIX%\\\\Library\\\\include\\\\SDL\\\\SDL.h exit 1"
+    "pkg-config --modversion sdl3"
    ],
    "requires": [
     "pkg-config"
@@ -757,20 +882,20 @@
     "c_stdlib_stub",
     "cmake",
     "cxx_compiler_stub",
-    "ninja"
+    "ninja",
+    "pkg-config"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
-    "sdl2"
+    "libusb",
+    "libvulkan-loader"
    ]
   },
   "run": {
    "__set__": true,
-   "elements": [
-    "sdl2"
-   ]
+   "elements": []
   },
   "test": {
    "__set__": true,
