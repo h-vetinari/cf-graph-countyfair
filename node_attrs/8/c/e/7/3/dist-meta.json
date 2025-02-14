@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,13 +33,14 @@
   },
   "package": {
    "name": "dist-meta",
-   "version": "0.8.1"
+   "version": "0.9.0"
   },
   "requirements": {
    "host": [
+    "hatchling",
+    "hatch-requirements-txt",
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9"
    ],
    "run": [
     "domdf-python-tools >=3.1.0",
@@ -50,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e73b873b08361835e25592d4d74129f0353bca4451dd12bfa10aaf14af4682e4",
-   "url": "https://pypi.org/packages/source/d/dist-meta/dist-meta-0.8.1.tar.gz"
+   "sha256": "fa16ebd5574744a09596ab342083a11d7209d8d05cf32891d1c985be7ec0cbd7",
+   "url": "https://pypi.org/packages/source/d/dist-meta/dist_meta-0.9.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -74,9 +75,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-requirements-txt",
+    "hatchling",
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run": {
@@ -106,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -116,13 +118,14 @@
   },
   "package": {
    "name": "dist-meta",
-   "version": "0.8.1"
+   "version": "0.9.0"
   },
   "requirements": {
    "host": [
+    "hatchling",
+    "hatch-requirements-txt",
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9"
    ],
    "run": [
     "domdf-python-tools >=3.1.0",
@@ -133,8 +136,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e73b873b08361835e25592d4d74129f0353bca4451dd12bfa10aaf14af4682e4",
-   "url": "https://pypi.org/packages/source/d/dist-meta/dist-meta-0.8.1.tar.gz"
+   "sha256": "fa16ebd5574744a09596ab342083a11d7209d8d05cf32891d1c985be7ec0cbd7",
+   "url": "https://pypi.org/packages/source/d/dist-meta/dist_meta-0.9.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -163,16 +166,17 @@
  "pr_info": {
   "__lazy_json__": "pr_info/dist-meta.json"
  },
- "raw_meta_yaml": "{% set name = \"dist-meta\" %}\n{% set version = \"0.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dist-meta-{{ version }}.tar.gz\n  sha256: e73b873b08361835e25592d4d74129f0353bca4451dd12bfa10aaf14af4682e4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - domdf-python-tools >=3.1.0\n    - handy-archives >=0.1.0\n    - packaging >=20.9\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - dist_meta\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/repo-helper/dist-meta\n  summary: Parse and create Python distribution metadata.\n  license: MIT\n  license_file: LICENSE\n  doc_url: https://dist-meta.readthedocs.io/en/latest\n\nextra:\n  recipe-maintainers:\n    - domdfcoding\n",
+ "raw_meta_yaml": "{% set name = \"dist-meta\" %}\n{% set version = \"0.9.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: fa16ebd5574744a09596ab342083a11d7209d8d05cf32891d1c985be7ec0cbd7\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - hatchling\n    - hatch-requirements-txt\n    - pip\n    - python {{ python_min }}\n  run:\n    - domdf-python-tools >=3.1.0\n    - handy-archives >=0.1.0\n    - packaging >=20.9\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - dist_meta\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/repo-helper/dist-meta\n  summary: Parse and create Python distribution metadata.\n  license: MIT\n  license_file: LICENSE\n  doc_url: https://dist-meta.readthedocs.io/en/latest\n\nextra:\n  recipe-maintainers:\n    - domdfcoding\n",
  "req": {
   "__set__": true,
   "elements": [
    "domdf-python-tools",
    "handy-archives",
+   "hatch-requirements-txt",
+   "hatchling",
    "packaging",
    "pip",
-   "python",
-   "setuptools"
+   "python"
   ]
  },
  "requirements": {
@@ -183,9 +187,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-requirements-txt",
+    "hatchling",
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run": {
@@ -214,9 +219,10 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatch-requirements-txt",
+    "hatchling",
     "pip",
-    "python 3.9",
-    "setuptools"
+    "python 3.9"
    ]
   },
   "run": {
@@ -236,8 +242,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/dist-meta/dist-meta-0.8.1.tar.gz",
- "version": "0.8.1",
+ "url": "https://pypi.org/packages/source/d/dist-meta/dist_meta-0.9.0.tar.gz",
+ "version": "0.9.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/dist-meta.json"
  }
