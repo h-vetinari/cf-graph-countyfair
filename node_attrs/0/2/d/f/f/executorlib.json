@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "executorlib",
-   "version": "0.2.0"
+   "version": "0.2.1"
   },
   "requirements": {
    "host": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b01857d8343dbd597a8eec8c0dffaf5e109b220055625b37491c7a22f44c87c4",
-   "url": "https://pypi.org/packages/source/e/executorlib/executorlib-0.2.0.tar.gz"
+   "sha256": "7bd06b3c60f5f017d72c98c6ba3dc79e2c4555bd0d1c8c0fbf3c0e391e204788",
+   "url": "https://pypi.org/packages/source/e/executorlib/executorlib-0.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -122,7 +122,7 @@
   },
   "package": {
    "name": "executorlib",
-   "version": "0.2.0"
+   "version": "0.2.1"
   },
   "requirements": {
    "host": [
@@ -141,8 +141,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b01857d8343dbd597a8eec8c0dffaf5e109b220055625b37491c7a22f44c87c4",
-   "url": "https://pypi.org/packages/source/e/executorlib/executorlib-0.2.0.tar.gz"
+   "sha256": "7bd06b3c60f5f017d72c98c6ba3dc79e2c4555bd0d1c8c0fbf3c0e391e204788",
+   "url": "https://pypi.org/packages/source/e/executorlib/executorlib-0.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -171,7 +171,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/executorlib.json"
  },
- "raw_meta_yaml": "{% set name = \"executorlib\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/executorlib-{{ version }}.tar.gz\n  sha256: b01857d8343dbd597a8eec8c0dffaf5e109b220055625b37491c7a22f44c87c4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - cloudpickle\n    - pyzmq\n    - setuptools\n    - versioneer ==0.29\n    - pip\n  run:\n    - python >={{ python_min }}\n    - cloudpickle >=2.0.0,<=3.1.1\n    - pyzmq >=25.0.0,<=26.2.1\n\ntest:\n  imports:\n    - executorlib\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Scale serial and MPI-parallel python functions over hundreds of compute nodes all from within a jupyter notebook or serial python process.\n  home: https://github.com/pyiron/executorlib\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"executorlib\" %}\n{% set version = \"0.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/executorlib-{{ version }}.tar.gz\n  sha256: 7bd06b3c60f5f017d72c98c6ba3dc79e2c4555bd0d1c8c0fbf3c0e391e204788\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - cloudpickle\n    - pyzmq\n    - setuptools\n    - versioneer ==0.29\n    - pip\n  run:\n    - python >={{ python_min }}\n    - cloudpickle >=2.0.0,<=3.1.1\n    - pyzmq >=25.0.0,<=26.2.1\n\ntest:\n  imports:\n    - executorlib\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Scale serial and MPI-parallel python functions over hundreds of compute nodes all from within a jupyter notebook or serial python process.\n  home: https://github.com/pyiron/executorlib\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -248,8 +248,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/e/executorlib/executorlib-0.2.0.tar.gz",
- "version": "0.2.0",
+ "url": "https://pypi.org/packages/source/e/executorlib/executorlib-0.2.1.tar.gz",
+ "version": "0.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/executorlib.json"
  }
