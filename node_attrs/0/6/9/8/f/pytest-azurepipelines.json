@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,29 +40,31 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.5"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
     "pytest >=5.0.0",
     "pytest-nunit >=1.0.0",
     "importlib-resources",
-    "python >=3.5"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "fd08f089bca0fad3c2b6fde9dbea69b975492ffaa8cb637cc987e64af8c18b9c",
-   "url": "https://pypi.io/packages/source/p/pytest-azurepipelines/pytest-azurepipelines-1.0.5.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pytest-azurepipelines/pytest-azurepipelines-1.0.5.tar.gz"
   },
   "test": {
    "commands": [
-    "py.test --traceconfig | grep pytest-azurepipelines-1.0.5",
-    "pip check"
+    "pip check",
+    "py.test --traceconfig | grep pytest-azurepipelines-1.0.5"
    ],
    "imports": [
     "pytest_azurepipelines"
    ],
    "requires": [
+    "python 3.9",
     "pip"
    ]
   }
@@ -76,7 +78,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -91,7 +94,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -106,7 +110,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -122,29 +126,31 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.5"
+    "python 3.9",
+    "setuptools"
    ],
    "run": [
     "pytest >=5.0.0",
     "pytest-nunit >=1.0.0",
     "importlib-resources",
-    "python >=3.5"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
    "sha256": "fd08f089bca0fad3c2b6fde9dbea69b975492ffaa8cb637cc987e64af8c18b9c",
-   "url": "https://pypi.io/packages/source/p/pytest-azurepipelines/pytest-azurepipelines-1.0.5.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pytest-azurepipelines/pytest-azurepipelines-1.0.5.tar.gz"
   },
   "test": {
    "commands": [
-    "py.test --traceconfig | grep pytest-azurepipelines-1.0.5",
-    "pip check"
+    "pip check",
+    "py.test --traceconfig | grep pytest-azurepipelines-1.0.5"
    ],
    "imports": [
     "pytest_azurepipelines"
    ],
    "requires": [
+    "python 3.9",
     "pip"
    ]
   }
@@ -163,7 +169,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pytest-azurepipelines.json"
  },
- "raw_meta_yaml": "{% set name = \"pytest-azurepipelines\" %}\n{% set version = \"1.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pytest-azurepipelines-{{ version }}.tar.gz\n  sha256: fd08f089bca0fad3c2b6fde9dbea69b975492ffaa8cb637cc987e64af8c18b9c\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n  run:\n    - pytest >=5.0.0\n    - pytest-nunit >=1.0.0\n    - importlib-resources\n    - python >=3.5\n\ntest:\n  imports:\n    - pytest_azurepipelines\n  commands:\n    - py.test --traceconfig | grep pytest-azurepipelines-{{ version }}\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/tonybaloney/pytest-azurepipelines\n  summary: Formatting PyTest output for Azure Pipelines UI\n  description: |\n    Making Pytest easier to use with Microsoft Azure Pipelines. Just run pytest with\n    this plugin and see your test results in the Azure Pipelines UI!\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/tonybaloney/pytest-azurepipelines\n\nextra:\n  recipe-maintainers:\n    - leouieda\n    - tonybaloney\n",
+ "raw_meta_yaml": "{% set name = \"pytest-azurepipelines\" %}\n{% set version = \"1.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pytest-azurepipelines-{{ version }}.tar.gz\n  sha256: fd08f089bca0fad3c2b6fde9dbea69b975492ffaa8cb637cc987e64af8c18b9c\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - pytest >=5.0.0\n    - pytest-nunit >=1.0.0\n    - importlib-resources\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - pytest_azurepipelines\n  commands:\n    - pip check\n    - py.test --traceconfig | grep pytest-azurepipelines-{{ version }}\n\nabout:\n  home: https://github.com/tonybaloney/pytest-azurepipelines\n  summary: Formatting PyTest output for Azure Pipelines UI\n  description: |\n    Making Pytest easier to use with Microsoft Azure Pipelines. Just run pytest with\n    this plugin and see your test results in the Azure Pipelines UI!\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/tonybaloney/pytest-azurepipelines\n\nextra:\n  recipe-maintainers:\n    - leouieda\n    - tonybaloney\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -171,7 +177,8 @@
    "pip",
    "pytest",
    "pytest-nunit",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -183,7 +190,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -198,7 +206,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -212,7 +221,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.5"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -221,17 +231,18 @@
     "importlib-resources",
     "pytest >=5.0.0",
     "pytest-nunit >=1.0.0",
-    "python >=3.5"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pytest-azurepipelines/pytest-azurepipelines-1.0.5.tar.gz",
+ "url": "https://pypi.org/packages/source/p/pytest-azurepipelines/pytest-azurepipelines-1.0.5.tar.gz",
  "version": "1.0.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pytest-azurepipelines.json"
