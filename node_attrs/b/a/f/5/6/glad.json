@@ -3,6 +3,8 @@
  "branch": "main",
  "conda-forge.yml": {
   "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
    "osx_arm64": "osx_64"
   },
   "conda_build": {
@@ -12,6 +14,11 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default",
+   "win": "azure"
   },
   "test": "native_and_emulated"
  },
@@ -25,7 +32,7 @@
    "summary": "GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -46,19 +53,25 @@
     "requirements": {
      "host": [
       "pip",
-      "python >=3.8"
+      "python 3.9",
+      "setuptools"
      ],
      "run": [
-      "python >=3.8",
+      "python >=3.9",
       "jinja2"
      ]
     },
     "test": {
      "commands": [
-      "glad --help"
+      "glad --help",
+      "pip check"
      ],
      "imports": [
       "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -71,6 +84,9 @@
      "summary": "CMake package for glad2."
     },
     "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
      "skip": false
     },
     "name": "glad2-cmake",
@@ -79,7 +95,6 @@
       "glad2"
      ]
     },
-    "script": "install_cmake.sh",
     "test": {
      "commands": [
       "cmake -G Ninja -B b"
@@ -113,7 +128,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -128,7 +144,263 @@
    "__set__": true,
    "elements": [
     "cmake",
-    "ninja"
+    "ninja",
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/Dav1dde/glad",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs."
+  },
+  "build": {
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cNoNim",
+    "traversaro"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "entry_points": [
+      "glad = glad.__main__:main"
+     ],
+     "noarch": "python",
+     "script": "python -m pip install . --no-deps -vv",
+     "skip": true
+    },
+    "name": "glad2",
+    "requirements": {
+     "host": [
+      "pip",
+      "python 3.9",
+      "setuptools"
+     ],
+     "run": [
+      "python >=3.9",
+      "jinja2"
+     ]
+    },
+    "test": {
+     "commands": [
+      "glad --help",
+      "pip check"
+     ],
+     "imports": [
+      "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "Example of use:\n```cmake\nfind_package(Glad CONFIG REQUIRED)\nglad_add_library(glad_gl_core_mx_33 REPRODUCIBLE MX API gl:core=3.3)\n```\nand link `glad_gl_core_mx_33` to target\n",
+     "home": "https://github.com/Dav1dde/glad",
+     "license": "MIT",
+     "license_file": "LICENSE",
+     "summary": "CMake package for glad2."
+    },
+    "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
+     "skip": false
+    },
+    "name": "glad2-cmake",
+    "requirements": {
+     "run": [
+      "glad2"
+     ]
+    },
+    "test": {
+     "commands": [
+      "cmake -G Ninja -B b"
+     ],
+     "files": [
+      "CMakeLists.txt"
+     ],
+     "requires": [
+      "cmake",
+      "ninja"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "glad2",
+   "version": "2.0.8"
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "44f06f9195427c7017f5028d0894f57eb216b0a8f7c4eda7ce883732aeb2d0fc",
+   "url": "https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.8.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "glad2",
+    "jinja2",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cmake",
+    "ninja",
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "home": "https://github.com/Dav1dde/glad",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs."
+  },
+  "build": {
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "cNoNim",
+    "traversaro"
+   ]
+  },
+  "outputs": [
+   {
+    "build": {
+     "entry_points": [
+      "glad = glad.__main__:main"
+     ],
+     "noarch": "python",
+     "script": "python -m pip install . --no-deps -vv",
+     "skip": true
+    },
+    "name": "glad2",
+    "requirements": {
+     "host": [
+      "pip",
+      "python 3.9",
+      "setuptools"
+     ],
+     "run": [
+      "python >=3.9",
+      "jinja2"
+     ]
+    },
+    "test": {
+     "commands": [
+      "glad --help",
+      "pip check"
+     ],
+     "imports": [
+      "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "Example of use:\n```cmake\nfind_package(Glad CONFIG REQUIRED)\nglad_add_library(glad_gl_core_mx_33 REPRODUCIBLE MX API gl:core=3.3)\n```\nand link `glad_gl_core_mx_33` to target\n",
+     "home": "https://github.com/Dav1dde/glad",
+     "license": "MIT",
+     "license_file": "LICENSE",
+     "summary": "CMake package for glad2."
+    },
+    "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
+     "skip": false
+    },
+    "name": "glad2-cmake",
+    "requirements": {
+     "run": [
+      "glad2"
+     ]
+    },
+    "test": {
+     "commands": [
+      "cmake -G Ninja -B b"
+     ],
+     "files": [
+      "CMakeLists.txt"
+     ],
+     "requires": [
+      "cmake",
+      "ninja"
+     ]
+    }
+   }
+  ],
+  "package": {
+   "name": "glad2",
+   "version": "2.0.8"
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "44f06f9195427c7017f5028d0894f57eb216b0a8f7c4eda7ce883732aeb2d0fc",
+   "url": "https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.8.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "glad2",
+    "jinja2",
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "cmake",
+    "ninja",
+    "pip",
+    "python"
    ]
   }
  },
@@ -140,7 +412,7 @@
    "summary": "GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -161,19 +433,25 @@
     "requirements": {
      "host": [
       "pip",
-      "python >=3.8"
+      "python 3.9",
+      "setuptools"
      ],
      "run": [
-      "python >=3.8",
+      "python >=3.9",
       "jinja2"
      ]
     },
     "test": {
      "commands": [
-      "glad --help"
+      "glad --help",
+      "pip check"
      ],
      "imports": [
       "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -186,6 +464,9 @@
      "summary": "CMake package for glad2."
     },
     "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
      "skip": false
     },
     "name": "glad2-cmake",
@@ -194,7 +475,6 @@
       "glad2"
      ]
     },
-    "script": "install_cmake.sh",
     "test": {
      "commands": [
       "cmake -G Ninja -B b"
@@ -221,19 +501,25 @@
     "requirements": {
      "host": [
       "pip",
-      "python >=3.8"
+      "python 3.9",
+      "setuptools"
      ],
      "run": [
-      "python >=3.8",
+      "python >=3.9",
       "jinja2"
      ]
     },
     "test": {
      "commands": [
-      "glad --help"
+      "glad --help",
+      "pip check"
      ],
      "imports": [
       "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -246,6 +532,9 @@
      "summary": "CMake package for glad2."
     },
     "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
      "skip": false
     },
     "name": "glad2-cmake",
@@ -254,7 +543,6 @@
       "glad2"
      ]
     },
-    "script": "install_cmake.sh",
     "test": {
      "commands": [
       "cmake -G Ninja -B b"
@@ -281,19 +569,25 @@
     "requirements": {
      "host": [
       "pip",
-      "python >=3.8"
+      "python 3.9",
+      "setuptools"
      ],
      "run": [
-      "python >=3.8",
+      "python >=3.9",
       "jinja2"
      ]
     },
     "test": {
      "commands": [
-      "glad --help"
+      "glad --help",
+      "pip check"
      ],
      "imports": [
       "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -306,6 +600,9 @@
      "summary": "CMake package for glad2."
     },
     "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
      "skip": false
     },
     "name": "glad2-cmake",
@@ -314,7 +611,6 @@
       "glad2"
      ]
     },
-    "script": "install_cmake.sh",
     "test": {
      "commands": [
       "cmake -G Ninja -B b"
@@ -341,19 +637,25 @@
     "requirements": {
      "host": [
       "pip",
-      "python >=3.8"
+      "python 3.9",
+      "setuptools"
      ],
      "run": [
-      "python >=3.8",
+      "python >=3.9",
       "jinja2"
      ]
     },
     "test": {
      "commands": [
-      "glad --help"
+      "glad --help",
+      "pip check"
      ],
      "imports": [
       "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -366,6 +668,145 @@
      "summary": "CMake package for glad2."
     },
     "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
+     "skip": false
+    },
+    "name": "glad2-cmake",
+    "requirements": {
+     "run": [
+      "glad2"
+     ]
+    },
+    "test": {
+     "commands": [
+      "cmake -G Ninja -B b"
+     ],
+     "files": [
+      "CMakeLists.txt"
+     ],
+     "requires": [
+      "cmake",
+      "ninja"
+     ]
+    }
+   },
+   {
+    "build": {
+     "entry_points": [
+      "glad = glad.__main__:main"
+     ],
+     "noarch": "python",
+     "script": "python -m pip install . --no-deps -vv",
+     "skip": true
+    },
+    "name": "glad2",
+    "requirements": {
+     "host": [
+      "pip",
+      "python 3.9",
+      "setuptools"
+     ],
+     "run": [
+      "python >=3.9",
+      "jinja2"
+     ]
+    },
+    "test": {
+     "commands": [
+      "glad --help",
+      "pip check"
+     ],
+     "imports": [
+      "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "Example of use:\n```cmake\nfind_package(Glad CONFIG REQUIRED)\nglad_add_library(glad_gl_core_mx_33 REPRODUCIBLE MX API gl:core=3.3)\n```\nand link `glad_gl_core_mx_33` to target\n",
+     "home": "https://github.com/Dav1dde/glad",
+     "license": "MIT",
+     "license_file": "LICENSE",
+     "summary": "CMake package for glad2."
+    },
+    "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
+     "skip": false
+    },
+    "name": "glad2-cmake",
+    "requirements": {
+     "run": [
+      "glad2"
+     ]
+    },
+    "test": {
+     "commands": [
+      "cmake -G Ninja -B b"
+     ],
+     "files": [
+      "CMakeLists.txt"
+     ],
+     "requires": [
+      "cmake",
+      "ninja"
+     ]
+    }
+   },
+   {
+    "build": {
+     "entry_points": [
+      "glad = glad.__main__:main"
+     ],
+     "noarch": "python",
+     "script": "python -m pip install . --no-deps -vv",
+     "skip": true
+    },
+    "name": "glad2",
+    "requirements": {
+     "host": [
+      "pip",
+      "python 3.9",
+      "setuptools"
+     ],
+     "run": [
+      "python >=3.9",
+      "jinja2"
+     ]
+    },
+    "test": {
+     "commands": [
+      "glad --help",
+      "pip check"
+     ],
+     "imports": [
+      "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
+     ]
+    }
+   },
+   {
+    "about": {
+     "description": "Example of use:\n```cmake\nfind_package(Glad CONFIG REQUIRED)\nglad_add_library(glad_gl_core_mx_33 REPRODUCIBLE MX API gl:core=3.3)\n```\nand link `glad_gl_core_mx_33` to target\n",
+     "home": "https://github.com/Dav1dde/glad",
+     "license": "MIT",
+     "license_file": "LICENSE",
+     "summary": "CMake package for glad2."
+    },
+    "build": {
+     "script": [
+      "%RECIPE_DIR%\\install_cmake.bat"
+     ],
      "skip": false
     },
     "name": "glad2-cmake",
@@ -377,7 +818,6 @@
       "glad2"
      ]
     },
-    "script": "install_cmake.bat",
     "test": {
      "commands": [
       "cmake -G Ninja -B b"
@@ -411,7 +851,7 @@
    "summary": "GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -433,19 +873,25 @@
     "requirements": {
      "host": [
       "pip",
-      "python >=3.8"
+      "python 3.9",
+      "setuptools"
      ],
      "run": [
-      "python >=3.8",
+      "python >=3.9",
       "jinja2"
      ]
     },
     "test": {
      "commands": [
-      "glad --help"
+      "glad --help",
+      "pip check"
      ],
      "imports": [
       "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -458,6 +904,9 @@
      "summary": "CMake package for glad2."
     },
     "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
      "skip": false
     },
     "name": "glad2-cmake",
@@ -466,7 +915,6 @@
       "glad2"
      ]
     },
-    "script": "install_cmake.sh",
     "test": {
      "commands": [
       "cmake -G Ninja -B b"
@@ -500,7 +948,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -515,7 +964,9 @@
    "__set__": true,
    "elements": [
     "cmake",
-    "ninja"
+    "ninja",
+    "pip",
+    "python"
    ]
   }
  },
@@ -527,7 +978,7 @@
    "summary": "GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -549,19 +1000,25 @@
     "requirements": {
      "host": [
       "pip",
-      "python >=3.8"
+      "python 3.9",
+      "setuptools"
      ],
      "run": [
-      "python >=3.8",
+      "python >=3.9",
       "jinja2"
      ]
     },
     "test": {
      "commands": [
-      "glad --help"
+      "glad --help",
+      "pip check"
      ],
      "imports": [
       "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -574,6 +1031,9 @@
      "summary": "CMake package for glad2."
     },
     "build": {
+     "script": [
+      "${RECIPE_DIR}/install_cmake.sh"
+     ],
      "skip": false
     },
     "name": "glad2-cmake",
@@ -582,7 +1042,6 @@
       "glad2"
      ]
     },
-    "script": "install_cmake.sh",
     "test": {
      "commands": [
       "cmake -G Ninja -B b"
@@ -616,7 +1075,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -631,7 +1091,9 @@
    "__set__": true,
    "elements": [
     "cmake",
-    "ninja"
+    "ninja",
+    "pip",
+    "python"
    ]
   }
  },
@@ -645,6 +1107,8 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
   "osx_arm64",
   "win_64"
@@ -652,7 +1116,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/glad.json"
  },
- "raw_meta_yaml": "{% set version = \"2.0.8\" %}\n\npackage:\n  name: glad2\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Dav1dde/glad/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 44f06f9195427c7017f5028d0894f57eb216b0a8f7c4eda7ce883732aeb2d0fc\n\nbuild:\n  number: 0\n\noutputs:\n  - name: glad2\n    build:\n      noarch: python\n      skip: true  # [not linux64]\n      entry_points:\n        - glad = glad.__main__:main\n      script: python -m pip install . --no-deps -vv\n\n    requirements:\n      host:\n        - pip\n        - python >=3.8\n      run:\n        - python >=3.8\n        - jinja2\n\n    test:\n      imports:\n        - glad\n      commands:\n        - glad --help\n\n  - name: glad2-cmake\n    build:\n      skip: false\n\n    requirements:\n      # dummy build env to avoid EnvironmentLocationNotFound on win\n      build:   # [win]\n        - cmake  # [win]\n      run:\n        - {{ pin_subpackage('glad2', exact=True) }}\n\n    script: install_cmake.sh  # [unix]\n    script: install_cmake.bat  # [win]\n\n    test:\n      files:\n        - CMakeLists.txt\n      requires:\n        - cmake\n        - ninja\n      commands:\n        - cmake -G Ninja -B b\n\n    about:\n      home: https://github.com/Dav1dde/glad\n      license: MIT\n      license_file: LICENSE\n      summary: CMake package for glad2.\n      description: |\n        Example of use:\n        ```cmake\n        find_package(Glad CONFIG REQUIRED)\n        glad_add_library(glad_gl_core_mx_33 REPRODUCIBLE MX API gl:core=3.3)\n        ```\n        and link `glad_gl_core_mx_33` to target\n\nabout:\n  home: https://github.com/Dav1dde/glad\n  license: MIT\n  license_file: LICENSE\n  summary: GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs.\n\nextra:\n  recipe-maintainers:\n    - cNoNim\n    - traversaro\n",
+ "raw_meta_yaml": "{% set version = \"2.0.8\" %}\n\npackage:\n  name: glad2\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Dav1dde/glad/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 44f06f9195427c7017f5028d0894f57eb216b0a8f7c4eda7ce883732aeb2d0fc\n\nbuild:\n  number: 1\n\noutputs:\n  - name: glad2\n    build:\n      noarch: python\n      skip: true  # [not linux64]\n      entry_points:\n        - glad = glad.__main__:main\n      script: python -m pip install . --no-deps -vv\n\n    requirements:\n      host:\n        - pip\n        - python {{ python_min }}\n        - setuptools\n      run:\n        - python >={{ python_min }}\n        - jinja2\n\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      imports:\n        - glad\n      commands:\n        - glad --help\n        - pip check\n\n  - name: glad2-cmake\n    build:\n      skip: false\n      script:\n        - ${RECIPE_DIR}/install_cmake.sh  # [not win]\n        - \"%RECIPE_DIR%\\\\install_cmake.bat\"  # [win]\n\n    requirements:\n      # dummy build env to avoid EnvironmentLocationNotFound on win\n      build:   # [win]\n        - cmake  # [win]\n      run:\n        - {{ pin_subpackage('glad2', exact=True) }}\n\n    test:\n      files:\n        - CMakeLists.txt\n      requires:\n        - cmake\n        - ninja\n      commands:\n        - cmake -G Ninja -B b\n\n    about:\n      home: https://github.com/Dav1dde/glad\n      license: MIT\n      license_file: LICENSE\n      summary: CMake package for glad2.\n      description: |\n        Example of use:\n        ```cmake\n        find_package(Glad CONFIG REQUIRED)\n        glad_add_library(glad_gl_core_mx_33 REPRODUCIBLE MX API gl:core=3.3)\n        ```\n        and link `glad_gl_core_mx_33` to target\n\nabout:\n  home: https://github.com/Dav1dde/glad\n  license: MIT\n  license_file: LICENSE\n  summary: GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs.\n\nextra:\n  recipe-maintainers:\n    - cNoNim\n    - traversaro\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -660,7 +1124,8 @@
    "glad2",
    "jinja2",
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -674,7 +1139,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -689,7 +1155,9 @@
    "__set__": true,
    "elements": [
     "cmake",
-    "ninja"
+    "ninja",
+    "pip",
+    "python"
    ]
   }
  },
@@ -705,7 +1173,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -713,14 +1182,16 @@
    "elements": [
     "glad2",
     "jinja2",
-    "python >=3.8"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
     "cmake",
-    "ninja"
+    "ninja",
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -737,7 +1208,7 @@
    "summary": "GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs."
   },
   "build": {
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -759,19 +1230,25 @@
     "requirements": {
      "host": [
       "pip",
-      "python >=3.8"
+      "python 3.9",
+      "setuptools"
      ],
      "run": [
-      "python >=3.8",
+      "python >=3.9",
       "jinja2"
      ]
     },
     "test": {
      "commands": [
-      "glad --help"
+      "glad --help",
+      "pip check"
      ],
      "imports": [
       "glad"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -784,6 +1261,9 @@
      "summary": "CMake package for glad2."
     },
     "build": {
+     "script": [
+      "%RECIPE_DIR%\\install_cmake.bat"
+     ],
      "skip": false
     },
     "name": "glad2-cmake",
@@ -795,7 +1275,6 @@
       "glad2"
      ]
     },
-    "script": "install_cmake.bat",
     "test": {
      "commands": [
       "cmake -G Ninja -B b"
@@ -831,7 +1310,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -846,7 +1326,9 @@
    "__set__": true,
    "elements": [
     "cmake",
-    "ninja"
+    "ninja",
+    "pip",
+    "python"
    ]
   }
  }
