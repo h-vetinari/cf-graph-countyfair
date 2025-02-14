@@ -1,1 +1,252 @@
-{}
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_build_tool": "rattler-build",
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "logfire-api",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/pydantic/logfire",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Shim for the Logfire SDK which does nothing unless Logfire is installed"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "${{ PYTHON }} -m pip install ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "moritzwilksch"
+   ]
+  },
+  "outputs": [
+   {
+    "build": null,
+    "name": "logfire-api",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.9.*",
+      "pip",
+      "hatchling"
+     ],
+     "run": [
+      "python >=3.9"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "logfire_api"
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "package": {
+   "name": "logfire-api",
+   "version": "3.5.3"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9.*",
+    "pip",
+    "hatchling"
+   ],
+   "run": [
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 1,
+  "source": {
+   "sha256": "2c15a0ad6f12f39003f62550a35f9247c29c87b466f7839836f346867442a55c",
+   "url": "https://pypi.org/packages/source/l/logfire-api/logfire_api-3.5.3.tar.gz"
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/pydantic/logfire",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Shim for the Logfire SDK which does nothing unless Logfire is installed"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "${{ PYTHON }} -m pip install ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "moritzwilksch"
+   ]
+  },
+  "outputs": [
+   {
+    "build": null,
+    "name": "logfire-api",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python 3.9.*",
+      "pip",
+      "hatchling"
+     ],
+     "run": [
+      "python >=3.9"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "logfire_api"
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "package": {
+   "name": "logfire-api",
+   "version": "3.5.3"
+  },
+  "requirements": {
+   "host": [
+    "python 3.9.*",
+    "pip",
+    "hatchling"
+   ],
+   "run": [
+    "python >=3.9"
+   ]
+  },
+  "schema_version": 1,
+  "source": {
+   "sha256": "2c15a0ad6f12f39003f62550a35f9247c29c87b466f7839836f346867442a55c",
+   "url": "https://pypi.org/packages/source/l/logfire-api/logfire_api-3.5.3.tar.gz"
+  }
+ },
+ "name": "logfire-api",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "logfire-api"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/logfire-api.json"
+ },
+ "raw_meta_yaml": "context:\n  version: 3.5.3\n\npackage:\n  name: logfire-api\n  version: ${{ version }}\n\nsource:\n- url: https://pypi.org/packages/source/l/logfire-api/logfire_api-${{ version }}.tar.gz\n  sha256: 2c15a0ad6f12f39003f62550a35f9247c29c87b466f7839836f346867442a55c\n- url: https://raw.githubusercontent.com/pydantic/logfire/refs/heads/main/LICENSE\n  sha256: 035507b8a1e787a16c7f138f092557a30a8ee9cc9cef6e84d11546ee3b9a45cd\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install .\n\nrequirements:\n  host:\n  - python ${{ python_min }}.*\n  - pip\n  - hatchling\n  run:\n  - python >=${{ python_min }}\n\ntests:\n- python:\n    imports:\n    - logfire_api\n    pip_check: true\n\nabout:\n  homepage: https://github.com/pydantic/logfire\n  license: MIT\n  license_file: LICENSE\n  summary: Shim for the Logfire SDK which does nothing unless Logfire is installed\n\nextra:\n  recipe-maintainers:\n    - moritzwilksch\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "hatchling",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "hatchling",
+    "pip",
+    "python 3.9.*"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "python >=3.9"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/l/logfire-api/logfire_api-3.5.3.tar.gz",
+ "version": "3.5.3",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/logfire-api.json"
+ }
+}
