@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "azure": {
+   "store_build_artifacts": false
+  },
   "bot": {
    "automerge": true
   },
@@ -19,8 +22,8 @@
    "tooling_branch_name": "main"
   },
   "provider": {
-   "linux_aarch64": "default",
-   "linux_ppc64le": "default",
+   "linux_aarch64": "azure",
+   "linux_ppc64le": "azure",
    "win": "azure"
   },
   "test": "native_and_emulated"
@@ -38,7 +41,8 @@
    "summary": "Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": null,
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -54,7 +58,7 @@
   },
   "package": {
    "name": "r-network",
-   "version": "1.18.2"
+   "version": "1.19.0"
   },
   "requirements": {
    "build": [
@@ -65,22 +69,22 @@
    "host": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ],
    "run": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bf33892db9cabba9cd1597f09ef0e1277d63520a8cebd2d919e0d41fc706a27b",
+   "sha256": "fd12a007fb16411ef386102f3ebb582ffc5b6798a7eb83858cb8601e1a152012",
    "url": [
-    "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz"
    ]
   },
   "test": {
@@ -132,7 +136,8 @@
    "summary": "Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": null,
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -148,7 +153,7 @@
   },
   "package": {
    "name": "r-network",
-   "version": "1.18.2"
+   "version": "1.19.0"
   },
   "requirements": {
    "build": [
@@ -159,22 +164,22 @@
    "host": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ],
    "run": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bf33892db9cabba9cd1597f09ef0e1277d63520a8cebd2d919e0d41fc706a27b",
+   "sha256": "fd12a007fb16411ef386102f3ebb582ffc5b6798a7eb83858cb8601e1a152012",
    "url": [
-    "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz"
    ]
   },
   "test": {
@@ -226,7 +231,8 @@
    "summary": "Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": null,
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -242,7 +248,7 @@
   },
   "package": {
    "name": "r-network",
-   "version": "1.18.2"
+   "version": "1.19.0"
   },
   "requirements": {
    "build": [
@@ -253,22 +259,22 @@
    "host": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ],
    "run": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bf33892db9cabba9cd1597f09ef0e1277d63520a8cebd2d919e0d41fc706a27b",
+   "sha256": "fd12a007fb16411ef386102f3ebb582ffc5b6798a7eb83858cb8601e1a152012",
    "url": [
-    "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz"
    ]
   },
   "test": {
@@ -320,7 +326,12 @@
    "summary": "Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": [
+    "*/R.dll",
+    "*/Rblas.dll",
+    "*/Rlapack.dll"
+   ],
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -336,7 +347,7 @@
   },
   "package": {
    "name": "r-network",
-   "version": "1.18.2"
+   "version": "1.19.0"
   },
   "requirements": {
    "build": [
@@ -353,22 +364,22 @@
    "host": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ],
    "run": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bf33892db9cabba9cd1597f09ef0e1277d63520a8cebd2d919e0d41fc706a27b",
+   "sha256": "fd12a007fb16411ef386102f3ebb582ffc5b6798a7eb83858cb8601e1a152012",
    "url": [
-    "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz"
    ]
   },
   "test": {
@@ -390,7 +401,8 @@
    "summary": "Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": null,
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -406,7 +418,7 @@
   },
   "package": {
    "name": "r-network",
-   "version": "1.18.2"
+   "version": "1.19.0"
   },
   "requirements": {
    "build": [
@@ -417,22 +429,22 @@
    "host": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ],
    "run": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bf33892db9cabba9cd1597f09ef0e1277d63520a8cebd2d919e0d41fc706a27b",
+   "sha256": "fd12a007fb16411ef386102f3ebb582ffc5b6798a7eb83858cb8601e1a152012",
    "url": [
-    "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz"
    ]
   },
   "test": {
@@ -484,7 +496,8 @@
    "summary": "Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": null,
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -500,7 +513,7 @@
   },
   "package": {
    "name": "r-network",
-   "version": "1.18.2"
+   "version": "1.19.0"
   },
   "requirements": {
    "build": [
@@ -511,22 +524,22 @@
    "host": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ],
    "run": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bf33892db9cabba9cd1597f09ef0e1277d63520a8cebd2d919e0d41fc706a27b",
+   "sha256": "fd12a007fb16411ef386102f3ebb582ffc5b6798a7eb83858cb8601e1a152012",
    "url": [
-    "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz"
    ]
   },
   "test": {
@@ -585,7 +598,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/r-network.json"
  },
- "raw_meta_yaml": "{% set version = \"1.18.2\" %} \n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-network\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/network_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/network/network_{{ version }}.tar.gz\n  sha256: bf33892db9cabba9cd1597f09ef0e1277d63520a8cebd2d919e0d41fc706a27b\n\nbuild:\n  number: 1\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - cross-r-base {{ r_base }}  # [build_platform != target_platform]\n    - r-statnet.common           # [build_platform != target_platform]\n    - r-magrittr                 # [build_platform != target_platform]\n    - r-tibble                   # [build_platform != target_platform]\n    - {{ compiler('c') }}              # [not win]\n    - {{ stdlib(\"c\") }}                # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ stdlib(\"m2w64_c\") }}          # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n    - cross-r-base {{ r_base }}    # [build_platform != target_platform]\n  host:\n    - r-base\n    - r-magrittr\n    - r-statnet.common >=4.4.1\n    - r-tibble\n  run:\n    - r-base\n    - r-magrittr\n    - r-statnet.common >=4.4.1\n    - r-tibble\n\ntest:\n  commands:\n    - $R -e \"library('network')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('network')\\\"\"  # [win]\n\nabout:\n  home: http://statnet.org/\n  license: GPL-2.0-or-later\n  summary: Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes.\n  license_family: GPL3\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n",
+ "raw_meta_yaml": "{% set version = \"1.19.0\" %} \n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: r-network\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/network_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/network/network_{{ version }}.tar.gz\n  sha256: fd12a007fb16411ef386102f3ebb582ffc5b6798a7eb83858cb8601e1a152012\n\nbuild:\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n  missing_dso_whitelist:\n    - '*/R.dll'        # [win]\n    - '*/Rblas.dll'    # [win]\n    - '*/Rlapack.dll'  # [win]\n\nrequirements:\n  build:\n    - cross-r-base {{ r_base }}  # [build_platform != target_platform]\n    - r-statnet.common           # [build_platform != target_platform]\n    - r-magrittr                 # [build_platform != target_platform]\n    - r-tibble                   # [build_platform != target_platform]\n    - {{ compiler('c') }}              # [not win]\n    - {{ stdlib(\"c\") }}                # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ stdlib(\"m2w64_c\") }}          # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-magrittr\n    - r-statnet.common >=4.5\n    - r-tibble\n  run:\n    - r-base\n    - r-magrittr\n    - r-statnet.common >=4.5\n    - r-tibble\n\ntest:\n  commands:\n    - $R -e \"library('network')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('network')\\\"\"  # [win]\n\nabout:\n  home: http://statnet.org/\n  license: GPL-2.0-or-later\n  summary: Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes.\n  license_family: GPL3\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -667,7 +680,7 @@
    "elements": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
@@ -676,7 +689,7 @@
    "elements": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
@@ -686,20 +699,20 @@
   }
  },
  "url": [
-  "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-  "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz"
+  "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz"
  ],
- "version": "1.18.2",
+ "version": "1.19.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/r-network.json"
  },
@@ -714,7 +727,12 @@
    "summary": "Tools to create and modify network objects.  The network class can represent a range of relational data types, and supports arbitrary vertex/edge/graph attributes."
   },
   "build": {
-   "number": "1",
+   "missing_dso_whitelist": [
+    "*/R.dll",
+    "*/Rblas.dll",
+    "*/Rlapack.dll"
+   ],
+   "number": "0",
    "rpaths": [
     "lib/R/lib/",
     "lib/"
@@ -730,7 +748,7 @@
   },
   "package": {
    "name": "r-network",
-   "version": "1.18.2"
+   "version": "1.19.0"
   },
   "requirements": {
    "build": [
@@ -745,22 +763,22 @@
    "host": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ],
    "run": [
     "r-base",
     "r-magrittr",
-    "r-statnet.common >=4.4.1",
+    "r-statnet.common >=4.5",
     "r-tibble"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "bf33892db9cabba9cd1597f09ef0e1277d63520a8cebd2d919e0d41fc706a27b",
+   "sha256": "fd12a007fb16411ef386102f3ebb582ffc5b6798a7eb83858cb8601e1a152012",
    "url": [
-    "https://cran.r-project.org/src/contrib/network_1.18.2.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/network/network_1.18.2.tar.gz"
+    "https://cran.r-project.org/src/contrib/network_1.19.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/network/network_1.19.0.tar.gz"
    ]
   },
   "test": {
