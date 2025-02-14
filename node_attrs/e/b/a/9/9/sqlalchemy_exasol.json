@@ -27,7 +27,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "sqlalchemy_exasol",
-   "version": "5.0.0"
+   "version": "5.1.0"
   },
   "requirements": {
    "host": [
@@ -48,7 +48,7 @@
    ],
    "run": [
     "packaging >=21.3",
-    "pyexasol >=0.25.1,<0.26.0",
+    "pyexasol >=0.26.0,<1",
     "python >=3.9",
     "sqlalchemy >=1.4,<2",
     "pyodbc >=4.0.34,<6",
@@ -57,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "901ff0a7990238c25791f6b9116b6b999661c2ecc16f59245d51358ee8b7bc12",
-   "url": "https://pypi.org/packages/source/s/sqlalchemy_exasol/sqlalchemy_exasol-5.0.0.tar.gz"
+   "sha256": "062d4f2571f43c5a342ca1b3f8a5a87c597848dd008fa04a65700af541d34307",
+   "url": "https://pypi.org/packages/source/s/sqlalchemy_exasol/sqlalchemy_exasol-5.1.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -111,7 +111,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -121,7 +121,7 @@
   },
   "package": {
    "name": "sqlalchemy_exasol",
-   "version": "5.0.0"
+   "version": "5.1.0"
   },
   "requirements": {
    "host": [
@@ -132,7 +132,7 @@
    ],
    "run": [
     "packaging >=21.3",
-    "pyexasol >=0.25.1,<0.26.0",
+    "pyexasol >=0.26.0,<1",
     "python >=3.9",
     "sqlalchemy >=1.4,<2",
     "pyodbc >=4.0.34,<6",
@@ -141,8 +141,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "901ff0a7990238c25791f6b9116b6b999661c2ecc16f59245d51358ee8b7bc12",
-   "url": "https://pypi.org/packages/source/s/sqlalchemy_exasol/sqlalchemy_exasol-5.0.0.tar.gz"
+   "sha256": "062d4f2571f43c5a342ca1b3f8a5a87c597848dd008fa04a65700af541d34307",
+   "url": "https://pypi.org/packages/source/s/sqlalchemy_exasol/sqlalchemy_exasol-5.1.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -167,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sqlalchemy_exasol.json"
  },
- "raw_meta_yaml": "{% set name = \"sqlalchemy_exasol\" %}\n{% set version = \"5.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 901ff0a7990238c25791f6b9116b6b999661c2ecc16f59245d51358ee8b7bc12\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - poetry >=1\n    - setuptools_scm\n  run:\n    - packaging >=21.3\n    - pyexasol >=0.25.1,<0.26.0\n    - python >={{ python_min }}\n    - sqlalchemy >=1.4,<2\n    - pyodbc >=4.0.34,<6\n    - six >=1.5\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - sqlalchemy_exasol\n\nabout:\n  home: http://github.com/blue-yonder/sqlalchemy_exasol\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: SQLAlchemy dialect for EXASOL\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
+ "raw_meta_yaml": "{% set name = \"sqlalchemy_exasol\" %}\n{% set version = \"5.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 062d4f2571f43c5a342ca1b3f8a5a87c597848dd008fa04a65700af541d34307\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - poetry >=1\n    - setuptools_scm\n  run:\n    - packaging >=21.3\n    - pyexasol >=0.26.0,<1\n    - python >={{ python_min }}\n    - sqlalchemy >=1.4,<2\n    - pyodbc >=4.0.34,<6\n    - six >=1.5\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - sqlalchemy_exasol\n\nabout:\n  home: http://github.com/blue-yonder/sqlalchemy_exasol\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: SQLAlchemy dialect for EXASOL\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -233,7 +233,7 @@
    "__set__": true,
    "elements": [
     "packaging >=21.3",
-    "pyexasol >=0.25.1,<0.26.0",
+    "pyexasol >=0.26.0,<1",
     "pyodbc >=4.0.34,<6",
     "python >=3.9",
     "six >=1.5",
@@ -247,8 +247,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/sqlalchemy_exasol/sqlalchemy_exasol-5.0.0.tar.gz",
- "version": "5.0.0",
+ "url": "https://pypi.org/packages/source/s/sqlalchemy_exasol/sqlalchemy_exasol-5.1.0.tar.gz",
+ "version": "5.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sqlalchemy_exasol.json"
  }
