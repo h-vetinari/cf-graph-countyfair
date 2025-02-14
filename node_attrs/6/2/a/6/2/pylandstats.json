@@ -28,7 +28,7 @@
    "summary": "Computing landscape metrics in the Python ecosystem."
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "pylandstats",
-   "version": "3.0.3"
+   "version": "3.1.0"
   },
   "requirements": {
    "build": [
@@ -55,18 +55,21 @@
    ],
    "run": [
     "python",
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base >=2.2",
     "pandas >=0.23",
     "rasterio >=1.0.0",
-    "scipy >=1.0.0"
+    "scikit-learn >=1.0.0",
+    "scipy >=1.0.0",
+    "seaborn"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "488ba70a550866b10af6b06805177d5a1f6c164c161cd33c3892f30e6a96270b",
-   "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.0.3.tar.gz"
+   "sha256": "6903514eac254ddd41482b575501389e92c81b8d79d2ed1585c0d8a0dfe0b382",
+   "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -102,13 +105,16 @@
   "run": {
    "__set__": true,
    "elements": [
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base",
     "pandas",
     "python",
     "rasterio",
-    "scipy"
+    "scikit-learn",
+    "scipy",
+    "seaborn"
    ]
   },
   "test": {
@@ -130,7 +136,7 @@
    "summary": "Computing landscape metrics in the Python ecosystem."
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -140,7 +146,7 @@
   },
   "package": {
    "name": "pylandstats",
-   "version": "3.0.3"
+   "version": "3.1.0"
   },
   "requirements": {
    "build": [
@@ -157,18 +163,21 @@
    ],
    "run": [
     "python",
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base >=2.2",
     "pandas >=0.23",
     "rasterio >=1.0.0",
-    "scipy >=1.0.0"
+    "scikit-learn >=1.0.0",
+    "scipy >=1.0.0",
+    "seaborn"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "488ba70a550866b10af6b06805177d5a1f6c164c161cd33c3892f30e6a96270b",
-   "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.0.3.tar.gz"
+   "sha256": "6903514eac254ddd41482b575501389e92c81b8d79d2ed1585c0d8a0dfe0b382",
+   "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -195,7 +204,7 @@
    "summary": "Computing landscape metrics in the Python ecosystem."
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -205,7 +214,7 @@
   },
   "package": {
    "name": "pylandstats",
-   "version": "3.0.3"
+   "version": "3.1.0"
   },
   "requirements": {
    "build": [
@@ -222,18 +231,21 @@
    ],
    "run": [
     "python",
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base >=2.2",
     "pandas >=0.23",
     "rasterio >=1.0.0",
-    "scipy >=1.0.0"
+    "scikit-learn >=1.0.0",
+    "scipy >=1.0.0",
+    "seaborn"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "488ba70a550866b10af6b06805177d5a1f6c164c161cd33c3892f30e6a96270b",
-   "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.0.3.tar.gz"
+   "sha256": "6903514eac254ddd41482b575501389e92c81b8d79d2ed1585c0d8a0dfe0b382",
+   "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -269,13 +281,16 @@
   "run": {
    "__set__": true,
    "elements": [
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base",
     "pandas",
     "python",
     "rasterio",
-    "scipy"
+    "scikit-learn",
+    "scipy",
+    "seaborn"
    ]
   },
   "test": {
@@ -300,12 +315,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pylandstats.json"
  },
- "raw_meta_yaml": "{% set name = \"pylandstats\" %}\n{% set version = \"3.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pylandstats-{{ version }}.tar.gz\n  sha256: 488ba70a550866b10af6b06805177d5a1f6c164c161cd33c3892f30e6a96270b\n\nbuild:\n  skip: true  # [py<39]\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n  host:\n    - python\n    - setuptools >=74.1.0\n    - wheel\n    - cython\n    - numpy >=2.0.0\n    - pip\n  run:\n    - python\n    - dask-core\n    - geopandas\n    - matplotlib-base >=2.2\n    - pandas >=0.23\n    - rasterio >=1.0.0\n    - scipy >=1.0.0\n\ntest:\n  imports:\n    - pylandstats\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/martibosch/pylandstats\n  license: GPL-3.0-or-later\n  license_family: GPL3\n  license_file: LICENSE\n  summary: Computing landscape metrics in the Python ecosystem.\n  description: |    \n    Open-source Pythonic library to compute landscape metrics in the Python\n    ecosystem (NumPy, pandas, matplotlib...)\n  doc_url: https://pylandstats.readthedocs.io\n  dev_url: https://github.com/martibosch/pylandstats\n\nextra:\n  recipe-maintainers:\n    - martibosch\n",
+ "raw_meta_yaml": "{% set name = \"pylandstats\" %}\n{% set version = \"3.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pylandstats-{{ version }}.tar.gz\n  sha256: 6903514eac254ddd41482b575501389e92c81b8d79d2ed1585c0d8a0dfe0b382\n\nbuild:\n  skip: true  # [py<39]\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n  host:\n    - python\n    - setuptools >=74.1.0\n    - wheel\n    - cython\n    - numpy >=2.0.0\n    - pip\n  run:\n    - python\n    - clustergram\n    - dask-core\n    - geopandas\n    - matplotlib-base >=2.2\n    - pandas >=0.23\n    - rasterio >=1.0.0\n    - scikit-learn >=1.0.0\n    - scipy >=1.0.0\n    - seaborn\n\ntest:\n  imports:\n    - pylandstats\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/martibosch/pylandstats\n  license: GPL-3.0-or-later\n  license_family: GPL3\n  license_file: LICENSE\n  summary: Computing landscape metrics in the Python ecosystem.\n  description: |\n    Open-source Pythonic library to compute landscape metrics in the Python\n    ecosystem (NumPy, pandas, matplotlib...)\n  doc_url: https://pylandstats.readthedocs.io\n  dev_url: https://github.com/martibosch/pylandstats\n\nextra:\n  recipe-maintainers:\n    - martibosch\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
    "c_stdlib_stub",
+   "clustergram",
    "cython",
    "dask-core",
    "geopandas",
@@ -315,7 +331,9 @@
    "pip",
    "python",
    "rasterio",
+   "scikit-learn",
    "scipy",
+   "seaborn",
    "setuptools",
    "wheel"
   ]
@@ -346,13 +364,16 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base",
     "pandas",
     "python",
     "rasterio",
-    "scipy"
+    "scikit-learn",
+    "scipy",
+    "seaborn"
    ]
   },
   "test": {
@@ -385,13 +406,16 @@
   "run": {
    "__set__": true,
    "elements": [
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base >=2.2",
     "pandas >=0.23",
     "python",
     "rasterio >=1.0.0",
-    "scipy >=1.0.0"
+    "scikit-learn >=1.0.0",
+    "scipy >=1.0.0",
+    "seaborn"
    ]
   },
   "test": {
@@ -401,8 +425,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.0.3.tar.gz",
- "version": "3.0.3",
+ "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.1.0.tar.gz",
+ "version": "3.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pylandstats.json"
  },
@@ -418,7 +442,7 @@
    "summary": "Computing landscape metrics in the Python ecosystem."
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -428,7 +452,7 @@
   },
   "package": {
    "name": "pylandstats",
-   "version": "3.0.3"
+   "version": "3.1.0"
   },
   "requirements": {
    "build": [
@@ -445,18 +469,21 @@
    ],
    "run": [
     "python",
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base >=2.2",
     "pandas >=0.23",
     "rasterio >=1.0.0",
-    "scipy >=1.0.0"
+    "scikit-learn >=1.0.0",
+    "scipy >=1.0.0",
+    "seaborn"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "488ba70a550866b10af6b06805177d5a1f6c164c161cd33c3892f30e6a96270b",
-   "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.0.3.tar.gz"
+   "sha256": "6903514eac254ddd41482b575501389e92c81b8d79d2ed1585c0d8a0dfe0b382",
+   "url": "https://pypi.org/packages/source/p/pylandstats/pylandstats-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -492,13 +519,16 @@
   "run": {
    "__set__": true,
    "elements": [
+    "clustergram",
     "dask-core",
     "geopandas",
     "matplotlib-base",
     "pandas",
     "python",
     "rasterio",
-    "scipy"
+    "scikit-learn",
+    "scipy",
+    "seaborn"
    ]
   },
   "test": {
