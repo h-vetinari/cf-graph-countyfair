@@ -46,7 +46,7 @@
   },
   "package": {
    "name": "oras",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "build": [
@@ -57,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1f3fc661c90cfb48b4b0e6ef4817b86b28c784186ab0da1a778809938899f574",
-   "url": "https://github.com/oras-project/oras/archive/v1.2.0.tar.gz"
+   "sha256": "200e843a5aa0f375b23403cd5442d77243600d92dc62a1acc8dbc2a2e6b72dd5",
+   "url": "https://github.com/oras-project/oras/archive/v1.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -124,7 +124,7 @@
   },
   "package": {
    "name": "oras",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "build": [
@@ -136,8 +136,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1f3fc661c90cfb48b4b0e6ef4817b86b28c784186ab0da1a778809938899f574",
-   "url": "https://github.com/oras-project/oras/archive/v1.2.0.tar.gz"
+   "sha256": "200e843a5aa0f375b23403cd5442d77243600d92dc62a1acc8dbc2a2e6b72dd5",
+   "url": "https://github.com/oras-project/oras/archive/v1.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -175,7 +175,7 @@
   },
   "package": {
    "name": "oras",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "build": [
@@ -186,8 +186,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1f3fc661c90cfb48b4b0e6ef4817b86b28c784186ab0da1a778809938899f574",
-   "url": "https://github.com/oras-project/oras/archive/v1.2.0.tar.gz"
+   "sha256": "200e843a5aa0f375b23403cd5442d77243600d92dc62a1acc8dbc2a2e6b72dd5",
+   "url": "https://github.com/oras-project/oras/archive/v1.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -246,7 +246,7 @@
   },
   "package": {
    "name": "oras",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "build": [
@@ -257,8 +257,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1f3fc661c90cfb48b4b0e6ef4817b86b28c784186ab0da1a778809938899f574",
-   "url": "https://github.com/oras-project/oras/archive/v1.2.0.tar.gz"
+   "sha256": "200e843a5aa0f375b23403cd5442d77243600d92dc62a1acc8dbc2a2e6b72dd5",
+   "url": "https://github.com/oras-project/oras/archive/v1.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -304,7 +304,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/oras.json"
  },
- "raw_meta_yaml": "{% set name = \"oras\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/oras-project/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 1f3fc661c90cfb48b4b0e6ef4817b86b28c784186ab0da1a778809938899f574\n\nbuild:\n  number: 0\n  script:\n    - mkdir -p $PREFIX/bin                                 # [unix]\n    - make build-mac                                       # [osx and not aarch64]\n    - mv bin/darwin/amd64/oras $PREFIX/bin/oras            # [osx and not aarch64]\n    - make build-linux                                     # [linux and x86_64]\n    - mv bin/linux/amd64/oras $PREFIX/bin/oras             # [linux and x86_64]\n    # Make sure a binary has been installed for all unix platforms\n    - which oras  # [unix]\n    - setlocal enableextensions       # [win]\n    - mkdir -p %PREFIX%\\Library\\bin   # [win]\n    - make build-windows                                   # [win]\n    - move bin\\windows\\amd64\\oras.exe %PREFIX%\\Library\\bin\\oras.exe   # [win]\n    - bash $RECIPE_DIR/collect_licenses.sh  # [unix]\n    - bash %RECIPE_DIR%\\\\collect_licenses.sh  # [win]\n\n    # - make build-mac-arm64\n    # - mv bin/darwin/arm64/oras $PREFIX/bin/oras\n\nrequirements:\n  build:\n    - {{ compiler(\"go\") }}\n    - make  # [not win]\n    - m2-make  # [win]\n    - go-licenses\n\ntest:\n  commands:\n    - oras --help\n\nabout:\n  home: https://github.com/oras-project/oras\n  doc_url: https://oras.land/\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - library_licenses/\n\n  summary: ORAS project provides a way to push and pull OCI Artifacts to and from OCI Registries.\n\nextra:\n  recipe-maintainers:\n    - borchero\n    - wolfv\n",
+ "raw_meta_yaml": "{% set name = \"oras\" %}\n{% set version = \"1.2.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/oras-project/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 200e843a5aa0f375b23403cd5442d77243600d92dc62a1acc8dbc2a2e6b72dd5\n\nbuild:\n  number: 0\n  script:\n    - mkdir -p $PREFIX/bin                                 # [unix]\n    - make build-mac                                       # [osx and not aarch64]\n    - mv bin/darwin/amd64/oras $PREFIX/bin/oras            # [osx and not aarch64]\n    - make build-linux                                     # [linux and x86_64]\n    - mv bin/linux/amd64/oras $PREFIX/bin/oras             # [linux and x86_64]\n    # Make sure a binary has been installed for all unix platforms\n    - which oras  # [unix]\n    - setlocal enableextensions       # [win]\n    - mkdir -p %PREFIX%\\Library\\bin   # [win]\n    - make build-windows                                   # [win]\n    - move bin\\windows\\amd64\\oras.exe %PREFIX%\\Library\\bin\\oras.exe   # [win]\n    - bash $RECIPE_DIR/collect_licenses.sh  # [unix]\n    - bash %RECIPE_DIR%\\\\collect_licenses.sh  # [win]\n\n    # - make build-mac-arm64\n    # - mv bin/darwin/arm64/oras $PREFIX/bin/oras\n\nrequirements:\n  build:\n    - {{ compiler(\"go\") }}\n    - make  # [not win]\n    - m2-make  # [win]\n    - go-licenses\n\ntest:\n  commands:\n    - oras --help\n\nabout:\n  home: https://github.com/oras-project/oras\n  doc_url: https://oras.land/\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n    - library_licenses/\n\n  summary: ORAS project provides a way to push and pull OCI Artifacts to and from OCI Registries.\n\nextra:\n  recipe-maintainers:\n    - borchero\n    - wolfv\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -361,8 +361,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/oras-project/oras/archive/v1.2.0.tar.gz",
- "version": "1.2.0",
+ "url": "https://github.com/oras-project/oras/archive/v1.2.1.tar.gz",
+ "version": "1.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/oras.json"
  },
@@ -395,7 +395,7 @@
   },
   "package": {
    "name": "oras",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "build": [
@@ -406,8 +406,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1f3fc661c90cfb48b4b0e6ef4817b86b28c784186ab0da1a778809938899f574",
-   "url": "https://github.com/oras-project/oras/archive/v1.2.0.tar.gz"
+   "sha256": "200e843a5aa0f375b23403cd5442d77243600d92dc62a1acc8dbc2a2e6b72dd5",
+   "url": "https://github.com/oras-project/oras/archive/v1.2.1.tar.gz"
   },
   "test": {
    "commands": [
