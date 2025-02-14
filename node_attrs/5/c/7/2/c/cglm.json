@@ -40,7 +40,7 @@
   },
   "package": {
    "name": "cglm",
-   "version": "0.9.5"
+   "version": "0.9.6"
   },
   "requirements": {
    "build": [
@@ -55,8 +55,8 @@
    "patches": [
     "windows_dll_name.patch"
    ],
-   "sha256": "1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435",
-   "url": "https://github.com/recp/cglm/archive/v0.9.5.tar.gz"
+   "sha256": "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184",
+   "url": "https://github.com/recp/cglm/archive/v0.9.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -108,7 +108,7 @@
   },
   "package": {
    "name": "cglm",
-   "version": "0.9.5"
+   "version": "0.9.6"
   },
   "requirements": {
    "build": [
@@ -123,8 +123,8 @@
    "patches": [
     "windows_dll_name.patch"
    ],
-   "sha256": "1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435",
-   "url": "https://github.com/recp/cglm/archive/v0.9.5.tar.gz"
+   "sha256": "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184",
+   "url": "https://github.com/recp/cglm/archive/v0.9.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -176,7 +176,7 @@
   },
   "package": {
    "name": "cglm",
-   "version": "0.9.5"
+   "version": "0.9.6"
   },
   "requirements": {
    "build": [
@@ -191,8 +191,8 @@
    "patches": [
     "windows_dll_name.patch"
    ],
-   "sha256": "1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435",
-   "url": "https://github.com/recp/cglm/archive/v0.9.5.tar.gz"
+   "sha256": "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184",
+   "url": "https://github.com/recp/cglm/archive/v0.9.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -244,7 +244,7 @@
   },
   "package": {
    "name": "cglm",
-   "version": "0.9.5"
+   "version": "0.9.6"
   },
   "requirements": {
    "build": [
@@ -260,8 +260,8 @@
    "patches": [
     "windows_dll_name.patch"
    ],
-   "sha256": "1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435",
-   "url": "https://github.com/recp/cglm/archive/v0.9.5.tar.gz"
+   "sha256": "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184",
+   "url": "https://github.com/recp/cglm/archive/v0.9.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -293,7 +293,7 @@
   },
   "package": {
    "name": "cglm",
-   "version": "0.9.5"
+   "version": "0.9.6"
   },
   "requirements": {
    "build": [
@@ -308,8 +308,8 @@
    "patches": [
     "windows_dll_name.patch"
    ],
-   "sha256": "1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435",
-   "url": "https://github.com/recp/cglm/archive/v0.9.5.tar.gz"
+   "sha256": "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184",
+   "url": "https://github.com/recp/cglm/archive/v0.9.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -361,7 +361,7 @@
   },
   "package": {
    "name": "cglm",
-   "version": "0.9.5"
+   "version": "0.9.6"
   },
   "requirements": {
    "build": [
@@ -376,8 +376,8 @@
    "patches": [
     "windows_dll_name.patch"
    ],
-   "sha256": "1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435",
-   "url": "https://github.com/recp/cglm/archive/v0.9.5.tar.gz"
+   "sha256": "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184",
+   "url": "https://github.com/recp/cglm/archive/v0.9.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -426,7 +426,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cglm.json"
  },
- "raw_meta_yaml": "{% set version = \"0.9.5\" %}\n\npackage:\n  name: cglm\n  version: {{ version }}\n\nsource:\n  url: https://github.com/recp/cglm/archive/v{{ version }}.tar.gz\n  sha256: 1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435\n  patches:\n    - windows_dll_name.patch\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('cglm', 'x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - make    # [unix]\n    - ninja   # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libcglm${SHLIB_EXT}                # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\cglm.dll exit 1    # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\cglm.lib exit 1    # [win]\n\nabout:\n  home: https://github.com/recp/cglm\n  summary: OpenGL Mathematics (glm) for C\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "raw_meta_yaml": "{% set version = \"0.9.6\" %}\n\npackage:\n  name: cglm\n  version: {{ version }}\n\nsource:\n  url: https://github.com/recp/cglm/archive/v{{ version }}.tar.gz\n  sha256: be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184\n  patches:\n    - windows_dll_name.patch\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('cglm', 'x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cmake\n    - make    # [unix]\n    - ninja   # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libcglm${SHLIB_EXT}                # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\cglm.dll exit 1    # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\cglm.lib exit 1    # [win]\n\nabout:\n  home: https://github.com/recp/cglm\n  summary: OpenGL Mathematics (glm) for C\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -492,8 +492,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/recp/cglm/archive/v0.9.5.tar.gz",
- "version": "0.9.5",
+ "url": "https://github.com/recp/cglm/archive/v0.9.6.tar.gz",
+ "version": "0.9.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cglm.json"
  },
@@ -518,7 +518,7 @@
   },
   "package": {
    "name": "cglm",
-   "version": "0.9.5"
+   "version": "0.9.6"
   },
   "requirements": {
    "build": [
@@ -533,8 +533,8 @@
    "patches": [
     "windows_dll_name.patch"
    ],
-   "sha256": "1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435",
-   "url": "https://github.com/recp/cglm/archive/v0.9.5.tar.gz"
+   "sha256": "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184",
+   "url": "https://github.com/recp/cglm/archive/v0.9.6.tar.gz"
   },
   "test": {
    "commands": [
