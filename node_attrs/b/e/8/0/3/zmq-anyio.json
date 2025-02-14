@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "zmq-anyio",
-   "version": "0.3.0"
+   "version": "0.3.1"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d1829f02e038e2316dad9b8e9774a4a3f5688dad25ee9cc0968d0034f5eb0bc7",
-   "url": "https://pypi.org/packages/source/z/zmq-anyio/zmq_anyio-0.3.0.tar.gz"
+   "sha256": "c59b7aa761b80f736ee680686e9f4dbad8d7105cf9706e8d8c7a3d6117a35e41",
+   "url": "https://pypi.org/packages/source/z/zmq-anyio/zmq_anyio-0.3.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -118,7 +118,7 @@
   },
   "package": {
    "name": "zmq-anyio",
-   "version": "0.3.0"
+   "version": "0.3.1"
   },
   "requirements": {
    "host": [
@@ -135,8 +135,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d1829f02e038e2316dad9b8e9774a4a3f5688dad25ee9cc0968d0034f5eb0bc7",
-   "url": "https://pypi.org/packages/source/z/zmq-anyio/zmq_anyio-0.3.0.tar.gz"
+   "sha256": "c59b7aa761b80f736ee680686e9f4dbad8d7105cf9706e8d8c7a3d6117a35e41",
+   "url": "https://pypi.org/packages/source/z/zmq-anyio/zmq_anyio-0.3.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -165,7 +165,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/zmq-anyio.json"
  },
- "raw_meta_yaml": "{% set name = \"zmq-anyio\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zmq_anyio-{{ version }}.tar.gz\n  sha256: d1829f02e038e2316dad9b8e9774a4a3f5688dad25ee9cc0968d0034f5eb0bc7\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - hatchling\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - anyio >=4.8.0,<5.0.0\n    - anyioutils >=0.6.2\n    - pyzmq >=26.0.0,<27.0.0\n\ntest:\n  imports:\n    - zmq_anyio\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/davidbrochart/zmq-anyio\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Asynchronous API for ZMQ using AnyIO\n  dev_url: https://github.com/davidbrochart/zmq-anyio\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
+ "raw_meta_yaml": "{% set name = \"zmq-anyio\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zmq_anyio-{{ version }}.tar.gz\n  sha256: c59b7aa761b80f736ee680686e9f4dbad8d7105cf9706e8d8c7a3d6117a35e41\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - hatchling\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - anyio >=4.8.0,<5.0.0\n    - anyioutils >=0.6.2\n    - pyzmq >=26.0.0,<27.0.0\n\ntest:\n  imports:\n    - zmq_anyio\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/davidbrochart/zmq-anyio\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Asynchronous API for ZMQ using AnyIO\n  dev_url: https://github.com/davidbrochart/zmq-anyio\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -238,8 +238,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/z/zmq-anyio/zmq_anyio-0.3.0.tar.gz",
- "version": "0.3.0",
+ "url": "https://pypi.org/packages/source/z/zmq-anyio/zmq_anyio-0.3.1.tar.gz",
+ "version": "0.3.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/zmq-anyio.json"
  }
