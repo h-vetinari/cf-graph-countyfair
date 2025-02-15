@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -50,7 +50,6 @@
     "mkdocs >=1.4",
     "mkdocs-autorefs >=1.3",
     "mkdocs-get-deps >=0.2",
-    "platformdirs >=2.2.0",
     "pymdown-extensions >=6.3",
     "importlib-metadata >=4.6",
     "typing-extensions >=4.1"
@@ -99,7 +98,6 @@
     "mkdocs",
     "mkdocs-autorefs",
     "mkdocs-get-deps",
-    "platformdirs",
     "pymdown-extensions",
     "python",
     "typing-extensions"
@@ -123,7 +121,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -150,7 +148,6 @@
     "mkdocs >=1.4",
     "mkdocs-autorefs >=1.3",
     "mkdocs-get-deps >=0.2",
-    "platformdirs >=2.2.0",
     "pymdown-extensions >=6.3",
     "importlib-metadata >=4.6",
     "typing-extensions >=4.1"
@@ -189,7 +186,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/mkdocstrings.json"
  },
- "raw_meta_yaml": "{% set name = \"mkdocstrings\" %}\n{% set version = \"0.28.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mkdocstrings-{{ version }}.tar.gz\n  sha256: df20afef1eafe36ba466ae20732509ecb74237653a585f5061937e54b553b4e0\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - pdm-backend\n  run:\n    - python >={{ python_min }},<4.0\n    - click >=7.0\n    - jinja2 >=2.11.1\n    - markdown >=3.6\n    - markupsafe >=1.1\n    - mkdocs >=1.4\n    - mkdocs-autorefs >=1.3\n    - mkdocs-get-deps >=0.2\n    - platformdirs >=2.2.0\n    - pymdown-extensions >=6.3\n    - importlib-metadata >=4.6\n    - typing-extensions >=4.1\n\ntest:\n  imports:\n    - mkdocstrings\n    - mkdocstrings.handlers\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mkdocstrings/mkdocstrings\n  doc_url: https://mkdocstrings.github.io\n  summary: Automatic documentation from sources, for MkDocs.\n  license: ISC\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - bandersen23\n",
+ "raw_meta_yaml": "{% set name = \"mkdocstrings\" %}\n{% set version = \"0.28.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mkdocstrings-{{ version }}.tar.gz\n  sha256: df20afef1eafe36ba466ae20732509ecb74237653a585f5061937e54b553b4e0\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - pdm-backend\n  run:\n    - python >={{ python_min }},<4.0\n    - click >=7.0\n    - jinja2 >=2.11.1\n    - markdown >=3.6\n    - markupsafe >=1.1\n    - mkdocs >=1.4\n    - mkdocs-autorefs >=1.3\n    - mkdocs-get-deps >=0.2\n    - pymdown-extensions >=6.3\n    - importlib-metadata >=4.6\n    - typing-extensions >=4.1\n\ntest:\n  imports:\n    - mkdocstrings\n    - mkdocstrings.handlers\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mkdocstrings/mkdocstrings\n  doc_url: https://mkdocstrings.github.io\n  summary: Automatic documentation from sources, for MkDocs.\n  license: ISC\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - bandersen23\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -203,7 +200,6 @@
    "mkdocs-get-deps",
    "pdm-backend",
    "pip",
-   "platformdirs",
    "pymdown-extensions",
    "python",
    "typing-extensions"
@@ -233,7 +229,6 @@
     "mkdocs",
     "mkdocs-autorefs",
     "mkdocs-get-deps",
-    "platformdirs",
     "pymdown-extensions",
     "python",
     "typing-extensions"
@@ -272,7 +267,6 @@
     "mkdocs >=1.4",
     "mkdocs-autorefs >=1.3",
     "mkdocs-get-deps >=0.2",
-    "platformdirs >=2.2.0",
     "pymdown-extensions >=6.3",
     "python >=3.9,<4.0",
     "typing-extensions >=4.1"
