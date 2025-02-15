@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -59,6 +59,9 @@
   "schema_version": 0,
   "source": [
    {
+    "patches": [
+     "42.patch"
+    ],
     "sha256": "55aeeb84174abea2ed0d6985a8e93aa9bdbb60c61c6db130c8269a275ef61a6e",
     "url": "https://pypi.org/packages/source/l/lvis/lvis-0.5.3.tar.gz"
    },
@@ -126,7 +129,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "2",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -162,6 +165,9 @@
   "schema_version": 0,
   "source": [
    {
+    "patches": [
+     "42.patch"
+    ],
     "sha256": "55aeeb84174abea2ed0d6985a8e93aa9bdbb60c61c6db130c8269a275ef61a6e",
     "url": "https://pypi.org/packages/source/l/lvis/lvis-0.5.3.tar.gz"
    },
@@ -196,7 +202,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lvis.json"
  },
- "raw_meta_yaml": "{% set name = \"lvis\" %}\n{% set version = \"0.5.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lvis-{{ version }}.tar.gz\n    sha256: 55aeeb84174abea2ed0d6985a8e93aa9bdbb60c61c6db130c8269a275ef61a6e\n  - path: requirements.txt\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  build:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - cycler >=0.10.0\n    - cython >=0.29.12\n    - kiwisolver >=1.1.0\n    - matplotlib-base\n    - numpy\n    - opencv\n    - pyparsing >=2.4.0\n    - python >={{ python_min }}\n    - python-dateutil >=2.8.0\n    - six\n    - pycocotools\n\ntest:\n  imports:\n    - lvis\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/lvis-dataset/lvis-api\n  doc_url: https://www.lvisdataset.org/\n  summary: Python API for LVIS dataset.\n  license: BSD-2-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n",
+ "raw_meta_yaml": "{% set name = \"lvis\" %}\n{% set version = \"0.5.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lvis-{{ version }}.tar.gz\n    sha256: 55aeeb84174abea2ed0d6985a8e93aa9bdbb60c61c6db130c8269a275ef61a6e\n    patches:\n      - 42.patch\n  - path: requirements.txt\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 2\n\nrequirements:\n  build:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - cycler >=0.10.0\n    - cython >=0.29.12\n    - kiwisolver >=1.1.0\n    - matplotlib-base\n    - numpy\n    - opencv\n    - pyparsing >=2.4.0\n    - python >={{ python_min }}\n    - python-dateutil >=2.8.0\n    - six\n    - pycocotools\n\ntest:\n  imports:\n    - lvis\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/lvis-dataset/lvis-api\n  doc_url: https://www.lvisdataset.org/\n  summary: Python API for LVIS dataset.\n  license: BSD-2-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n",
  "req": {
   "__set__": true,
   "elements": [
