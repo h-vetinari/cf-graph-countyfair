@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "fps-kernels",
-   "version": "0.7.1"
+   "version": "0.7.2"
   },
   "requirements": {
    "host": [
@@ -57,8 +57,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "dfd41e7558e5c1c83e55a50b9e5387ee907df056e48a9d53f43f248b012a5874",
-   "url": "https://pypi.org/packages/source/f/fps-kernels/fps_kernels-0.7.1.tar.gz"
+   "sha256": "e9101092202be043974c741f86efbdb220f491cf004a124a341f7c04958cbb2c",
+   "url": "https://pypi.org/packages/source/f/fps-kernels/fps_kernels-0.7.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -125,7 +125,7 @@
   },
   "package": {
    "name": "fps-kernels",
-   "version": "0.7.1"
+   "version": "0.7.2"
   },
   "requirements": {
    "host": [
@@ -147,8 +147,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "dfd41e7558e5c1c83e55a50b9e5387ee907df056e48a9d53f43f248b012a5874",
-   "url": "https://pypi.org/packages/source/f/fps-kernels/fps_kernels-0.7.1.tar.gz"
+   "sha256": "e9101092202be043974c741f86efbdb220f491cf004a124a341f7c04958cbb2c",
+   "url": "https://pypi.org/packages/source/f/fps-kernels/fps_kernels-0.7.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -173,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fps-kernels.json"
  },
- "raw_meta_yaml": "{% set name = \"fps-kernels\" %}\n{% set version = \"0.7.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fps_kernels-{{ version }}.tar.gz\n  sha256: dfd41e7558e5c1c83e55a50b9e5387ee907df056e48a9d53f43f248b012a5874\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - jupyverse-api >=0.7.0,<1\n    - pyzmq\n    - websockets\n    - python-dateutil\n    - types-python-dateutil\n    - watchfiles >=1.0.4,<2\n    - pycrdt >=0.10.3,<0.13.0\n    - anyio\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fps_kernels\n\nabout:\n  home: https://github.com/jupyter-server/jupyverse/tree/main/plugins/kernels\n  summary: An FPS plugin for the kernels API\n  keywords: jupyter, server, fastapi, plugins\n  dev_url: https://github.com/jupyter-server/jupyverse/tree/main/plugins/kernels\n  license_file: COPYING.md\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
+ "raw_meta_yaml": "{% set name = \"fps-kernels\" %}\n{% set version = \"0.7.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fps_kernels-{{ version }}.tar.gz\n  sha256: e9101092202be043974c741f86efbdb220f491cf004a124a341f7c04958cbb2c\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - jupyverse-api >=0.7.0,<1\n    - pyzmq\n    - websockets\n    - python-dateutil\n    - types-python-dateutil\n    - watchfiles >=1.0.4,<2\n    - pycrdt >=0.10.3,<0.13.0\n    - anyio\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fps_kernels\n\nabout:\n  home: https://github.com/jupyter-server/jupyverse/tree/main/plugins/kernels\n  summary: An FPS plugin for the kernels API\n  keywords: jupyter, server, fastapi, plugins\n  dev_url: https://github.com/jupyter-server/jupyverse/tree/main/plugins/kernels\n  license_file: COPYING.md\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -259,8 +259,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/f/fps-kernels/fps_kernels-0.7.1.tar.gz",
- "version": "0.7.1",
+ "url": "https://pypi.org/packages/source/f/fps-kernels/fps_kernels-0.7.2.tar.gz",
+ "version": "0.7.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/fps-kernels.json"
  }
