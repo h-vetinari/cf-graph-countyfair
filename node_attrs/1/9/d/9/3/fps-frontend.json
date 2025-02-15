@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "fps-frontend",
-   "version": "0.7.1"
+   "version": "0.7.2"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ceaab9cd856a3676a6e0e3e2e7c4851ac259c0146c79c673b1adbda53b521261",
-   "url": "https://pypi.org/packages/source/f/fps-frontend/fps_frontend-0.7.1.tar.gz"
+   "sha256": "9a3d49631bb59a6c2c44a493d737ef0734cdbc0199d7c183804cf6e748c8fd73",
+   "url": "https://pypi.org/packages/source/f/fps-frontend/fps_frontend-0.7.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -101,7 +101,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra": {
@@ -111,7 +111,7 @@
   },
   "package": {
    "name": "fps-frontend",
-   "version": "0.7.1"
+   "version": "0.7.2"
   },
   "requirements": {
    "host": [
@@ -126,8 +126,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ceaab9cd856a3676a6e0e3e2e7c4851ac259c0146c79c673b1adbda53b521261",
-   "url": "https://pypi.org/packages/source/f/fps-frontend/fps_frontend-0.7.1.tar.gz"
+   "sha256": "9a3d49631bb59a6c2c44a493d737ef0734cdbc0199d7c183804cf6e748c8fd73",
+   "url": "https://pypi.org/packages/source/f/fps-frontend/fps_frontend-0.7.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -152,7 +152,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fps-frontend.json"
  },
- "raw_meta_yaml": "{% set name = \"fps-frontend\" %}\n{% set version = \"0.7.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fps_frontend-{{ version }}.tar.gz\n  sha256: ceaab9cd856a3676a6e0e3e2e7c4851ac259c0146c79c673b1adbda53b521261\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - jupyverse-api >=0.7.0,<1\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fps_frontend\n\nabout:\n  home: https://github.com/jupyter-server/jupyverse/tree/main/plugins/frontend\n  summary: An FPS plugin for the frontend related configuration\n  keywords: jupyter, server, fastapi, plugins\n  dev_url: https://github.com/jupyter-server/jupyverse/tree/main/plugins/frontend\n  license_file: COPYING.md\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
+ "raw_meta_yaml": "{% set name = \"fps-frontend\" %}\n{% set version = \"0.7.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fps_frontend-{{ version }}.tar.gz\n  sha256: 9a3d49631bb59a6c2c44a493d737ef0734cdbc0199d7c183804cf6e748c8fd73\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - jupyverse-api >=0.7.0,<1\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fps_frontend\n\nabout:\n  home: https://github.com/jupyter-server/jupyverse/tree/main/plugins/frontend\n  summary: An FPS plugin for the frontend related configuration\n  keywords: jupyter, server, fastapi, plugins\n  dev_url: https://github.com/jupyter-server/jupyverse/tree/main/plugins/frontend\n  license_file: COPYING.md\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -217,8 +217,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/f/fps-frontend/fps_frontend-0.7.1.tar.gz",
- "version": "0.7.1",
+ "url": "https://pypi.org/packages/source/f/fps-frontend/fps_frontend-0.7.2.tar.gz",
+ "version": "0.7.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/fps-frontend.json"
  }
