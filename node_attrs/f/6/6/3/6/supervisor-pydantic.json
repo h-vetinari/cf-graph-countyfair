@@ -69,7 +69,7 @@
   ],
   "package": {
    "name": "supervisor-pydantic",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "host": [
@@ -90,8 +90,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "1a981f7a5702c509a305b343938fd6f7ea6fcb60dd6f8c24e385234a8bc027bd",
-   "url": "https://pypi.org/packages/source/s/supervisor-pydantic/supervisor_pydantic-1.2.0.tar.gz"
+   "sha256": "d50083715ef1692d5223889d02906d087a7c76732f3ef4f0c9f388a4dc4f74a6",
+   "url": "https://pypi.org/packages/source/s/supervisor-pydantic/supervisor_pydantic-1.2.1.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -182,7 +182,7 @@
   ],
   "package": {
    "name": "supervisor-pydantic",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "requirements": {
    "host": [
@@ -203,8 +203,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "1a981f7a5702c509a305b343938fd6f7ea6fcb60dd6f8c24e385234a8bc027bd",
-   "url": "https://pypi.org/packages/source/s/supervisor-pydantic/supervisor_pydantic-1.2.0.tar.gz"
+   "sha256": "d50083715ef1692d5223889d02906d087a7c76732f3ef4f0c9f388a4dc4f74a6",
+   "url": "https://pypi.org/packages/source/s/supervisor-pydantic/supervisor_pydantic-1.2.1.tar.gz"
   }
  },
  "name": "supervisor-pydantic",
@@ -221,7 +221,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/supervisor-pydantic.json"
  },
- "raw_meta_yaml": "context:\n  name: supervisor-pydantic\n  version: \"1.2.0\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/s/supervisor-pydantic/supervisor_pydantic-${{ version }}.tar.gz\n  sha256: 1a981f7a5702c509a305b343938fd6f7ea6fcb60dd6f8c24e385234a8bc027bd\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - pip\n    - hatchling\n  run:\n    - python >=${{ python_min }}\n    - colorlog\n    - hydra-core\n    - jinja2\n    - omegaconf\n    - pydantic >=2\n    - rich\n    - typer\n\ntests:\n  - python:\n      imports:\n        - supervisor_pydantic\n      pip_check: true\n      python_version: ${{ python_min }}.*\n\nabout:\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Pydantic models for supervisor\n  homepage: https://github.com/airflow-laminar/supervisor-pydantic\n  repository: https://github.com/airflow-laminar/supervisor-pydantic\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
+ "raw_meta_yaml": "context:\n  name: supervisor-pydantic\n  version: \"1.2.1\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/s/supervisor-pydantic/supervisor_pydantic-${{ version }}.tar.gz\n  sha256: d50083715ef1692d5223889d02906d087a7c76732f3ef4f0c9f388a4dc4f74a6\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - pip\n    - hatchling\n  run:\n    - python >=${{ python_min }}\n    - colorlog\n    - hydra-core\n    - jinja2\n    - omegaconf\n    - pydantic >=2\n    - rich\n    - typer\n\ntests:\n  - python:\n      imports:\n        - supervisor_pydantic\n      pip_check: true\n      python_version: ${{ python_min }}.*\n\nabout:\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Pydantic models for supervisor\n  homepage: https://github.com/airflow-laminar/supervisor-pydantic\n  repository: https://github.com/airflow-laminar/supervisor-pydantic\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -304,8 +304,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/supervisor-pydantic/supervisor_pydantic-1.2.0.tar.gz",
- "version": "1.2.0",
+ "url": "https://pypi.org/packages/source/s/supervisor-pydantic/supervisor_pydantic-1.2.1.tar.gz",
+ "version": "1.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/supervisor-pydantic.json"
  }
