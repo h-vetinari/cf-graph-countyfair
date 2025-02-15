@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --ignore-installed"
   },
   "extra": {
@@ -41,12 +41,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.6",
+    "python 3.9",
     "pip",
     "versioneer-518"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "pip",
     "importlib_metadata"
    ]
@@ -54,11 +54,14 @@
   "schema_version": 0,
   "source": {
    "sha256": "e0971be11519a823b126c875e17ad3ad8adaa6a86737395b9dbcef3ca0e77b0c",
-   "url": "https://pypi.io/packages/source/d/depinfo/depinfo-2.2.0.tar.gz"
+   "url": "https://pypi.org/packages/source/d/depinfo/depinfo-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
     "depinfo"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -85,7 +88,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -101,7 +106,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --ignore-installed"
   },
   "extra": {
@@ -116,12 +121,12 @@
   },
   "requirements": {
    "host": [
-    "python >=3.6",
+    "python 3.9",
     "pip",
     "versioneer-518"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "pip",
     "importlib_metadata"
    ]
@@ -129,11 +134,14 @@
   "schema_version": 0,
   "source": {
    "sha256": "e0971be11519a823b126c875e17ad3ad8adaa6a86737395b9dbcef3ca0e77b0c",
-   "url": "https://pypi.io/packages/source/d/depinfo/depinfo-2.2.0.tar.gz"
+   "url": "https://pypi.org/packages/source/d/depinfo/depinfo-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
     "depinfo"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -151,7 +159,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/depinfo.json"
  },
- "raw_meta_yaml": "{% set name = \"depinfo\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e0971be11519a823b126c875e17ad3ad8adaa6a86737395b9dbcef3ca0e77b0c\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - versioneer-518\n  run:\n    - python >=3.6\n    - pip\n    - importlib_metadata\n\ntest:\n  imports:\n    - depinfo\n\nabout:\n  home: https://github.com/Midnighter/dependency-info\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: List any package's direct dependencies and their versions.\n  description: >\n    A utility Python package intended for other library packages. Provides a function that when called with your package name, will print platform and dependency information.\n  doc_url: https://github.com/Midnighter/dependency-info\n  dev_url: https://github.com/Midnighter/dependency-info\n\nextra:\n  recipe-maintainers:\n    - cdiener\n    - Midnighter\n",
+ "raw_meta_yaml": "{% set name = \"depinfo\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e0971be11519a823b126c875e17ad3ad8adaa6a86737395b9dbcef3ca0e77b0c\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - versioneer-518\n  run:\n    - python >={{ python_min }}\n    - pip\n    - importlib_metadata\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - depinfo\n\nabout:\n  home: https://github.com/Midnighter/dependency-info\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: List any package's direct dependencies and their versions.\n  description: >\n    A utility Python package intended for other library packages. Provides a function that when called with your package name, will print platform and dependency information.\n  doc_url: https://github.com/Midnighter/dependency-info\n  dev_url: https://github.com/Midnighter/dependency-info\n\nextra:\n  recipe-maintainers:\n    - cdiener\n    - Midnighter\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -184,7 +192,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -197,7 +207,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "versioneer-518"
    ]
   },
@@ -206,15 +216,17 @@
    "elements": [
     "importlib_metadata",
     "pip",
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/d/depinfo/depinfo-2.2.0.tar.gz",
+ "url": "https://pypi.org/packages/source/d/depinfo/depinfo-2.2.0.tar.gz",
  "version": "2.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/depinfo.json"
