@@ -12,7 +12,6 @@
   }
  },
  "feedstock_name": "openff-qcsubmit",
- "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
    "description": "The OpenFF QCSubmit framework aims to facilitate curating and contributing\nnew quantum chemical (QC) datasets to the QCArchive (or any other QCFractal instance),\nas well as to retrieve already computed datasets.\n",
@@ -40,22 +39,23 @@
   },
   "package": {
    "name": "openff-qcsubmit",
-   "version": "0.54.0"
+   "version": "0.55.0"
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.10",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10,<3.13.0a0",
     "numpy",
     "tqdm",
     "networkx",
     "qcelemental <=0.28",
     "qcportal >=0.54",
     "openff-toolkit-base >=0.12",
+    "openff-units <0.3.0",
     "rdkit",
     "pyyaml",
     "pydantic <3.0.0a0",
@@ -65,12 +65,16 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "858fff536df133019e0fe1a84f2f072e24f50108f34ca4730d767d0d9d7c8229",
-   "url": "https://github.com/openforcefield/openff-qcsubmit/archive/0.54.0.tar.gz"
+   "git_depth": "-1",
+   "git_rev": "0.55.0",
+   "git_url": "https://github.com/openforcefield/openff-qcsubmit.git"
   },
   "test": {
    "imports": [
     "openff.qcsubmit"
+   ],
+   "requires": [
+    "python 3.10"
    ]
   }
  },
@@ -94,6 +98,7 @@
     "networkx",
     "numpy",
     "openff-toolkit-base",
+    "openff-units",
     "pydantic",
     "python",
     "pyyaml",
@@ -106,7 +111,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -136,22 +143,23 @@
   },
   "package": {
    "name": "openff-qcsubmit",
-   "version": "0.54.0"
+   "version": "0.55.0"
   },
   "requirements": {
    "host": [
-    "python >=3.9",
+    "python 3.10",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10,<3.13.0a0",
     "numpy",
     "tqdm",
     "networkx",
     "qcelemental <=0.28",
     "qcportal >=0.54",
     "openff-toolkit-base >=0.12",
+    "openff-units <0.3.0",
     "rdkit",
     "pyyaml",
     "pydantic <3.0.0a0",
@@ -161,12 +169,16 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "858fff536df133019e0fe1a84f2f072e24f50108f34ca4730d767d0d9d7c8229",
-   "url": "https://github.com/openforcefield/openff-qcsubmit/archive/0.54.0.tar.gz"
+   "git_depth": "-1",
+   "git_rev": "0.55.0",
+   "git_url": "https://github.com/openforcefield/openff-qcsubmit.git"
   },
   "test": {
    "imports": [
     "openff.qcsubmit"
+   ],
+   "requires": [
+    "python 3.10"
    ]
   }
  },
@@ -184,7 +196,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/openff-qcsubmit.json"
  },
- "raw_meta_yaml": "{% set name = \"openff-qcsubmit\" %}\n{% set version = \"0.54.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/openforcefield/openff-qcsubmit/archive/{{ version }}.tar.gz\n  sha256: 858fff536df133019e0fe1a84f2f072e24f50108f34ca4730d767d0d9d7c8229\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.9\n    - pip\n    - setuptools\n  run:\n    - python >=3.9\n    - numpy\n    - tqdm\n    - networkx\n    # context https://github.com/MolSSI/QCElemental/issues/323#issuecomment-2297528477\n    - qcelemental <=0.28\n    - qcportal >=0.54\n    - openff-toolkit-base >=0.12\n    - rdkit\n    - pyyaml\n    - pydantic <3.0.0a0\n    - basis_set_exchange\n    - typing_extensions\n\ntest:\n  imports:\n    - openff.qcsubmit\n\nabout:\n  home: https://github.com/openforcefield/openff-qcsubmit\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Automated tools for submitting molecules to QCFractal\n  description: |\n    The OpenFF QCSubmit framework aims to facilitate curating and contributing\n    new quantum chemical (QC) datasets to the QCArchive (or any other QCFractal instance),\n    as well as to retrieve already computed datasets.\n  doc_url: https://openff-qcsubmit.readthedocs.io\n  dev_url: https://github.com/openforcefield/openff-qcsubmit\n\nextra:\n  recipe-maintainers:\n    - JTHorton\n    - SimonBoothroyd\n    - j-wags\n    - dotsdl\n    - mattwthompson\n",
+ "raw_meta_yaml": "{% set org = \"openforcefield\" %}\n{% set name = \"openff-qcsubmit\" %}\n{% set version = \"0.55.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/{{ org }}/{{ name }}.git\n  git_rev: {{ version }}\n  git_depth: -1\n  \nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }},<3.13.0a0\n    - numpy\n    - tqdm\n    - networkx\n    # context https://github.com/MolSSI/QCElemental/issues/323#issuecomment-2297528477\n    - qcelemental <=0.28\n    - qcportal >=0.54\n    - openff-toolkit-base >=0.12\n    - openff-units <0.3.0\n    - rdkit\n    - pyyaml\n    - pydantic <3.0.0a0\n    - basis_set_exchange\n    - typing_extensions\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - openff.qcsubmit\n\nabout:\n  home: https://github.com/openforcefield/openff-qcsubmit\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Automated tools for submitting molecules to QCFractal\n  description: |\n    The OpenFF QCSubmit framework aims to facilitate curating and contributing\n    new quantum chemical (QC) datasets to the QCArchive (or any other QCFractal instance),\n    as well as to retrieve already computed datasets.\n  doc_url: https://openff-qcsubmit.readthedocs.io\n  dev_url: https://github.com/openforcefield/openff-qcsubmit\n\nextra:\n  recipe-maintainers:\n    - JTHorton\n    - SimonBoothroyd\n    - j-wags\n    - dotsdl\n    - mattwthompson\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -192,6 +204,7 @@
    "networkx",
    "numpy",
    "openff-toolkit-base",
+   "openff-units",
    "pip",
    "pydantic",
    "python",
@@ -224,6 +237,7 @@
     "networkx",
     "numpy",
     "openff-toolkit-base",
+    "openff-units",
     "pydantic",
     "python",
     "pyyaml",
@@ -236,7 +250,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -249,7 +265,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.9",
+    "python 3.10",
     "setuptools"
    ]
   },
@@ -260,8 +276,9 @@
     "networkx",
     "numpy",
     "openff-toolkit-base >=0.12",
+    "openff-units <0.3.0",
     "pydantic <3.0.0a0",
-    "python >=3.9",
+    "python >=3.10,<3.13.0a0",
     "pyyaml",
     "qcelemental <=0.28",
     "qcportal >=0.54",
@@ -272,11 +289,13 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.10"
+   ]
   }
  },
- "url": "https://github.com/openforcefield/openff-qcsubmit/archive/0.54.0.tar.gz",
- "version": "0.54.0",
+ "url": null,
+ "version": "0.55.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/openff-qcsubmit.json"
  }
