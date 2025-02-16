@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "hyper-connections",
-   "version": "0.1.11"
+   "version": "0.1.15"
   },
   "requirements": {
    "host": [
@@ -48,8 +48,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3ef1e8729a6d8f4f795562c3afe5bedf98686523f041bdb478f90f9fa336eaef",
-   "url": "https://pypi.org/packages/source/h/hyper-connections/hyper_connections-0.1.11.tar.gz"
+   "sha256": "d36f9ea8803e82e14f233085653660ead52117ca1787186bd0fdb1970b65ce1c",
+   "url": "https://pypi.org/packages/source/h/hyper-connections/hyper_connections-0.1.15.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +112,7 @@
   },
   "package": {
    "name": "hyper-connections",
-   "version": "0.1.11"
+   "version": "0.1.15"
   },
   "requirements": {
    "host": [
@@ -128,8 +128,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3ef1e8729a6d8f4f795562c3afe5bedf98686523f041bdb478f90f9fa336eaef",
-   "url": "https://pypi.org/packages/source/h/hyper-connections/hyper_connections-0.1.11.tar.gz"
+   "sha256": "d36f9ea8803e82e14f233085653660ead52117ca1787186bd0fdb1970b65ce1c",
+   "url": "https://pypi.org/packages/source/h/hyper-connections/hyper_connections-0.1.15.tar.gz"
   },
   "test": {
    "commands": [
@@ -158,7 +158,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/hyper-connections.json"
  },
- "raw_meta_yaml": "{% set name = \"hyper-connections\" %}\n{% set version = \"0.1.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hyper_connections-{{ version }}.tar.gz\n  sha256: 3ef1e8729a6d8f4f795562c3afe5bedf98686523f041bdb478f90f9fa336eaef\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - einops >=0.8.0\n    - pytorch >=2.3\n\ntest:\n  imports:\n    - hyper_connections\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/lucidrains/hyper-connections\n  summary: Attempt to make multiple residual streams from Bytedance's Hyper-Connections paper accessible to the public\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maresb\n",
+ "raw_meta_yaml": "{% set name = \"hyper-connections\" %}\n{% set version = \"0.1.15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hyper_connections-{{ version }}.tar.gz\n  sha256: d36f9ea8803e82e14f233085653660ead52117ca1787186bd0fdb1970b65ce1c\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - einops >=0.8.0\n    - pytorch >=2.3\n\ntest:\n  imports:\n    - hyper_connections\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/lucidrains/hyper-connections\n  summary: Attempt to make multiple residual streams from Bytedance's Hyper-Connections paper accessible to the public\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maresb\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -228,8 +228,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/h/hyper-connections/hyper_connections-0.1.11.tar.gz",
- "version": "0.1.11",
+ "url": "https://pypi.org/packages/source/h/hyper-connections/hyper_connections-0.1.15.tar.gz",
+ "version": "0.1.15",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/hyper-connections.json"
  }
