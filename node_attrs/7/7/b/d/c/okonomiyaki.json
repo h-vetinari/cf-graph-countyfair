@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "okonomiyaki",
-   "version": "2.0.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8aacccce9266629b7dd5d8f2ec01a4effa2b4d676517349f7933f9742f6f0c4a",
-   "url": "https://pypi.org/packages/source/o/okonomiyaki/okonomiyaki-2.0.0.tar.gz"
+   "sha256": "f5de606542d27821fda1a59c4e13dfa9adf227a0e4dc28a408e280918b54b70e",
+   "url": "https://pypi.org/packages/source/o/okonomiyaki/okonomiyaki-3.0.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -101,7 +101,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
@@ -111,7 +111,7 @@
   },
   "package": {
    "name": "okonomiyaki",
-   "version": "2.0.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "host": [
@@ -128,8 +128,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "8aacccce9266629b7dd5d8f2ec01a4effa2b4d676517349f7933f9742f6f0c4a",
-   "url": "https://pypi.org/packages/source/o/okonomiyaki/okonomiyaki-2.0.0.tar.gz"
+   "sha256": "f5de606542d27821fda1a59c4e13dfa9adf227a0e4dc28a408e280918b54b70e",
+   "url": "https://pypi.org/packages/source/o/okonomiyaki/okonomiyaki-3.0.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -154,7 +154,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/okonomiyaki.json"
  },
- "raw_meta_yaml": "{% set name = \"okonomiyaki\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8aacccce9266629b7dd5d8f2ec01a4effa2b4d676517349f7933f9742f6f0c4a\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - attrs >=16.1.0\n    - jsonschema >=2.5.1\n    - six >=1.9.0\n    - zipfile2 >=0.0.12\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - okonomiyaki\n\nabout:\n  home: https://github.com/enthought/okonomiyaki\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Okonomiyaki is an experimental library aimed at consolidating a lot of our low-level code used for Enthought's eggs.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "raw_meta_yaml": "{% set name = \"okonomiyaki\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f5de606542d27821fda1a59c4e13dfa9adf227a0e4dc28a408e280918b54b70e\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - attrs >=16.1.0\n    - jsonschema >=2.5.1\n    - six >=1.9.0\n    - zipfile2 >=0.0.12\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - okonomiyaki\n\nabout:\n  home: https://github.com/enthought/okonomiyaki\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Okonomiyaki is an experimental library aimed at consolidating a lot of our low-level code used for Enthought's eggs.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -225,8 +225,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/o/okonomiyaki/okonomiyaki-2.0.0.tar.gz",
- "version": "2.0.0",
+ "url": "https://pypi.org/packages/source/o/okonomiyaki/okonomiyaki-3.0.0.tar.gz",
+ "version": "3.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/okonomiyaki.json"
  }
