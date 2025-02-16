@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "semchunk",
-   "version": "3.0.0"
+   "version": "3.1.0"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "04cbe842ae0ba55a7185b7c42eacee20d510f117bc5802a3e72c0efac4f191ff",
-   "url": "https://pypi.org/packages/source/s/semchunk/semchunk-3.0.0.tar.gz"
+   "sha256": "2520f5b1c3b6cf00db82be4eb219225c2d8a7a1cdfeed0bfff5dc9f0f2d570fa",
+   "url": "https://pypi.org/packages/source/s/semchunk/semchunk-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "semchunk",
-   "version": "3.0.0"
+   "version": "3.1.0"
   },
   "requirements": {
    "host": [
@@ -133,8 +133,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "04cbe842ae0ba55a7185b7c42eacee20d510f117bc5802a3e72c0efac4f191ff",
-   "url": "https://pypi.org/packages/source/s/semchunk/semchunk-3.0.0.tar.gz"
+   "sha256": "2520f5b1c3b6cf00db82be4eb219225c2d8a7a1cdfeed0bfff5dc9f0f2d570fa",
+   "url": "https://pypi.org/packages/source/s/semchunk/semchunk-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -163,7 +163,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/semchunk.json"
  },
- "raw_meta_yaml": "{% set name = \"semchunk\" %}\n{% set version = \"3.0.0\" %}\n{% set python_min = \"3.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/semchunk-{{ version }}.tar.gz\n  sha256: 04cbe842ae0ba55a7185b7c42eacee20d510f117bc5802a3e72c0efac4f191ff\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - tqdm\n    - mpire\n    - multiprocess >=0.70.15\n\ntest:\n  imports:\n    - semchunk\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  summary: A fast, lightweight and easy-to-use Python library for splitting text into semantically meaningful chunks.\n  home: https://github.com/umarbutler/semchunk\n  license: MIT\n  license_file: LICENCE\n\nextra:\n  recipe-maintainers:\n    - umarbutler\n    - dominictarro\n",
+ "raw_meta_yaml": "{% set name = \"semchunk\" %}\n{% set version = \"3.1.0\" %}\n{% set python_min = \"3.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/semchunk-{{ version }}.tar.gz\n  sha256: 2520f5b1c3b6cf00db82be4eb219225c2d8a7a1cdfeed0bfff5dc9f0f2d570fa\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }}\n    - tqdm\n    - mpire\n    - multiprocess >=0.70.15\n\ntest:\n  imports:\n    - semchunk\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  summary: A fast, lightweight and easy-to-use Python library for splitting text into semantically meaningful chunks.\n  home: https://github.com/umarbutler/semchunk\n  license: MIT\n  license_file: LICENCE\n\nextra:\n  recipe-maintainers:\n    - umarbutler\n    - dominictarro\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -236,8 +236,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/semchunk/semchunk-3.0.0.tar.gz",
- "version": "3.0.0",
+ "url": "https://pypi.org/packages/source/s/semchunk/semchunk-3.1.0.tar.gz",
+ "version": "3.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/semchunk.json"
  }
