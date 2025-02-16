@@ -38,7 +38,7 @@
    "summary": "The Z3 Theorem Prover"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "run_exports": {
     "weak": [
      "z3prover"
@@ -51,6 +51,58 @@
    ]
   },
   "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "z3prover"
+     ]
+    },
+    "name": "z3prover",
+    "requirements": {
+     "build": [
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "libgomp"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}.${{ version }}*",
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}",
+       "test -f ${PREFIX}/include/z3_algebraic.h",
+       "test -f ${PREFIX}/include/z3_api.h",
+       "test -f ${PREFIX}/include/z3_ast_containers.h",
+       "test -f ${PREFIX}/include/z3_fixedpoint.h",
+       "test -f ${PREFIX}/include/z3_fpa.h",
+       "test -f ${PREFIX}/include/z3.h",
+       "test -f ${PREFIX}/include/z3++.h",
+       "test -f ${PREFIX}/include/z3_macros.h",
+       "test -f ${PREFIX}/include/z3_optimization.h",
+       "test -f ${PREFIX}/include/z3_polynomial.h",
+       "test -f ${PREFIX}/include/z3_rcf.h",
+       "test -f ${PREFIX}/include/z3_v1.h",
+       "test -f ${PREFIX}/include/z3_spacer.h",
+       "test -f ${PREFIX}/include/z3_version.h",
+       "test -x ${PREFIX}/bin/z3",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets-release.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Config.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3ConfigVersion.cmake",
+       "test -f ${PREFIX}/lib/pkgconfig/z3.pc",
+       "z3 --help"
+      ]
+     }
+    ]
+   },
    {
     "build": {
      "strong": [],
@@ -321,7 +373,7 @@
    "summary": "The Z3 Theorem Prover"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "run_exports": {
     "weak": [
      "z3prover"
@@ -334,6 +386,58 @@
    ]
   },
   "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "z3prover"
+     ]
+    },
+    "name": "z3prover",
+    "requirements": {
+     "build": [
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "libgomp"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}.${{ version }}*",
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}",
+       "test -f ${PREFIX}/include/z3_algebraic.h",
+       "test -f ${PREFIX}/include/z3_api.h",
+       "test -f ${PREFIX}/include/z3_ast_containers.h",
+       "test -f ${PREFIX}/include/z3_fixedpoint.h",
+       "test -f ${PREFIX}/include/z3_fpa.h",
+       "test -f ${PREFIX}/include/z3.h",
+       "test -f ${PREFIX}/include/z3++.h",
+       "test -f ${PREFIX}/include/z3_macros.h",
+       "test -f ${PREFIX}/include/z3_optimization.h",
+       "test -f ${PREFIX}/include/z3_polynomial.h",
+       "test -f ${PREFIX}/include/z3_rcf.h",
+       "test -f ${PREFIX}/include/z3_v1.h",
+       "test -f ${PREFIX}/include/z3_spacer.h",
+       "test -f ${PREFIX}/include/z3_version.h",
+       "test -x ${PREFIX}/bin/z3",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets-release.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Config.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3ConfigVersion.cmake",
+       "test -f ${PREFIX}/lib/pkgconfig/z3.pc",
+       "z3 --help"
+      ]
+     }
+    ]
+   },
    {
     "build": {
      "strong": [],
@@ -604,7 +708,7 @@
    "summary": "The Z3 Theorem Prover"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "run_exports": {
     "weak": [
      "z3prover"
@@ -617,6 +721,162 @@
    ]
   },
   "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "z3prover"
+     ]
+    },
+    "name": "z3prover",
+    "requirements": {
+     "build": [
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "libgomp"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}.${{ version }}*",
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}",
+       "test -f ${PREFIX}/include/z3_algebraic.h",
+       "test -f ${PREFIX}/include/z3_api.h",
+       "test -f ${PREFIX}/include/z3_ast_containers.h",
+       "test -f ${PREFIX}/include/z3_fixedpoint.h",
+       "test -f ${PREFIX}/include/z3_fpa.h",
+       "test -f ${PREFIX}/include/z3.h",
+       "test -f ${PREFIX}/include/z3++.h",
+       "test -f ${PREFIX}/include/z3_macros.h",
+       "test -f ${PREFIX}/include/z3_optimization.h",
+       "test -f ${PREFIX}/include/z3_polynomial.h",
+       "test -f ${PREFIX}/include/z3_rcf.h",
+       "test -f ${PREFIX}/include/z3_v1.h",
+       "test -f ${PREFIX}/include/z3_spacer.h",
+       "test -f ${PREFIX}/include/z3_version.h",
+       "test -x ${PREFIX}/bin/z3",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets-release.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Config.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3ConfigVersion.cmake",
+       "test -f ${PREFIX}/lib/pkgconfig/z3.pc",
+       "z3 --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "z3prover"
+     ]
+    },
+    "name": "z3prover",
+    "requirements": {
+     "build": [
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "libgomp"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}.${{ version }}*",
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}",
+       "test -f ${PREFIX}/include/z3_algebraic.h",
+       "test -f ${PREFIX}/include/z3_api.h",
+       "test -f ${PREFIX}/include/z3_ast_containers.h",
+       "test -f ${PREFIX}/include/z3_fixedpoint.h",
+       "test -f ${PREFIX}/include/z3_fpa.h",
+       "test -f ${PREFIX}/include/z3.h",
+       "test -f ${PREFIX}/include/z3++.h",
+       "test -f ${PREFIX}/include/z3_macros.h",
+       "test -f ${PREFIX}/include/z3_optimization.h",
+       "test -f ${PREFIX}/include/z3_polynomial.h",
+       "test -f ${PREFIX}/include/z3_rcf.h",
+       "test -f ${PREFIX}/include/z3_v1.h",
+       "test -f ${PREFIX}/include/z3_spacer.h",
+       "test -f ${PREFIX}/include/z3_version.h",
+       "test -x ${PREFIX}/bin/z3",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets-release.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Config.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3ConfigVersion.cmake",
+       "test -f ${PREFIX}/lib/pkgconfig/z3.pc",
+       "z3 --help"
+      ]
+     }
+    ]
+   },
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "z3prover"
+     ]
+    },
+    "name": "z3prover",
+    "requirements": {
+     "build": [
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "libgomp"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}.${{ version }}*",
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}",
+       "test -f ${PREFIX}/include/z3_algebraic.h",
+       "test -f ${PREFIX}/include/z3_api.h",
+       "test -f ${PREFIX}/include/z3_ast_containers.h",
+       "test -f ${PREFIX}/include/z3_fixedpoint.h",
+       "test -f ${PREFIX}/include/z3_fpa.h",
+       "test -f ${PREFIX}/include/z3.h",
+       "test -f ${PREFIX}/include/z3++.h",
+       "test -f ${PREFIX}/include/z3_macros.h",
+       "test -f ${PREFIX}/include/z3_optimization.h",
+       "test -f ${PREFIX}/include/z3_polynomial.h",
+       "test -f ${PREFIX}/include/z3_rcf.h",
+       "test -f ${PREFIX}/include/z3_v1.h",
+       "test -f ${PREFIX}/include/z3_spacer.h",
+       "test -f ${PREFIX}/include/z3_version.h",
+       "test -x ${PREFIX}/bin/z3",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets-release.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Config.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3ConfigVersion.cmake",
+       "test -f ${PREFIX}/lib/pkgconfig/z3.pc",
+       "z3 --help"
+      ]
+     }
+    ]
+   },
    {
     "build": {
      "strong": [],
@@ -1277,7 +1537,7 @@
    "summary": "The Z3 Theorem Prover"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "run_exports": {
     "weak": [
      "z3prover"
@@ -1290,6 +1550,58 @@
    ]
   },
   "outputs": [
+   {
+    "build": {
+     "strong": [],
+     "weak": [
+      "z3prover"
+     ]
+    },
+    "name": "z3prover",
+    "requirements": {
+     "build": [
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "libgomp"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "script": [
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}.${{ version }}*",
+       "test -f ${PREFIX}/lib/libz3${SHLIB_EXT}",
+       "test -f ${PREFIX}/include/z3_algebraic.h",
+       "test -f ${PREFIX}/include/z3_api.h",
+       "test -f ${PREFIX}/include/z3_ast_containers.h",
+       "test -f ${PREFIX}/include/z3_fixedpoint.h",
+       "test -f ${PREFIX}/include/z3_fpa.h",
+       "test -f ${PREFIX}/include/z3.h",
+       "test -f ${PREFIX}/include/z3++.h",
+       "test -f ${PREFIX}/include/z3_macros.h",
+       "test -f ${PREFIX}/include/z3_optimization.h",
+       "test -f ${PREFIX}/include/z3_polynomial.h",
+       "test -f ${PREFIX}/include/z3_rcf.h",
+       "test -f ${PREFIX}/include/z3_v1.h",
+       "test -f ${PREFIX}/include/z3_spacer.h",
+       "test -f ${PREFIX}/include/z3_version.h",
+       "test -x ${PREFIX}/bin/z3",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Targets-release.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3Config.cmake",
+       "test -f ${PREFIX}/lib/cmake/z3/Z3ConfigVersion.cmake",
+       "test -f ${PREFIX}/lib/pkgconfig/z3.pc",
+       "z3 --help"
+      ]
+     }
+    ]
+   },
    {
     "build": {
      "strong": [],
@@ -1564,7 +1876,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/z3prover.json"
  },
- "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: z3prover\n  version: 4.13.4\n\npackage:\n  name: ${{ name }}\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/Z3Prover/z3/archive/refs/tags/z3-${{ version }}.tar.gz\n  sha256: 4071977e66e9f3d239b7b098ceddfe62ffdf3c71e345e9524a4a5001d1f4adf3\n\nbuild:\n  number: 1\n  skip: win\n\nrequirements:\n  build:\n    - ${{ stdlib('c') }}\n    - ${{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - if: linux\n      then: libgomp\n    - if: osx\n      then: llvm-openmp\n  host:\n    - python\n    - if: linux\n      then: libgomp\n    - if: osx\n      then: llvm-openmp\n  run:\n  run_exports:\n    - ${{ pin_subpackage(name, upper_bound='x') }}\n  \ntests:\n  - script:\n      - if: linux\n        then: test -f ${PREFIX}/lib/libz3${SHLIB_EXT}.${{ version }}*\n      - if: osx\n        then: test -f ${PREFIX}/lib/libz3.${{ version }}*${SHLIB_EXT}\n      - test -f ${PREFIX}/lib/libz3${SHLIB_EXT}\n      - test -f ${PREFIX}/include/z3_algebraic.h\n      - test -f ${PREFIX}/include/z3_api.h\n      - test -f ${PREFIX}/include/z3_ast_containers.h\n      - test -f ${PREFIX}/include/z3_fixedpoint.h\n      - test -f ${PREFIX}/include/z3_fpa.h\n      - test -f ${PREFIX}/include/z3.h\n      - test -f ${PREFIX}/include/z3++.h\n      - test -f ${PREFIX}/include/z3_macros.h\n      - test -f ${PREFIX}/include/z3_optimization.h\n      - test -f ${PREFIX}/include/z3_polynomial.h\n      - test -f ${PREFIX}/include/z3_rcf.h\n      - test -f ${PREFIX}/include/z3_v1.h\n      - test -f ${PREFIX}/include/z3_spacer.h\n      - test -f ${PREFIX}/include/z3_version.h\n      - test -x ${PREFIX}/bin/z3\n      - test -f ${PREFIX}/lib/cmake/z3/Z3Targets.cmake\n      - test -f ${PREFIX}/lib/cmake/z3/Z3Targets-release.cmake\n      - test -f ${PREFIX}/lib/cmake/z3/Z3Config.cmake\n      - test -f ${PREFIX}/lib/cmake/z3/Z3ConfigVersion.cmake\n      - test -f ${PREFIX}/lib/pkgconfig/z3.pc\n      - z3 --help\n\nabout:\n  license: MIT\n  license_file: LICENSE.txt\n  summary: The Z3 Theorem Prover\n  homepage: https://github.com/Z3Prover/z3\n  repository: https://github.com/Z3Prover/z3\n  documentation: https://github.com/Z3Prover/z3/wiki#background\n\nextra:\n  recipe-maintainers:\n    - martin-g\n",
+ "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: z3prover\n  version: 4.13.4\n\npackage:\n  name: ${{ name }}\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/Z3Prover/z3/archive/refs/tags/z3-${{ version }}.tar.gz\n  sha256: 4071977e66e9f3d239b7b098ceddfe62ffdf3c71e345e9524a4a5001d1f4adf3\n\nbuild:\n  number: 2\n  skip: win\n\nrequirements:\n  build:\n    - ${{ stdlib('c') }}\n    - ${{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - if: linux\n      then: libgomp\n    - if: osx\n      then: llvm-openmp\n  host:\n    - python\n    - if: linux\n      then: libgomp\n    - if: osx\n      then: llvm-openmp\n  run:\n  run_exports:\n    - ${{ pin_subpackage(name, upper_bound='x') }}\n\ntests:\n  - script:\n      - if: linux\n        then: test -f ${PREFIX}/lib/libz3${SHLIB_EXT}.${{ version }}*\n      - if: osx\n        then: test -f ${PREFIX}/lib/libz3.${{ version }}*${SHLIB_EXT}\n      - test -f ${PREFIX}/lib/libz3${SHLIB_EXT}\n      - test -f ${PREFIX}/include/z3_algebraic.h\n      - test -f ${PREFIX}/include/z3_api.h\n      - test -f ${PREFIX}/include/z3_ast_containers.h\n      - test -f ${PREFIX}/include/z3_fixedpoint.h\n      - test -f ${PREFIX}/include/z3_fpa.h\n      - test -f ${PREFIX}/include/z3.h\n      - test -f ${PREFIX}/include/z3++.h\n      - test -f ${PREFIX}/include/z3_macros.h\n      - test -f ${PREFIX}/include/z3_optimization.h\n      - test -f ${PREFIX}/include/z3_polynomial.h\n      - test -f ${PREFIX}/include/z3_rcf.h\n      - test -f ${PREFIX}/include/z3_v1.h\n      - test -f ${PREFIX}/include/z3_spacer.h\n      - test -f ${PREFIX}/include/z3_version.h\n      - test -x ${PREFIX}/bin/z3\n      - test -f ${PREFIX}/lib/cmake/z3/Z3Targets.cmake\n      - test -f ${PREFIX}/lib/cmake/z3/Z3Targets-release.cmake\n      - test -f ${PREFIX}/lib/cmake/z3/Z3Config.cmake\n      - test -f ${PREFIX}/lib/cmake/z3/Z3ConfigVersion.cmake\n      - test -f ${PREFIX}/lib/pkgconfig/z3.pc\n      - z3 --help\n\nabout:\n  license: MIT\n  license_file: LICENSE.txt\n  summary: The Z3 Theorem Prover\n  homepage: https://github.com/Z3Prover/z3\n  repository: https://github.com/Z3Prover/z3\n  documentation: https://github.com/Z3Prover/z3/wiki#background\n\nextra:\n  recipe-maintainers:\n    - martin-g\n",
  "req": {
   "__set__": true,
   "elements": [
