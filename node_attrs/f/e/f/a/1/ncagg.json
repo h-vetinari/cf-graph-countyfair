@@ -32,7 +32,7 @@
     "ncagg = ncagg.cli:cli"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": [
     "PYTHON -m pip install . -vv",
     "python -m unittest discover -s $SRC_DIR"
@@ -50,7 +50,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "numpy",
     "netcdf4",
@@ -58,7 +58,7 @@
     "click"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "numpy",
     "netcdf4",
     "cerberus",
@@ -78,7 +78,8 @@
     "ncagg"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -111,7 +112,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -131,7 +133,7 @@
     "ncagg = ncagg.cli:cli"
    ],
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": [
     "PYTHON -m pip install . -vv",
     "python -m unittest discover -s $SRC_DIR"
@@ -149,7 +151,7 @@
   },
   "requirements": {
    "host": [
-    "python >=3.7",
+    "python 3.9",
     "pip",
     "numpy",
     "netcdf4",
@@ -157,7 +159,7 @@
     "click"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "numpy",
     "netcdf4",
     "cerberus",
@@ -177,7 +179,8 @@
     "ncagg"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -195,7 +198,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ncagg.json"
  },
- "raw_meta_yaml": "{% set version = \"0.8.18\" %}\n\npackage:\n  name: ncagg\n  version: {{ version }}\n\nsource:\n  url: https://github.com/5tefan/ncagg/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: c74bdb7cc268ec9f5338495bfc469c843ae2559e1a88c135165afd3e61eb2cb7\n\nbuild:\n  noarch: python\n  entry_points:\n    - ncagg = ncagg.cli:cli\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv\n    - python -m unittest discover -s $SRC_DIR\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - numpy\n    - netcdf4\n    - cerberus\n    - click\n  run:\n    - python >=3.7\n    - numpy\n    - netcdf4\n    - cerberus\n    - click\n\ntest:\n  imports:\n    - ncagg\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/5tefan/ncagg\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Combine multiple netCDF files into one.\n  description: |\n    ncagg is a flexible aggregation software that combines multiple netcdf\n    files into a single file, with special handling for metadata.\n  doc_url: https://ncagg.readthedocs.io/en/latest/\n  dev_url: https://github.com/5tefan/ncagg\n\nextra:\n  recipe-maintainers:\n    - khallock\n    - 5tefan\n",
+ "raw_meta_yaml": "{% set version = \"0.8.18\" %}\n\npackage:\n  name: ncagg\n  version: {{ version }}\n\nsource:\n  url: https://github.com/5tefan/ncagg/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: c74bdb7cc268ec9f5338495bfc469c843ae2559e1a88c135165afd3e61eb2cb7\n\nbuild:\n  noarch: python\n  entry_points:\n    - ncagg = ncagg.cli:cli\n  number: 1\n  script:\n    - {{ PYTHON }} -m pip install . -vv\n    - python -m unittest discover -s $SRC_DIR\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - numpy\n    - netcdf4\n    - cerberus\n    - click\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - netcdf4\n    - cerberus\n    - click\n\ntest:\n  imports:\n    - ncagg\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/5tefan/ncagg\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Combine multiple netCDF files into one.\n  description: |\n    ncagg is a flexible aggregation software that combines multiple netcdf\n    files into a single file, with special handling for metadata.\n  doc_url: https://ncagg.readthedocs.io/en/latest/\n  dev_url: https://github.com/5tefan/ncagg\n\nextra:\n  recipe-maintainers:\n    - khallock\n    - 5tefan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -236,7 +239,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -254,7 +258,7 @@
     "netcdf4",
     "numpy",
     "pip",
-    "python >=3.7"
+    "python 3.9"
    ]
   },
   "run": {
@@ -264,13 +268,14 @@
     "click",
     "netcdf4",
     "numpy",
-    "python >=3.7"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
