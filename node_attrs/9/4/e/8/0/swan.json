@@ -38,7 +38,7 @@
    "summary": "A third-generation wave model, that computes random, short-crested wind-generated waves in coastal regions and inland waters."
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -141,7 +141,7 @@
    "summary": "A third-generation wave model, that computes random, short-crested wind-generated waves in coastal regions and inland waters."
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -244,7 +244,7 @@
    "summary": "A third-generation wave model, that computes random, short-crested wind-generated waves in coastal regions and inland waters."
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -375,7 +375,7 @@
    "summary": "A third-generation wave model, that computes random, short-crested wind-generated waves in coastal regions and inland waters."
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -482,7 +482,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/swan.json"
  },
- "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: swan\n  version: 41.51\n\npackage:\n  name: ${{ name }}\n  version: ${{ version }}\n\nsource:\n  url: https://swanmodel.sourceforge.io/download/zip/swan4151.tar.gz\n  sha256: 5e30107af500cadf9d6d1b6076403cc85793fd4db113d6a487fede5f74f41f77\n\nbuild:\n  number: 1\n  skip: win\n\nrequirements:\n  build:\n    - make\n    - ${{ stdlib('c') }}\n    - ${{ compiler('c') }}\n    - ${{ compiler('fortran') }}\n  host:\n    - perl\n    - openmpi\n    - netcdf-fortran\n  run:\n    - openmpi\n  \ntests:\n  - script:\n      - test -x ${PREFIX}/bin/swan.exe\n      - test -x ${PREFIX}/bin/swanrun\n\nabout:\n  license: GPL-3.0-or-later\n  license_file: swanmain.f\n  summary: A third-generation wave model, that computes random, short-crested wind-generated waves in coastal regions and inland waters.\n  homepage: https://swanmodel.sourceforge.io/\n  repository: https://swanmodel.sourceforge.io/online_doc/swanuse/swanuse.html\n  documentation: https://swanmodel.sourceforge.io/\n\nextra:\n  recipe-maintainers:\n    - martin-g\n",
+ "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: swan\n  version: 41.51\n\npackage:\n  name: ${{ name }}\n  version: ${{ version }}\n\nsource:\n  url: https://swanmodel.sourceforge.io/download/zip/swan4151.tar.gz\n  sha256: 5e30107af500cadf9d6d1b6076403cc85793fd4db113d6a487fede5f74f41f77\n\nbuild:\n  number: 2\n  skip: win\n\nrequirements:\n  build:\n    - make\n    - ${{ stdlib('c') }}\n    - ${{ compiler('c') }}\n    - ${{ compiler('fortran') }}\n  host:\n    - perl\n    - openmpi\n    - netcdf-fortran\n  run:\n    - openmpi\n\ntests:\n  - script:\n      - test -x ${PREFIX}/bin/swan.exe\n      - test -x ${PREFIX}/bin/swanrun\n\nabout:\n  license: GPL-3.0-or-later\n  license_file: swanmain.f\n  summary: A third-generation wave model, that computes random, short-crested wind-generated waves in coastal regions and inland waters.\n  homepage: https://swanmodel.sourceforge.io/\n  repository: https://swanmodel.sourceforge.io/online_doc/swanuse/swanuse.html\n  documentation: https://swanmodel.sourceforge.io/\n\nextra:\n  recipe-maintainers:\n    - martin-g\n",
  "req": {
   "__set__": true,
   "elements": [
