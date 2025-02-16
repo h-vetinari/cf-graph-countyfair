@@ -42,7 +42,7 @@
   },
   "package": {
    "name": "ocamlbuild",
-   "version": "0.16.0"
+   "version": "0.16.1"
   },
   "requirements": {
    "build": [
@@ -59,9 +59,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "ocamlbuild-0.16.0.tar.gz",
-   "sha256": "104fa954c28a6d731674f2844e3f0c87b08db51d38f4ea25f4653bb60ef2e8f1",
-   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.0.tar.gz"
+   "fn": "ocamlbuild-0.16.1.tar.gz",
+   "sha256": "2ba6857f2991b7f69368e8db818b163d31cf5a367f15f5953bf8f01a77b3d4fc",
+   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -117,7 +117,7 @@
   },
   "package": {
    "name": "ocamlbuild",
-   "version": "0.16.0"
+   "version": "0.16.1"
   },
   "requirements": {
    "build": [
@@ -134,9 +134,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "ocamlbuild-0.16.0.tar.gz",
-   "sha256": "104fa954c28a6d731674f2844e3f0c87b08db51d38f4ea25f4653bb60ef2e8f1",
-   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.0.tar.gz"
+   "fn": "ocamlbuild-0.16.1.tar.gz",
+   "sha256": "2ba6857f2991b7f69368e8db818b163d31cf5a367f15f5953bf8f01a77b3d4fc",
+   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -192,7 +192,7 @@
   },
   "package": {
    "name": "ocamlbuild",
-   "version": "0.16.0"
+   "version": "0.16.1"
   },
   "requirements": {
    "build": [
@@ -209,9 +209,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "ocamlbuild-0.16.0.tar.gz",
-   "sha256": "104fa954c28a6d731674f2844e3f0c87b08db51d38f4ea25f4653bb60ef2e8f1",
-   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.0.tar.gz"
+   "fn": "ocamlbuild-0.16.1.tar.gz",
+   "sha256": "2ba6857f2991b7f69368e8db818b163d31cf5a367f15f5953bf8f01a77b3d4fc",
+   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -267,7 +267,7 @@
   },
   "package": {
    "name": "ocamlbuild",
-   "version": "0.16.0"
+   "version": "0.16.1"
   },
   "requirements": {
    "build": [
@@ -284,9 +284,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "ocamlbuild-0.16.0.tar.gz",
-   "sha256": "104fa954c28a6d731674f2844e3f0c87b08db51d38f4ea25f4653bb60ef2e8f1",
-   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.0.tar.gz"
+   "fn": "ocamlbuild-0.16.1.tar.gz",
+   "sha256": "2ba6857f2991b7f69368e8db818b163d31cf5a367f15f5953bf8f01a77b3d4fc",
+   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -317,7 +317,7 @@
   },
   "package": {
    "name": "ocamlbuild",
-   "version": "0.16.0"
+   "version": "0.16.1"
   },
   "requirements": {
    "build": [
@@ -334,9 +334,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "ocamlbuild-0.16.0.tar.gz",
-   "sha256": "104fa954c28a6d731674f2844e3f0c87b08db51d38f4ea25f4653bb60ef2e8f1",
-   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.0.tar.gz"
+   "fn": "ocamlbuild-0.16.1.tar.gz",
+   "sha256": "2ba6857f2991b7f69368e8db818b163d31cf5a367f15f5953bf8f01a77b3d4fc",
+   "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -387,7 +387,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ocamlbuild.json"
  },
- "raw_meta_yaml": "{% set name = \"ocamlbuild\" %}\n{% set version = \"0.16.0\" %}\n{% set sha256 = \"104fa954c28a6d731674f2844e3f0c87b08db51d38f4ea25f4653bb60ef2e8f1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ocaml/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - make\n  host:\n    - ocaml\n  run:\n    - ocaml\n\ntest:\n  commands:\n    - ocamlbuild -version\n    - ocamlbuild.native -version\n\nabout:\n  home: https://ocaml.org/\n  license: LGPL-2.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: OCamlbuild is a generic build tool, that has built-in rules for building OCaml library and programs.\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    OCaml is an implementation of the ML language, based on the Caml Light\n    dialect extended with a complete class-based object system and a powerful\n    module system in the style of Standard ML.\n\n    OCamlbuild was distributed as part of the OCaml distribution for OCaml\n    versions between 3.10.0 and 4.02.3. Starting from OCaml 4.03, it is now\n    released separately (with its own version numbering).\n\n    You should refer to the OCambuild manual for more informations on how to\n    use ocamlbuild.\n  doc_url: https://github.com/ocaml/ocamlbuild/blob/master/manual/manual.adoc\n  dev_url: https://github.com/ocaml/ocamlbuild\n\nextra:\n  recipe-maintainers:\n    - peterjc\n",
+ "raw_meta_yaml": "{% set name = \"ocamlbuild\" %}\n{% set version = \"0.16.1\" %}\n{% set sha256 = \"2ba6857f2991b7f69368e8db818b163d31cf5a367f15f5953bf8f01a77b3d4fc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ocaml/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - make\n  host:\n    - ocaml\n  run:\n    - ocaml\n\ntest:\n  commands:\n    - ocamlbuild -version\n    - ocamlbuild.native -version\n\nabout:\n  home: https://ocaml.org/\n  license: LGPL-2.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: OCamlbuild is a generic build tool, that has built-in rules for building OCaml library and programs.\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    OCaml is an implementation of the ML language, based on the Caml Light\n    dialect extended with a complete class-based object system and a powerful\n    module system in the style of Standard ML.\n\n    OCamlbuild was distributed as part of the OCaml distribution for OCaml\n    versions between 3.10.0 and 4.02.3. Starting from OCaml 4.03, it is now\n    released separately (with its own version numbering).\n\n    You should refer to the OCambuild manual for more informations on how to\n    use ocamlbuild.\n  doc_url: https://github.com/ocaml/ocamlbuild/blob/master/manual/manual.adoc\n  dev_url: https://github.com/ocaml/ocamlbuild\n\nextra:\n  recipe-maintainers:\n    - peterjc\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -454,8 +454,8 @@
    "elements": []
   }
  },
- "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.0.tar.gz",
- "version": "0.16.0",
+ "url": "https://github.com/ocaml/ocamlbuild/archive/0.16.1.tar.gz",
+ "version": "0.16.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ocamlbuild.json"
  }
