@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,12 +40,12 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.7",
+    "python 3.9",
     "hatchling >=1.8.0",
     "hatch-vcs"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "packaging >=20",
     "anaflow >=1.0.0",
     "numpy >=1.14.5",
@@ -57,7 +57,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "2182ef49db042531c82319a66014819210d9886fd695b81e0b22196b314f8ced",
-   "url": "https://pypi.io/packages/source/w/welltestpy/welltestpy-1.2.0.tar.gz"
+   "url": "https://pypi.org/packages/source/w/welltestpy/welltestpy-1.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -67,7 +67,8 @@
     "welltestpy"
    ],
    "requires": [
-    "pytest"
+    "pytest",
+    "python 3.9"
    ],
    "source_files": [
     "tests"
@@ -103,7 +104,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python"
    ]
   }
  },
@@ -119,7 +121,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -134,12 +136,12 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.7",
+    "python 3.9",
     "hatchling >=1.8.0",
     "hatch-vcs"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.9",
     "packaging >=20",
     "anaflow >=1.0.0",
     "numpy >=1.14.5",
@@ -151,7 +153,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "2182ef49db042531c82319a66014819210d9886fd695b81e0b22196b314f8ced",
-   "url": "https://pypi.io/packages/source/w/welltestpy/welltestpy-1.2.0.tar.gz"
+   "url": "https://pypi.org/packages/source/w/welltestpy/welltestpy-1.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -161,7 +163,8 @@
     "welltestpy"
    ],
    "requires": [
-    "pytest"
+    "pytest",
+    "python 3.9"
    ],
    "source_files": [
     "tests"
@@ -182,7 +185,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/welltestpy.json"
  },
- "raw_meta_yaml": "{% set name = \"welltestpy\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2182ef49db042531c82319a66014819210d9886fd695b81e0b22196b314f8ced\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n    - hatchling >=1.8.0\n    - hatch-vcs\n  run:\n    - python >=3.7\n    - packaging >=20\n    - anaflow >=1.0.0\n    - numpy >=1.14.5\n    - scipy >=1.1.0\n    - spotpy >=1.5.0\n    - matplotlib-base\n\ntest:\n  imports:\n    - welltestpy\n  requires:\n    - pytest\n  source_files:\n    - tests\n  commands:\n    - pytest -vv tests\n\nabout:\n  home: https://github.com/GeoStat-Framework/welltestpy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: welltestpy - package to handle well-based Field-campaigns.\n  doc_url: https://welltestpy.readthedocs.io/\n  dev_url: https://github.com/GeoStat-Framework/welltestpy\n\nextra:\n  recipe-maintainers:\n    - MuellerSeb\n",
+ "raw_meta_yaml": "{% set name = \"welltestpy\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2182ef49db042531c82319a66014819210d9886fd695b81e0b22196b314f8ced\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - hatchling >=1.8.0\n    - hatch-vcs\n  run:\n    - python >={{ python_min }}\n    - packaging >=20\n    - anaflow >=1.0.0\n    - numpy >=1.14.5\n    - scipy >=1.1.0\n    - spotpy >=1.5.0\n    - matplotlib-base\n\ntest:\n  imports:\n    - welltestpy\n  requires:\n    - pytest\n    - python {{ python_min }}\n  source_files:\n    - tests\n  commands:\n    - pytest -vv tests\n\nabout:\n  home: https://github.com/GeoStat-Framework/welltestpy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: welltestpy - package to handle well-based Field-campaigns.\n  doc_url: https://welltestpy.readthedocs.io/\n  dev_url: https://github.com/GeoStat-Framework/welltestpy\n\nextra:\n  recipe-maintainers:\n    - MuellerSeb\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -227,7 +230,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python"
    ]
   }
  },
@@ -243,7 +247,7 @@
     "hatch-vcs",
     "hatchling >=1.8.0",
     "pip",
-    "python >=3.7"
+    "python 3.9"
    ]
   },
   "run": {
@@ -253,7 +257,7 @@
     "matplotlib-base",
     "numpy >=1.14.5",
     "packaging >=20",
-    "python >=3.7",
+    "python >=3.9",
     "scipy >=1.1.0",
     "spotpy >=1.5.0"
    ]
@@ -261,11 +265,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pytest"
+    "pytest",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/w/welltestpy/welltestpy-1.2.0.tar.gz",
+ "url": "https://pypi.org/packages/source/w/welltestpy/welltestpy-1.2.0.tar.gz",
  "version": "1.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/welltestpy.json"
