@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "tf-keras",
-   "version": "2.17.0"
+   "version": "2.18.0"
   },
   "requirements": {
    "host": [
@@ -44,14 +44,14 @@
    "run": [
     "python >=3.9",
     "numpy >=1.23",
-    "tensorflow >=2.17,<2.18"
+    "tensorflow >=2.18,<2.19"
    ]
   },
   "schema_version": 0,
   "source": [
    {
-    "sha256": "fda97c18da30da0f72a5a7e80f3eee343b09f4c206dad6c57c944fb2cd18560e",
-    "url": "https://pypi.org/packages/source/t/tf-keras/tf_keras-2.17.0.tar.gz"
+    "sha256": "ebf744519b322afead33086a2aba872245473294affd40973694f3eb7c7ad77d",
+    "url": "https://pypi.org/packages/source/t/tf-keras/tf_keras-2.18.0.tar.gz"
    },
    {
     "fn": "LICENSE",
@@ -111,7 +111,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -121,7 +121,7 @@
   },
   "package": {
    "name": "tf-keras",
-   "version": "2.17.0"
+   "version": "2.18.0"
   },
   "requirements": {
    "host": [
@@ -132,14 +132,14 @@
    "run": [
     "python >=3.9",
     "numpy >=1.23",
-    "tensorflow >=2.17,<2.18"
+    "tensorflow >=2.18,<2.19"
    ]
   },
   "schema_version": 0,
   "source": [
    {
-    "sha256": "fda97c18da30da0f72a5a7e80f3eee343b09f4c206dad6c57c944fb2cd18560e",
-    "url": "https://pypi.org/packages/source/t/tf-keras/tf_keras-2.17.0.tar.gz"
+    "sha256": "ebf744519b322afead33086a2aba872245473294affd40973694f3eb7c7ad77d",
+    "url": "https://pypi.org/packages/source/t/tf-keras/tf_keras-2.18.0.tar.gz"
    },
    {
     "fn": "LICENSE",
@@ -174,7 +174,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tf-keras.json"
  },
- "raw_meta_yaml": "{% set name = \"tf-keras\" %}\n{% set version = \"2.17.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tf_keras-{{ version }}.tar.gz\n    sha256: fda97c18da30da0f72a5a7e80f3eee343b09f4c206dad6c57c944fb2cd18560e\n  - fn: LICENSE\n    url: https://raw.githubusercontent.com/keras-team/tf-keras/master/LICENSE\n    sha256: 58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.23\n    - tensorflow >=2.17,<2.18\n\ntest:\n  imports:\n    - tf_keras\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://keras.io/\n  dev_url: https://github.com/keras-team/tf-keras\n  summary: Deep learning for humans.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/keras\n",
+ "raw_meta_yaml": "{% set name = \"tf-keras\" %}\n{% set version = \"2.18.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tf_keras-{{ version }}.tar.gz\n    sha256: ebf744519b322afead33086a2aba872245473294affd40973694f3eb7c7ad77d\n  - fn: LICENSE\n    url: https://raw.githubusercontent.com/keras-team/tf-keras/master/LICENSE\n    sha256: 58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.23\n    - tensorflow >=2.18,<2.19\n\ntest:\n  imports:\n    - tf_keras\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://keras.io/\n  dev_url: https://github.com/keras-team/tf-keras\n  summary: Deep learning for humans.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/keras\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -233,7 +233,7 @@
    "elements": [
     "numpy >=1.23",
     "python >=3.9",
-    "tensorflow >=2.17,<2.18"
+    "tensorflow >=2.18,<2.19"
    ]
   },
   "test": {
@@ -244,8 +244,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/tf-keras/tf_keras-2.17.0.tar.gz",
- "version": "2.17.0",
+ "url": "https://pypi.org/packages/source/t/tf-keras/tf_keras-2.18.0.tar.gz",
+ "version": "2.18.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/tf-keras.json"
  }
