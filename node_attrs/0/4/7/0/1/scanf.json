@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -36,13 +36,14 @@
   },
   "package": {
    "name": "scanf",
-   "version": "1.5.2"
+   "version": "1.6.0"
   },
   "requirements": {
    "host": [
     "pip",
     "python 3.9",
-    "setuptools"
+    "setuptools",
+    "flit-core"
    ],
    "run": [
     "python >=3.9"
@@ -50,8 +51,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "57633440a02a138cd14b693d09270af0a03bb017e8d4cfd248c7988b31b8cb81",
-   "url": "https://pypi.org/packages/source/s/scanf/scanf-1.5.2.tar.gz"
+   "patches": [
+    "python.patch"
+   ],
+   "sha256": "7671292b825eb1cbdbdcacf3e30e761fc482bf3671c835e216b8b6f14758a272",
+   "url": "https://pypi.org/packages/source/s/scanf/scanf-1.6.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -74,6 +78,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "flit-core",
     "pip",
     "python",
     "setuptools"
@@ -106,7 +111,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -116,13 +121,14 @@
   },
   "package": {
    "name": "scanf",
-   "version": "1.5.2"
+   "version": "1.6.0"
   },
   "requirements": {
    "host": [
     "pip",
     "python 3.9",
-    "setuptools"
+    "setuptools",
+    "flit-core"
    ],
    "run": [
     "python >=3.9"
@@ -130,8 +136,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "57633440a02a138cd14b693d09270af0a03bb017e8d4cfd248c7988b31b8cb81",
-   "url": "https://pypi.org/packages/source/s/scanf/scanf-1.5.2.tar.gz"
+   "patches": [
+    "python.patch"
+   ],
+   "sha256": "7671292b825eb1cbdbdcacf3e30e761fc482bf3671c835e216b8b6f14758a272",
+   "url": "https://pypi.org/packages/source/s/scanf/scanf-1.6.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -160,10 +169,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/scanf.json"
  },
- "raw_meta_yaml": "{% set name = \"scanf\" %}\n{% set version = \"1.5.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 57633440a02a138cd14b693d09270af0a03bb017e8d4cfd248c7988b31b8cb81\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - scanf\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/joshburnett/scanf\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A small scanf implementation\n\n  description: |\n    Python has powerful regular expressions but they can be totally \n    overkill for many simpler situations. Additionally, some common \n    numerical formats require quite complex regex's to match them \n    robustly. This python implementation of scanf internally \n    translates the simple scanf format into regular expressions, \n    then returns the parsed values.\n  doc_url: https://github.com/joshburnett/scanf\n  dev_url: https://github.com/joshburnett/scanf\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"scanf\" %}\n{% set version = \"1.6.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7671292b825eb1cbdbdcacf3e30e761fc482bf3671c835e216b8b6f14758a272\n  patches:\n    - python.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - flit-core\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - scanf\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/joshburnett/scanf\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A small scanf implementation\n\n  description: |\n    Python has powerful regular expressions but they can be totally \n    overkill for many simpler situations. Additionally, some common \n    numerical formats require quite complex regex's to match them \n    robustly. This python implementation of scanf internally \n    translates the simple scanf format into regular expressions, \n    then returns the parsed values.\n  doc_url: https://github.com/joshburnett/scanf\n  dev_url: https://github.com/joshburnett/scanf\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
+   "flit-core",
    "pip",
    "python",
    "setuptools"
@@ -177,6 +187,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "flit-core",
     "pip",
     "python",
     "setuptools"
@@ -205,6 +216,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "flit-core",
     "pip",
     "python 3.9",
     "setuptools"
@@ -224,8 +236,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/scanf/scanf-1.5.2.tar.gz",
- "version": "1.5.2",
+ "url": "https://pypi.org/packages/source/s/scanf/scanf-1.6.0.tar.gz",
+ "version": "1.6.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/scanf.json"
  }
