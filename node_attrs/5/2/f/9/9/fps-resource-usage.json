@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "fps-resource-usage",
-   "version": "0.7.1"
+   "version": "0.7.2"
   },
   "requirements": {
    "host": [
@@ -53,8 +53,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1608cce8d76aac0969093419087189786e5e589c8d284cb6f420ef6aad6ba86d",
-   "url": "https://pypi.org/packages/source/f/fps-resource-usage/fps_resource_usage-0.7.1.tar.gz"
+   "sha256": "2db6139592a639c5880ee3967b927c2cb94ebe6cf864f598d90c69ac338ff64a",
+   "url": "https://pypi.org/packages/source/f/fps-resource-usage/fps_resource_usage-0.7.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -117,7 +117,7 @@
   },
   "package": {
    "name": "fps-resource-usage",
-   "version": "0.7.1"
+   "version": "0.7.2"
   },
   "requirements": {
    "host": [
@@ -135,8 +135,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1608cce8d76aac0969093419087189786e5e589c8d284cb6f420ef6aad6ba86d",
-   "url": "https://pypi.org/packages/source/f/fps-resource-usage/fps_resource_usage-0.7.1.tar.gz"
+   "sha256": "2db6139592a639c5880ee3967b927c2cb94ebe6cf864f598d90c69ac338ff64a",
+   "url": "https://pypi.org/packages/source/f/fps-resource-usage/fps_resource_usage-0.7.2.tar.gz"
   },
   "test": {
    "imports": [
@@ -161,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fps-resource-usage.json"
  },
- "raw_meta_yaml": "{% set name = \"fps-resource-usage\" %}\n{% set version = \"0.7.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fps_resource_usage-{{ version }}.tar.gz\n  sha256: 1608cce8d76aac0969093419087189786e5e589c8d284cb6f420ef6aad6ba86d\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - jupyverse-api >=0.7.0,<1\n    - psutil >=5.9.4\n    - types-psutil\n    - anyio >=3.6.2,<5\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fps_resource_usage\n\nabout:\n  home: https://github.com/jupyter-server/jupyverse/tree/main/plugins/resource_usage\n  summary: An FPS plugin for the resource usage API\n  keywords: jupyter, server, fastapi, plugins\n  dev_url: https://github.com/jupyter-server/jupyverse/tree/main/plugins/resource_usage\n  license_file: COPYING.md\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
+ "raw_meta_yaml": "{% set name = \"fps-resource-usage\" %}\n{% set version = \"0.7.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fps_resource_usage-{{ version }}.tar.gz\n  sha256: 2db6139592a639c5880ee3967b927c2cb94ebe6cf864f598d90c69ac338ff64a\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - jupyverse-api >=0.7.0,<1\n    - psutil >=5.9.4\n    - types-psutil\n    - anyio >=3.6.2,<5\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - fps_resource_usage\n\nabout:\n  home: https://github.com/jupyter-server/jupyverse/tree/main/plugins/resource_usage\n  summary: An FPS plugin for the resource usage API\n  keywords: jupyter, server, fastapi, plugins\n  dev_url: https://github.com/jupyter-server/jupyverse/tree/main/plugins/resource_usage\n  license_file: COPYING.md\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -235,8 +235,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/f/fps-resource-usage/fps_resource_usage-0.7.1.tar.gz",
- "version": "0.7.1",
+ "url": "https://pypi.org/packages/source/f/fps-resource-usage/fps_resource_usage-0.7.2.tar.gz",
+ "version": "0.7.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/fps-resource-usage.json"
  }
