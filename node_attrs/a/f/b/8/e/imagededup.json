@@ -26,7 +26,7 @@
    "summary": "Finding duplicate images made easy!"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "python -m pip install . -vv"
   },
   "extra": {
@@ -35,6 +35,42 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "imagededup",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pip",
+      "setuptools",
+      "cython >=0.29.0"
+     ],
+     "run": [
+      "python",
+      "pytorch",
+      "torchvision",
+      "pillow >=9.0",
+      "tqdm",
+      "scikit-learn",
+      "pywavelets",
+      "matplotlib-base"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "imagededup"
+       ]
+      }
+     }
+    ]
+   },
    {
     "build": null,
     "name": "imagededup",
@@ -263,7 +299,7 @@
    "summary": "Finding duplicate images made easy!"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "python -m pip install . -vv"
   },
   "extra": {
@@ -272,6 +308,78 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "imagededup",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pip",
+      "setuptools",
+      "cython >=0.29.0"
+     ],
+     "run": [
+      "python",
+      "pytorch",
+      "torchvision",
+      "pillow >=9.0",
+      "tqdm",
+      "scikit-learn",
+      "pywavelets",
+      "matplotlib-base"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "imagededup"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "imagededup",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pip",
+      "setuptools",
+      "cython >=0.29.0"
+     ],
+     "run": [
+      "python",
+      "pytorch",
+      "torchvision",
+      "pillow >=9.0",
+      "tqdm",
+      "scikit-learn",
+      "pywavelets",
+      "matplotlib-base"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "imagededup"
+       ]
+      }
+     }
+    ]
+   },
    {
     "build": null,
     "name": "imagededup",
@@ -607,7 +715,7 @@
    "summary": "Finding duplicate images made easy!"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "python -m pip install . -vv"
   },
   "extra": {
@@ -616,6 +724,42 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "imagededup",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pip",
+      "setuptools",
+      "cython >=0.29.0"
+     ],
+     "run": [
+      "python",
+      "pytorch",
+      "torchvision",
+      "pillow >=9.0",
+      "tqdm",
+      "scikit-learn",
+      "pywavelets",
+      "matplotlib-base"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "imagededup"
+       ]
+      }
+     }
+    ]
+   },
    {
     "build": null,
     "name": "imagededup",
@@ -846,7 +990,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/imagededup.json"
  },
- "raw_meta_yaml": "context:\n  name: imagededup\n  version: \"0.3.2\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  # No source distribution available, see issue https://github.com/idealo/imagededup/issues/222\n  url: https://github.com/idealo/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: 2a890cd92f884eb50b95daf7c375d56bf955c239602cece4f8fcca2aaddade7e\n\nbuild:\n  script: python -m pip install . -vv\n  number: 0\n  # windows build requires pytorch\n  skip: win\n\nrequirements:\n  build:\n    - ${{ compiler('c') }}\n    - ${{ compiler('cxx') }}\n    - ${{ stdlib('c') }}   \n  host:\n    - python\n    - pip\n    - setuptools\n    - cython >=0.29.0\n  run:\n    - python\n    - pytorch\n    - torchvision\n    - pillow >=9.0\n    - tqdm\n    - scikit-learn\n    - pywavelets\n    - matplotlib-base\n\ntests:\n  - python:\n      imports:\n      - imagededup\n      pip_check: true\n\nabout:\n  homepage: https://github.com/idealo/imagededup\n  summary: 'Finding duplicate images made easy!'\n  description: |\n    This package provides functionality to make use of hashing algorithms that are particularly good at finding exact duplicates as well as convolutional neural networks which are also adept at finding near duplicates. An evaluation framework is also provided to judge the quality of deduplication for a given dataset.\n  license: Apache-2.0\n  license_file: LICENSE\n  documentation: https://idealo.github.io/imagededup/\n  repository: https://idealo.github.io/imagededup/\n\nextra:\n  recipe-maintainers:\n    - EllaBootQC\n",
+ "raw_meta_yaml": "context:\n  name: imagededup\n  version: \"0.3.2\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  # No source distribution available, see issue https://github.com/idealo/imagededup/issues/222\n  url: https://github.com/idealo/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: 2a890cd92f884eb50b95daf7c375d56bf955c239602cece4f8fcca2aaddade7e\n\nbuild:\n  script: python -m pip install . -vv\n  number: 1\n  # windows build requires pytorch\n  skip: win\n\nrequirements:\n  build:\n    - ${{ compiler('c') }}\n    - ${{ compiler('cxx') }}\n    - ${{ stdlib('c') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - cython >=0.29.0\n  run:\n    - python\n    - pytorch\n    - torchvision\n    - pillow >=9.0\n    - tqdm\n    - scikit-learn\n    - pywavelets\n    - matplotlib-base\n\ntests:\n  - python:\n      imports:\n        - imagededup\n      pip_check: true\n\nabout:\n  homepage: https://github.com/idealo/imagededup\n  summary: 'Finding duplicate images made easy!'\n  description: |\n    This package provides functionality to make use of hashing algorithms that are particularly good at finding exact duplicates as well as convolutional neural networks which are also adept at finding near duplicates. An evaluation framework is also provided to judge the quality of deduplication for a given dataset.\n  license: Apache-2.0\n  license_file: LICENSE\n  documentation: https://idealo.github.io/imagededup/\n  repository: https://idealo.github.io/imagededup/\n\nextra:\n  recipe-maintainers:\n    - EllaBootQC\n",
  "req": {
   "__set__": true,
   "elements": [
