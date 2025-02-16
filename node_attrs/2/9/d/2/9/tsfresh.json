@@ -29,7 +29,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra": {
@@ -42,7 +42,7 @@
   },
   "package": {
    "name": "tsfresh",
-   "version": "0.20.3"
+   "version": "0.21.0"
   },
   "requirements": {
    "host": [
@@ -53,6 +53,7 @@
     "pyscaffold <4,>=3.3a0"
    ],
    "run": [
+    "pywavelets",
     "python >=3.9",
     "setuptools",
     "requests >=2.9.1",
@@ -71,9 +72,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "tsfresh-0.20.3.tar.gz",
-   "sha256": "cd12e1bfa2d51fff476c5384c630208fedbc8c098730e7907994b9d742258656",
-   "url": "https://pypi.org/packages/source/t/tsfresh/tsfresh-0.20.3.tar.gz"
+   "fn": "tsfresh-0.21.0.tar.gz",
+   "sha256": "9942c2f78523ea12d0403b443293e45d4f1e78f750e5264fabddd2575cd75c43",
+   "url": "https://pypi.org/packages/source/t/tsfresh/tsfresh-0.21.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -113,6 +114,7 @@
     "pandas",
     "patsy",
     "python",
+    "pywavelets",
     "requests",
     "scikit-learn",
     "scipy",
@@ -142,7 +144,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra": {
@@ -155,7 +157,7 @@
   },
   "package": {
    "name": "tsfresh",
-   "version": "0.20.3"
+   "version": "0.21.0"
   },
   "requirements": {
    "host": [
@@ -166,6 +168,7 @@
     "pyscaffold <4,>=3.3a0"
    ],
    "run": [
+    "pywavelets",
     "python >=3.9",
     "setuptools",
     "requests >=2.9.1",
@@ -184,9 +187,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "tsfresh-0.20.3.tar.gz",
-   "sha256": "cd12e1bfa2d51fff476c5384c630208fedbc8c098730e7907994b9d742258656",
-   "url": "https://pypi.org/packages/source/t/tsfresh/tsfresh-0.20.3.tar.gz"
+   "fn": "tsfresh-0.21.0.tar.gz",
+   "sha256": "9942c2f78523ea12d0403b443293e45d4f1e78f750e5264fabddd2575cd75c43",
+   "url": "https://pypi.org/packages/source/t/tsfresh/tsfresh-0.21.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -215,7 +218,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tsfresh.json"
  },
- "raw_meta_yaml": "{% set name = \"tsfresh\" %}\n{% set version = \"0.20.3\" %}\n{% set sha256 = \"cd12e1bfa2d51fff476c5384c630208fedbc8c098730e7907994b9d742258656\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools_scm\n    - setuptools\n    - pyscaffold <4,>=3.3a0\n  run:\n    - python >={{ python_min }}\n    - setuptools\n    - requests >=2.9.1\n    - numpy >=1.15.1\n    - pandas >=0.25.0\n    - scipy >=1.2.0\n    - statsmodels >=0.13\n    - patsy >=0.4.1\n    - scikit-learn >=0.22.0\n    - tqdm >=4.10.0\n    - dask[dataframe] >=2.9.0\n    - distributed >=2.11.0\n    - stumpy >=1.7.2\n    - cloudpickle\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - tsfresh\n\nabout:\n  home: http://github.com/blue-yonder/tsfresh\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Automatic extraction of relevant features from time series\n\n  doc_url: http://tsfresh.readthedocs.io/\n  dev_url: https://github.com/blue-yonder/tsfresh\n\nextra:\n  recipe-maintainers:\n    - kempa-liehr\n    - MaxBenChrist\n    - nils-braun\n    - xhochy\n",
+ "raw_meta_yaml": "{% set name = \"tsfresh\" %}\n{% set version = \"0.21.0\" %}\n{% set sha256 = \"9942c2f78523ea12d0403b443293e45d4f1e78f750e5264fabddd2575cd75c43\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools_scm\n    - setuptools\n    - pyscaffold <4,>=3.3a0\n  run:\n    - pywavelets\n    - python >={{ python_min }}\n    - setuptools\n    - requests >=2.9.1\n    - numpy >=1.15.1\n    - pandas >=0.25.0\n    - scipy >=1.2.0\n    - statsmodels >=0.13\n    - patsy >=0.4.1\n    - scikit-learn >=0.22.0\n    - tqdm >=4.10.0\n    - dask[dataframe] >=2.9.0\n    - distributed >=2.11.0\n    - stumpy >=1.7.2\n    - cloudpickle\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - tsfresh\n\nabout:\n  home: http://github.com/blue-yonder/tsfresh\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Automatic extraction of relevant features from time series\n\n  doc_url: http://tsfresh.readthedocs.io/\n  dev_url: https://github.com/blue-yonder/tsfresh\n\nextra:\n  recipe-maintainers:\n    - kempa-liehr\n    - MaxBenChrist\n    - nils-braun\n    - xhochy\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -228,6 +231,7 @@
    "pip",
    "pyscaffold",
    "python",
+   "pywavelets",
    "requests",
    "scikit-learn",
    "scipy",
@@ -263,6 +267,7 @@
     "pandas",
     "patsy",
     "python",
+    "pywavelets",
     "requests",
     "scikit-learn",
     "scipy",
@@ -306,6 +311,7 @@
     "pandas >=0.25.0",
     "patsy >=0.4.1",
     "python >=3.9",
+    "pywavelets",
     "requests >=2.9.1",
     "scikit-learn >=0.22.0",
     "scipy >=1.2.0",
@@ -323,8 +329,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/tsfresh/tsfresh-0.20.3.tar.gz",
- "version": "0.20.3",
+ "url": "https://pypi.org/packages/source/t/tsfresh/tsfresh-0.21.0.tar.gz",
+ "version": "0.21.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/tsfresh.json"
  }
