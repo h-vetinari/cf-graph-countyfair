@@ -298,22 +298,6 @@
       "pr_url": "https://github.com/conda-forge/torchtext-feedstock/pull/28",
       "pre_pr_migrator_status": ""
     },
-    "torchvision": {
-      "immediate_children": [
-        "aihwkit-gpu",
-        "detectron2",
-        "fairscale",
-        "fcos",
-        "kaolin",
-        "mmcv-recipe",
-        "norse",
-        "pixsfm",
-        "pytorch3d",
-        "sam-2"
-      ],
-      "num_descendants": 10,
-      "pre_pr_migrator_status": ""
-    },
     "xformers": {
       "immediate_children": [],
       "num_descendants": 0,
@@ -322,7 +306,10 @@
   },
   "awaiting-parents": [
     "xformers",
-    "torchvision",
+    "torchsort",
+    "nnpops"
+  ],
+  "awaiting-pr": [
     "sam-2",
     "pytorch3d",
     "pixsfm",
@@ -332,11 +319,8 @@
     "fcos",
     "fairscale",
     "detectron2",
-    "aihwkit-gpu",
-    "torchsort",
-    "nnpops"
+    "aihwkit-gpu"
   ],
-  "awaiting-pr": [],
   "bot-error": [
     "torchaudio"
   ],
