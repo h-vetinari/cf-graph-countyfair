@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -35,7 +35,7 @@
   },
   "package": {
    "name": "pycollada",
-   "version": "0.8"
+   "version": "0.9"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0ed3d422c2e287c187a6f744ad9db2d3bfef69f72d3666d037f1e01a245f5cbc",
-   "url": "https://github.com/pycollada/pycollada/archive/v0.8.tar.gz"
+   "sha256": "bb40e7a69dba1656255fbd70088a9a86e9480410e5f6b6642c301b37789462ce",
+   "url": "https://github.com/pycollada/pycollada/archive/v0.9.tar.gz"
   },
   "test": {
    "imports": [
@@ -102,7 +102,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -112,7 +112,7 @@
   },
   "package": {
    "name": "pycollada",
-   "version": "0.8"
+   "version": "0.9"
   },
   "requirements": {
    "host": [
@@ -127,8 +127,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0ed3d422c2e287c187a6f744ad9db2d3bfef69f72d3666d037f1e01a245f5cbc",
-   "url": "https://github.com/pycollada/pycollada/archive/v0.8.tar.gz"
+   "sha256": "bb40e7a69dba1656255fbd70088a9a86e9480410e5f6b6642c301b37789462ce",
+   "url": "https://github.com/pycollada/pycollada/archive/v0.9.tar.gz"
   },
   "test": {
    "imports": [
@@ -154,7 +154,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pycollada.json"
  },
- "raw_meta_yaml": "{% set name = \"pycollada\" %}\n{% set version = \"0.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pycollada/pycollada/archive/v{{ version }}.tar.gz\n  sha256: 0ed3d422c2e287c187a6f744ad9db2d3bfef69f72d3666d037f1e01a245f5cbc\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - python-dateutil >=2.2\n    - numpy\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - collada\n    - collada.tests\n\nabout:\n  home: http://pycollada.readthedocs.org/\n  license: BSD\n  license_family: BSD\n  license_file: COPYING\n  summary: python library for reading and writing collada documents\n  doc_url: http://pycollada.readthedocs.org/\n  dev_url: https://github.com/pycollada/pycollada\n\nextra:\n  recipe-maintainers:\n    - looooo\n",
+ "raw_meta_yaml": "{% set name = \"pycollada\" %}\n{% set version = \"0.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pycollada/pycollada/archive/v{{ version }}.tar.gz\n  sha256: bb40e7a69dba1656255fbd70088a9a86e9480410e5f6b6642c301b37789462ce\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - python-dateutil >=2.2\n    - numpy\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - collada\n    - collada.tests\n\nabout:\n  home: http://pycollada.readthedocs.org/\n  license: BSD\n  license_family: BSD\n  license_file: COPYING\n  summary: python library for reading and writing collada documents\n  doc_url: http://pycollada.readthedocs.org/\n  dev_url: https://github.com/pycollada/pycollada\n\nextra:\n  recipe-maintainers:\n    - looooo\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -219,8 +219,8 @@
    ]
   }
  },
- "url": "https://github.com/pycollada/pycollada/archive/v0.8.tar.gz",
- "version": "0.8",
+ "url": "https://github.com/pycollada/pycollada/archive/v0.9.tar.gz",
+ "version": "0.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pycollada.json"
  }
