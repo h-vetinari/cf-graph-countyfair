@@ -40,9 +40,12 @@
     "xlwings = xlwings.cli:main"
    ],
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv",
+   "script": [
+    "PYTHON -m pip install . --no-deps -vv"
+   ],
    "script_env": [
-    "XLWINGS_LICENSE_KEY=noncommercial"
+    "XLWINGS_LICENSE_KEY=noncommercial",
+    "BUILD_RUST=1"
    ]
   },
   "extra": {
@@ -52,14 +55,19 @@
   },
   "package": {
    "name": "xlwings",
-   "version": "0.33.7"
+   "version": "0.33.9"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ],
    "host": [
     "python",
     "pip",
-    "setuptools"
+    "setuptools",
+    "maturin >=1,<2"
    ],
    "run": [
     "python"
@@ -67,9 +75,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "xlwings-0.33.7.tar.gz",
-   "sha256": "1e691bf58387d36b016252babc585928a3607fdc67d68dfd080ec6d37908f0dd",
-   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.7.tar.gz"
+   "fn": "xlwings-0.33.9.tar.gz",
+   "sha256": "3c2f73abf482c54b09280e17d8fb342a911a6d97628085d20bbf4cc9dbf413bc",
+   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -84,11 +92,16 @@
  "linux_64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "maturin",
     "pip",
     "python",
     "setuptools"
@@ -121,9 +134,12 @@
     "xlwings = xlwings.cli:main"
    ],
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv",
+   "script": [
+    "PYTHON -m pip install . --no-deps -vv"
+   ],
    "script_env": [
-    "XLWINGS_LICENSE_KEY=noncommercial"
+    "XLWINGS_LICENSE_KEY=noncommercial",
+    "BUILD_RUST=1"
    ]
   },
   "extra": {
@@ -133,14 +149,19 @@
   },
   "package": {
    "name": "xlwings",
-   "version": "0.33.7"
+   "version": "0.33.9"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ],
    "host": [
     "python",
     "pip",
-    "setuptools"
+    "setuptools",
+    "maturin >=1,<2"
    ],
    "run": [
     "python"
@@ -148,9 +169,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "xlwings-0.33.7.tar.gz",
-   "sha256": "1e691bf58387d36b016252babc585928a3607fdc67d68dfd080ec6d37908f0dd",
-   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.7.tar.gz"
+   "fn": "xlwings-0.33.9.tar.gz",
+   "sha256": "3c2f73abf482c54b09280e17d8fb342a911a6d97628085d20bbf4cc9dbf413bc",
+   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -165,11 +186,16 @@
  "linux_aarch64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "maturin",
     "pip",
     "python",
     "setuptools"
@@ -202,9 +228,12 @@
     "xlwings = xlwings.cli:main"
    ],
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv",
+   "script": [
+    "PYTHON -m pip install . --no-deps -vv"
+   ],
    "script_env": [
-    "XLWINGS_LICENSE_KEY=noncommercial"
+    "XLWINGS_LICENSE_KEY=noncommercial",
+    "BUILD_RUST=1"
    ]
   },
   "extra": {
@@ -214,14 +243,19 @@
   },
   "package": {
    "name": "xlwings",
-   "version": "0.33.7"
+   "version": "0.33.9"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ],
    "host": [
     "python",
     "pip",
-    "setuptools"
+    "setuptools",
+    "maturin >=1,<2"
    ],
    "run": [
     "python"
@@ -229,9 +263,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "xlwings-0.33.7.tar.gz",
-   "sha256": "1e691bf58387d36b016252babc585928a3607fdc67d68dfd080ec6d37908f0dd",
-   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.7.tar.gz"
+   "fn": "xlwings-0.33.9.tar.gz",
+   "sha256": "3c2f73abf482c54b09280e17d8fb342a911a6d97628085d20bbf4cc9dbf413bc",
+   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -246,11 +280,16 @@
  "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "maturin",
     "pip",
     "python",
     "setuptools"
@@ -283,9 +322,13 @@
     "xlwings = xlwings.cli:main"
    ],
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv",
+   "script": [
+    "PYTHON -m pip install . --no-deps -vv",
+    "del pyproject.toml"
+   ],
    "script_env": [
-    "XLWINGS_LICENSE_KEY=noncommercial"
+    "XLWINGS_LICENSE_KEY=noncommercial",
+    "BUILD_RUST=1"
    ]
   },
   "extra": {
@@ -295,14 +338,20 @@
   },
   "package": {
    "name": "xlwings",
-   "version": "0.33.7"
+   "version": "0.33.9"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ],
    "host": [
     "python",
     "pip",
-    "setuptools"
+    "setuptools",
+    "maturin >=1,<2",
+    "setuptools-rust"
    ],
    "run": [
     "python",
@@ -313,9 +362,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "xlwings-0.33.7.tar.gz",
-   "sha256": "1e691bf58387d36b016252babc585928a3607fdc67d68dfd080ec6d37908f0dd",
-   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.7.tar.gz"
+   "fn": "xlwings-0.33.9.tar.gz",
+   "sha256": "3c2f73abf482c54b09280e17d8fb342a911a6d97628085d20bbf4cc9dbf413bc",
+   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -344,9 +393,12 @@
     "xlwings = xlwings.cli:main"
    ],
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv",
+   "script": [
+    "PYTHON -m pip install . --no-deps -vv"
+   ],
    "script_env": [
-    "XLWINGS_LICENSE_KEY=noncommercial"
+    "XLWINGS_LICENSE_KEY=noncommercial",
+    "BUILD_RUST=1"
    ]
   },
   "extra": {
@@ -356,14 +408,19 @@
   },
   "package": {
    "name": "xlwings",
-   "version": "0.33.7"
+   "version": "0.33.9"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ],
    "host": [
     "python",
     "pip",
-    "setuptools"
+    "setuptools",
+    "maturin >=1,<2"
    ],
    "run": [
     "python",
@@ -373,9 +430,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "xlwings-0.33.7.tar.gz",
-   "sha256": "1e691bf58387d36b016252babc585928a3607fdc67d68dfd080ec6d37908f0dd",
-   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.7.tar.gz"
+   "fn": "xlwings-0.33.9.tar.gz",
+   "sha256": "3c2f73abf482c54b09280e17d8fb342a911a6d97628085d20bbf4cc9dbf413bc",
+   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -390,11 +447,16 @@
  "osx_64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "maturin",
     "pip",
     "python",
     "setuptools"
@@ -429,9 +491,12 @@
     "xlwings = xlwings.cli:main"
    ],
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv",
+   "script": [
+    "PYTHON -m pip install . --no-deps -vv"
+   ],
    "script_env": [
-    "XLWINGS_LICENSE_KEY=noncommercial"
+    "XLWINGS_LICENSE_KEY=noncommercial",
+    "BUILD_RUST=1"
    ]
   },
   "extra": {
@@ -441,14 +506,19 @@
   },
   "package": {
    "name": "xlwings",
-   "version": "0.33.7"
+   "version": "0.33.9"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ],
    "host": [
     "python",
     "pip",
-    "setuptools"
+    "setuptools",
+    "maturin >=1,<2"
    ],
    "run": [
     "python",
@@ -458,9 +528,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "xlwings-0.33.7.tar.gz",
-   "sha256": "1e691bf58387d36b016252babc585928a3607fdc67d68dfd080ec6d37908f0dd",
-   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.7.tar.gz"
+   "fn": "xlwings-0.33.9.tar.gz",
+   "sha256": "3c2f73abf482c54b09280e17d8fb342a911a6d97628085d20bbf4cc9dbf413bc",
+   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -475,11 +545,16 @@
  "osx_arm64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "maturin",
     "pip",
     "python",
     "setuptools"
@@ -516,35 +591,50 @@
  "pr_info": {
   "__lazy_json__": "pr_info/xlwings.json"
  },
- "raw_meta_yaml": "{% set name = \"xlwings\" %}\n{% set version = \"0.33.7\" %}\n{% set sha256 = \"1e691bf58387d36b016252babc585928a3607fdc67d68dfd080ec6d37908f0dd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - xlwings = xlwings.cli:main\n  skip: true  # [py<39]\n  script_env:\n    - XLWINGS_LICENSE_KEY=noncommercial\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - pywin32  # [win]\n    - psutil >=2.0  # [osx]\n    - appscript >=1.0.1  # [osx]\n\ntest:\n  commands:\n    - xlwings -h\n  imports:\n    - xlwings\n    - xlwings.conversion\n\nabout:\n  home: https://www.xlwings.org/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Interact with Excel from Python and vice versa\n  description: |\n    xlwings is a BSD-licensed Python library that makes it easy to call Python from Excel and vice versa.\n  doc_url: http://docs.xlwings.org/en/stable/index.html\n  dev_url: https://github.com/xlwings/xlwings\n\nextra:\n  recipe-maintainers:\n    - fzumstein\n",
+ "raw_meta_yaml": "{% set name = \"xlwings\" %}\n{% set version = \"0.33.9\" %}\n{% set sha256 = \"3c2f73abf482c54b09280e17d8fb342a911a6d97628085d20bbf4cc9dbf413bc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - del pyproject.toml  # [win]\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - xlwings = xlwings.cli:main\n  skip: true  # [py<39]\n  script_env:\n    - XLWINGS_LICENSE_KEY=noncommercial\n    - BUILD_RUST=1\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - maturin >=1,<2                         # [build_platform != target_platform]\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler(\"rust\") }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - maturin >=1,<2  # [not win]\n    - setuptools-rust  # [win]\n  run:\n    - python\n    - pywin32  # [win]\n    - psutil >=2.0  # [osx]\n    - appscript >=1.0.1  # [osx]\n\ntest:\n  commands:\n    - xlwings -h\n  imports:\n    - xlwings\n    - xlwings.conversion\n\nabout:\n  home: https://www.xlwings.org/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Interact with Excel from Python and vice versa\n  description: |\n    xlwings is a BSD-licensed Python library that makes it easy to call Python from Excel and vice versa.\n  doc_url: http://docs.xlwings.org/en/stable/index.html\n  dev_url: https://github.com/xlwings/xlwings\n\nextra:\n  recipe-maintainers:\n    - fzumstein\n",
  "req": {
   "__set__": true,
   "elements": [
    "appscript",
+   "c_compiler_stub",
+   "c_stdlib_stub",
+   "maturin",
    "pip",
    "psutil",
    "python",
    "pywin32",
-   "setuptools"
+   "rust_compiler_stub",
+   "setuptools",
+   "setuptools-rust"
   ]
  },
  "requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "maturin",
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools-rust"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "appscript",
+    "c_compiler_stub",
+    "c_stdlib_stub",
     "psutil",
     "python",
     "pywin32"
@@ -559,14 +649,20 @@
  "total_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
+    "maturin >=1,<2",
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools-rust"
    ]
   },
   "run": {
@@ -583,8 +679,8 @@
    "elements": []
   }
  },
- "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.7.tar.gz",
- "version": "0.33.7",
+ "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.9.tar.gz",
+ "version": "0.33.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/xlwings.json"
  },
@@ -604,9 +700,13 @@
     "xlwings = xlwings.cli:main"
    ],
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv",
+   "script": [
+    "del pyproject.toml",
+    "PYTHON -m pip install . --no-deps -vv"
+   ],
    "script_env": [
-    "XLWINGS_LICENSE_KEY=noncommercial"
+    "XLWINGS_LICENSE_KEY=noncommercial",
+    "BUILD_RUST=1"
    ]
   },
   "extra": {
@@ -616,14 +716,19 @@
   },
   "package": {
    "name": "xlwings",
-   "version": "0.33.7"
+   "version": "0.33.9"
   },
   "requirements": {
-   "build": [],
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ],
    "host": [
     "python",
     "pip",
-    "setuptools"
+    "setuptools",
+    "setuptools-rust"
    ],
    "run": [
     "python",
@@ -632,9 +737,9 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "xlwings-0.33.7.tar.gz",
-   "sha256": "1e691bf58387d36b016252babc585928a3607fdc67d68dfd080ec6d37908f0dd",
-   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.7.tar.gz"
+   "fn": "xlwings-0.33.9.tar.gz",
+   "sha256": "3c2f73abf482c54b09280e17d8fb342a911a6d97628085d20bbf4cc9dbf413bc",
+   "url": "https://pypi.org/packages/source/x/xlwings/xlwings-0.33.9.tar.gz"
   },
   "test": {
    "commands": [
@@ -649,14 +754,19 @@
  "win_64_requirements": {
   "build": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "rust_compiler_stub"
+   ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "setuptools-rust"
    ]
   },
   "run": {
