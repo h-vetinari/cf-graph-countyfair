@@ -26,13 +26,14 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "python -m pip install --no-deps --ignore-installed ."
+   "number": "2",
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
     "hajapy",
-    "rlabbe"
+    "rlabbe",
+    "hmaarrfk"
    ]
   },
   "package": {
@@ -42,11 +43,11 @@
   "requirements": {
    "host": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ],
    "run": [
-    "python",
+    "python >=3.9",
     "numpy",
     "matplotlib-base",
     "scipy"
@@ -54,11 +55,13 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "filterpy-1.4.5.zip",
    "sha256": "4f2a4d39e4ea601b9ab42b2db08b5918a9538c168cff1c6895ae26646f3d73b1",
-   "url": "https://pypi.io/packages/source/f/filterpy/filterpy-1.4.5.zip"
+   "url": "https://pypi.org/packages/source/f/filterpy/filterpy-1.4.5.zip"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "filterpy",
     "filterpy.common",
@@ -71,6 +74,10 @@
     "filterpy.memory",
     "filterpy.monte_carlo",
     "filterpy.stats"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -98,7 +105,10 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -114,13 +124,14 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "python -m pip install --no-deps --ignore-installed ."
+   "number": "2",
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
     "hajapy",
-    "rlabbe"
+    "rlabbe",
+    "hmaarrfk"
    ]
   },
   "package": {
@@ -130,11 +141,11 @@
   "requirements": {
    "host": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ],
    "run": [
-    "python",
+    "python >=3.9",
     "numpy",
     "matplotlib-base",
     "scipy"
@@ -142,11 +153,13 @@
   },
   "schema_version": 0,
   "source": {
-   "fn": "filterpy-1.4.5.zip",
    "sha256": "4f2a4d39e4ea601b9ab42b2db08b5918a9538c168cff1c6895ae26646f3d73b1",
-   "url": "https://pypi.io/packages/source/f/filterpy/filterpy-1.4.5.zip"
+   "url": "https://pypi.org/packages/source/f/filterpy/filterpy-1.4.5.zip"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "filterpy",
     "filterpy.common",
@@ -159,6 +172,10 @@
     "filterpy.memory",
     "filterpy.monte_carlo",
     "filterpy.stats"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -176,7 +193,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/filterpy.json"
  },
- "raw_meta_yaml": "{% set name = \"filterpy\" %}\n{% set version = \"1.4.5\" %}\n{% set sha256 = \"4f2a4d39e4ea601b9ab42b2db08b5918a9538c168cff1c6895ae26646f3d73b1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - matplotlib-base\n    - scipy\n\ntest:\n  imports:\n    - filterpy\n    - filterpy.common\n    - filterpy.discrete_bayes\n    - filterpy.examples\n    - filterpy.gh\n    - filterpy.hinfinity\n    - filterpy.kalman\n    - filterpy.leastsq\n    - filterpy.memory\n    - filterpy.monte_carlo\n    - filterpy.stats\n\nabout:\n  home: https://github.com/rlabbe/filterpy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Kalman filters and other optimal and non-optimal estimation filters in Python'\n\n  description: |\n      Kalman filtering and optimal estimation library in Python.\n      Kalman filter, Extended Kalman filter, Unscented Kalman filter,\n      g-h, least squares, H Infinity, smoothers, and more.\n      Has companion book 'Kalman and Bayesian Filters in Python'.\n  doc_url: https://filterpy.readthedocs.io/en/latest/\n  dev_url: https://github.com/rlabbe/filterpy\n\nextra:\n  recipe-maintainers:\n    - hajapy\n    - rlabbe\n",
+ "raw_meta_yaml": "{% set version = \"1.4.5\" %}\n\npackage:\n  name: filterpy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/f/filterpy/filterpy-{{ version }}.zip\n  sha256: 4f2a4d39e4ea601b9ab42b2db08b5918a9538c168cff1c6895ae26646f3d73b1\n\nbuild:\n  noarch: python\n  number: 2\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - matplotlib-base\n    - scipy\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - filterpy\n    - filterpy.common\n    - filterpy.discrete_bayes\n    - filterpy.examples\n    - filterpy.gh\n    - filterpy.hinfinity\n    - filterpy.kalman\n    - filterpy.leastsq\n    - filterpy.memory\n    - filterpy.monte_carlo\n    - filterpy.stats\n\nabout:\n  home: https://github.com/rlabbe/filterpy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Kalman filters and other optimal and non-optimal estimation filters in Python'\n\n  description: |\n      Kalman filtering and optimal estimation library in Python.\n      Kalman filter, Extended Kalman filter, Unscented Kalman filter,\n      g-h, least squares, H Infinity, smoothers, and more.\n      Has companion book 'Kalman and Bayesian Filters in Python'.\n  doc_url: https://filterpy.readthedocs.io/en/latest/\n  dev_url: https://github.com/rlabbe/filterpy\n\nextra:\n  recipe-maintainers:\n    - hajapy\n    - rlabbe\n    - hmaarrfk\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -212,7 +229,10 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -225,7 +245,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -234,16 +254,19 @@
    "elements": [
     "matplotlib-base",
     "numpy",
-    "python",
+    "python >=3.9",
     "scipy"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/f/filterpy/filterpy-1.4.5.zip",
+ "url": "https://pypi.org/packages/source/f/filterpy/filterpy-1.4.5.zip",
  "version": "1.4.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/filterpy.json"
