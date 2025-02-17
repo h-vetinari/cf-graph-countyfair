@@ -31,6 +31,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "xylar",
     "pelson",
     "ocefpaf"
    ]
@@ -109,6 +110,7 @@
   },
   "extra": {
    "recipe-maintainers": [
+    "xylar",
     "pelson",
     "ocefpaf"
    ]
@@ -159,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/smmap.json"
  },
- "raw_meta_yaml": "{% set name = \"smmap\" %}\n{% set version = \"6.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smmap-{{ version }}.tar.gz\n  sha256: 8d79028ea6cc131da5eab099a5d95a998d43c6779956fffe3b455040911076da\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation \n  number: 2\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - smmap\n\nabout:\n  home: https://github.com/gitpython-developers/smmap\n  summary: A pure git implementation of a sliding window memory map manager.\n  doc_url: https://pythonhosted.org/smmap/\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - ocefpaf\n",
+ "raw_meta_yaml": "{% set name = \"smmap\" %}\n{% set version = \"6.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smmap-{{ version }}.tar.gz\n  sha256: 8d79028ea6cc131da5eab099a5d95a998d43c6779956fffe3b455040911076da\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation \n  number: 2\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - smmap\n\nabout:\n  home: https://github.com/gitpython-developers/smmap\n  summary: A pure git implementation of a sliding window memory map manager.\n  doc_url: https://pythonhosted.org/smmap/\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - xylar\n    - pelson\n    - ocefpaf\n",
  "req": {
   "__set__": true,
   "elements": [
