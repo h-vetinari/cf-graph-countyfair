@@ -3,6 +3,8 @@
  "branch": "main",
  "conda-forge.yml": {
   "build_platform": {
+   "linux_aarch64": "linux_64",
+   "linux_ppc64le": "linux_64",
    "osx_arm64": "osx_64"
   },
   "conda_build": {
@@ -12,6 +14,10 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
+  },
+  "provider": {
+   "linux_aarch64": "default",
+   "linux_ppc64le": "default"
   },
   "test": "native_and_emulated"
  },
@@ -79,6 +85,192 @@
   }
  },
  "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-rlang",
+    "r-vctrs"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-rlang",
+    "r-vctrs"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_aarch64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/r-lib/sparsevctrs, https://r-lib.github.io/sparsevctrs/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary": "Provides sparse vectors powered by ALTREP (Alternative Representations for R Objects) that behave like regular vectors, and can thus be used in data frames. Also provides tools to convert between sparse matrices and data frames with sparse columns and functions to interact with sparse vectors."
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-sparsevctrs",
+   "version": "0.2.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ],
+   "host": [
+    "r-base",
+    "r-cli >=3.4.0",
+    "r-rlang >=1.1.0",
+    "r-vctrs"
+   ],
+   "run": [
+    "r-base",
+    "r-cli >=3.4.0",
+    "r-rlang >=1.1.0",
+    "r-vctrs"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "04f806ea5e3e7aae406e4aeb759df398b7a7871a812ee20681bdcb4dfafe3f8a",
+   "url": [
+    "https://cran.r-project.org/src/contrib/sparsevctrs_0.2.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sparsevctrs/sparsevctrs_0.2.0.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('sparsevctrs')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-rlang",
+    "r-vctrs"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "r-base",
+    "r-cli",
+    "r-rlang",
+    "r-vctrs"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": []
+  }
+ },
+ "linux_ppc64le_meta_yaml": {
+  "about": {
+   "home": "https://github.com/r-lib/sparsevctrs, https://r-lib.github.io/sparsevctrs/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": [
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary": "Provides sparse vectors powered by ALTREP (Alternative Representations for R Objects) that behave like regular vectors, and can thus be used in data frames. Also provides tools to convert between sparse matrices and data frames with sparse columns and functions to interact with sparse vectors."
+  },
+  "build": {
+   "missing_dso_whitelist": null,
+   "number": "1",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-sparsevctrs",
+   "version": "0.2.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "make"
+   ],
+   "host": [
+    "r-base",
+    "r-cli >=3.4.0",
+    "r-rlang >=1.1.0",
+    "r-vctrs"
+   ],
+   "run": [
+    "r-base",
+    "r-cli >=3.4.0",
+    "r-rlang >=1.1.0",
+    "r-vctrs"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "04f806ea5e3e7aae406e4aeb759df398b7a7871a812ee20681bdcb4dfafe3f8a",
+   "url": [
+    "https://cran.r-project.org/src/contrib/sparsevctrs_0.2.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sparsevctrs/sparsevctrs_0.2.0.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('sparsevctrs')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements": {
   "build": {
    "__set__": true,
    "elements": [
@@ -378,6 +570,8 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
+  "linux_aarch64",
+  "linux_ppc64le",
   "osx_64",
   "osx_arm64",
   "win_64"
@@ -486,6 +680,10 @@
   }
  },
  "url": [
+  "https://cran.r-project.org/src/contrib/sparsevctrs_0.2.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/sparsevctrs/sparsevctrs_0.2.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/sparsevctrs_0.2.0.tar.gz",
+  "https://cran.r-project.org/src/contrib/Archive/sparsevctrs/sparsevctrs_0.2.0.tar.gz",
   "https://cran.r-project.org/src/contrib/sparsevctrs_0.2.0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/sparsevctrs/sparsevctrs_0.2.0.tar.gz",
   "https://cran.r-project.org/src/contrib/sparsevctrs_0.2.0.tar.gz",
