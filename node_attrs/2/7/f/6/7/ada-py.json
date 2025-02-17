@@ -37,16 +37,16 @@
   },
   "package": {
    "name": "ada-py",
-   "version": "0.3.8"
+   "version": "0.4.0"
   },
   "requirements": {
    "host": [
     "pip",
     "setuptools",
-    "python 3.10"
+    "python 3.11"
    ],
    "run": [
-    "python >=3.10",
+    "python >=3.11",
     "kaleido-core 0.1.0",
     "numpy",
     "hdf5",
@@ -74,8 +74,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "63ba5e1eb840447863ca75054ce8367ac7a153527a13ebccfc214c9d9ff04f18",
-   "url": "https://github.com/Krande/adapy/archive/v0.3.8.tar.gz"
+   "sha256": "4a983c6683f248d38cc66336c9f521549dbef9699765a70aca9c383f19809316",
+   "url": "https://github.com/Krande/adapy/archive/v0.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -85,7 +85,7 @@
     "ada"
    ],
    "requires": [
-    "python 3.10",
+    "python 3.11",
     "pytest",
     "pytest-cov",
     "pytest-asyncio"
@@ -172,16 +172,16 @@
   },
   "package": {
    "name": "ada-py",
-   "version": "0.3.8"
+   "version": "0.4.0"
   },
   "requirements": {
    "host": [
     "pip",
     "setuptools",
-    "python 3.10"
+    "python 3.11"
    ],
    "run": [
-    "python >=3.10",
+    "python >=3.11",
     "kaleido-core 0.1.0",
     "numpy",
     "hdf5",
@@ -209,8 +209,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "63ba5e1eb840447863ca75054ce8367ac7a153527a13ebccfc214c9d9ff04f18",
-   "url": "https://github.com/Krande/adapy/archive/v0.3.8.tar.gz"
+   "sha256": "4a983c6683f248d38cc66336c9f521549dbef9699765a70aca9c383f19809316",
+   "url": "https://github.com/Krande/adapy/archive/v0.4.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -220,7 +220,7 @@
     "ada"
    ],
    "requires": [
-    "python 3.10",
+    "python 3.11",
     "pytest",
     "pytest-cov",
     "pytest-asyncio"
@@ -245,7 +245,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ada-py.json"
  },
- "raw_meta_yaml": "{% set name = \"ada-py\" %}\n{% set version = \"0.3.8\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Krande/adapy/archive/v{{ version }}.tar.gz\n  sha256: 63ba5e1eb840447863ca75054ce8367ac7a153527a13ebccfc214c9d9ff04f18\n\nbuild:\n  noarch: python\n  script: python -m pip install . --no-deps -vv\n  number: 0\n  entry_points:\n    - ada-viewer=ada.visit.websocket_cli:ws_cli_app\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - kaleido-core 0.1.0\n    - numpy\n    - hdf5\n    - h5py\n    - ifcopenshell\n    - bcf-client\n    - pythonocc-core\n    - python-gmsh\n    - pyquaternion\n    - trimesh\n    - occt >=7.7.2\n    - send2trash\n    - meshio\n    - websockets\n    - plotly\n    - python-kaleido\n    - calculix\n    - ipywidgets\n    - jupyterlab\n    - pyparsing\n    - pyglfw\n    - pygfx\n    - python-flatbuffers\n\ntest:\n  source_files:\n    - tests\n    - files\n  requires:\n    - python {{ python_min }}\n    - pytest\n    - pytest-cov\n    - pytest-asyncio\n  imports:\n    - ada\n  commands:\n    - pytest tests --ignore=tests/fem --ignore=tests/profiling --ignore=tests/examples --ignore=tests/full/frontend --cov=ada --cov-report=xml\n\nabout:\n  home: https://github.com/krande/adapy\n  license: \"GPL-3.0-or-later\"\n  license_family: GPL3\n  license_file: LICENSE\n  summary: \"A python library for structural analysis and design\"\n  doc_url: https://krande.github.io/adapy/\n\nextra:\n  recipe-maintainers:\n    - Krande\n",
+ "raw_meta_yaml": "{% set name = \"ada-py\" %}\n{% set version = \"0.4.0\" %}\n{% set python_min = \"3.11\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Krande/adapy/archive/v{{ version }}.tar.gz\n  sha256: 4a983c6683f248d38cc66336c9f521549dbef9699765a70aca9c383f19809316\n\nbuild:\n  noarch: python\n  script: python -m pip install . --no-deps -vv\n  number: 0\n  entry_points:\n    - ada-viewer=ada.visit.websocket_cli:ws_cli_app\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - kaleido-core 0.1.0\n    - numpy\n    - hdf5\n    - h5py\n    - ifcopenshell\n    - bcf-client\n    - pythonocc-core\n    - python-gmsh\n    - pyquaternion\n    - trimesh\n    - occt >=7.7.2\n    - send2trash\n    - meshio\n    - websockets\n    - plotly\n    - python-kaleido\n    - calculix\n    - ipywidgets\n    - jupyterlab\n    - pyparsing\n    - pyglfw\n    - pygfx\n    - python-flatbuffers\n\ntest:\n  source_files:\n    - tests\n    - files\n  requires:\n    - python {{ python_min }}\n    - pytest\n    - pytest-cov\n    - pytest-asyncio\n  imports:\n    - ada\n  commands:\n    - pytest tests --ignore=tests/fem --ignore=tests/profiling --ignore=tests/examples --ignore=tests/full/frontend --cov=ada --cov-report=xml\n\nabout:\n  home: https://github.com/krande/adapy\n  license: \"GPL-3.0-or-later\"\n  license_family: GPL3\n  license_file: LICENSE\n  summary: \"A python library for structural analysis and design\"\n  doc_url: https://krande.github.io/adapy/\n\nextra:\n  recipe-maintainers:\n    - Krande\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -339,7 +339,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.10",
+    "python 3.11",
     "setuptools"
    ]
   },
@@ -362,7 +362,7 @@
     "pyglfw",
     "pyparsing",
     "pyquaternion",
-    "python >=3.10",
+    "python >=3.11",
     "python-flatbuffers",
     "python-gmsh",
     "python-kaleido",
@@ -378,12 +378,12 @@
     "pytest",
     "pytest-asyncio",
     "pytest-cov",
-    "python 3.10"
+    "python 3.11"
    ]
   }
  },
- "url": "https://github.com/Krande/adapy/archive/v0.3.8.tar.gz",
- "version": "0.3.8",
+ "url": "https://github.com/Krande/adapy/archive/v0.4.0.tar.gz",
+ "version": "0.4.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ada-py.json"
  }
