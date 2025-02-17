@@ -30,7 +30,7 @@
    "summary": "Simple package for fast molecular similarity searching"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -40,6 +40,45 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
    {
     "build": null,
     "name": "fpsim2",
@@ -238,7 +277,7 @@
    "summary": "Simple package for fast molecular similarity searching"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -248,6 +287,48 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
    {
     "build": null,
     "name": "fpsim2",
@@ -461,7 +542,7 @@
    "summary": "Simple package for fast molecular similarity searching"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -471,6 +552,48 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
    {
     "build": null,
     "name": "fpsim2",
@@ -684,7 +807,7 @@
    "summary": "Simple package for fast molecular similarity searching"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -777,6 +900,255 @@
     "name": "fpsim2",
     "requirements": {
      "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
       "c_compiler_stub",
       "cxx_compiler_stub",
       "c_stdlib_stub"
@@ -1488,7 +1860,7 @@
    "summary": "Simple package for fast molecular similarity searching"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -1498,6 +1870,48 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
    {
     "build": null,
     "name": "fpsim2",
@@ -1711,7 +2125,7 @@
    "summary": "Simple package for fast molecular similarity searching"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -1721,6 +2135,48 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
    {
     "build": null,
     "name": "fpsim2",
@@ -1943,7 +2399,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fpsim2.json"
  },
- "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: fpsim2\n  version: 0.7.3\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fpsim2-${{ version }}.tar.gz\n  sha256: d8da3fd37c707db459edeab72c9c70fe3986aeefd463352da0cbcef780341d53\n\nbuild:\n  number: 1\n  skip: match(python, \"<3.10\")\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  python:\n    entry_points:\n      - fpsim2-create-db = FPSim2.scripts.create_fpsim2_fp_db:main\n\nrequirements:\n  build:\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n        - numpy\n\n    - ${{ compiler('c') }}\n    - ${{ compiler('cxx') }}\n    - ${{ stdlib(\"c\") }}\n  host:\n    - python\n    - pybind11 >=2.2\n    - numpy\n    - setuptools >=61.0.0\n    - pip\n  run:\n    - python\n    - rdkit >=2022.3.3\n    - pytables >=3.10\n    - sqlalchemy >=1.4.47\n    - scipy\n    - tqdm\n    - numpy\n\ntests:\n  - python:\n      imports:\n        - FPSim2\n      pip_check: true\n  - script:\n      - fpsim2-create-db --help\n\nabout:\n  summary: Simple package for fast molecular similarity searching\n  license: MIT\n  license_file: LICENSE\n  homepage: https://github.com/chembl/FPSim2\n\nextra:\n  recipe-maintainers:\n    - hadim\n    - eloyfelix\n",
+ "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: fpsim2\n  version: 0.7.3\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fpsim2-${{ version }}.tar.gz\n  sha256: d8da3fd37c707db459edeab72c9c70fe3986aeefd463352da0cbcef780341d53\n\nbuild:\n  number: 2\n  skip: match(python, \"<3.10\")\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  python:\n    entry_points:\n      - fpsim2-create-db = FPSim2.scripts.create_fpsim2_fp_db:main\n\nrequirements:\n  build:\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n        - numpy\n\n    - ${{ compiler('c') }}\n    - ${{ compiler('cxx') }}\n    - ${{ stdlib(\"c\") }}\n  host:\n    - python\n    - pybind11 >=2.2\n    - numpy\n    - setuptools >=61.0.0\n    - pip\n  run:\n    - python\n    - rdkit >=2022.3.3\n    - pytables >=3.10\n    - sqlalchemy >=1.4.47\n    - scipy\n    - tqdm\n    - numpy\n\ntests:\n  - python:\n      imports:\n        - FPSim2\n      pip_check: true\n  - script:\n      - fpsim2-create-db --help\n\nabout:\n  summary: Simple package for fast molecular similarity searching\n  license: MIT\n  license_file: LICENSE\n  homepage: https://github.com/chembl/FPSim2\n\nextra:\n  recipe-maintainers:\n    - hadim\n    - eloyfelix\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -2066,7 +2522,7 @@
    "summary": "Simple package for fast molecular similarity searching"
   },
   "build": {
-   "number": "1",
+   "number": "2",
    "script": "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -2076,6 +2532,48 @@
    ]
   },
   "outputs": [
+   {
+    "build": null,
+    "name": "fpsim2",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "numpy",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub"
+     ],
+     "host": [
+      "python",
+      "pybind11 >=2.2",
+      "numpy",
+      "setuptools >=61.0.0",
+      "pip"
+     ],
+     "run": [
+      "python",
+      "rdkit >=2022.3.3",
+      "pytables >=3.10",
+      "sqlalchemy >=1.4.47",
+      "scipy",
+      "tqdm",
+      "numpy"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "FPSim2"
+       ]
+      }
+     },
+     {
+      "script": "fpsim2-create-db --help"
+     }
+    ]
+   },
    {
     "build": null,
     "name": "fpsim2",
