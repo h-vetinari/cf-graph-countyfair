@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,11 +36,11 @@
   },
   "requirements": {
    "host": [
-    "python >=3.10",
+    "python 3.12",
     "pip"
    ],
    "run": [
-    "python >=3.10",
+    "python >=3.12",
     "numpy >=1.26",
     "scipy >=1.10",
     "scikit-learn >=1.5.1",
@@ -64,7 +64,8 @@
     "bibmon"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.12"
    ]
   }
  },
@@ -97,7 +98,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -110,7 +112,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -124,11 +126,11 @@
   },
   "requirements": {
    "host": [
-    "python >=3.10",
+    "python 3.12",
     "pip"
    ],
    "run": [
-    "python >=3.10",
+    "python >=3.12",
     "numpy >=1.26",
     "scipy >=1.10",
     "scikit-learn >=1.5.1",
@@ -152,7 +154,8 @@
     "bibmon"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.12"
    ]
   }
  },
@@ -170,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/bibmon.json"
  },
- "raw_meta_yaml": "{% set name = \"bibmon\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bibmon-{{ version }}.tar.gz\n  sha256: 2c19dd935cc1bc09b3393d936ec83c1626d8b0b9511b622bdfceea75c47cefd5\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.10\n    - pip\n  run:\n    - python >=3.10\n    - numpy >=1.26\n    - scipy >=1.10\n    - scikit-learn >=1.5.1\n    - pandas >=2.2.2\n    - matplotlib-base >=3.9.0\n    - seaborn >=0.13.2\n    - statsmodels >=0.14.1\n    - optuna >=3.6.1\n\ntest:\n  imports:\n    - bibmon\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/petrobras/bibmon\n  summary: Library with routines for data-driven process monitoring.\n  license: Apache-2.0\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - camaramm\n",
+ "raw_meta_yaml": "{% set python_min = '3.12' %}\n{% set name = \"bibmon\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bibmon-{{ version }}.tar.gz\n  sha256: 2c19dd935cc1bc09b3393d936ec83c1626d8b0b9511b622bdfceea75c47cefd5\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.26\n    - scipy >=1.10\n    - scikit-learn >=1.5.1\n    - pandas >=2.2.2\n    - matplotlib-base >=3.9.0\n    - seaborn >=0.13.2\n    - statsmodels >=0.14.1\n    - optuna >=3.6.1\n\ntest:\n  imports:\n    - bibmon\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/petrobras/bibmon\n  summary: Library with routines for data-driven process monitoring.\n  license: Apache-2.0\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - camaramm\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -215,7 +218,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -229,7 +233,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.10"
+    "python 3.12"
    ]
   },
   "run": {
@@ -239,7 +243,7 @@
     "numpy >=1.26",
     "optuna >=3.6.1",
     "pandas >=2.2.2",
-    "python >=3.10",
+    "python >=3.12",
     "scikit-learn >=1.5.1",
     "scipy >=1.10",
     "seaborn >=0.13.2",
@@ -249,7 +253,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.12"
    ]
   }
  },
