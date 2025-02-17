@@ -32,24 +32,24 @@
   },
   "package": {
    "name": "felyxcontribs-metrics-base",
-   "version": "1.0.1"
+   "version": "1.0.3"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python >=3.10",
     "pip",
     "poetry-core",
     "poetry-dynamic-versioning"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.10",
     "virtualenv >=20.13.3,<20.14"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6009c820fd5996724efd168b673cd298f86edbdf2d65667d9ee9d3a933936f5e",
-   "url": "https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base/-/archive/1.0.1/felyxcontribs_metrics_base-1.0.1.tar.gz"
+   "sha256": "bd3a2da174eaafb20ea1ca632b4ae03406f2ccb0564d",
+   "url": "https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base/-/archive/1.0.3/felyxcontribs_metrics_base-1.0.3.tar.gz"
   },
   "test": {
    "imports": [
@@ -105,24 +105,24 @@
   },
   "package": {
    "name": "felyxcontribs-metrics-base",
-   "version": "1.0.1"
+   "version": "1.0.3"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python >=3.10",
     "pip",
     "poetry-core",
     "poetry-dynamic-versioning"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.10",
     "virtualenv >=20.13.3,<20.14"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6009c820fd5996724efd168b673cd298f86edbdf2d65667d9ee9d3a933936f5e",
-   "url": "https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base/-/archive/1.0.1/felyxcontribs_metrics_base-1.0.1.tar.gz"
+   "sha256": "bd3a2da174eaafb20ea1ca632b4ae03406f2ccb0564d",
+   "url": "https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base/-/archive/1.0.3/felyxcontribs_metrics_base-1.0.3.tar.gz"
   },
   "test": {
    "imports": [
@@ -144,7 +144,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/felyxcontribs-metrics-base.json"
  },
- "raw_meta_yaml": "{% set name = \"felyxcontribs-metrics-base\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base/-/archive/{{ version }}/felyxcontribs_metrics_base-{{ version }}.tar.gz\n  sha256: 6009c820fd5996724efd168b673cd298f86edbdf2d65667d9ee9d3a933936f5e\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n\n  run:\n    - python >=3.8\n    - virtualenv >=20.13.3,<20.14\n    \ntest:\n  imports:\n    - felyxcontribs_metrics_base\n\nabout:\n  home: https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: felyx is a free software solution, written in python, whose aim is to provide Earth Observation data producers and users with an open-source, flexible and reusable tool to allow scientific analysis and performance monitoring of scientific observation data through subsetting over specific areas or matching up with in situ measurements.\n\nextra:\n  recipe-maintainers:\n    - erwanbodere\n    - cso2943\n    - criou-cg\n    - marie59\n",
+ "raw_meta_yaml": "{% set name = \"felyxcontribs-metrics-base\" %}\n{% set version = \"1.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base/-/archive/{{ version }}/felyxcontribs_metrics_base-{{ version }}.tar.gz\n  sha256: bd3a2da174eaafb20ea1ca632b4ae03406f2ccb0564d\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.10\n    - pip\n    - poetry-core\n    - poetry-dynamic-versioning\n\n  run:\n    - python >=3.10\n    - virtualenv >=20.13.3,<20.14\n    \ntest:\n  imports:\n    - felyxcontribs_metrics_base\n\nabout:\n  home: https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base\n  license: LGPL-3.0-only\n  license_file: LICENSE\n  summary: felyx is a free software solution, written in python, whose aim is to provide Earth Observation data producers and users with an open-source, flexible and reusable tool to allow scientific analysis and performance monitoring of scientific observation data through subsetting over specific areas or matching up with in situ measurements.\n\nextra:\n  recipe-maintainers:\n    - erwanbodere\n    - cso2943\n    - criou-cg\n    - marie59\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -193,13 +193,13 @@
     "pip",
     "poetry-core",
     "poetry-dynamic-versioning",
-    "python >=3.8"
+    "python >=3.10"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.8",
+    "python >=3.10",
     "virtualenv >=20.13.3,<20.14"
    ]
   },
@@ -208,8 +208,8 @@
    "elements": []
   }
  },
- "url": "https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base/-/archive/1.0.1/felyxcontribs_metrics_base-1.0.1.tar.gz",
- "version": "1.0.1",
+ "url": "https://gitlab.ifremer.fr/felyx/felyxcontribs_metrics_base/-/archive/1.0.3/felyxcontribs_metrics_base-1.0.3.tar.gz",
+ "version": "1.0.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/felyxcontribs-metrics-base.json"
  }
