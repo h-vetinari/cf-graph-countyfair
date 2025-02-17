@@ -40,7 +40,7 @@
   },
   "package": {
    "name": "fps",
-   "version": "0.1.1"
+   "version": "0.1.2"
   },
   "requirements": {
    "host": [
@@ -51,7 +51,7 @@
    "run": [
     "python >=3.9",
     "anyio",
-    "anyioutils >=0.4.9",
+    "anyioutils >=0.6.3",
     "click >=8.1.8,<9",
     "structlog",
     "exceptiongroup",
@@ -62,8 +62,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "98c4a6bc72970619a969f7fc6aa94f492fd3954dbe0327df2586565ab29d2189",
-   "url": "https://pypi.org/packages/source/f/fps/fps-0.1.1.tar.gz"
+   "sha256": "7d8e766552bdac246e75d258ade2f28711c5b162c675c615482d417f5c9a4946",
+   "url": "https://pypi.org/packages/source/f/fps/fps-0.1.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -142,7 +142,7 @@
   },
   "package": {
    "name": "fps",
-   "version": "0.1.1"
+   "version": "0.1.2"
   },
   "requirements": {
    "host": [
@@ -153,7 +153,7 @@
    "run": [
     "python >=3.9",
     "anyio",
-    "anyioutils >=0.4.9",
+    "anyioutils >=0.6.3",
     "click >=8.1.8,<9",
     "structlog",
     "exceptiongroup",
@@ -164,8 +164,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "98c4a6bc72970619a969f7fc6aa94f492fd3954dbe0327df2586565ab29d2189",
-   "url": "https://pypi.org/packages/source/f/fps/fps-0.1.1.tar.gz"
+   "sha256": "7d8e766552bdac246e75d258ade2f28711c5b162c675c615482d417f5c9a4946",
+   "url": "https://pypi.org/packages/source/f/fps/fps-0.1.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -196,7 +196,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fps.json"
  },
- "raw_meta_yaml": "{% set name = \"fps\" %}\n{% set version = \"0.1.1\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 98c4a6bc72970619a969f7fc6aa94f492fd3954dbe0327df2586565ab29d2189\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - fps = fps._cli:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - anyio\n    - anyioutils >=0.4.9\n    - click >=8.1.8,<9\n    - structlog\n    - exceptiongroup\n    - importlib_metadata\n    - fastapi\n    - anycorn\n\ntest:\n  imports:\n    - fps\n    - fps.web\n  commands:\n    - pip check\n    - fps --help\n  requires:\n    - pip\n    - python >={{ python_min }}\n\nabout:\n  home: https://github.com/jupyter-server/fps\n  summary: Fast Pluggable System\n  description: A system for creating modular, configurable, pluggable and concurrent applications\n  dev_url: https://github.com/jupyter-server/fps\n  doc_url: https://jupyter-server.github.io/fps\n  license_file: LICENSE\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - adriendelsalle\n    - davidbrochart\n",
+ "raw_meta_yaml": "{% set name = \"fps\" %}\n{% set version = \"0.1.2\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7d8e766552bdac246e75d258ade2f28711c5b162c675c615482d417f5c9a4946\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - fps = fps._cli:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n    - anyio\n    - anyioutils >=0.6.3\n    - click >=8.1.8,<9\n    - structlog\n    - exceptiongroup\n    - importlib_metadata\n    - fastapi\n    - anycorn\n\ntest:\n  imports:\n    - fps\n    - fps.web\n  commands:\n    - pip check\n    - fps --help\n  requires:\n    - pip\n    - python >={{ python_min }}\n\nabout:\n  home: https://github.com/jupyter-server/fps\n  summary: Fast Pluggable System\n  description: A system for creating modular, configurable, pluggable and concurrent applications\n  dev_url: https://github.com/jupyter-server/fps\n  doc_url: https://jupyter-server.github.io/fps\n  license_file: LICENSE\n  license: BSD-3-Clause\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - adriendelsalle\n    - davidbrochart\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -267,7 +267,7 @@
    "elements": [
     "anycorn",
     "anyio",
-    "anyioutils >=0.4.9",
+    "anyioutils >=0.6.3",
     "click >=8.1.8,<9",
     "exceptiongroup",
     "fastapi",
@@ -284,8 +284,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/f/fps/fps-0.1.1.tar.gz",
- "version": "0.1.1",
+ "url": "https://pypi.org/packages/source/f/fps/fps-0.1.2.tar.gz",
+ "version": "0.1.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/fps.json"
  }
