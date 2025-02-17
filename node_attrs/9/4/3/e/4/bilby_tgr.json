@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,14 +38,14 @@
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.9",
     "setuptools >=42",
     "setuptools-scm >=3.4.3",
     "wheel",
     "pip"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "bilby",
     "python-lal >=7.4.0",
     "python-lalsimulation >=5.3.0",
@@ -58,7 +58,7 @@
     "0001-minimise-dependencies.patch"
    ],
    "sha256": "a3c1fe9146111ed6d6da1110d332d311d55b2d4cf311aa18849732cb886f0a27",
-   "url": "https://pypi.io/packages/source/b/bilby_tgr/bilby_tgr-0.1.tar.gz"
+   "url": "https://pypi.org/packages/source/b/bilby_tgr/bilby_tgr-0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -68,7 +68,8 @@
     "bilby_tgr"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -100,7 +101,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -113,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -129,14 +131,14 @@
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.9",
     "setuptools >=42",
     "setuptools-scm >=3.4.3",
     "wheel",
     "pip"
    ],
    "run": [
-    "python >=3.8",
+    "python >=3.9",
     "bilby",
     "python-lal >=7.4.0",
     "python-lalsimulation >=5.3.0",
@@ -149,7 +151,7 @@
     "0001-minimise-dependencies.patch"
    ],
    "sha256": "a3c1fe9146111ed6d6da1110d332d311d55b2d4cf311aa18849732cb886f0a27",
-   "url": "https://pypi.io/packages/source/b/bilby_tgr/bilby_tgr-0.1.tar.gz"
+   "url": "https://pypi.org/packages/source/b/bilby_tgr/bilby_tgr-0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,7 +161,8 @@
     "bilby_tgr"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -177,7 +180,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/bilby_tgr.json"
  },
- "raw_meta_yaml": "{% set name = \"bilby_tgr\" %}\n{% set version = \"0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bilby_tgr-{{ version }}.tar.gz\n  sha256: a3c1fe9146111ed6d6da1110d332d311d55b2d4cf311aa18849732cb886f0a27\n  patches:\n    # replace the dependency lalsuite by the actually required subcomponents python-lal\n    # and python-lalsimulation, which are not packaged separately on PyPI\n    - 0001-minimise-dependencies.patch\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.8\n    - setuptools >=42\n    - setuptools-scm >=3.4.3\n    - wheel\n    - pip\n  run:\n    - python >=3.8\n    - bilby\n    - python-lal >=7.4.0\n    - python-lalsimulation >=5.3.0\n    - numpy >=1.17\n\ntest:\n  imports:\n    - bilby_tgr\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://git.ligo.org/lscsoft/bilby_tgr\n  summary: Testing GR analysis pipelines to use with Bilby\n  license: MIT\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - adivijaykumar\n    - jsteinhoff\n    - magathos\n",
+ "raw_meta_yaml": "{% set name = \"bilby_tgr\" %}\n{% set version = \"0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bilby_tgr-{{ version }}.tar.gz\n  sha256: a3c1fe9146111ed6d6da1110d332d311d55b2d4cf311aa18849732cb886f0a27\n  patches:\n    # replace the dependency lalsuite by the actually required subcomponents python-lal\n    # and python-lalsimulation, which are not packaged separately on PyPI\n    - 0001-minimise-dependencies.patch\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=42\n    - setuptools-scm >=3.4.3\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - bilby\n    - python-lal >=7.4.0\n    - python-lalsimulation >=5.3.0\n    - numpy >=1.17\n\ntest:\n  imports:\n    - bilby_tgr\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://git.ligo.org/lscsoft/bilby_tgr\n  summary: Testing GR analysis pipelines to use with Bilby\n  license: MIT\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - adivijaykumar\n    - jsteinhoff\n    - magathos\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -220,7 +223,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -234,7 +238,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8",
+    "python 3.9",
     "setuptools >=42",
     "setuptools-scm >=3.4.3",
     "wheel"
@@ -245,7 +249,7 @@
    "elements": [
     "bilby",
     "numpy >=1.17",
-    "python >=3.8",
+    "python >=3.9",
     "python-lal >=7.4.0",
     "python-lalsimulation >=5.3.0"
    ]
@@ -253,11 +257,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/b/bilby_tgr/bilby_tgr-0.1.tar.gz",
+ "url": "https://pypi.org/packages/source/b/bilby_tgr/bilby_tgr-0.1.tar.gz",
  "version": "0.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/bilby_tgr.json"
