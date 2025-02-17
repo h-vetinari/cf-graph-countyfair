@@ -34,7 +34,7 @@
    "summary": "Structured Text Generation in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}",
@@ -100,7 +100,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -156,7 +156,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -212,7 +212,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -268,7 +268,63 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    }
@@ -360,7 +416,7 @@
    "summary": "Structured Text Generation in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}",
@@ -431,7 +487,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -492,7 +548,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -553,7 +609,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -614,7 +670,68 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    }
@@ -716,7 +833,7 @@
    "summary": "Structured Text Generation in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}",
@@ -787,7 +904,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -848,7 +965,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -909,7 +1026,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -970,7 +1087,68 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    }
@@ -1072,7 +1250,7 @@
    "summary": "Structured Text Generation in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}",
@@ -1138,7 +1316,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1194,7 +1372,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1250,7 +1428,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1306,7 +1484,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1315,11 +1493,6 @@
     "name": "outlines-core",
     "requirements": {
      "build": [
-      "python",
-      "cross-python_linux-64",
-      "setuptools >=45",
-      "setuptools-scm >=6.2",
-      "setuptools-rust",
       "rust_compiler_stub",
       "cxx_compiler_stub",
       "c_stdlib_stub",
@@ -1367,68 +1540,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "outlines-core",
-    "requirements": {
-     "build": [
-      "python",
-      "cross-python_linux-64",
-      "setuptools >=45",
-      "setuptools-scm >=6.2",
-      "setuptools-rust",
-      "rust_compiler_stub",
-      "cxx_compiler_stub",
-      "c_stdlib_stub",
-      "cargo-bundle-licenses",
-      "pkg-config"
-     ],
-     "host": [
-      "python",
-      "setuptools >=45",
-      "setuptools-scm >=6.2",
-      "setuptools-rust",
-      "pip",
-      "openssl"
-     ],
-     "run": [
-      "python",
-      "jsonschema"
-     ]
-    },
-    "tests": [
-     {
-      "python": {
-       "imports": [
-        "outlines_core"
-       ]
-      }
-     },
-     {
-      "files": {
-       "source": [
-        "tests/**"
-       ]
-      },
-      "requirements": {
-       "run": [
-        "pytest",
-        "pytest-benchmark",
-        "pytest-mock",
-        "scipy",
-        "numpy",
-        "pytorch",
-        "pydantic",
-        "transformers",
-        "datasets",
-        "sentencepiece"
-       ]
-      },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1489,7 +1601,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1550,7 +1662,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1611,7 +1723,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1672,7 +1784,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1733,7 +1845,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1794,7 +1906,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1855,7 +1967,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1916,7 +2028,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -1977,7 +2089,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2038,7 +2150,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2099,7 +2211,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2160,7 +2272,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2221,7 +2333,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2282,7 +2394,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2343,7 +2455,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2404,7 +2516,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2465,7 +2577,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2526,7 +2638,434 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    }
@@ -2578,7 +3117,7 @@
    "summary": "Structured Text Generation in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}",
@@ -2649,7 +3188,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2710,7 +3249,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2771,7 +3310,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -2832,7 +3371,68 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    }
@@ -2934,7 +3534,7 @@
    "summary": "Structured Text Generation in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}",
@@ -3005,7 +3605,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -3066,7 +3666,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -3127,7 +3727,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -3188,7 +3788,68 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    }
@@ -3298,7 +3959,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/outlines-core.json"
  },
- "raw_meta_yaml": "context:\n  name: outlines-core\n  version: \"0.2.3\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/outlines_core-${{ version }}.tar.gz\n  sha256: 3e44c09e8138adcd0b05eb8748a5bba912b51127ce03ad37f8fee53324a36d34\n\nbuild:\n  number: 0\n  script:\n    # NOTE: Switch to `script.content` and `script.env` once\n    # https://github.com/prefix-dev/rattler-build/pull/1353 is merged.\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n    - ${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  build:\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n        - setuptools >=45\n        - setuptools-scm >=6.2\n        - setuptools-rust\n\n    - ${{ compiler('rust') }}\n    - ${{ compiler('cxx') }}\n    - ${{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n    - pkg-config\n  host:\n    - python\n    - setuptools >=45\n    - setuptools-scm >=6.2\n    - setuptools-rust\n    - pip\n    - ${{ \"openssl\" if unix }}\n  run:\n    - python\n    - jsonschema\n\ntests:\n  - python:\n      imports:\n        - outlines_core\n      pip_check: true\n\n  # NOTE: disable the test for linux-ppc64le since pytorch is not\n  # available. See https://github.com/conda-forge/pytorch-cpu-feedstock/pull/255\n  - if: not (linux and ppc64le)\n    then:\n      requirements:\n        run:\n          - pytest\n          - pytest-benchmark\n          - pytest-mock\n          - scipy\n          - numpy\n          - pytorch\n          - pydantic\n          - transformers\n          - datasets\n          - sentencepiece\n      files:\n        source:\n          - tests/\n      script:\n        # NOTE: remove test_serialization.py since it imports the tests folder\n        # which is a bad practice and raise an error here.\n        - pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py\n\nabout:\n  summary: Structured Text Generation in Rust\n  license: Apache-2.0\n  license_file:\n    - THIRDPARTY.yml\n    - LICENSE\n  homepage: https://github.com/dottxt-ai/outlines-core\n  repository: https://github.com/dottxt-ai/outlines-core\n\nextra:\n  recipe-maintainers:\n    - hadim\n    - maresb\n",
+ "raw_meta_yaml": "context:\n  name: outlines-core\n  version: \"0.2.3\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/outlines_core-${{ version }}.tar.gz\n  sha256: 3e44c09e8138adcd0b05eb8748a5bba912b51127ce03ad37f8fee53324a36d34\n\nbuild:\n  number: 1\n  script:\n    # NOTE: Switch to `script.content` and `script.env` once\n    # https://github.com/prefix-dev/rattler-build/pull/1353 is merged.\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n    - ${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  build:\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n        - setuptools >=45\n        - setuptools-scm >=6.2\n        - setuptools-rust\n\n    - ${{ compiler('rust') }}\n    - ${{ compiler('cxx') }}\n    - ${{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n    - pkg-config\n  host:\n    - python\n    - setuptools >=45\n    - setuptools-scm >=6.2\n    - setuptools-rust\n    - pip\n    - ${{ \"openssl\" if unix }}\n  run:\n    - python\n    - jsonschema\n\ntests:\n  - python:\n      imports:\n        - outlines_core\n      pip_check: true\n\n  # NOTE: disable the test for linux-ppc64le since pytorch is not\n  # available. See https://github.com/conda-forge/pytorch-cpu-feedstock/pull/255\n  - if: not (linux and ppc64le)\n    then:\n      requirements:\n        run:\n          - pytest\n          - pytest-benchmark\n          - pytest-mock\n          - scipy\n          - numpy\n          - pytorch\n          - pydantic\n          - transformers\n          - datasets\n          - sentencepiece\n      files:\n        source:\n          - tests/\n      script:\n        # NOTE: remove test_serialization.py since it imports the tests folder\n        # which is a bad practice and raise an error here.\n        - pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same\n        # TODO: remove the preceding deselect on the next release\n        # (Fixed by https://github.com/dottxt-ai/outlines-core/pull/175)\n\nabout:\n  summary: Structured Text Generation in Rust\n  license: Apache-2.0\n  license_file:\n    - THIRDPARTY.yml\n    - LICENSE\n  homepage: https://github.com/dottxt-ai/outlines-core\n  repository: https://github.com/dottxt-ai/outlines-core\n\nextra:\n  recipe-maintainers:\n    - hadim\n    - maresb\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -3439,7 +4100,7 @@
    "summary": "Structured Text Generation in Rust"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ \"export OPENSSL_DIR=${PREFIX}\" if unix }}",
@@ -3510,7 +4171,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -3571,7 +4232,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -3632,7 +4293,7 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    },
@@ -3693,7 +4354,68 @@
         "sentencepiece"
        ]
       },
-      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py"
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "outlines-core",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "rust_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "pkg-config"
+     ],
+     "host": [
+      "python",
+      "setuptools >=45",
+      "setuptools-scm >=6.2",
+      "setuptools-rust",
+      "pip",
+      "openssl"
+     ],
+     "run": [
+      "python",
+      "jsonschema"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "outlines_core"
+       ]
+      }
+     },
+     {
+      "files": {
+       "source": [
+        "tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-benchmark",
+        "pytest-mock",
+        "scipy",
+        "numpy",
+        "pytorch",
+        "pydantic",
+        "transformers",
+        "datasets",
+        "sentencepiece"
+       ]
+      },
+      "script": "pytest -vvv tests/ --ignore=tests/fsm/test_serialization.py --deselect tests/test_guide.py::test_str_and_bytes_produce_the_same"
      }
     ]
    }
