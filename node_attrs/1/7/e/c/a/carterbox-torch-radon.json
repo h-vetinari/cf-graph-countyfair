@@ -26,7 +26,7 @@
    "summary": "Tomography operators for Pytorch"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -41,10 +41,11 @@
    "build": [
     "cuda_compiler_stub",
     "cxx_compiler_stub",
+    "c_compiler_stub",
     "c_stdlib_stub"
    ],
    "host": [
-    "cuda-version 12.0",
+    "cuda-version 12.6",
     "python",
     "pip",
     "pytorch",
@@ -52,8 +53,7 @@
     "libtorch",
     "setuptools",
     "setuptools-scm",
-    "toml",
-    "cuda-version 11.8"
+    "toml"
    ],
    "run": [
     "__cuda",
@@ -81,6 +81,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_compiler_stub",
     "c_stdlib_stub",
     "cuda_compiler_stub",
     "cxx_compiler_stub"
@@ -126,7 +127,7 @@
    "summary": "Tomography operators for Pytorch"
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -141,10 +142,11 @@
    "build": [
     "cuda_compiler_stub",
     "cxx_compiler_stub",
+    "c_compiler_stub",
     "c_stdlib_stub"
    ],
    "host": [
-    "cuda-version 12.0",
+    "cuda-version 12.6",
     "python",
     "pip",
     "pytorch",
@@ -152,8 +154,7 @@
     "libtorch",
     "setuptools",
     "setuptools-scm",
-    "toml",
-    "cuda-version 11.8"
+    "toml"
    ],
    "run": [
     "__cuda",
@@ -191,11 +192,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/carterbox-torch-radon.json"
  },
- "raw_meta_yaml": "{% set version = \"3.0.0\" %}\n\n{% set cuda_major = environ.get(\"cuda_compiler_version\", \"11.2\").split(\".\")[0]|int %}\n\npackage:\n  name: carterbox-torch-radon\n  version: {{ version }}\n\nsource:\n  url: https://github.com/carterbox/torch-radon/releases/download/v{{ version }}/torch-radon-v{{ version }}.zip\n  sha256: 8b2cc1ae62e357517f805b878a8f23aeb9a1c43e09397f79e884d3eb83ef8aaf\n\nbuild:\n  number: 2\n  skip: true  # [cuda_compiler_version == \"None\"]\n  skip: true  # [cuda_compiler_version == \"10.2\"]\n  skip: true  # [cuda_compiler_version == \"11.0\"]\n  skip: true  # [cuda_compiler_version == \"11.1\"]\n  # no pytorch on windows in conda-forge, see\n  # https://github.com/conda-forge/pytorch-cpu-feedstock/issues/32\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cuda') }}\n    - {{ compiler('cxx') }}\n    - {{ stdlib('c') }}\n  host:\n    - cuda-version {{ cuda_compiler_version }}\n  {% if cuda_major == 12 %}\n    - cuda-cudart-dev\n    - libcurand-dev\n  {% endif %}\n    - python\n    - pip\n    - pytorch\n  # We must have the CUDA variant of pytorch\n    - pytorch =*=cuda*\n    - libtorch\n    - setuptools\n    - setuptools-scm\n    - toml\n  run:\n    - __cuda\n    - python\n    - pytorch =*=cuda*\n    - scipy\n    - numpy\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/carterbox/torch-radon\n  summary: 'Tomography operators for Pytorch'\n  description: |\n    TorchRadon is a PyTorch extension written in CUDA that implements\n    differentiable tomography operators.\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - carterbox\n",
+ "raw_meta_yaml": "{% set version = \"3.0.0\" %}\n\n{% set cuda_major = environ.get(\"cuda_compiler_version\", \"0.0\").split(\".\")[0]|int %}\n\npackage:\n  name: carterbox-torch-radon\n  version: {{ version }}\n\nsource:\n  url: https://github.com/carterbox/torch-radon/releases/download/v{{ version }}/torch-radon-v{{ version }}.zip\n  sha256: 8b2cc1ae62e357517f805b878a8f23aeb9a1c43e09397f79e884d3eb83ef8aaf\n\nbuild:\n  number: 3\n  # pytorch in conda-forge does not support CUDA 11.8 as of v2.5\n  # Windows compile fails with syntax errors\n  skip: true  # [win or cuda_compiler_version in (\"None\", \"11.8\")]\n\nrequirements:\n  build:\n    - {{ compiler('cuda') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ stdlib('c') }}\n  host:\n    - cuda-version {{ cuda_compiler_version }}\n  {% if cuda_major == 12 %}\n    - cuda-cudart-dev\n    - libcurand-dev\n  {% endif %}\n    - python\n    - pip\n    - pytorch\n  # We must have the CUDA variant of pytorch\n    - pytorch =*=cuda*\n    - libtorch\n    - setuptools\n    - setuptools-scm\n    - toml\n  run:\n    - __cuda\n    - python\n    - pytorch =*=cuda*\n    - scipy\n    - numpy\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/carterbox/torch-radon\n  summary: 'Tomography operators for Pytorch'\n  description: |\n    TorchRadon is a PyTorch extension written in CUDA that implements\n    differentiable tomography operators.\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - carterbox\n",
  "req": {
   "__set__": true,
   "elements": [
    "__cuda",
+   "c_compiler_stub",
    "c_stdlib_stub",
    "cuda-version",
    "cuda_compiler_stub",
@@ -215,6 +217,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_compiler_stub",
     "c_stdlib_stub",
     "cuda_compiler_stub",
     "cxx_compiler_stub"
@@ -223,6 +226,7 @@
   "host": {
    "__set__": true,
    "elements": [
+    "c_compiler_stub",
     "c_stdlib_stub",
     "cuda-version",
     "cuda_compiler_stub",
@@ -240,6 +244,7 @@
    "__set__": true,
    "elements": [
     "__cuda",
+    "c_compiler_stub",
     "c_stdlib_stub",
     "cuda_compiler_stub",
     "cxx_compiler_stub",
@@ -261,6 +266,7 @@
   "build": {
    "__set__": true,
    "elements": [
+    "c_compiler_stub",
     "c_stdlib_stub",
     "cuda_compiler_stub",
     "cxx_compiler_stub"
@@ -269,8 +275,7 @@
   "host": {
    "__set__": true,
    "elements": [
-    "cuda-version 11.8",
-    "cuda-version 12.0",
+    "cuda-version 12.6",
     "libtorch",
     "pip",
     "python",
