@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -37,10 +37,10 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6"
+    "python 3.9"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "pytorch >=1.1.0",
     "numpy",
     "pandas",
@@ -52,7 +52,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "aab85d0be457488c7336a90af44d99dd38d1c3750bfb3b87269d2067316fdbd4",
-   "url": "https://pypi.io/packages/source/s/snntorch/snntorch-0.9.1.tar.gz"
+   "url": "https://pypi.org/packages/source/s/snntorch/snntorch-0.9.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -62,7 +62,8 @@
     "snntorch"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -93,7 +94,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -106,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -121,10 +123,10 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6"
+    "python 3.9"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "pytorch >=1.1.0",
     "numpy",
     "pandas",
@@ -136,7 +138,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "aab85d0be457488c7336a90af44d99dd38d1c3750bfb3b87269d2067316fdbd4",
-   "url": "https://pypi.io/packages/source/s/snntorch/snntorch-0.9.1.tar.gz"
+   "url": "https://pypi.org/packages/source/s/snntorch/snntorch-0.9.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -146,7 +148,8 @@
     "snntorch"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -164,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/snntorch.json"
  },
- "raw_meta_yaml": "{% set name = \"snntorch\" %}\n{% set version = \"0.9.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/snntorch-{{ version }}.tar.gz\n  sha256: aab85d0be457488c7336a90af44d99dd38d1c3750bfb3b87269d2067316fdbd4\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - pytorch >=1.1.0\n    - numpy\n    - pandas\n    - matplotlib-base\n    - nir\n    - nirtorch\n\ntest:\n  imports:\n    - snntorch\n  commands:\n    - pip check\n  requires:\n    - pip\n\n\nabout:\n  home: https://github.com/jeshraghian/snntorch\n  summary: Deep learning with spiking neural networks.\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jeshraghian\n",
+ "raw_meta_yaml": "{% set name = \"snntorch\" %}\n{% set version = \"0.9.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/snntorch-{{ version }}.tar.gz\n  sha256: aab85d0be457488c7336a90af44d99dd38d1c3750bfb3b87269d2067316fdbd4\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - pytorch >=1.1.0\n    - numpy\n    - pandas\n    - matplotlib-base\n    - nir\n    - nirtorch\n\ntest:\n  imports:\n    - snntorch\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\n\nabout:\n  home: https://github.com/jeshraghian/snntorch\n  summary: Deep learning with spiking neural networks.\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jeshraghian\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -205,7 +208,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -219,7 +223,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6"
+    "python 3.9"
    ]
   },
   "run": {
@@ -230,18 +234,19 @@
     "nirtorch",
     "numpy",
     "pandas",
-    "python >=3.6",
+    "python >=3.9",
     "pytorch >=1.1.0"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/s/snntorch/snntorch-0.9.1.tar.gz",
+ "url": "https://pypi.org/packages/source/s/snntorch/snntorch-0.9.1.tar.gz",
  "version": "0.9.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/snntorch.json"
