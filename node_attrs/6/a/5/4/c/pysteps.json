@@ -32,7 +32,7 @@
   },
   "build": {
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -43,7 +43,7 @@
   },
   "package": {
    "name": "pysteps",
-   "version": "1.13.0"
+   "version": "1.14.0"
   },
   "requirements": {
    "build": [
@@ -52,32 +52,39 @@
    ],
    "host": [
     "python",
-    "numpy >=1.17",
-    "cython",
-    "pip",
-    "setuptools"
+    "wheel",
+    "setuptools >=40.8.0",
+    "cython >=0.29.2",
+    "numpy >=1.13",
+    "pip"
    ],
    "run": [
     "python",
     "jsmin",
+    "scipy",
     "jsonschema",
+    "numpy",
     "matplotlib",
     "netCDF4",
     "opencv",
     "pillow",
-    "pyproj",
-    "scipy",
-    "setuptools"
+    "pyproj"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a3dbd72a6fe368b42d7761efe4a3b658b12224ec51e2cf7276641d2fc43cf20d",
-   "url": "https://files.pythonhosted.org/packages/a1/22/ddc583bbae5b4cdd34c7cb2e30e96f88df4ad9197065502ad4e330d8e4b1/pysteps-1.13.0.tar.gz"
+   "sha256": "3437fd995fbef42a5c5384845a8746dea8f15b12d6ea1540051a46710af3f1c2",
+   "url": "https://pypi.org/packages/source/p/pysteps/pysteps-1.14.0.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "pysteps"
+   ],
+   "requires": [
+    "pip"
    ]
   }
  },
@@ -96,7 +103,8 @@
     "numpy",
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "wheel"
    ]
   },
   "run": {
@@ -106,17 +114,19 @@
     "jsonschema",
     "matplotlib",
     "netcdf4",
+    "numpy",
     "opencv",
     "pillow",
     "pyproj",
     "python",
-    "scipy",
-    "setuptools"
+    "scipy"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  },
  "meta_yaml": {
@@ -132,7 +142,7 @@
   },
   "build": {
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -143,7 +153,7 @@
   },
   "package": {
    "name": "pysteps",
-   "version": "1.13.0"
+   "version": "1.14.0"
   },
   "requirements": {
    "build": [
@@ -152,34 +162,39 @@
    ],
    "host": [
     "python",
-    "numpy >=1.17",
-    "cython",
-    "pip",
-    "setuptools",
-    "openmp"
+    "wheel",
+    "setuptools >=40.8.0",
+    "cython >=0.29.2",
+    "numpy >=1.13",
+    "pip"
    ],
    "run": [
     "python",
     "jsmin",
+    "scipy",
     "jsonschema",
+    "numpy",
     "matplotlib",
     "netCDF4",
     "opencv",
     "pillow",
-    "pyproj",
-    "scipy",
-    "setuptools",
-    "openmp"
+    "pyproj"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a3dbd72a6fe368b42d7761efe4a3b658b12224ec51e2cf7276641d2fc43cf20d",
-   "url": "https://files.pythonhosted.org/packages/a1/22/ddc583bbae5b4cdd34c7cb2e30e96f88df4ad9197065502ad4e330d8e4b1/pysteps-1.13.0.tar.gz"
+   "sha256": "3437fd995fbef42a5c5384845a8746dea8f15b12d6ea1540051a46710af3f1c2",
+   "url": "https://pypi.org/packages/source/p/pysteps/pysteps-1.14.0.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "pysteps"
+   ],
+   "requires": [
+    "pip"
    ]
   }
  },
@@ -197,7 +212,7 @@
   },
   "build": {
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -208,7 +223,7 @@
   },
   "package": {
    "name": "pysteps",
-   "version": "1.13.0"
+   "version": "1.14.0"
   },
   "requirements": {
    "build": [
@@ -217,34 +232,39 @@
    ],
    "host": [
     "python",
-    "numpy >=1.17",
-    "cython",
-    "pip",
-    "setuptools",
-    "openmp"
+    "wheel",
+    "setuptools >=40.8.0",
+    "cython >=0.29.2",
+    "numpy >=1.13",
+    "pip"
    ],
    "run": [
     "python",
-    "openmp",
     "jsmin",
+    "scipy",
     "jsonschema",
+    "numpy",
     "matplotlib",
     "netCDF4",
     "opencv",
     "pillow",
-    "pyproj",
-    "scipy",
-    "setuptools"
+    "pyproj"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a3dbd72a6fe368b42d7761efe4a3b658b12224ec51e2cf7276641d2fc43cf20d",
-   "url": "https://files.pythonhosted.org/packages/a1/22/ddc583bbae5b4cdd34c7cb2e30e96f88df4ad9197065502ad4e330d8e4b1/pysteps-1.13.0.tar.gz"
+   "sha256": "3437fd995fbef42a5c5384845a8746dea8f15b12d6ea1540051a46710af3f1c2",
+   "url": "https://pypi.org/packages/source/p/pysteps/pysteps-1.14.0.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "pysteps"
+   ],
+   "requires": [
+    "pip"
    ]
   }
  },
@@ -261,10 +281,10 @@
    "elements": [
     "cython",
     "numpy",
-    "openmp",
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "wheel"
    ]
   },
   "run": {
@@ -274,18 +294,19 @@
     "jsonschema",
     "matplotlib",
     "netcdf4",
+    "numpy",
     "opencv",
-    "openmp",
     "pillow",
     "pyproj",
     "python",
-    "scipy",
-    "setuptools"
+    "scipy"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  },
  "outputs_names": {
@@ -303,7 +324,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pysteps.json"
  },
- "raw_meta_yaml": "{% set name = \"pysteps\" %}\n{% set version = \"1.13.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://files.pythonhosted.org/packages/a1/22/ddc583bbae5b4cdd34c7cb2e30e96f88df4ad9197065502ad4e330d8e4b1/pysteps-{{ version }}.tar.gz\n  sha256: a3dbd72a6fe368b42d7761efe4a3b658b12224ec51e2cf7276641d2fc43cf20d\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  skip: true  # [py<310 or py>312]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - numpy >=1.17\n    - cython\n    - pip\n    - setuptools\n    - openmp  # [osx]\n  run:\n    - python\n    - openmp  # [osx]\n    - jsmin\n    - jsonschema\n    - matplotlib\n    - netCDF4\n    - opencv\n    - pillow\n    - pyproj\n    - scipy\n    - setuptools\n\ntest:\n  imports:\n    - pysteps\n\nabout:\n  home: https://pysteps.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: Python framework for short-term ensemble prediction systems\n  license_file: LICENSE\n  description: |\n    pySTEPS is a community-driven initiative for developing and maintaining an\n    easy to use, modular, free and open-source Python framework for short-term\n    ensemble prediction systems.\n  doc_url: https://pysteps.readthedocs.io/\n  dev_url: https://github.com/pySTEPS/pysteps\n\nextra:\n  recipe-maintainers:\n    - aperezhortal\n    - pulkkins\n    - dnerini\n",
+ "raw_meta_yaml": "{% set name = \"pysteps\" %}\n{% set version = \"1.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pysteps-{{ version }}.tar.gz\n  sha256: 3437fd995fbef42a5c5384845a8746dea8f15b12d6ea1540051a46710af3f1c2\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  skip: true  # [py<310 or py>312]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - wheel\n    - setuptools >=40.8.0\n    - cython >=0.29.2\n    - numpy >=1.13\n    - pip\n  run:\n    - python\n    - jsmin\n    - scipy\n    - jsonschema\n    - numpy\n    - matplotlib\n    - netCDF4\n    - opencv\n    - pillow\n    - pyproj\ntest:\n  imports:\n    - pysteps\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pysteps.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: Python framework for short-term ensemble prediction systems\n  license_file: LICENSE\n  description: |\n    pySTEPS is a community-driven initiative for developing and maintaining an\n    easy to use, modular, free and open-source Python framework for short-term\n    ensemble prediction systems.\n  doc_url: https://pysteps.readthedocs.io/\n  dev_url: https://github.com/pySTEPS/pysteps\n\nextra:\n  recipe-maintainers:\n    - aperezhortal\n    - pulkkins\n    - dnerini\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -316,13 +337,13 @@
    "netcdf4",
    "numpy",
    "opencv",
-   "openmp",
    "pillow",
    "pip",
    "pyproj",
    "python",
    "scipy",
-   "setuptools"
+   "setuptools",
+   "wheel"
   ]
  },
  "requirements": {
@@ -340,10 +361,10 @@
     "c_stdlib_stub",
     "cython",
     "numpy",
-    "openmp",
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "wheel"
    ]
   },
   "run": {
@@ -355,18 +376,19 @@
     "jsonschema",
     "matplotlib",
     "netcdf4",
+    "numpy",
     "opencv",
-    "openmp",
     "pillow",
     "pyproj",
     "python",
-    "scipy",
-    "setuptools"
+    "scipy"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  },
  "strong_exports": false,
@@ -381,12 +403,12 @@
   "host": {
    "__set__": true,
    "elements": [
-    "cython",
-    "numpy >=1.17",
-    "openmp",
+    "cython >=0.29.2",
+    "numpy >=1.13",
     "pip",
     "python",
-    "setuptools"
+    "setuptools >=40.8.0",
+    "wheel"
    ]
   },
   "run": {
@@ -396,22 +418,23 @@
     "jsonschema",
     "matplotlib",
     "netCDF4",
+    "numpy",
     "opencv",
-    "openmp",
     "pillow",
     "pyproj",
     "python",
-    "scipy",
-    "setuptools"
+    "scipy"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  },
- "url": "https://files.pythonhosted.org/packages/a1/22/ddc583bbae5b4cdd34c7cb2e30e96f88df4ad9197065502ad4e330d8e4b1/pysteps-1.13.0.tar.gz",
- "version": "1.13.0",
+ "url": "https://pypi.org/packages/source/p/pysteps/pysteps-1.14.0.tar.gz",
+ "version": "1.14.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pysteps.json"
  },
@@ -428,7 +451,7 @@
   },
   "build": {
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -439,7 +462,7 @@
   },
   "package": {
    "name": "pysteps",
-   "version": "1.13.0"
+   "version": "1.14.0"
   },
   "requirements": {
    "build": [
@@ -448,32 +471,39 @@
    ],
    "host": [
     "python",
-    "numpy >=1.17",
-    "cython",
-    "pip",
-    "setuptools"
+    "wheel",
+    "setuptools >=40.8.0",
+    "cython >=0.29.2",
+    "numpy >=1.13",
+    "pip"
    ],
    "run": [
     "python",
     "jsmin",
+    "scipy",
     "jsonschema",
+    "numpy",
     "matplotlib",
     "netCDF4",
     "opencv",
     "pillow",
-    "pyproj",
-    "scipy",
-    "setuptools"
+    "pyproj"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a3dbd72a6fe368b42d7761efe4a3b658b12224ec51e2cf7276641d2fc43cf20d",
-   "url": "https://files.pythonhosted.org/packages/a1/22/ddc583bbae5b4cdd34c7cb2e30e96f88df4ad9197065502ad4e330d8e4b1/pysteps-1.13.0.tar.gz"
+   "sha256": "3437fd995fbef42a5c5384845a8746dea8f15b12d6ea1540051a46710af3f1c2",
+   "url": "https://pypi.org/packages/source/p/pysteps/pysteps-1.14.0.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "pysteps"
+   ],
+   "requires": [
+    "pip"
    ]
   }
  },
@@ -492,7 +522,8 @@
     "numpy",
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "wheel"
    ]
   },
   "run": {
@@ -502,17 +533,19 @@
     "jsonschema",
     "matplotlib",
     "netcdf4",
+    "numpy",
     "opencv",
     "pillow",
     "pyproj",
     "python",
-    "scipy",
-    "setuptools"
+    "scipy"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  }
 }
