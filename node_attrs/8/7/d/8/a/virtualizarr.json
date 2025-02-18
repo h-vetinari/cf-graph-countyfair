@@ -19,10 +19,9 @@
  "linux_64_meta_yaml": {
   "about": {
    "home": "https://pypi.org/project/virtualizarr/",
-   "license": "MIT AND Apache-2.0",
+   "license": "Apache-2.0",
    "license_file": [
-    "LICENSE",
-    "virtualizarr/vendor/zarr/LICENSE.txt"
+    "LICENSE"
    ],
    "summary": "Create virtual Zarr stores from archival data using xarray API"
   },
@@ -118,10 +117,9 @@
  "meta_yaml": {
   "about": {
    "home": "https://pypi.org/project/virtualizarr/",
-   "license": "MIT AND Apache-2.0",
+   "license": "Apache-2.0",
    "license_file": [
-    "LICENSE",
-    "virtualizarr/vendor/zarr/LICENSE.txt"
+    "LICENSE"
    ],
    "summary": "Create virtual Zarr stores from archival data using xarray API"
   },
@@ -194,7 +192,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/virtualizarr.json"
  },
- "raw_meta_yaml": "{% set python_min = '3.11' %}\n{% set name = \"virtualizarr\" %}\n{% set version = \"1.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/virtualizarr-{{ version }}.tar.gz\n  sha256: 593c79b1482aeef6b672d2c9b8621abe700af3f3880c314e01780c8f2c4dbc73\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0.0\n    - setuptools-scm >=7.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - xarray >=2025.1.1\n    - numpy >=2.0.0\n    - packaging\n    - universal_pathlib\n    - numcodecs\n    - ujson\n  run_constrained:\n    - imagecodecs >=2024.6.1\n    - kerchunk >=0.2.8\n    - icechunk >=0.1.1\n\ntest:\n  imports:\n    - virtualizarr\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/virtualizarr/\n  summary: Create virtual Zarr stores from archival data using xarray API\n  license: MIT AND Apache-2.0\n  license_file:\n    - LICENSE\n    - virtualizarr/vendor/zarr/LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - TomNicholas\n    - maxrjones\n",
+ "raw_meta_yaml": "{% set python_min = '3.11' %}\n{% set name = \"virtualizarr\" %}\n{% set version = \"1.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/virtualizarr-{{ version }}.tar.gz\n  sha256: 593c79b1482aeef6b672d2c9b8621abe700af3f3880c314e01780c8f2c4dbc73\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0.0\n    - setuptools-scm >=7.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - xarray >=2025.1.1\n    - numpy >=2.0.0\n    - packaging\n    - universal_pathlib\n    - numcodecs\n    - ujson\n  run_constrained:\n    - imagecodecs >=2024.6.1\n    - kerchunk >=0.2.8\n    - icechunk >=0.1.1\n\ntest:\n  imports:\n    - virtualizarr\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/virtualizarr/\n  summary: Create virtual Zarr stores from archival data using xarray API\n  license: Apache-2.0\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - TomNicholas\n    - maxrjones\n",
  "req": {
   "__set__": true,
   "elements": [
