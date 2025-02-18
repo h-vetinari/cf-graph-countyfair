@@ -24,6 +24,7 @@
    "summary": "Python library for GraphBLAS: high-performance sparse linear algebra for scalable graph analytics"
   },
   "build": {
+   "noarch": "python",
    "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
@@ -35,19 +36,19 @@
   },
   "package": {
    "name": "python-graphblas",
-   "version": "2024.2.0"
+   "version": "2025.2.0"
   },
   "requirements": {
    "host": [
-    "python",
+    "python 3.10",
     "setuptools >=64",
     "setuptools-git-versioning",
     "pip"
    ],
    "run": [
-    "python",
-    "python-suitesparse-graphblas >=7.4.0.0,<9",
-    "numpy >=1.22",
+    "python >=3.10",
+    "python-suitesparse-graphblas >=7.4.0.0,<10",
+    "numpy >=1.23",
     "numba >=0.55",
     "donfig >=0.6",
     "pyyaml >=5.4"
@@ -55,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "51a31b4b20cae3fbfdb86a95f7ef1d5a06d749f281640bfcc724f6dda79d266b",
-   "url": "https://pypi.io/packages/source/p/python-graphblas/python-graphblas-2024.2.0.tar.gz"
+   "sha256": "63e4cabc7c8fe90b5f61b13b2d32682f3480f13c994b7f186c15905e27682664",
+   "url": "https://pypi.org/packages/source/p/python-graphblas/python_graphblas-2025.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -68,7 +69,8 @@
     "graphblas.agg"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -100,7 +102,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -115,6 +118,7 @@
    "summary": "Python library for GraphBLAS: high-performance sparse linear algebra for scalable graph analytics"
   },
   "build": {
+   "noarch": "python",
    "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
@@ -126,19 +130,19 @@
   },
   "package": {
    "name": "python-graphblas",
-   "version": "2024.2.0"
+   "version": "2025.2.0"
   },
   "requirements": {
    "host": [
-    "python",
+    "python 3.10",
     "setuptools >=64",
     "setuptools-git-versioning",
     "pip"
    ],
    "run": [
-    "python",
-    "python-suitesparse-graphblas >=7.4.0.0,<9",
-    "numpy >=1.22",
+    "python >=3.10",
+    "python-suitesparse-graphblas >=7.4.0.0,<10",
+    "numpy >=1.23",
     "numba >=0.55",
     "donfig >=0.6",
     "pyyaml >=5.4"
@@ -146,8 +150,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "51a31b4b20cae3fbfdb86a95f7ef1d5a06d749f281640bfcc724f6dda79d266b",
-   "url": "https://pypi.io/packages/source/p/python-graphblas/python-graphblas-2024.2.0.tar.gz"
+   "sha256": "63e4cabc7c8fe90b5f61b13b2d32682f3480f13c994b7f186c15905e27682664",
+   "url": "https://pypi.org/packages/source/p/python-graphblas/python_graphblas-2025.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,102 +163,12 @@
     "graphblas.agg"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
  "name": "python-graphblas",
- "osx_64_meta_yaml": {
-  "about": {
-   "description": "Python wrapper around GraphBLAS. Currently only supports SuiteSparse::GraphBLAS.\nGoal is to be a Pythonic way to write beautiful, efficient graph algorithms\nin the language of linear algebra.\n",
-   "dev_url": "https://github.com/python-graphblas/python-graphblas",
-   "home": "https://github.com/python-graphblas/python-graphblas",
-   "license": "Apache-2.0",
-   "license_family": "Apache",
-   "license_file": "LICENSE",
-   "summary": "Python library for GraphBLAS: high-performance sparse linear algebra for scalable graph analytics"
-  },
-  "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "eriknw",
-    "jim22k"
-   ]
-  },
-  "package": {
-   "name": "python-graphblas",
-   "version": "2024.2.0"
-  },
-  "requirements": {
-   "host": [
-    "python",
-    "setuptools >=64",
-    "setuptools-git-versioning",
-    "pip"
-   ],
-   "run": [
-    "python",
-    "python-suitesparse-graphblas >=7.4.0.0,<9",
-    "numpy >=1.22",
-    "numba >=0.55",
-    "donfig >=0.6",
-    "pyyaml >=5.4"
-   ]
-  },
-  "schema_version": 0,
-  "source": {
-   "sha256": "51a31b4b20cae3fbfdb86a95f7ef1d5a06d749f281640bfcc724f6dda79d266b",
-   "url": "https://pypi.io/packages/source/p/python-graphblas/python-graphblas-2024.2.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "python -c \"from graphblas import Matrix\""
-   ],
-   "imports": [
-    "graphblas",
-    "graphblas.agg"
-   ],
-   "requires": [
-    "pip"
-   ]
-  }
- },
- "osx_64_requirements": {
-  "build": {
-   "__set__": true,
-   "elements": []
-  },
-  "host": {
-   "__set__": true,
-   "elements": [
-    "pip",
-    "python",
-    "setuptools",
-    "setuptools-git-versioning"
-   ]
-  },
-  "run": {
-   "__set__": true,
-   "elements": [
-    "donfig",
-    "numba",
-    "numpy",
-    "python",
-    "python-suitesparse-graphblas",
-    "pyyaml"
-   ]
-  },
-  "test": {
-   "__set__": true,
-   "elements": [
-    "pip"
-   ]
-  }
- },
  "outputs_names": {
   "__set__": true,
   "elements": [
@@ -263,14 +177,12 @@
  },
  "parsing_error": false,
  "platforms": [
-  "linux_64",
-  "osx_64",
-  "win_64"
+  "linux_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/python-graphblas.json"
  },
- "raw_meta_yaml": "{% set name = \"python-graphblas\" %}\n{% set version = \"2024.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/python-graphblas-{{ version }}.tar.gz\n  sha256: 51a31b4b20cae3fbfdb86a95f7ef1d5a06d749f281640bfcc724f6dda79d266b\n\nbuild:\n  skip: true  # [py<39]\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python\n    - setuptools >=64\n    - setuptools-git-versioning\n    - pip\n  run:\n    - python\n    - python-suitesparse-graphblas >=7.4.0.0,<9\n    - numpy >=1.22\n    - numba >=0.55  # [py<313]\n    - donfig >=0.6\n    - pyyaml >=5.4\n\ntest:\n  imports:\n    - graphblas\n    - graphblas.agg\n  commands:\n    - pip check\n    - python -c \"from graphblas import Matrix\"\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/python-graphblas/python-graphblas\n  summary: 'Python library for GraphBLAS: high-performance sparse linear algebra for scalable graph analytics'\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  description: |\n    Python wrapper around GraphBLAS. Currently only supports SuiteSparse::GraphBLAS.\n    Goal is to be a Pythonic way to write beautiful, efficient graph algorithms\n    in the language of linear algebra.\n  dev_url: https://github.com/python-graphblas/python-graphblas\n\nextra:\n  recipe-maintainers:\n    - eriknw\n    - jim22k\n",
+ "raw_meta_yaml": "{% set name = \"python-graphblas\" %}\n{% set version = \"2025.2.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/python_graphblas-{{ version }}.tar.gz\n  sha256: 63e4cabc7c8fe90b5f61b13b2d32682f3480f13c994b7f186c15905e27682664\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=64\n    - setuptools-git-versioning\n    - pip\n  run:\n    - python >={{ python_min }}\n    - python-suitesparse-graphblas >=7.4.0.0,<10\n    - numpy >=1.23\n    - numba >=0.55\n    - donfig >=0.6\n    - pyyaml >=5.4\n\ntest:\n  imports:\n    - graphblas\n    - graphblas.agg\n  commands:\n    - pip check\n    - python -c \"from graphblas import Matrix\"\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/python-graphblas/python-graphblas\n  summary: 'Python library for GraphBLAS: high-performance sparse linear algebra for scalable graph analytics'\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  description: |\n    Python wrapper around GraphBLAS. Currently only supports SuiteSparse::GraphBLAS.\n    Goal is to be a Pythonic way to write beautiful, efficient graph algorithms\n    in the language of linear algebra.\n  dev_url: https://github.com/python-graphblas/python-graphblas\n\nextra:\n  recipe-maintainers:\n    - eriknw\n    - jim22k\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -313,7 +225,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -327,7 +240,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python",
+    "python 3.10",
     "setuptools >=64",
     "setuptools-git-versioning"
    ]
@@ -337,113 +250,23 @@
    "elements": [
     "donfig >=0.6",
     "numba >=0.55",
-    "numpy >=1.22",
-    "python",
-    "python-suitesparse-graphblas >=7.4.0.0,<9",
+    "numpy >=1.23",
+    "python >=3.10",
+    "python-suitesparse-graphblas >=7.4.0.0,<10",
     "pyyaml >=5.4"
    ]
   },
   "test": {
-   "__set__": true,
-   "elements": [
-    "pip"
-   ]
-  }
- },
- "url": "https://pypi.io/packages/source/p/python-graphblas/python-graphblas-2024.2.0.tar.gz",
- "version": "2024.2.0",
- "version_pr_info": {
-  "__lazy_json__": "version_pr_info/python-graphblas.json"
- },
- "win_64_meta_yaml": {
-  "about": {
-   "description": "Python wrapper around GraphBLAS. Currently only supports SuiteSparse::GraphBLAS.\nGoal is to be a Pythonic way to write beautiful, efficient graph algorithms\nin the language of linear algebra.\n",
-   "dev_url": "https://github.com/python-graphblas/python-graphblas",
-   "home": "https://github.com/python-graphblas/python-graphblas",
-   "license": "Apache-2.0",
-   "license_family": "Apache",
-   "license_file": "LICENSE",
-   "summary": "Python library for GraphBLAS: high-performance sparse linear algebra for scalable graph analytics"
-  },
-  "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "eriknw",
-    "jim22k"
-   ]
-  },
-  "package": {
-   "name": "python-graphblas",
-   "version": "2024.2.0"
-  },
-  "requirements": {
-   "host": [
-    "python",
-    "setuptools >=64",
-    "setuptools-git-versioning",
-    "pip"
-   ],
-   "run": [
-    "python",
-    "python-suitesparse-graphblas >=7.4.0.0,<9",
-    "numpy >=1.22",
-    "numba >=0.55",
-    "donfig >=0.6",
-    "pyyaml >=5.4"
-   ]
-  },
-  "schema_version": 0,
-  "source": {
-   "sha256": "51a31b4b20cae3fbfdb86a95f7ef1d5a06d749f281640bfcc724f6dda79d266b",
-   "url": "https://pypi.io/packages/source/p/python-graphblas/python-graphblas-2024.2.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "python -c \"from graphblas import Matrix\""
-   ],
-   "imports": [
-    "graphblas",
-    "graphblas.agg"
-   ],
-   "requires": [
-    "pip"
-   ]
-  }
- },
- "win_64_requirements": {
-  "build": {
-   "__set__": true,
-   "elements": []
-  },
-  "host": {
    "__set__": true,
    "elements": [
     "pip",
-    "python",
-    "setuptools",
-    "setuptools-git-versioning"
-   ]
-  },
-  "run": {
-   "__set__": true,
-   "elements": [
-    "donfig",
-    "numba",
-    "numpy",
-    "python",
-    "python-suitesparse-graphblas",
-    "pyyaml"
-   ]
-  },
-  "test": {
-   "__set__": true,
-   "elements": [
-    "pip"
+    "python 3.10"
    ]
   }
+ },
+ "url": "https://pypi.org/packages/source/p/python-graphblas/python_graphblas-2025.2.0.tar.gz",
+ "version": "2025.2.0",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/python-graphblas.json"
  }
 }
