@@ -36,7 +36,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -50,7 +50,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -72,7 +72,37 @@
      ],
      "script": "test_core.sh",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -89,7 +119,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -104,7 +135,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.sh",
     "test": {
      "commands": [
       "pip check",
@@ -118,7 +148,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -134,25 +165,27 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.sh",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
       "make",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "gemmi >=0.6.1",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.sh",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.sh"
     }
    }
   ],
@@ -190,6 +223,7 @@
    "__set__": true,
    "elements": [
     "ncrystal-core",
+    "ncrystal-lib",
     "ncrystal-python",
     "numpy",
     "python"
@@ -198,16 +232,22 @@
   "test": {
    "__set__": true,
    "elements": [
+    "ase",
+    "c-compiler",
     "cmake",
     "cxx-compiler",
+    "gemmi",
     "git",
     "make",
+    "matplotlib-base",
+    "mpmath",
     "pip",
     "python",
     "pyyaml",
     "ruff",
     "scikit-build-core",
     "setuptools",
+    "spglib",
     "tomli"
    ]
   }
@@ -225,7 +265,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -239,7 +279,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -261,7 +301,37 @@
      ],
      "script": "test_core.sh",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -278,7 +348,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -293,7 +364,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.sh",
     "test": {
      "commands": [
       "pip check",
@@ -307,7 +377,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -323,25 +394,26 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.sh",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
       "make",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.sh",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.sh"
     }
    }
   ],
@@ -379,6 +451,7 @@
    "__set__": true,
    "elements": [
     "ncrystal-core",
+    "ncrystal-lib",
     "ncrystal-python",
     "numpy",
     "python"
@@ -387,16 +460,21 @@
   "test": {
    "__set__": true,
    "elements": [
+    "ase",
+    "c-compiler",
     "cmake",
     "cxx-compiler",
     "git",
     "make",
+    "matplotlib-base",
+    "mpmath",
     "pip",
     "python",
     "pyyaml",
     "ruff",
     "scikit-build-core",
     "setuptools",
+    "spglib",
     "tomli"
    ]
   }
@@ -414,7 +492,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -428,7 +506,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -450,7 +528,37 @@
      ],
      "script": "test_core.sh",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -467,7 +575,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -482,7 +591,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.sh",
     "test": {
      "commands": [
       "pip check",
@@ -496,7 +604,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -512,25 +621,27 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.sh",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
       "make",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "gemmi >=0.6.1",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.sh",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.sh"
     }
    },
    {
@@ -539,7 +650,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -561,7 +672,37 @@
      ],
      "script": "test_core.sh",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -578,7 +719,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -593,7 +735,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.sh",
     "test": {
      "commands": [
       "pip check",
@@ -607,7 +748,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -623,25 +765,26 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.sh",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
       "make",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.sh",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.sh"
     }
    },
    {
@@ -650,7 +793,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -672,7 +815,37 @@
      ],
      "script": "test_core.sh",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -689,7 +862,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -704,7 +878,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.sh",
     "test": {
      "commands": [
       "pip check",
@@ -718,7 +891,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -734,25 +908,27 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.sh",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
       "make",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "gemmi >=0.6.1",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.sh",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.sh"
     }
    },
    {
@@ -761,7 +937,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -783,7 +959,37 @@
      ],
      "script": "test_core.sh",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -800,7 +1006,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -815,7 +1022,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.sh",
     "test": {
      "commands": [
       "pip check",
@@ -829,7 +1035,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -845,25 +1052,27 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.sh",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
       "make",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "gemmi >=0.6.1",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.sh",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.sh"
     }
    },
    {
@@ -872,7 +1081,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -892,7 +1101,37 @@
      ],
      "script": "test_core.bat",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -909,7 +1148,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -924,7 +1164,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.bat",
     "test": {
      "commands": [
       "pip check",
@@ -938,7 +1177,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -954,24 +1194,26 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.bat",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "gemmi >=0.6.1",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.bat",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.bat"
     }
    }
   ],
@@ -1000,7 +1242,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -1014,7 +1256,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -1036,7 +1278,37 @@
      ],
      "script": "test_core.sh",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -1053,7 +1325,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -1068,7 +1341,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.sh",
     "test": {
      "commands": [
       "pip check",
@@ -1082,7 +1354,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -1098,25 +1371,27 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.sh",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
       "make",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "gemmi >=0.6.1",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.sh",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.sh"
     }
    }
   ],
@@ -1154,6 +1429,7 @@
    "__set__": true,
    "elements": [
     "ncrystal-core",
+    "ncrystal-lib",
     "ncrystal-python",
     "numpy",
     "python"
@@ -1162,16 +1438,22 @@
   "test": {
    "__set__": true,
    "elements": [
+    "ase",
+    "c-compiler",
     "cmake",
     "cxx-compiler",
+    "gemmi",
     "git",
     "make",
+    "matplotlib-base",
+    "mpmath",
     "pip",
     "python",
     "pyyaml",
     "ruff",
     "scikit-build-core",
     "setuptools",
+    "spglib",
     "tomli"
    ]
   }
@@ -1189,7 +1471,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -1203,7 +1485,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -1225,7 +1507,37 @@
      ],
      "script": "test_core.sh",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -1242,7 +1554,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -1257,7 +1570,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.sh",
     "test": {
      "commands": [
       "pip check",
@@ -1271,7 +1583,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -1287,25 +1600,27 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.sh",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
       "make",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "gemmi >=0.6.1",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.sh",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.sh"
     }
    }
   ],
@@ -1343,6 +1658,7 @@
    "__set__": true,
    "elements": [
     "ncrystal-core",
+    "ncrystal-lib",
     "ncrystal-python",
     "numpy",
     "python"
@@ -1351,16 +1667,22 @@
   "test": {
    "__set__": true,
    "elements": [
+    "ase",
+    "c-compiler",
     "cmake",
     "cxx-compiler",
+    "gemmi",
     "git",
     "make",
+    "matplotlib-base",
+    "mpmath",
     "pip",
     "python",
     "pyyaml",
     "ruff",
     "scikit-build-core",
     "setuptools",
+    "spglib",
     "tomli"
    ]
   }
@@ -1370,6 +1692,7 @@
   "elements": [
    "ncrystal",
    "ncrystal-core",
+   "ncrystal-lib",
    "ncrystal-python"
   ]
  },
@@ -1384,7 +1707,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ncrystal.json"
  },
- "raw_meta_yaml": "{% set version = \"4.0.0\" %}\n\npackage:\n  name: ncrystal-suite\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mctools/ncrystal/archive/v{{ version }}.tar.gz\n  sha256: 9acb81720806e5f232c9a9b4cb1b52db757744da12dd772010aff2a11ed89833\n  folder: src\n\nbuild:\n  noarch: python\n  number: 0\n\noutputs:\n  - name: ncrystal-core\n    script: build_core.sh  # [unix]\n    script: build_core.bat  # [win]\n    build:\n      #If building against ncrystal-core, ncrystal-core is almost always also\n      #needed at runtime as well, so we could consider enabling the following:\n      #run_exports:\n      #  strong:\n      #    - ncrystal-core\n      ignore_run_exports_from:\n        - python\n    requirements:\n      build:\n        - cmake >=3.25\n        - make  # [not win]\n        - {{ compiler('cxx') }}\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n      host:\n        - python  # note that python is only used to convert ncmat->C++ code,\n                  # hence the ignore_run_exports_from python above.\n      #NB: no explicit run: dependencies!\n    test:\n      requires:\n        - cmake >=3.25\n        - make  # [not win]\n        - cxx-compiler\n      source_files:\n        - ./src/examples\n      script: test_core.sh  # [unix]\n      script: test_core.bat  # [win]\n\n  - name: ncrystal-python\n    #For some reason putting the pip install command inline here does not work,\n    #so we use some scripts:\n    script: build_python.sh  # [unix]\n    script: build_python.bat  # [win]\n    build:\n      noarch: python\n      entry_points:\n        - nctool = NCrystal._cli_nctool:main\n        - ncrystal_cif2ncmat = NCrystal._cli_cif2ncmat:main\n        - ncrystal_endf2ncmat = NCrystal._cli_endf2ncmat:main\n        - ncrystal_hfg2ncmat = NCrystal._cli_hfg2ncmat:main\n        - ncrystal_mcstasunion = NCrystal._cli_mcstasunion:main\n        - ncrystal_ncmat2cpp = NCrystal._cli_ncmat2cpp:main\n        - ncrystal_ncmat2hkl = NCrystal._cli_ncmat2hkl:main\n        - ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main\n        - ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main\n    requirements:\n      build:\n        - python  {{ python_min }}  # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n      host:\n        - python  {{ python_min }}\n        - pip\n        - setuptools >=64.0\n      run:\n        - python >={{ python_min }}\n        - numpy >=1.22\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      commands:\n        - pip check\n        - pip show ncrystal-python\n\n  - name: ncrystal\n    script: build_ncrystal.sh  # [unix]\n    script: build_ncrystal.bat  # [win]\n    build:\n      noarch: python\n    requirements:\n      build:\n        - python  {{ python_min }}  # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n      host:\n        - python  {{ python_min }}\n        - pip\n        - setuptools >=64.0\n      run:\n        - python >={{ python_min }}\n        #Exact version pinning for consistent ncrystal environment:\n        - ncrystal-core ={{ version }}\n        - ncrystal-python ={{ version }}\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n        - cmake >=3.25\n        - make  # [not win]\n        - cxx-compiler\n        - scikit-build-core >=0.10\n        - setuptools >=64.0\n        - ruff\n        - pyyaml\n        - tomli\n        - git\n      source_files:\n        - ./src\n      script: test_ncrystal.sh  # [unix]\n      script: test_ncrystal.bat  # [win]\n\n#  Wait with an ncrystal-all package until later (gemmi is not present in linux\n#  aarch64 yet):\n#   - name: ncrystal-all\n#     build:\n#       noarch: generic\n#     requirements:\n#       run:\n#         #Exact version pinning for consistent ncrystal environment:\n#         - ncrystal ={{ version }}\n#         - ncrystal-core ={{ version }}\n#         - ncrystal-python ={{ version }}\n#         - ase !=3.24.*\n#         - gemmi >=0.6.1\n#         - spglib >=2.1.0\n#         - matplotlib-base >=3.7.0\n#     test:\n#       requires:\n#         - python {{ python_min }}\n#         - pip\n#       commands:\n#         - pip check\n\nabout:\n  home: https://github.com/mctools/ncrystal\n  summary: Library for thermal neutron transport in crystals and other materials.\n  description: |\n    NCrystal is a library and toolkit for thermal neutron transport in crystals\n    and other materials. It can be used standalone or as a backend for other\n    Monte Carlo particle simulation frameworks.\n  license: Apache-2.0\n  license_family: Apache\n  license_file: src/LICENSE\n  doc_url: https://github.com/mctools/ncrystal/wiki\n  dev_url: https://github.com/mctools/ncrystal\n\nextra:\n  recipe-maintainers:\n    - tkittel\n",
+ "raw_meta_yaml": "{% set version = \"4.0.0\" %}\n\npackage:\n  name: ncrystal-suite\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mctools/ncrystal/archive/v{{ version }}.tar.gz\n  sha256: 9acb81720806e5f232c9a9b4cb1b52db757744da12dd772010aff2a11ed89833\n  folder: src\n\nbuild:\n  noarch: python\n  number: 1\n\noutputs:\n  - name: ncrystal-lib\n    script: build_core.sh  # [unix]\n    script: build_core.bat  # [win]\n    build:\n      #If building against ncrystal-core, ncrystal-core is almost always also\n      #needed at runtime as well, so we could consider enabling the following:\n      #run_exports:\n      #  strong:\n      #    - ncrystal-core\n      ignore_run_exports_from:\n        - python\n    requirements:\n      build:\n        - cmake >=3.25\n        - make  # [not win]\n        - {{ compiler('cxx') }}\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n      host:\n        # Note that python is only used to convert ncmat->C++ code,\n        # hence the ignore_run_exports_from python above.\n        - python\n      #NB: no explicit run: dependencies!\n    test:\n      requires:\n        - cmake >=3.25\n        - make  # [not win]\n        - cxx-compiler\n      source_files:\n        - ./src/examples/downstream_cmake\n      script: test_core.sh  # [unix]\n      script: test_core.bat  # [win]\n\n  - name: ncrystal-core\n    build:\n      noarch: python\n      script: python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation\n    requirements:\n      build:\n        - python  {{ python_min }}  # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n      host:\n        - python  {{ python_min }}\n        - pip\n        - setuptools >=64.0\n      run:\n        - python >={{ python_min }}\n        - ncrystal-lib ={{ version }}\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      commands:\n        - pip check\n        - pip show ncrystal-core\n        - conda list\n\n  - name: ncrystal-python\n    build:\n      noarch: python\n      script: python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation\n      entry_points:\n        - nctool = NCrystal._cli_nctool:main\n        - ncrystal_cif2ncmat = NCrystal._cli_cif2ncmat:main\n        - ncrystal_endf2ncmat = NCrystal._cli_endf2ncmat:main\n        - ncrystal_hfg2ncmat = NCrystal._cli_hfg2ncmat:main\n        - ncrystal_mcstasunion = NCrystal._cli_mcstasunion:main\n        - ncrystal_ncmat2cpp = NCrystal._cli_ncmat2cpp:main\n        - ncrystal_ncmat2hkl = NCrystal._cli_ncmat2hkl:main\n        - ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main\n        - ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main\n    requirements:\n      build:\n        - python  {{ python_min }}  # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n      host:\n        - python  {{ python_min }}\n        - pip\n        - setuptools >=64.0\n      run:\n        - python >={{ python_min }}\n        - numpy >=1.22\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n      commands:\n        - pip check\n        - pip show ncrystal-python\n\n  - name: ncrystal\n    build:\n      noarch: python\n      script: python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation\n    requirements:\n      build:\n        - python  {{ python_min }}  # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}  # [build_platform != target_platform]\n      host:\n        - python  {{ python_min }}\n        - pip\n        - setuptools >=64.0\n      run:\n        - python >={{ python_min }}\n        #Exact version pinning for consistent ncrystal environment:\n        - ncrystal-core ={{ version }}\n        - ncrystal-python ={{ version }}\n    test:\n      requires:\n        - python {{ python_min }}\n        - pip\n        - git >=2.40.0\n        - cmake >=3.25\n        - make  # [not win]\n        - c-compiler\n        - cxx-compiler\n        - scikit-build-core >=0.10\n        - setuptools >=64.0\n        - ruff >=0.8.1\n        - pyyaml >=6.0.0\n        - tomli >=2.0.0\n        - ase !=3.24.*\n        - gemmi >=0.6.1  # [not aarch64]\n        - spglib >=2.1.0\n        - matplotlib-base >=3.7.0\n        - mpmath >=1.3.0\n      script: test_ncrystal.sh  # [unix]\n      script: test_ncrystal.bat  # [win]\n\n#  - name: ncrystal-all\n#    build:\n#      noarch: generic\n#    requirements:\n#      run:\n#        #Exact version pinning for consistent ncrystal environment:\n#        - ncrystal ={{ version }}\n#        - ase !=3.24.*\n##        - gemmi >=0.6.1  # [not aarch64]\n#        - spglib >=2.1.0\n#        - matplotlib-base >=3.7.0\n#    test:\n#      requires:\n#        - python {{ python_min }}\n#        - pip\n#      commands:\n#        - pip check\n\nabout:\n  home: https://github.com/mctools/ncrystal\n  summary: Library for thermal neutron transport in crystals and other materials.\n  description: |\n    NCrystal is a library and toolkit for thermal neutron transport in crystals\n    and other materials. It can be used standalone or as a backend for other\n    Monte Carlo particle simulation frameworks.\n  license: Apache-2.0\n  license_family: Apache\n  license_file: src/LICENSE\n  doc_url: https://github.com/mctools/ncrystal/wiki\n  dev_url: https://github.com/mctools/ncrystal\n\nextra:\n  recipe-maintainers:\n    - tkittel\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -1394,6 +1717,7 @@
    "cxx_compiler_stub",
    "make",
    "ncrystal-core",
+   "ncrystal-lib",
    "ncrystal-python",
    "numpy",
    "pip",
@@ -1430,6 +1754,7 @@
     "c_stdlib_stub",
     "cxx_compiler_stub",
     "ncrystal-core",
+    "ncrystal-lib",
     "ncrystal-python",
     "numpy",
     "python"
@@ -1438,16 +1763,22 @@
   "test": {
    "__set__": true,
    "elements": [
+    "ase",
+    "c-compiler",
     "cmake",
     "cxx-compiler",
+    "gemmi",
     "git",
     "make",
+    "matplotlib-base",
+    "mpmath",
     "pip",
     "python",
     "pyyaml",
     "ruff",
     "scikit-build-core",
     "setuptools",
+    "spglib",
     "tomli"
    ]
   }
@@ -1477,6 +1808,7 @@
    "__set__": true,
    "elements": [
     "ncrystal-core =4.0.0",
+    "ncrystal-lib =4.0.0",
     "ncrystal-python =4.0.0",
     "numpy >=1.22",
     "python >=3.9"
@@ -1485,17 +1817,23 @@
   "test": {
    "__set__": true,
    "elements": [
+    "ase !=3.24.*",
+    "c-compiler",
     "cmake >=3.25",
     "cxx-compiler",
-    "git",
+    "gemmi >=0.6.1",
+    "git >=2.40.0",
     "make",
+    "matplotlib-base >=3.7.0",
+    "mpmath >=1.3.0",
     "pip",
     "python 3.9",
-    "pyyaml",
-    "ruff",
+    "pyyaml >=6.0.0",
+    "ruff >=0.8.1",
     "scikit-build-core >=0.10",
     "setuptools >=64.0",
-    "tomli"
+    "spglib >=2.1.0",
+    "tomli >=2.0.0"
    ]
   }
  },
@@ -1517,7 +1855,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0"
+   "number": "1"
   },
   "extra": {
    "recipe-maintainers": [
@@ -1531,7 +1869,7 @@
       "python"
      ]
     },
-    "name": "ncrystal-core",
+    "name": "ncrystal-lib",
     "requirements": {
      "build": [
       "cmake >=3.25",
@@ -1551,7 +1889,37 @@
      ],
      "script": "test_core.bat",
      "source_files": [
-      "./src/examples"
+      "./src/examples/downstream_cmake"
+     ]
+    }
+   },
+   {
+    "build": {
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_core/empty_pypkg\" -vv --no-deps --no-build-isolation"
+    },
+    "name": "ncrystal-core",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python  3.9",
+      "pip",
+      "setuptools >=64.0"
+     ],
+     "run": [
+      "python >=3.9",
+      "ncrystal-lib =4.0.0"
+     ]
+    },
+    "test": {
+     "commands": [
+      "pip check",
+      "pip show ncrystal-core",
+      "conda list"
+     ],
+     "requires": [
+      "python 3.9",
+      "pip"
      ]
     }
    },
@@ -1568,7 +1936,8 @@
       "ncrystal_vdos2ncmat = NCrystal._cli_vdos2ncmat:main",
       "ncrystal_verifyatompos = NCrystal._cli_verifyatompos:main"
      ],
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_python\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal-python",
     "requirements": {
@@ -1583,7 +1952,6 @@
       "numpy >=1.22"
      ]
     },
-    "script": "build_python.bat",
     "test": {
      "commands": [
       "pip check",
@@ -1597,7 +1965,8 @@
    },
    {
     "build": {
-     "noarch": "python"
+     "noarch": "python",
+     "script": "python -m pip install \"./src/ncrystal_metapkg\" -vv --no-deps --no-build-isolation"
     },
     "name": "ncrystal",
     "requirements": {
@@ -1613,24 +1982,26 @@
       "ncrystal-python =4.0.0"
      ]
     },
-    "script": "build_ncrystal.bat",
     "test": {
      "requires": [
       "python 3.9",
       "pip",
+      "git >=2.40.0",
       "cmake >=3.25",
+      "c-compiler",
       "cxx-compiler",
       "scikit-build-core >=0.10",
       "setuptools >=64.0",
-      "ruff",
-      "pyyaml",
-      "tomli",
-      "git"
+      "ruff >=0.8.1",
+      "pyyaml >=6.0.0",
+      "tomli >=2.0.0",
+      "ase !=3.24.*",
+      "gemmi >=0.6.1",
+      "spglib >=2.1.0",
+      "matplotlib-base >=3.7.0",
+      "mpmath >=1.3.0"
      ],
-     "script": "test_ncrystal.bat",
-     "source_files": [
-      "./src"
-     ]
+     "script": "test_ncrystal.bat"
     }
    }
   ],
@@ -1667,6 +2038,7 @@
    "__set__": true,
    "elements": [
     "ncrystal-core",
+    "ncrystal-lib",
     "ncrystal-python",
     "numpy",
     "python"
@@ -1675,15 +2047,21 @@
   "test": {
    "__set__": true,
    "elements": [
+    "ase",
+    "c-compiler",
     "cmake",
     "cxx-compiler",
+    "gemmi",
     "git",
+    "matplotlib-base",
+    "mpmath",
     "pip",
     "python",
     "pyyaml",
     "ruff",
     "scikit-build-core",
     "setuptools",
+    "spglib",
     "tomli"
    ]
   }
