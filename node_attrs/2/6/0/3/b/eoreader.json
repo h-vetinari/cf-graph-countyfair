@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "eoreader",
-   "version": "0.21.9"
+   "version": "0.21.10"
   },
   "requirements": {
    "host": [
@@ -55,7 +55,7 @@
     "rioxarray >=0.10.0",
     "odc-geo >=0.4.6",
     "rtree",
-    "cloudpathlib >=0.12.1",
+    "cloudpathlib-s3 >=0.12.1",
     "sertit >=1.44.1",
     "validators",
     "matplotlib-base",
@@ -64,13 +64,14 @@
     "spyndex >=0.3.0",
     "pyresample",
     "zarr",
-    "dicttoxml"
+    "dicttoxml",
+    "tifffile"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "fae9e1b47d77931bb47050f613fe799a29755a7af8ff9e1e2a82410d6113cdae",
-   "url": "https://pypi.org/packages/source/e/eoreader/eoreader-0.21.9.tar.gz"
+   "sha256": "c77ded1a0984a54bbdd71d8e31cf0312c6d49c517f354bf2285fda1446b348a9",
+   "url": "https://pypi.org/packages/source/e/eoreader/eoreader-0.21.10.tar.gz"
   },
   "test": {
    "commands": [
@@ -104,7 +105,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "cloudpathlib",
+    "cloudpathlib-s3",
     "dicttoxml",
     "geopandas",
     "h5netcdf",
@@ -120,6 +121,7 @@
     "rtree",
     "sertit",
     "spyndex",
+    "tifffile",
     "validators",
     "xarray",
     "zarr"
@@ -157,7 +159,7 @@
   },
   "package": {
    "name": "eoreader",
-   "version": "0.21.9"
+   "version": "0.21.10"
   },
   "requirements": {
    "host": [
@@ -175,7 +177,7 @@
     "rioxarray >=0.10.0",
     "odc-geo >=0.4.6",
     "rtree",
-    "cloudpathlib >=0.12.1",
+    "cloudpathlib-s3 >=0.12.1",
     "sertit >=1.44.1",
     "validators",
     "matplotlib-base",
@@ -184,13 +186,14 @@
     "spyndex >=0.3.0",
     "pyresample",
     "zarr",
-    "dicttoxml"
+    "dicttoxml",
+    "tifffile"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "fae9e1b47d77931bb47050f613fe799a29755a7af8ff9e1e2a82410d6113cdae",
-   "url": "https://pypi.org/packages/source/e/eoreader/eoreader-0.21.9.tar.gz"
+   "sha256": "c77ded1a0984a54bbdd71d8e31cf0312c6d49c517f354bf2285fda1446b348a9",
+   "url": "https://pypi.org/packages/source/e/eoreader/eoreader-0.21.10.tar.gz"
   },
   "test": {
    "commands": [
@@ -222,11 +225,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/eoreader.json"
  },
- "raw_meta_yaml": "{% set name = \"eoreader\" %}\n{% set version = \"0.21.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/eoreader-{{ version }}.tar.gz\n  sha256: fae9e1b47d77931bb47050f613fe799a29755a7af8ff9e1e2a82410d6113cdae\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - python {{ python_min }}\n  run:\n    - geopandas >=0.14.4\n    - lxml\n    - h5netcdf\n    - python >={{ python_min }}\n    - rasterio >=1.3.10\n    - xarray >=2024.06.0\n    - rioxarray >=0.10.0\n    - odc-geo >=0.4.6\n    - rtree\n    - cloudpathlib >=0.12.1\n    - sertit >=1.44.1\n    - validators\n    - matplotlib-base\n    - methodtools\n    - pystac\n    - spyndex >=0.3.0\n    - pyresample\n    - zarr\n    - dicttoxml\n\ntest:\n  imports:\n    - eoreader\n    - eoreader.bands\n    - eoreader.stac\n    - eoreader.products\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: http://github.com/sertit/eoreader/\n  summary: Remote-sensing opensource python library reading optical and SAR sensors, loading and stacking bands, clouds, DEM and index.\n  license: Apache-2.0\n  license_file: LICENSE\n  description: Remote-sensing opensource python library reading optical and SAR sensors, loading and stacking bands, clouds, DEM and index.\n  doc_url: https://eoreader.readthedocs.io/en/latest/\n  dev_url: http://github.com/sertit/eoreader\n\nextra:\n  recipe-maintainers:\n    - bastiencyr\n    - qpoterek\n    - remi-braun\n",
+ "raw_meta_yaml": "{% set name = \"eoreader\" %}\n{% set version = \"0.21.10\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/eoreader-{{ version }}.tar.gz\n  sha256: c77ded1a0984a54bbdd71d8e31cf0312c6d49c517f354bf2285fda1446b348a9\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - python {{ python_min }}\n  run:\n    - geopandas >=0.14.4\n    - lxml\n    - h5netcdf\n    - python >={{ python_min }}\n    - rasterio >=1.3.10\n    - xarray >=2024.06.0\n    - rioxarray >=0.10.0\n    - odc-geo >=0.4.6\n    - rtree\n    - cloudpathlib-s3 >=0.12.1\n    - sertit >=1.44.1\n    - validators\n    - matplotlib-base\n    - methodtools\n    - pystac\n    - spyndex >=0.3.0\n    - pyresample\n    - zarr\n    - dicttoxml\n    - tifffile\n\ntest:\n  imports:\n    - eoreader\n    - eoreader.bands\n    - eoreader.stac\n    - eoreader.products\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: http://github.com/sertit/eoreader/\n  summary: Remote-sensing opensource python library reading optical and SAR sensors, loading and stacking bands, clouds, DEM and index.\n  license: Apache-2.0\n  license_file: LICENSE\n  description: Remote-sensing opensource python library reading optical and SAR sensors, loading and stacking bands, clouds, DEM and index.\n  doc_url: https://eoreader.readthedocs.io/en/latest/\n  dev_url: http://github.com/sertit/eoreader\n\nextra:\n  recipe-maintainers:\n    - bastiencyr\n    - qpoterek\n    - remi-braun\n",
  "req": {
   "__set__": true,
   "elements": [
-   "cloudpathlib",
+   "cloudpathlib-s3",
    "dicttoxml",
    "geopandas",
    "h5netcdf",
@@ -244,6 +247,7 @@
    "sertit",
    "setuptools",
    "spyndex",
+   "tifffile",
    "validators",
    "xarray",
    "zarr"
@@ -265,7 +269,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "cloudpathlib",
+    "cloudpathlib-s3",
     "dicttoxml",
     "geopandas",
     "h5netcdf",
@@ -281,6 +285,7 @@
     "rtree",
     "sertit",
     "spyndex",
+    "tifffile",
     "validators",
     "xarray",
     "zarr"
@@ -311,7 +316,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "cloudpathlib >=0.12.1",
+    "cloudpathlib-s3 >=0.12.1",
     "dicttoxml",
     "geopandas >=0.14.4",
     "h5netcdf",
@@ -327,6 +332,7 @@
     "rtree",
     "sertit >=1.44.1",
     "spyndex >=0.3.0",
+    "tifffile",
     "validators",
     "xarray >=2024.06.0",
     "zarr"
@@ -340,8 +346,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/e/eoreader/eoreader-0.21.9.tar.gz",
- "version": "0.21.9",
+ "url": "https://pypi.org/packages/source/e/eoreader/eoreader-0.21.10.tar.gz",
+ "version": "0.21.10",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/eoreader.json"
  }
