@@ -21,7 +21,7 @@
    "summary": "Multiparameter Topological Persistence for Machine Learning"
   },
   "build": {
-   "number": "2",
+   "number": "3",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -31,7 +31,7 @@
   },
   "package": {
    "name": "multipers",
-   "version": "2.2.3"
+   "version": "2.3.0"
   },
   "requirements": {
    "build": [
@@ -68,11 +68,12 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d5beb966e6272d3894e3bf4dad3814f60863b5c0b08b415f8a56601da9237eaf",
-   "url": "https://github.com/DavidLapous/multipers/releases/download/v2.2.3/multipers-2.2.3.tar.gz"
+   "sha256": "3a14b831a319d1af41920180568997a9f39a51a04a591731563d082913e3be27",
+   "url": "https://pypi.org/packages/source/m/multipers/multipers-2.3.0.tar.gz"
   },
   "test": {
    "commands": [
+    "pip install pykeops filtration-domination --upgrade",
     "pip check"
    ],
    "imports": [
@@ -139,7 +140,7 @@
    "summary": "Multiparameter Topological Persistence for Machine Learning"
   },
   "build": {
-   "number": "2",
+   "number": "3",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -149,7 +150,7 @@
   },
   "package": {
    "name": "multipers",
-   "version": "2.2.3"
+   "version": "2.3.0"
   },
   "requirements": {
    "build": [
@@ -186,11 +187,12 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d5beb966e6272d3894e3bf4dad3814f60863b5c0b08b415f8a56601da9237eaf",
-   "url": "https://github.com/DavidLapous/multipers/releases/download/v2.2.3/multipers-2.2.3.tar.gz"
+   "sha256": "3a14b831a319d1af41920180568997a9f39a51a04a591731563d082913e3be27",
+   "url": "https://pypi.org/packages/source/m/multipers/multipers-2.3.0.tar.gz"
   },
   "test": {
    "commands": [
+    "pip install pykeops filtration-domination --upgrade",
     "pip check"
    ],
    "imports": [
@@ -210,7 +212,7 @@
    "summary": "Multiparameter Topological Persistence for Machine Learning"
   },
   "build": {
-   "number": "2",
+   "number": "3",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -220,7 +222,7 @@
   },
   "package": {
    "name": "multipers",
-   "version": "2.2.3"
+   "version": "2.3.0"
   },
   "requirements": {
    "build": [
@@ -257,11 +259,12 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d5beb966e6272d3894e3bf4dad3814f60863b5c0b08b415f8a56601da9237eaf",
-   "url": "https://github.com/DavidLapous/multipers/releases/download/v2.2.3/multipers-2.2.3.tar.gz"
+   "sha256": "3a14b831a319d1af41920180568997a9f39a51a04a591731563d082913e3be27",
+   "url": "https://pypi.org/packages/source/m/multipers/multipers-2.3.0.tar.gz"
   },
   "test": {
    "commands": [
+    "pip install pykeops filtration-domination --upgrade",
     "pip check"
    ],
    "imports": [
@@ -329,12 +332,13 @@
  "parsing_error": false,
  "platforms": [
   "linux_64",
-  "osx_64"
+  "osx_64",
+  "win_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/multipers.json"
  },
- "raw_meta_yaml": "{% set name = \"multipers\" %}\n{% set version = \"2.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DavidLapous/multipers/releases/download/v{{ version }}/multipers-{{ version }}.tar.gz\n  sha256: d5beb966e6272d3894e3bf4dad3814f60863b5c0b08b415f8a56601da9237eaf\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 2\n  skip: true  # [py<=39 or py>=313 or win]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ stdlib('c') }}\n    - {{ compiler('cxx') }}\n    - python\n    - numpy >=2\n    - cython >=3  \n  host:\n    - python\n    - numpy >=2\n    - cython >=3\n    - setuptools\n    - pip\n    - tbb\n    - tbb-devel\n    - libboost-python-devel\n    - libboost-devel\n  run:\n    - python\n    - tbb\n    - numpy\n    - gudhi >=3.8\n    - tqdm\n    - scipy\n    - joblib\n    - matplotlib-base\n    - scikit-learn\n    - pot\n\n\ntest:\n   imports:\n      - multipers\n   requires:\n      - pip\n   commands:\n      - pip check\nabout:\n  home: https://davidlapous.github.io/multipers/\n  summary: Multiparameter Topological Persistence for Machine Learning\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - DavidLapous\n",
+ "raw_meta_yaml": "{% set name = \"multipers\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3a14b831a319d1af41920180568997a9f39a51a04a591731563d082913e3be27\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 3\n  skip: true  # [py<=39 or py>=313]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ stdlib('c') }}\n    - {{ compiler('cxx') }}\n    - python\n    - numpy >=2\n    - cython >=3  \n  host:\n    - python\n    - numpy >=2\n    - cython >=3\n    - setuptools\n    - pip\n    - tbb\n    - tbb-devel\n    - libboost-python-devel\n    - libboost-devel\n  run:\n    - python\n    - tbb\n    - numpy\n    - gudhi >=3.8\n    - tqdm\n    - scipy\n    - joblib\n    - matplotlib-base\n    - scikit-learn\n    - pot\n\n\ntest:\n   imports:\n      - multipers\n   requires:\n      - pip\n   commands:\n      - pip install pykeops filtration-domination --upgrade\n      - pip check\nabout:\n  home: https://davidlapous.github.io/multipers/\n  summary: Multiparameter Topological Persistence for Machine Learning\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - DavidLapous\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -462,9 +466,128 @@
    ]
   }
  },
- "url": "https://github.com/DavidLapous/multipers/releases/download/v2.2.3/multipers-2.2.3.tar.gz",
- "version": "2.2.3",
+ "url": "https://pypi.org/packages/source/m/multipers/multipers-2.3.0.tar.gz",
+ "version": "2.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/multipers.json"
+ },
+ "win_64_meta_yaml": {
+  "about": {
+   "home": "https://davidlapous.github.io/multipers/",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Multiparameter Topological Persistence for Machine Learning"
+  },
+  "build": {
+   "number": "3",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DavidLapous"
+   ]
+  },
+  "package": {
+   "name": "multipers",
+   "version": "2.3.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "python",
+    "numpy >=2",
+    "cython >=3"
+   ],
+   "host": [
+    "python",
+    "numpy >=2",
+    "cython >=3",
+    "setuptools",
+    "pip",
+    "tbb",
+    "tbb-devel",
+    "libboost-python-devel",
+    "libboost-devel"
+   ],
+   "run": [
+    "python",
+    "tbb",
+    "numpy",
+    "gudhi >=3.8",
+    "tqdm",
+    "scipy",
+    "joblib",
+    "matplotlib-base",
+    "scikit-learn",
+    "pot"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3a14b831a319d1af41920180568997a9f39a51a04a591731563d082913e3be27",
+   "url": "https://pypi.org/packages/source/m/multipers/multipers-2.3.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip install pykeops filtration-domination --upgrade",
+    "pip check"
+   ],
+   "imports": [
+    "multipers"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub",
+    "cython",
+    "numpy",
+    "python"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "libboost-devel",
+    "libboost-python-devel",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools",
+    "tbb",
+    "tbb-devel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "gudhi",
+    "joblib",
+    "matplotlib-base",
+    "numpy",
+    "pot",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tbb",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
  }
 }
