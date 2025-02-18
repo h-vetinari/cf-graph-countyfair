@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "json-repair",
-   "version": "0.37.0"
+   "version": "0.38.0"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "af7bb6a028cde3d316f2958b76cb0ba07c87af4a3694d5ce08bf6897197b7a03",
-   "url": "https://pypi.org/packages/source/j/json-repair/json_repair-0.37.0.tar.gz"
+   "sha256": "df9fbe6ba8d02f2eb17010508c9838b9c708557f67b1429829874eed559e7ca3",
+   "url": "https://pypi.org/packages/source/j/json-repair/json_repair-0.38.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +112,7 @@
   },
   "package": {
    "name": "json-repair",
-   "version": "0.37.0"
+   "version": "0.38.0"
   },
   "requirements": {
    "host": [
@@ -126,8 +126,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "af7bb6a028cde3d316f2958b76cb0ba07c87af4a3694d5ce08bf6897197b7a03",
-   "url": "https://pypi.org/packages/source/j/json-repair/json_repair-0.37.0.tar.gz"
+   "sha256": "df9fbe6ba8d02f2eb17010508c9838b9c708557f67b1429829874eed559e7ca3",
+   "url": "https://pypi.org/packages/source/j/json-repair/json_repair-0.38.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -156,7 +156,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/json-repair.json"
  },
- "raw_meta_yaml": "{% set name = \"json-repair\" %}\n{% set version = \"0.37.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/json_repair-{{ version }}.tar.gz\n  sha256: af7bb6a028cde3d316f2958b76cb0ba07c87af4a3694d5ce08bf6897197b7a03\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - json_repair\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mangiucugna/json_repair/\n  summary: A package to repair broken json strings\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"json-repair\" %}\n{% set version = \"0.38.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/json_repair-{{ version }}.tar.gz\n  sha256: df9fbe6ba8d02f2eb17010508c9838b9c708557f67b1429829874eed559e7ca3\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - json_repair\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mangiucugna/json_repair/\n  summary: A package to repair broken json strings\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -220,8 +220,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/j/json-repair/json_repair-0.37.0.tar.gz",
- "version": "0.37.0",
+ "url": "https://pypi.org/packages/source/j/json-repair/json_repair-0.38.0.tar.gz",
+ "version": "0.38.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/json-repair.json"
  }
