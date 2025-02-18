@@ -1,8 +1,1335 @@
 {
- "parsing_error": "make_graph: missing parsing_error key",
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_build_tool": "rattler-build",
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "tinygrad",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "description": "This may not be the best deep learning framework, but it is a deep learning framework.\n\nDue to its extreme simplicity, it aims to be the easiest framework to add new accelerators to,\nwith support for both inference and training. If XLA is CISC, tinygrad is RISC.",
+   "dev_url": "https://github.com/tinygrad/tinygrad",
+   "doc_url": "https://docs.tinygrad.org/",
+   "home": "https://github.com/tinygrad/tinygrad",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "You like pytorch? You like micrograd? You love tinygrad! \u2764\uFE0F"
+  },
+  "build": {
+   "number": "0",
+   "script": "python -m pip install . -vv"
+  },
+  "extra": {
+   "feedstock-name": "tinygrad",
+   "recipe-maintainers": [
+    "h-vetinari"
+   ]
+  },
+  "outputs": [
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   }
+  ],
+  "package": {
+   "name": "tinygrad",
+   "version": "0.10.1"
+  },
+  "requirements": {
+   "host": [
+    "python",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "clangxx_linux-64"
+   ]
+  },
+  "schema_version": 1,
+  "source": {
+   "patches": [
+    "patches/0001-also-install-tinygrad.viz.patch",
+    "patches/0002-downgrade-default-metal-standard.patch"
+   ],
+   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "clangxx_linux-64",
+    "python",
+    "tinygrad"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "blobfile",
+    "bottle",
+    "capstone",
+    "hypothesis",
+    "jax",
+    "librosa",
+    "networkx",
+    "nibabel",
+    "numpy",
+    "onnx",
+    "onnx2torch",
+    "pillow",
+    "pip",
+    "py-opencv",
+    "pytest",
+    "pytest-rerunfailures",
+    "pytest-xdist",
+    "pytorch",
+    "safetensors",
+    "sentencepiece",
+    "tabulate",
+    "tiktoken",
+    "tqdm",
+    "transformers"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "description": "This may not be the best deep learning framework, but it is a deep learning framework.\n\nDue to its extreme simplicity, it aims to be the easiest framework to add new accelerators to,\nwith support for both inference and training. If XLA is CISC, tinygrad is RISC.",
+   "dev_url": "https://github.com/tinygrad/tinygrad",
+   "doc_url": "https://docs.tinygrad.org/",
+   "home": "https://github.com/tinygrad/tinygrad",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "You like pytorch? You like micrograd? You love tinygrad! \u2764\uFE0F"
+  },
+  "build": {
+   "number": "0",
+   "script": "python -m pip install . -vv"
+  },
+  "extra": {
+   "feedstock-name": "tinygrad",
+   "recipe-maintainers": [
+    "h-vetinari"
+   ]
+  },
+  "outputs": [
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   }
+  ],
+  "package": {
+   "name": "tinygrad",
+   "version": "0.10.1"
+  },
+  "requirements": {
+   "host": [
+    "python",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "clangxx_linux-64"
+   ]
+  },
+  "schema_version": 1,
+  "source": {
+   "patches": [
+    "patches/0001-also-install-tinygrad.viz.patch",
+    "patches/0002-downgrade-default-metal-standard.patch"
+   ],
+   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+  }
+ },
+ "name": "tinygrad",
+ "osx_64_meta_yaml": {
+  "about": {
+   "description": "This may not be the best deep learning framework, but it is a deep learning framework.\n\nDue to its extreme simplicity, it aims to be the easiest framework to add new accelerators to,\nwith support for both inference and training. If XLA is CISC, tinygrad is RISC.",
+   "dev_url": "https://github.com/tinygrad/tinygrad",
+   "doc_url": "https://docs.tinygrad.org/",
+   "home": "https://github.com/tinygrad/tinygrad",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "You like pytorch? You like micrograd? You love tinygrad! \u2764\uFE0F"
+  },
+  "build": {
+   "number": "0",
+   "script": "python -m pip install . -vv"
+  },
+  "extra": {
+   "feedstock-name": "tinygrad",
+   "recipe-maintainers": [
+    "h-vetinari"
+   ]
+  },
+  "outputs": [
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-rerunfailures",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "unset CLANG",
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5"
+      ]
+     }
+    ]
+   }
+  ],
+  "package": {
+   "name": "tinygrad",
+   "version": "0.10.1"
+  },
+  "requirements": {
+   "host": [
+    "python",
+    "pip",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "clangxx_linux-64"
+   ]
+  },
+  "schema_version": 1,
+  "source": {
+   "patches": [
+    "patches/0001-also-install-tinygrad.viz.patch",
+    "patches/0002-downgrade-default-metal-standard.patch"
+   ],
+   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+  }
+ },
+ "osx_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "clangxx_linux-64",
+    "python",
+    "tinygrad"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "blobfile",
+    "bottle",
+    "capstone",
+    "hypothesis",
+    "jax",
+    "librosa",
+    "networkx",
+    "nibabel",
+    "numpy",
+    "onnx",
+    "onnx2torch",
+    "pillow",
+    "pip",
+    "py-opencv",
+    "pytest",
+    "pytest-rerunfailures",
+    "pytest-xdist",
+    "pytorch",
+    "safetensors",
+    "sentencepiece",
+    "tabulate",
+    "tiktoken",
+    "tqdm",
+    "transformers"
+   ]
+  }
+ },
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "tinygrad",
+   "tinygrad-tests"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64",
+  "osx_64"
+ ],
  "pr_info": {
   "__lazy_json__": "pr_info/tinygrad.json"
  },
+ "raw_meta_yaml": "context:\n  version: \"0.10.1\"\n  build_number: 0\n  # see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion\n  torch_proc_type: ${{ \"cuda\" ~ cuda_compiler_version | version_to_buildstring if cuda_compiler_version != \"None\" else \"cpu\" }}\n  tests_to_skip: >\n    _not_a_real_test\n    ${{ \"fails `assert Device.DEFAULT in failed_platforms`\" if 0 }}\n    ${{ \" or (TestLinearizerFailures and test_failure_27)\" if linux }}\n    ${{ \" or (TestLinearizerFailures and (test_failure_56 or test_failure_57))\" if osx }}\n    ${{ \"Causes `Fatal Python error: Bus error` + segfault\" if 0 }}\n    ${{ \" or testCopySHMtoDefault\" if linux }}\n    ${{ \"timing-sensitive; may fail in our relatively puny CI\" if 0 }}\n    ${{ \" or test_recursive_pad\" if linux }}\n    ${{ \"`NotImplementedError: Encountered unknown relocation type 4` for something elf-related\" if 0 }}\n    ${{ \" or test_backward_sum_acc_dtype\" if linux }}\n    ${{ \"RuntimeError: Attribute list does not match Module context!\" if 0 }}\n    ${{ \" or test_bf16_disk_write_read\" if linux and cuda_compiler_version != \"None\" }}\n    ${{ \"`error: use of undefined value '@.const.pickledata.7893608704'`\" if 0 }}\n    ${{ \" or (TestWhisper and (test_transcribe_batch21 or test_transcribe_file1))\" if osx }}\n    ${{ \"signed int32 overflow\" if 0 }}\n    ${{ \" or test_float_midcast_int32\" if osx }}\n    ${{ \"tinygrad.codegen.kernel.KernelOptError: must have tensor cores or TC=2\" if 0 }}\n    ${{ \" or test_unmerged_ifs\" if osx }}\n\nrecipe:\n  name: tinygrad\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/tinygrad/tinygrad/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8\n  patches:\n    - patches/0001-also-install-tinygrad.viz.patch\n    # clang 19 doesn't seem to support -std=metal3.1 yet\n    - patches/0002-downgrade-default-metal-standard.patch\n\nbuild:\n  number: ${{ build_number }}\n  string: ${{ torch_proc_type }}_py${{ python | version_to_buildstring }}_h${{ hash }}_${{ build_number }}\n  skip:\n    - match(python, \"<3.10\")\n    # toolchain for 11.8 is not usable in end-user environment\n    - match(cuda_compiler_version, \"==11.8\")\n    # skip windows until next version (where testing without jax should be possible),\n    # or when conda-forge gains windows-support for jax\n    - win\n    # only one CUDA build because there's not enough disk space to build all variants in one job\n    - cuda_compiler_version != \"None\" and match(python, \"!=3.12\")\n\noutputs:\n  - package:\n      name: tinygrad\n    build:\n      script: python -m pip install . -vv\n    requirements:\n      host:\n        - python\n        - pip\n        - setuptools\n      run:\n        - python\n        - if: win\n          then:\n            - clang-cl_${{ target_platform }}\n          else:\n            - clangxx_${{ target_platform }}\n        - if: cuda_compiler_version != \"None\"\n          then:\n            - cuda-nvcc_${{ target_platform }}\n            - triton\n    tests:\n      - python:\n          imports:\n          - tinygrad\n          pip_check: true\n\n  - package:\n      name: tinygrad-tests\n    requirements:\n      run:\n        - ${{ pin_subpackage('tinygrad', exact=True) }}\n    tests:\n      - requirements:\n          run:\n            # minimal\n            - pytest\n            - pytest-rerunfailures\n            - pytest-xdist\n            - hypothesis\n            - numpy\n            - pytorch\n            # optional\n            - blobfile\n            - bottle\n            - capstone\n            # https://github.com/conda-forge/staged-recipes/issues/29179\n            # - ggml-python\n            - if: unix\n              then:\n                # not available on windows yet\n                - jax\n            - librosa\n            - networkx\n            - nibabel\n            - onnx2torch\n            - onnx\n            - py-opencv\n            - pillow\n            - safetensors\n            - sentencepiece\n            - tabulate\n            - tiktoken\n            - tqdm\n            - transformers\n        files:\n          source:\n            - examples/\n            - extra/\n            - test/\n        script:\n          # tinygrad uses `CLANG` as a boolean switch, which is incompatible with our compiler activation;\n          # see https://github.com/tinygrad/tinygrad/blob/v0.10.1/tinygrad/device.py#L13\n          - if: unix\n            then:\n              - unset CLANG\n          - if: win\n            then:\n              - set \"CLANG=\"\n          - pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\" --reruns=5 --reruns-delay=5\n\nabout:\n  homepage: https://github.com/tinygrad/tinygrad\n  summary: 'You like pytorch? You like micrograd? You love tinygrad! \u2764\uFE0F'\n  description: |\n    This may not be the best deep learning framework, but it is a deep learning framework.\n    \n    Due to its extreme simplicity, it aims to be the easiest framework to add new accelerators to,\n    with support for both inference and training. If XLA is CISC, tinygrad is RISC.\n  license: MIT\n  license_file: LICENSE\n  documentation: https://docs.tinygrad.org/\n  repository: https://github.com/tinygrad/tinygrad\n\nextra:\n  recipe-maintainers:\n    - h-vetinari\n  feedstock-name: tinygrad\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "clangxx_linux-64",
+   "pip",
+   "python",
+   "setuptools",
+   "tinygrad"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "ctng-compiler-activation",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "clangxx_linux-64",
+    "ctng-compiler-activation",
+    "python",
+    "tinygrad"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "blobfile",
+    "bottle",
+    "capstone",
+    "hypothesis",
+    "jax",
+    "librosa",
+    "networkx",
+    "nibabel",
+    "numpy",
+    "onnx",
+    "onnx2torch",
+    "pillow",
+    "pip",
+    "py-opencv",
+    "pytest",
+    "pytest-rerunfailures",
+    "pytest-xdist",
+    "pytorch",
+    "safetensors",
+    "sentencepiece",
+    "tabulate",
+    "tiktoken",
+    "tqdm",
+    "transformers"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "clangxx_linux-64",
+    "python",
+    "tinygrad"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "blobfile",
+    "bottle",
+    "capstone",
+    "hypothesis",
+    "jax",
+    "librosa",
+    "networkx",
+    "nibabel",
+    "numpy",
+    "onnx",
+    "onnx2torch",
+    "pillow",
+    "pip",
+    "py-opencv",
+    "pytest",
+    "pytest-rerunfailures",
+    "pytest-xdist",
+    "pytorch",
+    "safetensors",
+    "sentencepiece",
+    "tabulate",
+    "tiktoken",
+    "tqdm",
+    "transformers"
+   ]
+  }
+ },
+ "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz",
+ "version": "0.10.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/tinygrad.json"
  }
