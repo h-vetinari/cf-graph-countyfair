@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "python-iso639",
-   "version": "2025.2.8"
+   "version": "2025.2.18"
   },
   "requirements": {
    "host": [
@@ -51,8 +51,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "94f27c0286fc81ff0e033d7b63d63a5967eef584b97f13289366bf178953f5d7",
-   "url": "https://pypi.org/packages/source/p/python-iso639/python_iso639-2025.2.8.tar.gz"
+   "sha256": "34e31e8e76eb3fc839629e257b12bcfd957c6edcbd486bbf66ba5185d1f566e8",
+   "url": "https://pypi.org/packages/source/p/python-iso639/python_iso639-2025.2.18.tar.gz"
   },
   "test": {
    "commands": [
@@ -114,7 +114,7 @@
   },
   "package": {
    "name": "python-iso639",
-   "version": "2025.2.8"
+   "version": "2025.2.18"
   },
   "requirements": {
    "host": [
@@ -129,8 +129,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "94f27c0286fc81ff0e033d7b63d63a5967eef584b97f13289366bf178953f5d7",
-   "url": "https://pypi.org/packages/source/p/python-iso639/python_iso639-2025.2.8.tar.gz"
+   "sha256": "34e31e8e76eb3fc839629e257b12bcfd957c6edcbd486bbf66ba5185d1f566e8",
+   "url": "https://pypi.org/packages/source/p/python-iso639/python_iso639-2025.2.18.tar.gz"
   },
   "test": {
    "commands": [
@@ -159,7 +159,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/python-iso639.json"
  },
- "raw_meta_yaml": "{% set name = \"python-iso639\" %}\n{% set version = \"2025.2.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 94f27c0286fc81ff0e033d7b63d63a5967eef584b97f13289366bf178953f5d7\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=65.3.0\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - iso639\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Look-up utilities for ISO 639 language codes and names\n  home: https://github.com/jacksonllee/iso639\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"python-iso639\" %}\n{% set version = \"2025.2.18\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 34e31e8e76eb3fc839629e257b12bcfd957c6edcbd486bbf66ba5185d1f566e8\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=65.3.0\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - iso639\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: Look-up utilities for ISO 639 language codes and names\n  home: https://github.com/jacksonllee/iso639\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -226,8 +226,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/python-iso639/python_iso639-2025.2.8.tar.gz",
- "version": "2025.2.8",
+ "url": "https://pypi.org/packages/source/p/python-iso639/python_iso639-2025.2.18.tar.gz",
+ "version": "2025.2.18",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/python-iso639.json"
  }
