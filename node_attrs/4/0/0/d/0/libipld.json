@@ -25,7 +25,7 @@
    "summary": "Python binding to the Rust IPLD library"
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "libipld",
-   "version": "3.0.0"
+   "version": "3.0.1"
   },
   "requirements": {
    "build": [
@@ -58,11 +58,8 @@
   },
   "schema_version": 0,
   "source": {
-   "patches": [
-    "patches/0001-Specify-dynamic-version-in-pyproject.toml.patch"
-   ],
-   "sha256": "c532323efb36e63df8005f075afe01d726aa170999ee0cf0738553f8e75aaad5",
-   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.0.tar.gz"
+   "sha256": "2970752de70e5fdcac4646900cdefaa0dca08db9b5d59c40b5496d99e3bffa64",
+   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -115,7 +112,7 @@
    "summary": "Python binding to the Rust IPLD library"
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -128,7 +125,7 @@
   },
   "package": {
    "name": "libipld",
-   "version": "3.0.0"
+   "version": "3.0.1"
   },
   "requirements": {
    "build": [
@@ -148,11 +145,8 @@
   },
   "schema_version": 0,
   "source": {
-   "patches": [
-    "patches/0001-Specify-dynamic-version-in-pyproject.toml.patch"
-   ],
-   "sha256": "c532323efb36e63df8005f075afe01d726aa170999ee0cf0738553f8e75aaad5",
-   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.0.tar.gz"
+   "sha256": "2970752de70e5fdcac4646900cdefaa0dca08db9b5d59c40b5496d99e3bffa64",
+   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -175,7 +169,7 @@
    "summary": "Python binding to the Rust IPLD library"
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -188,7 +182,7 @@
   },
   "package": {
    "name": "libipld",
-   "version": "3.0.0"
+   "version": "3.0.1"
   },
   "requirements": {
    "build": [
@@ -208,11 +202,8 @@
   },
   "schema_version": 0,
   "source": {
-   "patches": [
-    "patches/0001-Specify-dynamic-version-in-pyproject.toml.patch"
-   ],
-   "sha256": "c532323efb36e63df8005f075afe01d726aa170999ee0cf0738553f8e75aaad5",
-   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.0.tar.gz"
+   "sha256": "2970752de70e5fdcac4646900cdefaa0dca08db9b5d59c40b5496d99e3bffa64",
+   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -265,7 +256,7 @@
    "summary": "Python binding to the Rust IPLD library"
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -278,7 +269,7 @@
   },
   "package": {
    "name": "libipld",
-   "version": "3.0.0"
+   "version": "3.0.1"
   },
   "requirements": {
    "build": [
@@ -298,11 +289,8 @@
   },
   "schema_version": 0,
   "source": {
-   "patches": [
-    "patches/0001-Specify-dynamic-version-in-pyproject.toml.patch"
-   ],
-   "sha256": "c532323efb36e63df8005f075afe01d726aa170999ee0cf0738553f8e75aaad5",
-   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.0.tar.gz"
+   "sha256": "2970752de70e5fdcac4646900cdefaa0dca08db9b5d59c40b5496d99e3bffa64",
+   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -363,7 +351,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/libipld.json"
  },
- "raw_meta_yaml": "{% set name = \"libipld\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libipld-{{ version }}.tar.gz\n  sha256: c532323efb36e63df8005f075afe01d726aa170999ee0cf0738553f8e75aaad5\n  patches:\n    - patches/0001-Specify-dynamic-version-in-pyproject.toml.patch\n    # https://github.com/MarshalX/python-libipld/pull/53\n\nbuild:\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - maturin >=1.2,<2.0                     # [build_platform != target_platform]\n  host:\n    - python\n    - maturin >=1.2,<2.0\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - libipld\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/libipld/\n  summary: Python binding to the Rust IPLD library\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - akrherz\n",
+ "raw_meta_yaml": "{% set name = \"libipld\" %}\n{% set version = \"3.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libipld-{{ version }}.tar.gz\n  sha256: 2970752de70e5fdcac4646900cdefaa0dca08db9b5d59c40b5496d99e3bffa64\n\nbuild:\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - maturin >=1.2,<2.0                     # [build_platform != target_platform]\n  host:\n    - python\n    - maturin >=1.2,<2.0\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - libipld\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/libipld/\n  summary: Python binding to the Rust IPLD library\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - akrherz\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -443,8 +431,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.0.tar.gz",
- "version": "3.0.0",
+ "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.1.tar.gz",
+ "version": "3.0.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/libipld.json"
  },
@@ -456,7 +444,7 @@
    "summary": "Python binding to the Rust IPLD library"
   },
   "build": {
-   "number": "2",
+   "number": "0",
    "script": [
     "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -469,7 +457,7 @@
   },
   "package": {
    "name": "libipld",
-   "version": "3.0.0"
+   "version": "3.0.1"
   },
   "requirements": {
    "build": [
@@ -489,11 +477,8 @@
   },
   "schema_version": 0,
   "source": {
-   "patches": [
-    "patches/0001-Specify-dynamic-version-in-pyproject.toml.patch"
-   ],
-   "sha256": "c532323efb36e63df8005f075afe01d726aa170999ee0cf0738553f8e75aaad5",
-   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.0.tar.gz"
+   "sha256": "2970752de70e5fdcac4646900cdefaa0dca08db9b5d59c40b5496d99e3bffa64",
+   "url": "https://pypi.org/packages/source/l/libipld/libipld-3.0.1.tar.gz"
   },
   "test": {
    "commands": [
