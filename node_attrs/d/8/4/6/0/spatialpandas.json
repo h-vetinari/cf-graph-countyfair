@@ -22,8 +22,8 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -35,29 +35,29 @@
   },
   "package": {
    "name": "spatialpandas",
-   "version": "0.4.10"
+   "version": "0.5.0"
   },
   "requirements": {
    "host": [
+    "python 3.10",
     "pip",
-    "python >=3.9",
-    "param"
+    "hatchling",
+    "hatch-vcs"
    ],
    "run": [
-    "dask-core",
-    "fsspec",
+    "python >=3.10",
+    "dask-core >=2025.1",
+    "fsspec >=2022.8",
     "numba",
-    "pandas",
-    "param",
-    "pyarrow >=1.0",
-    "python >=3.9",
+    "pandas >=2.0",
+    "pyarrow >=14.0.1",
     "retrying"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "032e24ebb40f75c5c79cb79d7c281f2990e69ba382c0b24acb53da7bba60851c",
-   "url": "https://pypi.io/packages/source/s/spatialpandas/spatialpandas-0.4.10.tar.gz"
+   "sha256": "412bb93bb25f49b6c057e825560d14c06e71137228fa99dc007b3a191bfbabd1",
+   "url": "https://pypi.org/packages/source/s/spatialpandas/spatialpandas-0.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -67,6 +67,7 @@
     "spatialpandas"
    ],
    "requires": [
+    "python 3.10",
     "pip"
    ]
   }
@@ -79,7 +80,8 @@
   "host": {
    "__set__": true,
    "elements": [
-    "param",
+    "hatch-vcs",
+    "hatchling",
     "pip",
     "python"
    ]
@@ -91,7 +93,6 @@
     "fsspec",
     "numba",
     "pandas",
-    "param",
     "pyarrow",
     "python",
     "retrying"
@@ -100,7 +101,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -113,8 +115,8 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "0",
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -126,29 +128,29 @@
   },
   "package": {
    "name": "spatialpandas",
-   "version": "0.4.10"
+   "version": "0.5.0"
   },
   "requirements": {
    "host": [
+    "python 3.10",
     "pip",
-    "python >=3.9",
-    "param"
+    "hatchling",
+    "hatch-vcs"
    ],
    "run": [
-    "dask-core",
-    "fsspec",
+    "python >=3.10",
+    "dask-core >=2025.1",
+    "fsspec >=2022.8",
     "numba",
-    "pandas",
-    "param",
-    "pyarrow >=1.0",
-    "python >=3.9",
+    "pandas >=2.0",
+    "pyarrow >=14.0.1",
     "retrying"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "032e24ebb40f75c5c79cb79d7c281f2990e69ba382c0b24acb53da7bba60851c",
-   "url": "https://pypi.io/packages/source/s/spatialpandas/spatialpandas-0.4.10.tar.gz"
+   "sha256": "412bb93bb25f49b6c057e825560d14c06e71137228fa99dc007b3a191bfbabd1",
+   "url": "https://pypi.org/packages/source/s/spatialpandas/spatialpandas-0.5.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -158,6 +160,7 @@
     "spatialpandas"
    ],
    "requires": [
+    "python 3.10",
     "pip"
    ]
   }
@@ -176,15 +179,16 @@
  "pr_info": {
   "__lazy_json__": "pr_info/spatialpandas.json"
  },
- "raw_meta_yaml": "{% set name = \"spatialpandas\" %}\n{% set version = \"0.4.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 032e24ebb40f75c5c79cb79d7c281f2990e69ba382c0b24acb53da7bba60851c\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.9\n    - param\n  run:\n    - dask-core\n    - fsspec\n    - numba\n    - pandas\n    - param\n    - pyarrow >=1.0\n    - python >=3.9\n    - retrying\n\ntest:\n  imports:\n    - spatialpandas\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/holoviz/spatialpandas\n  summary: Pandas extension arrays for spatial/geometric operations\n  license: BSD-2-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hoxbro\n    - andrewannex\n    - maximlt\n    - philippjfr\n",
+ "raw_meta_yaml": "{% set name = \"spatialpandas\" %}\n{% set version = \"0.5.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 412bb93bb25f49b6c057e825560d14c06e71137228fa99dc007b3a191bfbabd1\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n    - hatch-vcs\n  run:\n    - python >={{ python_min }}\n    - dask-core >=2025.1\n    - fsspec >=2022.8\n    - numba\n    - pandas >=2.0\n    - pyarrow >=14.0.1\n    - retrying\n\ntest:\n  imports:\n    - spatialpandas\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/holoviz/spatialpandas\n  summary: Pandas extension arrays for spatial/geometric operations\n  license: BSD-2-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hoxbro\n    - andrewannex\n    - maximlt\n    - philippjfr\n",
  "req": {
   "__set__": true,
   "elements": [
    "dask-core",
    "fsspec",
+   "hatch-vcs",
+   "hatchling",
    "numba",
    "pandas",
-   "param",
    "pip",
    "pyarrow",
    "python",
@@ -199,7 +203,8 @@
   "host": {
    "__set__": true,
    "elements": [
-    "param",
+    "hatch-vcs",
+    "hatchling",
     "pip",
     "python"
    ]
@@ -211,7 +216,6 @@
     "fsspec",
     "numba",
     "pandas",
-    "param",
     "pyarrow",
     "python",
     "retrying"
@@ -220,7 +224,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -233,33 +238,34 @@
   "host": {
    "__set__": true,
    "elements": [
-    "param",
+    "hatch-vcs",
+    "hatchling",
     "pip",
-    "python >=3.9"
+    "python 3.10"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "dask-core",
-    "fsspec",
+    "dask-core >=2025.1",
+    "fsspec >=2022.8",
     "numba",
-    "pandas",
-    "param",
-    "pyarrow >=1.0",
-    "python >=3.9",
+    "pandas >=2.0",
+    "pyarrow >=14.0.1",
+    "python >=3.10",
     "retrying"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.10"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/s/spatialpandas/spatialpandas-0.4.10.tar.gz",
- "version": "0.4.10",
+ "url": "https://pypi.org/packages/source/s/spatialpandas/spatialpandas-0.5.0.tar.gz",
+ "version": "0.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/spatialpandas.json"
  }
