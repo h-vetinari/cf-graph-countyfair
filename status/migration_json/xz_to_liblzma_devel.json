@@ -66,7 +66,7 @@
       "immediate_children": [
         "python"
       ],
-      "num_descendants": 63,
+      "num_descendants": 64,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cmake-feedstock",
       "pre_pr_migrator_status": ""
@@ -324,7 +324,7 @@
         "vtk",
         "wxwidgets"
       ],
-      "num_descendants": 22,
+      "num_descendants": 23,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/libtiff-feedstock",
       "pre_pr_migrator_status": ""
@@ -369,6 +369,7 @@
         "pypy3.6",
         "python",
         "r-base",
+        "r-leidenbase",
         "r-xslt",
         "root",
         "rpm-tools",
@@ -381,7 +382,7 @@
         "uwsgi",
         "vtk"
       ],
-      "num_descendants": 68,
+      "num_descendants": 69,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/libxml2-feedstock",
       "pre_pr_migrator_status": ""
@@ -520,6 +521,7 @@
         "pypy3.5",
         "pypy3.6",
         "r-base",
+        "r-leidenbase",
         "root",
         "rpm-tools",
         "scilab",
@@ -537,19 +539,25 @@
         "wxwidgets",
         "z5py"
       ],
-      "num_descendants": 63,
+      "num_descendants": 64,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/python-feedstock",
       "pre_pr_migrator_status": ""
     },
     "r-base": {
       "immediate_children": [
+        "r-leidenbase",
         "r-xslt",
         "root"
       ],
-      "num_descendants": 3,
+      "num_descendants": 4,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/r-base-feedstock",
+      "pre_pr_migrator_status": ""
+    },
+    "r-leidenbase": {
+      "immediate_children": [],
+      "num_descendants": 0,
       "pre_pr_migrator_status": ""
     },
     "r-xslt": {
@@ -709,7 +717,9 @@
     "cds-crtools",
     "tesseract"
   ],
-  "awaiting-pr": [],
+  "awaiting-pr": [
+    "r-leidenbase"
+  ],
   "bot-error": [
     "torchaudio"
   ],
