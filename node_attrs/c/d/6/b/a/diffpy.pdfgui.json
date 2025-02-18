@@ -16,9 +16,8 @@
    "dev_url": "https://github.com/diffpy/diffpy.pdfgui",
    "doc_url": "https://www.diffpy.org/products/pdfgui.html",
    "home": "https://github.com/diffpy/diffpy.pdfgui",
-   "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": "LICENSE.txt",
+   "license": "Free To Use But Restricted",
+   "license_file": "LICENSE.rst",
    "summary": "GUI for PDF simulation and structure refinement"
   },
   "app": {
@@ -30,9 +29,9 @@
    "entry_points": [
     "pdfgui = diffpy.pdfgui.applications.pdfgui:main"
    ],
-   "number": "2",
+   "number": "0",
    "osx_is_app": true,
-   "preserve_egg_dir": true
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -43,39 +42,44 @@
   },
   "package": {
    "name": "diffpy.pdfgui",
-   "version": "3.0.5"
+   "version": "3.1.0"
   },
   "requirements": {
    "host": [
     "python",
+    "setuptools",
+    "setuptools-git-versioning >=2.0",
     "pip"
    ],
    "run": [
     "python",
-    "setuptools",
-    "six",
-    "matplotlib",
+    "numpy",
     "wxpython",
     "diffpy.pdffit2",
     "diffpy.structure >=3",
-    "diffpy.utils"
+    "diffpy.utils",
+    "matplotlib-base"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ca07f557997173221dacc94f9b50fb8441e3d5755e01192b4ae0f28a0cea68b2",
-   "url": "https://github.com/diffpy/diffpy.pdfgui/archive/refs/tags/3.0.5.tar.gz"
+   "sha256": "2ac7c32f2c3687a063757db4d035d4d309c80f05498f468a8b9fa77c91462c2f",
+   "url": "https://pypi.org/packages/source/d/diffpy_pdfgui/diffpy_pdfgui-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "diffpy.pdfgui.tui",
-    "diffpy.pdfgui.tests"
+    "pip check",
+    "pip list"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "freezegun",
+    "python"
+   ],
+   "source_files": [
+    "tests"
    ]
   }
  },
@@ -88,7 +92,9 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools",
+    "setuptools-git-versioning"
    ]
   },
   "run": {
@@ -97,17 +103,20 @@
     "diffpy.pdffit2",
     "diffpy.structure",
     "diffpy.utils",
-    "matplotlib",
+    "matplotlib-base",
+    "numpy",
     "python",
-    "setuptools",
-    "six",
     "wxpython"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "freezegun",
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "python"
    ]
   }
  },
@@ -117,9 +126,8 @@
    "dev_url": "https://github.com/diffpy/diffpy.pdfgui",
    "doc_url": "https://www.diffpy.org/products/pdfgui.html",
    "home": "https://github.com/diffpy/diffpy.pdfgui",
-   "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": "LICENSE.txt",
+   "license": "Free To Use But Restricted",
+   "license_file": "LICENSE.rst",
    "summary": "GUI for PDF simulation and structure refinement"
   },
   "app": {
@@ -131,9 +139,9 @@
    "entry_points": [
     "pdfgui = diffpy.pdfgui.applications.pdfgui:main"
    ],
-   "number": "2",
+   "number": "0",
    "osx_is_app": true,
-   "preserve_egg_dir": true
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -144,40 +152,45 @@
   },
   "package": {
    "name": "diffpy.pdfgui",
-   "version": "3.0.5"
+   "version": "3.1.0"
   },
   "requirements": {
    "host": [
     "python",
+    "setuptools",
+    "setuptools-git-versioning >=2.0",
     "pip"
    ],
    "run": [
     "python",
-    "setuptools",
-    "six",
-    "matplotlib",
+    "numpy",
     "wxpython",
     "diffpy.pdffit2",
     "diffpy.structure >=3",
     "diffpy.utils",
+    "matplotlib-base",
     "menuinst"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ca07f557997173221dacc94f9b50fb8441e3d5755e01192b4ae0f28a0cea68b2",
-   "url": "https://github.com/diffpy/diffpy.pdfgui/archive/refs/tags/3.0.5.tar.gz"
+   "sha256": "2ac7c32f2c3687a063757db4d035d4d309c80f05498f468a8b9fa77c91462c2f",
+   "url": "https://pypi.org/packages/source/d/diffpy_pdfgui/diffpy_pdfgui-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "diffpy.pdfgui.tui",
-    "diffpy.pdfgui.tests"
+    "pip check",
+    "pip list"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "freezegun",
+    "python"
+   ],
+   "source_files": [
+    "tests"
    ]
   }
  },
@@ -188,9 +201,8 @@
    "dev_url": "https://github.com/diffpy/diffpy.pdfgui",
    "doc_url": "https://www.diffpy.org/products/pdfgui.html",
    "home": "https://github.com/diffpy/diffpy.pdfgui",
-   "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": "LICENSE.txt",
+   "license": "Free To Use But Restricted",
+   "license_file": "LICENSE.rst",
    "summary": "GUI for PDF simulation and structure refinement"
   },
   "app": {
@@ -202,9 +214,9 @@
    "entry_points": [
     "pdfgui = diffpy.pdfgui.applications.pdfgui:main"
    ],
-   "number": "2",
+   "number": "0",
    "osx_is_app": true,
-   "preserve_egg_dir": true
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -215,39 +227,44 @@
   },
   "package": {
    "name": "diffpy.pdfgui",
-   "version": "3.0.5"
+   "version": "3.1.0"
   },
   "requirements": {
    "host": [
     "python",
+    "setuptools",
+    "setuptools-git-versioning >=2.0",
     "pip"
    ],
    "run": [
     "python",
-    "setuptools",
-    "six",
-    "matplotlib",
+    "numpy",
     "wxpython",
     "diffpy.pdffit2",
     "diffpy.structure >=3",
-    "diffpy.utils"
+    "diffpy.utils",
+    "matplotlib-base"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ca07f557997173221dacc94f9b50fb8441e3d5755e01192b4ae0f28a0cea68b2",
-   "url": "https://github.com/diffpy/diffpy.pdfgui/archive/refs/tags/3.0.5.tar.gz"
+   "sha256": "2ac7c32f2c3687a063757db4d035d4d309c80f05498f468a8b9fa77c91462c2f",
+   "url": "https://pypi.org/packages/source/d/diffpy_pdfgui/diffpy_pdfgui-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "diffpy.pdfgui.tui",
-    "diffpy.pdfgui.tests"
+    "pip check",
+    "pip list"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "freezegun",
+    "python"
+   ],
+   "source_files": [
+    "tests"
    ]
   }
  },
@@ -260,7 +277,9 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools",
+    "setuptools-git-versioning"
    ]
   },
   "run": {
@@ -269,17 +288,20 @@
     "diffpy.pdffit2",
     "diffpy.structure",
     "diffpy.utils",
-    "matplotlib",
+    "matplotlib-base",
+    "numpy",
     "python",
-    "setuptools",
-    "six",
     "wxpython"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "freezegun",
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "python"
    ]
   }
  },
@@ -298,19 +320,20 @@
  "pr_info": {
   "__lazy_json__": "pr_info/diffpy.pdfgui.json"
  },
- "raw_meta_yaml": "{% set name = \"diffpy.pdfgui\" %}\n{% set version = \"3.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n#  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  url: https://github.com/diffpy/{{ name }}/archive/refs/tags/{{ version }}.tar.gz\n  sha256: ca07f557997173221dacc94f9b50fb8441e3d5755e01192b4ae0f28a0cea68b2\n\nbuild:\n  # we need egg_dir to avoid overlapping diffpy/__init__.py files.\n  preserve_egg_dir: true\n  number: 2\n#  noarch: python\n#  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - pdfgui = diffpy.pdfgui.applications.pdfgui:main\n  osx_is_app: true\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - six\n    - matplotlib\n    - wxpython\n    - menuinst  # [win]\n    - diffpy.pdffit2\n    - diffpy.structure >=3\n    - diffpy.utils\n\ntest:\n  imports:\n    - diffpy.pdfgui.tui\n    - diffpy.pdfgui.tests\n  requires:\n    - pip\n  commands:\n    - pip check\n\napp:\n  entry: pdfgui  # [not win]\n  entry: pythonw -m diffpy.pdfgui.applications.pdfgui  # [win]\n  icon: pdfgui_64x64.png\n  summary: materials structure analysis from Pair Distribution Function\n\nabout:\n  home: https://github.com/diffpy/diffpy.pdfgui\n  summary: GUI for PDF simulation and structure refinement\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  description: |\n    The diffpy.pdfgui package provides a graphical user interface to pdffit2 refinement engine, \n    with many powerful extensions. It is a GUI program for structure refinements to atomic pair \n    distribution function. It is capable of full-profile fitting of the atomic pair distribution \n    function derived from x-ray or neutron diffraction data and comes with built in graphical and \n    structure visualization capabilities.\n  doc_url: https://www.diffpy.org/products/pdfgui.html\n  dev_url: https://github.com/diffpy/diffpy.pdfgui\n\nextra:\n  recipe-maintainers:\n    - bobleesj\n    - dragonyanglong\n    - sbillinge\n",
+ "raw_meta_yaml": "{% set name = \"diffpy.pdfgui\" %}\n{% set version = \"3.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/d/diffpy_pdfgui/diffpy_pdfgui-{{ version }}.tar.gz\n  # url: https://github.com/diffpy/{{ name }}/archive/refs/tags/{{ version }}.tar.gz\n  sha256: 2ac7c32f2c3687a063757db4d035d4d309c80f05498f468a8b9fa77c91462c2f\n\nbuild:\n  # PDFgui not released as noarch despite having no C code\n  # noarch: python\n  number: 0\n  skip: true  # [py<311]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - pdfgui = diffpy.pdfgui.applications.pdfgui:main\n  osx_is_app: true\n\nrequirements:\n  host:\n    - python\n    - setuptools\n    - setuptools-git-versioning >=2.0\n    - pip\n  run:\n    - python\n    - numpy\n    - wxpython\n    - menuinst  # [win]\n    - diffpy.pdffit2\n    - diffpy.structure >=3\n    - diffpy.utils\n    - matplotlib-base\n\ntest: \n  requires:\n    - pip\n    - pytest\n    - pytest-mock\n    - freezegun\n    - python\n  source_files:\n    - tests\n  commands:\n    - pip check\n    - pip list\n    # FIXME: run pytest tests in headless\n    # - pytest\n\napp:\n  entry: pdfgui  # [not win]\n  entry: pythonw -m diffpy.pdfgui.applications.pdfgui  # [win]\n  icon: pdfgui_64x64.png\n  summary: materials structure analysis from Pair Distribution Function\n\nabout:\n  home: https://github.com/diffpy/diffpy.pdfgui\n  summary: GUI for PDF simulation and structure refinement\n  license: Free To Use But Restricted\n  license_file: LICENSE.rst\n  description: |\n    The diffpy.pdfgui package provides a graphical user interface to pdffit2 refinement engine, \n    with many powerful extensions. It is a GUI program for structure refinements to atomic pair \n    distribution function. It is capable of full-profile fitting of the atomic pair distribution \n    function derived from x-ray or neutron diffraction data and comes with built in graphical and \n    structure visualization capabilities.\n  doc_url: https://www.diffpy.org/products/pdfgui.html\n  dev_url: https://github.com/diffpy/diffpy.pdfgui\n\nextra:\n  recipe-maintainers:\n    - bobleesj\n    - dragonyanglong\n    - sbillinge\n",
  "req": {
   "__set__": true,
   "elements": [
    "diffpy.pdffit2",
    "diffpy.structure",
    "diffpy.utils",
-   "matplotlib",
+   "matplotlib-base",
    "menuinst",
+   "numpy",
    "pip",
    "python",
    "setuptools",
-   "six",
+   "setuptools-git-versioning",
    "wxpython"
   ]
  },
@@ -323,7 +346,9 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools",
+    "setuptools-git-versioning"
    ]
   },
   "run": {
@@ -332,18 +357,21 @@
     "diffpy.pdffit2",
     "diffpy.structure",
     "diffpy.utils",
-    "matplotlib",
+    "matplotlib-base",
     "menuinst",
+    "numpy",
     "python",
-    "setuptools",
-    "six",
     "wxpython"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "freezegun",
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "python"
    ]
   }
  },
@@ -357,7 +385,9 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools",
+    "setuptools-git-versioning >=2.0"
    ]
   },
   "run": {
@@ -366,23 +396,26 @@
     "diffpy.pdffit2",
     "diffpy.structure >=3",
     "diffpy.utils",
-    "matplotlib",
+    "matplotlib-base",
     "menuinst",
+    "numpy",
     "python",
-    "setuptools",
-    "six",
     "wxpython"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "freezegun",
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "python"
    ]
   }
  },
- "url": "https://github.com/diffpy/diffpy.pdfgui/archive/refs/tags/3.0.5.tar.gz",
- "version": "3.0.5",
+ "url": "https://pypi.org/packages/source/d/diffpy_pdfgui/diffpy_pdfgui-3.1.0.tar.gz",
+ "version": "3.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/diffpy.pdfgui.json"
  },
@@ -392,9 +425,8 @@
    "dev_url": "https://github.com/diffpy/diffpy.pdfgui",
    "doc_url": "https://www.diffpy.org/products/pdfgui.html",
    "home": "https://github.com/diffpy/diffpy.pdfgui",
-   "license": "BSD-3-Clause",
-   "license_family": "BSD",
-   "license_file": "LICENSE.txt",
+   "license": "Free To Use But Restricted",
+   "license_file": "LICENSE.rst",
    "summary": "GUI for PDF simulation and structure refinement"
   },
   "app": {
@@ -406,9 +438,9 @@
    "entry_points": [
     "pdfgui = diffpy.pdfgui.applications.pdfgui:main"
    ],
-   "number": "2",
+   "number": "0",
    "osx_is_app": true,
-   "preserve_egg_dir": true
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -419,40 +451,45 @@
   },
   "package": {
    "name": "diffpy.pdfgui",
-   "version": "3.0.5"
+   "version": "3.1.0"
   },
   "requirements": {
    "host": [
     "python",
+    "setuptools",
+    "setuptools-git-versioning >=2.0",
     "pip"
    ],
    "run": [
     "python",
-    "setuptools",
-    "six",
-    "matplotlib",
+    "numpy",
     "wxpython",
     "menuinst",
     "diffpy.pdffit2",
     "diffpy.structure >=3",
-    "diffpy.utils"
+    "diffpy.utils",
+    "matplotlib-base"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "ca07f557997173221dacc94f9b50fb8441e3d5755e01192b4ae0f28a0cea68b2",
-   "url": "https://github.com/diffpy/diffpy.pdfgui/archive/refs/tags/3.0.5.tar.gz"
+   "sha256": "2ac7c32f2c3687a063757db4d035d4d309c80f05498f468a8b9fa77c91462c2f",
+   "url": "https://pypi.org/packages/source/d/diffpy_pdfgui/diffpy_pdfgui-3.1.0.tar.gz"
   },
   "test": {
    "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "diffpy.pdfgui.tui",
-    "diffpy.pdfgui.tests"
+    "pip check",
+    "pip list"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "freezegun",
+    "python"
+   ],
+   "source_files": [
+    "tests"
    ]
   }
  },
@@ -465,7 +502,9 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools",
+    "setuptools-git-versioning"
    ]
   },
   "run": {
@@ -474,18 +513,21 @@
     "diffpy.pdffit2",
     "diffpy.structure",
     "diffpy.utils",
-    "matplotlib",
+    "matplotlib-base",
     "menuinst",
+    "numpy",
     "python",
-    "setuptools",
-    "six",
     "wxpython"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "freezegun",
+    "pip",
+    "pytest",
+    "pytest-mock",
+    "python"
    ]
   }
  }
