@@ -15,8 +15,8 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "dev_url": "http://github.com/yu9824/ternary_diagram/",
-   "home": "http://github.com/yu9824/ternary_diagram/",
+   "dev_url": "http://github.com/yu9824/ternary-diagram/",
+   "home": "http://github.com/yu9824/ternary-diagram/",
    "license": "MIT",
    "license_file": "LICENSE",
    "summary": "This package makes it easier for you to draw beautiful ternary diagram without pymatgen."
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "ternary-diagram",
-   "version": "3.2.0"
+   "version": "3.2.1"
   },
   "requirements": {
    "host": [
@@ -49,8 +49,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e32887d82eff52b5034a7885c45012d4a77643d3e1f909451a68505e27d25f20",
-   "url": "https://pypi.org/packages/source/t/ternary-diagram/ternary_diagram-3.2.0.tar.gz"
+   "sha256": "9c58793619dd84a08c3d5c2aea08c91b53c6766d515edbc34d4b728518e1f331",
+   "url": "https://pypi.org/packages/source/t/ternary-diagram/ternary_diagram-3.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -96,8 +96,8 @@
  },
  "meta_yaml": {
   "about": {
-   "dev_url": "http://github.com/yu9824/ternary_diagram/",
-   "home": "http://github.com/yu9824/ternary_diagram/",
+   "dev_url": "http://github.com/yu9824/ternary-diagram/",
+   "home": "http://github.com/yu9824/ternary-diagram/",
    "license": "MIT",
    "license_file": "LICENSE",
    "summary": "This package makes it easier for you to draw beautiful ternary diagram without pymatgen."
@@ -114,7 +114,7 @@
   },
   "package": {
    "name": "ternary-diagram",
-   "version": "3.2.0"
+   "version": "3.2.1"
   },
   "requirements": {
    "host": [
@@ -130,8 +130,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "e32887d82eff52b5034a7885c45012d4a77643d3e1f909451a68505e27d25f20",
-   "url": "https://pypi.org/packages/source/t/ternary-diagram/ternary_diagram-3.2.0.tar.gz"
+   "sha256": "9c58793619dd84a08c3d5c2aea08c91b53c6766d515edbc34d4b728518e1f331",
+   "url": "https://pypi.org/packages/source/t/ternary-diagram/ternary_diagram-3.2.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -160,7 +160,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ternary-diagram.json"
  },
- "raw_meta_yaml": "{% set name = \"ternary-diagram\" %}\n{% set version = \"3.2.0\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ternary_diagram-{{ version }}.tar.gz\n  sha256: e32887d82eff52b5034a7885c45012d4a77643d3e1f909451a68505e27d25f20\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.20\n    - matplotlib-base\n\ntest:\n  imports:\n    - ternary_diagram\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://github.com/yu9824/ternary_diagram/\n  summary: This package makes it easier for you to draw beautiful ternary diagram without pymatgen.\n  dev_url: http://github.com/yu9824/ternary_diagram/\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - yu9824\n",
+ "raw_meta_yaml": "{% set name = \"ternary-diagram\" %}\n{% set version = \"3.2.1\" %}\n{% set python_min = \"3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ternary_diagram-{{ version }}.tar.gz\n  sha256: 9c58793619dd84a08c3d5c2aea08c91b53c6766d515edbc34d4b728518e1f331\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy >=1.20\n    - matplotlib-base\n\ntest:\n  imports:\n    - ternary_diagram\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://github.com/yu9824/ternary-diagram/\n  summary: This package makes it easier for you to draw beautiful ternary diagram without pymatgen.\n  dev_url: http://github.com/yu9824/ternary-diagram/\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - yu9824\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -230,8 +230,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/ternary-diagram/ternary_diagram-3.2.0.tar.gz",
- "version": "3.2.0",
+ "url": "https://pypi.org/packages/source/t/ternary-diagram/ternary_diagram-3.2.1.tar.gz",
+ "version": "3.2.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ternary-diagram.json"
  }
