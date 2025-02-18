@@ -26,7 +26,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "wagtail-grapple",
-   "version": "0.27.0"
+   "version": "0.28.0"
   },
   "requirements": {
    "host": [
@@ -46,15 +46,15 @@
    ],
    "run": [
     "python >=3.9",
-    "wagtail >=5.2",
+    "wagtail >=6.3",
     "graphene-django >=3,<4",
     "wagtail-headless-preview"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "428ce97309212fd63e53ad5c7594a9d6bee460065c9b060ddc2a0bf4e97d95bb",
-   "url": "https://pypi.org/packages/source/w/wagtail-grapple/wagtail_grapple-0.27.0.tar.gz"
+   "sha256": "3f89a7ea98ed7fe1348ff10aeac503a510f6cde94cd6e667f738747db8432697",
+   "url": "https://pypi.org/packages/source/w/wagtail-grapple/wagtail_grapple-0.28.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -108,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -118,7 +118,7 @@
   },
   "package": {
    "name": "wagtail-grapple",
-   "version": "0.27.0"
+   "version": "0.28.0"
   },
   "requirements": {
    "host": [
@@ -128,15 +128,15 @@
    ],
    "run": [
     "python >=3.9",
-    "wagtail >=5.2",
+    "wagtail >=6.3",
     "graphene-django >=3,<4",
     "wagtail-headless-preview"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "428ce97309212fd63e53ad5c7594a9d6bee460065c9b060ddc2a0bf4e97d95bb",
-   "url": "https://pypi.org/packages/source/w/wagtail-grapple/wagtail_grapple-0.27.0.tar.gz"
+   "sha256": "3f89a7ea98ed7fe1348ff10aeac503a510f6cde94cd6e667f738747db8432697",
+   "url": "https://pypi.org/packages/source/w/wagtail-grapple/wagtail_grapple-0.28.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -165,7 +165,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/wagtail-grapple.json"
  },
- "raw_meta_yaml": "{% set name = \"wagtail-grapple\" %}\n{% set version = \"0.27.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wagtail_grapple-{{ version }}.tar.gz\n  sha256: 428ce97309212fd63e53ad5c7594a9d6bee460065c9b060ddc2a0bf4e97d95bb\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - flit-core >=3.2,<4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - wagtail >=5.2\n    - graphene-django >=3,<4\n    - wagtail-headless-preview\n\ntest:\n  imports:\n    - grapple\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/torchbox/wagtail-grapple\n  summary: A Wagtail package that speeds up and simplifies implementing a GraphQL endpoint!\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
+ "raw_meta_yaml": "{% set name = \"wagtail-grapple\" %}\n{% set version = \"0.28.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wagtail_grapple-{{ version }}.tar.gz\n  sha256: 3f89a7ea98ed7fe1348ff10aeac503a510f6cde94cd6e667f738747db8432697\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - flit-core >=3.2,<4\n    - pip\n  run:\n    - python >={{ python_min }}\n    - wagtail >=6.3\n    - graphene-django >=3,<4\n    - wagtail-headless-preview\n\ntest:\n  imports:\n    - grapple\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/torchbox/wagtail-grapple\n  summary: A Wagtail package that speeds up and simplifies implementing a GraphQL endpoint!\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rxm7706\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -226,7 +226,7 @@
    "elements": [
     "graphene-django >=3,<4",
     "python >=3.9",
-    "wagtail >=5.2",
+    "wagtail >=6.3",
     "wagtail-headless-preview"
    ]
   },
@@ -238,8 +238,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/w/wagtail-grapple/wagtail_grapple-0.27.0.tar.gz",
- "version": "0.27.0",
+ "url": "https://pypi.org/packages/source/w/wagtail-grapple/wagtail_grapple-0.28.0.tar.gz",
+ "version": "0.28.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/wagtail-grapple.json"
  }
