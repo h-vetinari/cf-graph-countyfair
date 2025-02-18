@@ -35,7 +35,7 @@
    "entry_points": [
     "parmed = parmed.scripts:clapp"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -57,6 +57,7 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
+    "setuptools",
     "python"
    ],
    "run": [
@@ -107,7 +108,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -137,7 +139,7 @@
    "entry_points": [
     "parmed = parmed.scripts:clapp"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -159,6 +161,7 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
+    "setuptools",
     "python"
    ],
    "run": [
@@ -209,7 +212,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -239,7 +243,7 @@
    "entry_points": [
     "parmed = parmed.scripts:clapp"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -261,6 +265,7 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
+    "setuptools",
     "python"
    ],
    "run": [
@@ -311,7 +316,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -341,7 +347,7 @@
    "entry_points": [
     "parmed = parmed.scripts:clapp"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -363,6 +369,7 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
+    "setuptools",
     "python"
    ],
    "run": [
@@ -417,7 +424,7 @@
    "entry_points": [
     "parmed = parmed.scripts:clapp"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -439,6 +446,7 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
+    "setuptools",
     "python"
    ],
    "run": [
@@ -489,7 +497,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -519,7 +528,7 @@
    "entry_points": [
     "parmed = parmed.scripts:clapp"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -541,6 +550,7 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
+    "setuptools",
     "python"
    ],
    "run": [
@@ -591,7 +601,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -625,7 +636,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/parmed.json"
  },
- "raw_meta_yaml": "{% set name = \"ParmEd\" %}\n{% set version = \"4.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ name }}/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 11d9ac959f3bd0004c139db5d51cd00988f9b1d85d4929a9a21d31a8f8478a2a\n\nbuild:\n  number: 0\n  entry_points:\n    - parmed = parmed.scripts:clapp\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - pip\n    - python\n  run:\n    - numpy >=1.14\n    - pandas\n    - python\n\ntest:\n  imports:\n    - parmed\n    - parmed.amber\n    - parmed.amber.mdin\n    - parmed.charmm\n    - parmed.formats\n    - parmed.formats.pdbx\n    - parmed.gromacs\n    - parmed.modeller\n    - parmed.namd\n    - parmed.openmm\n    - parmed.rdkit\n    - parmed.rosetta\n    - parmed.tinker\n    - parmed.tools\n    - parmed.tools.simulations\n    - parmed.unit\n    - parmed.utils\n    - parmed.utils.fortranformat\n  commands:\n    - parmed --help\n\nabout:\n  home: https://parmed.github.io/ParmEd/html/index.html\n  license: LGPL-2.1-or-later\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Amber parameter file editor\n  doc_url: https://parmed.github.io/ParmEd/html/index.html\n  description: |\n    ParmEd is a package designed to facilitate creating and easily \n    manipulating molecular systems that are fully described by a \n    common classical force field. Supported force fields include \n    Amber, CHARMM, AMOEBA, and several others that share a similar \n    functional form (e.g., GROMOS).\n\nextra:\n  recipe-maintainers:\n    - chrisbarnettster\n    - simonbray\n    - tsenapathi\n    - jaimergp\n    - swails\n",
+ "raw_meta_yaml": "{% set name = \"ParmEd\" %}\n{% set version = \"4.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ name }}/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 11d9ac959f3bd0004c139db5d51cd00988f9b1d85d4929a9a21d31a8f8478a2a\n\nbuild:\n  number: 1\n  entry_points:\n    - parmed = parmed.scripts:clapp\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - pip\n    - setuptools\n    - python\n  run:\n    - numpy >=1.14\n    - pandas\n    - python\n\ntest:\n  imports:\n    - parmed\n    - parmed.amber\n    - parmed.amber.mdin\n    - parmed.charmm\n    - parmed.formats\n    - parmed.formats.pdbx\n    - parmed.gromacs\n    - parmed.modeller\n    - parmed.namd\n    - parmed.openmm\n    - parmed.rdkit\n    - parmed.rosetta\n    - parmed.tinker\n    - parmed.tools\n    - parmed.tools.simulations\n    - parmed.unit\n    - parmed.utils\n    - parmed.utils.fortranformat\n  commands:\n    - parmed --help\n\nabout:\n  home: https://parmed.github.io/ParmEd/html/index.html\n  license: LGPL-2.1-or-later\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Amber parameter file editor\n  doc_url: https://parmed.github.io/ParmEd/html/index.html\n  description: |\n    ParmEd is a package designed to facilitate creating and easily \n    manipulating molecular systems that are fully described by a \n    common classical force field. Supported force fields include \n    Amber, CHARMM, AMOEBA, and several others that share a similar \n    functional form (e.g., GROMOS).\n\nextra:\n  recipe-maintainers:\n    - chrisbarnettster\n    - simonbray\n    - tsenapathi\n    - jaimergp\n    - swails\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -634,7 +645,8 @@
    "numpy",
    "pandas",
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -648,7 +660,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -678,7 +691,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -713,7 +727,7 @@
    "entry_points": [
     "parmed = parmed.scripts:clapp"
    ],
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra": {
@@ -735,6 +749,7 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
+    "setuptools",
     "python"
    ],
    "run": [
@@ -785,7 +800,8 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
