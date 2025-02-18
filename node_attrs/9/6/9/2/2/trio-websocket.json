@@ -49,6 +49,7 @@
      ],
      "run": [
       "exceptiongroup",
+      "outcome >=1.2.0",
       "python >=3.9",
       "trio >=0.11",
       "wsproto >=0.14"
@@ -89,7 +90,7 @@
   ],
   "package": {
    "name": "trio-websocket",
-   "version": "0.12.0"
+   "version": "0.12.1"
   },
   "requirements": {
    "host": [
@@ -99,6 +100,7 @@
    ],
    "run": [
     "exceptiongroup",
+    "outcome >=1.2.0",
     "python >=3.9",
     "trio >=0.11",
     "wsproto >=0.14"
@@ -106,8 +108,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "d9bc17ee061c66c9abf62a08fe9f36949ad6be17eed281c3b979be9293f3df74",
-   "url": "https://pypi.org/packages/source/t/trio-websocket/trio_websocket-0.12.0.tar.gz"
+   "sha256": "d55ccd4d3eae27c494f3fdae14823317839bdcb8214d1173eacc4d42c69fc91b",
+   "url": "https://pypi.org/packages/source/t/trio-websocket/trio_websocket-0.12.1.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -127,6 +129,7 @@
    "__set__": true,
    "elements": [
     "exceptiongroup",
+    "outcome",
     "python",
     "trio",
     "wsproto"
@@ -177,6 +180,7 @@
      ],
      "run": [
       "exceptiongroup",
+      "outcome >=1.2.0",
       "python >=3.9",
       "trio >=0.11",
       "wsproto >=0.14"
@@ -217,7 +221,7 @@
   ],
   "package": {
    "name": "trio-websocket",
-   "version": "0.12.0"
+   "version": "0.12.1"
   },
   "requirements": {
    "host": [
@@ -227,6 +231,7 @@
    ],
    "run": [
     "exceptiongroup",
+    "outcome >=1.2.0",
     "python >=3.9",
     "trio >=0.11",
     "wsproto >=0.14"
@@ -234,8 +239,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "d9bc17ee061c66c9abf62a08fe9f36949ad6be17eed281c3b979be9293f3df74",
-   "url": "https://pypi.org/packages/source/t/trio-websocket/trio_websocket-0.12.0.tar.gz"
+   "sha256": "d55ccd4d3eae27c494f3fdae14823317839bdcb8214d1173eacc4d42c69fc91b",
+   "url": "https://pypi.org/packages/source/t/trio-websocket/trio_websocket-0.12.1.tar.gz"
   }
  },
  "name": "trio-websocket",
@@ -252,11 +257,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/trio-websocket.json"
  },
- "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 0.12.0\n\npackage:\n  name: trio-websocket\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/t/trio-websocket/trio_websocket-${{ version }}.tar.gz\n  sha256: d9bc17ee061c66c9abf62a08fe9f36949ad6be17eed281c3b979be9293f3df74\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n\nrequirements:\n  host:\n    - pip\n    - python ${{ python_min }}.*\n    - setuptools\n  run:\n    - exceptiongroup\n    - python >=${{ python_min }}\n    - trio >=0.11\n    - wsproto >=0.14\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: trio_websocket\n  - files:\n      recipe:\n        - run_test.py\n      source:\n        - tests/\n    requirements:\n      run:\n        - attrs >=19.2.0\n        - pytest >=4.6\n        - pytest-cov\n        - pytest-trio >=0.5.0\n        - python ${{ python_min }}.*\n        - trustme\n    script:\n      - python run_test.py\n\nabout:\n  summary: WebSocket library for Trio\n  license: MIT\n  license_file: LICENSE\n  homepage: https://github.com/python-trio/trio-websocket\n  documentation: https://trio-websocket.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: \"0.12.1\"\n\npackage:\n  name: trio-websocket\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/t/trio-websocket/trio_websocket-${{ version }}.tar.gz\n  sha256: d55ccd4d3eae27c494f3fdae14823317839bdcb8214d1173eacc4d42c69fc91b\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n\nrequirements:\n  host:\n    - pip\n    - python ${{ python_min }}.*\n    - setuptools\n  run:\n    - exceptiongroup\n    - outcome >=1.2.0\n    - python >=${{ python_min }}\n    - trio >=0.11\n    - wsproto >=0.14\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: trio_websocket\n  - files:\n      recipe:\n        - run_test.py\n      source:\n        - tests/\n    requirements:\n      run:\n        - attrs >=19.2.0\n        - pytest >=4.6\n        - pytest-cov\n        - pytest-trio >=0.5.0\n        - python ${{ python_min }}.*\n        - trustme\n    script:\n      - python run_test.py\n\nabout:\n  summary: WebSocket library for Trio\n  license: MIT\n  license_file: LICENSE\n  homepage: https://github.com/python-trio/trio-websocket\n  documentation: https://trio-websocket.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
    "exceptiongroup",
+   "outcome",
    "pip",
    "python",
    "setuptools",
@@ -281,6 +287,7 @@
    "__set__": true,
    "elements": [
     "exceptiongroup",
+    "outcome",
     "python",
     "trio",
     "wsproto"
@@ -317,6 +324,7 @@
    "__set__": true,
    "elements": [
     "exceptiongroup",
+    "outcome >=1.2.0",
     "python >=3.9",
     "trio >=0.11",
     "wsproto >=0.14"
@@ -335,8 +343,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/trio-websocket/trio_websocket-0.12.0.tar.gz",
- "version": "0.12.0",
+ "url": "https://pypi.org/packages/source/t/trio-websocket/trio_websocket-0.12.1.tar.gz",
+ "version": "0.12.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/trio-websocket.json"
  }
