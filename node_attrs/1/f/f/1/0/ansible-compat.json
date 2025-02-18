@@ -32,7 +32,7 @@
   },
   "package": {
    "name": "ansible-compat",
-   "version": "25.1.2"
+   "version": "25.1.3"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0dc51fc1cb35a1dd060ec977290a1290f434bb3e81c864b6375762767c035b25",
-   "url": "https://pypi.org/packages/source/a/ansible-compat/ansible_compat-25.1.2.tar.gz"
+   "sha256": "bf1601d2f65a735ce1f1aa055336bab4451dadb28e0443e78a7b0155ecc153f8",
+   "url": "https://pypi.org/packages/source/a/ansible-compat/ansible_compat-25.1.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -124,7 +124,7 @@
   },
   "package": {
    "name": "ansible-compat",
-   "version": "25.1.2"
+   "version": "25.1.3"
   },
   "requirements": {
    "host": [
@@ -146,8 +146,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0dc51fc1cb35a1dd060ec977290a1290f434bb3e81c864b6375762767c035b25",
-   "url": "https://pypi.org/packages/source/a/ansible-compat/ansible_compat-25.1.2.tar.gz"
+   "sha256": "bf1601d2f65a735ce1f1aa055336bab4451dadb28e0443e78a7b0155ecc153f8",
+   "url": "https://pypi.org/packages/source/a/ansible-compat/ansible_compat-25.1.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -176,7 +176,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ansible-compat.json"
  },
- "raw_meta_yaml": "{% set name = \"ansible-compat\" %}\n{% set version = \"25.1.2\" %}\n{% set python_min = \"3.10\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 0dc51fc1cb35a1dd060ec977290a1290f434bb3e81c864b6375762767c035b25\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm >=3.5.0\n    - setuptools_scm_git_archive >=1.0\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - ansible-core >=2.14\n    - pyyaml\n    - subprocess-tee >=0.4.1\n    - packaging\n    - jsonschema >=4.6.0\n    - typing-extensions >=4.5.0\n\ntest:\n  imports:\n    - ansible_compat\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ansible-community/ansible-compat\n  summary: Ansible compatibility goodies\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
+ "raw_meta_yaml": "{% set name = \"ansible-compat\" %}\n{% set version = \"25.1.3\" %}\n{% set python_min = \"3.10\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: bf1601d2f65a735ce1f1aa055336bab4451dadb28e0443e78a7b0155ecc153f8\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm >=3.5.0\n    - setuptools_scm_git_archive >=1.0\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - ansible-core >=2.14\n    - pyyaml\n    - subprocess-tee >=0.4.1\n    - packaging\n    - jsonschema >=4.6.0\n    - typing-extensions >=4.5.0\n\ntest:\n  imports:\n    - ansible_compat\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ansible-community/ansible-compat\n  summary: Ansible compatibility goodies\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -264,8 +264,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/ansible-compat/ansible_compat-25.1.2.tar.gz",
- "version": "25.1.2",
+ "url": "https://pypi.org/packages/source/a/ansible-compat/ansible_compat-25.1.3.tar.gz",
+ "version": "25.1.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ansible-compat.json"
  }
