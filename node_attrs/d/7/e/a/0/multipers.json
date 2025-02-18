@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "build_platform": {
+   "osx_arm64": "osx_64"
+  },
   "conda_build": {
    "error_overlinking": true
   },
@@ -9,7 +12,8 @@
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
-  }
+  },
+  "test": "native_and_emulated"
  },
  "feedstock_name": "multipers",
  "hash_type": "sha256",
@@ -21,7 +25,7 @@
    "summary": "Multiparameter Topological Persistence for Machine Learning"
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -37,10 +41,7 @@
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "python",
-    "numpy >=2",
-    "cython >=3"
+    "cxx_compiler_stub"
    ],
    "host": [
     "python",
@@ -50,7 +51,6 @@
     "pip",
     "tbb",
     "tbb-devel",
-    "libboost-python-devel",
     "libboost-devel"
    ],
    "run": [
@@ -90,10 +90,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "cython",
-    "numpy",
-    "python"
+    "cxx_compiler_stub"
    ]
   },
   "host": {
@@ -101,7 +98,6 @@
    "elements": [
     "cython",
     "libboost-devel",
-    "libboost-python-devel",
     "numpy",
     "pip",
     "python",
@@ -140,7 +136,7 @@
    "summary": "Multiparameter Topological Persistence for Machine Learning"
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -156,10 +152,7 @@
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "python",
-    "numpy >=2",
-    "cython >=3"
+    "cxx_compiler_stub"
    ],
    "host": [
     "python",
@@ -169,7 +162,6 @@
     "pip",
     "tbb",
     "tbb-devel",
-    "libboost-python-devel",
     "libboost-devel"
    ],
    "run": [
@@ -212,7 +204,7 @@
    "summary": "Multiparameter Topological Persistence for Machine Learning"
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -228,10 +220,7 @@
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "python",
-    "numpy >=2",
-    "cython >=3"
+    "cxx_compiler_stub"
    ],
    "host": [
     "python",
@@ -241,7 +230,6 @@
     "pip",
     "tbb",
     "tbb-devel",
-    "libboost-python-devel",
     "libboost-devel"
    ],
    "run": [
@@ -281,10 +269,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "cython",
-    "numpy",
-    "python"
+    "cxx_compiler_stub"
    ]
   },
   "host": {
@@ -292,7 +277,117 @@
    "elements": [
     "cython",
     "libboost-devel",
-    "libboost-python-devel",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools",
+    "tbb",
+    "tbb-devel"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "gudhi",
+    "joblib",
+    "matplotlib-base",
+    "numpy",
+    "pot",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "tbb",
+    "tqdm"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip"
+   ]
+  }
+ },
+ "osx_arm64_meta_yaml": {
+  "about": {
+   "home": "https://davidlapous.github.io/multipers/",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Multiparameter Topological Persistence for Machine Learning"
+  },
+  "build": {
+   "number": "4",
+   "script": "PYTHON -m pip install . -vv"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DavidLapous"
+   ]
+  },
+  "package": {
+   "name": "multipers",
+   "version": "2.3.0"
+  },
+  "requirements": {
+   "build": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ],
+   "host": [
+    "python",
+    "numpy >=2",
+    "cython >=3",
+    "setuptools",
+    "pip",
+    "tbb",
+    "tbb-devel",
+    "libboost-devel"
+   ],
+   "run": [
+    "python",
+    "tbb",
+    "numpy",
+    "gudhi >=3.8",
+    "tqdm",
+    "scipy",
+    "joblib",
+    "matplotlib-base",
+    "scikit-learn",
+    "pot"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "3a14b831a319d1af41920180568997a9f39a51a04a591731563d082913e3be27",
+   "url": "https://pypi.org/packages/source/m/multipers/multipers-2.3.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip install pykeops filtration-domination --upgrade",
+    "pip check"
+   ],
+   "imports": [
+    "multipers"
+   ],
+   "requires": [
+    "pip"
+   ]
+  }
+ },
+ "osx_arm64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": [
+    "c_compiler_stub",
+    "c_stdlib_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "cython",
+    "libboost-devel",
     "numpy",
     "pip",
     "python",
@@ -333,12 +428,13 @@
  "platforms": [
   "linux_64",
   "osx_64",
+  "osx_arm64",
   "win_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/multipers.json"
  },
- "raw_meta_yaml": "{% set name = \"multipers\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3a14b831a319d1af41920180568997a9f39a51a04a591731563d082913e3be27\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 3\n  skip: true  # [py<=39 or py>=313]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ stdlib('c') }}\n    - {{ compiler('cxx') }}\n    - python\n    - numpy >=2\n    - cython >=3  \n  host:\n    - python\n    - numpy >=2\n    - cython >=3\n    - setuptools\n    - pip\n    - tbb\n    - tbb-devel\n    - libboost-python-devel\n    - libboost-devel\n  run:\n    - python\n    - tbb\n    - numpy\n    - gudhi >=3.8\n    - tqdm\n    - scipy\n    - joblib\n    - matplotlib-base\n    - scikit-learn\n    - pot\n\n\ntest:\n   imports:\n      - multipers\n   requires:\n      - pip\n   commands:\n      - pip install pykeops filtration-domination --upgrade\n      - pip check\nabout:\n  home: https://davidlapous.github.io/multipers/\n  summary: Multiparameter Topological Persistence for Machine Learning\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - DavidLapous\n",
+ "raw_meta_yaml": "{% set name = \"multipers\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3a14b831a319d1af41920180568997a9f39a51a04a591731563d082913e3be27\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 4\n  skip: true  # [py<=39 or py>=313]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ stdlib('c') }}\n    - {{ compiler('cxx') }}\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - numpy >=2                              # [build_platform != target_platform]\n    - cython >=3                             # [build_platform != target_platform]\n  host:\n    - python\n    - numpy >=2\n    - cython >=3\n    - setuptools\n    - pip\n    - tbb\n    - tbb-devel\n    - libboost-devel\n  run:\n    - python\n    - tbb\n    - numpy\n    - gudhi >=3.8\n    - tqdm\n    - scipy\n    - joblib\n    - matplotlib-base\n    - scikit-learn\n    - pot\n\n\ntest:\n   imports:\n      - multipers\n   requires:\n      - pip\n   commands:\n      - pip install pykeops filtration-domination --upgrade\n      - pip check\nabout:\n  home: https://davidlapous.github.io/multipers/\n  summary: Multiparameter Topological Persistence for Machine Learning\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - DavidLapous\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -349,7 +445,6 @@
    "gudhi",
    "joblib",
    "libboost-devel",
-   "libboost-python-devel",
    "matplotlib-base",
    "numpy",
    "pip",
@@ -369,10 +464,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "cython",
-    "numpy",
-    "python"
+    "cxx_compiler_stub"
    ]
   },
   "host": {
@@ -383,7 +475,6 @@
     "cxx_compiler_stub",
     "cython",
     "libboost-devel",
-    "libboost-python-devel",
     "numpy",
     "pip",
     "python",
@@ -424,10 +515,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "cython >=3",
-    "numpy >=2",
-    "python"
+    "cxx_compiler_stub"
    ]
   },
   "host": {
@@ -435,7 +523,6 @@
    "elements": [
     "cython >=3",
     "libboost-devel",
-    "libboost-python-devel",
     "numpy >=2",
     "pip",
     "python",
@@ -479,7 +566,7 @@
    "summary": "Multiparameter Topological Persistence for Machine Learning"
   },
   "build": {
-   "number": "3",
+   "number": "4",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -495,10 +582,7 @@
    "build": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "python",
-    "numpy >=2",
-    "cython >=3"
+    "cxx_compiler_stub"
    ],
    "host": [
     "python",
@@ -508,7 +592,6 @@
     "pip",
     "tbb",
     "tbb-devel",
-    "libboost-python-devel",
     "libboost-devel"
    ],
    "run": [
@@ -548,10 +631,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub",
-    "cython",
-    "numpy",
-    "python"
+    "cxx_compiler_stub"
    ]
   },
   "host": {
@@ -559,7 +639,6 @@
    "elements": [
     "cython",
     "libboost-devel",
-    "libboost-python-devel",
     "numpy",
     "pip",
     "python",
