@@ -48,7 +48,7 @@
   },
   "package": {
    "name": "photutils",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -82,8 +82,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4d13709c076809638a483c6f48ac5ad4079b4cd2db4b0b31310d09399334aaef",
-   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.1.0.tar.gz"
+   "sha256": "eb5b67f335df594c954605c9bcfc6808cc66361909b89776c3c95d920c722bc0",
+   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -177,7 +177,7 @@
   },
   "package": {
    "name": "photutils",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -211,8 +211,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4d13709c076809638a483c6f48ac5ad4079b4cd2db4b0b31310d09399334aaef",
-   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.1.0.tar.gz"
+   "sha256": "eb5b67f335df594c954605c9bcfc6808cc66361909b89776c3c95d920c722bc0",
+   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -306,7 +306,7 @@
   },
   "package": {
    "name": "photutils",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -340,8 +340,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4d13709c076809638a483c6f48ac5ad4079b4cd2db4b0b31310d09399334aaef",
-   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.1.0.tar.gz"
+   "sha256": "eb5b67f335df594c954605c9bcfc6808cc66361909b89776c3c95d920c722bc0",
+   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -435,7 +435,7 @@
   },
   "package": {
    "name": "photutils",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -469,8 +469,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4d13709c076809638a483c6f48ac5ad4079b4cd2db4b0b31310d09399334aaef",
-   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.1.0.tar.gz"
+   "sha256": "eb5b67f335df594c954605c9bcfc6808cc66361909b89776c3c95d920c722bc0",
+   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -520,7 +520,7 @@
   },
   "package": {
    "name": "photutils",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -554,8 +554,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4d13709c076809638a483c6f48ac5ad4079b4cd2db4b0b31310d09399334aaef",
-   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.1.0.tar.gz"
+   "sha256": "eb5b67f335df594c954605c9bcfc6808cc66361909b89776c3c95d920c722bc0",
+   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -649,7 +649,7 @@
   },
   "package": {
    "name": "photutils",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -683,8 +683,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4d13709c076809638a483c6f48ac5ad4079b4cd2db4b0b31310d09399334aaef",
-   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.1.0.tar.gz"
+   "sha256": "eb5b67f335df594c954605c9bcfc6808cc66361909b89776c3c95d920c722bc0",
+   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
@@ -772,7 +772,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/photutils.json"
  },
- "raw_meta_yaml": "{% set name = \"photutils\" %}\n{% set version = \"2.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/photutils/photutils-{{ version }}.tar.gz\n  sha256: 4d13709c076809638a483c6f48ac5ad4079b4cd2db4b0b31310d09399334aaef\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py<311]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython >=3.0.0,<3.1.0                  # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - setuptools_scm >=6.2\n    - cython >=3.0.0,<3.1.0\n    - extension-helpers\n    - astropy-base >=5.3\n    - numpy\n  run:\n    - python\n    - numpy >=1.24\n    - astropy-base >=5.3\n    - scipy >=1.10\n    - matplotlib-base >=3.7\n    - regions >=0.9\n    - scikit-image >=0.20\n    - gwcs >=0.20\n    - bottleneck\n    - tqdm\n    - rasterio\n    - shapely\n\ntest:\n  requires:\n    - pytest-astropy\n  imports:\n    - photutils\n    - photutils.aperture\n    - photutils.background\n    - photutils.centroids\n    - photutils.datasets\n    - photutils.detection\n    - photutils.extern\n    - photutils.geometry\n    - photutils.isophote\n    - photutils.morphology\n    - photutils.profiles\n    - photutils.psf\n    - photutils.psf.matching\n    - photutils.segmentation\n    - photutils.utils\n\nabout:\n  home: https://photutils.readthedocs.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: An Astropy package for photometry\n  description: |\n    Photutils is an Astropy package for detection and photometry of\n    astronomical sources.\n  doc_url: https://photutils.readthedocs.io/\n  dev_url: https://github.com/astropy/photutils\n\nextra:\n  recipe-maintainers:\n    - larrybradley\n    - bsipocz\n    - mwcraig\n",
+ "raw_meta_yaml": "{% set name = \"photutils\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/photutils/photutils-{{ version }}.tar.gz\n  sha256: eb5b67f335df594c954605c9bcfc6808cc66361909b89776c3c95d920c722bc0\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py<311]\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython >=3.0.0,<3.1.0                  # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - setuptools_scm >=6.2\n    - cython >=3.0.0,<3.1.0\n    - extension-helpers\n    - astropy-base >=5.3\n    - numpy\n  run:\n    - python\n    - numpy >=1.24\n    - astropy-base >=5.3\n    - scipy >=1.10\n    - matplotlib-base >=3.7\n    - regions >=0.9\n    - scikit-image >=0.20\n    - gwcs >=0.20\n    - bottleneck\n    - tqdm\n    - rasterio\n    - shapely\n\ntest:\n  requires:\n    - pytest-astropy\n  imports:\n    - photutils\n    - photutils.aperture\n    - photutils.background\n    - photutils.centroids\n    - photutils.datasets\n    - photutils.detection\n    - photutils.extern\n    - photutils.geometry\n    - photutils.isophote\n    - photutils.morphology\n    - photutils.profiles\n    - photutils.psf\n    - photutils.psf.matching\n    - photutils.segmentation\n    - photutils.utils\n\nabout:\n  home: https://photutils.readthedocs.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: An Astropy package for photometry\n  description: |\n    Photutils is an Astropy package for detection and photometry of\n    astronomical sources.\n  doc_url: https://photutils.readthedocs.io/\n  dev_url: https://github.com/astropy/photutils\n\nextra:\n  recipe-maintainers:\n    - larrybradley\n    - bsipocz\n    - mwcraig\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -892,8 +892,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/photutils/photutils-2.1.0.tar.gz",
- "version": "2.1.0",
+ "url": "https://pypi.org/packages/source/p/photutils/photutils-2.2.0.tar.gz",
+ "version": "2.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/photutils.json"
  },
@@ -921,7 +921,7 @@
   },
   "package": {
    "name": "photutils",
-   "version": "2.1.0"
+   "version": "2.2.0"
   },
   "requirements": {
    "build": [
@@ -955,8 +955,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4d13709c076809638a483c6f48ac5ad4079b4cd2db4b0b31310d09399334aaef",
-   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.1.0.tar.gz"
+   "sha256": "eb5b67f335df594c954605c9bcfc6808cc66361909b89776c3c95d920c722bc0",
+   "url": "https://pypi.org/packages/source/p/photutils/photutils-2.2.0.tar.gz"
   },
   "test": {
    "imports": [
