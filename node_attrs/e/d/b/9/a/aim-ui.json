@@ -19,8 +19,8 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -30,7 +30,7 @@
   },
   "package": {
    "name": "aim-ui",
-   "version": "3.21.0"
+   "version": "3.27.0"
   },
   "requirements": {
    "host": [
@@ -44,8 +44,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "52614968cd79a81ab48131633170fadbeae77a26e98d3a0618a0c92e9f67dbd4",
-   "url": "https://pypi.org/packages/source/a/aim-ui/aim-ui-3.21.0.tar.gz"
+   "sha256": "4587dd2c918621cf968ac22c6fefc527b85b3ee15a12fc012dac6bce292d3e94",
+   "url": "https://pypi.org/packages/source/a/aim-ui/aim-ui-3.27.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -96,8 +96,8 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv"
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -107,7 +107,7 @@
   },
   "package": {
    "name": "aim-ui",
-   "version": "3.21.0"
+   "version": "3.27.0"
   },
   "requirements": {
    "host": [
@@ -121,8 +121,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "52614968cd79a81ab48131633170fadbeae77a26e98d3a0618a0c92e9f67dbd4",
-   "url": "https://pypi.org/packages/source/a/aim-ui/aim-ui-3.21.0.tar.gz"
+   "sha256": "4587dd2c918621cf968ac22c6fefc527b85b3ee15a12fc012dac6bce292d3e94",
+   "url": "https://pypi.org/packages/source/a/aim-ui/aim-ui-3.27.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -151,7 +151,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/aim-ui.json"
  },
- "raw_meta_yaml": "{% set name = \"aim-ui\" %}\n{% set version = \"3.21.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aim-ui-{{ version }}.tar.gz\n  sha256: 52614968cd79a81ab48131633170fadbeae77a26e98d3a0618a0c92e9f67dbd4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - aim_ui\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/aim-ui/\n  summary: Aim UI\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - gorarakelyan\n    - synapticarbors\n",
+ "raw_meta_yaml": "{% set name = \"aim-ui\" %}\n{% set version = \"3.27.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aim-ui-{{ version }}.tar.gz\n  sha256: 4587dd2c918621cf968ac22c6fefc527b85b3ee15a12fc012dac6bce292d3e94\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - aim_ui\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://pypi.org/project/aim-ui/\n  summary: Aim UI\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - gorarakelyan\n    - synapticarbors\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -215,8 +215,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/aim-ui/aim-ui-3.21.0.tar.gz",
- "version": "3.21.0",
+ "url": "https://pypi.org/packages/source/a/aim-ui/aim-ui-3.27.0.tar.gz",
+ "version": "3.27.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/aim-ui.json"
  }
