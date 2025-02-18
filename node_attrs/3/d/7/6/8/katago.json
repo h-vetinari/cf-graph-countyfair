@@ -82,7 +82,6 @@
     "name": "katago",
     "requirements": {
      "build": [
-      "cuda_compiler_stub",
       "c_compiler_stub",
       "cxx_compiler_stub",
       "c_stdlib_stub",
@@ -91,10 +90,6 @@
       "curl"
      ],
      "host": [
-      "cuda-version ==12.6",
-      "libcublas-dev",
-      "cudnn",
-      "nccl",
       "zlib",
       "libzip",
       "eigen",
@@ -113,9 +108,11 @@
        "katago",
        "katago version",
        "${{ \"katago runtests\" if not osx }}",
+       "${{ \"katago runnnlayertests\" if cuda != \"true\" }}",
        "cd cpp/",
        "mkdir tests/scratch",
-       "katago runoutputtests"
+       "katago runoutputtests",
+       "${{ \"katago runtinynntests tests/scratch 1.0\" if cuda != \"true\" }}"
       ]
      }
     ]
@@ -132,18 +129,13 @@
     "c_stdlib_stub",
     "cmake",
     "ninja",
-    "curl",
-    "cuda_compiler_stub"
+    "curl"
    ],
    "host": [
     "zlib",
     "libzip",
     "eigen",
-    "openssl",
-    "cuda-version ==12.6",
-    "libcublas-dev",
-    "cudnn",
-    "nccl"
+    "openssl"
    ]
   },
   "schema_version": 1,
@@ -162,7 +154,6 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "cuda_compiler_stub",
     "curl",
     "cxx_compiler_stub",
     "ninja"
@@ -171,12 +162,8 @@
   "host": {
    "__set__": true,
    "elements": [
-    "cuda-version",
-    "cudnn",
     "eigen",
-    "libcublas-dev",
     "libzip",
-    "nccl",
     "openssl",
     "zlib"
    ]
@@ -252,7 +239,6 @@
     "name": "katago",
     "requirements": {
      "build": [
-      "cuda_compiler_stub",
       "c_compiler_stub",
       "cxx_compiler_stub",
       "c_stdlib_stub",
@@ -261,10 +247,6 @@
       "curl"
      ],
      "host": [
-      "cuda-version ==12.6",
-      "libcublas-dev",
-      "cudnn",
-      "nccl",
       "zlib",
       "libzip",
       "eigen",
@@ -283,9 +265,11 @@
        "katago",
        "katago version",
        "${{ \"katago runtests\" if not osx }}",
+       "${{ \"katago runnnlayertests\" if cuda != \"true\" }}",
        "cd cpp/",
        "mkdir tests/scratch",
-       "katago runoutputtests"
+       "katago runoutputtests",
+       "${{ \"katago runtinynntests tests/scratch 1.0\" if cuda != \"true\" }}"
       ]
      }
     ]
@@ -302,18 +286,13 @@
     "c_stdlib_stub",
     "cmake",
     "ninja",
-    "curl",
-    "cuda_compiler_stub"
+    "curl"
    ],
    "host": [
     "zlib",
     "libzip",
     "eigen",
-    "openssl",
-    "cuda-version ==12.6",
-    "libcublas-dev",
-    "cudnn",
-    "nccl"
+    "openssl"
    ]
   },
   "schema_version": 1,
@@ -332,7 +311,6 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "cuda_compiler_stub",
     "curl",
     "cxx_compiler_stub",
     "ninja"
@@ -341,12 +319,8 @@
   "host": {
    "__set__": true,
    "elements": [
-    "cuda-version",
-    "cudnn",
     "eigen",
-    "libcublas-dev",
     "libzip",
-    "nccl",
     "openssl",
     "zlib"
    ]
@@ -422,49 +396,6 @@
     "name": "katago",
     "requirements": {
      "build": [
-      "cuda_compiler_stub",
-      "c_compiler_stub",
-      "cxx_compiler_stub",
-      "c_stdlib_stub",
-      "cmake",
-      "ninja",
-      "curl"
-     ],
-     "host": [
-      "cuda-version ==12.6",
-      "libcublas-dev",
-      "cudnn",
-      "nccl",
-      "zlib",
-      "libzip",
-      "eigen",
-      "openssl"
-     ],
-     "run": []
-    },
-    "tests": [
-     {
-      "files": {
-       "source": [
-        "cpp/tests/**"
-       ]
-      },
-      "script": [
-       "katago",
-       "katago version",
-       "${{ \"katago runtests\" if not osx }}",
-       "cd cpp/",
-       "mkdir tests/scratch",
-       "katago runoutputtests"
-      ]
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "katago",
-    "requirements": {
-     "build": [
       "c_compiler_stub",
       "cxx_compiler_stub",
       "c_stdlib_stub",
@@ -505,7 +436,6 @@
     "name": "katago",
     "requirements": {
      "build": [
-      "cuda_compiler_stub",
       "c_compiler_stub",
       "cxx_compiler_stub",
       "c_stdlib_stub",
@@ -514,10 +444,6 @@
       "curl"
      ],
      "host": [
-      "cuda-version ==12.6",
-      "libcublas-dev",
-      "cudnn",
-      "nccl",
       "zlib",
       "libzip",
       "eigen",
@@ -536,9 +462,11 @@
        "katago",
        "katago version",
        "${{ \"katago runtests\" if not osx }}",
+       "${{ \"katago runnnlayertests\" if cuda != \"true\" }}",
        "cd cpp/",
        "mkdir tests/scratch",
-       "katago runoutputtests"
+       "katago runoutputtests",
+       "${{ \"katago runtinynntests tests/scratch 1.0\" if cuda != \"true\" }}"
       ]
      }
     ]
@@ -668,7 +596,6 @@
     "name": "katago",
     "requirements": {
      "build": [
-      "cuda_compiler_stub",
       "c_compiler_stub",
       "cxx_compiler_stub",
       "c_stdlib_stub",
@@ -677,10 +604,6 @@
       "curl"
      ],
      "host": [
-      "cuda-version ==12.6",
-      "libcublas-dev",
-      "cudnn",
-      "nccl",
       "zlib",
       "libzip",
       "eigen",
@@ -699,9 +622,51 @@
        "katago",
        "katago version",
        "${{ \"katago runtests\" if not osx }}",
+       "${{ \"katago runnnlayertests\" if cuda != \"true\" }}",
        "cd cpp/",
        "mkdir tests/scratch",
-       "katago runoutputtests"
+       "katago runoutputtests",
+       "${{ \"katago runtinynntests tests/scratch 1.0\" if cuda != \"true\" }}"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "katago",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "c_stdlib_stub",
+      "cmake",
+      "ninja",
+      "curl"
+     ],
+     "host": [
+      "zlib",
+      "libzip",
+      "eigen",
+      "openssl"
+     ],
+     "run": []
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "cpp/tests/**"
+       ]
+      },
+      "script": [
+       "katago",
+       "katago version",
+       "${{ \"katago runtests\" if not osx }}",
+       "${{ \"katago runnnlayertests\" if cuda != \"true\" }}",
+       "cd cpp/",
+       "mkdir tests/scratch",
+       "katago runoutputtests",
+       "${{ \"katago runtinynntests tests/scratch 1.0\" if cuda != \"true\" }}"
       ]
      }
     ]
@@ -718,18 +683,13 @@
     "c_stdlib_stub",
     "cmake",
     "ninja",
-    "curl",
-    "cuda_compiler_stub"
+    "curl"
    ],
    "host": [
     "zlib",
     "libzip",
     "eigen",
-    "openssl",
-    "cuda-version ==12.6",
-    "libcublas-dev",
-    "cudnn",
-    "nccl"
+    "openssl"
    ]
   },
   "schema_version": 1,
@@ -1000,15 +960,10 @@
    "c_compiler_stub",
    "c_stdlib_stub",
    "cmake",
-   "cuda-version",
-   "cuda_compiler_stub",
-   "cudnn",
    "curl",
    "cxx_compiler_stub",
    "eigen",
-   "libcublas-dev",
    "libzip",
-   "nccl",
    "ninja",
    "openssl",
    "zlib"
@@ -1021,7 +976,6 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "cuda_compiler_stub",
     "curl",
     "cxx_compiler_stub",
     "ninja"
@@ -1032,14 +986,9 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cuda-version",
-    "cuda_compiler_stub",
-    "cudnn",
     "cxx_compiler_stub",
     "eigen",
-    "libcublas-dev",
     "libzip",
-    "nccl",
     "openssl",
     "zlib"
    ]
@@ -1049,7 +998,6 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cuda_compiler_stub",
     "cxx_compiler_stub"
    ]
   },
@@ -1066,7 +1014,6 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "cuda_compiler_stub",
     "curl",
     "cxx_compiler_stub",
     "ninja"
@@ -1075,12 +1022,8 @@
   "host": {
    "__set__": true,
    "elements": [
-    "cuda-version ==12.6",
-    "cudnn",
     "eigen",
-    "libcublas-dev",
     "libzip",
-    "nccl",
     "openssl",
     "zlib"
    ]
@@ -1161,7 +1104,6 @@
     "name": "katago",
     "requirements": {
      "build": [
-      "cuda_compiler_stub",
       "c_compiler_stub",
       "cxx_compiler_stub",
       "c_stdlib_stub",
@@ -1170,10 +1112,6 @@
       "curl"
      ],
      "host": [
-      "cuda-version ==12.6",
-      "libcublas-dev",
-      "cudnn",
-      "nccl",
       "zlib",
       "libzip",
       "eigen",
@@ -1192,9 +1130,11 @@
        "katago",
        "katago version",
        "${{ \"katago runtests\" if not osx }}",
+       "${{ \"katago runnnlayertests\" if cuda != \"true\" }}",
        "cd cpp/",
        "mkdir tests/scratch",
-       "katago runoutputtests"
+       "katago runoutputtests",
+       "${{ \"katago runtinynntests tests/scratch 1.0\" if cuda != \"true\" }}"
       ]
      }
     ]
@@ -1211,18 +1151,13 @@
     "c_stdlib_stub",
     "cmake",
     "ninja",
-    "curl",
-    "cuda_compiler_stub"
+    "curl"
    ],
    "host": [
     "zlib",
     "libzip",
     "eigen",
-    "openssl",
-    "cuda-version ==12.6",
-    "libcublas-dev",
-    "cudnn",
-    "nccl"
+    "openssl"
    ]
   },
   "schema_version": 1,
@@ -1241,7 +1176,6 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cmake",
-    "cuda_compiler_stub",
     "curl",
     "cxx_compiler_stub",
     "ninja"
@@ -1250,12 +1184,8 @@
   "host": {
    "__set__": true,
    "elements": [
-    "cuda-version",
-    "cudnn",
     "eigen",
-    "libcublas-dev",
     "libzip",
-    "nccl",
     "openssl",
     "zlib"
    ]
