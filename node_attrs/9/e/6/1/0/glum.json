@@ -10,7 +10,9 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
+  "conda_install_tool": "pixi",
   "github": {
    "branch_name": "main",
    "tooling_branch_name": "main"
@@ -25,21 +27,23 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
-   "dev_url": "https://github.com/Quantco/glum",
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!",
+   "dev_url": "https://github.com/quantco/glum",
    "doc_url": "https://glum.readthedocs.io/",
-   "home": "https://github.com/Quantco/glum",
+   "home": "https://github.com/quantco/glum",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
-   "summary": "High performance Python GLMs with all the features! "
+   "summary": "High performance Python GLMs with all the features!"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv",
-   "script_env": [
-    "GLM_ARCHITECTURE=default"
-   ]
+   "number": "1",
+   "script": {
+    "content": "python -m pip install . -vv",
+    "env": {
+     "GLM_ARCHITECTURE": "default"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -51,6 +55,213 @@
     "jtilly"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "glum",
    "version": "3.1.2"
@@ -69,7 +280,7 @@
     "pip",
     "scikit-learn >=0.23",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ],
    "run": [
     "python",
@@ -83,21 +294,10 @@
     "tabmat >=4.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612",
    "url": "https://pypi.org/packages/source/g/glum/glum-3.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "glum"
-   ],
-   "requires": [
-    "pip"
-   ]
   }
  },
  "linux_64_requirements": {
@@ -119,7 +319,7 @@
     "python",
     "scikit-learn",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ]
   },
   "run": {
@@ -145,21 +345,23 @@
  },
  "linux_aarch64_meta_yaml": {
   "about": {
-   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
-   "dev_url": "https://github.com/Quantco/glum",
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!",
+   "dev_url": "https://github.com/quantco/glum",
    "doc_url": "https://glum.readthedocs.io/",
-   "home": "https://github.com/Quantco/glum",
+   "home": "https://github.com/quantco/glum",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
-   "summary": "High performance Python GLMs with all the features! "
+   "summary": "High performance Python GLMs with all the features!"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv",
-   "script_env": [
-    "GLM_ARCHITECTURE=default"
-   ]
+   "number": "1",
+   "script": {
+    "content": "python -m pip install . -vv",
+    "env": {
+     "GLM_ARCHITECTURE": "default"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -171,12 +373,243 @@
     "jtilly"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "glum",
    "version": "3.1.2"
   },
   "requirements": {
    "build": [
+    "python",
+    "cross-python_linux-64",
+    "cython",
+    "numpy",
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
@@ -189,7 +622,7 @@
     "pip",
     "scikit-learn >=0.23",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ],
    "run": [
     "python",
@@ -203,21 +636,10 @@
     "tabmat >=4.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612",
    "url": "https://pypi.org/packages/source/g/glum/glum-3.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "glum"
-   ],
-   "requires": [
-    "pip"
-   ]
   }
  },
  "linux_aarch64_requirements": {
@@ -226,8 +648,12 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cross-python_linux-64",
     "cxx_compiler_stub",
-    "libgomp"
+    "cython",
+    "libgomp",
+    "numpy",
+    "python"
    ]
   },
   "host": {
@@ -239,7 +665,7 @@
     "python",
     "scikit-learn",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ]
   },
   "run": {
@@ -265,21 +691,23 @@
  },
  "linux_ppc64le_meta_yaml": {
   "about": {
-   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
-   "dev_url": "https://github.com/Quantco/glum",
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!",
+   "dev_url": "https://github.com/quantco/glum",
    "doc_url": "https://glum.readthedocs.io/",
-   "home": "https://github.com/Quantco/glum",
+   "home": "https://github.com/quantco/glum",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
-   "summary": "High performance Python GLMs with all the features! "
+   "summary": "High performance Python GLMs with all the features!"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv",
-   "script_env": [
-    "GLM_ARCHITECTURE=default"
-   ]
+   "number": "1",
+   "script": {
+    "content": "python -m pip install . -vv",
+    "env": {
+     "GLM_ARCHITECTURE": "default"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -291,12 +719,243 @@
     "jtilly"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "glum",
    "version": "3.1.2"
   },
   "requirements": {
    "build": [
+    "python",
+    "cross-python_linux-64",
+    "cython",
+    "numpy",
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
@@ -309,7 +968,7 @@
     "pip",
     "scikit-learn >=0.23",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ],
    "run": [
     "python",
@@ -323,21 +982,10 @@
     "tabmat >=4.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612",
    "url": "https://pypi.org/packages/source/g/glum/glum-3.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "glum"
-   ],
-   "requires": [
-    "pip"
-   ]
   }
  },
  "linux_ppc64le_requirements": {
@@ -346,8 +994,12 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cross-python_linux-64",
     "cxx_compiler_stub",
-    "libgomp"
+    "cython",
+    "libgomp",
+    "numpy",
+    "python"
    ]
   },
   "host": {
@@ -359,7 +1011,7 @@
     "python",
     "scikit-learn",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ]
   },
   "run": {
@@ -385,21 +1037,23 @@
  },
  "meta_yaml": {
   "about": {
-   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
-   "dev_url": "https://github.com/Quantco/glum",
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!",
+   "dev_url": "https://github.com/quantco/glum",
    "doc_url": "https://glum.readthedocs.io/",
-   "home": "https://github.com/Quantco/glum",
+   "home": "https://github.com/quantco/glum",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
-   "summary": "High performance Python GLMs with all the features! "
+   "summary": "High performance Python GLMs with all the features!"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv",
-   "script_env": [
-    "GLM_ARCHITECTURE=default"
-   ]
+   "number": "1",
+   "script": {
+    "content": "python -m pip install . -vv",
+    "env": {
+     "GLM_ARCHITECTURE": "default"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -411,6 +1065,1338 @@
     "jtilly"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "glum",
    "version": "3.1.2"
@@ -421,7 +2407,10 @@
     "c_stdlib_stub",
     "cxx_compiler_stub",
     "libgomp",
-    "llvm-openmp"
+    "python",
+    "cross-python_linux-64",
+    "cython",
+    "numpy"
    ],
    "host": [
     "python",
@@ -430,8 +2419,7 @@
     "pip",
     "scikit-learn >=0.23",
     "setuptools",
-    "setuptools_scm",
-    "llvm-openmp"
+    "setuptools-scm"
    ],
    "run": [
     "python",
@@ -445,41 +2433,32 @@
     "tabmat >=4.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612",
    "url": "https://pypi.org/packages/source/g/glum/glum-3.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "glum"
-   ],
-   "requires": [
-    "pip"
-   ]
   }
  },
  "name": "glum",
  "osx_64_meta_yaml": {
   "about": {
-   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
-   "dev_url": "https://github.com/Quantco/glum",
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!",
+   "dev_url": "https://github.com/quantco/glum",
    "doc_url": "https://glum.readthedocs.io/",
-   "home": "https://github.com/Quantco/glum",
+   "home": "https://github.com/quantco/glum",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
-   "summary": "High performance Python GLMs with all the features! "
+   "summary": "High performance Python GLMs with all the features!"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv",
-   "script_env": [
-    "GLM_ARCHITECTURE=default"
-   ]
+   "number": "1",
+   "script": {
+    "content": "python -m pip install . -vv",
+    "env": {
+     "GLM_ARCHITECTURE": "default"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -491,26 +2470,256 @@
     "jtilly"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "glum",
    "version": "3.1.2"
   },
   "requirements": {
    "build": [
+    "python",
+    "cross-python_linux-64",
+    "cython",
+    "numpy",
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
-    "llvm-openmp"
+    "libgomp"
    ],
    "host": [
     "python",
     "cython",
-    "llvm-openmp",
     "numpy",
     "pip",
     "scikit-learn >=0.23",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ],
    "run": [
     "python",
@@ -524,21 +2733,10 @@
     "tabmat >=4.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612",
    "url": "https://pypi.org/packages/source/g/glum/glum-3.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "glum"
-   ],
-   "requires": [
-    "pip"
-   ]
   }
  },
  "osx_64_requirements": {
@@ -547,21 +2745,24 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cross-python_linux-64",
     "cxx_compiler_stub",
-    "llvm-openmp"
+    "cython",
+    "libgomp",
+    "numpy",
+    "python"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "cython",
-    "llvm-openmp",
     "numpy",
     "pip",
     "python",
     "scikit-learn",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ]
   },
   "run": {
@@ -587,21 +2788,23 @@
  },
  "osx_arm64_meta_yaml": {
   "about": {
-   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
-   "dev_url": "https://github.com/Quantco/glum",
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!",
+   "dev_url": "https://github.com/quantco/glum",
    "doc_url": "https://glum.readthedocs.io/",
-   "home": "https://github.com/Quantco/glum",
+   "home": "https://github.com/quantco/glum",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
-   "summary": "High performance Python GLMs with all the features! "
+   "summary": "High performance Python GLMs with all the features!"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv",
-   "script_env": [
-    "GLM_ARCHITECTURE=default"
-   ]
+   "number": "1",
+   "script": {
+    "content": "python -m pip install . -vv",
+    "env": {
+     "GLM_ARCHITECTURE": "default"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -613,26 +2816,256 @@
     "jtilly"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "glum",
    "version": "3.1.2"
   },
   "requirements": {
    "build": [
+    "python",
+    "cross-python_linux-64",
+    "cython",
+    "numpy",
     "c_compiler_stub",
     "c_stdlib_stub",
     "cxx_compiler_stub",
-    "llvm-openmp"
+    "libgomp"
    ],
    "host": [
     "python",
     "cython",
-    "llvm-openmp",
     "numpy",
     "pip",
     "scikit-learn >=0.23",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ],
    "run": [
     "python",
@@ -646,21 +3079,10 @@
     "tabmat >=4.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612",
    "url": "https://pypi.org/packages/source/g/glum/glum-3.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "glum"
-   ],
-   "requires": [
-    "pip"
-   ]
   }
  },
  "osx_arm64_requirements": {
@@ -669,21 +3091,24 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cross-python_linux-64",
     "cxx_compiler_stub",
-    "llvm-openmp"
+    "cython",
+    "libgomp",
+    "numpy",
+    "python"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "cython",
-    "llvm-openmp",
     "numpy",
     "pip",
     "python",
     "scikit-learn",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ]
   },
   "run": {
@@ -725,18 +3150,18 @@
  "pr_info": {
   "__lazy_json__": "pr_info/glum.json"
  },
- "raw_meta_yaml": "{% set name = \"glum\" %}\n{% set version = \"3.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612\n\n\nbuild:\n  number: 0\n  skip: true  # [py<39]\n  skip: true  # [python_impl == \"pypy\"]\n  script: {{ PYTHON }} -m pip install . -vv\n  script_env:\n    - GLM_ARCHITECTURE=default\n\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler(\"c\") }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n  host:\n    - python\n    - cython\n    - llvm-openmp  # [osx]\n    - numpy\n    - pip\n    - scikit-learn >=0.23\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - formulaic >=0.6\n    - joblib\n    - numexpr\n    - packaging\n    - pandas\n    - scikit-learn >=0.23\n    - scipy\n    - tabmat >=4.0.0\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - glum\n\nabout:\n  home: https://github.com/Quantco/glum\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'High performance Python GLMs with all the features! '\n  description: |\n    glum is a fast and feature-complete GLM estimator. It supports built-in\n    cross-validation, exploiting regularization path, L1 and L2 regularization\n    with Tikhonov penalties, sample weights, offsets, linear inequality constraints,\n    and more!\n  doc_url: https://glum.readthedocs.io/\n  dev_url: https://github.com/Quantco/glum\n\nextra:\n  recipe-maintainers:\n    - MatthiasSchmidtblaicherQC\n    - MarcAntoineSchmidtQC\n    - xhochy\n    - stanmart\n    - janjagusch\n    - jtilly\n",
+ "raw_meta_yaml": "context:\n  name: glum\n  version: 3.1.2\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz\n  sha256: e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612\n\n\nbuild:\n  number: 1\n  skip: python_impl == \"pypy\"\n  script:\n    content:\n      python -m pip install . -vv\n    env:\n      GLM_ARCHITECTURE: default\n\nrequirements:\n  build:\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n        - cython\n        - numpy\n    - ${{ compiler(\"c\") }}\n    - ${{ stdlib(\"c\") }}\n    - ${{ compiler(\"cxx\") }}\n    - if: osx\n      then:\n        - llvm-openmp\n    - if: linux\n      then:\n        - libgomp\n  host:\n    - python\n    - cython\n    - if: osx\n      then:\n        - llvm-openmp\n    - numpy\n    - pip\n    - scikit-learn >=0.23\n    - setuptools\n    - setuptools-scm\n  run:\n    - python\n    - formulaic >=0.6\n    - joblib\n    - numexpr\n    - packaging\n    - pandas\n    - scikit-learn >=0.23\n    - scipy\n    - tabmat >=4.0.0\n\ntests:\n  - python:\n      pip_check: true\n      imports:\n        - glum\n\nabout:\n  homepage: https://github.com/quantco/glum\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: High performance Python GLMs with all the features!\n  description: |\n    glum is a fast and feature-complete GLM estimator. It supports built-in\n    cross-validation, exploiting regularization path, L1 and L2 regularization\n    with Tikhonov penalties, sample weights, offsets, linear inequality constraints,\n    and more!\n  documentation: https://glum.readthedocs.io\n  repository: https://github.com/quantco/glum\n\nextra:\n  recipe-maintainers:\n    - MatthiasSchmidtblaicherQC\n    - MarcAntoineSchmidtQC\n    - xhochy\n    - stanmart\n    - janjagusch\n    - jtilly\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cross-python_linux-64",
    "cxx_compiler_stub",
    "cython",
    "formulaic",
    "joblib",
    "libgomp",
-   "llvm-openmp",
    "numexpr",
    "numpy",
    "packaging",
@@ -746,7 +3171,7 @@
    "scikit-learn",
    "scipy",
    "setuptools",
-   "setuptools_scm",
+   "setuptools-scm",
    "tabmat"
   ]
  },
@@ -756,9 +3181,12 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cross-python_linux-64",
     "cxx_compiler_stub",
+    "cython",
     "libgomp",
-    "llvm-openmp"
+    "numpy",
+    "python"
    ]
   },
   "host": {
@@ -769,14 +3197,12 @@
     "ctng-compilers",
     "cxx_compiler_stub",
     "cython",
-    "llvm-openmp",
     "numpy",
-    "openmp",
     "pip",
     "python",
     "scikit-learn",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ]
   },
   "run": {
@@ -789,7 +3215,6 @@
     "formulaic",
     "joblib",
     "numexpr",
-    "openmp",
     "packaging",
     "pandas",
     "python",
@@ -812,22 +3237,24 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cross-python_linux-64",
     "cxx_compiler_stub",
+    "cython",
     "libgomp",
-    "llvm-openmp"
+    "numpy",
+    "python"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "cython",
-    "llvm-openmp",
     "numpy",
     "pip",
     "python",
     "scikit-learn >=0.23",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ]
   },
   "run": {
@@ -858,21 +3285,23 @@
  },
  "win_64_meta_yaml": {
   "about": {
-   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!\n",
-   "dev_url": "https://github.com/Quantco/glum",
+   "description": "glum is a fast and feature-complete GLM estimator. It supports built-in\ncross-validation, exploiting regularization path, L1 and L2 regularization\nwith Tikhonov penalties, sample weights, offsets, linear inequality constraints,\nand more!",
+   "dev_url": "https://github.com/quantco/glum",
    "doc_url": "https://glum.readthedocs.io/",
-   "home": "https://github.com/Quantco/glum",
+   "home": "https://github.com/quantco/glum",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
-   "summary": "High performance Python GLMs with all the features! "
+   "summary": "High performance Python GLMs with all the features!"
   },
   "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv",
-   "script_env": [
-    "GLM_ARCHITECTURE=default"
-   ]
+   "number": "1",
+   "script": {
+    "content": "python -m pip install . -vv",
+    "env": {
+     "GLM_ARCHITECTURE": "default"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
@@ -884,15 +3313,247 @@
     "jtilly"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "glum",
+    "requirements": {
+     "build": [
+      "python",
+      "cross-python_linux-64",
+      "cython",
+      "numpy",
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "libgomp"
+     ],
+     "host": [
+      "python",
+      "cython",
+      "numpy",
+      "pip",
+      "scikit-learn >=0.23",
+      "setuptools",
+      "setuptools-scm"
+     ],
+     "run": [
+      "python",
+      "formulaic >=0.6",
+      "joblib",
+      "numexpr",
+      "packaging",
+      "pandas",
+      "scikit-learn >=0.23",
+      "scipy",
+      "tabmat >=4.0.0"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "glum"
+       ]
+      }
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "glum",
    "version": "3.1.2"
   },
   "requirements": {
    "build": [
+    "python",
+    "cross-python_linux-64",
+    "cython",
+    "numpy",
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub"
+    "cxx_compiler_stub",
+    "libgomp"
    ],
    "host": [
     "python",
@@ -901,7 +3562,7 @@
     "pip",
     "scikit-learn >=0.23",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ],
    "run": [
     "python",
@@ -915,21 +3576,10 @@
     "tabmat >=4.0.0"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
    "sha256": "e6a416e4737d0133c1cfb1ce47057a3761349c3ac79663192ec6b4f26821a612",
    "url": "https://pypi.org/packages/source/g/glum/glum-3.1.2.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check"
-   ],
-   "imports": [
-    "glum"
-   ],
-   "requires": [
-    "pip"
-   ]
   }
  },
  "win_64_requirements": {
@@ -938,7 +3588,12 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
-    "cxx_compiler_stub"
+    "cross-python_linux-64",
+    "cxx_compiler_stub",
+    "cython",
+    "libgomp",
+    "numpy",
+    "python"
    ]
   },
   "host": {
@@ -950,7 +3605,7 @@
     "python",
     "scikit-learn",
     "setuptools",
-    "setuptools_scm"
+    "setuptools-scm"
    ]
   },
   "run": {
