@@ -25,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "sqltrie",
-   "version": "0.11.1"
+   "version": "0.11.2"
   },
   "requirements": {
    "host": [
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "56963921dec494881b048e968d5556a90ed273b5dba1ea0aaac462f3b9815d21",
-   "url": "https://pypi.org/packages/source/s/sqltrie/sqltrie-0.11.1.tar.gz"
+   "sha256": "4df47089b3abfe347bcf81044e633b8c7737ebda4ce1fec8b636a85954ac36da",
+   "url": "https://pypi.org/packages/source/s/sqltrie/sqltrie-0.11.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -109,7 +109,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -121,7 +121,7 @@
   },
   "package": {
    "name": "sqltrie",
-   "version": "0.11.1"
+   "version": "0.11.2"
   },
   "requirements": {
    "host": [
@@ -138,8 +138,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "56963921dec494881b048e968d5556a90ed273b5dba1ea0aaac462f3b9815d21",
-   "url": "https://pypi.org/packages/source/s/sqltrie/sqltrie-0.11.1.tar.gz"
+   "sha256": "4df47089b3abfe347bcf81044e633b8c7737ebda4ce1fec8b636a85954ac36da",
+   "url": "https://pypi.org/packages/source/s/sqltrie/sqltrie-0.11.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -168,7 +168,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sqltrie.json"
  },
- "raw_meta_yaml": "{% set name = \"sqltrie\" %}\n{% set version = \"0.11.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqltrie-{{ version }}.tar.gz\n  sha256: 56963921dec494881b048e968d5556a90ed273b5dba1ea0aaac462f3b9815d21\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm >=6.3.1\n\n  run:\n    - python >={{ python_min }}\n    - attrs\n    - orjson\n    - pygtrie\n\ntest:\n  imports:\n    - sqltrie\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/iterative/sqltrie\n  summary: SQL-based prefix tree inspired by pygtrie and python-diskcache\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - pmrowla\n    - efiop\n    - shcheklein\n",
+ "raw_meta_yaml": "{% set name = \"sqltrie\" %}\n{% set version = \"0.11.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqltrie-{{ version }}.tar.gz\n  sha256: 4df47089b3abfe347bcf81044e633b8c7737ebda4ce1fec8b636a85954ac36da\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools_scm >=6.3.1\n\n  run:\n    - python >={{ python_min }}\n    - attrs\n    - orjson\n    - pygtrie\n\ntest:\n  imports:\n    - sqltrie\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/iterative/sqltrie\n  summary: SQL-based prefix tree inspired by pygtrie and python-diskcache\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - pmrowla\n    - efiop\n    - shcheklein\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -241,8 +241,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/sqltrie/sqltrie-0.11.1.tar.gz",
- "version": "0.11.1",
+ "url": "https://pypi.org/packages/source/s/sqltrie/sqltrie-0.11.2.tar.gz",
+ "version": "0.11.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sqltrie.json"
  }
