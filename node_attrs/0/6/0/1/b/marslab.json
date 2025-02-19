@@ -37,7 +37,7 @@
   },
   "package": {
    "name": "marslab",
-   "version": "0.9.23"
+   "version": "0.9.24"
   },
   "requirements": {
    "host": [
@@ -69,8 +69,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "39b1c974671ef476650189c95cfbd2a600a928a3e281294d27948e1f5c643e3a",
-   "url": "https://pypi.org/packages/source/m/marslab/marslab-0.9.23.tar.gz"
+   "sha256": "e2a7bd34289adf5b5caa4ede720a8f26b6c7c00932889d72842defe323578ac4",
+   "url": "https://pypi.org/packages/source/m/marslab/marslab-0.9.24.tar.gz"
   },
   "test": {
    "commands": [
@@ -151,7 +151,7 @@
   },
   "package": {
    "name": "marslab",
-   "version": "0.9.23"
+   "version": "0.9.24"
   },
   "requirements": {
    "host": [
@@ -183,8 +183,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "39b1c974671ef476650189c95cfbd2a600a928a3e281294d27948e1f5c643e3a",
-   "url": "https://pypi.org/packages/source/m/marslab/marslab-0.9.23.tar.gz"
+   "sha256": "e2a7bd34289adf5b5caa4ede720a8f26b6c7c00932889d72842defe323578ac4",
+   "url": "https://pypi.org/packages/source/m/marslab/marslab-0.9.24.tar.gz"
   },
   "test": {
    "commands": [
@@ -213,7 +213,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/marslab.json"
  },
- "raw_meta_yaml": "{% set name = \"marslab\" %}\n{% set version = \"0.9.23\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/marslab-{{ version }}.tar.gz\n  sha256: 39b1c974671ef476650189c95cfbd2a600a928a3e281294d27948e1f5c643e3a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - astropy-base\n    - cytoolz\n    - dustgoggles\n    - fast-histogram\n    - matplotlib-base\n    - more-itertools\n    - numpy\n    - opencv\n    - pandas\n    - pathos\n    - pdr\n    - pip\n    - python-dateutil\n    - scikit-image\n    - scipy\n    - sympy\n    # optional dependencies for testing, included by default\n    - pytest\n    - hypothesis\n\ntest:\n  imports:\n    - marslab\n  commands:\n    - pip check\n  requires:\n    - pip\n    - setuptools\n\nabout:\n  home: https://github.com/millionconcepts/marslab\n  summary: Utilities for working with observational data of Mars.\n  description: |\n    marslab is the core support library for the marslab ecosystem (https://github.com/MillionConcepts/marslab-reference).\n    It defines common formats, shared references, and support objects, many of which are also useful on their own.\n    Highlights include Look, a lightweight construction kit for multispectral visualizations;\n    and BandSet, an object that streamlines operations on multispectral observations, treating entire clusters of related images as coherent wholes.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - Sierra-MC\n    - m-stclair\n",
+ "raw_meta_yaml": "{% set name = \"marslab\" %}\n{% set version = \"0.9.24\" %}\n{% set python_min = \"3.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/marslab-{{ version }}.tar.gz\n  sha256: e2a7bd34289adf5b5caa4ede720a8f26b6c7c00932889d72842defe323578ac4\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - astropy-base\n    - cytoolz\n    - dustgoggles\n    - fast-histogram\n    - matplotlib-base\n    - more-itertools\n    - numpy\n    - opencv\n    - pandas\n    - pathos\n    - pdr\n    - pip\n    - python-dateutil\n    - scikit-image\n    - scipy\n    - sympy\n    # optional dependencies for testing, included by default\n    - pytest\n    - hypothesis\n\ntest:\n  imports:\n    - marslab\n  commands:\n    - pip check\n  requires:\n    - pip\n    - setuptools\n\nabout:\n  home: https://github.com/millionconcepts/marslab\n  summary: Utilities for working with observational data of Mars.\n  description: |\n    marslab is the core support library for the marslab ecosystem (https://github.com/MillionConcepts/marslab-reference).\n    It defines common formats, shared references, and support objects, many of which are also useful on their own.\n    Highlights include Look, a lightweight construction kit for multispectral visualizations;\n    and BandSet, an object that streamlines operations on multispectral observations, treating entire clusters of related images as coherent wholes.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - Sierra-MC\n    - m-stclair\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -330,8 +330,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/m/marslab/marslab-0.9.23.tar.gz",
- "version": "0.9.23",
+ "url": "https://pypi.org/packages/source/m/marslab/marslab-0.9.24.tar.gz",
+ "version": "0.9.24",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/marslab.json"
  }
