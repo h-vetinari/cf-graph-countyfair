@@ -24,7 +24,7 @@
    "summary": "A no-dependency Python package for STAC, using Rust under the hood."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
@@ -156,7 +156,7 @@
   ],
   "package": {
    "name": "stacrs",
-   "version": "0.5.3"
+   "version": "0.5.4"
   },
   "requirements": {
    "build": [
@@ -176,8 +176,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "5439aa2ec894d73ca0ebc2100eb177386cbbb1e558a1e063859adca0943e6f85",
-   "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.3.tar.gz"
+   "sha256": "17cc0766aa1061bd0dc584f340157e893a53c05e99182987c2382eaf6a429926",
+   "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.4.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -221,7 +221,7 @@
    "summary": "A no-dependency Python package for STAC, using Rust under the hood."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
@@ -585,7 +585,7 @@
   ],
   "package": {
    "name": "stacrs",
-   "version": "0.5.3"
+   "version": "0.5.4"
   },
   "requirements": {
    "build": [
@@ -605,8 +605,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "5439aa2ec894d73ca0ebc2100eb177386cbbb1e558a1e063859adca0943e6f85",
-   "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.3.tar.gz"
+   "sha256": "17cc0766aa1061bd0dc584f340157e893a53c05e99182987c2382eaf6a429926",
+   "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.4.tar.gz"
   }
  },
  "name": "stacrs",
@@ -620,7 +620,7 @@
    "summary": "A no-dependency Python package for STAC, using Rust under the hood."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
@@ -752,7 +752,7 @@
   ],
   "package": {
    "name": "stacrs",
-   "version": "0.5.3"
+   "version": "0.5.4"
   },
   "requirements": {
    "build": [
@@ -772,8 +772,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "5439aa2ec894d73ca0ebc2100eb177386cbbb1e558a1e063859adca0943e6f85",
-   "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.3.tar.gz"
+   "sha256": "17cc0766aa1061bd0dc584f340157e893a53c05e99182987c2382eaf6a429926",
+   "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.4.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -822,7 +822,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/stacrs.json"
  },
- "raw_meta_yaml": "context:\n  name: stacrs\n  version: \"0.5.3\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/stacrs-${{ version }}.tar.gz\n  sha256: 5439aa2ec894d73ca0ebc2100eb177386cbbb1e558a1e063859adca0943e6f85\n\nbuild:\n  number: 1\n  script:\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  skip:\n    - match(python, \"<3.10\")\n\nrequirements:\n  build:\n    - ${{ stdlib(\"c\") }}\n    - ${{ compiler(\"cxx\") }} # needed to compile libduckdb-sys\n    - ${{ compiler(\"rust\") }}\n    - cargo-bundle-licenses\n  host:\n    - maturin >=1.7,<2.0\n    - pip\n    - python\n  run:\n    - python\n\ntests:\n  - python:\n      imports:\n        - stacrs\n      pip_check: true\n\nabout:\n  summary: A no-dependency Python package for STAC, using Rust under the hood.\n  license: MIT OR Apache-2.0\n  license_file:\n    - LICENSE-APACHE\n    - LICENSE-MIT\n    - THIRDPARTY.yml\n  homepage: https://www.gadom.ski/stacrs\n  repository: https://github.com/gadomski/stacrs\n\nextra:\n  recipe-maintainers:\n    - gadomski\n    - weiji14\n",
+ "raw_meta_yaml": "context:\n  name: stacrs\n  version: \"0.5.4\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/stacrs-${{ version }}.tar.gz\n  sha256: 17cc0766aa1061bd0dc584f340157e893a53c05e99182987c2382eaf6a429926\n\nbuild:\n  number: 0\n  script:\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  skip:\n    - match(python, \"<3.10\")\n\nrequirements:\n  build:\n    - ${{ stdlib(\"c\") }}\n    - ${{ compiler(\"cxx\") }} # needed to compile libduckdb-sys\n    - ${{ compiler(\"rust\") }}\n    - cargo-bundle-licenses\n  host:\n    - maturin >=1.7,<2.0\n    - pip\n    - python\n  run:\n    - python\n\ntests:\n  - python:\n      imports:\n        - stacrs\n      pip_check: true\n\nabout:\n  summary: A no-dependency Python package for STAC, using Rust under the hood.\n  license: MIT OR Apache-2.0\n  license_file:\n    - LICENSE-APACHE\n    - LICENSE-MIT\n    - THIRDPARTY.yml\n  homepage: https://www.gadom.ski/stacrs\n  repository: https://github.com/gadomski/stacrs\n\nextra:\n  recipe-maintainers:\n    - gadomski\n    - weiji14\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -902,8 +902,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.3.tar.gz",
- "version": "0.5.3",
+ "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.4.tar.gz",
+ "version": "0.5.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/stacrs.json"
  },
@@ -917,7 +917,7 @@
    "summary": "A no-dependency Python package for STAC, using Rust under the hood."
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": [
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
@@ -1049,7 +1049,7 @@
   ],
   "package": {
    "name": "stacrs",
-   "version": "0.5.3"
+   "version": "0.5.4"
   },
   "requirements": {
    "build": [
@@ -1069,8 +1069,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "5439aa2ec894d73ca0ebc2100eb177386cbbb1e558a1e063859adca0943e6f85",
-   "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.3.tar.gz"
+   "sha256": "17cc0766aa1061bd0dc584f340157e893a53c05e99182987c2382eaf6a429926",
+   "url": "https://pypi.org/packages/source/s/stacrs/stacrs-0.5.4.tar.gz"
   }
  },
  "win_64_requirements": {
