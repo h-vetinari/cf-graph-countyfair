@@ -33,7 +33,7 @@
    "summary": "C++ libraries for Apache ORC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "orc"
    ]
@@ -73,7 +73,8 @@
   "source": {
    "patches": [
     "patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch",
-    "patches/0002-Allow-user-to-override-path-to-protoc.patch"
+    "patches/0002-Allow-user-to-override-path-to-protoc.patch",
+    "patches/0003-ORC-1833-C-Fix-CMake-script-to-be-used-inside-anothe.patch"
    ],
    "sha256": "69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c",
    "url": "https://archive.apache.org/dist/orc/orc-2.1.0/orc-2.1.0.tar.gz"
@@ -129,7 +130,7 @@
    "summary": "C++ libraries for Apache ORC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "orc"
    ]
@@ -169,7 +170,8 @@
   "source": {
    "patches": [
     "patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch",
-    "patches/0002-Allow-user-to-override-path-to-protoc.patch"
+    "patches/0002-Allow-user-to-override-path-to-protoc.patch",
+    "patches/0003-ORC-1833-C-Fix-CMake-script-to-be-used-inside-anothe.patch"
    ],
    "sha256": "69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c",
    "url": "https://archive.apache.org/dist/orc/orc-2.1.0/orc-2.1.0.tar.gz"
@@ -225,7 +227,7 @@
    "summary": "C++ libraries for Apache ORC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "orc"
    ]
@@ -265,7 +267,8 @@
   "source": {
    "patches": [
     "patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch",
-    "patches/0002-Allow-user-to-override-path-to-protoc.patch"
+    "patches/0002-Allow-user-to-override-path-to-protoc.patch",
+    "patches/0003-ORC-1833-C-Fix-CMake-script-to-be-used-inside-anothe.patch"
    ],
    "sha256": "69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c",
    "url": "https://archive.apache.org/dist/orc/orc-2.1.0/orc-2.1.0.tar.gz"
@@ -321,7 +324,7 @@
    "summary": "C++ libraries for Apache ORC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "orc"
    ]
@@ -361,7 +364,8 @@
   "source": {
    "patches": [
     "patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch",
-    "patches/0002-Allow-user-to-override-path-to-protoc.patch"
+    "patches/0002-Allow-user-to-override-path-to-protoc.patch",
+    "patches/0003-ORC-1833-C-Fix-CMake-script-to-be-used-inside-anothe.patch"
    ],
    "sha256": "69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c",
    "url": "https://archive.apache.org/dist/orc/orc-2.1.0/orc-2.1.0.tar.gz"
@@ -389,7 +393,7 @@
    "summary": "C++ libraries for Apache ORC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "orc"
    ]
@@ -429,7 +433,8 @@
   "source": {
    "patches": [
     "patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch",
-    "patches/0002-Allow-user-to-override-path-to-protoc.patch"
+    "patches/0002-Allow-user-to-override-path-to-protoc.patch",
+    "patches/0003-ORC-1833-C-Fix-CMake-script-to-be-used-inside-anothe.patch"
    ],
    "sha256": "69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c",
    "url": "https://archive.apache.org/dist/orc/orc-2.1.0/orc-2.1.0.tar.gz"
@@ -485,7 +490,7 @@
    "summary": "C++ libraries for Apache ORC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "orc"
    ]
@@ -525,7 +530,8 @@
   "source": {
    "patches": [
     "patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch",
-    "patches/0002-Allow-user-to-override-path-to-protoc.patch"
+    "patches/0002-Allow-user-to-override-path-to-protoc.patch",
+    "patches/0003-ORC-1833-C-Fix-CMake-script-to-be-used-inside-anothe.patch"
    ],
    "sha256": "69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c",
    "url": "https://archive.apache.org/dist/orc/orc-2.1.0/orc-2.1.0.tar.gz"
@@ -589,7 +595,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/orc.json"
  },
- "raw_meta_yaml": "{% set version = \"2.1.0\" %}\n\npackage:\n  name: orc\n  version: {{ version }}\n\nsource:\n  url: https://archive.apache.org/dist/orc/orc-{{ version }}/orc-{{ version }}.tar.gz\n  sha256: 69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c\n  patches:\n    - patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch\n    - patches/0002-Allow-user-to-override-path-to-protoc.patch\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage(\"orc\", max_pin=\"x.x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - ninja       # [unix]\n    # `protoc` is also used for building\n    - libprotobuf\n    - cmake\n  host:\n    - zlib\n    - snappy\n    - libprotobuf\n    - lz4-c\n    - zstd\n  run:\n    # orc >=2.0.1 will prefer $CONDA_PREFIX/share/zoneinfo for tzdb\n    - tzdata\n\ntest:\n  commands:\n    # shared libraries\n    - test -f $PREFIX/lib/liborc.so              # [linux]\n    - test -f $PREFIX/lib/liborc.dylib           # [osx]\n    - if not exist %LIBRARY_BIN%\\orc.dll exit 1  # [win]\n    # import library for the DLL\n    - if not exist %LIBRARY_LIB%\\orc.lib exit 1  # [win]\n\n    # absence of static libraries\n    - test ! -f $PREFIX/lib/liborc.a             # [not win]\n\n    # headers\n    - test -f $PREFIX/include/orc/Common.hh            # [unix]\n    - if not exist %LIBRARY_INC%\\orc\\Common.hh exit 1  # [win]\n\nabout:\n  home: http://github.com/apache/orc\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: C++ libraries for Apache ORC\n  dev_url: https://github.com/apache/orc\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n    - nehaljwani\n",
+ "raw_meta_yaml": "{% set version = \"2.1.0\" %}\n\npackage:\n  name: orc\n  version: {{ version }}\n\nsource:\n  url: https://archive.apache.org/dist/orc/orc-{{ version }}/orc-{{ version }}.tar.gz\n  sha256: 69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c\n  patches:\n    - patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch\n    - patches/0002-Allow-user-to-override-path-to-protoc.patch\n    # backport https://github.com/apache/orc/pull/2108\n    - patches/0003-ORC-1833-C-Fix-CMake-script-to-be-used-inside-anothe.patch\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage(\"orc\", max_pin=\"x.x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n    - ninja       # [unix]\n    # `protoc` is also used for building\n    - libprotobuf\n    - cmake\n  host:\n    - zlib\n    - snappy\n    - libprotobuf\n    - lz4-c\n    - zstd\n  run:\n    # orc >=2.0.1 will prefer $CONDA_PREFIX/share/zoneinfo for tzdb\n    - tzdata\n\ntest:\n  commands:\n    # shared libraries\n    - test -f $PREFIX/lib/liborc.so              # [linux]\n    - test -f $PREFIX/lib/liborc.dylib           # [osx]\n    - if not exist %LIBRARY_BIN%\\orc.dll exit 1  # [win]\n    # import library for the DLL\n    - if not exist %LIBRARY_LIB%\\orc.lib exit 1  # [win]\n\n    # absence of static libraries\n    - test ! -f $PREFIX/lib/liborc.a             # [not win]\n\n    # headers\n    - test -f $PREFIX/include/orc/Common.hh            # [unix]\n    - if not exist %LIBRARY_INC%\\orc\\Common.hh exit 1  # [win]\n\nabout:\n  home: http://github.com/apache/orc\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: C++ libraries for Apache ORC\n  dev_url: https://github.com/apache/orc\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n    - nehaljwani\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -694,7 +700,7 @@
    "summary": "C++ libraries for Apache ORC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "run_exports": [
     "orc"
    ]
@@ -733,7 +739,8 @@
   "source": {
    "patches": [
     "patches/0001-Don-t-force-orc-to-be-a-static-library-let-end-user-.patch",
-    "patches/0002-Allow-user-to-override-path-to-protoc.patch"
+    "patches/0002-Allow-user-to-override-path-to-protoc.patch",
+    "patches/0003-ORC-1833-C-Fix-CMake-script-to-be-used-inside-anothe.patch"
    ],
    "sha256": "69d45665bfb5699b709094ba630ae4b186b19e083c4438855fc29c77125c149c",
    "url": "https://archive.apache.org/dist/orc/orc-2.1.0/orc-2.1.0.tar.gz"
