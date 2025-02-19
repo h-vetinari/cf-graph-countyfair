@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,15 +38,16 @@
   },
   "requirements": {
    "host": [
+    "python 3.9",
     "pip",
-    "python >=3.6"
+    "setuptools"
    ],
    "run": [
     "attrs",
     "future",
     "matplotlib-base >=1.3.1",
     "numpy",
-    "python >=3.6",
+    "python >=3.9",
     "pyyaml",
     "scipy",
     "tqdm"
@@ -55,7 +56,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "1204aa9c332c662113e3c37d1b109906f4a0859b29ded80c1582dc66387ce34b",
-   "url": "https://pypi.io/packages/source/p/pyswarms/pyswarms-1.3.0.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pyswarms/pyswarms-1.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -65,7 +66,8 @@
     "pyswarms"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -78,7 +80,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -97,7 +100,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -111,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -126,15 +130,16 @@
   },
   "requirements": {
    "host": [
+    "python 3.9",
     "pip",
-    "python >=3.6"
+    "setuptools"
    ],
    "run": [
     "attrs",
     "future",
     "matplotlib-base >=1.3.1",
     "numpy",
-    "python >=3.6",
+    "python >=3.9",
     "pyyaml",
     "scipy",
     "tqdm"
@@ -143,7 +148,7 @@
   "schema_version": 0,
   "source": {
    "sha256": "1204aa9c332c662113e3c37d1b109906f4a0859b29ded80c1582dc66387ce34b",
-   "url": "https://pypi.io/packages/source/p/pyswarms/pyswarms-1.3.0.tar.gz"
+   "url": "https://pypi.org/packages/source/p/pyswarms/pyswarms-1.3.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -153,7 +158,8 @@
     "pyswarms"
    ],
    "requires": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -171,7 +177,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyswarms.json"
  },
- "raw_meta_yaml": "{% set name = \"pyswarms\" %}\n{% set version = \"1.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyswarms-{{ version }}.tar.gz\n  sha256: 1204aa9c332c662113e3c37d1b109906f4a0859b29ded80c1582dc66387ce34b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - attrs\n    - future\n    - matplotlib-base >=1.3.1\n    - numpy\n    - python >=3.6\n    - pyyaml\n    - scipy\n    - tqdm\n\ntest:\n  requires:\n    - pip\n  imports:\n    - pyswarms\n  commands:\n    - pip check\n\nabout:\n  doc_url: https://pyswarms.readthedocs.io/en/latest/\n  home: https://github.com/ljvmiranda921/pyswarms\n  summary: A Python-based Particle Swarm Optimization (PSO) library.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ljvmiranda921\n    - hakonanes\n",
+ "raw_meta_yaml": "{% set name = \"pyswarms\" %}\n{% set version = \"1.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1204aa9c332c662113e3c37d1b109906f4a0859b29ded80c1582dc66387ce34b\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - attrs\n    - future\n    - matplotlib-base >=1.3.1\n    - numpy\n    - python >={{ python_min }}\n    - pyyaml\n    - scipy\n    - tqdm\n\ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  imports:\n    - pyswarms\n  commands:\n    - pip check\n\nabout:\n  doc_url: https://pyswarms.readthedocs.io/en/latest/\n  home: https://github.com/ljvmiranda921/pyswarms\n  summary: A Python-based Particle Swarm Optimization (PSO) library.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ljvmiranda921\n    - hakonanes\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -183,6 +189,7 @@
    "python",
    "pyyaml",
    "scipy",
+   "setuptools",
    "tqdm"
   ]
  },
@@ -195,7 +202,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -214,7 +222,8 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python"
    ]
   }
  },
@@ -228,7 +237,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -238,7 +248,7 @@
     "future",
     "matplotlib-base >=1.3.1",
     "numpy",
-    "python >=3.6",
+    "python >=3.9",
     "pyyaml",
     "scipy",
     "tqdm"
@@ -247,11 +257,12 @@
   "test": {
    "__set__": true,
    "elements": [
-    "pip"
+    "pip",
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pyswarms/pyswarms-1.3.0.tar.gz",
+ "url": "https://pypi.org/packages/source/p/pyswarms/pyswarms-1.3.0.tar.gz",
  "version": "1.3.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyswarms.json"
