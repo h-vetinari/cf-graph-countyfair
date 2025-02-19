@@ -45,7 +45,7 @@
   },
   "package": {
    "name": "pkginfo",
-   "version": "1.12.1.1"
+   "version": "1.12.1.2"
   },
   "requirements": {
    "host": [
@@ -59,8 +59,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4a09d6ab00af353d24021a42c1b00ac9d0beef0ccc012a5c122430acbeb01c0e",
-   "url": "https://pypi.org/packages/source/p/pkginfo/pkginfo-1.12.1.1.tar.gz"
+   "sha256": "5cd957824ac36f140260964eba3c6be6442a8359b8c48f4adf90210f33a04b7b",
+   "url": "https://pypi.org/packages/source/p/pkginfo/pkginfo-1.12.1.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -132,7 +132,7 @@
   },
   "package": {
    "name": "pkginfo",
-   "version": "1.12.1.1"
+   "version": "1.12.1.2"
   },
   "requirements": {
    "host": [
@@ -146,8 +146,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4a09d6ab00af353d24021a42c1b00ac9d0beef0ccc012a5c122430acbeb01c0e",
-   "url": "https://pypi.org/packages/source/p/pkginfo/pkginfo-1.12.1.1.tar.gz"
+   "sha256": "5cd957824ac36f140260964eba3c6be6442a8359b8c48f4adf90210f33a04b7b",
+   "url": "https://pypi.org/packages/source/p/pkginfo/pkginfo-1.12.1.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -178,7 +178,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pkginfo.json"
  },
- "raw_meta_yaml": "{% set name = \"pkginfo\" %}\n{% set version = \"1.12.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pkginfo-{{ version }}.tar.gz\n  sha256: 4a09d6ab00af353d24021a42c1b00ac9d0beef0ccc012a5c122430acbeb01c0e\n\nbuild:\n  entry_points:\n    - pkginfo = pkginfo.commandline:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pkginfo\n    - pkginfo.tests\n  commands:\n    - pip check\n    - pkginfo --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://code.launchpad.net/~tseaver/pkginfo/trunk\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Query metadatdata from sdists / bdists / installed packages.\n  description: |\n    This package provides an API for querying the distutils metadata written in\n    the ``PKG-INFO`` file inside a source distriubtion (an ``sdist``) or\n    a binary distribution (e.g., created by running ``bdist_egg``)\n  doc_url: http://pythonhosted.org/pkginfo/\n  dev_url: https://code.launchpad.net/~tseaver/pkginfo/trunk\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jankatins\n    - mingwandroid\n",
+ "raw_meta_yaml": "{% set name = \"pkginfo\" %}\n{% set version = \"1.12.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pkginfo-{{ version }}.tar.gz\n  sha256: 5cd957824ac36f140260964eba3c6be6442a8359b8c48f4adf90210f33a04b7b\n\nbuild:\n  entry_points:\n    - pkginfo = pkginfo.commandline:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - pkginfo\n    - pkginfo.tests\n  commands:\n    - pip check\n    - pkginfo --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://code.launchpad.net/~tseaver/pkginfo/trunk\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Query metadatdata from sdists / bdists / installed packages.\n  description: |\n    This package provides an API for querying the distutils metadata written in\n    the ``PKG-INFO`` file inside a source distriubtion (an ``sdist``) or\n    a binary distribution (e.g., created by running ``bdist_egg``)\n  doc_url: http://pythonhosted.org/pkginfo/\n  dev_url: https://code.launchpad.net/~tseaver/pkginfo/trunk\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jankatins\n    - mingwandroid\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -242,8 +242,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pkginfo/pkginfo-1.12.1.1.tar.gz",
- "version": "1.12.1.1",
+ "url": "https://pypi.org/packages/source/p/pkginfo/pkginfo-1.12.1.2.tar.gz",
+ "version": "1.12.1.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pkginfo.json"
  }
