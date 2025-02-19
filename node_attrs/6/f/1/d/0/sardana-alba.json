@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "sardana-alba",
-   "version": "0.10.2"
+   "version": "0.11.0"
   },
   "requirements": {
    "host": [
@@ -48,8 +48,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6adb923e36707aeebe600b7103505d722b99d0d97df1daa30a079af0e39a0f55",
-   "url": "https://github.com/ALBA-Synchrotron/sardana-alba/archive/0.10.2.tar.gz"
+   "sha256": "2e3c35874168fea240084a527130ce0fb7320903e79a414ac0dd63ec0541db28",
+   "url": "https://github.com/ALBA-Synchrotron/sardana-alba/archive/0.11.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -101,7 +101,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -112,7 +112,7 @@
   },
   "package": {
    "name": "sardana-alba",
-   "version": "0.10.2"
+   "version": "0.11.0"
   },
   "requirements": {
    "host": [
@@ -127,8 +127,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6adb923e36707aeebe600b7103505d722b99d0d97df1daa30a079af0e39a0f55",
-   "url": "https://github.com/ALBA-Synchrotron/sardana-alba/archive/0.10.2.tar.gz"
+   "sha256": "2e3c35874168fea240084a527130ce0fb7320903e79a414ac0dd63ec0541db28",
+   "url": "https://github.com/ALBA-Synchrotron/sardana-alba/archive/0.11.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -157,7 +157,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sardana-alba.json"
  },
- "raw_meta_yaml": "{% set name = \"sardana-alba\" %}\n{% set version = \"0.10.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ALBA-Synchrotron/sardana-alba/archive/{{ version }}.tar.gz\n  sha256: 6adb923e36707aeebe600b7103505d722b99d0d97df1daa30a079af0e39a0f55\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - sardana\n\ntest:\n  imports:\n    - sardana_alba\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ALBA-Synchrotron/sardana-alba\n  summary: Sardana common ALBA plugins\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rhomspuron\n    - ovallcorba\n",
+ "raw_meta_yaml": "{% set name = \"sardana-alba\" %}\n{% set version = \"0.11.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ALBA-Synchrotron/sardana-alba/archive/{{ version }}.tar.gz\n  sha256: 2e3c35874168fea240084a527130ce0fb7320903e79a414ac0dd63ec0541db28\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools\n    - pip\n  run:\n    - python >={{ python_min }}\n    - sardana\n\ntest:\n  imports:\n    - sardana_alba\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/ALBA-Synchrotron/sardana-alba\n  summary: Sardana common ALBA plugins\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - rhomspuron\n    - ovallcorba\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -224,8 +224,8 @@
    ]
   }
  },
- "url": "https://github.com/ALBA-Synchrotron/sardana-alba/archive/0.10.2.tar.gz",
- "version": "0.10.2",
+ "url": "https://github.com/ALBA-Synchrotron/sardana-alba/archive/0.11.0.tar.gz",
+ "version": "0.11.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sardana-alba.json"
  }
