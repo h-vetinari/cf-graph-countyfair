@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -33,11 +36,11 @@
   },
   "package": {
    "name": "featurewiz",
-   "version": "0.5.83"
+   "version": "0.6.1"
   },
   "requirements": {
    "host": [
-    "python 3.9.*",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
@@ -70,8 +73,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "980d37bcb8b58d8f8333d6708f899a8edf736b329bcc8d13e4d778d09dd046fb",
-   "url": "https://pypi.org/packages/source/f/featurewiz/featurewiz-0.5.83.tar.gz"
+   "sha256": "cef09b02bc1e5053723494acdf007dd19166b1346b3ee6c79cd3bee9d3b4d368",
+   "url": "https://pypi.org/packages/source/f/featurewiz/featurewiz-0.6.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -81,7 +84,7 @@
     "featurewiz"
    ],
    "requires": [
-    "python =3.9",
+    "python 3.9",
     "pip"
    ]
   }
@@ -156,11 +159,11 @@
   },
   "package": {
    "name": "featurewiz",
-   "version": "0.5.83"
+   "version": "0.6.1"
   },
   "requirements": {
    "host": [
-    "python 3.9.*",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
@@ -193,8 +196,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "980d37bcb8b58d8f8333d6708f899a8edf736b329bcc8d13e4d778d09dd046fb",
-   "url": "https://pypi.org/packages/source/f/featurewiz/featurewiz-0.5.83.tar.gz"
+   "sha256": "cef09b02bc1e5053723494acdf007dd19166b1346b3ee6c79cd3bee9d3b4d368",
+   "url": "https://pypi.org/packages/source/f/featurewiz/featurewiz-0.6.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -204,7 +207,7 @@
     "featurewiz"
    ],
    "requires": [
-    "python =3.9",
+    "python 3.9",
     "pip"
    ]
   }
@@ -223,7 +226,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/featurewiz.json"
  },
- "raw_meta_yaml": "{% set name = \"featurewiz\" %}\n{% set version = \"0.5.83\" %}\n{% set python_min = python_min|default(\"3.7\") %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/featurewiz-{{ version }}.tar.gz\n  sha256: 980d37bcb8b58d8f8333d6708f899a8edf736b329bcc8d13e4d778d09dd046fb\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}.*\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy <2.0\n    - ipython\n    - jupyter\n    - xgboost >=1.6.2,<=1.7.6\n    - pandas >=2.0\n    - matplotlib-base\n    - seaborn\n    - scikit-learn >=1.2.2,<=1.5.2\n    - networkx\n    - category_encoders =2.6.3\n    - xlrd >=2.0.0\n    - tqdm >=4.61.1\n    - dask-core >=2021.11.0\n    - lightgbm >=3.2.1\n    - distributed >=2021.11.0\n    - feather-format >=0.4.1\n    - pyarrow >=7.0.0\n    - fsspec >=0.3.3\n    - scipy\n    - pillow >=9.0.0\n    - numexpr >=2.7.3\n    - tensorflow >=2.5.2\n    - lazytransform\n\ntest:\n  requires:\n    - python ={{ python_min }}\n    - pip\n  imports:\n    - featurewiz\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/AutoViML/featurewiz\n  summary: Select Best Features from your data set - any size - now with XGBoost!\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - arturdaraujo\n    - mfansler\n",
+ "raw_meta_yaml": "{% set name = \"featurewiz\" %}\n{% set version = \"0.6.1\" %}\n{% set python_min = python_min|default(\"3.7\") %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/featurewiz-{{ version }}.tar.gz\n  sha256: cef09b02bc1e5053723494acdf007dd19166b1346b3ee6c79cd3bee9d3b4d368\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - numpy <2.0\n    - ipython\n    - jupyter\n    - xgboost >=1.6.2,<=1.7.6\n    - pandas >=2.0\n    - matplotlib-base\n    - seaborn\n    - scikit-learn >=1.2.2,<=1.5.2\n    - networkx\n    - category_encoders =2.6.3\n    - xlrd >=2.0.0\n    - tqdm >=4.61.1\n    - dask-core >=2021.11.0\n    - lightgbm >=3.2.1\n    - distributed >=2021.11.0\n    - feather-format >=0.4.1\n    - pyarrow >=7.0.0\n    - fsspec >=0.3.3\n    - scipy\n    - pillow >=9.0.0\n    - numexpr >=2.7.3\n    - tensorflow >=2.5.2\n    - lazytransform\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - featurewiz\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/AutoViML/featurewiz\n  summary: Select Best Features from your data set - any size - now with XGBoost!\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - arturdaraujo\n    - mfansler\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -315,7 +318,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9.*",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -352,12 +355,12 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python =3.9"
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/f/featurewiz/featurewiz-0.5.83.tar.gz",
- "version": "0.5.83",
+ "url": "https://pypi.org/packages/source/f/featurewiz/featurewiz-0.6.1.tar.gz",
+ "version": "0.6.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/featurewiz.json"
  }
