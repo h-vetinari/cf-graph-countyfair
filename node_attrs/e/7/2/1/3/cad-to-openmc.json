@@ -22,7 +22,7 @@
    "summary": "Package to automagically convert step-geometries to h5m descriptions for neutronics by OpenMC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -47,7 +47,6 @@
    ],
    "run": [
     "python",
-    "numpy",
     "gmsh",
     "python-gmsh",
     "moab >=5.3.0",
@@ -109,7 +108,6 @@
     "gmsh",
     "moab",
     "networkx",
-    "numpy",
     "ocp",
     "pyparsing",
     "python",
@@ -134,7 +132,7 @@
    "summary": "Package to automagically convert step-geometries to h5m descriptions for neutronics by OpenMC"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -159,7 +157,6 @@
    ],
    "run": [
     "python",
-    "numpy",
     "gmsh",
     "python-gmsh",
     "moab >=5.3.0",
@@ -211,7 +208,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cad-to-openmc.json"
  },
- "raw_meta_yaml": "{% set name = \"cad-to-openmc\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  sha256: 4c41abb90b06128f3f4d9a6a5ad9ed13e928fc0fced30821aa554f7314c8b3e6\n  url: https://github.com/openmsr/CAD_to_OpenMC/archive/refs/tags/v{{ version }}.tar.gz\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n  skip: true  # [win]\n  skip: true  # [osx]\n  skip: true  # [py<39]\n  skip: true  # [py>311]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - setuptools >=61.0\n    - pip\n    - numpy <2.0a0\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - gmsh\n    - python-gmsh\n    - moab >=5.3.0\n    - pyparsing\n    - cadquery >=2.4.0\n    - ocp >=7.7.2\n    - trimesh\n    - networkx\n    - unidecode\n\ntest:\n  imports:\n    - CAD_to_OpenMC\n    - CAD_to_OpenMC.assembly\n  files:\n    - 7pin.step\n    - pincell1.step\n  source_files:\n    - tests\n    - examples/step_files\n  commands:\n    - pytest tests\n  requires:\n    - pytest\n\nabout:\n  home: https://www.github.com/openmsr/CAD_to_OpenMC\n  summary: Package to automagically convert step-geometries to h5m descriptions for neutronics by OpenMC\n  description: |\n    CAD_to_OpenMC is a tool that converts CAD-geometries to DAGMC-geometries by means of surface meshing\n    on a geometry in a step-file.\n    DAGMC-geometries may be used in particles transport packages such as OpenMC.\n    By default names used for parts in the CAD-geometry are used as material tags in the DAGMC-file, but this\n    may be overridden.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ebknudsen\n",
+ "raw_meta_yaml": "{% set name = \"cad-to-openmc\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  sha256: 4c41abb90b06128f3f4d9a6a5ad9ed13e928fc0fced30821aa554f7314c8b3e6\n  url: https://github.com/openmsr/CAD_to_OpenMC/archive/refs/tags/v{{ version }}.tar.gz\n\nbuild:\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n  skip: true  # [win]\n  skip: true  # [osx]\n  skip: true  # [py<39]\n  skip: true  # [py>311]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - setuptools >=61.0\n    - pip\n    - numpy <2.0a0\n  run:\n    - python\n    - gmsh\n    - python-gmsh\n    - moab >=5.3.0\n    - pyparsing\n    - cadquery >=2.4.0\n    - ocp >=7.7.2\n    - trimesh\n    - networkx\n    - unidecode\n\ntest:\n  imports:\n    - CAD_to_OpenMC\n    - CAD_to_OpenMC.assembly\n  files:\n    - 7pin.step\n    - pincell1.step\n  source_files:\n    - tests\n    - examples/step_files\n  commands:\n    - pytest tests\n  requires:\n    - pytest\n\nabout:\n  home: https://www.github.com/openmsr/CAD_to_OpenMC\n  summary: Package to automagically convert step-geometries to h5m descriptions for neutronics by OpenMC\n  description: |\n    CAD_to_OpenMC is a tool that converts CAD-geometries to DAGMC-geometries by means of surface meshing\n    on a geometry in a step-file.\n    DAGMC-geometries may be used in particles transport packages such as OpenMC.\n    By default names used for parts in the CAD-geometry are used as material tags in the DAGMC-file, but this\n    may be overridden.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ebknudsen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -260,7 +257,6 @@
     "gmsh",
     "moab",
     "networkx",
-    "numpy",
     "ocp",
     "pyparsing",
     "python",
@@ -301,7 +297,6 @@
     "gmsh",
     "moab >=5.3.0",
     "networkx",
-    "numpy",
     "ocp >=7.7.2",
     "pyparsing",
     "python",
