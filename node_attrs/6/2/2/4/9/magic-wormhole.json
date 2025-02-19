@@ -33,7 +33,7 @@
    ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv"
+   "script": "python -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -42,19 +42,20 @@
   },
   "package": {
    "name": "magic-wormhole",
-   "version": "0.12.0"
+   "version": "0.17.0"
   },
   "requirements": {
    "host": [
-    "python",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python",
-    "spake2 ==0.8",
+    "python >=3.9",
+    "spake2 ==0.9",
     "pynacl",
     "six",
-    "attrs >=16.3.0",
+    "attrs >=19.2.0",
     "twisted >=17.5.0",
     "autobahn >=0.14.1",
     "automat",
@@ -62,21 +63,29 @@
     "tqdm >=4.13.0",
     "click",
     "humanize",
-    "service_identity"
+    "service_identity",
+    "txtorcon >=18.0.2",
+    "zipstream-ng >=1.7.1,<2.0.0",
+    "iterable-io >=1.0.0,<2.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "353d889c667d468fd519bf43d1b2f241211711a1ca0c103bf204d3012767142f",
-   "url": "https://github.com/warner/magic-wormhole/archive/0.12.0.tar.gz"
+   "sha256": "a305fe79da93ba857afca6bfc297d94d4578ca78b6820be91350d3aab9fc49e2",
+   "url": "https://github.com/warner/magic-wormhole/archive/0.17.0.tar.gz"
   },
   "test": {
    "commands": [
     "wormhole --version",
-    "wormhole --help"
+    "wormhole --help",
+    "pip check"
    ],
    "imports": [
     "wormhole"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -89,7 +98,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -101,18 +111,24 @@
     "click",
     "hkdf",
     "humanize",
+    "iterable-io",
     "pynacl",
     "python",
     "service_identity",
     "six",
     "spake2",
     "tqdm",
-    "twisted"
+    "twisted",
+    "txtorcon",
+    "zipstream-ng"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -132,7 +148,7 @@
    ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps -vv"
+   "script": "python -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
@@ -141,19 +157,20 @@
   },
   "package": {
    "name": "magic-wormhole",
-   "version": "0.12.0"
+   "version": "0.17.0"
   },
   "requirements": {
    "host": [
-    "python",
-    "pip"
+    "python 3.9",
+    "pip",
+    "setuptools"
    ],
    "run": [
-    "python",
-    "spake2 ==0.8",
+    "python >=3.9",
+    "spake2 ==0.9",
     "pynacl",
     "six",
-    "attrs >=16.3.0",
+    "attrs >=19.2.0",
     "twisted >=17.5.0",
     "autobahn >=0.14.1",
     "automat",
@@ -161,21 +178,29 @@
     "tqdm >=4.13.0",
     "click",
     "humanize",
-    "service_identity"
+    "service_identity",
+    "txtorcon >=18.0.2",
+    "zipstream-ng >=1.7.1,<2.0.0",
+    "iterable-io >=1.0.0,<2.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "353d889c667d468fd519bf43d1b2f241211711a1ca0c103bf204d3012767142f",
-   "url": "https://github.com/warner/magic-wormhole/archive/0.12.0.tar.gz"
+   "sha256": "a305fe79da93ba857afca6bfc297d94d4578ca78b6820be91350d3aab9fc49e2",
+   "url": "https://github.com/warner/magic-wormhole/archive/0.17.0.tar.gz"
   },
   "test": {
    "commands": [
     "wormhole --version",
-    "wormhole --help"
+    "wormhole --help",
+    "pip check"
    ],
    "imports": [
     "wormhole"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -193,7 +218,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/magic-wormhole.json"
  },
- "raw_meta_yaml": "{% set name = \"magic-wormhole\" %}\n{% set version = \"0.12.0\" %}\n{% set sha256 = \"353d889c667d468fd519bf43d1b2f241211711a1ca0c103bf204d3012767142f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/warner/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - wormhole = wormhole.cli.cli:wormhole\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - spake2 ==0.8\n    - pynacl\n    - six\n    - attrs >=16.3.0\n    - twisted >=17.5.0\n    - autobahn >=0.14.1\n    - automat\n    - hkdf\n    - tqdm >=4.13.0\n    - click\n    - humanize\n    - service_identity\n\ntest:\n  commands:\n    - wormhole --version\n    - wormhole --help\n  imports:\n    - wormhole\n\nabout:\n  home: http://github.com/warner/magic-wormhole\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Get things from one computer to another, safely.\n\n  description: |\n    This package provides a library and a command-line tool named wormhole, \n    which makes it possible to get arbitrary-sized files and directories (or \n    short pieces of text) from one computer to another. The two endpoints are \n    identified by using identical \"wormhole codes\": in general, the sending \n    machine generates and displays the code, which must then be typed into \n    the receiving machine.\n\n  doc_url: https://magic-wormhole.readthedocs.io/en/latest/\n  dev_url: http://github.com/warner/magic-wormhole\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
+ "raw_meta_yaml": "{% set version = \"0.17.0\" %}\n\npackage:\n  name: magic-wormhole\n  version: {{ version }}\n\nsource:\n  url: https://github.com/warner/magic-wormhole/archive/{{ version }}.tar.gz\n  sha256: a305fe79da93ba857afca6bfc297d94d4578ca78b6820be91350d3aab9fc49e2\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install . -vv\n  entry_points:\n    - wormhole = wormhole.cli.cli:wormhole\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - spake2 ==0.9\n    - pynacl\n    - six\n    - attrs >=19.2.0\n    - twisted >=17.5.0\n    - autobahn >=0.14.1\n    - automat\n    - hkdf\n    - tqdm >=4.13.0\n    - click\n    - humanize\n    - service_identity\n    - txtorcon >=18.0.2\n    - zipstream-ng >=1.7.1,<2.0.0\n    - iterable-io >=1.0.0,<2.0.0\n\ntest:\n  commands:\n    - wormhole --version\n    - wormhole --help\n    - pip check\n  imports:\n    - wormhole\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://github.com/warner/magic-wormhole\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Get things from one computer to another, safely.\n\n  description: |\n    This package provides a library and a command-line tool named wormhole,\n    which makes it possible to get arbitrary-sized files and directories (or\n    short pieces of text) from one computer to another. The two endpoints are\n    identified by using identical \"wormhole codes\": in general, the sending\n    machine generates and displays the code, which must then be typed into\n    the receiving machine.\n\n  doc_url: https://magic-wormhole.readthedocs.io/en/latest/\n  dev_url: http://github.com/warner/magic-wormhole\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -203,14 +228,18 @@
    "click",
    "hkdf",
    "humanize",
+   "iterable-io",
    "pip",
    "pynacl",
    "python",
    "service_identity",
+   "setuptools",
    "six",
    "spake2",
    "tqdm",
-   "twisted"
+   "twisted",
+   "txtorcon",
+   "zipstream-ng"
   ]
  },
  "requirements": {
@@ -222,7 +251,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -234,18 +264,24 @@
     "click",
     "hkdf",
     "humanize",
+    "iterable-io",
     "pynacl",
     "python",
     "service_identity",
     "six",
     "spake2",
     "tqdm",
-    "twisted"
+    "twisted",
+    "txtorcon",
+    "zipstream-ng"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -258,34 +294,41 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "attrs >=16.3.0",
+    "attrs >=19.2.0",
     "autobahn >=0.14.1",
     "automat",
     "click",
     "hkdf",
     "humanize",
+    "iterable-io >=1.0.0,<2.0.0",
     "pynacl",
-    "python",
+    "python >=3.9",
     "service_identity",
     "six",
-    "spake2 ==0.8",
+    "spake2 ==0.9",
     "tqdm >=4.13.0",
-    "twisted >=17.5.0"
+    "twisted >=17.5.0",
+    "txtorcon >=18.0.2",
+    "zipstream-ng >=1.7.1,<2.0.0"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
   }
  },
- "url": "https://github.com/warner/magic-wormhole/archive/0.12.0.tar.gz",
- "version": "0.12.0",
+ "url": "https://github.com/warner/magic-wormhole/archive/0.17.0.tar.gz",
+ "version": "0.17.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/magic-wormhole.json"
  }
