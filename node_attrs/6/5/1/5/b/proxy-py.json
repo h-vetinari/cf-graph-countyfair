@@ -8,6 +8,7 @@
   "conda_build": {
    "error_overlinking": true
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -18,38 +19,78 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "doc_url": "https://proxypy.readthedocs.io",
+   "doc_url": "https://proxypy.readthedocs.io/",
    "home": "https://github.com/abhinavsingh/proxy.py",
    "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
    "summary": "Proxy Server, Web Server, PubSub, Work acceptor & executor framework."
   },
   "build": {
-   "entry_points": [
-    "proxy = proxy:entry_point",
-    "grout = proxy:grout"
-   ],
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-   "script_env": [
-    "PYTHONIOENCODING=utf-8",
-    "PYTHONLEGACYTEXTENCODING=utf-8"
-   ]
+   "number": "0",
+   "script": {
+    "content": [
+     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+    ],
+    "env": {
+     "PYTHONIOENCODING": "utf-8",
+     "PYTHONLEGACYTEXTENCODING": "utf-8"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "proxy-py",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*",
+      "setuptools",
+      "setuptools-scm >=7.0.5"
+     ],
+     "run": [
+      "python >=3.9"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "proxy"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "proxy --help",
+       "which grout || where grout"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "proxy-py",
-   "version": "2.4.9"
+   "version": "2.4.10"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools",
     "setuptools-scm >=7.0.5"
    ],
@@ -57,24 +98,10 @@
     "python >=3.9"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "98676034f94615097bcbe383de65e20a7a2bed74431ffdfd073ece76f3d6e366",
-   "url": "https://pypi.org/packages/source/p/proxy.py/proxy_py-2.4.9.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "proxy --help",
-    "which grout || where grout"
-   ],
-   "imports": [
-    "proxy"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+   "sha256": "41b9e9d3aae6f80e2304d3726e8e9c583a510d8de224eada53d115f48a63a9ce",
+   "url": "https://pypi.org/packages/source/p/proxy.py/proxy_py-2.4.10.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -107,38 +134,78 @@
  },
  "meta_yaml": {
   "about": {
-   "doc_url": "https://proxypy.readthedocs.io",
+   "doc_url": "https://proxypy.readthedocs.io/",
    "home": "https://github.com/abhinavsingh/proxy.py",
    "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
    "license_file": "LICENSE",
    "summary": "Proxy Server, Web Server, PubSub, Work acceptor & executor framework."
   },
   "build": {
-   "entry_points": [
-    "proxy = proxy:entry_point",
-    "grout = proxy:grout"
-   ],
    "noarch": "python",
-   "number": "1",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
-   "script_env": [
-    "PYTHONIOENCODING=utf-8",
-    "PYTHONLEGACYTEXTENCODING=utf-8"
-   ]
+   "number": "0",
+   "script": {
+    "content": [
+     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check"
+    ],
+    "env": {
+     "PYTHONIOENCODING": "utf-8",
+     "PYTHONLEGACYTEXTENCODING": "utf-8"
+    }
+   }
   },
   "extra": {
    "recipe-maintainers": [
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "proxy-py",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*",
+      "setuptools",
+      "setuptools-scm >=7.0.5"
+     ],
+     "run": [
+      "python >=3.9"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "proxy"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "requirements": {
+       "run": [
+        "python 3.9.*"
+       ]
+      },
+      "script": [
+       "proxy --help",
+       "which grout || where grout"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "proxy-py",
-   "version": "2.4.9"
+   "version": "2.4.10"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools",
     "setuptools-scm >=7.0.5"
    ],
@@ -146,24 +213,10 @@
     "python >=3.9"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "98676034f94615097bcbe383de65e20a7a2bed74431ffdfd073ece76f3d6e366",
-   "url": "https://pypi.org/packages/source/p/proxy.py/proxy_py-2.4.9.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "proxy --help",
-    "which grout || where grout"
-   ],
-   "imports": [
-    "proxy"
-   ],
-   "requires": [
-    "pip",
-    "python 3.9"
-   ]
+   "sha256": "41b9e9d3aae6f80e2304d3726e8e9c583a510d8de224eada53d115f48a63a9ce",
+   "url": "https://pypi.org/packages/source/p/proxy.py/proxy_py-2.4.10.tar.gz"
   }
  },
  "name": "proxy-py",
@@ -180,7 +233,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/proxy-py.json"
  },
- "raw_meta_yaml": "{% set version = \"2.4.9\" %}\n\npackage:\n  name: proxy-py\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/proxy.py/proxy_py-{{ version }}.tar.gz\n  sha256: 98676034f94615097bcbe383de65e20a7a2bed74431ffdfd073ece76f3d6e366\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 1\n  entry_points:\n    - proxy = proxy:entry_point\n    - grout = proxy:grout\n  script_env:\n    - PYTHONIOENCODING=utf-8\n    - PYTHONLEGACYTEXTENCODING=utf-8\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n    - setuptools-scm >=7.0.5\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - proxy\n  commands:\n    - pip check\n    - proxy --help\n    - which grout || where grout\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/abhinavsingh/proxy.py\n  summary: Proxy Server, Web Server, PubSub, Work acceptor & executor framework.\n  license: BSD-3-Clause\n  license_file: LICENSE\n  doc_url: https://proxypy.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 2.4.10\n\npackage:\n  name: proxy-py\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/proxy.py/proxy_py-${{ version }}.tar.gz\n  sha256: 41b9e9d3aae6f80e2304d3726e8e9c583a510d8de224eada53d115f48a63a9ce\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    env:\n      PYTHONIOENCODING: utf-8\n      PYTHONLEGACYTEXTENCODING: utf-8\n    content:\n      - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n  python:\n    entry_points:\n      - proxy = proxy:entry_point\n      - grout = proxy:grout\n\nrequirements:\n  host:\n    - pip\n    - python ${{ python_min }}.*\n    - setuptools\n    - setuptools-scm >=7.0.5\n  run:\n    - python >=${{ python_min }}\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: proxy\n  - requirements:\n      run:\n        - python ${{ python_min }}.*\n    script:\n      - proxy --help\n      - which grout || where grout\n\nabout:\n  summary: Proxy Server, Web Server, PubSub, Work acceptor & executor framework.\n  license: BSD-3-Clause\n  license_file: LICENSE\n  homepage: https://github.com/abhinavsingh/proxy.py\n  documentation: https://proxypy.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -228,7 +281,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools",
     "setuptools-scm >=7.0.5"
    ]
@@ -243,12 +296,12 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.9.*"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/proxy.py/proxy_py-2.4.9.tar.gz",
- "version": "2.4.9",
+ "url": "https://pypi.org/packages/source/p/proxy.py/proxy_py-2.4.10.tar.gz",
+ "version": "2.4.10",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/proxy-py.json"
  }
