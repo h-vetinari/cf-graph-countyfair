@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "inspection": "update-all"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -22,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -32,24 +35,23 @@
   },
   "package": {
    "name": "jsonschema-default",
-   "version": "1.6.0"
+   "version": "1.6.1"
   },
   "requirements": {
    "host": [
-    "python 3.10",
+    "hatchling",
     "pip",
-    "poetry <1.6"
+    "python 3.10"
    ],
    "run": [
-    "loguru >=0.7.0",
     "python >=3.10",
-    "rstr >=3.2.1"
+    "rstr ==3.2.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c653ec0e5011fa7514f83442fba5813625c9af80cc535708d53c2eeebadf064b",
-   "url": "https://pypi.org/packages/source/j/jsonschema-default/jsonschema_default-1.6.0.tar.gz"
+   "sha256": "bf94ffe9f9131571a70dbf4ac89ba83d99ff1c0830d04d7646a37f5cc54de22a",
+   "url": "https://pypi.org/packages/source/j/jsonschema-default/jsonschema_default-1.6.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -72,15 +74,14 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry",
     "python"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "loguru",
     "python",
     "rstr"
    ]
@@ -102,7 +103,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -112,24 +113,23 @@
   },
   "package": {
    "name": "jsonschema-default",
-   "version": "1.6.0"
+   "version": "1.6.1"
   },
   "requirements": {
    "host": [
-    "python 3.10",
+    "hatchling",
     "pip",
-    "poetry <1.6"
+    "python 3.10"
    ],
    "run": [
-    "loguru >=0.7.0",
     "python >=3.10",
-    "rstr >=3.2.1"
+    "rstr ==3.2.2"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c653ec0e5011fa7514f83442fba5813625c9af80cc535708d53c2eeebadf064b",
-   "url": "https://pypi.org/packages/source/j/jsonschema-default/jsonschema_default-1.6.0.tar.gz"
+   "sha256": "bf94ffe9f9131571a70dbf4ac89ba83d99ff1c0830d04d7646a37f5cc54de22a",
+   "url": "https://pypi.org/packages/source/j/jsonschema-default/jsonschema_default-1.6.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -158,13 +158,12 @@
  "pr_info": {
   "__lazy_json__": "pr_info/jsonschema-default.json"
  },
- "raw_meta_yaml": "{% set name = \"jsonschema-default\" %}\n{% set version = \"1.6.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: c653ec0e5011fa7514f83442fba5813625c9af80cc535708d53c2eeebadf064b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    # max version on poetry until pyproject.toml tool.poetry.homepage is a valid URI\n    - poetry <1.6\n  run:\n    - loguru >=0.7.0\n    - python >={{ python_min }}\n    - rstr >=3.2.1\n\ntest:\n  imports:\n    - jsonschema_default\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mnboos/jsonschema-default\n  summary: Create default objects from a JSON schema\n  license: AGPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
+ "raw_meta_yaml": "{% set name = \"jsonschema-default\" %}\n{% set version = \"1.6.1\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: bf94ffe9f9131571a70dbf4ac89ba83d99ff1c0830d04d7646a37f5cc54de22a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - rstr ==3.2.2\n\ntest:\n  imports:\n    - jsonschema_default\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/mnboos/jsonschema-default\n  summary: Create default objects from a JSON schema\n  license: AGPL-3.0-or-later\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req": {
   "__set__": true,
   "elements": [
-   "loguru",
+   "hatchling",
    "pip",
-   "poetry",
    "python",
    "rstr"
   ]
@@ -177,15 +176,14 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry",
     "python"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "loguru",
     "python",
     "rstr"
    ]
@@ -207,17 +205,16 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry <1.6",
     "python 3.10"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "loguru >=0.7.0",
     "python >=3.10",
-    "rstr >=3.2.1"
+    "rstr ==3.2.2"
    ]
   },
   "test": {
@@ -228,8 +225,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/j/jsonschema-default/jsonschema_default-1.6.0.tar.gz",
- "version": "1.6.0",
+ "url": "https://pypi.org/packages/source/j/jsonschema-default/jsonschema_default-1.6.1.tar.gz",
+ "version": "1.6.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/jsonschema-default.json"
  }
