@@ -60,7 +60,9 @@
       "requests",
       "numpy",
       "python-dateutil",
-      "haystack-experimental"
+      "haystack-experimental",
+      "openapi-llm >=0.4.1",
+      "jsonschema"
      ]
     },
     "tests": [
@@ -76,7 +78,7 @@
   ],
   "package": {
    "name": "haystack-ai",
-   "version": "2.9.0"
+   "version": "2.10.2"
   },
   "requirements": {
    "host": [
@@ -100,13 +102,15 @@
     "requests",
     "numpy",
     "python-dateutil",
-    "haystack-experimental"
+    "haystack-experimental",
+    "openapi-llm >=0.4.1",
+    "jsonschema"
    ]
   },
   "schema_version": 1,
   "source": {
-   "sha256": "ffaf32a8d1a3b15e5f6dc9277670f7167d2651f8c0c778178649b20c693f3dcd",
-   "url": "https://pypi.org/packages/source/h/haystack-ai/haystack_ai-2.9.0.tar.gz"
+   "sha256": "9e9f434b14b42cd226b641913e704f06709f3c25ca1dd6ed8f1cc5de63f7ce7b",
+   "url": "https://pypi.org/packages/source/h/haystack-ai/haystack_ai-2.10.2.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -127,11 +131,13 @@
    "elements": [
     "haystack-experimental",
     "jinja2",
+    "jsonschema",
     "lazy-imports",
     "more-itertools",
     "networkx",
     "numpy",
     "openai",
+    "openapi-llm",
     "pandas",
     "posthog",
     "python",
@@ -196,7 +202,9 @@
       "requests",
       "numpy",
       "python-dateutil",
-      "haystack-experimental"
+      "haystack-experimental",
+      "openapi-llm >=0.4.1",
+      "jsonschema"
      ]
     },
     "tests": [
@@ -212,7 +220,7 @@
   ],
   "package": {
    "name": "haystack-ai",
-   "version": "2.9.0"
+   "version": "2.10.2"
   },
   "requirements": {
    "host": [
@@ -236,13 +244,15 @@
     "requests",
     "numpy",
     "python-dateutil",
-    "haystack-experimental"
+    "haystack-experimental",
+    "openapi-llm >=0.4.1",
+    "jsonschema"
    ]
   },
   "schema_version": 1,
   "source": {
-   "sha256": "ffaf32a8d1a3b15e5f6dc9277670f7167d2651f8c0c778178649b20c693f3dcd",
-   "url": "https://pypi.org/packages/source/h/haystack-ai/haystack_ai-2.9.0.tar.gz"
+   "sha256": "9e9f434b14b42cd226b641913e704f06709f3c25ca1dd6ed8f1cc5de63f7ce7b",
+   "url": "https://pypi.org/packages/source/h/haystack-ai/haystack_ai-2.10.2.tar.gz"
   }
  },
  "name": "haystack-ai",
@@ -259,18 +269,20 @@
  "pr_info": {
   "__lazy_json__": "pr_info/haystack-ai.json"
  },
- "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: haystack-ai\n  version: 2.9.0\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/haystack_ai-${{ version }}.tar.gz\n  sha256: ffaf32a8d1a3b15e5f6dc9277670f7167d2651f8c0c778178649b20c693f3dcd\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python >=${{ python_min }},<3.13\n    - hatchling >=1.8.0\n    - pip\n  run:\n    - python >=${{ python_min }},<3.13\n    - pandas\n    - tqdm\n    - tenacity\n    - lazy-imports\n    - openai >=1.1.0\n    - jinja2\n    - posthog\n    - pyyaml\n    - more-itertools\n    - networkx\n    - typing-extensions >=4.7\n    - requests\n    - numpy\n    - python-dateutil\n    - haystack-experimental\n\ntests:\n  - python:\n      imports:\n        - haystack\n      pip_check: true\n\nabout:\n  summary: LLM framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data.\n  license: Apache-2.0\n  license_file: LICENSE\n  homepage: https://github.com/deepset-ai/haystack\n\nextra:\n  recipe-maintainers:\n    - julian-risch\n    - moritzwilksch\n",
+ "raw_meta_yaml": "schema_version: 1\n\ncontext:\n  name: haystack-ai\n  version: \"2.10.2\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/haystack_ai-${{ version }}.tar.gz\n  sha256: 9e9f434b14b42cd226b641913e704f06709f3c25ca1dd6ed8f1cc5de63f7ce7b\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python >=${{ python_min }},<3.13\n    - hatchling >=1.8.0\n    - pip\n  run:\n    - python >=${{ python_min }},<3.13\n    - pandas\n    - tqdm\n    - tenacity\n    - lazy-imports\n    - openai >=1.1.0\n    - jinja2\n    - posthog\n    - pyyaml\n    - more-itertools\n    - networkx\n    - typing-extensions >=4.7\n    - requests\n    - numpy\n    - python-dateutil\n    - haystack-experimental\n    - openapi-llm >=0.4.1\n    - jsonschema\n\ntests:\n  - python:\n      imports:\n        - haystack\n      pip_check: true\n\nabout:\n  summary: LLM framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data.\n  license: Apache-2.0\n  license_file: LICENSE\n  homepage: https://github.com/deepset-ai/haystack\n\nextra:\n  recipe-maintainers:\n    - julian-risch\n    - moritzwilksch\n",
  "req": {
   "__set__": true,
   "elements": [
    "hatchling",
    "haystack-experimental",
    "jinja2",
+   "jsonschema",
    "lazy-imports",
    "more-itertools",
    "networkx",
    "numpy",
    "openai",
+   "openapi-llm",
    "pandas",
    "pip",
    "posthog",
@@ -301,11 +313,13 @@
    "elements": [
     "haystack-experimental",
     "jinja2",
+    "jsonschema",
     "lazy-imports",
     "more-itertools",
     "networkx",
     "numpy",
     "openai",
+    "openapi-llm",
     "pandas",
     "posthog",
     "python",
@@ -343,11 +357,13 @@
    "elements": [
     "haystack-experimental",
     "jinja2",
+    "jsonschema",
     "lazy-imports",
     "more-itertools",
     "networkx",
     "numpy",
     "openai >=1.1.0",
+    "openapi-llm >=0.4.1",
     "pandas",
     "posthog",
     "python >=3.9,<3.13",
@@ -366,8 +382,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/h/haystack-ai/haystack_ai-2.9.0.tar.gz",
- "version": "2.9.0",
+ "url": "https://pypi.org/packages/source/h/haystack-ai/haystack_ai-2.10.2.tar.gz",
+ "version": "2.10.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/haystack-ai.json"
  }
