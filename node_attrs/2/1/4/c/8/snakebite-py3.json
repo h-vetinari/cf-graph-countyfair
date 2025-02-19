@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "inspection": "update-grayskull"
+  },
   "conda_build": {
    "pkg_format": "2"
   },
@@ -26,7 +29,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -36,7 +39,7 @@
   },
   "package": {
    "name": "snakebite-py3",
-   "version": "3.0.5"
+   "version": "3.0.6"
   },
   "requirements": {
    "host": [
@@ -45,8 +48,8 @@
     "setuptools"
    ],
    "run": [
-    "protobuf >2.4.1",
-    "python >=3.9"
+    "python >=3.9",
+    "protobuf >2.4.1,<4"
    ]
   },
   "schema_version": 0,
@@ -54,8 +57,8 @@
    "patches": [
     "0001-remove-argparse.patch"
    ],
-   "sha256": "2026f2f755b63503145b6ab3037ca2b5905c9d1c68d3e7903b90ab94ac7fa260",
-   "url": "https://pypi.org/packages/source/s/snakebite-py3/snakebite-py3-3.0.5.tar.gz"
+   "sha256": "f6586f79610ca466506fd8507970b3fc059b0b5144e7a8f53e9474aaed2fc637",
+   "url": "https://pypi.org/packages/source/s/snakebite-py3/snakebite_py3-3.0.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -122,7 +125,7 @@
   },
   "package": {
    "name": "snakebite-py3",
-   "version": "3.0.5"
+   "version": "3.0.6"
   },
   "requirements": {
    "host": [
@@ -131,8 +134,8 @@
     "setuptools"
    ],
    "run": [
-    "protobuf >2.4.1",
-    "python >=3.9"
+    "python >=3.9",
+    "protobuf >2.4.1,<4"
    ]
   },
   "schema_version": 0,
@@ -140,8 +143,8 @@
    "patches": [
     "0001-remove-argparse.patch"
    ],
-   "sha256": "2026f2f755b63503145b6ab3037ca2b5905c9d1c68d3e7903b90ab94ac7fa260",
-   "url": "https://pypi.org/packages/source/s/snakebite-py3/snakebite-py3-3.0.5.tar.gz"
+   "sha256": "f6586f79610ca466506fd8507970b3fc059b0b5144e7a8f53e9474aaed2fc637",
+   "url": "https://pypi.org/packages/source/s/snakebite-py3/snakebite_py3-3.0.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -171,7 +174,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/snakebite-py3.json"
  },
- "raw_meta_yaml": "{% set name = \"snakebite-py3\" %}\n{% set version = \"3.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/snakebite-py3-{{ version }}.tar.gz\n  sha256: 2026f2f755b63503145b6ab3037ca2b5905c9d1c68d3e7903b90ab94ac7fa260\n  patches:\n    - 0001-remove-argparse.patch\n\nbuild:\n  number: 2\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - protobuf >2.4.1\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - snakebite\n    - snakebite.protobuf\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://github.com/internetarchive/snakebite-py3\n  summary: Pure Python HDFS client\n  description: |\n    Port of snakebite for python 3.\n\n    Snakebite is a python library that provides a pure python HDFS client and a\n    wrapper around Hadoops minicluster. The client uses protobuf for\n    communicating with the NameNode and comes in the form of a library and a\n    command line interface. Currently, the snakebite client supports most\n    actions that involve the Namenode and reading data from DataNodes.\n\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  doc_url: https://github.com/internetarchive/snakebite-py3\n  dev_url: https://github.com/internetarchive/snakebite-py3\n\nextra:\n  recipe-maintainers:\n    - xylar\n",
+ "raw_meta_yaml": "{% set name = \"snakebite-py3\" %}\n{% set version = \"3.0.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/snakebite_py3-{{ version }}.tar.gz\n  sha256: f6586f79610ca466506fd8507970b3fc059b0b5144e7a8f53e9474aaed2fc637\n  patches:\n    - 0001-remove-argparse.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - protobuf >2.4.1,<4\n\ntest:\n  imports:\n    - snakebite\n    - snakebite.protobuf\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: http://github.com/internetarchive/snakebite-py3\n  summary: Pure Python HDFS client\n  description: |\n    Port of snakebite for python 3.\n\n    Snakebite is a python library that provides a pure python HDFS client and a\n    wrapper around Hadoops minicluster. The client uses protobuf for\n    communicating with the NameNode and comes in the form of a library and a\n    command line interface. Currently, the snakebite client supports most\n    actions that involve the Namenode and reading data from DataNodes.\n\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  doc_url: https://github.com/internetarchive/snakebite-py3\n  dev_url: https://github.com/internetarchive/snakebite-py3\n\nextra:\n  recipe-maintainers:\n    - xylar\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -226,7 +229,7 @@
   "run": {
    "__set__": true,
    "elements": [
-    "protobuf >2.4.1",
+    "protobuf >2.4.1,<4",
     "python >=3.9"
    ]
   },
@@ -238,8 +241,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/snakebite-py3/snakebite-py3-3.0.5.tar.gz",
- "version": "3.0.5",
+ "url": "https://pypi.org/packages/source/s/snakebite-py3/snakebite_py3-3.0.6.tar.gz",
+ "version": "3.0.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/snakebite-py3.json"
  }
