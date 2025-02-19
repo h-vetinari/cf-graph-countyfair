@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "ariadne",
-   "version": "0.26.0"
+   "version": "0.26.1"
   },
   "requirements": {
    "host": [
@@ -56,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "27129338d21419300232dd163498ab1d7c92c02a14a2061af618a913f02f3722",
-   "url": "https://pypi.org/packages/source/a/ariadne/ariadne-0.26.0.tar.gz"
+   "sha256": "3b609ce656104d99d2af198cad266a88adf4d4c2a247f943e8c5034e73b4c89e",
+   "url": "https://pypi.org/packages/source/a/ariadne/ariadne-0.26.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -125,7 +125,7 @@
   },
   "package": {
    "name": "ariadne",
-   "version": "0.26.0"
+   "version": "0.26.1"
   },
   "requirements": {
    "host": [
@@ -142,8 +142,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "27129338d21419300232dd163498ab1d7c92c02a14a2061af618a913f02f3722",
-   "url": "https://pypi.org/packages/source/a/ariadne/ariadne-0.26.0.tar.gz"
+   "sha256": "3b609ce656104d99d2af198cad266a88adf4d4c2a247f943e8c5034e73b4c89e",
+   "url": "https://pypi.org/packages/source/a/ariadne/ariadne-0.26.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -172,7 +172,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/ariadne.json"
  },
- "raw_meta_yaml": "{% set name = \"ariadne\" %}\n{% set version = \"0.26.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ariadne-{{ version }}.tar.gz\n  sha256: 27129338d21419300232dd163498ab1d7c92c02a14a2061af618a913f02f3722\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - graphql-core >=3.2.0,<3.2.6\n    - starlette >0.17,<1.0\n    - typing_extensions >=3.6.0\n\ntest:\n  imports:\n    - ariadne\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://ariadnegraphql.org/\n  dev_url: https://github.com/mirumee/ariadne\n  doc_url: https://ariadnegraphql.org/docs/intro\n  summary: Ariadne is a Python library for implementing GraphQL servers.\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"ariadne\" %}\n{% set version = \"0.26.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ariadne-{{ version }}.tar.gz\n  sha256: 3b609ce656104d99d2af198cad266a88adf4d4c2a247f943e8c5034e73b4c89e\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - hatchling\n    - pip\n    - python {{ python_min }}\n  run:\n    - python >={{ python_min }}\n    - graphql-core >=3.2.0,<3.2.6\n    - starlette >0.17,<1.0\n    - typing_extensions >=3.6.0\n\ntest:\n  imports:\n    - ariadne\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://ariadnegraphql.org/\n  dev_url: https://github.com/mirumee/ariadne\n  doc_url: https://ariadnegraphql.org/docs/intro\n  summary: Ariadne is a Python library for implementing GraphQL servers.\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -245,8 +245,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/a/ariadne/ariadne-0.26.0.tar.gz",
- "version": "0.26.0",
+ "url": "https://pypi.org/packages/source/a/ariadne/ariadne-0.26.1.tar.gz",
+ "version": "0.26.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/ariadne.json"
  }
