@@ -43,12 +43,12 @@
     "requirements": {
      "build": [],
      "host": [
-      "python 3.10.*",
+      "python 3.9.*",
       "poetry-core >=1.0.0",
       "pip"
      ],
      "run": [
-      "python >=3.10",
+      "python >=3.9",
       "pytorch >=2.2.2,<3.0.0",
       "torchvision",
       "transformers >=4.42.0,<5.0.0",
@@ -58,7 +58,9 @@
       "tqdm >=4.64.0,<5.0.0",
       "py-opencv >=4.6.0.66,<5.0.0",
       "huggingface_hub >=0.23,<1.0.0",
-      "safetensors >=0.4.3,<1"
+      "safetensors >=0.4.3,<1",
+      "pydantic >=2.0.0,<3",
+      "docling-core >=2.19.0,<3"
      ]
     },
     "tests": [
@@ -67,7 +69,7 @@
        "imports": [
         "docling_ibm_models"
        ],
-       "python_version": "3.10.*"
+       "python_version": "3.9.*"
       }
      }
     ]
@@ -75,16 +77,16 @@
   ],
   "package": {
    "name": "docling-ibm-models",
-   "version": "3.3.2"
+   "version": "3.4.0"
   },
   "requirements": {
    "host": [
-    "python 3.10.*",
+    "python 3.9.*",
     "poetry-core >=1.0.0",
     "pip"
    ],
    "run": [
-    "python >=3.10",
+    "python >=3.9",
     "pytorch >=2.2.2,<3.0.0",
     "torchvision",
     "transformers >=4.42.0,<5.0.0",
@@ -94,7 +96,9 @@
     "tqdm >=4.64.0,<5.0.0",
     "py-opencv >=4.6.0.66,<5.0.0",
     "huggingface_hub >=0.23,<1.0.0",
-    "safetensors >=0.4.3,<1"
+    "safetensors >=0.4.3,<1",
+    "pydantic >=2.0.0,<3",
+    "docling-core >=2.19.0,<3"
    ]
   },
   "schema_version": 1,
@@ -102,8 +106,8 @@
    "patches": [
     "fix-numpy-dep.patch"
    ],
-   "sha256": "f6ed59dfb3f98a71ccdd003c13c9a868e3003c22bd5adc554197da7eec227cde",
-   "url": "https://pypi.org/packages/source/d/docling-ibm-models/docling_ibm_models-3.3.2.tar.gz"
+   "sha256": "fb79beeb07d1bb9bc8acf9d0a44643cd7ce1910aa418cd685e2e477b13eeafee",
+   "url": "https://pypi.org/packages/source/d/docling-ibm-models/docling_ibm_models-3.4.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -122,11 +126,13 @@
   "run": {
    "__set__": true,
    "elements": [
+    "docling-core",
     "huggingface_hub",
     "jsonlines",
     "numpy",
     "pillow",
     "py-opencv",
+    "pydantic",
     "python",
     "pytorch",
     "safetensors",
@@ -167,12 +173,12 @@
     "requirements": {
      "build": [],
      "host": [
-      "python 3.10.*",
+      "python 3.9.*",
       "poetry-core >=1.0.0",
       "pip"
      ],
      "run": [
-      "python >=3.10",
+      "python >=3.9",
       "pytorch >=2.2.2,<3.0.0",
       "torchvision",
       "transformers >=4.42.0,<5.0.0",
@@ -182,7 +188,9 @@
       "tqdm >=4.64.0,<5.0.0",
       "py-opencv >=4.6.0.66,<5.0.0",
       "huggingface_hub >=0.23,<1.0.0",
-      "safetensors >=0.4.3,<1"
+      "safetensors >=0.4.3,<1",
+      "pydantic >=2.0.0,<3",
+      "docling-core >=2.19.0,<3"
      ]
     },
     "tests": [
@@ -191,7 +199,7 @@
        "imports": [
         "docling_ibm_models"
        ],
-       "python_version": "3.10.*"
+       "python_version": "3.9.*"
       }
      }
     ]
@@ -199,16 +207,16 @@
   ],
   "package": {
    "name": "docling-ibm-models",
-   "version": "3.3.2"
+   "version": "3.4.0"
   },
   "requirements": {
    "host": [
-    "python 3.10.*",
+    "python 3.9.*",
     "poetry-core >=1.0.0",
     "pip"
    ],
    "run": [
-    "python >=3.10",
+    "python >=3.9",
     "pytorch >=2.2.2,<3.0.0",
     "torchvision",
     "transformers >=4.42.0,<5.0.0",
@@ -218,7 +226,9 @@
     "tqdm >=4.64.0,<5.0.0",
     "py-opencv >=4.6.0.66,<5.0.0",
     "huggingface_hub >=0.23,<1.0.0",
-    "safetensors >=0.4.3,<1"
+    "safetensors >=0.4.3,<1",
+    "pydantic >=2.0.0,<3",
+    "docling-core >=2.19.0,<3"
    ]
   },
   "schema_version": 1,
@@ -226,8 +236,8 @@
    "patches": [
     "fix-numpy-dep.patch"
    ],
-   "sha256": "f6ed59dfb3f98a71ccdd003c13c9a868e3003c22bd5adc554197da7eec227cde",
-   "url": "https://pypi.org/packages/source/d/docling-ibm-models/docling_ibm_models-3.3.2.tar.gz"
+   "sha256": "fb79beeb07d1bb9bc8acf9d0a44643cd7ce1910aa418cd685e2e477b13eeafee",
+   "url": "https://pypi.org/packages/source/d/docling-ibm-models/docling_ibm_models-3.4.0.tar.gz"
   }
  },
  "name": "docling-ibm-models",
@@ -244,10 +254,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/docling-ibm-models.json"
  },
- "raw_meta_yaml": "context:\n  name: docling-ibm-models\n  version: \"3.3.2\"\n  python_min: \"3.10\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz\n  sha256: f6ed59dfb3f98a71ccdd003c13c9a868e3003c22bd5adc554197da7eec227cde\n  patches:\n    - fix-numpy-dep.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >=${{ python_min }}\n    - pytorch >=2.2.2,<3.0.0\n    - torchvision\n    - transformers >=4.42.0,<5.0.0\n    - numpy >=1.22,<3.0.0\n    - jsonlines >=3.1.0,<4.0.0\n    - pillow >=10.0.0,<12.0.0\n    - tqdm >=4.64.0,<5.0.0\n    - py-opencv >=4.6.0.66,<5.0.0\n    - huggingface_hub >=0.23,<1.0.0\n    - safetensors >=0.4.3,<1\n\ntests:\n  - python:\n      imports:\n        - docling_ibm_models\n      pip_check: true\n      python_version: ${{ python_min }}.*\n\nabout:\n  summary: This package contains the AI models used by the Docling PDF conversion package\n  license: MIT\n  license_file: LICENSE\n  homepage: https://github.com/DS4SD/docling-ibm-models\n\nextra:\n  recipe-maintainers:\n    - hadim\n",
+ "raw_meta_yaml": "context:\n  name: docling-ibm-models\n  version: \"3.4.0\"\n\npackage:\n  name: ${{ name|lower }}\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz\n  sha256: fb79beeb07d1bb9bc8acf9d0a44643cd7ce1910aa418cd685e2e477b13eeafee\n  patches:\n    - fix-numpy-dep.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - poetry-core >=1.0.0\n    - pip\n  run:\n    - python >=${{ python_min }}\n    - pytorch >=2.2.2,<3.0.0\n    - torchvision\n    - transformers >=4.42.0,<5.0.0\n    - numpy >=1.22,<3.0.0\n    - jsonlines >=3.1.0,<4.0.0\n    - pillow >=10.0.0,<12.0.0\n    - tqdm >=4.64.0,<5.0.0\n    - py-opencv >=4.6.0.66,<5.0.0\n    - huggingface_hub >=0.23,<1.0.0\n    - safetensors >=0.4.3,<1\n    - pydantic >=2.0.0,<3\n    - docling-core >=2.19.0,<3\n\ntests:\n  - python:\n      imports:\n        - docling_ibm_models\n      pip_check: true\n      python_version: ${{ python_min }}.*\n\nabout:\n  summary: This package contains the AI models used by the Docling PDF conversion package\n  license: MIT\n  license_file: LICENSE\n  homepage: https://github.com/DS4SD/docling-ibm-models\n\nextra:\n  recipe-maintainers:\n    - hadim\n",
  "req": {
   "__set__": true,
   "elements": [
+   "docling-core",
    "huggingface_hub",
    "jsonlines",
    "numpy",
@@ -255,6 +266,7 @@
    "pip",
    "poetry-core",
    "py-opencv",
+   "pydantic",
    "python",
    "pytorch",
    "safetensors",
@@ -279,11 +291,13 @@
   "run": {
    "__set__": true,
    "elements": [
+    "docling-core",
     "huggingface_hub",
     "jsonlines",
     "numpy",
     "pillow",
     "py-opencv",
+    "pydantic",
     "python",
     "pytorch",
     "safetensors",
@@ -310,18 +324,20 @@
    "elements": [
     "pip",
     "poetry-core >=1.0.0",
-    "python 3.10.*"
+    "python 3.9.*"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "docling-core >=2.19.0,<3",
     "huggingface_hub >=0.23,<1.0.0",
     "jsonlines >=3.1.0,<4.0.0",
     "numpy >=1.22,<3.0.0",
     "pillow >=10.0.0,<12.0.0",
     "py-opencv >=4.6.0.66,<5.0.0",
-    "python >=3.10",
+    "pydantic >=2.0.0,<3",
+    "python >=3.9",
     "pytorch >=2.2.2,<3.0.0",
     "safetensors >=0.4.3,<1",
     "torchvision",
@@ -336,8 +352,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/docling-ibm-models/docling_ibm_models-3.3.2.tar.gz",
- "version": "3.3.2",
+ "url": "https://pypi.org/packages/source/d/docling-ibm-models/docling_ibm_models-3.4.0.tar.gz",
+ "version": "3.4.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/docling-ibm-models.json"
  }
