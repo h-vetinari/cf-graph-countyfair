@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "znflow",
-   "version": "0.2.3"
+   "version": "0.2.4"
   },
   "requirements": {
    "host": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c7997be3080c6c25c4d2a79204b6705a5ab93a761098610e2230b79d67ac68c6",
-   "url": "https://pypi.org/packages/source/z/znflow/znflow-0.2.3.tar.gz"
+   "sha256": "1ec2c0c261a03e5e7dcb6d28e63163ee9f0af85987132bd5f8975561e4193006",
+   "url": "https://pypi.org/packages/source/z/znflow/znflow-0.2.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -118,7 +118,7 @@
   },
   "package": {
    "name": "znflow",
-   "version": "0.2.3"
+   "version": "0.2.4"
   },
   "requirements": {
    "host": [
@@ -137,8 +137,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c7997be3080c6c25c4d2a79204b6705a5ab93a761098610e2230b79d67ac68c6",
-   "url": "https://pypi.org/packages/source/z/znflow/znflow-0.2.3.tar.gz"
+   "sha256": "1ec2c0c261a03e5e7dcb6d28e63163ee9f0af85987132bd5f8975561e4193006",
+   "url": "https://pypi.org/packages/source/z/znflow/znflow-0.2.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -167,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/znflow.json"
  },
- "raw_meta_yaml": "{% set name = \"znflow\" %}\n{% set version = \"0.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/znflow-{{ version }}.tar.gz\n  sha256: c7997be3080c6c25c4d2a79204b6705a5ab93a761098610e2230b79d67ac68c6\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }}\n    - networkx >=3.0.0,<4.0.0\n  run_constrained:\n    - dask-core >=2024.0.0,<2025.0.0\n    - distributed >=2024.0.0,<2025.0.0\n\ntest:\n  imports:\n    - znflow\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: A general purpose framework for building and running computational graphs.\n  home: https://github.com/zincware/ZnFlow\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"znflow\" %}\n{% set version = \"0.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/znflow-{{ version }}.tar.gz\n  sha256: 1ec2c0c261a03e5e7dcb6d28e63163ee9f0af85987132bd5f8975561e4193006\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }}\n    - networkx >=3.0.0,<4.0.0\n  run_constrained:\n    - dask-core >=2024.0.0,<2025.0.0\n    - distributed >=2024.0.0,<2025.0.0\n\ntest:\n  imports:\n    - znflow\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  summary: A general purpose framework for building and running computational graphs.\n  home: https://github.com/zincware/ZnFlow\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -234,8 +234,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/z/znflow/znflow-0.2.3.tar.gz",
- "version": "0.2.3",
+ "url": "https://pypi.org/packages/source/z/znflow/znflow-0.2.4.tar.gz",
+ "version": "0.2.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/znflow.json"
  }
