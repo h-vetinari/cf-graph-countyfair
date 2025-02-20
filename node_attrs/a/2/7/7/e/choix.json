@@ -23,7 +23,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "choix",
-   "version": "0.3.4"
+   "version": "0.3.6"
   },
   "requirements": {
    "host": [
@@ -53,8 +53,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0d7d4fa376a119167ad51b629fd423f50356c04ef0c3bf65399e7c7c0ceaf520",
-   "url": "https://pypi.org/packages/source/c/choix/choix-0.3.4.tar.gz"
+   "sha256": "08d50eef29d0a5a33aedcf6939783144ee141b736e4616ba2e0db835df8c81b2",
+   "url": "https://pypi.org/packages/source/c/choix/choix-0.3.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -109,7 +109,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -122,7 +122,7 @@
   },
   "package": {
    "name": "choix",
-   "version": "0.3.4"
+   "version": "0.3.6"
   },
   "requirements": {
    "host": [
@@ -139,8 +139,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "0d7d4fa376a119167ad51b629fd423f50356c04ef0c3bf65399e7c7c0ceaf520",
-   "url": "https://pypi.org/packages/source/c/choix/choix-0.3.4.tar.gz"
+   "sha256": "08d50eef29d0a5a33aedcf6939783144ee141b736e4616ba2e0db835df8c81b2",
+   "url": "https://pypi.org/packages/source/c/choix/choix-0.3.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -169,7 +169,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/choix.json"
  },
- "raw_meta_yaml": "{% set name = \"choix\" %}\n{% set version = \"0.3.4\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0d7d4fa376a119167ad51b629fd423f50356c04ef0c3bf65399e7c7c0ceaf520\n\nbuild:\n  number: 2\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - pytest-runner\n    - setuptools\n    - python {{ python_min }}\n  run:\n    - numpy\n    - python >={{ python_min }}\n    - scipy\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - choix\n  commands:\n    - pip check\n\nabout:\n  home: https://pypi.org/project/choix/\n  summary: Inference algorithms for models based on Luce's choice axiom.\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/lucasmaystre/choix\n\nextra:\n  recipe-maintainers:\n    - mxr-conda\n    - rluria14\n    - oblute\n    - synapticarbors\n",
+ "raw_meta_yaml": "{% set name = \"choix\" %}\n{% set version = \"0.3.6\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 08d50eef29d0a5a33aedcf6939783144ee141b736e4616ba2e0db835df8c81b2\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - pytest-runner\n    - setuptools\n    - python {{ python_min }}\n  run:\n    - numpy\n    - python >={{ python_min }}\n    - scipy\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - choix\n  commands:\n    - pip check\n\nabout:\n  home: https://pypi.org/project/choix/\n  summary: Inference algorithms for models based on Luce's choice axiom.\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/lucasmaystre/choix\n\nextra:\n  recipe-maintainers:\n    - mxr-conda\n    - rluria14\n    - oblute\n    - synapticarbors\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -242,8 +242,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/choix/choix-0.3.4.tar.gz",
- "version": "0.3.4",
+ "url": "https://pypi.org/packages/source/c/choix/choix-0.3.6.tar.gz",
+ "version": "0.3.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/choix.json"
  }
