@@ -25,43 +25,42 @@
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON setup.py install --old-and-unmanageable"
+   "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
     "ilanschnell",
-    "nerohmot"
+    "nerohmot",
+    "beenje"
    ]
   },
   "package": {
    "name": "paho-mqtt",
-   "version": "1.6.1"
+   "version": "2.1.0"
   },
   "requirements": {
    "host": [
-    "python >=3.6",
-    "setuptools"
+    "python 3.9",
+    "pip",
+    "hatchling"
    ],
    "run": [
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "paho-mqtt-1.6.1.tar.gz",
-   "sha256": "2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f",
-   "url": "https://pypi.io/packages/source/p/paho-mqtt/paho-mqtt-1.6.1.tar.gz"
+   "sha256": "12d6e7511d4137555a3f6ea167ae846af2c7357b10bc6fa4f7c3968fc1723834",
+   "url": "https://pypi.org/packages/source/p/paho_mqtt/paho_mqtt-2.1.0.tar.gz"
   },
   "test": {
    "imports": [
     "paho",
-    "paho.mqtt"
+    "paho.mqtt",
+    "paho.mqtt.client"
    ],
    "requires": [
-    "mock",
-    "pylama",
-    "pytest",
-    "six"
+    "python 3.9"
    ]
   }
  },
@@ -73,8 +72,9 @@
   "host": {
    "__set__": true,
    "elements": [
-    "python",
-    "setuptools"
+    "hatchling",
+    "pip",
+    "python"
    ]
   },
   "run": {
@@ -86,10 +86,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "mock",
-    "pylama",
-    "pytest",
-    "six"
+    "python"
    ]
   }
  },
@@ -105,43 +102,42 @@
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON setup.py install --old-and-unmanageable"
+   "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
     "ilanschnell",
-    "nerohmot"
+    "nerohmot",
+    "beenje"
    ]
   },
   "package": {
    "name": "paho-mqtt",
-   "version": "1.6.1"
+   "version": "2.1.0"
   },
   "requirements": {
    "host": [
-    "python >=3.6",
-    "setuptools"
+    "python 3.9",
+    "pip",
+    "hatchling"
    ],
    "run": [
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "paho-mqtt-1.6.1.tar.gz",
-   "sha256": "2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f",
-   "url": "https://pypi.io/packages/source/p/paho-mqtt/paho-mqtt-1.6.1.tar.gz"
+   "sha256": "12d6e7511d4137555a3f6ea167ae846af2c7357b10bc6fa4f7c3968fc1723834",
+   "url": "https://pypi.org/packages/source/p/paho_mqtt/paho_mqtt-2.1.0.tar.gz"
   },
   "test": {
    "imports": [
     "paho",
-    "paho.mqtt"
+    "paho.mqtt",
+    "paho.mqtt.client"
    ],
    "requires": [
-    "mock",
-    "pylama",
-    "pytest",
-    "six"
+    "python 3.9"
    ]
   }
  },
@@ -159,12 +155,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/paho-mqtt.json"
  },
- "raw_meta_yaml": "{% set name = \"paho-mqtt\" %}\n{% set version = \"1.6.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} setup.py install --old-and-unmanageable\n\nrequirements:\n  host:\n    - python >=3.6\n    - setuptools\n  run:\n    - python >=3.6\n\ntest:\n  imports:\n    - paho\n    - paho.mqtt\n  requires:\n    - mock\n    - pylama\n    - pytest\n    - six\n\nabout:\n  home: http://eclipse.org/paho\n  license: EPL-2.0 AND BSD-3-Clause\n  license_family: OTHER\n  license_file: LICENSE.txt\n  summary: MQTT version 3.1.1 client class\n  description: Eclipse Paho MQTT Python Client\n\nextra:\n  recipe-maintainers:\n    - ilanschnell\n    - nerohmot\n",
+ "raw_meta_yaml": "{% set name = \"paho-mqtt\" %}\n{% set version = \"2.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/paho_mqtt/paho_mqtt-{{ version }}.tar.gz\n  sha256: 12d6e7511d4137555a3f6ea167ae846af2c7357b10bc6fa4f7c3968fc1723834\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - hatchling\n  run:\n    - python >={{ python_min }}\n\ntest:\n  imports:\n    - paho\n    - paho.mqtt\n    - paho.mqtt.client\n  requires:\n    - python {{ python_min }}\n\nabout:\n  home: http://eclipse.org/paho\n  license: EPL-2.0 AND BSD-3-Clause\n  license_family: OTHER\n  license_file: LICENSE.txt\n  summary: MQTT version 3.1.1 client class\n  description: Eclipse Paho MQTT Python Client\n\nextra:\n  recipe-maintainers:\n    - ilanschnell\n    - nerohmot\n    - beenje\n",
  "req": {
   "__set__": true,
   "elements": [
-   "python",
-   "setuptools"
+   "hatchling",
+   "pip",
+   "python"
   ]
  },
  "requirements": {
@@ -175,8 +172,9 @@
   "host": {
    "__set__": true,
    "elements": [
-    "python",
-    "setuptools"
+    "hatchling",
+    "pip",
+    "python"
    ]
   },
   "run": {
@@ -188,10 +186,7 @@
   "test": {
    "__set__": true,
    "elements": [
-    "mock",
-    "pylama",
-    "pytest",
-    "six"
+    "python"
    ]
   }
  },
@@ -204,28 +199,26 @@
   "host": {
    "__set__": true,
    "elements": [
-    "python >=3.6",
-    "setuptools"
+    "hatchling",
+    "pip",
+    "python 3.9"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.6"
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
-    "mock",
-    "pylama",
-    "pytest",
-    "six"
+    "python 3.9"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/p/paho-mqtt/paho-mqtt-1.6.1.tar.gz",
- "version": "1.6.1",
+ "url": "https://pypi.org/packages/source/p/paho_mqtt/paho_mqtt-2.1.0.tar.gz",
+ "version": "2.1.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/paho-mqtt.json"
  }
