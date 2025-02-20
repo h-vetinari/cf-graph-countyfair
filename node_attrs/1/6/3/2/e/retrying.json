@@ -24,12 +24,13 @@
   },
   "build": {
    "noarch": "python",
-   "number": "3",
-   "script": "python -m pip install --no-deps --ignore-installed ."
+   "number": "4",
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "pmlandwehr"
+    "pmlandwehr",
+    "synapticarbors"
    ]
   },
   "package": {
@@ -39,23 +40,29 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "setuptools"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "six >=1.7.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "retrying-1.3.3.tar.gz",
    "sha256": "08c039560a6da2fe4f2c426d0766e284d3b736e355f8dd24b37367b0bb41973b",
-   "url": "https://pypi.io/packages/source/r/retrying/retrying-1.3.3.tar.gz"
+   "url": "https://pypi.org/packages/source/r/retrying/retrying-1.3.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "retrying"
+   ],
+   "requires": [
+    "python 3.9",
+    "pip"
    ]
   }
  },
@@ -81,7 +88,10 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -95,12 +105,13 @@
   },
   "build": {
    "noarch": "python",
-   "number": "3",
-   "script": "python -m pip install --no-deps --ignore-installed ."
+   "number": "4",
+   "script": "PYTHON -m pip install . --no-deps -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "pmlandwehr"
+    "pmlandwehr",
+    "synapticarbors"
    ]
   },
   "package": {
@@ -110,23 +121,29 @@
   "requirements": {
    "host": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "setuptools"
    ],
    "run": [
-    "python >=3.6",
+    "python >=3.9",
     "six >=1.7.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "fn": "retrying-1.3.3.tar.gz",
    "sha256": "08c039560a6da2fe4f2c426d0766e284d3b736e355f8dd24b37367b0bb41973b",
-   "url": "https://pypi.io/packages/source/r/retrying/retrying-1.3.3.tar.gz"
+   "url": "https://pypi.org/packages/source/r/retrying/retrying-1.3.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "retrying"
+   ],
+   "requires": [
+    "python 3.9",
+    "pip"
    ]
   }
  },
@@ -144,7 +161,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/retrying.json"
  },
- "raw_meta_yaml": "{% set name = \"retrying\" %}\n{% set version = \"1.3.3\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"08c039560a6da2fe4f2c426d0766e284d3b736e355f8dd24b37367b0bb41973b\" %}\n{% set build = 3 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools\n\n  run:\n    - python >=3.6\n    - six >=1.7.0\n\ntest:\n  imports:\n    - retrying\n\nabout:\n  home: https://github.com/rholder/retrying\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: 'Simplify the task of adding retry behavior to just about anything.'\n  dev_url: https://github.com/rholder/retrying\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "raw_meta_yaml": "{% set name = \"retrying\" %}\n{% set version = \"1.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 08c039560a6da2fe4f2c426d0766e284d3b736e355f8dd24b37367b0bb41973b\n\nbuild:\n  noarch: python\n  number: 4\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n\n  run:\n    - python >={{ python_min }}\n    - six >=1.7.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n    - pip\n  imports:\n    - retrying\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/rholder/retrying\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: 'Simplify the task of adding retry behavior to just about anything.'\n  dev_url: https://github.com/rholder/retrying\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - synapticarbors\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -176,7 +193,10 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -189,23 +209,26 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.6",
+    "python 3.9",
     "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "python >=3.6",
+    "python >=3.9",
     "six >=1.7.0"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/r/retrying/retrying-1.3.3.tar.gz",
+ "url": "https://pypi.org/packages/source/r/retrying/retrying-1.3.3.tar.gz",
  "version": "1.3.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/retrying.json"
