@@ -29,7 +29,7 @@
     "traceback-with-variables = traceback_with_variables.main:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "traceback-with-variables",
-   "version": "2.0.4"
+   "version": "2.2.0"
   },
   "requirements": {
    "host": [
@@ -52,8 +52,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a30c79b7c206fb255967f3f5d125ce114b3dae4fd92d268f901dd35ee23f9cc0",
-   "url": "https://pypi.org/packages/source/t/traceback-with-variables/traceback-with-variables-2.0.4.tar.gz"
+   "sha256": "750457dd847f12d444320c9d24a4972912fcc64868c98b44f8a79ca2fd698257",
+   "url": "https://pypi.org/packages/source/t/traceback-with-variables/traceback-with-variables-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -108,7 +108,7 @@
     "traceback-with-variables = traceback_with_variables.main:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -118,7 +118,7 @@
   },
   "package": {
    "name": "traceback-with-variables",
-   "version": "2.0.4"
+   "version": "2.2.0"
   },
   "requirements": {
    "host": [
@@ -131,8 +131,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "a30c79b7c206fb255967f3f5d125ce114b3dae4fd92d268f901dd35ee23f9cc0",
-   "url": "https://pypi.org/packages/source/t/traceback-with-variables/traceback-with-variables-2.0.4.tar.gz"
+   "sha256": "750457dd847f12d444320c9d24a4972912fcc64868c98b44f8a79ca2fd698257",
+   "url": "https://pypi.org/packages/source/t/traceback-with-variables/traceback-with-variables-2.2.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -160,7 +160,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/traceback-with-variables.json"
  },
- "raw_meta_yaml": "{% set name = \"traceback-with-variables\" %}\n{% set version = \"2.0.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a30c79b7c206fb255967f3f5d125ce114b3dae4fd92d268f901dd35ee23f9cc0\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - traceback-with-variables = traceback_with_variables.main:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    - traceback-with-variables --help\n  imports:\n    - traceback_with_variables\n\nabout:\n  home: https://github.com/andy-landy/traceback_with_variables\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Traceback (Error Message) Printing Variables.\n  description: |\n    Very simple to use, but versatile when needed.  Try for\n    debug and keep for production.Adds variables to python\n    traceback. Simple, lightweight,\n    controllable. Debug reasons of exceptions by logging or\n    pretty printing colorful variable contexts for each frame\n    in a stacktrace, showing every value. Dump locals\n    environments after errors to console, files, and loggers.\n  doc_url: https://github.com/andy-landy/traceback_with_variables/blob/master/README.md\n  dev_url: https://github.com/andy-landy/traceback_with_variables\n\nextra:\n  recipe-maintainers:\n    - andy-landy\n",
+ "raw_meta_yaml": "{% set name = \"traceback-with-variables\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 750457dd847f12d444320c9d24a4972912fcc64868c98b44f8a79ca2fd698257\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - traceback-with-variables = traceback_with_variables.main:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n\ntest:\n  requires:\n    - python {{ python_min }}\n  commands:\n    - traceback-with-variables --help\n  imports:\n    - traceback_with_variables\n\nabout:\n  home: https://github.com/andy-landy/traceback_with_variables\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Traceback (Error Message) Printing Variables.\n  description: |\n    Very simple to use, but versatile when needed.  Try for\n    debug and keep for production.Adds variables to python\n    traceback. Simple, lightweight,\n    controllable. Debug reasons of exceptions by logging or\n    pretty printing colorful variable contexts for each frame\n    in a stacktrace, showing every value. Dump locals\n    environments after errors to console, files, and loggers.\n  doc_url: https://github.com/andy-landy/traceback_with_variables/blob/master/README.md\n  dev_url: https://github.com/andy-landy/traceback_with_variables\n\nextra:\n  recipe-maintainers:\n    - andy-landy\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -219,8 +219,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/traceback-with-variables/traceback-with-variables-2.0.4.tar.gz",
- "version": "2.0.4",
+ "url": "https://pypi.org/packages/source/t/traceback-with-variables/traceback-with-variables-2.2.0.tar.gz",
+ "version": "2.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/traceback-with-variables.json"
  }
