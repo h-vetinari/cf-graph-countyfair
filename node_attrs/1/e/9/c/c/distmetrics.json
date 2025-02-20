@@ -34,7 +34,7 @@
   },
   "package": {
    "name": "distmetrics",
-   "version": "0.0.7"
+   "version": "0.0.8"
   },
   "requirements": {
    "host": [
@@ -60,15 +60,13 @@
     "geopandas",
     "pytorch",
     "tqdm",
-    "dill",
-    "mpire",
     "pandas"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6c24667f4e7531ba238c1840b584b17b8be93b5ded8e305c084f99006c9e1698",
-   "url": "https://pypi.org/packages/source/d/distmetrics/distmetrics-0.0.7.tar.gz"
+   "sha256": "7734c1da4dfd8b6c84f062af8d87bb28c68ef8b69441f90779bb0903868e7137",
+   "url": "https://pypi.org/packages/source/d/distmetrics/distmetrics-0.0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -104,11 +102,9 @@
     "asf_search",
     "astropy-base",
     "backoff",
-    "dill",
     "einops",
     "geopandas",
     "matplotlib-base",
-    "mpire",
     "numpy",
     "pandas",
     "pydantic",
@@ -150,7 +146,7 @@
   },
   "package": {
    "name": "distmetrics",
-   "version": "0.0.7"
+   "version": "0.0.8"
   },
   "requirements": {
    "host": [
@@ -176,15 +172,13 @@
     "geopandas",
     "pytorch",
     "tqdm",
-    "dill",
-    "mpire",
     "pandas"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "6c24667f4e7531ba238c1840b584b17b8be93b5ded8e305c084f99006c9e1698",
-   "url": "https://pypi.org/packages/source/d/distmetrics/distmetrics-0.0.7.tar.gz"
+   "sha256": "7734c1da4dfd8b6c84f062af8d87bb28c68ef8b69441f90779bb0903868e7137",
+   "url": "https://pypi.org/packages/source/d/distmetrics/distmetrics-0.0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -213,7 +207,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/distmetrics.json"
  },
- "raw_meta_yaml": "{% set name = \"distmetrics\" %}\n{% set version = \"0.0.7\" %}\n{% set python_min = \"3.12\" %} \n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/distmetrics-{{ version }}.tar.gz\n  sha256: 6c24667f4e7531ba238c1840b584b17b8be93b5ded8e305c084f99006c9e1698\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - affine\n    - rasterio\n    - numpy\n    - scikit-image\n    - matplotlib-base\n    - scipy\n    - pydantic\n    - astropy-base\n    - einops\n    - backoff\n    - asf_search\n    - shapely\n    - geopandas\n    - pytorch\n    - pydantic\n    - asf_search\n    - tqdm\n    - dill\n    - mpire\n    - pandas\n\ntest:\n  imports:\n    - distmetrics\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/opera-adt/distmetrics\n  summary: Measure Disturbances in OPERA RTC-S1 Stacks\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - richw7185\n    - cmarshak\n    - taliboliver\n    - richw7185\n",
+ "raw_meta_yaml": "{% set name = \"distmetrics\" %}\n{% set version = \"0.0.8\" %}\n{% set python_min = \"3.12\" %} \n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/distmetrics-{{ version }}.tar.gz\n  sha256: 7734c1da4dfd8b6c84f062af8d87bb28c68ef8b69441f90779bb0903868e7137\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - affine\n    - rasterio\n    - numpy\n    - scikit-image\n    - matplotlib-base\n    - scipy\n    - pydantic\n    - astropy-base\n    - einops\n    - backoff\n    - asf_search\n    - shapely\n    - geopandas\n    - pytorch\n    - pydantic\n    - asf_search\n    - tqdm\n    - pandas\n\ntest:\n  imports:\n    - distmetrics\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/opera-adt/distmetrics\n  summary: Measure Disturbances in OPERA RTC-S1 Stacks\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - richw7185\n    - cmarshak\n    - taliboliver\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -221,11 +215,9 @@
    "asf_search",
    "astropy-base",
    "backoff",
-   "dill",
    "einops",
    "geopandas",
    "matplotlib-base",
-   "mpire",
    "numpy",
    "pandas",
    "pip",
@@ -262,11 +254,9 @@
     "asf_search",
     "astropy-base",
     "backoff",
-    "dill",
     "einops",
     "geopandas",
     "matplotlib-base",
-    "mpire",
     "numpy",
     "pandas",
     "pydantic",
@@ -309,11 +299,9 @@
     "asf_search",
     "astropy-base",
     "backoff",
-    "dill",
     "einops",
     "geopandas",
     "matplotlib-base",
-    "mpire",
     "numpy",
     "pandas",
     "pydantic",
@@ -334,8 +322,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/d/distmetrics/distmetrics-0.0.7.tar.gz",
- "version": "0.0.7",
+ "url": "https://pypi.org/packages/source/d/distmetrics/distmetrics-0.0.8.tar.gz",
+ "version": "0.0.8",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/distmetrics.json"
  }
