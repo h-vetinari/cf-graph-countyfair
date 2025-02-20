@@ -38,7 +38,7 @@
     "ceci-ancestors = ceci.tools.ancestors:main"
    ],
    "noarch": "python",
-   "number": "3",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -48,7 +48,7 @@
   },
   "package": {
    "name": "lsstdesc-ceci",
-   "version": "2.0.1"
+   "version": "2.2"
   },
   "requirements": {
    "host": [
@@ -68,8 +68,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3f3e2f79a8c43f4a32a02ca00fe8401ec1f99388d48d7cd7747f276bf27efd82",
-   "url": "https://pypi.org/packages/source/c/ceci/ceci-2.0.1.tar.gz"
+   "sha256": "cfa955f0407d6c2962428aaf4537956124284e40cc92e953317402a7c6c241ff",
+   "url": "https://pypi.org/packages/source/c/ceci/ceci-2.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -134,7 +134,7 @@
     "ceci-ancestors = ceci.tools.ancestors:main"
    ],
    "noarch": "python",
-   "number": "3",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -144,7 +144,7 @@
   },
   "package": {
    "name": "lsstdesc-ceci",
-   "version": "2.0.1"
+   "version": "2.2"
   },
   "requirements": {
    "host": [
@@ -164,8 +164,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3f3e2f79a8c43f4a32a02ca00fe8401ec1f99388d48d7cd7747f276bf27efd82",
-   "url": "https://pypi.org/packages/source/c/ceci/ceci-2.0.1.tar.gz"
+   "sha256": "cfa955f0407d6c2962428aaf4537956124284e40cc92e953317402a7c6c241ff",
+   "url": "https://pypi.org/packages/source/c/ceci/ceci-2.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -197,7 +197,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/lsstdesc-ceci.json"
  },
- "raw_meta_yaml": "{% set name = \"ceci\" %}\n{% set version = \"2.0.1\" %}\n\npackage:\n  name: lsstdesc-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ceci-{{ version }}.tar.gz\n  sha256: 3f3e2f79a8c43f4a32a02ca00fe8401ec1f99388d48d7cd7747f276bf27efd82\n\nbuild:\n  entry_points:\n    - ceci = ceci.main:main\n    - ceci-update-for-version-2 = ceci.update_pipelines_for_ceci_2:main\n    - ceci-ancestors = ceci.tools.ancestors:main\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n  number: 3\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - wheel\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - setuptools\n    - pyyaml >=5.1\n    - psutil\n    - ruamel.yaml\n\ntest:\n  imports:\n    - ceci\n  commands:\n    - pip check\n    - ceci --help\n    - ceci-update-for-version-2 --help\n    - ceci-ancestors --help\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  summary: Lightweight pipeline engine for LSST DESC\n  license: BSD-3-Clause\n  license_file: LICENSE\n  home: https://github.com/LSSTDESC/ceci\n\nextra:\n  recipe-maintainers:\n    - joezuntz\n",
+ "raw_meta_yaml": "{% set name = \"ceci\" %}\n{% set version = \"2.2\" %}\n\npackage:\n  name: lsstdesc-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ceci-{{ version }}.tar.gz\n  sha256: cfa955f0407d6c2962428aaf4537956124284e40cc92e953317402a7c6c241ff\n\nbuild:\n  entry_points:\n    - ceci = ceci.main:main\n    - ceci-update-for-version-2 = ceci.update_pipelines_for_ceci_2:main\n    - ceci-ancestors = ceci.tools.ancestors:main\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - wheel\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - setuptools\n    - pyyaml >=5.1\n    - psutil\n    - ruamel.yaml\n\ntest:\n  imports:\n    - ceci\n  commands:\n    - pip check\n    - ceci --help\n    - ceci-update-for-version-2 --help\n    - ceci-ancestors --help\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  summary: Lightweight pipeline engine for LSST DESC\n  license: BSD-3-Clause\n  license_file: LICENSE\n  home: https://github.com/LSSTDESC/ceci\n\nextra:\n  recipe-maintainers:\n    - joezuntz\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -278,8 +278,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/c/ceci/ceci-2.0.1.tar.gz",
- "version": "2.0.1",
+ "url": "https://pypi.org/packages/source/c/ceci/ceci-2.2.tar.gz",
+ "version": "2.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/lsstdesc-ceci.json"
  }
