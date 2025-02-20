@@ -22,7 +22,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -34,26 +34,26 @@
   },
   "package": {
    "name": "brainglobe-space",
-   "version": "1.0.2"
+   "version": "1.0.3"
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python 3.10",
     "setuptools >=45",
     "wheel",
     "setuptools-scm >=6.2",
     "pip"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10",
     "numpy",
     "scipy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5706f8b921d747c059120353b34cd67f006facc78d0eedea6dc4144380e85dcf",
-   "url": "https://pypi.org/packages/source/b/brainglobe-space/brainglobe_space-1.0.2.tar.gz"
+   "sha256": "7c182957291d27234f1bbd62f5de9b3c32d9e8842b71943795ea62e35d19a54f",
+   "url": "https://pypi.org/packages/source/b/brainglobe-space/brainglobe_space-1.0.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -64,7 +64,7 @@
    ],
    "requires": [
     "pip",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -108,7 +108,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -120,26 +120,26 @@
   },
   "package": {
    "name": "brainglobe-space",
-   "version": "1.0.2"
+   "version": "1.0.3"
   },
   "requirements": {
    "host": [
-    "python 3.9",
+    "python 3.10",
     "setuptools >=45",
     "wheel",
     "setuptools-scm >=6.2",
     "pip"
    ],
    "run": [
-    "python >=3.9",
+    "python >=3.10",
     "numpy",
     "scipy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5706f8b921d747c059120353b34cd67f006facc78d0eedea6dc4144380e85dcf",
-   "url": "https://pypi.org/packages/source/b/brainglobe-space/brainglobe_space-1.0.2.tar.gz"
+   "sha256": "7c182957291d27234f1bbd62f5de9b3c32d9e8842b71943795ea62e35d19a54f",
+   "url": "https://pypi.org/packages/source/b/brainglobe-space/brainglobe_space-1.0.3.tar.gz"
   },
   "test": {
    "commands": [
@@ -150,7 +150,7 @@
    ],
    "requires": [
     "pip",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
@@ -168,7 +168,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/brainglobe-space.json"
  },
- "raw_meta_yaml": "{% set name = \"brainglobe-space\" %}\n{% set version = \"1.0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/brainglobe_space-{{ version }}.tar.gz\n  sha256: 5706f8b921d747c059120353b34cd67f006facc78d0eedea6dc4144380e85dcf\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 1\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=45\n    - wheel\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - brainglobe_space\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/brainglobe/brainglobe-space\n  summary: Anatomical space conventions made easy\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - willGraham01\n    - alessandrofelder\n    - adamltyson\n",
+ "raw_meta_yaml": "{% set python_min = \"3.10\" %}\n{% set name = \"brainglobe-space\" %}\n{% set version = \"1.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/brainglobe_space-{{ version }}.tar.gz\n  sha256: 7c182957291d27234f1bbd62f5de9b3c32d9e8842b71943795ea62e35d19a54f\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=45\n    - wheel\n    - setuptools-scm >=6.2\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - brainglobe_space\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/brainglobe/brainglobe-space\n  summary: Anatomical space conventions made easy\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - willGraham01\n    - alessandrofelder\n    - adamltyson\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -222,7 +222,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9",
+    "python 3.10",
     "setuptools >=45",
     "setuptools-scm >=6.2",
     "wheel"
@@ -232,7 +232,7 @@
    "__set__": true,
    "elements": [
     "numpy",
-    "python >=3.9",
+    "python >=3.10",
     "scipy"
    ]
   },
@@ -240,12 +240,12 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.10"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/b/brainglobe-space/brainglobe_space-1.0.2.tar.gz",
- "version": "1.0.2",
+ "url": "https://pypi.org/packages/source/b/brainglobe-space/brainglobe_space-1.0.3.tar.gz",
+ "version": "1.0.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/brainglobe-space.json"
  }
