@@ -8,6 +8,7 @@
   "build_platform": {
    "osx_arm64": "osx_64"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -22,16 +23,14 @@
    "dev_url": "https://github.com/tox-dev/toml-fmt",
    "home": "https://pypi.org/project/pyproject-fmt",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE.txt",
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "entry_points": [
-    "pyproject-fmt = pyproject_fmt.__main__:runner"
-   ],
    "number": "0",
    "script": [
-    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -40,9 +39,65 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "pyproject-fmt",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses"
+     ],
+     "host": [
+      "maturin >=1.7.1",
+      "pip",
+      "python",
+      "python-abi3"
+     ],
+     "run": [
+      "python",
+      "toml-fmt-common ==1.0.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyproject_fmt"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject-fmt/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest >=8.2",
+        "pytest-cov >=5",
+        "pytest-mock >=3.14",
+        "python !=3.9.*"
+       ]
+      },
+      "script": [
+       "pyproject-fmt --help",
+       "python run_test.py"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "pyproject-fmt",
-   "version": "2.5.0"
+   "version": "2.5.1"
   },
   "requirements": {
    "build": [
@@ -54,37 +109,18 @@
    "host": [
     "maturin >=1.7.1",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ],
    "run": [
     "python",
     "toml-fmt-common ==1.0.1"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "d8d9064bf740cda9b30386fc40f34deb8014a9a59f10e89bfb991df4c9dcbf15",
-   "url": "https://pypi.io/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pyproject-fmt --help",
-    "cd pyproject-fmt",
-    "python -m pytest -vv --cov=pyproject_fmt --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail -k \"not classifier_gt_tox\" --cov-fail-under=88"
-   ],
-   "imports": [
-    "pyproject_fmt"
-   ],
-   "requires": [
-    "pip",
-    "pytest >=8.2",
-    "pytest-cov >=5",
-    "pytest-mock >=3.14"
-   ],
-   "source_files": [
-    "pyproject-fmt/tests"
-   ]
+   "sha256": "c7dfe1f62cc91fdf7ec73043b12c0df03a9a828ce09067fa4bb522fea5b24269",
+   "url": "https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.1.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -102,7 +138,8 @@
    "elements": [
     "maturin",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -118,7 +155,8 @@
     "pip",
     "pytest",
     "pytest-cov",
-    "pytest-mock"
+    "pytest-mock",
+    "python"
    ]
   }
  },
@@ -127,16 +165,14 @@
    "dev_url": "https://github.com/tox-dev/toml-fmt",
    "home": "https://pypi.org/project/pyproject-fmt",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE.txt",
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "entry_points": [
-    "pyproject-fmt = pyproject_fmt.__main__:runner"
-   ],
    "number": "0",
    "script": [
-    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -145,52 +181,262 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "pyproject-fmt",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses"
+     ],
+     "host": [
+      "maturin >=1.7.1",
+      "pip",
+      "python",
+      "python-abi3"
+     ],
+     "run": [
+      "python",
+      "toml-fmt-common ==1.0.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyproject_fmt"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject-fmt/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest >=8.2",
+        "pytest-cov >=5",
+        "pytest-mock >=3.14",
+        "python !=3.9.*"
+       ]
+      },
+      "script": [
+       "pyproject-fmt --help",
+       "python run_test.py"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "pyproject-fmt",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.7.1"
+     ],
+     "host": [
+      "maturin >=1.7.1",
+      "pip",
+      "python",
+      "python-abi3"
+     ],
+     "run": [
+      "python",
+      "toml-fmt-common ==1.0.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyproject_fmt"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject-fmt/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest >=8.2",
+        "pytest-cov >=5",
+        "pytest-mock >=3.14",
+        "python !=3.9.*"
+       ]
+      },
+      "script": [
+       "pyproject-fmt --help",
+       "python run_test.py"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "pyproject-fmt",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.7.1"
+     ],
+     "host": [
+      "maturin >=1.7.1",
+      "pip",
+      "python",
+      "python-abi3"
+     ],
+     "run": [
+      "python",
+      "toml-fmt-common ==1.0.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyproject_fmt"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject-fmt/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest >=8.2",
+        "pytest-cov >=5",
+        "pytest-mock >=3.14",
+        "python !=3.9.*"
+       ]
+      },
+      "script": [
+       "pyproject-fmt --help",
+       "python run_test.py"
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "pyproject-fmt",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.7.1"
+     ],
+     "host": [
+      "maturin >=1.7.1",
+      "pip",
+      "python",
+      "python-abi3"
+     ],
+     "run": [
+      "python",
+      "toml-fmt-common ==1.0.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyproject_fmt"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject-fmt/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest >=8.2",
+        "pytest-cov >=5",
+        "pytest-mock >=3.14",
+        "python !=3.9.*"
+       ]
+      },
+      "script": [
+       "pyproject-fmt --help",
+       "python run_test.py"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "pyproject-fmt",
-   "version": "2.5.0"
+   "version": "2.5.1"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "rust_compiler_stub",
     "c_stdlib_stub",
-    "cargo-bundle-licenses"
+    "cargo-bundle-licenses",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.7.1"
    ],
    "host": [
     "maturin >=1.7.1",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ],
    "run": [
     "python",
     "toml-fmt-common ==1.0.1"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "d8d9064bf740cda9b30386fc40f34deb8014a9a59f10e89bfb991df4c9dcbf15",
-   "url": "https://pypi.io/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pyproject-fmt --help",
-    "cd pyproject-fmt",
-    "python -m pytest -vv --cov=pyproject_fmt --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail -k \"not classifier_gt_tox\" --cov-fail-under=88",
-    "python -m pytest -vv --cov=pyproject_fmt --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail -k \"not classifier_gt_tox\" -k \"not (help_invocation_as_script or cli_pyproject_toml_not_file)\""
-   ],
-   "imports": [
-    "pyproject_fmt"
-   ],
-   "requires": [
-    "pip",
-    "pytest >=8.2",
-    "pytest-cov >=5",
-    "pytest-mock >=3.14"
-   ],
-   "source_files": [
-    "pyproject-fmt/tests"
-   ]
+   "sha256": "c7dfe1f62cc91fdf7ec73043b12c0df03a9a828ce09067fa4bb522fea5b24269",
+   "url": "https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.1.tar.gz"
   }
  },
  "name": "pyproject-fmt",
@@ -199,16 +445,14 @@
    "dev_url": "https://github.com/tox-dev/toml-fmt",
    "home": "https://pypi.org/project/pyproject-fmt",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE.txt",
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "entry_points": [
-    "pyproject-fmt = pyproject_fmt.__main__:runner"
-   ],
    "number": "0",
    "script": [
-    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -217,51 +461,94 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "pyproject-fmt",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.7.1"
+     ],
+     "host": [
+      "maturin >=1.7.1",
+      "pip",
+      "python",
+      "python-abi3"
+     ],
+     "run": [
+      "python",
+      "toml-fmt-common ==1.0.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyproject_fmt"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject-fmt/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest >=8.2",
+        "pytest-cov >=5",
+        "pytest-mock >=3.14",
+        "python !=3.9.*"
+       ]
+      },
+      "script": [
+       "pyproject-fmt --help",
+       "python run_test.py"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "pyproject-fmt",
-   "version": "2.5.0"
+   "version": "2.5.1"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "rust_compiler_stub",
     "c_stdlib_stub",
-    "cargo-bundle-licenses"
+    "cargo-bundle-licenses",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.7.1"
    ],
    "host": [
     "maturin >=1.7.1",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ],
    "run": [
     "python",
     "toml-fmt-common ==1.0.1"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "d8d9064bf740cda9b30386fc40f34deb8014a9a59f10e89bfb991df4c9dcbf15",
-   "url": "https://pypi.io/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pyproject-fmt --help",
-    "cd pyproject-fmt",
-    "python -m pytest -vv --cov=pyproject_fmt --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail -k \"not classifier_gt_tox\" --cov-fail-under=88"
-   ],
-   "imports": [
-    "pyproject_fmt"
-   ],
-   "requires": [
-    "pip",
-    "pytest >=8.2",
-    "pytest-cov >=5",
-    "pytest-mock >=3.14"
-   ],
-   "source_files": [
-    "pyproject-fmt/tests"
-   ]
+   "sha256": "c7dfe1f62cc91fdf7ec73043b12c0df03a9a828ce09067fa4bb522fea5b24269",
+   "url": "https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.1.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -271,6 +558,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -279,7 +569,8 @@
    "elements": [
     "maturin",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -295,7 +586,8 @@
     "pip",
     "pytest",
     "pytest-cov",
-    "pytest-mock"
+    "pytest-mock",
+    "python"
    ]
   }
  },
@@ -304,16 +596,14 @@
    "dev_url": "https://github.com/tox-dev/toml-fmt",
    "home": "https://pypi.org/project/pyproject-fmt",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE.txt",
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "entry_points": [
-    "pyproject-fmt = pyproject_fmt.__main__:runner"
-   ],
    "number": "0",
    "script": [
-    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -322,51 +612,94 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "pyproject-fmt",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.7.1"
+     ],
+     "host": [
+      "maturin >=1.7.1",
+      "pip",
+      "python",
+      "python-abi3"
+     ],
+     "run": [
+      "python",
+      "toml-fmt-common ==1.0.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyproject_fmt"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject-fmt/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest >=8.2",
+        "pytest-cov >=5",
+        "pytest-mock >=3.14",
+        "python !=3.9.*"
+       ]
+      },
+      "script": [
+       "pyproject-fmt --help",
+       "python run_test.py"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "pyproject-fmt",
-   "version": "2.5.0"
+   "version": "2.5.1"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "rust_compiler_stub",
     "c_stdlib_stub",
-    "cargo-bundle-licenses"
+    "cargo-bundle-licenses",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.7.1"
    ],
    "host": [
     "maturin >=1.7.1",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ],
    "run": [
     "python",
     "toml-fmt-common ==1.0.1"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "d8d9064bf740cda9b30386fc40f34deb8014a9a59f10e89bfb991df4c9dcbf15",
-   "url": "https://pypi.io/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pyproject-fmt --help",
-    "cd pyproject-fmt",
-    "python -m pytest -vv --cov=pyproject_fmt --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail -k \"not classifier_gt_tox\" --cov-fail-under=88"
-   ],
-   "imports": [
-    "pyproject_fmt"
-   ],
-   "requires": [
-    "pip",
-    "pytest >=8.2",
-    "pytest-cov >=5",
-    "pytest-mock >=3.14"
-   ],
-   "source_files": [
-    "pyproject-fmt/tests"
-   ]
+   "sha256": "c7dfe1f62cc91fdf7ec73043b12c0df03a9a828ce09067fa4bb522fea5b24269",
+   "url": "https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.1.tar.gz"
   }
  },
  "osx_arm64_requirements": {
@@ -376,6 +709,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -384,7 +720,8 @@
    "elements": [
     "maturin",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -400,7 +737,8 @@
     "pip",
     "pytest",
     "pytest-cov",
-    "pytest-mock"
+    "pytest-mock",
+    "python"
    ]
   }
  },
@@ -420,16 +758,18 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyproject-fmt.json"
  },
- "raw_meta_yaml": "{% set version = \"2.5.0\" %}\n\n# the `if` avoids bot dupes\n{% if 1 %}\n{% set pytest_args = 'python -m pytest -vv --cov=pyproject_fmt --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail -k \"not classifier_gt_tox\"' %}\n{% set win_skips = 'help_invocation_as_script or cli_pyproject_toml_not_file' %}\n{% endif %}\n\npackage:\n  name: pyproject-fmt\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pyproject-fmt/pyproject_fmt-{{ version }}.tar.gz\n  sha256: d8d9064bf740cda9b30386fc40f34deb8014a9a59f10e89bfb991df4c9dcbf15\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n  entry_points:\n    - pyproject-fmt = pyproject_fmt.__main__:runner\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - maturin >=1.7.1                        # [build_platform != target_platform]\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"rust\") }}\n    - {{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n  host:\n    - maturin >=1.7.1\n    - pip\n    - python\n  run:\n    - python\n    - toml-fmt-common ==1.0.1\n\ntest:\n  source_files:\n    - pyproject-fmt/tests\n  imports:\n    - pyproject_fmt\n  commands:\n    - pip check\n    - pyproject-fmt --help\n    - cd pyproject-fmt\n    - {{ pytest_args }} --cov-fail-under=88         # [unix]\n    - {{ pytest_args }} -k \"not ({{ win_skips }})\"  # [win]\n  requires:\n    - pip\n    - pytest >=8.2\n    - pytest-cov >=5\n    - pytest-mock >=3.14\n\nabout:\n  home: https://pypi.org/project/pyproject-fmt\n  summary: Format your pyproject.toml file\n  license: MIT\n  license_file: LICENSE.txt\n  dev_url: https://github.com/tox-dev/toml-fmt\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 2.5.1\n  maturin_version: \">=1.7.1\"\n\npackage:\n  name: pyproject-fmt\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-${{ version }}.tar.gz\n  sha256: c7dfe1f62cc91fdf7ec73043b12c0df03a9a828ce09067fa4bb522fea5b24269\n\nbuild:\n  number: 0\n  # only build for the minimal python version\n  skip: not (match(python, python_min ~ \".*\") and is_abi3 == 'true')\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n  python:\n    entry_points:\n      - pyproject-fmt = pyproject_fmt.__main__:runner\n    version_independent: true\nrequirements:\n  build:\n    - ${{ compiler(\"c\") }}\n    - ${{ compiler(\"rust\") }}\n    - ${{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n        - maturin ${{ maturin_version }}\n  host:\n    - maturin ${{ maturin_version }}\n    - pip\n    - python\n    - python-abi3\n  run:\n    - python\n    - toml-fmt-common ==1.0.1\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: pyproject_fmt\n  - files:\n      recipe:\n        - run_test.py\n      source:\n        - pyproject-fmt/tests/\n    requirements:\n      run:\n        - pytest >=8.2\n        - pytest-cov >=5\n        - pytest-mock >=3.14\n        - python !=${{ python_min }}.*\n    script:\n      - pyproject-fmt --help\n      - python run_test.py\n\nabout:\n  summary: Format your pyproject.toml file\n  license: MIT\n  license_file:\n    - LICENSE.txt\n    - THIRDPARTY.yml\n  homepage: https://pypi.org/project/pyproject-fmt\n  repository: https://github.com/tox-dev/toml-fmt\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
    "c_stdlib_stub",
    "cargo-bundle-licenses",
+   "cross-python_linux-64",
    "maturin",
    "pip",
    "python",
+   "python-abi3",
    "rust_compiler_stub",
    "toml-fmt-common"
   ]
@@ -441,6 +781,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -451,7 +794,8 @@
     "c_stdlib_stub",
     "maturin",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -469,7 +813,8 @@
     "pip",
     "pytest",
     "pytest-cov",
-    "pytest-mock"
+    "pytest-mock",
+    "python"
    ]
   }
  },
@@ -481,6 +826,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin >=1.7.1",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -489,7 +837,8 @@
    "elements": [
     "maturin >=1.7.1",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -505,12 +854,13 @@
     "pip",
     "pytest >=8.2",
     "pytest-cov >=5",
-    "pytest-mock >=3.14"
+    "pytest-mock >=3.14",
+    "python !=3.9.*"
    ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.0.tar.gz",
- "version": "2.5.0",
+ "url": "https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.1.tar.gz",
+ "version": "2.5.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyproject-fmt.json"
  },
@@ -519,16 +869,14 @@
    "dev_url": "https://github.com/tox-dev/toml-fmt",
    "home": "https://pypi.org/project/pyproject-fmt",
    "license": "MIT",
+   "license_family": "MIT",
    "license_file": "LICENSE.txt",
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "entry_points": [
-    "pyproject-fmt = pyproject_fmt.__main__:runner"
-   ],
    "number": "0",
    "script": [
-    "PYTHON -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
+    "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
    ]
   },
@@ -537,51 +885,94 @@
     "bollwyvl"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "pyproject-fmt",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "rust_compiler_stub",
+      "c_stdlib_stub",
+      "cargo-bundle-licenses",
+      "python",
+      "cross-python_linux-64",
+      "maturin >=1.7.1"
+     ],
+     "host": [
+      "maturin >=1.7.1",
+      "pip",
+      "python",
+      "python-abi3"
+     ],
+     "run": [
+      "python",
+      "toml-fmt-common ==1.0.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "pyproject_fmt"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "pyproject-fmt/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest >=8.2",
+        "pytest-cov >=5",
+        "pytest-mock >=3.14",
+        "python !=3.9.*"
+       ]
+      },
+      "script": [
+       "pyproject-fmt --help",
+       "python run_test.py"
+      ]
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "pyproject-fmt",
-   "version": "2.5.0"
+   "version": "2.5.1"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
     "rust_compiler_stub",
     "c_stdlib_stub",
-    "cargo-bundle-licenses"
+    "cargo-bundle-licenses",
+    "python",
+    "cross-python_linux-64",
+    "maturin >=1.7.1"
    ],
    "host": [
     "maturin >=1.7.1",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ],
    "run": [
     "python",
     "toml-fmt-common ==1.0.1"
    ]
   },
-  "schema_version": 0,
+  "schema_version": 1,
   "source": {
-   "sha256": "d8d9064bf740cda9b30386fc40f34deb8014a9a59f10e89bfb991df4c9dcbf15",
-   "url": "https://pypi.io/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.0.tar.gz"
-  },
-  "test": {
-   "commands": [
-    "pip check",
-    "pyproject-fmt --help",
-    "cd pyproject-fmt",
-    "python -m pytest -vv --cov=pyproject_fmt --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail -k \"not classifier_gt_tox\" -k \"not (help_invocation_as_script or cli_pyproject_toml_not_file)\""
-   ],
-   "imports": [
-    "pyproject_fmt"
-   ],
-   "requires": [
-    "pip",
-    "pytest >=8.2",
-    "pytest-cov >=5",
-    "pytest-mock >=3.14"
-   ],
-   "source_files": [
-    "pyproject-fmt/tests"
-   ]
+   "sha256": "c7dfe1f62cc91fdf7ec73043b12c0df03a9a828ce09067fa4bb522fea5b24269",
+   "url": "https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-2.5.1.tar.gz"
   }
  },
  "win_64_requirements": {
@@ -591,6 +982,9 @@
     "c_compiler_stub",
     "c_stdlib_stub",
     "cargo-bundle-licenses",
+    "cross-python_linux-64",
+    "maturin",
+    "python",
     "rust_compiler_stub"
    ]
   },
@@ -599,7 +993,8 @@
    "elements": [
     "maturin",
     "pip",
-    "python"
+    "python",
+    "python-abi3"
    ]
   },
   "run": {
@@ -615,7 +1010,8 @@
     "pip",
     "pytest",
     "pytest-cov",
-    "pytest-mock"
+    "pytest-mock",
+    "python"
    ]
   }
  }
