@@ -37,35 +37,35 @@
   },
   "package": {
    "name": "hypofuzz",
-   "version": "25.2.2"
+   "version": "25.2.4"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "pip",
-    "setuptools"
+    "setuptools",
+    "wheel",
+    "nodejs"
    ],
    "run": [
     "python >=3.9",
     "black >=23.3.0",
     "coverage >=5.2.1",
-    "dash >=2.0.0",
-    "hypothesis >=6.124.9",
+    "hypothesis >=6.125.3",
     "libcst >=1.0.0",
-    "pandas >=1.0.0",
     "psutil >=3.0.0",
     "pytest >=6.0.1",
+    "starlette",
+    "trio",
+    "hypercorn",
     "click >=7.0",
-    "rich >=9.0.0",
-    "dash-core-components",
-    "dash-html-components",
-    "dash-table"
+    "rich >=9.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b550e87170107b1d89cdea6d6e33882b1c805307559dd664dfb503b4c2860f3d",
-   "url": "https://pypi.org/packages/source/h/hypofuzz/hypofuzz-25.2.2.tar.gz"
+   "sha256": "0976045c122b4bfbecd508924689dc82059acd8ce7a29902d3bdc468dec593d1",
+   "url": "https://pypi.org/packages/source/h/hypofuzz/hypofuzz-25.2.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -89,9 +89,11 @@
   "host": {
    "__set__": true,
    "elements": [
+    "nodejs",
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "wheel"
    ]
   },
   "run": {
@@ -100,17 +102,15 @@
     "black",
     "click",
     "coverage",
-    "dash",
-    "dash-core-components",
-    "dash-html-components",
-    "dash-table",
+    "hypercorn",
     "hypothesis",
     "libcst",
-    "pandas",
     "psutil",
     "pytest",
     "python",
-    "rich"
+    "rich",
+    "starlette",
+    "trio"
    ]
   },
   "test": {
@@ -142,35 +142,35 @@
   },
   "package": {
    "name": "hypofuzz",
-   "version": "25.2.2"
+   "version": "25.2.4"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "pip",
-    "setuptools"
+    "setuptools",
+    "wheel",
+    "nodejs"
    ],
    "run": [
     "python >=3.9",
     "black >=23.3.0",
     "coverage >=5.2.1",
-    "dash >=2.0.0",
-    "hypothesis >=6.124.9",
+    "hypothesis >=6.125.3",
     "libcst >=1.0.0",
-    "pandas >=1.0.0",
     "psutil >=3.0.0",
     "pytest >=6.0.1",
+    "starlette",
+    "trio",
+    "hypercorn",
     "click >=7.0",
-    "rich >=9.0.0",
-    "dash-core-components",
-    "dash-html-components",
-    "dash-table"
+    "rich >=9.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "b550e87170107b1d89cdea6d6e33882b1c805307559dd664dfb503b4c2860f3d",
-   "url": "https://pypi.org/packages/source/h/hypofuzz/hypofuzz-25.2.2.tar.gz"
+   "sha256": "0976045c122b4bfbecd508924689dc82059acd8ce7a29902d3bdc468dec593d1",
+   "url": "https://pypi.org/packages/source/h/hypofuzz/hypofuzz-25.2.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -200,26 +200,26 @@
  "pr_info": {
   "__lazy_json__": "pr_info/hypofuzz.json"
  },
- "raw_meta_yaml": "{% set name = \"hypofuzz\" %}\n{% set version = \"25.2.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypofuzz-{{ version }}.tar.gz\n  sha256: b550e87170107b1d89cdea6d6e33882b1c805307559dd664dfb503b4c2860f3d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - black >=23.3.0\n    - coverage >=5.2.1\n    - dash >=2.0.0\n    - hypothesis >=6.124.9\n    - libcst >=1.0.0\n    - pandas >=1.0.0\n    - psutil >=3.0.0\n    - pytest >=6.0.1\n\n    # From hypothesis[cli]\n    - click >=7.0\n    - rich >=9.0.0\n\n    # Pip check reports dash 2.15 requires the following\n    - dash-core-components\n    - dash-html-components\n    - dash-table\n\ntest:\n  imports:\n    - hypofuzz\n  commands:\n    - pip check\n    - hypothesis fuzz --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://hypofuzz.com/\n  dev_url: https://github.com/Zac-HD/hypofuzz\n  doc_url: https://hypofuzz.com/docs/\n  summary: Adaptive fuzzing for property-based tests\n  license: AGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"hypofuzz\" %}\n{% set version = \"25.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypofuzz-{{ version }}.tar.gz\n  sha256: 0976045c122b4bfbecd508924689dc82059acd8ce7a29902d3bdc468dec593d1\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - wheel\n    - nodejs\n  run:\n    - python >={{ python_min }}\n    - black >=23.3.0\n    - coverage >=5.2.1\n    - hypothesis >=6.125.3\n    - libcst >=1.0.0\n    - psutil >=3.0.0\n    - pytest >=6.0.1\n    - starlette\n    - trio\n    - hypercorn\n\n    # From hypothesis[cli]\n    - click >=7.0\n    - rich >=9.0.0\n\ntest:\n  imports:\n    - hypofuzz\n  commands:\n    - pip check\n    - hypothesis fuzz --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://hypofuzz.com/\n  dev_url: https://github.com/Zac-HD/hypofuzz\n  doc_url: https://hypofuzz.com/docs/\n  summary: Adaptive fuzzing for property-based tests\n  license: AGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
    "black",
    "click",
    "coverage",
-   "dash",
-   "dash-core-components",
-   "dash-html-components",
-   "dash-table",
+   "hypercorn",
    "hypothesis",
    "libcst",
-   "pandas",
+   "nodejs",
    "pip",
    "psutil",
    "pytest",
    "python",
    "rich",
-   "setuptools"
+   "setuptools",
+   "starlette",
+   "trio",
+   "wheel"
   ]
  },
  "requirements": {
@@ -230,9 +230,11 @@
   "host": {
    "__set__": true,
    "elements": [
+    "nodejs",
     "pip",
     "python",
-    "setuptools"
+    "setuptools",
+    "wheel"
    ]
   },
   "run": {
@@ -241,17 +243,15 @@
     "black",
     "click",
     "coverage",
-    "dash",
-    "dash-core-components",
-    "dash-html-components",
-    "dash-table",
+    "hypercorn",
     "hypothesis",
     "libcst",
-    "pandas",
     "psutil",
     "pytest",
     "python",
-    "rich"
+    "rich",
+    "starlette",
+    "trio"
    ]
   },
   "test": {
@@ -271,9 +271,11 @@
   "host": {
    "__set__": true,
    "elements": [
+    "nodejs",
     "pip",
     "python 3.9",
-    "setuptools"
+    "setuptools",
+    "wheel"
    ]
   },
   "run": {
@@ -282,17 +284,15 @@
     "black >=23.3.0",
     "click >=7.0",
     "coverage >=5.2.1",
-    "dash >=2.0.0",
-    "dash-core-components",
-    "dash-html-components",
-    "dash-table",
-    "hypothesis >=6.124.9",
+    "hypercorn",
+    "hypothesis >=6.125.3",
     "libcst >=1.0.0",
-    "pandas >=1.0.0",
     "psutil >=3.0.0",
     "pytest >=6.0.1",
     "python >=3.9",
-    "rich >=9.0.0"
+    "rich >=9.0.0",
+    "starlette",
+    "trio"
    ]
   },
   "test": {
@@ -303,8 +303,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/h/hypofuzz/hypofuzz-25.2.2.tar.gz",
- "version": "25.2.2",
+ "url": "https://pypi.org/packages/source/h/hypofuzz/hypofuzz-25.2.4.tar.gz",
+ "version": "25.2.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/hypofuzz.json"
  }
