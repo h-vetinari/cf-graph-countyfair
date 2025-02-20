@@ -27,7 +27,7 @@
    "summary": "Python implementation of the multistate Bennett acceptance ratio (MBAR) method."
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -54,7 +54,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -90,7 +89,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -126,7 +124,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -162,7 +159,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -198,7 +194,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -232,8 +227,14 @@
    "url": "https://github.com/choderalab/pymbar/archive/4.0.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pytest --pyargs pymbar"
+   ],
    "imports": [
     "pymbar"
+   ],
+   "requires": [
+    "pytest"
    ]
   }
  },
@@ -258,7 +259,6 @@
    "elements": [
     "jax",
     "numexpr",
-    "numpy",
     "pymbar-core",
     "python",
     "scipy"
@@ -266,7 +266,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pytest"
+   ]
   }
  },
  "meta_yaml": {
@@ -279,7 +281,7 @@
    "summary": "Python implementation of the multistate Bennett acceptance ratio (MBAR) method."
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -306,7 +308,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -342,7 +343,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -378,7 +378,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -414,7 +413,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -450,7 +448,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -486,7 +483,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -522,7 +518,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -558,7 +553,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -594,7 +588,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -630,7 +623,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -666,7 +658,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -702,7 +693,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -738,7 +728,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -774,7 +763,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -810,7 +798,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -846,7 +833,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -881,7 +867,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -916,7 +901,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -951,7 +935,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -986,7 +969,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1019,8 +1001,14 @@
    "url": "https://github.com/choderalab/pymbar/archive/4.0.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pytest --pyargs pymbar"
+   ],
    "imports": [
     "pymbar"
+   ],
+   "requires": [
+    "pytest"
    ]
   }
  },
@@ -1035,7 +1023,7 @@
    "summary": "Python implementation of the multistate Bennett acceptance ratio (MBAR) method."
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -1062,7 +1050,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1098,7 +1085,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1134,7 +1120,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1170,7 +1155,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1206,7 +1190,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1240,8 +1223,14 @@
    "url": "https://github.com/choderalab/pymbar/archive/4.0.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pytest --pyargs pymbar"
+   ],
    "imports": [
     "pymbar"
+   ],
+   "requires": [
+    "pytest"
    ]
   }
  },
@@ -1266,7 +1255,6 @@
    "elements": [
     "jax",
     "numexpr",
-    "numpy",
     "pymbar-core",
     "python",
     "scipy"
@@ -1274,7 +1262,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pytest"
+   ]
   }
  },
  "osx_arm64_meta_yaml": {
@@ -1287,7 +1277,7 @@
    "summary": "Python implementation of the multistate Bennett acceptance ratio (MBAR) method."
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -1314,7 +1304,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1350,7 +1339,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1386,7 +1374,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1422,7 +1409,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1458,7 +1444,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1492,8 +1477,14 @@
    "url": "https://github.com/choderalab/pymbar/archive/4.0.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pytest --pyargs pymbar"
+   ],
    "imports": [
     "pymbar"
+   ],
+   "requires": [
+    "pytest"
    ]
   }
  },
@@ -1518,7 +1509,6 @@
    "elements": [
     "jax",
     "numexpr",
-    "numpy",
     "pymbar-core",
     "python",
     "scipy"
@@ -1526,7 +1516,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pytest"
+   ]
   }
  },
  "outputs_names": {
@@ -1546,7 +1538,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pymbar.json"
  },
- "raw_meta_yaml": "{% set name = \"pymbar\" %}\n{% set version = \"4.0.3\" %}\n{% set sha256 = \"810566a5b973284b5beb2d9dfece0ca321b4ceb91180c124aac8fd883ed5ee68\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/choderalab/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [python_impl == 'pypy'] \n  number: 2\n\ntest:\n  imports:\n    - pymbar\n\noutputs:\n  - name: {{ name }}-core\n    script: install.sh\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - numpy                                  # [build_platform != target_platform]\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n      host:\n        - python\n        - setuptools\n        - numpy\n      run:\n        - python\n        - {{ pin_compatible('numpy') }}\n        - scipy >=1.0.0\n        - numexpr\n\n  - name: {{ name }}\n    requirements:\n      host:\n        - python\n      run:\n        - {{ pin_subpackage('pymbar-core', exact=True) }}\n        - jax  # [unix]\n      run_constrained:\n        - jaxlib >=0.3\n\nabout:\n  home: http://github.com/choderalab/pymbar\n  dev_url: http://github.com/choderalab/pymbar\n  doc_url: http://pymbar.readthedocs.io/\n  license: MIT\n  license_file: LICENSE\n  summary: Python implementation of the multistate Bennett acceptance ratio (MBAR) method.\n\nextra:\n  recipe-maintainers:\n    - Lnaden\n    - jchodera\n    - mrshirts\n    - jaimergp\n    - mikemhenry\n    - ijpulidos\n",
+ "raw_meta_yaml": "{% set name = \"pymbar\" %}\n{% set version = \"4.0.3\" %}\n{% set sha256 = \"810566a5b973284b5beb2d9dfece0ca321b4ceb91180c124aac8fd883ed5ee68\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/choderalab/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [python_impl == 'pypy'] \n  number: 3\n\ntest:\n  imports:\n    - pymbar\n  requires:\n    - pytest\n  commands:\n    - pytest --pyargs pymbar\n\noutputs:\n  - name: {{ name }}-core\n    script: install.sh\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - numpy                                  # [build_platform != target_platform]\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n      host:\n        - python\n        - setuptools\n        - numpy\n      run:\n        - python\n        - scipy >=1.0.0\n        - numexpr\n\n  - name: {{ name }}\n    requirements:\n      host:\n        - python\n      run:\n        - {{ pin_subpackage('pymbar-core', exact=True) }}\n        - jax  # [unix]\n      run_constrained:\n        - jaxlib >=0.3\n\nabout:\n  home: http://github.com/choderalab/pymbar\n  dev_url: http://github.com/choderalab/pymbar\n  doc_url: http://pymbar.readthedocs.io/\n  license: MIT\n  license_file: LICENSE\n  summary: Python implementation of the multistate Bennett acceptance ratio (MBAR) method.\n\nextra:\n  recipe-maintainers:\n    - Lnaden\n    - jchodera\n    - mrshirts\n    - jaimergp\n    - mikemhenry\n    - ijpulidos\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -1586,7 +1578,6 @@
     "c_stdlib_stub",
     "jax",
     "numexpr",
-    "numpy",
     "pymbar-core",
     "python",
     "scipy"
@@ -1594,7 +1585,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pytest"
+   ]
   }
  },
  "strong_exports": false,
@@ -1619,7 +1612,6 @@
    "elements": [
     "jax",
     "numexpr",
-    "numpy",
     "pymbar-core",
     "python",
     "scipy >=1.0.0"
@@ -1627,7 +1619,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pytest"
+   ]
   }
  },
  "url": "https://github.com/choderalab/pymbar/archive/4.0.3.tar.gz",
@@ -1645,7 +1639,7 @@
    "summary": "Python implementation of the multistate Bennett acceptance ratio (MBAR) method."
   },
   "build": {
-   "number": "2"
+   "number": "3"
   },
   "extra": {
    "recipe-maintainers": [
@@ -1672,7 +1666,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1707,7 +1700,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1742,7 +1734,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1777,7 +1768,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1812,7 +1802,6 @@
      ],
      "run": [
       "python",
-      "numpy",
       "scipy >=1.0.0",
       "numexpr"
      ]
@@ -1845,8 +1834,14 @@
    "url": "https://github.com/choderalab/pymbar/archive/4.0.3.tar.gz"
   },
   "test": {
+   "commands": [
+    "pytest --pyargs pymbar"
+   ],
    "imports": [
     "pymbar"
+   ],
+   "requires": [
+    "pytest"
    ]
   }
  },
@@ -1870,7 +1865,6 @@
    "__set__": true,
    "elements": [
     "numexpr",
-    "numpy",
     "pymbar-core",
     "python",
     "scipy"
@@ -1878,7 +1872,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pytest"
+   ]
   }
  }
 }
