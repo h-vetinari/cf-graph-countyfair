@@ -22,7 +22,7 @@
    "summary": "Tools for finite element computations"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -60,7 +60,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -70,7 +70,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -82,7 +82,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -98,7 +98,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -174,7 +174,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -183,7 +182,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -223,7 +227,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -233,7 +237,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -245,7 +249,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -261,7 +265,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -337,7 +341,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -346,7 +349,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -386,7 +394,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -396,7 +404,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -408,7 +416,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -424,7 +432,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -500,7 +508,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -509,7 +516,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -549,7 +561,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -559,7 +571,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -571,7 +583,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -587,7 +599,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -663,7 +675,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -672,7 +683,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -715,7 +731,7 @@
     "libboost-headers",
     "libgomp",
     "libscotch",
-    "matplotlib",
+    "matplotlib-base",
     "meshio",
     "mkl-devel",
     "mmgsuite",
@@ -741,6 +757,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "cmake",
     "coverage",
     "cvxpy",
     "cxx_compiler_stub",
@@ -760,7 +777,6 @@
     "networkx",
     "numpy",
     "psutil",
-    "pycgns",
     "pycgns-core",
     "pytest",
     "python",
@@ -778,7 +794,7 @@
    "elements": [
     "cvxpy",
     "h5py",
-    "matplotlib",
+    "matplotlib-base",
     "pycgns-core",
     "scipy"
    ]
@@ -793,7 +809,7 @@
    "summary": "Tools for finite element computations"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -831,7 +847,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -841,7 +857,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -853,7 +869,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -869,7 +885,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -945,7 +961,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -954,7 +969,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -994,7 +1014,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -1004,7 +1024,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -1016,7 +1036,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -1032,7 +1052,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -1108,7 +1128,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -1117,7 +1136,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -1157,7 +1181,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -1167,7 +1191,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -1179,7 +1203,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -1195,7 +1219,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -1271,7 +1295,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -1280,7 +1303,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -1320,7 +1348,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -1330,7 +1358,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -1342,7 +1370,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -1358,7 +1386,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -1434,7 +1462,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -1443,7 +1470,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -1483,7 +1515,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -1493,7 +1525,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -1505,7 +1537,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -1521,7 +1553,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -1597,7 +1629,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -1606,7 +1637,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -1646,7 +1682,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -1656,7 +1692,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -1668,7 +1704,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -1684,7 +1720,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -1760,7 +1796,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -1769,7 +1804,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -1809,7 +1849,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -1819,7 +1859,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -1831,7 +1871,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -1847,7 +1887,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -1923,7 +1963,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -1932,7 +1971,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -1972,7 +2016,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -1982,7 +2026,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -1994,7 +2038,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -2010,7 +2054,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -2086,7 +2130,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -2095,7 +2138,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -2134,7 +2182,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "zlib",
       "scipy >=1.12,<1.15",
@@ -2143,7 +2191,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -2156,7 +2204,7 @@
       "tbb",
       "dill",
       "pywin32",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -2172,7 +2220,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -2248,7 +2296,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -2258,7 +2305,12 @@
       "matplotlib-base",
       "coverage",
       "pywin32",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -2297,7 +2349,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "zlib",
       "scipy >=1.12,<1.15",
@@ -2306,7 +2358,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -2319,7 +2371,7 @@
       "tbb",
       "dill",
       "pywin32",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -2335,7 +2387,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -2411,7 +2463,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -2421,7 +2472,12 @@
       "matplotlib-base",
       "coverage",
       "pywin32",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -2460,7 +2516,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "zlib",
       "scipy >=1.12,<1.15",
@@ -2469,7 +2525,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -2482,7 +2538,7 @@
       "tbb",
       "dill",
       "pywin32",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -2498,7 +2554,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -2574,7 +2630,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -2584,7 +2639,12 @@
       "matplotlib-base",
       "coverage",
       "pywin32",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -2623,7 +2683,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "zlib",
       "scipy >=1.12,<1.15",
@@ -2632,7 +2692,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -2645,7 +2705,7 @@
       "tbb",
       "dill",
       "pywin32",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -2661,7 +2721,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -2737,7 +2797,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -2747,7 +2806,12 @@
       "matplotlib-base",
       "coverage",
       "pywin32",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -2778,7 +2842,7 @@
    "summary": "Tools for finite element computations"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -2816,7 +2880,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -2826,7 +2890,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -2838,7 +2902,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -2854,7 +2918,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -2930,7 +2994,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -2939,7 +3002,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -2979,7 +3047,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -2989,7 +3057,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -3001,7 +3069,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -3017,7 +3085,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -3093,7 +3161,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -3102,7 +3169,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -3142,7 +3214,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -3152,7 +3224,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -3164,7 +3236,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -3180,7 +3252,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -3256,7 +3328,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -3265,7 +3336,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -3305,7 +3381,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "libscotch",
       "zlib",
@@ -3315,7 +3391,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -3327,7 +3403,7 @@
       "networkx >=3.0",
       "tbb",
       "dill",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -3343,7 +3419,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -3419,7 +3495,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -3428,7 +3503,12 @@
       "tbb-devel",
       "matplotlib-base",
       "coverage",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -3471,7 +3551,7 @@
     "libboost-headers",
     "libscotch",
     "llvm-openmp",
-    "matplotlib",
+    "matplotlib-base",
     "meshio",
     "mkl-devel",
     "mmgsuite",
@@ -3497,6 +3577,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "cmake",
     "coverage",
     "cvxpy",
     "cxx_compiler_stub",
@@ -3516,7 +3597,6 @@
     "networkx",
     "numpy",
     "psutil",
-    "pycgns",
     "pycgns-core",
     "pytest",
     "python",
@@ -3534,7 +3614,7 @@
    "elements": [
     "cvxpy",
     "h5py",
-    "matplotlib",
+    "matplotlib-base",
     "pycgns-core",
     "scipy"
    ]
@@ -3558,7 +3638,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/muscat-split.json"
  },
- "raw_meta_yaml": "{% set version = \"2.4.0\" %}\n\npackage:\n  name: muscat-split\n  version: {{ version }}\n\n\nsource:\n  url: https://gitlab.com/drti/muscat/-/archive/{{ version }}/muscat-{{ version }}.tar.bz2\n  sha256: 201258c5568bcac832518633b46dc77ec6ecee65bf2376a5bce2d6f4328293b6\n\nbuild:\n  number: 1\n\n\noutputs:\n  - name: muscat-core\n    version: {{ version }}\n    script: build_core.sh  # [not win]\n    script: bld_core.bat  # [win]\n    build:\n      entry_points:\n        - \"MeshFileConvert = Muscat.IO.MeshFileConverter:Main\"\n      skip_compile_pyc:\n        \"MuscatParaViewPlugin.py\"\n\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - cython                                 # [build_platform != target_platform]\n        - ninja                                  # [build_platform != target_platform]\n        - {{ compiler('cxx') }}\n        - {{ stdlib('c') }}\n        - cmake\n      host:\n        - ninja\n        - python\n        - numpy\n        - cython\n        - sympy\n        - eigency =3.4.0.2\n        - mkl-devel\n        - setuptools-scm\n        - eigen\n        - libboost-headers\n        - llvm-openmp  # [osx]\n        - libgomp      # [linux]\n        - pip\n        - tbb\n        - tbb-devel\n        - setuptools\n        - kokkos =4.4.01\n        - mmgsuite\n        - libscotch          # [not win]\n        #so cmake can be tested before install\n        - zlib\n        - scipy >=1.12,<1.15\n        - dill\n        - pywin32\n        - networkx >=3.0\n        - cvxpy\n        - h5py\n        - matplotlib\n        - pycgns-core  # [py > 39]\n        - pycgns  # [py == 39]\n      run:\n        - python\n        - {{ pin_compatible('numpy') }}\n        - scipy >=1.12,<1.15\n        - sympy\n        - eigency =3.4.0.2\n        - networkx >=3.0\n        - tbb\n        - dill\n        - pywin32  # [win]\n        - kokkos =4.4.01\n        - mmgsuite\n    test:\n      requires:\n        - scipy <1.15\n        - cvxpy\n        - h5py\n        - matplotlib\n        - pycgns-core  # [py > 39]\n        - pycgns  # [py == 39]\n      imports:\n        - Muscat\n      commands:\n        - python -u -m Muscat.Helpers.Check -k Which  # [osx]\n        - python -u -m Muscat.Helpers.Check  # [linux]\n        - python -u -m Muscat.Helpers.Check -k AnisotropicMetricComputation   # [win]\n\n  - name: \"muscat-extensions\"\n    version: {{ version }}\n    requirements:\n      host:\n        - python\n        - numpy\n        - vtk\n        - psutil\n        - h5py\n        - meshio\n        - pyvista\n        - networkx >=3.0\n      run:\n        - python\n        - {{ pin_compatible('numpy') }}\n        - vtk\n        - psutil\n        - h5py\n        - meshio\n        - pyvista\n        - networkx >=3.0\n        - mmgsuite\n        - cvxpy\n        - pycgns-core  # [py > 39]\n        - pycgns  # [py == 39]\n    test:\n      imports:\n        - psutil\n        - h5py\n        - meshio\n        - networkx\n\n  - name: \"muscat\"\n    version: {{ version }}\n    requirements:\n      run:\n        - {{ pin_subpackage('muscat-core', max_pin='x.x.x') }}\n        - {{ pin_subpackage('muscat-extensions', max_pin='x.x.x') }}\n    test:\n      imports:\n        - Muscat\n      commands:\n        - python -u -m Muscat.Helpers.Check -k Which  # [osx]\n        - python -u -m Muscat.Helpers.Check  # [linux]\n        - python -u -m Muscat.Helpers.Check -k AnisotropicMetricComputation   # [win]\n\n  - name: \"muscat-devenv\"\n    version: {{ version }}\n    requirements:\n      run:\n        - {{ compiler('cxx') }}\n        - python\n        - numpy\n        - sympy\n        - cython\n        - eigency =3.4.0.2\n        - mkl-devel\n        - setuptools-scm\n        - eigen\n        - scipy >=1.9,<1.15\n        - h5py\n        - pycgns\n        - networkx >=3.0\n        - libboost-headers\n        - pytest\n        - vtk\n        - tbb\n        - tbb-devel\n        - matplotlib-base\n        - coverage\n        - pywin32  # [win]\n        - dill\n    test:\n      imports:\n        - numpy\n\nabout:\n  home: https://gitlab.com/drti/muscat\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  license_family: BSD\n  summary: Tools for finite element computations\n\nextra:\n  recipe-maintainers:\n    - fbordeu\n",
+ "raw_meta_yaml": "{% set version = \"2.4.0\" %}\n\npackage:\n  name: muscat-split\n  version: {{ version }}\n\n\nsource:\n  url: https://gitlab.com/drti/muscat/-/archive/{{ version }}/muscat-{{ version }}.tar.bz2\n  sha256: 201258c5568bcac832518633b46dc77ec6ecee65bf2376a5bce2d6f4328293b6\n\nbuild:\n  number: 2\n\n\noutputs:\n  - name: muscat-core\n    version: {{ version }}\n    script: build_core.sh  # [not win]\n    script: bld_core.bat  # [win]\n    build:\n      entry_points:\n        - \"MeshFileConvert = Muscat.IO.MeshFileConverter:Main\"\n      skip_compile_pyc:\n        \"MuscatParaViewPlugin.py\"\n\n    requirements:\n      build:\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - cython                                 # [build_platform != target_platform]\n        - ninja                                  # [build_platform != target_platform]\n        - {{ compiler('cxx') }}\n        - {{ stdlib('c') }}\n        - cmake\n      host:\n        - ninja\n        - python\n        - numpy\n        - cython\n        - sympy\n        - eigency =3.4.0.2\n        - mkl-devel\n        - setuptools-scm\n        - eigen\n        - libboost-headers\n        - llvm-openmp  # [osx]\n        - libgomp      # [linux]\n        - pip\n        - tbb\n        - tbb-devel\n        - setuptools\n        - kokkos =4.4.01=h*\n        - mmgsuite\n        - libscotch          # [not win]\n        #so cmake can be tested before install\n        - zlib\n        - scipy >=1.12,<1.15\n        - dill\n        - pywin32\n        - networkx >=3.0\n        - cvxpy\n        - h5py\n        - matplotlib-base\n        - pycgns-core  # [py > 39]\n        - pycgns  # [py == 39]\n      run:\n        - python\n        - {{ pin_compatible('numpy') }}\n        - scipy >=1.12,<1.15\n        - sympy\n        - eigency =3.4.0.2\n        - networkx >=3.0\n        - tbb\n        - dill\n        - pywin32  # [win]\n        - kokkos =4.4.01=h*\n        - mmgsuite\n    test:\n      requires:\n        - scipy <1.15\n        - cvxpy\n        - h5py\n        - matplotlib-base\n        - pycgns-core  # [py > 39]\n        - pycgns  # [py == 39]\n      imports:\n        - Muscat\n      commands:\n        - python -u -m Muscat.Helpers.Check -k Which  # [osx]\n        - python -u -m Muscat.Helpers.Check  # [linux]\n        - python -u -m Muscat.Helpers.Check -k AnisotropicMetricComputation   # [win]\n\n  - name: \"muscat-extensions\"\n    version: {{ version }}\n    requirements:\n      host:\n        - python\n        - numpy\n        - vtk\n        - psutil\n        - h5py\n        - meshio\n        - pyvista\n        - networkx >=3.0\n      run:\n        - python\n        - {{ pin_compatible('numpy') }}\n        - vtk\n        - psutil\n        - h5py\n        - meshio\n        - pyvista\n        - networkx >=3.0\n        - mmgsuite\n        - cvxpy\n        - pycgns-core  # [py > 39]\n        - pycgns  # [py == 39]\n    test:\n      imports:\n        - psutil\n        - h5py\n        - meshio\n        - networkx\n\n  - name: \"muscat\"\n    version: {{ version }}\n    requirements:\n      run:\n        - {{ pin_subpackage('muscat-core', max_pin='x.x.x') }}\n        - {{ pin_subpackage('muscat-extensions', max_pin='x.x.x') }}\n    test:\n      imports:\n        - Muscat\n      commands:\n        - python -u -m Muscat.Helpers.Check -k Which  # [osx]\n        - python -u -m Muscat.Helpers.Check  # [linux]\n        - python -u -m Muscat.Helpers.Check -k AnisotropicMetricComputation   # [win]\n\n  - name: \"muscat-devenv\"\n    version: {{ version }}\n    requirements:\n      run:\n        - {{ compiler('cxx') }}\n        - python\n        - numpy\n        - sympy\n        - cython\n        - eigency =3.4.0.2\n        - mkl-devel\n        - setuptools-scm\n        - eigen\n        - scipy >=1.9,<1.15\n        - h5py\n        - networkx >=3.0\n        - libboost-headers\n        - pytest\n        - vtk\n        - tbb\n        - tbb-devel\n        - matplotlib-base\n        - coverage\n        - pywin32  # [win]\n        - dill\n        - cmake\n        - kokkos\n        - mmgsuite\n        - pycgns-core  # [py > 39]\n        - pycgns  # [py == 39]\n        - cvxpy\n    test:\n      imports:\n        - numpy\n\nabout:\n  home: https://gitlab.com/drti/muscat\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  license_family: BSD\n  summary: Tools for finite element computations\n\nextra:\n  recipe-maintainers:\n    - fbordeu\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -3577,7 +3657,6 @@
    "libgomp",
    "libscotch",
    "llvm-openmp",
-   "matplotlib",
    "matplotlib-base",
    "meshio",
    "mkl-devel",
@@ -3589,7 +3668,6 @@
    "numpy",
    "pip",
    "psutil",
-   "pycgns",
    "pycgns-core",
    "pytest",
    "python",
@@ -3631,7 +3709,7 @@
     "libgomp",
     "libscotch",
     "llvm-openmp",
-    "matplotlib",
+    "matplotlib-base",
     "meshio",
     "mkl-devel",
     "mmgsuite",
@@ -3659,6 +3737,7 @@
    "__set__": true,
    "elements": [
     "c_stdlib_stub",
+    "cmake",
     "coverage",
     "ctng-compilers",
     "cvxpy",
@@ -3680,7 +3759,6 @@
     "numpy",
     "openmp",
     "psutil",
-    "pycgns",
     "pycgns-core",
     "pytest",
     "python",
@@ -3699,7 +3777,7 @@
    "elements": [
     "cvxpy",
     "h5py",
-    "matplotlib",
+    "matplotlib-base",
     "pycgns-core",
     "scipy"
    ]
@@ -3724,12 +3802,12 @@
     "eigen",
     "eigency =3.4.0.2",
     "h5py",
-    "kokkos =4.4.01",
+    "kokkos =4.4.01=h*",
     "libboost-headers",
     "libgomp",
     "libscotch",
     "llvm-openmp",
-    "matplotlib",
+    "matplotlib-base",
     "meshio",
     "mkl-devel",
     "mmgsuite",
@@ -3755,6 +3833,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "cmake",
     "coverage",
     "cvxpy",
     "cxx_compiler_stub",
@@ -3763,7 +3842,8 @@
     "eigen",
     "eigency =3.4.0.2",
     "h5py",
-    "kokkos =4.4.01",
+    "kokkos",
+    "kokkos =4.4.01=h*",
     "libboost-headers",
     "matplotlib-base",
     "meshio",
@@ -3774,7 +3854,6 @@
     "networkx >=3.0",
     "numpy",
     "psutil",
-    "pycgns",
     "pycgns-core",
     "pytest",
     "python",
@@ -3794,7 +3873,7 @@
    "elements": [
     "cvxpy",
     "h5py",
-    "matplotlib",
+    "matplotlib-base",
     "pycgns-core",
     "scipy <1.15"
    ]
@@ -3814,7 +3893,7 @@
    "summary": "Tools for finite element computations"
   },
   "build": {
-   "number": "1"
+   "number": "2"
   },
   "extra": {
    "recipe-maintainers": [
@@ -3851,7 +3930,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "zlib",
       "scipy >=1.12,<1.15",
@@ -3860,7 +3939,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -3873,7 +3952,7 @@
       "tbb",
       "dill",
       "pywin32",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -3889,7 +3968,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -3965,7 +4044,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -3975,7 +4053,12 @@
       "matplotlib-base",
       "coverage",
       "pywin32",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -4014,7 +4097,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "zlib",
       "scipy >=1.12,<1.15",
@@ -4023,7 +4106,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -4036,7 +4119,7 @@
       "tbb",
       "dill",
       "pywin32",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -4052,7 +4135,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -4128,7 +4211,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -4138,7 +4220,12 @@
       "matplotlib-base",
       "coverage",
       "pywin32",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -4177,7 +4264,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "zlib",
       "scipy >=1.12,<1.15",
@@ -4186,7 +4273,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -4199,7 +4286,7 @@
       "tbb",
       "dill",
       "pywin32",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -4215,7 +4302,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -4291,7 +4378,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -4301,7 +4387,12 @@
       "matplotlib-base",
       "coverage",
       "pywin32",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -4340,7 +4431,7 @@
       "tbb",
       "tbb-devel",
       "setuptools",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite",
       "zlib",
       "scipy >=1.12,<1.15",
@@ -4349,7 +4440,7 @@
       "networkx >=3.0",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ],
      "run": [
@@ -4362,7 +4453,7 @@
       "tbb",
       "dill",
       "pywin32",
-      "kokkos =4.4.01",
+      "kokkos =4.4.01=h*",
       "mmgsuite"
      ]
     },
@@ -4378,7 +4469,7 @@
       "scipy <1.15",
       "cvxpy",
       "h5py",
-      "matplotlib",
+      "matplotlib-base",
       "pycgns-core"
      ]
     },
@@ -4454,7 +4545,6 @@
       "eigen",
       "scipy >=1.9,<1.15",
       "h5py",
-      "pycgns",
       "networkx >=3.0",
       "libboost-headers",
       "pytest",
@@ -4464,7 +4554,12 @@
       "matplotlib-base",
       "coverage",
       "pywin32",
-      "dill"
+      "dill",
+      "cmake",
+      "kokkos",
+      "mmgsuite",
+      "pycgns-core",
+      "cvxpy"
      ]
     },
     "test": {
@@ -4505,7 +4600,7 @@
     "h5py",
     "kokkos",
     "libboost-headers",
-    "matplotlib",
+    "matplotlib-base",
     "meshio",
     "mkl-devel",
     "mmgsuite",
@@ -4531,6 +4626,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "cmake",
     "coverage",
     "cvxpy",
     "cxx_compiler_stub",
@@ -4550,7 +4646,6 @@
     "networkx",
     "numpy",
     "psutil",
-    "pycgns",
     "pycgns-core",
     "pytest",
     "python",
@@ -4569,7 +4664,7 @@
    "elements": [
     "cvxpy",
     "h5py",
-    "matplotlib",
+    "matplotlib-base",
     "pycgns-core",
     "scipy"
    ]
