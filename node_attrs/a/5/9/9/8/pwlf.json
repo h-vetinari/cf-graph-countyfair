@@ -25,6 +25,7 @@
    "summary": "fit piecewise linear data for a specified number of line segments "
   },
   "build": {
+   "noarch": "python",
    "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
@@ -36,16 +37,16 @@
   },
   "package": {
    "name": "pwlf",
-   "version": "2.4.0"
+   "version": "2.5.0"
   },
   "requirements": {
    "host": [
-    "python",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python",
+    "python >=3.9",
     "pydoe >=0.3.8",
     "numpy >=1.14.0",
     "scipy >=1.2.0"
@@ -53,12 +54,15 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "66850dd043e083f37e4b78dd0049d2920c0a40bfb97d9ec1522949dfa955ed2c",
-   "url": "https://pypi.org/packages/source/p/pwlf/pwlf-2.4.0.tar.gz"
+   "sha256": "e38948e959c6fdad8c0e22cda55fce09c82c0105ff1539d98aa1a136920e8163",
+   "url": "https://pypi.org/packages/source/p/pwlf/pwlf-2.5.0.tar.gz"
   },
   "test": {
    "imports": [
     "pwlf"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
@@ -86,7 +90,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "meta_yaml": {
@@ -101,6 +107,7 @@
    "summary": "fit piecewise linear data for a specified number of line segments "
   },
   "build": {
+   "noarch": "python",
    "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
@@ -112,16 +119,16 @@
   },
   "package": {
    "name": "pwlf",
-   "version": "2.4.0"
+   "version": "2.5.0"
   },
   "requirements": {
    "host": [
-    "python",
+    "python 3.9",
     "pip",
     "setuptools"
    ],
    "run": [
-    "python",
+    "python >=3.9",
     "pydoe >=0.3.8",
     "numpy >=1.14.0",
     "scipy >=1.2.0"
@@ -129,92 +136,19 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "66850dd043e083f37e4b78dd0049d2920c0a40bfb97d9ec1522949dfa955ed2c",
-   "url": "https://pypi.org/packages/source/p/pwlf/pwlf-2.4.0.tar.gz"
+   "sha256": "e38948e959c6fdad8c0e22cda55fce09c82c0105ff1539d98aa1a136920e8163",
+   "url": "https://pypi.org/packages/source/p/pwlf/pwlf-2.5.0.tar.gz"
   },
   "test": {
    "imports": [
     "pwlf"
+   ],
+   "requires": [
+    "python 3.9"
    ]
   }
  },
  "name": "pwlf",
- "osx_64_meta_yaml": {
-  "about": {
-   "description": "A library for fitting continuous piecewise linear functions to data.\nJust specify the number of line segments you desire and provide the data.\n",
-   "dev_url": "https://github.com/cjekel/piecewise_linear_fit_py",
-   "doc_url": "https://jekel.me/piecewise_linear_fit_py/",
-   "home": "https://github.com/cjekel/piecewise_linear_fit_py",
-   "license": "MIT",
-   "license_family": "MIT",
-   "license_file": "LICENSE",
-   "summary": "fit piecewise linear data for a specified number of line segments "
-  },
-  "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv"
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "cjekel",
-    "h-vetinari"
-   ]
-  },
-  "package": {
-   "name": "pwlf",
-   "version": "2.4.0"
-  },
-  "requirements": {
-   "host": [
-    "python",
-    "pip",
-    "setuptools"
-   ],
-   "run": [
-    "python",
-    "pydoe >=0.3.8",
-    "numpy >=1.14.0",
-    "scipy >=1.2.0"
-   ]
-  },
-  "schema_version": 0,
-  "source": {
-   "sha256": "66850dd043e083f37e4b78dd0049d2920c0a40bfb97d9ec1522949dfa955ed2c",
-   "url": "https://pypi.org/packages/source/p/pwlf/pwlf-2.4.0.tar.gz"
-  },
-  "test": {
-   "imports": [
-    "pwlf"
-   ]
-  }
- },
- "osx_64_requirements": {
-  "build": {
-   "__set__": true,
-   "elements": []
-  },
-  "host": {
-   "__set__": true,
-   "elements": [
-    "pip",
-    "python",
-    "setuptools"
-   ]
-  },
-  "run": {
-   "__set__": true,
-   "elements": [
-    "numpy",
-    "pydoe",
-    "python",
-    "scipy"
-   ]
-  },
-  "test": {
-   "__set__": true,
-   "elements": []
-  }
- },
  "outputs_names": {
   "__set__": true,
   "elements": [
@@ -223,14 +157,12 @@
  },
  "parsing_error": false,
  "platforms": [
-  "linux_64",
-  "osx_64",
-  "win_64"
+  "linux_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/pwlf.json"
  },
- "raw_meta_yaml": "{% set version = \"2.4.0\" %}\n\npackage:\n  # noarch can be enabled as soon as importlib_metada is not necessary anymore\n  # noarch: python\n  name: pwlf\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/pwlf/pwlf-{{ version }}.tar.gz\n  sha256: 66850dd043e083f37e4b78dd0049d2920c0a40bfb97d9ec1522949dfa955ed2c\n\nbuild:\n\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - pydoe >=0.3.8\n    - numpy >=1.14.0\n    - scipy >=1.2.0\n    - importlib-metadata  # [py<38]\n\ntest:\n  imports:\n    - pwlf\n\nabout:\n  home: https://github.com/cjekel/piecewise_linear_fit_py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'fit piecewise linear data for a specified number of line segments '\n\n  description: |\n    A library for fitting continuous piecewise linear functions to data.\n    Just specify the number of line segments you desire and provide the data.\n  doc_url: https://jekel.me/piecewise_linear_fit_py/\n  dev_url: https://github.com/cjekel/piecewise_linear_fit_py\n\nextra:\n  recipe-maintainers:\n    - cjekel\n    - h-vetinari\n",
+ "raw_meta_yaml": "{% set version = \"2.5.0\" %}\n\npackage:\n  name: pwlf\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/pwlf/pwlf-{{ version }}.tar.gz\n  sha256: e38948e959c6fdad8c0e22cda55fce09c82c0105ff1539d98aa1a136920e8163\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - pydoe >=0.3.8\n    - numpy >=1.14.0\n    - scipy >=1.2.0\n\ntest:\n  requires:\n    - python {{ python_min }}\n  imports:\n    - pwlf\n\nabout:\n  home: https://github.com/cjekel/piecewise_linear_fit_py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'fit piecewise linear data for a specified number of line segments '\n\n  description: |\n    A library for fitting continuous piecewise linear functions to data.\n    Just specify the number of line segments you desire and provide the data.\n  doc_url: https://jekel.me/piecewise_linear_fit_py/\n  dev_url: https://github.com/cjekel/piecewise_linear_fit_py\n\nextra:\n  recipe-maintainers:\n    - cjekel\n    - h-vetinari\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -266,7 +198,9 @@
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -279,7 +213,7 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python",
+    "python 3.9",
     "setuptools"
    ]
   },
@@ -288,94 +222,20 @@
    "elements": [
     "numpy >=1.14.0",
     "pydoe >=0.3.8",
-    "python",
+    "python >=3.9",
     "scipy >=1.2.0"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pwlf/pwlf-2.4.0.tar.gz",
- "version": "2.4.0",
+ "url": "https://pypi.org/packages/source/p/pwlf/pwlf-2.5.0.tar.gz",
+ "version": "2.5.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pwlf.json"
- },
- "win_64_meta_yaml": {
-  "about": {
-   "description": "A library for fitting continuous piecewise linear functions to data.\nJust specify the number of line segments you desire and provide the data.\n",
-   "dev_url": "https://github.com/cjekel/piecewise_linear_fit_py",
-   "doc_url": "https://jekel.me/piecewise_linear_fit_py/",
-   "home": "https://github.com/cjekel/piecewise_linear_fit_py",
-   "license": "MIT",
-   "license_family": "MIT",
-   "license_file": "LICENSE",
-   "summary": "fit piecewise linear data for a specified number of line segments "
-  },
-  "build": {
-   "number": "0",
-   "script": "PYTHON -m pip install . -vv"
-  },
-  "extra": {
-   "recipe-maintainers": [
-    "cjekel",
-    "h-vetinari"
-   ]
-  },
-  "package": {
-   "name": "pwlf",
-   "version": "2.4.0"
-  },
-  "requirements": {
-   "host": [
-    "python",
-    "pip",
-    "setuptools"
-   ],
-   "run": [
-    "python",
-    "pydoe >=0.3.8",
-    "numpy >=1.14.0",
-    "scipy >=1.2.0"
-   ]
-  },
-  "schema_version": 0,
-  "source": {
-   "sha256": "66850dd043e083f37e4b78dd0049d2920c0a40bfb97d9ec1522949dfa955ed2c",
-   "url": "https://pypi.org/packages/source/p/pwlf/pwlf-2.4.0.tar.gz"
-  },
-  "test": {
-   "imports": [
-    "pwlf"
-   ]
-  }
- },
- "win_64_requirements": {
-  "build": {
-   "__set__": true,
-   "elements": []
-  },
-  "host": {
-   "__set__": true,
-   "elements": [
-    "pip",
-    "python",
-    "setuptools"
-   ]
-  },
-  "run": {
-   "__set__": true,
-   "elements": [
-    "numpy",
-    "pydoe",
-    "python",
-    "scipy"
-   ]
-  },
-  "test": {
-   "__set__": true,
-   "elements": []
-  }
  }
 }
