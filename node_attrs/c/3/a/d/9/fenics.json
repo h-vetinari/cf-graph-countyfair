@@ -47,7 +47,7 @@
     "python",
     "mpi"
    ],
-   "number": "54"
+   "number": "55"
   },
   "extra": {
    "feedstock-name": "fenics",
@@ -172,9 +172,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -320,9 +322,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -468,9 +472,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -616,9 +622,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -764,9 +772,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -912,9 +922,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -1060,9 +1072,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -1208,9 +1222,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -1261,7 +1277,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -1275,7 +1292,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -1289,7 +1307,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -1303,7 +1322,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -1317,7 +1337,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -1331,7 +1352,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -1345,7 +1367,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -1359,7 +1382,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -1444,6 +1468,7 @@
     "decorator",
     "git",
     "nose",
+    "pip",
     "pytest"
    ]
   }
@@ -1467,7 +1492,7 @@
     "python",
     "mpi"
    ],
-   "number": "54"
+   "number": "55"
   },
   "extra": {
    "feedstock-name": "fenics",
@@ -1592,9 +1617,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -1740,9 +1767,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -1888,9 +1917,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -2036,9 +2067,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -2184,9 +2217,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -2332,9 +2367,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -2480,9 +2517,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -2628,9 +2667,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -2681,7 +2722,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -2695,7 +2737,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -2709,7 +2752,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -2723,7 +2767,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -2737,7 +2782,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -2751,7 +2797,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -2765,7 +2812,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -2779,7 +2827,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -2864,6 +2913,7 @@
     "decorator",
     "git",
     "nose",
+    "pip",
     "pytest"
    ]
   }
@@ -2887,7 +2937,7 @@
     "python",
     "mpi"
    ],
-   "number": "54"
+   "number": "55"
   },
   "extra": {
    "feedstock-name": "fenics",
@@ -3012,9 +3062,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -3160,9 +3212,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -3308,9 +3362,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -3456,9 +3512,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -3604,9 +3662,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -3752,9 +3812,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -3900,9 +3962,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -4048,9 +4112,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -4101,7 +4167,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -4115,7 +4182,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -4129,7 +4197,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -4143,7 +4212,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -4157,7 +4227,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -4171,7 +4242,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -4185,7 +4257,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -4199,7 +4272,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -4284,6 +4358,7 @@
     "decorator",
     "git",
     "nose",
+    "pip",
     "pytest"
    ]
   }
@@ -4307,7 +4382,7 @@
     "python",
     "mpi"
    ],
-   "number": "54"
+   "number": "55"
   },
   "extra": {
    "feedstock-name": "fenics",
@@ -4432,9 +4507,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -4580,9 +4657,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -4728,9 +4807,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -4876,9 +4957,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -5024,9 +5107,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -5172,9 +5257,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -5320,9 +5407,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -5468,9 +5557,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -5616,9 +5707,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -5764,9 +5857,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -5912,9 +6007,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -6060,9 +6157,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -6208,9 +6307,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -6356,9 +6457,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -6504,9 +6607,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -6652,9 +6757,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -6800,9 +6907,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -6948,9 +7057,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -7096,9 +7207,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -7244,9 +7357,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -7392,9 +7507,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -7540,9 +7657,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -7688,9 +7807,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -7836,9 +7957,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -7983,9 +8106,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -8130,9 +8255,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -8277,9 +8404,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -8424,9 +8553,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -8570,9 +8701,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -8716,9 +8849,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -8862,9 +8997,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -9008,9 +9145,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -9061,7 +9200,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9075,7 +9215,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9089,7 +9230,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9103,7 +9245,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9117,7 +9260,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9131,7 +9275,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9145,7 +9290,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9159,7 +9305,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9173,7 +9320,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9187,7 +9335,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9201,7 +9350,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9215,7 +9365,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9229,7 +9380,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9243,7 +9395,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9257,7 +9410,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9271,7 +9425,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9285,7 +9440,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9299,7 +9455,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9313,7 +9470,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9327,7 +9485,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9341,7 +9500,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9355,7 +9515,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9369,7 +9530,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9383,7 +9545,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9396,7 +9559,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9409,7 +9573,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9422,7 +9587,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9435,7 +9601,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9448,7 +9615,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9461,7 +9629,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9474,7 +9643,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9487,7 +9657,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -9514,7 +9685,7 @@
     "python",
     "mpi"
    ],
-   "number": "54"
+   "number": "55"
   },
   "extra": {
    "feedstock-name": "fenics",
@@ -9638,9 +9809,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -9785,9 +9958,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -9932,9 +10107,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -10079,9 +10256,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -10131,7 +10310,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -10144,7 +10324,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -10157,7 +10338,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -10170,7 +10352,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -10253,6 +10436,7 @@
     "decorator",
     "git",
     "nose",
+    "pip",
     "pytest"
    ]
   }
@@ -10276,7 +10460,7 @@
     "python",
     "mpi"
    ],
-   "number": "54"
+   "number": "55"
   },
   "extra": {
    "feedstock-name": "fenics",
@@ -10399,9 +10583,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -10545,9 +10731,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -10691,9 +10879,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -10837,9 +11027,11 @@
     },
     "test": {
      "commands": [
+      "pip check",
       "bash ${RECIPE_DIR}/parent/test-dolfin.sh"
      ],
      "requires": [
+      "pip",
       "nose",
       "pytest",
       "git",
@@ -10889,7 +11081,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -10902,7 +11095,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -10915,7 +11109,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -10928,7 +11123,8 @@
      "fix-xdmf.patch",
      "python-cmake-args.patch",
      "boost-1.86.patch",
-     "numpy-2.0.patch"
+     "numpy-2.0.patch",
+     "unpin-pybind.patch"
     ],
     "sha256": "61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f",
     "url": "https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-2019.1.0.post0.tar.gz"
@@ -11010,6 +11206,7 @@
     "decorator",
     "git",
     "nose",
+    "pip",
     "pytest"
    ]
   }
@@ -11033,7 +11230,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/fenics.json"
  },
- "raw_meta_yaml": "{% set version = \"2019.1.0\" %}\n\n\npackage:\n  name: fenics-pkgs\n  version: {{ version }}\n\nsource:\n  - url: https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-{{ version }}.post0.tar.gz\n    sha256: 61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f\n    patches:\n      - boost.patch\n      - linuxboost.patch  # [linux]\n      - find-petsc-slepc.patch\n      - hdf5-1.12.patch\n      - fix-xdmf.patch\n      - python-cmake-args.patch\n      - boost-1.86.patch\n      - numpy-2.0.patch\n\nbuild:\n  number: 54\n  skip: true  # [win]\n  # this doesn't actually affect the build hashes\n  # so duplicate where the build hash should actually change\n  force_use_keys:\n    - python\n    - mpi\n\noutputs:\n  - name: fenics-libdolfin\n    build:\n      script: ${RECIPE_DIR}/build-libdolfin.sh\n      skip: true  # [win]\n      ignore_run_exports_from:\n        - python\n        - numpy\n        - cross-python_{{ target_platform }}\n      {% set mpi_prefix = \"mpi_\" + mpi %}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - {{ compiler('cxx') }}\n        - cmake >=3.9\n        - make\n        - pkg-config\n        - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]\n        # python needed for ufc discovery via ffc\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - numpy  # [build_platform != target_platform]\n        - fenics-ffc =={{ version }}  # [build_platform != target_platform]\n      host:\n        - libblas\n        - libcblas\n        - libboost-devel\n        - eigen\n        - parmetis\n        - libptscotch  # [target_platform != \"osx-arm64\"]\n        - suitesparse\n        - zlib\n        - {{ mpi }}\n        - petsc\n        - slepc\n        - python\n        - numpy\n        - fenics-ffc =={{ version }}\n        # need to list libnetcdf and netcdf-fortran twice to get version\n        # pinning from conda_build_config and build pinning from {{ mpi_prefix }}\n        - hdf5\n        - hdf5 * {{ mpi_prefix }}_*\n      run:\n        # only need library dependencies that _lack_ run_exports here\n        - eigen\n        - parmetis\n    test:\n      commands:\n        - test -f ${PREFIX}/lib/libdolfin${SHLIB_EXT}\n        - test -f ${PREFIX}/lib/libdolfin.{{ version }}${SHLIB_EXT}  # [osx]\n        - test -f ${PREFIX}/lib/libdolfin${SHLIB_EXT}.{{ version }}  # [linux]\n\n  - name: fenics-dolfin\n    build:\n      script: ${RECIPE_DIR}/build-dolfin.sh\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - {{ compiler('cxx') }}\n        - cmake >=3.9\n        - make\n        - pkg-config\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - pybind11                               # [build_platform != target_platform]\n        - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]\n      host:\n        - libblas\n        - libcblas\n        - libboost-devel\n        - python\n        - pip\n        - setuptools\n        - pkgconfig\n        - zlib\n        - {{ mpi }}\n        - mpi4py\n        - petsc4py\n        - slepc4py\n        - numpy\n        - pybind11\n        - six\n        - sympy >=1\n        - {{ pin_subpackage(\"fenics-libdolfin\", exact=True) }}\n        - fenics-dijitso =={{ version }}\n        - fenics-fiat =={{ version }}\n        - fenics-ufl =={{ version }}\n        - fenics-ffc =={{ version }}\n        # need to list libnetcdf and netcdf-fortran twice to get version\n        # pinning from conda_build_config and build pinning from {{ mpi_prefix }}\n        - hdf5\n        - hdf5 * {{ mpi_prefix }}_*\n      run:\n        - {{ compiler('cxx') }}\n        # gxx provides default 'c++' executable on linux\n        - gxx  # [linux]\n        - python\n        # dolfin depends on the boost headers for its own headers, see\n        # https://bitbucket.org/fenics-project/dolfin/src/master/dolfin/parameter/Parameters.h#lines-24\n        - libboost-headers\n        - setuptools\n        - zlib\n        - {{ pin_compatible('mpi4py', max_pin='x') }}\n        - petsc4py\n        - slepc4py\n        - pkgconfig  # Python pkgconfig package\n        - pybind11\n        - six\n        - sympy >=1\n        - {{ pin_subpackage(\"fenics-libdolfin\", exact=True) }}\n        - fenics-dijitso =={{ version }}\n        - fenics-fiat =={{ version }}\n        - fenics-ufl =={{ version }}\n        - fenics-ffc =={{ version }}\n\n    test:\n      commands:\n        - bash ${RECIPE_DIR}/parent/test-dolfin.sh\n      source_files:\n        - python/test\n\n      requires:\n        - nose\n        - pytest\n        - git\n        - decorator\n\n  - name: fenics\n    build:\n      skip: true  # [win]\n      script: \"echo 1\"\n      force_use_keys:\n        - mpi\n        - python\n    requirements:\n      build: []\n      host: []\n      run:\n        - python\n        - {{ pin_subpackage(\"fenics-libdolfin\", exact=True) }}\n        - {{ pin_subpackage(\"fenics-dolfin\", exact=True) }}\n    test:\n      commands:\n        - bash ${RECIPE_DIR}/parent/test-fenics.sh\n\nabout:\n  home: http://www.fenicsproject.org\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file:\n    - COPYING\n    - COPYING.LESSER\n  summary: 'FEniCS is a collection of free software for automated, efficient solution of differential equations'\n\n  description: |\n    FEniCS is a collection of free software for automated, efficient solution of differential equations\n    (<http://fenicsproject.org>). It provides C++ and Python interfaces, and creates effecient solvers via\n    expression of finite variational statements in a domain-specific language that are transformed and\n    just-in-time compiled into efficient implementations.\n  doc_url: https://fenics.readthedocs.io/\n  dev_url: https://bitbucket.org/fenics-project/\n\nextra:\n  feedstock-name: fenics\n  recipe-maintainers:\n    - garth-wells\n    - johannesring\n    - mikaem\n    - minrk\n    - jan-janssen\n    - sblauth\n",
+ "raw_meta_yaml": "{% set version = \"2019.1.0\" %}\n\n\npackage:\n  name: fenics-pkgs\n  version: {{ version }}\n\nsource:\n  - url: https://bitbucket.org/fenics-project/dolfin/downloads/dolfin-{{ version }}.post0.tar.gz\n    sha256: 61abdcdb13684ba2a3ba4afb7ea6c7907aa0896a46439d3af7e8848483d4392f\n    patches:\n      - boost.patch\n      - linuxboost.patch  # [linux]\n      - find-petsc-slepc.patch\n      - hdf5-1.12.patch\n      - fix-xdmf.patch\n      - python-cmake-args.patch\n      - boost-1.86.patch\n      - numpy-2.0.patch\n      - unpin-pybind.patch\n\nbuild:\n  number: 55\n  skip: true  # [win]\n  # this doesn't actually affect the build hashes\n  # so duplicate where the build hash should actually change\n  force_use_keys:\n    - python\n    - mpi\n\noutputs:\n  - name: fenics-libdolfin\n    build:\n      script: ${RECIPE_DIR}/build-libdolfin.sh\n      skip: true  # [win]\n      ignore_run_exports_from:\n        - python\n        - numpy\n        - cross-python_{{ target_platform }}\n      {% set mpi_prefix = \"mpi_\" + mpi %}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - {{ compiler('cxx') }}\n        - cmake >=3.9\n        - make\n        - pkg-config\n        - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]\n        # python needed for ufc discovery via ffc\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - numpy  # [build_platform != target_platform]\n        - fenics-ffc =={{ version }}  # [build_platform != target_platform]\n      host:\n        - libblas\n        - libcblas\n        - libboost-devel\n        - eigen\n        - parmetis\n        - libptscotch  # [target_platform != \"osx-arm64\"]\n        - suitesparse\n        - zlib\n        - {{ mpi }}\n        - petsc\n        - slepc\n        - python\n        - numpy\n        - fenics-ffc =={{ version }}\n        # need to list libnetcdf and netcdf-fortran twice to get version\n        # pinning from conda_build_config and build pinning from {{ mpi_prefix }}\n        - hdf5\n        - hdf5 * {{ mpi_prefix }}_*\n      run:\n        # only need library dependencies that _lack_ run_exports here\n        - eigen\n        - parmetis\n    test:\n      commands:\n        - test -f ${PREFIX}/lib/libdolfin${SHLIB_EXT}\n        - test -f ${PREFIX}/lib/libdolfin.{{ version }}${SHLIB_EXT}  # [osx]\n        - test -f ${PREFIX}/lib/libdolfin${SHLIB_EXT}.{{ version }}  # [linux]\n\n  - name: fenics-dolfin\n    build:\n      script: ${RECIPE_DIR}/build-dolfin.sh\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - {{ compiler('cxx') }}\n        - cmake >=3.9\n        - make\n        - pkg-config\n        - python                                 # [build_platform != target_platform]\n        - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n        - pybind11                               # [build_platform != target_platform]\n        - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]\n      host:\n        - libblas\n        - libcblas\n        - libboost-devel\n        - python\n        - pip\n        - setuptools\n        - pkgconfig\n        - zlib\n        - {{ mpi }}\n        - mpi4py\n        - petsc4py\n        - slepc4py\n        - numpy\n        - pybind11\n        - six\n        - sympy >=1\n        - {{ pin_subpackage(\"fenics-libdolfin\", exact=True) }}\n        - fenics-dijitso =={{ version }}\n        - fenics-fiat =={{ version }}\n        - fenics-ufl =={{ version }}\n        - fenics-ffc =={{ version }}\n        # need to list libnetcdf and netcdf-fortran twice to get version\n        # pinning from conda_build_config and build pinning from {{ mpi_prefix }}\n        - hdf5\n        - hdf5 * {{ mpi_prefix }}_*\n      run:\n        - {{ compiler('cxx') }}\n        # gxx provides default 'c++' executable on linux\n        - gxx  # [linux]\n        - python\n        # dolfin depends on the boost headers for its own headers, see\n        # https://bitbucket.org/fenics-project/dolfin/src/master/dolfin/parameter/Parameters.h#lines-24\n        - libboost-headers\n        - setuptools\n        - zlib\n        - {{ pin_compatible('mpi4py', max_pin='x') }}\n        - petsc4py\n        - slepc4py\n        - pkgconfig  # Python pkgconfig package\n        - pybind11\n        - six\n        - sympy >=1\n        - {{ pin_subpackage(\"fenics-libdolfin\", exact=True) }}\n        - fenics-dijitso =={{ version }}\n        - fenics-fiat =={{ version }}\n        - fenics-ufl =={{ version }}\n        - fenics-ffc =={{ version }}\n\n    test:\n      commands:\n        - pip check\n        - bash ${RECIPE_DIR}/parent/test-dolfin.sh\n      source_files:\n        - python/test\n\n      requires:\n        - pip\n        - nose\n        - pytest\n        - git\n        - decorator\n\n  - name: fenics\n    build:\n      skip: true  # [win]\n      script: \"echo 1\"\n      force_use_keys:\n        - mpi\n        - python\n    requirements:\n      build: []\n      host: []\n      run:\n        - python\n        - {{ pin_subpackage(\"fenics-libdolfin\", exact=True) }}\n        - {{ pin_subpackage(\"fenics-dolfin\", exact=True) }}\n    test:\n      commands:\n        - bash ${RECIPE_DIR}/parent/test-fenics.sh\n\nabout:\n  home: http://www.fenicsproject.org\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file:\n    - COPYING\n    - COPYING.LESSER\n  summary: 'FEniCS is a collection of free software for automated, efficient solution of differential equations'\n\n  description: |\n    FEniCS is a collection of free software for automated, efficient solution of differential equations\n    (<http://fenicsproject.org>). It provides C++ and Python interfaces, and creates effecient solvers via\n    expression of finite variational statements in a domain-specific language that are transformed and\n    just-in-time compiled into efficient implementations.\n  doc_url: https://fenics.readthedocs.io/\n  dev_url: https://bitbucket.org/fenics-project/\n\nextra:\n  feedstock-name: fenics\n  recipe-maintainers:\n    - garth-wells\n    - johannesring\n    - mikaem\n    - minrk\n    - jan-janssen\n    - sblauth\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -11162,6 +11359,7 @@
     "decorator",
     "git",
     "nose",
+    "pip",
     "pytest"
    ]
   }
@@ -11247,6 +11445,7 @@
     "decorator",
     "git",
     "nose",
+    "pip",
     "pytest"
    ]
   }
