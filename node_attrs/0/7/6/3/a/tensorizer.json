@@ -80,8 +80,7 @@
         "moto >=4.1.4,<5.0.0",
         "redis-py >=5.0.0",
         "redis-server",
-        "boto3",
-        "numpy <2"
+        "boto3"
        ]
       },
       "script": "pytest tests -vvv --reruns 2"
@@ -91,7 +90,7 @@
   ],
   "package": {
    "name": "tensorizer",
-   "version": "2.9.1"
+   "version": "2.9.2"
   },
   "requirements": {
    "host": [
@@ -113,8 +112,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "f79ac50d0a3bc328e3ee8cdf838ba04ddb5b9fa1d72be69f6ae618533d349e8e",
-   "url": "https://pypi.org/packages/source/t/tensorizer/tensorizer-2.9.1.tar.gz"
+   "sha256": "973a69e9247ee393625850ef9152cd65acd163a60db39ca6edad376f503cffe5",
+   "url": "https://pypi.org/packages/source/t/tensorizer/tensorizer-2.9.2.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -149,7 +148,6 @@
    "elements": [
     "boto3",
     "moto",
-    "numpy",
     "pip",
     "pytest",
     "pytest-rerunfailures",
@@ -225,8 +223,7 @@
         "moto >=4.1.4,<5.0.0",
         "redis-py >=5.0.0",
         "redis-server",
-        "boto3",
-        "numpy <2"
+        "boto3"
        ]
       },
       "script": "pytest tests -vvv --reruns 2"
@@ -236,7 +233,7 @@
   ],
   "package": {
    "name": "tensorizer",
-   "version": "2.9.1"
+   "version": "2.9.2"
   },
   "requirements": {
    "host": [
@@ -258,8 +255,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "f79ac50d0a3bc328e3ee8cdf838ba04ddb5b9fa1d72be69f6ae618533d349e8e",
-   "url": "https://pypi.org/packages/source/t/tensorizer/tensorizer-2.9.1.tar.gz"
+   "sha256": "973a69e9247ee393625850ef9152cd65acd163a60db39ca6edad376f503cffe5",
+   "url": "https://pypi.org/packages/source/t/tensorizer/tensorizer-2.9.2.tar.gz"
   }
  },
  "name": "tensorizer",
@@ -276,7 +273,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tensorizer.json"
  },
- "raw_meta_yaml": "context:\n  version: 2.9.1\n\npackage:\n  name: tensorizer\n  version: ${{ version }}\n\nsource:\n- url: https://pypi.org/packages/source/t/tensorizer/tensorizer-${{ version }}.tar.gz\n  sha256: f79ac50d0a3bc328e3ee8cdf838ba04ddb5b9fa1d72be69f6ae618533d349e8e\n\nbuild:\n  noarch: python\n  number: 0\n  script: ${{ PYTHON }} -m pip install .\n\nrequirements:\n  host:\n  - python ${{ python_min }}.*\n  - setuptools\n  - pip\n  run:\n  - python >=${{ python_min }}\n  - pytorch >=1.9.0\n  - numpy >=1.19.5\n  - protobuf >=3.19.5\n  - psutil >=5.9.4\n  - boto3 >=1.26.0\n  - redis-py >=4.5.5\n  - hiredis >=2.2.0\n  - libnacl-python-bindings >=2.1.0\n\ntests:\n- python:\n    imports:\n    - tensorizer\n    pip_check: true\n    python_version: ${{ python_min }}.*\n- files:\n    source:\n      - tests/\n  requirements:\n    run:\n      - pytest\n      - pytest-rerunfailures\n      - transformers >=4.27.1\n      - moto >=4.1.4,<5.0.0\n      - redis-py >=5.0.0\n      - if: not win\n        then:\n          - redis-server\n      - boto3\n      # Opened <https://github.com/coreweave/tensorizer/pull/183>\n      # to fix the underlying issue.\n      - numpy <2\n  script:\n    # Redis tests are flaky, sometimes failing with:\n    #     redis.exceptions.ConnectionError: Error 111 connecting to localhost:6381.\n    #     Connection refused.\n    # I suspect that there's not enough startup time, so we retry a few times.\n    - if: linux\n      then:\n        - pytest tests -vvv --reruns 2\n    # Fails on macOS and Windows in test_cpu_multiple_readers\n    # (test_serialization.TestDeserialization) with:\n    #     ValueError: Cannot reopen this type of file to enable parallel reading with\n    #     num_readers > 1. File paths, URIs, and HTTP(S) or S3 streams returned from\n    #     tensorizer.stream_io.open_stream, plus some open files are capable of being\n    #     reopened. Other file-like objects and special files (e.g. BytesIO, pipes,\n    #     sockets) are not supported.\n    # Unfortunately I don't know which type of file is being opened, but this doesn't\n    # seem serious, so I'm skipping it.\n    - if: osx\n      then:\n        - |\n          pytest tests -vvv --reruns 2 \\\n            --deselect tests/test_serialization.py::TestDeserialization::test_cpu_multiple_readers\n    # In addition to the above, we don't have a Redis server on Windows.\n    # Also, test_bfloat16 and test_structure fail with:\n    #     PermissionError: [WinError 32] The process cannot access the file because it\n    #     is being used by another process:\n    #       'C:\\\\Users\\\\VSSADM~1\\\\AppData\\\\Local\\\\Temp\\\\tensorizer-testu78j78id'\n    - if: win\n      then:\n        - |\n          pytest tests -vvv ^\n            --deselect tests/test_serialization.py::TestDeserialization::test_cpu_multiple_readers ^\n            --deselect tests/test_serialization.py::TestDeserialization::test_redis ^\n            --deselect tests/test_stream_io.py::TestRedis::test_redis_stream ^\n            --deselect tests/test_serialization.py::TestSerialization::test_bfloat16 ^\n            --deselect tests/test_serialization.py::TestSerialization::test_structure\n\nabout:\n  homepage: https://github.com/coreweave/tensorizer\n  repository: https://github.com/coreweave/tensorizer\n  summary: A tool for fast PyTorch module, model, and tensor serialization + deserialization.\n  description: Module, Model, and Tensor Serialization/Deserialization\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maresb\n",
+ "raw_meta_yaml": "context:\n  version: \"2.9.2\"\n\npackage:\n  name: tensorizer\n  version: ${{ version }}\n\nsource:\n  - url: https://pypi.org/packages/source/t/tensorizer/tensorizer-${{ version }}.tar.gz\n    sha256: 973a69e9247ee393625850ef9152cd65acd163a60db39ca6edad376f503cffe5\n\nbuild:\n  noarch: python\n  number: 0\n  script: ${{ PYTHON }} -m pip install .\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - setuptools\n    - pip\n  run:\n    - python >=${{ python_min }}\n    - pytorch >=1.9.0\n    - numpy >=1.19.5\n    - protobuf >=3.19.5\n    - psutil >=5.9.4\n    - boto3 >=1.26.0\n    - redis-py >=4.5.5\n    - hiredis >=2.2.0\n    - libnacl-python-bindings >=2.1.0\n\ntests:\n  - python:\n      imports:\n        - tensorizer\n      pip_check: true\n      python_version: ${{ python_min }}.*\n  - files:\n      source:\n        - tests/\n    requirements:\n      run:\n        - pytest\n        - pytest-rerunfailures\n        - transformers >=4.27.1\n        - moto >=4.1.4,<5.0.0\n        - redis-py >=5.0.0\n        - if: not win\n          then:\n            - redis-server\n        - boto3\n    script:\n    # Redis tests are flaky, sometimes failing with:\n    #     redis.exceptions.ConnectionError: Error 111 connecting to localhost:6381.\n    #     Connection refused.\n    # I suspect that there's not enough startup time, so we retry a few times.\n      - if: linux\n        then:\n          - pytest tests -vvv --reruns 2\n    # Fails on macOS and Windows in test_cpu_multiple_readers\n    # (test_serialization.TestDeserialization) with:\n    #     ValueError: Cannot reopen this type of file to enable parallel reading with\n    #     num_readers > 1. File paths, URIs, and HTTP(S) or S3 streams returned from\n    #     tensorizer.stream_io.open_stream, plus some open files are capable of being\n    #     reopened. Other file-like objects and special files (e.g. BytesIO, pipes,\n    #     sockets) are not supported.\n    # Unfortunately I don't know which type of file is being opened, but this doesn't\n    # seem serious, so I'm skipping it.\n      - if: osx\n        then:\n          - |\n            pytest tests -vvv --reruns 2 \\\n              --deselect tests/test_serialization.py::TestDeserialization::test_cpu_multiple_readers\n    # In addition to the above, we don't have a Redis server on Windows.\n    # Also, test_bfloat16 and test_structure fail with:\n    #     PermissionError: [WinError 32] The process cannot access the file because it\n    #     is being used by another process:\n    #       'C:\\\\Users\\\\VSSADM~1\\\\AppData\\\\Local\\\\Temp\\\\tensorizer-testu78j78id'\n      - if: win\n        then:\n          - |\n            pytest tests -vvv ^\n              --deselect tests/test_serialization.py::TestDeserialization::test_cpu_multiple_readers ^\n              --deselect tests/test_serialization.py::TestDeserialization::test_redis ^\n              --deselect tests/test_stream_io.py::TestRedis::test_redis_stream ^\n              --deselect tests/test_serialization.py::TestSerialization::test_bfloat16 ^\n              --deselect tests/test_serialization.py::TestSerialization::test_structure\n\nabout:\n  homepage: https://github.com/coreweave/tensorizer\n  repository: https://github.com/coreweave/tensorizer\n  summary: A tool for fast PyTorch module, model, and tensor serialization + deserialization.\n  description: Module, Model, and Tensor Serialization/Deserialization\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - maresb\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -325,7 +322,6 @@
    "elements": [
     "boto3",
     "moto",
-    "numpy",
     "pip",
     "pytest",
     "pytest-rerunfailures",
@@ -368,7 +364,6 @@
    "elements": [
     "boto3",
     "moto >=4.1.4,<5.0.0",
-    "numpy <2",
     "pip",
     "pytest",
     "pytest-rerunfailures",
@@ -378,8 +373,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/t/tensorizer/tensorizer-2.9.1.tar.gz",
- "version": "2.9.1",
+ "url": "https://pypi.org/packages/source/t/tensorizer/tensorizer-2.9.2.tar.gz",
+ "version": "2.9.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/tensorizer.json"
  }
