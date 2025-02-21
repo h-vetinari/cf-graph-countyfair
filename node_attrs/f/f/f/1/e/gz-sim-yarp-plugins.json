@@ -48,7 +48,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -65,14 +66,87 @@
       "xorg-libxfixes",
       "libgl-devel",
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "xorg-libxfixes",
+      "libgl-devel",
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -121,6 +195,10 @@
    {
     "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
     "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
    }
   ]
  },
@@ -141,15 +219,23 @@
    "__set__": true,
    "elements": [
     "gtest",
+    "libabseil",
     "libgl-devel",
     "libgz-common5",
+    "libgz-common6",
     "libgz-math7",
+    "libgz-math8",
     "libgz-msgs10",
+    "libgz-msgs11",
     "libgz-plugin2",
+    "libgz-plugin3",
     "libgz-sim8",
+    "libgz-sim9",
     "libgz-transport13",
+    "libgz-transport14",
     "libprotobuf",
     "libsdformat14",
+    "libsdformat15",
     "libyarp",
     "xorg-libxfixes"
    ]
@@ -190,7 +276,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -207,14 +294,87 @@
       "xorg-libxfixes",
       "libgl-devel",
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "xorg-libxfixes",
+      "libgl-devel",
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -263,6 +423,10 @@
    {
     "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
     "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
    }
   ]
  },
@@ -283,15 +447,23 @@
    "__set__": true,
    "elements": [
     "gtest",
+    "libabseil",
     "libgl-devel",
     "libgz-common5",
+    "libgz-common6",
     "libgz-math7",
+    "libgz-math8",
     "libgz-msgs10",
+    "libgz-msgs11",
     "libgz-plugin2",
+    "libgz-plugin3",
     "libgz-sim8",
+    "libgz-sim9",
     "libgz-transport13",
+    "libgz-transport14",
     "libprotobuf",
     "libsdformat14",
+    "libsdformat15",
     "libyarp",
     "xorg-libxfixes"
    ]
@@ -332,7 +504,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -349,14 +522,87 @@
       "xorg-libxfixes",
       "libgl-devel",
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "xorg-libxfixes",
+      "libgl-devel",
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -405,6 +651,10 @@
    {
     "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
     "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
    }
   ]
  },
@@ -425,15 +675,23 @@
    "__set__": true,
    "elements": [
     "gtest",
+    "libabseil",
     "libgl-devel",
     "libgz-common5",
+    "libgz-common6",
     "libgz-math7",
+    "libgz-math8",
     "libgz-msgs10",
+    "libgz-msgs11",
     "libgz-plugin2",
+    "libgz-plugin3",
     "libgz-sim8",
+    "libgz-sim9",
     "libgz-transport13",
+    "libgz-transport14",
     "libprotobuf",
     "libsdformat14",
+    "libsdformat15",
     "libyarp",
     "xorg-libxfixes"
    ]
@@ -474,7 +732,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -491,14 +750,16 @@
       "xorg-libxfixes",
       "libgl-devel",
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
       "gtest"
      ],
      "run": []
@@ -544,7 +805,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "ionich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -561,14 +823,14 @@
       "xorg-libxfixes",
       "libgl-devel",
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
-      "libgz-math7",
-      "libgz-plugin2",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -614,7 +876,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -631,14 +894,16 @@
       "xorg-libxfixes",
       "libgl-devel",
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
       "gtest"
      ],
      "run": []
@@ -684,7 +949,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "ionich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -698,15 +964,17 @@
       "multisheller"
      ],
      "host": [
+      "xorg-libxfixes",
+      "libgl-devel",
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
-      "libgz-math7",
-      "libgz-plugin2",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -752,7 +1020,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -766,15 +1035,19 @@
       "multisheller"
      ],
      "host": [
+      "xorg-libxfixes",
+      "libgl-devel",
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
       "gtest"
      ],
      "run": []
@@ -820,7 +1093,79 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "xorg-libxfixes",
+      "libgl-devel",
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
      ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -835,14 +1180,365 @@
      ],
      "host": [
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "harmonich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math7",
+      "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "harmonich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math7",
+      "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "bld_cxx.bat",
+    "test": {
+     "commands": [
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-basestate-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-camera-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-clock-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-controlboard-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-forcetorque-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-imu-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-laser-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-robotinterface-system.dll exit 1"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-basestate-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-camera-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-clock-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-controlboard-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-forcetorque-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-imu-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-laser-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-robotinterface-system.dll exit 1"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -888,6 +1584,30 @@
   },
   "schema_version": 0,
   "source": [
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
    {
     "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
     "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
@@ -940,7 +1660,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -955,14 +1676,85 @@
      ],
      "host": [
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -1011,6 +1803,10 @@
    {
     "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
     "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
    }
   ]
  },
@@ -1031,14 +1827,22 @@
    "__set__": true,
    "elements": [
     "gtest",
+    "libabseil",
     "libgz-common5",
+    "libgz-common6",
     "libgz-math7",
+    "libgz-math8",
     "libgz-msgs10",
+    "libgz-msgs11",
     "libgz-plugin2",
+    "libgz-plugin3",
     "libgz-sim8",
+    "libgz-sim9",
     "libgz-transport13",
+    "libgz-transport14",
     "libprotobuf",
     "libsdformat14",
+    "libsdformat15",
     "libyarp"
    ]
   },
@@ -1078,7 +1882,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -1093,14 +1898,85 @@
      ],
      "host": [
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "build_cxx.sh",
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-basestate-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-camera-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-clock-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-controlboard-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-forcetorque-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-imu-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-laser-system${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/libgz-sim-yarp-robotinterface-system${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -1149,6 +2025,10 @@
    {
     "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
     "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
    }
   ]
  },
@@ -1169,14 +2049,22 @@
    "__set__": true,
    "elements": [
     "gtest",
+    "libabseil",
     "libgz-common5",
+    "libgz-common6",
     "libgz-math7",
+    "libgz-math8",
     "libgz-msgs10",
+    "libgz-msgs11",
     "libgz-plugin2",
+    "libgz-plugin3",
     "libgz-sim8",
+    "libgz-sim9",
     "libgz-transport13",
+    "libgz-transport14",
     "libprotobuf",
     "libsdformat14",
+    "libsdformat15",
     "libyarp"
    ]
   },
@@ -1210,7 +2098,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/gz-sim-yarp-plugins.json"
  },
- "raw_meta_yaml": "# Note: we use this variable everywhere except in outputs names as jinja variables in output names are not supported\n# by migrators, see https://github.com/conda-forge/librobometry-feedstock/pull/20#issuecomment-2041618340\n{% set cxx_name = \"libgz-sim-yarp-plugins\" %}\n{% set plugin_name = \"gz-sim-yarp-plugins\" %}\n{% set name = \"gz-sim-yarp-plugins-split\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  # {{ name }}\n  name: gz-sim-yarp-plugins-split\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v{{ version }}.tar.gz\n    sha256: 8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4\n\nbuild:\n  number: 0\n\noutputs:\n  # {{ cxx_name }}\n  - name: libgz-sim-yarp-plugins\n    script: build_cxx.sh  # [unix]\n    script: bld_cxx.bat  # [win]\n    build:\n      ignore_run_exports_from:\n        - gtest\n      run_exports:\n        # See https://github.com/robotology/gz-sim-yarp-plugins/pull/237\n        - {{ pin_subpackage(cxx_name, max_pin='x.x') }}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - {{ compiler('cxx') }}\n        - cmake\n        - pkg-config\n        - ninja\n        - multisheller\n      host:\n        - xorg-libxfixes  # [linux]\n        - libgl-devel  # [linux]\n        - libyarp\n        - libgz-sim8\n        - libgz-common5\n        - libgz-transport13\n        - libgz-msgs10\n        - libsdformat14\n        - libprotobuf\n        - libgz-math7\n        - libgz-plugin2\n        - gtest\n      run:\n\n    test:\n      commands:\n        {% set gyp_libs = [\n                \"basestate-system\",\n                \"camera-system\",\n                \"clock-system\",\n                \"controlboard-system\",\n                \"forcetorque-system\",\n                \"imu-system\",\n                \"laser-system\",\n                \"robotinterface-system\"\n        ] %}\n        {% for gyp_lib in gyp_libs %}\n        - test -f ${PREFIX}/lib/libgz-sim-yarp-{{ gyp_lib }}${SHLIB_EXT}  # [unix]\n        - if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-{{ gyp_lib }}.dll exit 1  # [win]\n        {% endfor %}\n\n  # {{ plugin_name }}\n  - name: gz-sim-yarp-plugins\n    requirements:\n      run:\n        - {{ pin_subpackage(cxx_name, exact=True) }}\n    test:\n      commands:\n        {% for gyp_lib in gyp_libs %}\n        - test -f ${PREFIX}/lib/libgz-sim-yarp-{{ gyp_lib }}${SHLIB_EXT}  # [unix]\n        - if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-{{ gyp_lib }}.dll exit 1  # [win]\n        {% endfor %}\n\nabout:\n  home: https://github.com/robotology/gz-sim-yarp-plugins\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: 'YARP plugins for Modern Gazebo (gz-sim).'\n\nextra:\n  feedstock-name: gz-sim-yarp-plugins\n  recipe-maintainers:\n    - xela-95\n    - traversaro\n",
+ "raw_meta_yaml": "# Note: we use this variable everywhere except in outputs names as jinja variables in output names are not supported\n# by migrators, see https://github.com/conda-forge/librobometry-feedstock/pull/20#issuecomment-2041618340\n{% set cxx_name = \"libgz-sim-yarp-plugins\" %}\n{% set plugin_name = \"gz-sim-yarp-plugins\" %}\n{% set name = \"gz-sim-yarp-plugins-split\" %}\n{% set version = \"0.4.0\" %}\n{% set build_number = 1 %}\n\n# As ionic (gz-sim9) is newer then harmonic (gz-sim8),\n# we give priority to the gz-sim9 installation\n{% if GZ_DISTRO_VARIANT == \"ionic\" %}\n{% set build_number = build_number + 200 %}\n{% endif %}\n\npackage:\n  # {{ name }}\n  name: gz-sim-yarp-plugins-split\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v{{ version }}.tar.gz\n    sha256: 8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4\n\nbuild:\n  number: 0\n\noutputs:\n  # {{ cxx_name }}\n  - name: libgz-sim-yarp-plugins\n    script: build_cxx.sh  # [unix]\n    script: bld_cxx.bat  # [win]\n    build:\n      ignore_run_exports_from:\n        - gtest\n      run_exports:\n        # See https://github.com/robotology/gz-sim-yarp-plugins/pull/237\n        - {{ pin_subpackage(cxx_name, max_pin='x.x') }}\n      string: {{ GZ_DISTRO_VARIANT }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ stdlib(\"c\") }}\n        - {{ compiler('cxx') }}\n        - cmake\n        - pkg-config\n        - ninja\n        - multisheller\n      host:\n        - xorg-libxfixes  # [linux]\n        - libgl-devel  # [linux]\n        - libyarp\n        - libabseil\n        - libprotobuf\n        - libgz-math7  # [GZ_DISTRO_VARIANT == \"harmonic\"]\n        - libgz-math8  # [GZ_DISTRO_VARIANT == \"ionic\"]\n        - libgz-plugin2  # [GZ_DISTRO_VARIANT == \"harmonic\"]\n        - libgz-plugin3  # [GZ_DISTRO_VARIANT == \"ionic\"]\n        - libgz-msgs10  # [GZ_DISTRO_VARIANT == \"harmonic\"]\n        - libgz-msgs11  # [GZ_DISTRO_VARIANT == \"harmonic\"]\n        - libgz-transport13  # [GZ_DISTRO_VARIANT == \"harmonic\"]\n        - libgz-transport14  # [GZ_DISTRO_VARIANT == \"ionic\"]\n        - libgz-common5  # [GZ_DISTRO_VARIANT == \"harmonic\"]\n        - libgz-common6  # [GZ_DISTRO_VARIANT == \"ionic\"]\n        - libsdformat14  # [GZ_DISTRO_VARIANT == \"harmonic\"]\n        - libsdformat15  # [GZ_DISTRO_VARIANT == \"ionic\"]\n        - libgz-sim8  # [GZ_DISTRO_VARIANT == \"harmonic\"]\n        - libgz-sim9  # [GZ_DISTRO_VARIANT == \"ionic\"]\n        - gtest\n      run:\n\n    test:\n      commands:\n        {% set gyp_libs = [\n                \"basestate-system\",\n                \"camera-system\",\n                \"clock-system\",\n                \"controlboard-system\",\n                \"forcetorque-system\",\n                \"imu-system\",\n                \"laser-system\",\n                \"robotinterface-system\"\n        ] %}\n        {% for gyp_lib in gyp_libs %}\n        - test -f ${PREFIX}/lib/libgz-sim-yarp-{{ gyp_lib }}${SHLIB_EXT}  # [unix]\n        - if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-{{ gyp_lib }}.dll exit 1  # [win]\n        {% endfor %}\n\n  # {{ plugin_name }}\n  - name: gz-sim-yarp-plugins\n    requirements:\n      run:\n        - {{ pin_subpackage(cxx_name, max_pin='x.x.x') }}\n    test:\n      commands:\n        {% for gyp_lib in gyp_libs %}\n        - test -f ${PREFIX}/lib/libgz-sim-yarp-{{ gyp_lib }}${SHLIB_EXT}  # [unix]\n        - if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-{{ gyp_lib }}.dll exit 1  # [win]\n        {% endfor %}\n\nabout:\n  home: https://github.com/robotology/gz-sim-yarp-plugins\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: 'YARP plugins for Modern Gazebo (gz-sim).'\n\nextra:\n  feedstock-name: gz-sim-yarp-plugins\n  recipe-maintainers:\n    - xela-95\n    - traversaro\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -1219,16 +2107,24 @@
    "cmake",
    "cxx_compiler_stub",
    "gtest",
+   "libabseil",
    "libgl-devel",
    "libgz-common5",
+   "libgz-common6",
    "libgz-math7",
+   "libgz-math8",
    "libgz-msgs10",
+   "libgz-msgs11",
    "libgz-plugin2",
+   "libgz-plugin3",
    "libgz-sim-yarp-plugins",
    "libgz-sim8",
+   "libgz-sim9",
    "libgz-transport13",
+   "libgz-transport14",
    "libprotobuf",
    "libsdformat14",
+   "libsdformat15",
    "libyarp",
    "multisheller",
    "ninja",
@@ -1256,15 +2152,23 @@
     "c_stdlib_stub",
     "cxx_compiler_stub",
     "gtest",
+    "libabseil",
     "libgl-devel",
     "libgz-common5",
+    "libgz-common6",
     "libgz-math7",
+    "libgz-math8",
     "libgz-msgs10",
+    "libgz-msgs11",
     "libgz-plugin2",
+    "libgz-plugin3",
     "libgz-sim8",
+    "libgz-sim9",
     "libgz-transport13",
+    "libgz-transport14",
     "libprotobuf",
     "libsdformat14",
+    "libsdformat15",
     "libyarp",
     "xorg-libxfixes"
    ]
@@ -1301,15 +2205,23 @@
    "__set__": true,
    "elements": [
     "gtest",
+    "libabseil",
     "libgl-devel",
     "libgz-common5",
+    "libgz-common6",
     "libgz-math7",
+    "libgz-math8",
     "libgz-msgs10",
+    "libgz-msgs11",
     "libgz-plugin2",
+    "libgz-plugin3",
     "libgz-sim8",
+    "libgz-sim9",
     "libgz-transport13",
+    "libgz-transport14",
     "libprotobuf",
     "libsdformat14",
+    "libsdformat15",
     "libyarp",
     "xorg-libxfixes"
    ]
@@ -1355,7 +2267,8 @@
      ],
      "run_exports": [
       "libgz-sim-yarp-plugins"
-     ]
+     ],
+     "string": "harmonich1234567_0"
     },
     "name": "libgz-sim-yarp-plugins",
     "requirements": {
@@ -1370,14 +2283,85 @@
      ],
      "host": [
       "libyarp",
-      "libgz-sim8",
-      "libgz-common5",
-      "libgz-transport13",
-      "libgz-msgs10",
-      "libsdformat14",
+      "libabseil",
       "libprotobuf",
       "libgz-math7",
       "libgz-plugin2",
+      "libgz-msgs10",
+      "libgz-msgs11",
+      "libgz-transport13",
+      "libgz-common5",
+      "libsdformat14",
+      "libgz-sim8",
+      "gtest"
+     ],
+     "run": []
+    },
+    "script": "bld_cxx.bat",
+    "test": {
+     "commands": [
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-basestate-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-camera-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-clock-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-controlboard-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-forcetorque-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-imu-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-laser-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-robotinterface-system.dll exit 1"
+     ]
+    }
+   },
+   {
+    "name": "gz-sim-yarp-plugins",
+    "requirements": {
+     "run": [
+      "libgz-sim-yarp-plugins"
+     ]
+    },
+    "test": {
+     "commands": [
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-basestate-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-camera-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-clock-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-controlboard-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-forcetorque-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-imu-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-laser-system.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\\\gz-sim-yarp-robotinterface-system.dll exit 1"
+     ]
+    }
+   },
+   {
+    "build": {
+     "ignore_run_exports_from": [
+      "gtest"
+     ],
+     "run_exports": [
+      "libgz-sim-yarp-plugins"
+     ],
+     "string": "ionich1234567_0"
+    },
+    "name": "libgz-sim-yarp-plugins",
+    "requirements": {
+     "build": [
+      "c_compiler_stub",
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "pkg-config",
+      "ninja",
+      "multisheller"
+     ],
+     "host": [
+      "libyarp",
+      "libabseil",
+      "libprotobuf",
+      "libgz-math8",
+      "libgz-plugin3",
+      "libgz-transport14",
+      "libgz-common6",
+      "libsdformat15",
+      "libgz-sim9",
       "gtest"
      ],
      "run": []
@@ -1426,6 +2410,10 @@
    {
     "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
     "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
+   },
+   {
+    "sha256": "8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4",
+    "url": "https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v0.4.0.tar.gz"
    }
   ]
  },
@@ -1446,14 +2434,22 @@
    "__set__": true,
    "elements": [
     "gtest",
+    "libabseil",
     "libgz-common5",
+    "libgz-common6",
     "libgz-math7",
+    "libgz-math8",
     "libgz-msgs10",
+    "libgz-msgs11",
     "libgz-plugin2",
+    "libgz-plugin3",
     "libgz-sim8",
+    "libgz-sim9",
     "libgz-transport13",
+    "libgz-transport14",
     "libprotobuf",
     "libsdformat14",
+    "libsdformat15",
     "libyarp"
    ]
   },
