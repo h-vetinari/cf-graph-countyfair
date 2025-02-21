@@ -1,1 +1,326 @@
-{}
+{
+ "archived": false,
+ "branch": "main",
+ "conda-forge.yml": {
+  "conda_build": {
+   "error_overlinking": true
+  },
+  "conda_forge_output_validation": true,
+  "github": {
+   "branch_name": "main",
+   "tooling_branch_name": "main"
+  }
+ },
+ "feedstock_name": "zndraw",
+ "hash_type": "sha256",
+ "linux_64_meta_yaml": {
+  "about": {
+   "home": "https://github.com/zincware/ZnDraw",
+   "license": "EPL-2.0",
+   "license_file": "LICENSE",
+   "summary": "Display and Edit Molecular Structures and Trajectories in the Browser."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "zndraw",
+   "version": "0.5.2"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10",
+    "poetry-core",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10,<4.0.0",
+    "ase >=3.0.0,<4.0.0",
+    "typer >=0.0.0,<1.0.0",
+    "flask >=2.0.0,<3.0.0",
+    "tqdm >=4.0.0,<5.0.0",
+    "flask-socketio >=5.0.0,<6.0.0",
+    "networkx >=3.0.0,<4.0.0",
+    "pydantic >=2.0.0,<3.0.0",
+    "python-socketio >=5.11.0,<6.0.0",
+    "plotly >=5.0.0,<6.0.0",
+    "pandas >=2.0.0,<3.0.0",
+    "celery >=5.0.0,<6.0.0",
+    "sqlalchemy >=2.0.0,<3.0.0",
+    "redis-py >=5.0.0,<6.0.0",
+    "splines >=0.3.0,<0.4.0",
+    "znsocket >=0.2.7,<0.3.0",
+    "znjson >=0.2.4,<0.3.0",
+    "requests"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "51740c5b406eef53aaceedf26a970db001f6d8709e27f2d751ad5b4d78a19bb7",
+   "url": "https://pypi.org/packages/source/z/zndraw/zndraw-0.5.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "zndraw"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "linux_64_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ase",
+    "celery",
+    "flask",
+    "flask-socketio",
+    "networkx",
+    "pandas",
+    "plotly",
+    "pydantic",
+    "python",
+    "python-socketio",
+    "redis-py",
+    "requests",
+    "splines",
+    "sqlalchemy",
+    "tqdm",
+    "typer",
+    "znjson",
+    "znsocket"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "meta_yaml": {
+  "about": {
+   "home": "https://github.com/zincware/ZnDraw",
+   "license": "EPL-2.0",
+   "license_file": "LICENSE",
+   "summary": "Display and Edit Molecular Structures and Trajectories in the Browser."
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "zndraw",
+   "version": "0.5.2"
+  },
+  "requirements": {
+   "host": [
+    "python 3.10",
+    "poetry-core",
+    "pip"
+   ],
+   "run": [
+    "python >=3.10,<4.0.0",
+    "ase >=3.0.0,<4.0.0",
+    "typer >=0.0.0,<1.0.0",
+    "flask >=2.0.0,<3.0.0",
+    "tqdm >=4.0.0,<5.0.0",
+    "flask-socketio >=5.0.0,<6.0.0",
+    "networkx >=3.0.0,<4.0.0",
+    "pydantic >=2.0.0,<3.0.0",
+    "python-socketio >=5.11.0,<6.0.0",
+    "plotly >=5.0.0,<6.0.0",
+    "pandas >=2.0.0,<3.0.0",
+    "celery >=5.0.0,<6.0.0",
+    "sqlalchemy >=2.0.0,<3.0.0",
+    "redis-py >=5.0.0,<6.0.0",
+    "splines >=0.3.0,<0.4.0",
+    "znsocket >=0.2.7,<0.3.0",
+    "znjson >=0.2.4,<0.3.0",
+    "requests"
+   ]
+  },
+  "schema_version": 0,
+  "source": {
+   "sha256": "51740c5b406eef53aaceedf26a970db001f6d8709e27f2d751ad5b4d78a19bb7",
+   "url": "https://pypi.org/packages/source/z/zndraw/zndraw-0.5.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pip check"
+   ],
+   "imports": [
+    "zndraw"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "name": "zndraw",
+ "outputs_names": {
+  "__set__": true,
+  "elements": [
+   "zndraw"
+  ]
+ },
+ "parsing_error": false,
+ "platforms": [
+  "linux_64"
+ ],
+ "pr_info": {
+  "__lazy_json__": "pr_info/zndraw.json"
+ },
+ "raw_meta_yaml": "{% set name = \"zndraw\" %}\n{% set version = \"0.5.2\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zndraw-{{ version }}.tar.gz\n  sha256: 51740c5b406eef53aaceedf26a970db001f6d8709e27f2d751ad5b4d78a19bb7\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n    - ase >=3.0.0,<4.0.0\n    - typer >=0.0.0,<1.0.0\n    - flask >=2.0.0,<3.0.0\n    - tqdm >=4.0.0,<5.0.0\n    - flask-socketio >=5.0.0,<6.0.0\n    - networkx >=3.0.0,<4.0.0\n    - pydantic >=2.0.0,<3.0.0\n    - python-socketio >=5.11.0,<6.0.0\n    - plotly >=5.0.0,<6.0.0\n    - pandas >=2.0.0,<3.0.0\n    - celery >=5.0.0,<6.0.0\n    - sqlalchemy >=2.0.0,<3.0.0\n    - redis-py >=5.0.0,<6.0.0\n    - splines >=0.3.0,<0.4.0\n    - znsocket >=0.2.7,<0.3.0\n    - znjson >=0.2.4,<0.3.0\n    - requests\n\ntest:\n  imports:\n    - zndraw\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zincware/ZnDraw\n  summary: Display and Edit Molecular Structures and Trajectories in the Browser.\n  license: EPL-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "req": {
+  "__set__": true,
+  "elements": [
+   "ase",
+   "celery",
+   "flask",
+   "flask-socketio",
+   "networkx",
+   "pandas",
+   "pip",
+   "plotly",
+   "poetry-core",
+   "pydantic",
+   "python",
+   "python-socketio",
+   "redis-py",
+   "requests",
+   "splines",
+   "sqlalchemy",
+   "tqdm",
+   "typer",
+   "znjson",
+   "znsocket"
+  ]
+ },
+ "requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ase",
+    "celery",
+    "flask",
+    "flask-socketio",
+    "networkx",
+    "pandas",
+    "plotly",
+    "pydantic",
+    "python",
+    "python-socketio",
+    "redis-py",
+    "requests",
+    "splines",
+    "sqlalchemy",
+    "tqdm",
+    "typer",
+    "znjson",
+    "znsocket"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python"
+   ]
+  }
+ },
+ "strong_exports": false,
+ "total_requirements": {
+  "build": {
+   "__set__": true,
+   "elements": []
+  },
+  "host": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "poetry-core",
+    "python 3.10"
+   ]
+  },
+  "run": {
+   "__set__": true,
+   "elements": [
+    "ase >=3.0.0,<4.0.0",
+    "celery >=5.0.0,<6.0.0",
+    "flask >=2.0.0,<3.0.0",
+    "flask-socketio >=5.0.0,<6.0.0",
+    "networkx >=3.0.0,<4.0.0",
+    "pandas >=2.0.0,<3.0.0",
+    "plotly >=5.0.0,<6.0.0",
+    "pydantic >=2.0.0,<3.0.0",
+    "python >=3.10,<4.0.0",
+    "python-socketio >=5.11.0,<6.0.0",
+    "redis-py >=5.0.0,<6.0.0",
+    "requests",
+    "splines >=0.3.0,<0.4.0",
+    "sqlalchemy >=2.0.0,<3.0.0",
+    "tqdm >=4.0.0,<5.0.0",
+    "typer >=0.0.0,<1.0.0",
+    "znjson >=0.2.4,<0.3.0",
+    "znsocket >=0.2.7,<0.3.0"
+   ]
+  },
+  "test": {
+   "__set__": true,
+   "elements": [
+    "pip",
+    "python 3.10"
+   ]
+  }
+ },
+ "url": "https://pypi.org/packages/source/z/zndraw/zndraw-0.5.2.tar.gz",
+ "version": "0.5.2",
+ "version_pr_info": {
+  "__lazy_json__": "version_pr_info/zndraw.json"
+ }
+}
