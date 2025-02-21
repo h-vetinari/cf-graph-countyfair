@@ -43,7 +43,7 @@
   },
   "package": {
    "name": "pyiron_base",
-   "version": "0.11.4"
+   "version": "0.11.5"
   },
   "requirements": {
    "host": [
@@ -76,8 +76,8 @@
     "executorlib >=0.1.0,<=0.4.0",
     "python >=3.10,<3.13",
     "cloudpickle >=2.0.0,<=3.1.1",
-    "h5io_browser >=0.0.14,<=0.1.7",
-    "h5py >=3.6.0,<=3.12.1",
+    "h5io_browser >=0.0.14,<=0.1.8",
+    "h5py >=3.6.0,<=3.13.0",
     "monty >=2025.1.3,<=2025.1.9",
     "numpy >=1.23.5,<=2.2.3",
     "pandas >=2.0.0,<=2.2.3",
@@ -93,8 +93,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "41184d2d19df96583fbdf8b1f52add3c34378a8e84d7adfe8c08bae93d81f57b",
-   "url": "https://pypi.org/packages/source/p/pyiron_base/pyiron_base-0.11.4.tar.gz"
+   "sha256": "939a02ec5230e57f5a594f33ba37163c4254208b519da62c01ac7dea58da4dff",
+   "url": "https://pypi.org/packages/source/p/pyiron_base/pyiron_base-0.11.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -199,7 +199,7 @@
   },
   "package": {
    "name": "pyiron_base",
-   "version": "0.11.4"
+   "version": "0.11.5"
   },
   "requirements": {
    "host": [
@@ -232,8 +232,8 @@
     "executorlib >=0.1.0,<=0.4.0",
     "python >=3.10,<3.13",
     "cloudpickle >=2.0.0,<=3.1.1",
-    "h5io_browser >=0.0.14,<=0.1.7",
-    "h5py >=3.6.0,<=3.12.1",
+    "h5io_browser >=0.0.14,<=0.1.8",
+    "h5py >=3.6.0,<=3.13.0",
     "monty >=2025.1.3,<=2025.1.9",
     "numpy >=1.23.5,<=2.2.3",
     "pandas >=2.0.0,<=2.2.3",
@@ -249,8 +249,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "41184d2d19df96583fbdf8b1f52add3c34378a8e84d7adfe8c08bae93d81f57b",
-   "url": "https://pypi.org/packages/source/p/pyiron_base/pyiron_base-0.11.4.tar.gz"
+   "sha256": "939a02ec5230e57f5a594f33ba37163c4254208b519da62c01ac7dea58da4dff",
+   "url": "https://pypi.org/packages/source/p/pyiron_base/pyiron_base-0.11.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -280,7 +280,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyiron_base.json"
  },
- "raw_meta_yaml": "{% set name = \"pyiron_base\" %}\n{% set version = \"0.11.4\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyiron_base-{{ version }}.tar.gz\n  sha256: 41184d2d19df96583fbdf8b1f52add3c34378a8e84d7adfe8c08bae93d81f57b\n\nbuild:\n  entry_points:\n    - pyiron=pyiron_base.cli:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - cloudpickle\n    - gitpython\n    - h5io_browser\n    - h5py\n    - jinja2\n    - monty\n    - numpy\n    - pandas\n    - pint\n    - psutil\n    - pyfileindex\n    - pysqa\n    - sqlalchemy\n    - pytables\n    - tqdm\n    - traitlets\n    - pyiron_dataclasses\n    - pyiron_snippets\n    - versioneer\n    - toml\n    - setuptools\n  run:\n    - pyiron_dataclasses ==0.0.1\n    - executorlib >=0.1.0,<=0.4.0\n    - python >={{ python_min }},<3.13\n    - cloudpickle >=2.0.0,<=3.1.1\n    - h5io_browser >=0.0.14,<=0.1.7\n    - h5py >=3.6.0,<=3.12.1\n    - monty >=2025.1.3,<=2025.1.9\n    - numpy >=1.23.5,<=2.2.3\n    - pandas >=2.0.0,<=2.2.3\n    - psutil >=5.8.0,<=6.1.1\n    - pyfileindex >=0.0.16,<=0.0.34\n    - pyiron_snippets >=0.1.3,<=0.1.4\n    - pysqa >=0.1.12,<=0.2.3\n    - sqlalchemy >=2.0.22,<=2.0.38\n    - pytables >=3.6.1,<=3.10.2\n    - tqdm >=4.44.0,<=4.67.1\n    - traitlets >=5.1.1,<=5.14.3\n\ntest:\n  imports:\n    - pyiron_base\n  commands:\n    - pip check\n    - pyiron --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/pyiron/pyiron_base\n  summary: pyiron_base - an integrated development environment (IDE) for computational science.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - niklassiemer\n    - srmnitc\n    - pyiron-runner\n    - jan-janssen\n    - pmrv\n",
+ "raw_meta_yaml": "{% set name = \"pyiron_base\" %}\n{% set version = \"0.11.5\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyiron_base-{{ version }}.tar.gz\n  sha256: 939a02ec5230e57f5a594f33ba37163c4254208b519da62c01ac7dea58da4dff\n\nbuild:\n  entry_points:\n    - pyiron=pyiron_base.cli:main\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - cloudpickle\n    - gitpython\n    - h5io_browser\n    - h5py\n    - jinja2\n    - monty\n    - numpy\n    - pandas\n    - pint\n    - psutil\n    - pyfileindex\n    - pysqa\n    - sqlalchemy\n    - pytables\n    - tqdm\n    - traitlets\n    - pyiron_dataclasses\n    - pyiron_snippets\n    - versioneer\n    - toml\n    - setuptools\n  run:\n    - pyiron_dataclasses ==0.0.1\n    - executorlib >=0.1.0,<=0.4.0\n    - python >={{ python_min }},<3.13\n    - cloudpickle >=2.0.0,<=3.1.1\n    - h5io_browser >=0.0.14,<=0.1.8\n    - h5py >=3.6.0,<=3.13.0\n    - monty >=2025.1.3,<=2025.1.9\n    - numpy >=1.23.5,<=2.2.3\n    - pandas >=2.0.0,<=2.2.3\n    - psutil >=5.8.0,<=6.1.1\n    - pyfileindex >=0.0.16,<=0.0.34\n    - pyiron_snippets >=0.1.3,<=0.1.4\n    - pysqa >=0.1.12,<=0.2.3\n    - sqlalchemy >=2.0.22,<=2.0.38\n    - pytables >=3.6.1,<=3.10.2\n    - tqdm >=4.44.0,<=4.67.1\n    - traitlets >=5.1.1,<=5.14.3\n\ntest:\n  imports:\n    - pyiron_base\n  commands:\n    - pip check\n    - pyiron --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/pyiron/pyiron_base\n  summary: pyiron_base - an integrated development environment (IDE) for computational science.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - niklassiemer\n    - srmnitc\n    - pyiron-runner\n    - jan-janssen\n    - pmrv\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -412,8 +412,8 @@
    "elements": [
     "cloudpickle >=2.0.0,<=3.1.1",
     "executorlib >=0.1.0,<=0.4.0",
-    "h5io_browser >=0.0.14,<=0.1.7",
-    "h5py >=3.6.0,<=3.12.1",
+    "h5io_browser >=0.0.14,<=0.1.8",
+    "h5py >=3.6.0,<=3.13.0",
     "monty >=2025.1.3,<=2025.1.9",
     "numpy >=1.23.5,<=2.2.3",
     "pandas >=2.0.0,<=2.2.3",
@@ -437,8 +437,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/pyiron_base/pyiron_base-0.11.4.tar.gz",
- "version": "0.11.4",
+ "url": "https://pypi.org/packages/source/p/pyiron_base/pyiron_base-0.11.5.tar.gz",
+ "version": "0.11.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyiron_base.json"
  }
