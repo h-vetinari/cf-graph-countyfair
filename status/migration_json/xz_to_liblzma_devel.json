@@ -66,7 +66,7 @@
       "immediate_children": [
         "python"
       ],
-      "num_descendants": 64,
+      "num_descendants": 65,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/cmake-feedstock",
       "pre_pr_migrator_status": ""
@@ -218,9 +218,10 @@
       "immediate_children": [
         "emacs",
         "graphviz",
+        "wxpython",
         "wxwidgets"
       ],
-      "num_descendants": 6,
+      "num_descendants": 7,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/gtk3-feedstock",
       "pre_pr_migrator_status": ""
@@ -298,7 +299,7 @@
         "imagemagick",
         "root"
       ],
-      "num_descendants": 12,
+      "num_descendants": 13,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/librsvg-feedstock",
       "pre_pr_migrator_status": ""
@@ -324,7 +325,7 @@
         "vtk",
         "wxwidgets"
       ],
-      "num_descendants": 23,
+      "num_descendants": 24,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/libtiff-feedstock",
       "pre_pr_migrator_status": ""
@@ -382,7 +383,7 @@
         "uwsgi",
         "vtk"
       ],
-      "num_descendants": 69,
+      "num_descendants": 70,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/libxml2-feedstock",
       "pre_pr_migrator_status": ""
@@ -536,10 +537,11 @@
         "ugrep",
         "uwsgi",
         "vtk",
+        "wxpython",
         "wxwidgets",
         "z5py"
       ],
-      "num_descendants": 64,
+      "num_descendants": 65,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/python-feedstock",
       "pre_pr_migrator_status": ""
@@ -696,9 +698,16 @@
       "pr_url": "https://github.com/conda-forge/vtk-feedstock",
       "pre_pr_migrator_status": ""
     },
-    "wxwidgets": {
+    "wxpython": {
       "immediate_children": [],
       "num_descendants": 0,
+      "pre_pr_migrator_status": ""
+    },
+    "wxwidgets": {
+      "immediate_children": [
+        "wxpython"
+      ],
+      "num_descendants": 1,
       "pr_status": "",
       "pr_url": "https://github.com/conda-forge/wxwidgets-feedstock",
       "pre_pr_migrator_status": ""
@@ -719,7 +728,9 @@
     "cds-crtools",
     "tesseract"
   ],
-  "awaiting-pr": [],
+  "awaiting-pr": [
+    "wxpython"
+  ],
   "bot-error": [
     "torchaudio"
   ],
