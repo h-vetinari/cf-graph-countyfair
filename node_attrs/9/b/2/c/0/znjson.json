@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "znjson",
-   "version": "0.2.4"
+   "version": "0.2.6"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "445b4125588e8cb40a75e3e1db22531788631bb4489f1022baec31f411d6472d",
-   "url": "https://pypi.org/packages/source/z/znjson/znjson-0.2.4.tar.gz"
+   "sha256": "b9a5360bc598018ea82972c595b953edc6cc0b3f860fbaff46034266461372ea",
+   "url": "https://pypi.org/packages/source/z/znjson/znjson-0.2.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -112,7 +112,7 @@
   },
   "package": {
    "name": "znjson",
-   "version": "0.2.4"
+   "version": "0.2.6"
   },
   "requirements": {
    "host": [
@@ -126,8 +126,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "445b4125588e8cb40a75e3e1db22531788631bb4489f1022baec31f411d6472d",
-   "url": "https://pypi.org/packages/source/z/znjson/znjson-0.2.4.tar.gz"
+   "sha256": "b9a5360bc598018ea82972c595b953edc6cc0b3f860fbaff46034266461372ea",
+   "url": "https://pypi.org/packages/source/z/znjson/znjson-0.2.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -156,7 +156,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/znjson.json"
  },
- "raw_meta_yaml": "{% set name = \"znjson\" %}\n{% set version = \"0.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/znjson-{{ version }}.tar.gz\n  sha256: 445b4125588e8cb40a75e3e1db22531788631bb4489f1022baec31f411d6472d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n\ntest:\n  imports:\n    - znjson\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zincware/ZnJSON\n  summary: A Python Package to Encode/Decode some common file formats to json\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"znjson\" %}\n{% set version = \"0.2.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/znjson-{{ version }}.tar.gz\n  sha256: b9a5360bc598018ea82972c595b953edc6cc0b3f860fbaff46034266461372ea\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n\ntest:\n  imports:\n    - znjson\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zincware/ZnJSON\n  summary: A Python Package to Encode/Decode some common file formats to json\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -220,8 +220,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/z/znjson/znjson-0.2.4.tar.gz",
- "version": "0.2.4",
+ "url": "https://pypi.org/packages/source/z/znjson/znjson-0.2.6.tar.gz",
+ "version": "0.2.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/znjson.json"
  }
