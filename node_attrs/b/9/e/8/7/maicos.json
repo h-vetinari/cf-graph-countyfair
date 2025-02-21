@@ -22,11 +22,14 @@
    "license": "GPL-3.0-or-later",
    "license_family": "GPL",
    "license_file": "LICENSE",
-   "summary": "A Python package for Molecular Analysis for Interfacial and Confined Systems."
+   "summary": "Analyse molecular dynamics simulations of interfacial and confined systems."
   },
   "build": {
+   "entry_points": [
+    "maicos = maicos.__main__:main"
+   ],
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -37,42 +40,47 @@
   },
   "package": {
    "name": "maicos",
-   "version": "0.8"
+   "version": "0.9"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "cxx_compiler_stub",
-    "libgomp"
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
-    "pip",
-    "numpy",
-    "cython",
+    "cython >=0.28",
     "packaging",
+    "numpy >=2.0.0",
+    "setuptools >=43.0.0",
+    "setuptools-git-versioning <2",
     "versioneer",
-    "tomli"
+    "wheel",
+    "pip"
    ],
    "run": [
     "python",
-    "scipy >=1.0.0",
-    "numpy",
-    "mdanalysis >=2.7.0",
     "mdacli >=0.1.28",
-    "tqdm >=4.60.0",
-    "typing_extensions"
+    "mdanalysis >=2.8.0",
+    "typing_extensions",
+    "numpy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f",
-   "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz"
+   "sha256": "d6cc66ff998f2a55b0edb1a160acda356e0e282be1f749f92d730824307448f8",
+   "url": "https://pypi.org/packages/source/m/maicos/maicos-0.9.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check",
+    "maicos --help"
+   ],
    "imports": [
-    "MDAnalysis",
-    "MDAnalysis.analysis"
+    "maicos"
+   ],
+   "requires": [
+    "pip"
    ]
   }
  },
@@ -81,8 +89,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "cxx_compiler_stub",
-    "libgomp"
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -93,8 +100,10 @@
     "packaging",
     "pip",
     "python",
-    "tomli",
-    "versioneer"
+    "setuptools",
+    "setuptools-git-versioning",
+    "versioneer",
+    "wheel"
    ]
   },
   "run": {
@@ -104,14 +113,14 @@
     "mdanalysis",
     "numpy",
     "python",
-    "scipy",
-    "tqdm",
     "typing_extensions"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  },
  "meta_yaml": {
@@ -123,11 +132,14 @@
    "license": "GPL-3.0-or-later",
    "license_family": "GPL",
    "license_file": "LICENSE",
-   "summary": "A Python package for Molecular Analysis for Interfacial and Confined Systems."
+   "summary": "Analyse molecular dynamics simulations of interfacial and confined systems."
   },
   "build": {
+   "entry_points": [
+    "maicos = maicos.__main__:main"
+   ],
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -138,42 +150,47 @@
   },
   "package": {
    "name": "maicos",
-   "version": "0.8"
+   "version": "0.9"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "cxx_compiler_stub",
-    "libgomp"
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
-    "pip",
-    "numpy",
-    "cython",
+    "cython >=0.28",
     "packaging",
+    "numpy >=2.0.0",
+    "setuptools >=43.0.0",
+    "setuptools-git-versioning <2",
     "versioneer",
-    "tomli"
+    "wheel",
+    "pip"
    ],
    "run": [
     "python",
-    "scipy >=1.0.0",
-    "numpy",
-    "mdanalysis >=2.7.0",
     "mdacli >=0.1.28",
-    "tqdm >=4.60.0",
-    "typing_extensions"
+    "mdanalysis >=2.8.0",
+    "typing_extensions",
+    "numpy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f",
-   "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz"
+   "sha256": "d6cc66ff998f2a55b0edb1a160acda356e0e282be1f749f92d730824307448f8",
+   "url": "https://pypi.org/packages/source/m/maicos/maicos-0.9.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check",
+    "maicos --help"
+   ],
    "imports": [
-    "MDAnalysis",
-    "MDAnalysis.analysis"
+    "maicos"
+   ],
+   "requires": [
+    "pip"
    ]
   }
  },
@@ -187,11 +204,14 @@
    "license": "GPL-3.0-or-later",
    "license_family": "GPL",
    "license_file": "LICENSE",
-   "summary": "A Python package for Molecular Analysis for Interfacial and Confined Systems."
+   "summary": "Analyse molecular dynamics simulations of interfacial and confined systems."
   },
   "build": {
+   "entry_points": [
+    "maicos = maicos.__main__:main"
+   ],
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -202,41 +222,47 @@
   },
   "package": {
    "name": "maicos",
-   "version": "0.8"
+   "version": "0.9"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "cxx_compiler_stub"
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
-    "pip",
-    "numpy",
-    "cython",
+    "cython >=0.28",
     "packaging",
+    "numpy >=2.0.0",
+    "setuptools >=43.0.0",
+    "setuptools-git-versioning <2",
     "versioneer",
-    "tomli"
+    "wheel",
+    "pip"
    ],
    "run": [
     "python",
-    "scipy >=1.0.0",
-    "numpy",
-    "mdanalysis >=2.7.0",
     "mdacli >=0.1.28",
-    "tqdm >=4.60.0",
-    "typing_extensions"
+    "mdanalysis >=2.8.0",
+    "typing_extensions",
+    "numpy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f",
-   "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz"
+   "sha256": "d6cc66ff998f2a55b0edb1a160acda356e0e282be1f749f92d730824307448f8",
+   "url": "https://pypi.org/packages/source/m/maicos/maicos-0.9.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check",
+    "maicos --help"
+   ],
    "imports": [
-    "MDAnalysis",
-    "MDAnalysis.analysis"
+    "maicos"
+   ],
+   "requires": [
+    "pip"
    ]
   }
  },
@@ -245,7 +271,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "cxx_compiler_stub"
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -256,8 +282,10 @@
     "packaging",
     "pip",
     "python",
-    "tomli",
-    "versioneer"
+    "setuptools",
+    "setuptools-git-versioning",
+    "versioneer",
+    "wheel"
    ]
   },
   "run": {
@@ -267,14 +295,14 @@
     "mdanalysis",
     "numpy",
     "python",
-    "scipy",
-    "tqdm",
     "typing_extensions"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  },
  "outputs_names": {
@@ -292,25 +320,24 @@
  "pr_info": {
   "__lazy_json__": "pr_info/maicos.json"
  },
- "raw_meta_yaml": "{% set name = \"maicos\" %}\n{% set version = \"0.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f\n\nbuild:\n  number: 0\n  skip: true  # [python_impl == 'pypy']\n  skip: true  # [py>312]\n  skip: true  # [py<39]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - libgomp  # [linux]\n  host:\n    - python\n    - pip\n    - numpy {{ numpy }}\n    - cython\n    - packaging\n    - versioneer\n    - tomli\n\n  run:\n    - python\n    - scipy >=1.0.0\n    - {{ pin_compatible('numpy', lower_bound='1.22.3') }}\n    - mdanalysis >=2.7.0\n    - mdacli >=0.1.28\n    - tqdm >=4.60.0\n    - typing_extensions\n\n\n\ntest:\n  imports:\n    - MDAnalysis\n    - MDAnalysis.analysis\n\nabout:\n  home: https://www.maicos-analysis.org\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: A Python package for Molecular Analysis for Interfacial and Confined Systems.\n  description: MAICoS is an object-oriented python toolkit for analysing the structure and dynamics of interfacial and confined fluids from molecular simulations. Combined with MDAnalysis, MAICoS can be used to extract density profiles, dielectric constants, structure factors, or transport properties from trajectories files,\n    including LAMMPS, GROMACS, CHARMM or NAMD data. MAICoS is open source and is released under the GNU general public license v3.0.\n  doc_url: https://www.maicos-analysis.org\n  dev_url: https://gitlab.com/maicos-devel/maicos\n\nextra:\n  recipe-maintainers:\n    - srihas29\n    - PicoCentauri\n    - hejamu\n",
+ "raw_meta_yaml": "{% set name = \"maicos\" %}\n{% set version = \"0.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d6cc66ff998f2a55b0edb1a160acda356e0e282be1f749f92d730824307448f8\n\nbuild:\n  skip: true  # [py<310]\n  entry_points:\n    - maicos = maicos.__main__:main\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n  host:\n    - python\n    - cython >=0.28\n    - packaging\n    - numpy >=2.0.0\n    - setuptools >=43.0.0\n    - setuptools-git-versioning <2\n    - versioneer\n    - wheel\n    - pip\n  run:\n    - python\n    - mdacli >=0.1.28\n    - mdanalysis >=2.8.0\n    - typing_extensions\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - maicos\n  commands:\n    - pip check\n    - maicos --help\n  requires:\n    - pip\n\nabout:\n  home: https://www.maicos-analysis.org\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Analyse molecular dynamics simulations of interfacial and confined systems.\n  description: MAICoS is an object-oriented python toolkit for analysing the structure and dynamics of interfacial and confined fluids from molecular simulations. Combined with MDAnalysis, MAICoS can be used to extract density profiles, dielectric constants, structure factors, or transport properties from trajectories files,\n    including LAMMPS, GROMACS, CHARMM or NAMD data. MAICoS is open source and is released under the GNU general public license v3.0.\n  doc_url: https://www.maicos-analysis.org\n  dev_url: https://gitlab.com/maicos-devel/maicos\n\nextra:\n  recipe-maintainers:\n    - srihas29\n    - PicoCentauri\n    - hejamu\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
-   "cxx_compiler_stub",
+   "c_stdlib_stub",
    "cython",
-   "libgomp",
    "mdacli",
    "mdanalysis",
    "numpy",
    "packaging",
    "pip",
    "python",
-   "scipy",
-   "tomli",
-   "tqdm",
+   "setuptools",
+   "setuptools-git-versioning",
    "typing_extensions",
-   "versioneer"
+   "versioneer",
+   "wheel"
   ]
  },
  "requirements": {
@@ -318,43 +345,42 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "cxx_compiler_stub",
-    "libgomp"
+    "c_stdlib_stub"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "ctng-compilers",
-    "cxx_compiler_stub",
+    "c_stdlib_stub",
     "cython",
     "numpy",
     "packaging",
     "pip",
     "python",
-    "tomli",
-    "versioneer"
+    "setuptools",
+    "setuptools-git-versioning",
+    "versioneer",
+    "wheel"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "ctng-compilers",
-    "cxx_compiler_stub",
+    "c_stdlib_stub",
     "mdacli",
     "mdanalysis",
     "numpy",
     "python",
-    "scipy",
-    "tqdm",
     "typing_extensions"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  },
  "strong_exports": false,
@@ -363,41 +389,42 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "cxx_compiler_stub",
-    "libgomp"
+    "c_stdlib_stub"
    ]
   },
   "host": {
    "__set__": true,
    "elements": [
-    "cython",
-    "numpy",
+    "cython >=0.28",
+    "numpy >=2.0.0",
     "packaging",
     "pip",
     "python",
-    "tomli",
-    "versioneer"
+    "setuptools >=43.0.0",
+    "setuptools-git-versioning <2",
+    "versioneer",
+    "wheel"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "mdacli >=0.1.28",
-    "mdanalysis >=2.7.0",
+    "mdanalysis >=2.8.0",
     "numpy",
     "python",
-    "scipy >=1.0.0",
-    "tqdm >=4.60.0",
     "typing_extensions"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz",
- "version": "0.8",
+ "url": "https://pypi.org/packages/source/m/maicos/maicos-0.9.tar.gz",
+ "version": "0.9",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/maicos.json"
  },
@@ -410,11 +437,14 @@
    "license": "GPL-3.0-or-later",
    "license_family": "GPL",
    "license_file": "LICENSE",
-   "summary": "A Python package for Molecular Analysis for Interfacial and Confined Systems."
+   "summary": "Analyse molecular dynamics simulations of interfacial and confined systems."
   },
   "build": {
+   "entry_points": [
+    "maicos = maicos.__main__:main"
+   ],
    "number": "0",
-   "script": "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
@@ -425,41 +455,47 @@
   },
   "package": {
    "name": "maicos",
-   "version": "0.8"
+   "version": "0.9"
   },
   "requirements": {
    "build": [
     "c_compiler_stub",
-    "cxx_compiler_stub"
+    "c_stdlib_stub"
    ],
    "host": [
     "python",
-    "pip",
-    "numpy",
-    "cython",
+    "cython >=0.28",
     "packaging",
+    "numpy >=2.0.0",
+    "setuptools >=43.0.0",
+    "setuptools-git-versioning <2",
     "versioneer",
-    "tomli"
+    "wheel",
+    "pip"
    ],
    "run": [
     "python",
-    "scipy >=1.0.0",
-    "numpy",
-    "mdanalysis >=2.7.0",
     "mdacli >=0.1.28",
-    "tqdm >=4.60.0",
-    "typing_extensions"
+    "mdanalysis >=2.8.0",
+    "typing_extensions",
+    "numpy"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f",
-   "url": "https://pypi.io/packages/source/m/maicos/maicos-0.8.tar.gz"
+   "sha256": "d6cc66ff998f2a55b0edb1a160acda356e0e282be1f749f92d730824307448f8",
+   "url": "https://pypi.org/packages/source/m/maicos/maicos-0.9.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check",
+    "maicos --help"
+   ],
    "imports": [
-    "MDAnalysis",
-    "MDAnalysis.analysis"
+    "maicos"
+   ],
+   "requires": [
+    "pip"
    ]
   }
  },
@@ -468,7 +504,7 @@
    "__set__": true,
    "elements": [
     "c_compiler_stub",
-    "cxx_compiler_stub"
+    "c_stdlib_stub"
    ]
   },
   "host": {
@@ -479,8 +515,10 @@
     "packaging",
     "pip",
     "python",
-    "tomli",
-    "versioneer"
+    "setuptools",
+    "setuptools-git-versioning",
+    "versioneer",
+    "wheel"
    ]
   },
   "run": {
@@ -490,14 +528,14 @@
     "mdanalysis",
     "numpy",
     "python",
-    "scipy",
-    "tqdm",
     "typing_extensions"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip"
+   ]
   }
  }
 }
