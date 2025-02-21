@@ -120,8 +120,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -197,8 +197,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -274,8 +274,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -351,8 +351,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -434,8 +434,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -517,8 +517,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -600,8 +600,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -683,8 +683,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -692,7 +692,7 @@
   ],
   "package": {
    "name": "tinygrad",
-   "version": "0.10.1"
+   "version": "0.10.2"
   },
   "requirements": {
    "build": [
@@ -715,12 +715,10 @@
   "schema_version": 1,
   "source": {
    "patches": [
-    "patches/0001-also-install-tinygrad.viz.patch",
-    "patches/0002-downgrade-default-metal-standard.patch",
-    "patches/0003-rely-on-the-packaged-CUDA-toolchain.patch"
+    "patches/0001-rely-on-the-packaged-CUDA-toolchain.patch"
    ],
-   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
-   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+   "sha256": "3e0fd20a2df28e95ee2c6c5aa02a1cf872ea8ff285ea74ee91d76c694c03b3ae",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.2.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -874,7 +872,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -951,7 +949,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -1028,7 +1026,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -1105,7 +1103,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -1187,7 +1185,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -1269,7 +1267,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -1351,7 +1349,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -1433,14 +1431,14 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    }
   ],
   "package": {
    "name": "tinygrad",
-   "version": "0.10.1"
+   "version": "0.10.2"
   },
   "requirements": {
    "build": [
@@ -1465,12 +1463,10 @@
   "schema_version": 1,
   "source": {
    "patches": [
-    "patches/0001-also-install-tinygrad.viz.patch",
-    "patches/0002-downgrade-default-metal-standard.patch",
-    "patches/0003-rely-on-the-packaged-CUDA-toolchain.patch"
+    "patches/0001-rely-on-the-packaged-CUDA-toolchain.patch"
    ],
-   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
-   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+   "sha256": "3e0fd20a2df28e95ee2c6c5aa02a1cf872ea8ff285ea74ee91d76c694c03b3ae",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.2.tar.gz"
   }
  },
  "linux_aarch64_requirements": {
@@ -1624,8 +1620,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -1701,8 +1697,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -1778,8 +1774,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -1855,91 +1851,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
-      ]
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "tinygrad",
-    "requirements": {
-     "build": [
-      "c_stdlib_stub",
-      "cxx_compiler_stub",
-      "cuda_compiler_stub"
-     ],
-     "host": [
-      "python",
-      "pip",
-      "setuptools"
-     ],
-     "run": [
-      "python",
-      "clangxx_linux-64",
-      "cuda-nvcc_linux-64",
-      "triton"
-     ]
-    },
-    "tests": [
-     {
-      "python": {
-       "imports": [
-        "tinygrad"
-       ]
-      }
-     }
-    ]
-   },
-   {
-    "build": null,
-    "name": "tinygrad-tests",
-    "requirements": {
-     "build": [],
-     "host": [],
-     "run": [
-      "tinygrad"
-     ]
-    },
-    "tests": [
-     {
-      "files": {
-       "source": [
-        "examples/**",
-        "extra/**",
-        "test/**"
-       ]
-      },
-      "requirements": {
-       "run": [
-        "pytest",
-        "pytest-xdist",
-        "hypothesis",
-        "numpy",
-        "pytorch",
-        "blobfile",
-        "bottle",
-        "capstone",
-        "jax",
-        "librosa",
-        "networkx",
-        "nibabel",
-        "onnx2torch",
-        "onnx",
-        "py-opencv",
-        "pillow",
-        "safetensors",
-        "sentencepiece",
-        "tabulate",
-        "tiktoken",
-        "tqdm",
-        "transformers"
-       ]
-      },
-      "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -2021,8 +1934,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -2104,8 +2017,8 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -2187,8 +2100,91 @@
        ]
       },
       "script": [
-       "unset CLANG",
-       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\""
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
+      ]
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad",
+    "requirements": {
+     "build": [
+      "c_stdlib_stub",
+      "cxx_compiler_stub",
+      "cuda_compiler_stub"
+     ],
+     "host": [
+      "python",
+      "pip",
+      "setuptools"
+     ],
+     "run": [
+      "python",
+      "clangxx_linux-64",
+      "cuda-nvcc_linux-64",
+      "triton"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "tinygrad"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "build": null,
+    "name": "tinygrad-tests",
+    "requirements": {
+     "build": [],
+     "host": [],
+     "run": [
+      "tinygrad"
+     ]
+    },
+    "tests": [
+     {
+      "files": {
+       "source": [
+        "examples/**",
+        "extra/**",
+        "test/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "pytest",
+        "pytest-xdist",
+        "hypothesis",
+        "numpy",
+        "pytorch",
+        "blobfile",
+        "bottle",
+        "capstone",
+        "jax",
+        "librosa",
+        "networkx",
+        "nibabel",
+        "onnx2torch",
+        "onnx",
+        "py-opencv",
+        "pillow",
+        "safetensors",
+        "sentencepiece",
+        "tabulate",
+        "tiktoken",
+        "tqdm",
+        "transformers"
+       ]
+      },
+      "script": [
+       "pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"",
+       "echo \"just something so aarch doesn't have an empty script section\""
       ]
      }
     ]
@@ -2266,7 +2262,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2343,7 +2339,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2420,7 +2416,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2497,7 +2493,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2579,7 +2575,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2661,7 +2657,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2743,7 +2739,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2825,7 +2821,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2902,7 +2898,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -2979,7 +2975,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3056,7 +3052,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3133,7 +3129,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3210,7 +3206,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3287,7 +3283,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3364,7 +3360,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3441,7 +3437,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3518,7 +3514,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3595,7 +3591,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3672,7 +3668,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3749,7 +3745,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3831,7 +3827,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3913,7 +3909,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -3995,7 +3991,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -4077,14 +4073,14 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    }
   ],
   "package": {
    "name": "tinygrad",
-   "version": "0.10.1"
+   "version": "0.10.2"
   },
   "requirements": {
    "build": [
@@ -4109,12 +4105,10 @@
   "schema_version": 1,
   "source": {
    "patches": [
-    "patches/0001-also-install-tinygrad.viz.patch",
-    "patches/0002-downgrade-default-metal-standard.patch",
-    "patches/0003-rely-on-the-packaged-CUDA-toolchain.patch"
+    "patches/0001-rely-on-the-packaged-CUDA-toolchain.patch"
    ],
-   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
-   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+   "sha256": "3e0fd20a2df28e95ee2c6c5aa02a1cf872ea8ff285ea74ee91d76c694c03b3ae",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.2.tar.gz"
   }
  },
  "name": "tinygrad",
@@ -4213,7 +4207,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -4290,7 +4284,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -4367,7 +4361,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -4444,14 +4438,14 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    }
   ],
   "package": {
    "name": "tinygrad",
-   "version": "0.10.1"
+   "version": "0.10.2"
   },
   "requirements": {
    "build": [
@@ -4471,12 +4465,10 @@
   "schema_version": 1,
   "source": {
    "patches": [
-    "patches/0001-also-install-tinygrad.viz.patch",
-    "patches/0002-downgrade-default-metal-standard.patch",
-    "patches/0003-rely-on-the-packaged-CUDA-toolchain.patch"
+    "patches/0001-rely-on-the-packaged-CUDA-toolchain.patch"
    ],
-   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
-   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+   "sha256": "3e0fd20a2df28e95ee2c6c5aa02a1cf872ea8ff285ea74ee91d76c694c03b3ae",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.2.tar.gz"
   }
  },
  "osx_64_requirements": {
@@ -4627,7 +4619,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -4704,7 +4696,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -4781,7 +4773,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -4858,14 +4850,14 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    }
   ],
   "package": {
    "name": "tinygrad",
-   "version": "0.10.1"
+   "version": "0.10.2"
   },
   "requirements": {
    "build": [
@@ -4885,12 +4877,10 @@
   "schema_version": 1,
   "source": {
    "patches": [
-    "patches/0001-also-install-tinygrad.viz.patch",
-    "patches/0002-downgrade-default-metal-standard.patch",
-    "patches/0003-rely-on-the-packaged-CUDA-toolchain.patch"
+    "patches/0001-rely-on-the-packaged-CUDA-toolchain.patch"
    ],
-   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
-   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+   "sha256": "3e0fd20a2df28e95ee2c6c5aa02a1cf872ea8ff285ea74ee91d76c694c03b3ae",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.2.tar.gz"
   }
  },
  "osx_arm64_requirements": {
@@ -4964,7 +4954,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/tinygrad.json"
  },
- "raw_meta_yaml": "context:\n  version: \"0.10.1\"\n  build_number: 0\n  # see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion\n  proc_type: ${{ \"cuda\" ~ cuda_compiler_version | version_to_buildstring if cuda_compiler_version != \"None\" else \"cpu\" }}\n  tests_to_skip: >\n    _not_a_real_test\n    ${{ \"fails `assert Device.DEFAULT in failed_platforms`\" if 0 }}\n    ${{ \" or (TestLinearizerFailures and test_failure_27)\" if linux }}\n    ${{ \" or (TestLinearizerFailures and (test_failure_56 or test_failure_57))\" if osx }}\n    ${{ \"Causes `Fatal Python error: Bus error` + segfault\" if 0 }}\n    ${{ \" or testCopySHMtoDefault\" if linux }}\n    ${{ \"timing-sensitive; may fail in our relatively puny CI\" if 0 }}\n    ${{ \" or test_recursive_pad\" if linux }}\n    ${{ \"`NotImplementedError: Encountered unknown relocation type 4` for something elf-related\" if 0 }}\n    ${{ \" or test_backward_sum_acc_dtype\" if linux }}\n    ${{ \"RuntimeError: Attribute list does not match Module context!\" if 0 }}\n    ${{ \" or test_bf16_disk_write_read\" if linux and cuda_compiler_version != \"None\" }}\n    ${{ \"`error: use of undefined value '@.const.pickledata.7893608704'`\" if 0 }}\n    ${{ \" or (TestWhisper and (test_transcribe_batch21 or test_transcribe_file1))\" if osx }}\n    ${{ \"signed int32 overflow\" if 0 }}\n    ${{ \" or test_float_midcast_int32\" if osx }}\n    ${{ \"tinygrad.codegen.kernel.KernelOptError: must have tensor cores or TC=2\" if 0 }}\n    ${{ \" or test_unmerged_ifs\" if osx }}\n\nrecipe:\n  name: tinygrad\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/tinygrad/tinygrad/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8\n  patches:\n    - patches/0001-also-install-tinygrad.viz.patch\n    # clang 19 doesn't seem to support -std=metal3.1 yet\n    - patches/0002-downgrade-default-metal-standard.patch\n    - patches/0003-rely-on-the-packaged-CUDA-toolchain.patch\n\nbuild:\n  number: ${{ build_number }}\n  string: ${{ proc_type }}_py${{ python | version_to_buildstring }}_h${{ hash }}_${{ build_number }}\n  skip:\n    - match(python, \"<3.10\")\n    # toolchain for 11.8 is not usable in end-user environment\n    - match(cuda_compiler_version, \"==11.8\")\noutputs:\n  - package:\n      name: tinygrad\n    build:\n      script: python -m pip install . -vv\n    requirements:\n      build:\n        - if: build_platform != target_platform\n          then:\n            - python\n            - cross-python_${{ target_platform }}\n        # this is just here so smithy creates separate jobs for the CUDA variants\n        - if: cuda_compiler_version != \"None\"\n          then:\n            - ${{ stdlib(\"c\") }}\n            - ${{ compiler(\"cxx\") }}\n            - ${{ compiler(\"cuda\") }}\n      host:\n        - python\n        - pip\n        - setuptools\n      run:\n        - python\n        - if: win\n          then:\n            - clang-cl_${{ target_platform }}\n          else:\n            - clangxx_${{ target_platform }}\n        - if: cuda_compiler_version != \"None\"\n          then:\n            - cuda-nvcc_${{ target_platform }}\n        - if: cuda_compiler_version != \"None\" and linux\n          then:\n            - triton\n    tests:\n      - python:\n          imports:\n          - tinygrad\n          pip_check: true\n\n  - package:\n      name: tinygrad-tests\n    requirements:\n      run:\n        - ${{ pin_subpackage('tinygrad', exact=True) }}\n    tests:\n      - requirements:\n          run:\n            # minimal\n            - pytest\n            - pytest-xdist\n            - hypothesis\n            - numpy\n            - pytorch\n            # optional\n            - blobfile\n            - bottle\n            - if: x86_64\n              then:\n                - capstone\n            # https://github.com/conda-forge/staged-recipes/issues/29179\n            # - ggml-python\n            - if: unix\n              then:\n                # not available on windows yet\n                - jax\n            - librosa\n            - networkx\n            - nibabel\n            - onnx2torch\n            - onnx\n            - py-opencv\n            - pillow\n            - safetensors\n            - sentencepiece\n            - tabulate\n            - tiktoken\n            - tqdm\n            - transformers\n        files:\n          source:\n            - examples/\n            - extra/\n            - test/\n        script:\n          # tinygrad uses `CLANG` as a boolean switch, which is incompatible with our compiler activation;\n          # see https://github.com/tinygrad/tinygrad/blob/v0.10.1/tinygrad/device.py#L13\n          - if: unix\n            then:\n              - unset CLANG\n          - if: win\n            then:\n              - set \"CLANG=\"\n          - if: unix and build_platform == target_platform\n            then:\n              - pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"\n          - if: win\n            then:\n              # windows cannot run tests yet due to lack of jax\n              - python examples/beautiful_mnist.py\n\nabout:\n  homepage: https://github.com/tinygrad/tinygrad\n  summary: 'You like pytorch? You like micrograd? You love tinygrad! \u2764\uFE0F'\n  description: |\n    This may not be the best deep learning framework, but it is a deep learning framework.\n    \n    Due to its extreme simplicity, it aims to be the easiest framework to add new accelerators to,\n    with support for both inference and training. If XLA is CISC, tinygrad is RISC.\n  license: MIT\n  license_file: LICENSE\n  documentation: https://docs.tinygrad.org/\n  repository: https://github.com/tinygrad/tinygrad\n\nextra:\n  recipe-maintainers:\n    - h-vetinari\n  feedstock-name: tinygrad\n",
+ "raw_meta_yaml": "context:\n  version: \"0.10.2\"\n  build_number: 0\n  # see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion\n  proc_type: ${{ \"cuda\" ~ cuda_compiler_version | version_to_buildstring if cuda_compiler_version != \"None\" else \"cpu\" }}\n  tests_to_skip: >\n    _not_a_real_test\n    ${{ \"fails `assert Device.DEFAULT in failed_platforms`\" if 0 }}\n    ${{ \" or (TestLinearizerFailures and test_failure_27)\" if linux }}\n    ${{ \"Causes `Fatal Python error: Bus error` + segfault\" if 0 }}\n    ${{ \" or testCopySHMtoDefault\" if linux }}\n    ${{ \"`RuntimeError: Attempting to relocate against an undefined symbol 'fmaxf'\" if 0 }}\n    ${{ \" or test_backward_sum_acc_dtype\" if linux }}\n    ${{ \"RuntimeError: Attribute list does not match Module context!\" if 0 }}\n    ${{ \" or test_bf16_disk_write_read\" if linux and cuda_compiler_version != \"None\" }}\n    ${{ \"`error: use of undefined value '@.const.pickledata.7893608704'`\" if 0 }}\n    ${{ \" or (TestWhisper and (test_transcribe_batch21 or test_transcribe_file1))\" if osx }}\n    ${{ \"signed int32 overflow\" if 0 }}\n    ${{ \" or test_float_midcast_int32\" if osx }}\n    ${{ \"tinygrad.codegen.kernel.KernelOptError: must have tensor cores or TC=2\" if 0 }}\n    ${{ \" or test_unmerged_ifs\" if osx }}\n\nrecipe:\n  name: tinygrad\n  version: ${{ version }}\n\nsource:\n  url: https://github.com/tinygrad/tinygrad/archive/refs/tags/v${{ version }}.tar.gz\n  sha256: 3e0fd20a2df28e95ee2c6c5aa02a1cf872ea8ff285ea74ee91d76c694c03b3ae\n  patches:\n    - patches/0001-rely-on-the-packaged-CUDA-toolchain.patch\n\nbuild:\n  number: ${{ build_number }}\n  string: ${{ proc_type }}_py${{ python | version_to_buildstring }}_h${{ hash }}_${{ build_number }}\n  skip:\n    - match(python, \"<3.10\")\n    # toolchain for 11.8 is not usable in end-user environment\n    - match(cuda_compiler_version, \"==11.8\")\n\noutputs:\n  - package:\n      name: tinygrad\n    build:\n      script: python -m pip install . -vv\n    requirements:\n      build:\n        - if: build_platform != target_platform\n          then:\n            - python\n            - cross-python_${{ target_platform }}\n        # this is just here so smithy creates separate jobs for the CUDA variants\n        - if: cuda_compiler_version != \"None\"\n          then:\n            - ${{ stdlib(\"c\") }}\n            - ${{ compiler(\"cxx\") }}\n            - ${{ compiler(\"cuda\") }}\n      host:\n        - python\n        - pip\n        - setuptools\n      run:\n        - python\n        - if: win\n          then:\n            - clang-cl_${{ target_platform }}\n          else:\n            - clangxx_${{ target_platform }}\n        - if: cuda_compiler_version != \"None\"\n          then:\n            - cuda-nvcc_${{ target_platform }}\n        - if: cuda_compiler_version != \"None\" and linux\n          then:\n            - triton\n    tests:\n      - python:\n          imports:\n            - tinygrad\n          pip_check: true\n\n  - package:\n      name: tinygrad-tests\n    build:\n      # silly: https://github.com/prefix-dev/rattler-build/pull/1367\n      script: ${{ 'true' if unix else 'exit /b 0' }}\n    requirements:\n      run:\n        - ${{ pin_subpackage('tinygrad', exact=True) }}\n    tests:\n      - requirements:\n          run:\n            # minimal\n            - pytest\n            - pytest-xdist\n            - hypothesis\n            - numpy\n            - pytorch\n            # optional\n            - blobfile\n            - bottle\n            - if: x86_64\n              then:\n                - capstone\n            # https://github.com/conda-forge/staged-recipes/issues/29179\n            # - ggml-python\n            - if: unix\n              then:\n                # not available on windows yet\n                - jax\n            - librosa\n            - networkx\n            - nibabel\n            - onnx2torch\n            - onnx\n            - py-opencv\n            - pillow\n            - safetensors\n            - sentencepiece\n            - tabulate\n            - tiktoken\n            - tqdm\n            - transformers\n        files:\n          source:\n            - examples/\n            - extra/\n            - test/\n        script:\n          # test suite in emulation on aarch is super slow\n          - if: unix and build_platform == target_platform\n            then:\n              - pytest -n 2 -v test/ -k \"not (${{ tests_to_skip }})\"\n          - if: win\n            then:\n              # windows cannot run tests yet due to lack of jax\n              - python examples/beautiful_mnist.py\n          - echo \"just something so aarch doesn't have an empty script section\"\n\nabout:\n  homepage: https://github.com/tinygrad/tinygrad\n  summary: 'You like pytorch? You like micrograd? You love tinygrad! \u2764\uFE0F'\n  description: |\n    This may not be the best deep learning framework, but it is a deep learning framework.\n\n    Due to its extreme simplicity, it aims to be the easiest framework to add new accelerators to,\n    with support for both inference and training. If XLA is CISC, tinygrad is RISC.\n  license: MIT\n  license_file: LICENSE\n  documentation: https://docs.tinygrad.org/\n  repository: https://github.com/tinygrad/tinygrad\n\nextra:\n  recipe-maintainers:\n    - h-vetinari\n  feedstock-name: tinygrad\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -5106,8 +5096,8 @@
    ]
   }
  },
- "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz",
- "version": "0.10.1",
+ "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.2.tar.gz",
+ "version": "0.10.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/tinygrad.json"
  },
@@ -5206,7 +5196,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -5283,7 +5273,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -5360,7 +5350,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -5437,7 +5427,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -5519,7 +5509,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -5601,7 +5591,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -5683,7 +5673,7 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    },
@@ -5765,14 +5755,14 @@
         "transformers"
        ]
       },
-      "script": "unset CLANG"
+      "script": "echo \"just something so aarch doesn't have an empty script section\""
      }
     ]
    }
   ],
   "package": {
    "name": "tinygrad",
-   "version": "0.10.1"
+   "version": "0.10.2"
   },
   "requirements": {
    "build": [
@@ -5797,12 +5787,10 @@
   "schema_version": 1,
   "source": {
    "patches": [
-    "patches/0001-also-install-tinygrad.viz.patch",
-    "patches/0002-downgrade-default-metal-standard.patch",
-    "patches/0003-rely-on-the-packaged-CUDA-toolchain.patch"
+    "patches/0001-rely-on-the-packaged-CUDA-toolchain.patch"
    ],
-   "sha256": "a22402a8c08da0930720b13a8a66a9c9f99507b15fca9caf31fde63776529ca8",
-   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.1.tar.gz"
+   "sha256": "3e0fd20a2df28e95ee2c6c5aa02a1cf872ea8ff285ea74ee91d76c694c03b3ae",
+   "url": "https://github.com/tinygrad/tinygrad/archive/refs/tags/v0.10.2.tar.gz"
   }
  },
  "win_64_requirements": {
