@@ -45,7 +45,7 @@
   },
   "package": {
    "name": "godoctor",
-   "version": "0.7"
+   "version": "0.8"
   },
   "requirements": {
    "build": [
@@ -55,8 +55,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7a7951c3f69479abc886c6b0ce2fa54cd4bed2142c1c3d9fe6af8425384a76df",
-   "url": "https://github.com/godoctor/godoctor/archive/v0.7.tar.gz"
+   "sha256": "c1517a444783224fdad46b7a7ce82407b714b121f60b17e9df9834b5b6773332",
+   "url": "https://github.com/godoctor/godoctor/archive/v0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -107,7 +107,7 @@
   },
   "package": {
    "name": "godoctor",
-   "version": "0.7"
+   "version": "0.8"
   },
   "requirements": {
    "build": [
@@ -117,8 +117,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7a7951c3f69479abc886c6b0ce2fa54cd4bed2142c1c3d9fe6af8425384a76df",
-   "url": "https://github.com/godoctor/godoctor/archive/v0.7.tar.gz"
+   "sha256": "c1517a444783224fdad46b7a7ce82407b714b121f60b17e9df9834b5b6773332",
+   "url": "https://github.com/godoctor/godoctor/archive/v0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -169,7 +169,7 @@
   },
   "package": {
    "name": "godoctor",
-   "version": "0.7"
+   "version": "0.8"
   },
   "requirements": {
    "build": [
@@ -179,8 +179,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7a7951c3f69479abc886c6b0ce2fa54cd4bed2142c1c3d9fe6af8425384a76df",
-   "url": "https://github.com/godoctor/godoctor/archive/v0.7.tar.gz"
+   "sha256": "c1517a444783224fdad46b7a7ce82407b714b121f60b17e9df9834b5b6773332",
+   "url": "https://github.com/godoctor/godoctor/archive/v0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -231,7 +231,7 @@
   },
   "package": {
    "name": "godoctor",
-   "version": "0.7"
+   "version": "0.8"
   },
   "requirements": {
    "build": [
@@ -241,8 +241,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7a7951c3f69479abc886c6b0ce2fa54cd4bed2142c1c3d9fe6af8425384a76df",
-   "url": "https://github.com/godoctor/godoctor/archive/v0.7.tar.gz"
+   "sha256": "c1517a444783224fdad46b7a7ce82407b714b121f60b17e9df9834b5b6773332",
+   "url": "https://github.com/godoctor/godoctor/archive/v0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -275,7 +275,7 @@
   },
   "package": {
    "name": "godoctor",
-   "version": "0.7"
+   "version": "0.8"
   },
   "requirements": {
    "build": [
@@ -285,8 +285,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7a7951c3f69479abc886c6b0ce2fa54cd4bed2142c1c3d9fe6af8425384a76df",
-   "url": "https://github.com/godoctor/godoctor/archive/v0.7.tar.gz"
+   "sha256": "c1517a444783224fdad46b7a7ce82407b714b121f60b17e9df9834b5b6773332",
+   "url": "https://github.com/godoctor/godoctor/archive/v0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -337,7 +337,7 @@
   },
   "package": {
    "name": "godoctor",
-   "version": "0.7"
+   "version": "0.8"
   },
   "requirements": {
    "build": [
@@ -347,8 +347,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7a7951c3f69479abc886c6b0ce2fa54cd4bed2142c1c3d9fe6af8425384a76df",
-   "url": "https://github.com/godoctor/godoctor/archive/v0.7.tar.gz"
+   "sha256": "c1517a444783224fdad46b7a7ce82407b714b121f60b17e9df9834b5b6773332",
+   "url": "https://github.com/godoctor/godoctor/archive/v0.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -396,7 +396,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/godoctor.json"
  },
- "raw_meta_yaml": "{% set name = \"godoctor\" %}\n{% set version = \"0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/godoctor/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 7a7951c3f69479abc886c6b0ce2fa54cd4bed2142c1c3d9fe6af8425384a76df\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('go-nocgo') }}\n    - go-licenses\n\ntest:\n  requires:\n    - m2-grep  # [win]\n  commands:\n    - {{ name }} --help 2>&1 | grep -q \"Go source code refactoring tool\"\n\nabout:\n  home: https://github.com/godoctor/{{ name }}\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - license-files/\n  summary: Go Doctor - The Golang Refactoring Engine\n  dev_url: https://github.com/godoctor/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
+ "raw_meta_yaml": "{% set name = \"godoctor\" %}\n{% set version = \"0.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/godoctor/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: c1517a444783224fdad46b7a7ce82407b714b121f60b17e9df9834b5b6773332\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('go-nocgo') }}\n    - go-licenses\n\ntest:\n  requires:\n    - m2-grep  # [win]\n  commands:\n    - {{ name }} --help 2>&1 | grep -q \"Go source code refactoring tool\"\n\nabout:\n  home: https://github.com/godoctor/{{ name }}\n  license: BSD-3-Clause\n  license_file:\n    - LICENSE\n    - license-files/\n  summary: Go Doctor - The Golang Refactoring Engine\n  dev_url: https://github.com/godoctor/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - danielnachun\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -451,8 +451,8 @@
    ]
   }
  },
- "url": "https://github.com/godoctor/godoctor/archive/v0.7.tar.gz",
- "version": "0.7",
+ "url": "https://github.com/godoctor/godoctor/archive/v0.8.tar.gz",
+ "version": "0.8",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/godoctor.json"
  },
@@ -477,7 +477,7 @@
   },
   "package": {
    "name": "godoctor",
-   "version": "0.7"
+   "version": "0.8"
   },
   "requirements": {
    "build": [
@@ -487,8 +487,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7a7951c3f69479abc886c6b0ce2fa54cd4bed2142c1c3d9fe6af8425384a76df",
-   "url": "https://github.com/godoctor/godoctor/archive/v0.7.tar.gz"
+   "sha256": "c1517a444783224fdad46b7a7ce82407b714b121f60b17e9df9834b5b6773332",
+   "url": "https://github.com/godoctor/godoctor/archive/v0.8.tar.gz"
   },
   "test": {
    "commands": [
