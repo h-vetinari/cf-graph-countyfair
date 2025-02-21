@@ -28,7 +28,7 @@
    "summary": "Library for analyzing ELF files and DWARF debugging information"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -39,7 +39,7 @@
   },
   "package": {
    "name": "pyelftools",
-   "version": "0.31"
+   "version": "0.32"
   },
   "requirements": {
    "build": [],
@@ -54,8 +54,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99",
-   "url": "https://pypi.io/packages/source/p/pyelftools/pyelftools-0.31.tar.gz"
+   "sha256": "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5",
+   "url": "https://pypi.org/packages/source/p/pyelftools/pyelftools-0.32.tar.gz"
   },
   "test": {
    "commands": [
@@ -104,7 +104,7 @@
    "summary": "Library for analyzing ELF files and DWARF debugging information"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -115,7 +115,7 @@
   },
   "package": {
    "name": "pyelftools",
-   "version": "0.31"
+   "version": "0.32"
   },
   "requirements": {
    "build": [],
@@ -130,8 +130,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99",
-   "url": "https://pypi.io/packages/source/p/pyelftools/pyelftools-0.31.tar.gz"
+   "sha256": "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5",
+   "url": "https://pypi.org/packages/source/p/pyelftools/pyelftools-0.32.tar.gz"
   },
   "test": {
    "commands": [
@@ -155,7 +155,7 @@
    "summary": "Library for analyzing ELF files and DWARF debugging information"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -166,7 +166,7 @@
   },
   "package": {
    "name": "pyelftools",
-   "version": "0.31"
+   "version": "0.32"
   },
   "requirements": {
    "build": [],
@@ -181,8 +181,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99",
-   "url": "https://pypi.io/packages/source/p/pyelftools/pyelftools-0.31.tar.gz"
+   "sha256": "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5",
+   "url": "https://pypi.org/packages/source/p/pyelftools/pyelftools-0.32.tar.gz"
   },
   "test": {
    "commands": [
@@ -231,7 +231,7 @@
    "summary": "Library for analyzing ELF files and DWARF debugging information"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -242,7 +242,7 @@
   },
   "package": {
    "name": "pyelftools",
-   "version": "0.31"
+   "version": "0.32"
   },
   "requirements": {
    "build": [],
@@ -257,8 +257,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99",
-   "url": "https://pypi.io/packages/source/p/pyelftools/pyelftools-0.31.tar.gz"
+   "sha256": "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5",
+   "url": "https://pypi.org/packages/source/p/pyelftools/pyelftools-0.32.tar.gz"
   },
   "test": {
    "commands": [
@@ -315,7 +315,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyelftools.json"
  },
- "raw_meta_yaml": "{% set name = \"pyelftools\" %}\n{% set version = \"0.31\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyelftools-{{ version }}.tar.gz\n  sha256: c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99\n\nbuild:\n  number: 1\n  # noarch: python\n  # this cannot be noarch b/c it has scripts\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python\n    - setuptools >=46.4.0\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - elftools\n    - elftools.common\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/eliben/pyelftools\n  summary: Library for analyzing ELF files and DWARF debugging information\n  license: Unlicense\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - ocefpaf\n",
+ "raw_meta_yaml": "{% set name = \"pyelftools\" %}\n{% set version = \"0.32\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyelftools-{{ version }}.tar.gz\n  sha256: 6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5\n\nbuild:\n  number: 0\n  # noarch: python\n  # this cannot be noarch b/c it has scripts\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n  host:\n    - python\n    - setuptools >=46.4.0\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - elftools\n    - elftools.common\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/eliben/pyelftools\n  summary: Library for analyzing ELF files and DWARF debugging information\n  license: Unlicense\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - ocefpaf\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -377,8 +377,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/p/pyelftools/pyelftools-0.31.tar.gz",
- "version": "0.31",
+ "url": "https://pypi.org/packages/source/p/pyelftools/pyelftools-0.32.tar.gz",
+ "version": "0.32",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/pyelftools.json"
  },
@@ -390,7 +390,7 @@
    "summary": "Library for analyzing ELF files and DWARF debugging information"
   },
   "build": {
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -401,7 +401,7 @@
   },
   "package": {
    "name": "pyelftools",
-   "version": "0.31"
+   "version": "0.32"
   },
   "requirements": {
    "build": [],
@@ -416,8 +416,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99",
-   "url": "https://pypi.io/packages/source/p/pyelftools/pyelftools-0.31.tar.gz"
+   "sha256": "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5",
+   "url": "https://pypi.org/packages/source/p/pyelftools/pyelftools-0.32.tar.gz"
   },
   "test": {
    "commands": [
