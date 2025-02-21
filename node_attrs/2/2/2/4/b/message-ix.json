@@ -25,31 +25,31 @@
     "message-ix=message_ix.cli:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "gidden",
     "khaeru",
     "glatterf42"
    ]
   },
   "package": {
    "name": "message-ix",
-   "version": "3.9.0"
+   "version": "3.10.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.9",
     "click",
     "genno >=1.20",
-    "importlib_metadata",
-    "ixmp >=3.9.0",
+    "importlib-metadata",
+    "ixmp >=3.10.0",
     "numpy",
     "pandas >=1.2",
     "iam-units",
@@ -62,8 +62,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "78023a8d441f2bd0fbd8ce2de07e387d24670407bdcd9fc03402435819f442b9",
-   "url": "https://pypi.org/packages/source/m/message_ix/message_ix-3.9.0.tar.gz"
+   "sha256": "7bb4b08fc0b49b0e473d24d107b9eaec815c93cc851f639bc0f7bb823ecfceac",
+   "url": "https://pypi.org/packages/source/m/message_ix/message_ix-3.10.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -90,7 +90,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -99,7 +100,7 @@
     "click",
     "genno",
     "iam-units",
-    "importlib_metadata",
+    "importlib-metadata",
     "ixmp",
     "jupyter",
     "matplotlib-base",
@@ -131,31 +132,31 @@
     "message-ix=message_ix.cli:main"
    ],
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
    "recipe-maintainers": [
-    "gidden",
     "khaeru",
     "glatterf42"
    ]
   },
   "package": {
    "name": "message-ix",
-   "version": "3.9.0"
+   "version": "3.10.0"
   },
   "requirements": {
    "host": [
     "python 3.9",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run": [
     "python >=3.9",
     "click",
     "genno >=1.20",
-    "importlib_metadata",
-    "ixmp >=3.9.0",
+    "importlib-metadata",
+    "ixmp >=3.10.0",
     "numpy",
     "pandas >=1.2",
     "iam-units",
@@ -168,8 +169,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "78023a8d441f2bd0fbd8ce2de07e387d24670407bdcd9fc03402435819f442b9",
-   "url": "https://pypi.org/packages/source/m/message_ix/message_ix-3.9.0.tar.gz"
+   "sha256": "7bb4b08fc0b49b0e473d24d107b9eaec815c93cc851f639bc0f7bb823ecfceac",
+   "url": "https://pypi.org/packages/source/m/message_ix/message_ix-3.10.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -201,14 +202,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/message-ix.json"
  },
- "raw_meta_yaml": "{% set name = \"message-ix\" %}\n{% set name_ = \"message_ix\" %}\n{% set version = \"3.9.0\" %}\n{% set hash = \"78023a8d441f2bd0fbd8ce2de07e387d24670407bdcd9fc03402435819f442b9\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name_ }}/{{ name_ }}-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - message-ix=message_ix.cli:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n  run:\n    - python >={{ python_min }}\n    # Install requirements\n    - click\n    - genno >=1.20\n    - importlib_metadata\n    - ixmp >=3.9.0\n    - numpy\n    - pandas >=1.2\n    # Extra requirements\n    - iam-units\n    - jupyter\n    - matplotlib-base\n    - pint\n    - plotnine\n    - pyam >=0.6\n\ntest:\n  imports:\n    - message_ix\n  requires:\n    - requests\n    - python {{ python_min }}\n  commands:\n  # General CLI usage\n    - message-ix --help\n    - message-ix add-years --help\n    - message-ix show-versions\n  # Download the tutorials\n    - message-ix dl tutorial\n\nabout:\n  home: https://github.com/iiasa/message_ix\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: The MESSAGE integrated assessment and energy systems model\n\nextra:\n  recipe-maintainers:\n    - gidden\n    - khaeru\n    - glatterf42\n",
+ "raw_meta_yaml": "{% set name = \"message-ix\" %}\n{% set name_ = \"message_ix\" %}\n{% set version = \"3.10.0\" %}\n{% set hash = \"7bb4b08fc0b49b0e473d24d107b9eaec815c93cc851f639bc0f7bb823ecfceac\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name_ }}/{{ name_ }}-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - message-ix=message_ix.cli:main\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    # Install requirements\n    - click\n    - genno >=1.20\n    - importlib-metadata\n    - ixmp >=3.10.0\n    - numpy\n    - pandas >=1.2\n    # Extra requirements\n    - iam-units\n    - jupyter\n    - matplotlib-base\n    - pint\n    - plotnine\n    - pyam >=0.6\n\ntest:\n  imports:\n    - message_ix\n  requires:\n    - requests\n    - python {{ python_min }}\n  commands:\n  # General CLI usage\n    - message-ix --help\n    - message-ix add-years --help\n    - message-ix show-versions\n  # Download the tutorials\n    - message-ix dl tutorial\n\nabout:\n  home: https://github.com/iiasa/message_ix\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: The MESSAGE integrated assessment and energy systems model\n\nextra:\n  recipe-maintainers:\n    - khaeru\n    - glatterf42\n",
  "req": {
   "__set__": true,
   "elements": [
    "click",
    "genno",
    "iam-units",
-   "importlib_metadata",
+   "importlib-metadata",
    "ixmp",
    "jupyter",
    "matplotlib-base",
@@ -218,7 +219,8 @@
    "pip",
    "plotnine",
    "pyam",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements": {
@@ -230,7 +232,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run": {
@@ -239,7 +242,7 @@
     "click",
     "genno",
     "iam-units",
-    "importlib_metadata",
+    "importlib-metadata",
     "ixmp",
     "jupyter",
     "matplotlib-base",
@@ -269,7 +272,8 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9"
+    "python 3.9",
+    "setuptools"
    ]
   },
   "run": {
@@ -278,8 +282,8 @@
     "click",
     "genno >=1.20",
     "iam-units",
-    "importlib_metadata",
-    "ixmp >=3.9.0",
+    "importlib-metadata",
+    "ixmp >=3.10.0",
     "jupyter",
     "matplotlib-base",
     "numpy",
@@ -298,8 +302,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/m/message_ix/message_ix-3.9.0.tar.gz",
- "version": "3.9.0",
+ "url": "https://pypi.org/packages/source/m/message_ix/message_ix-3.10.0.tar.gz",
+ "version": "3.10.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/message-ix.json"
  }
