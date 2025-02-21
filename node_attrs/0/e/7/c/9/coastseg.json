@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "coastseg",
-   "version": "1.4.1"
+   "version": "1.4.3"
   },
   "requirements": {
    "host": [
@@ -50,7 +50,7 @@
     "python >=3.10",
     "gdal >=3.8.4",
     "h5py >=3.10.0",
-    "pytmd >=2.1.7",
+    "pytmd <=2.1.9",
     "coastsat-package >=0.1.74",
     "pooch",
     "area",
@@ -69,8 +69,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "786cbc844dc23770c31bc1b60747be7f6791dfcecd5e36421148adfbff593c8d",
-   "url": "https://pypi.org/packages/source/C/CoastSeg/coastseg-1.4.1.tar.gz"
+   "sha256": "16d64c399ca021552efd2b1481222a7a05a046d1fdb137b9fbd6e84b0bda668a",
+   "url": "https://pypi.org/packages/source/C/CoastSeg/coastseg-1.4.3.tar.gz"
   },
   "test": {
    "commands": null,
@@ -149,7 +149,7 @@
   },
   "package": {
    "name": "coastseg",
-   "version": "1.4.1"
+   "version": "1.4.3"
   },
   "requirements": {
    "host": [
@@ -161,7 +161,7 @@
     "python >=3.10",
     "gdal >=3.8.4",
     "h5py >=3.10.0",
-    "pytmd >=2.1.7",
+    "pytmd <=2.1.9",
     "coastsat-package >=0.1.74",
     "pooch",
     "area",
@@ -180,8 +180,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "786cbc844dc23770c31bc1b60747be7f6791dfcecd5e36421148adfbff593c8d",
-   "url": "https://pypi.org/packages/source/C/CoastSeg/coastseg-1.4.1.tar.gz"
+   "sha256": "16d64c399ca021552efd2b1481222a7a05a046d1fdb137b9fbd6e84b0bda668a",
+   "url": "https://pypi.org/packages/source/C/CoastSeg/coastseg-1.4.3.tar.gz"
   },
   "test": {
    "commands": null,
@@ -208,7 +208,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/coastseg.json"
  },
- "raw_meta_yaml": "{% set name = \"CoastSeg\" %}\n{% set version = \"1.4.1\" %}\n{% set python_min = \"3.10\" %}\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coastseg-{{ version }}.tar.gz\n  sha256: 786cbc844dc23770c31bc1b60747be7f6791dfcecd5e36421148adfbff593c8d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - gdal >=3.8.4\n    - h5py >=3.10.0\n    - pytmd >=2.1.7\n    - coastsat-package >=0.1.74\n    - pooch\n    - area\n    - aiohttp\n    - chardet\n    - dask-core\n    - doodleverse-utils >=0.0.35\n    - earthengine-api >=0.1.388\n    - geojson\n    - geopandas\n    - jupyterlab >=3.0.0\n    - leafmap >=0.14.0\n    - nest-asyncio\n    - xarray\n\ntest:\n  imports:\n    - coastseg\n  commands:\n    # bogus requirement on versioneer in doodleverse_utils\n    # - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/SatelliteShorelines/CoastSeg\n  doc_url: https://satelliteshorelines.github.io/CoastSeg/\n  dev_url: https://github.com/SatelliteShorelines/CoastSeg\n  summary: An interactive python package for satellite derived shoreline workflows\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - 2320sharon\n",
+ "raw_meta_yaml": "{% set name = \"CoastSeg\" %}\n{% set version = \"1.4.3\" %}\n{% set python_min = \"3.10\" %}\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coastseg-{{ version }}.tar.gz\n  sha256: 16d64c399ca021552efd2b1481222a7a05a046d1fdb137b9fbd6e84b0bda668a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=61.0\n    - pip\n  run:\n    - python >={{ python_min }}\n    - gdal >=3.8.4\n    - h5py >=3.10.0\n    - pytmd <=2.1.9\n    - coastsat-package >=0.1.74\n    - pooch\n    - area\n    - aiohttp\n    - chardet\n    - dask-core\n    - doodleverse-utils >=0.0.35\n    - earthengine-api >=0.1.388\n    - geojson\n    - geopandas\n    - jupyterlab >=3.0.0\n    - leafmap >=0.14.0\n    - nest-asyncio\n    - xarray\n\ntest:\n  imports:\n    - coastseg\n  commands:\n    # bogus requirement on versioneer in doodleverse_utils\n    # - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://github.com/SatelliteShorelines/CoastSeg\n  doc_url: https://satelliteshorelines.github.io/CoastSeg/\n  dev_url: https://github.com/SatelliteShorelines/CoastSeg\n  summary: An interactive python package for satellite derived shoreline workflows\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - 2320sharon\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -311,7 +311,7 @@
     "nest-asyncio",
     "pooch",
     "python >=3.10",
-    "pytmd >=2.1.7",
+    "pytmd <=2.1.9",
     "xarray"
    ]
   },
@@ -323,8 +323,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/C/CoastSeg/coastseg-1.4.1.tar.gz",
- "version": "1.4.1",
+ "url": "https://pypi.org/packages/source/C/CoastSeg/coastseg-1.4.3.tar.gz",
+ "version": "1.4.3",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/coastseg.json"
  }
