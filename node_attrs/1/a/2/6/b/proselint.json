@@ -15,9 +15,8 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
-   "home": "http://github.com/amperser/proselint",
+   "home": "https://proselint.com",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
    "license_file": "LICENSE.md",
    "summary": "A linter for prose."
   },
@@ -27,36 +26,37 @@
    ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
-    "CJ-Wright"
+    "CJ-Wright",
+    "JaRoSchm"
    ]
   },
   "package": {
    "name": "proselint",
-   "version": "0.10.2"
+   "version": "0.14.0"
   },
   "requirements": {
    "host": [
-    "pip",
-    "python"
+    "python 3.9",
+    "poetry-core",
+    "pip"
    ],
    "run": [
-    "click",
-    "future",
-    "python",
-    "six"
+    "python >=3.9",
+    "click >=8.0.0,<9.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3a87eb393056d1bc77d898e4bcf8998f50e9ad84f7b9ff7cf2720509ac8ef904",
-   "url": "https://pypi.io/packages/source/p/proselint/proselint-0.10.2.tar.gz"
+   "sha256": "624964272bea14767e5df2561d87dd30767938c8cb52fb23585bc37580680e86",
+   "url": "https://pypi.org/packages/source/p/proselint/proselint-0.14.0.tar.gz"
   },
   "test": {
    "commands": [
+    "pip check",
     "proselint --help"
    ],
    "imports": [
@@ -93,6 +93,10 @@
     "proselint.checks.typography",
     "proselint.checks.uncomparables",
     "proselint.checks.weasel_words"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -105,6 +109,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "poetry-core",
     "python"
    ]
   },
@@ -112,21 +117,21 @@
    "__set__": true,
    "elements": [
     "click",
-    "future",
-    "python",
-    "six"
+    "python"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "meta_yaml": {
   "about": {
-   "home": "http://github.com/amperser/proselint",
+   "home": "https://proselint.com",
    "license": "BSD-3-Clause",
-   "license_family": "BSD",
    "license_file": "LICENSE.md",
    "summary": "A linter for prose."
   },
@@ -136,36 +141,37 @@
    ],
    "noarch": "python",
    "number": "0",
-   "script": "PYTHON -m pip install . --no-deps --ignore-installed -vv "
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
    "recipe-maintainers": [
-    "CJ-Wright"
+    "CJ-Wright",
+    "JaRoSchm"
    ]
   },
   "package": {
    "name": "proselint",
-   "version": "0.10.2"
+   "version": "0.14.0"
   },
   "requirements": {
    "host": [
-    "pip",
-    "python"
+    "python 3.9",
+    "poetry-core",
+    "pip"
    ],
    "run": [
-    "click",
-    "future",
-    "python",
-    "six"
+    "python >=3.9",
+    "click >=8.0.0,<9.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "3a87eb393056d1bc77d898e4bcf8998f50e9ad84f7b9ff7cf2720509ac8ef904",
-   "url": "https://pypi.io/packages/source/p/proselint/proselint-0.10.2.tar.gz"
+   "sha256": "624964272bea14767e5df2561d87dd30767938c8cb52fb23585bc37580680e86",
+   "url": "https://pypi.org/packages/source/p/proselint/proselint-0.14.0.tar.gz"
   },
   "test": {
    "commands": [
+    "pip check",
     "proselint --help"
    ],
    "imports": [
@@ -202,6 +208,10 @@
     "proselint.checks.typography",
     "proselint.checks.uncomparables",
     "proselint.checks.weasel_words"
+   ],
+   "requires": [
+    "pip",
+    "python 3.9"
    ]
   }
  },
@@ -219,15 +229,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/proselint.json"
  },
- "raw_meta_yaml": "{% set name = \"proselint\" %}\n{% set version = \"0.10.2\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: \"3a87eb393056d1bc77d898e4bcf8998f50e9ad84f7b9ff7cf2720509ac8ef904\"\n\nbuild:\n  number: 0\n  entry_points:\n    - proselint = proselint.command_line:proselint\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - click\n    - future\n    - python\n    - six\n\ntest:\n  imports:\n    - proselint\n    - proselint.checks\n    - proselint.checks.airlinese\n    - proselint.checks.annotations\n    - proselint.checks.archaism\n    - proselint.checks.cliches\n    - proselint.checks.consistency\n    - proselint.checks.corporate_speak\n    - proselint.checks.cursing\n    - proselint.checks.dates_times\n    - proselint.checks.hedging\n    - proselint.checks.hyperbole\n    - proselint.checks.jargon\n    - proselint.checks.lexical_illusions\n    - proselint.checks.lgbtq\n    - proselint.checks.links\n    - proselint.checks.malapropisms\n    - proselint.checks.misc\n    - proselint.checks.mixed_metaphors\n    - proselint.checks.mondegreens\n    - proselint.checks.needless_variants\n    - proselint.checks.nonwords\n    - proselint.checks.oxymorons\n    - proselint.checks.psychology\n    - proselint.checks.redundancy\n    - proselint.checks.security\n    - proselint.checks.sexism\n    - proselint.checks.skunked_terms\n    - proselint.checks.spelling\n    - proselint.checks.terms\n    - proselint.checks.typography\n    - proselint.checks.uncomparables\n    - proselint.checks.weasel_words\n  commands:\n    - proselint --help\n\nabout:\n  home: \"http://github.com/amperser/proselint\"\n  license: \"BSD-3-Clause\"\n  license_family: \"BSD\"\n  license_file: LICENSE.md\n  summary: \"A linter for prose.\"\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
+ "raw_meta_yaml": "{% set name = \"proselint\" %}\n{% set version = \"0.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/proselint-{{ version }}.tar.gz\n  sha256: 624964272bea14767e5df2561d87dd30767938c8cb52fb23585bc37580680e86\n\nbuild:\n  number: 0\n  entry_points:\n    - proselint = proselint.command_line:proselint\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  noarch: python\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }}\n    - click >=8.0.0,<9.0.0\n\ntest:\n  imports:\n    - proselint\n    - proselint.checks\n    - proselint.checks.airlinese\n    - proselint.checks.annotations\n    - proselint.checks.archaism\n    - proselint.checks.cliches\n    - proselint.checks.consistency\n    - proselint.checks.corporate_speak\n    - proselint.checks.cursing\n    - proselint.checks.dates_times\n    - proselint.checks.hedging\n    - proselint.checks.hyperbole\n    - proselint.checks.jargon\n    - proselint.checks.lexical_illusions\n    - proselint.checks.lgbtq\n    - proselint.checks.links\n    - proselint.checks.malapropisms\n    - proselint.checks.misc\n    - proselint.checks.mixed_metaphors\n    - proselint.checks.mondegreens\n    - proselint.checks.needless_variants\n    - proselint.checks.nonwords\n    - proselint.checks.oxymorons\n    - proselint.checks.psychology\n    - proselint.checks.redundancy\n    - proselint.checks.security\n    - proselint.checks.sexism\n    - proselint.checks.skunked_terms\n    - proselint.checks.spelling\n    - proselint.checks.terms\n    - proselint.checks.typography\n    - proselint.checks.uncomparables\n    - proselint.checks.weasel_words\n  commands:\n    - pip check\n    - proselint --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://proselint.com\n  license: BSD-3-Clause\n  license_file: LICENSE.md\n  summary: A linter for prose.\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - JaRoSchm\n",
  "req": {
   "__set__": true,
   "elements": [
    "click",
-   "future",
    "pip",
-   "python",
-   "six"
+   "poetry-core",
+   "python"
   ]
  },
  "requirements": {
@@ -239,6 +248,7 @@
    "__set__": true,
    "elements": [
     "pip",
+    "poetry-core",
     "python"
    ]
   },
@@ -246,14 +256,15 @@
    "__set__": true,
    "elements": [
     "click",
-    "future",
-    "python",
-    "six"
+    "python"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -266,25 +277,27 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python"
+    "poetry-core",
+    "python 3.9"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "click",
-    "future",
-    "python",
-    "six"
+    "click >=8.0.0,<9.0.0",
+    "python >=3.9"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python 3.9"
+   ]
   }
  },
- "url": "https://pypi.io/packages/source/p/proselint/proselint-0.10.2.tar.gz",
- "version": "0.10.2",
+ "url": "https://pypi.org/packages/source/p/proselint/proselint-0.14.0.tar.gz",
+ "version": "0.14.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/proselint.json"
  }
