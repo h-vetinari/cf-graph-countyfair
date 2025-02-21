@@ -15,16 +15,18 @@
  "hash_type": "sha256",
  "linux_64_meta_yaml": {
   "about": {
+   "doc_url": "https://cerbere.readthedocs.io/en/latest/",
    "home": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3",
-   "license": "GPL-3.0-or-later",
-   "license_file": "LICENSE.txt",
+   "license": "LGPL-3.0-only",
+   "license_file": "LICENSE.md",
    "summary": "Companion package of cerbere for Copernicus Sentinel-3 products."
   },
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": [
-    "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
+   "script_env": [
+    "POETRY_DYNAMIC_VERSIONING_BYPASS=3.1.2"
    ]
   },
   "extra": {
@@ -32,33 +34,46 @@
     "erwanbodere",
     "criou-cg",
     "cso2943",
-    "marie59"
+    "Marie59",
+    "jfpiolle"
    ]
   },
   "package": {
    "name": "cerberecontrib-s3",
-   "version": "1.1"
+   "version": "3.1.2"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.10",
+    "poetry-core >=1.0.0",
+    "poetry-dynamic-versioning >=1.0.0,<2.0.0",
     "pip"
    ],
    "run": [
-    "python >=3.8",
-    "cerbere >=2.1.1",
-    "gdal",
-    "lxml"
+    "python 3.10",
+    "lxml >=4,<5",
+    "more-itertools >=9.1,<10.0.0",
+    "attrs >=24.2.0,<25.1.0",
+    "h5netcdf >=1.3.0",
+    "cerbere >=3.1.2,<4.0.0",
+    "cerberecontrib-ghrsst >=3.1.2,<4.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d6001d8c27f1833665bd8d4ca13f0d45a6ffa61a306f49a650da8cb38993f165",
-   "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v1.1/cerberecontrib-s3-NOV-FE-1187-DT-115_v1.1.tar.gz"
+   "sha256": "ed0bc1f116f90572c138df0a6f4c8ebefeb78cfca2682f9f04c80652b75c0c5d",
+   "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/3.1.2/cerberecontrib-s3-3.1.2.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "cerberecontrib_s3"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -71,35 +86,45 @@
    "__set__": true,
    "elements": [
     "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning",
     "python"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "attrs",
     "cerbere",
-    "gdal",
+    "cerberecontrib-ghrsst",
+    "h5netcdf",
     "lxml",
+    "more-itertools",
     "python"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "meta_yaml": {
   "about": {
+   "doc_url": "https://cerbere.readthedocs.io/en/latest/",
    "home": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3",
-   "license": "GPL-3.0-or-later",
-   "license_file": "LICENSE.txt",
+   "license": "LGPL-3.0-only",
+   "license_file": "LICENSE.md",
    "summary": "Companion package of cerbere for Copernicus Sentinel-3 products."
   },
   "build": {
    "noarch": "python",
    "number": "0",
-   "script": [
-    "PYTHON -m pip install . -vv"
+   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation",
+   "script_env": [
+    "POETRY_DYNAMIC_VERSIONING_BYPASS=3.1.2"
    ]
   },
   "extra": {
@@ -107,33 +132,46 @@
     "erwanbodere",
     "criou-cg",
     "cso2943",
-    "marie59"
+    "Marie59",
+    "jfpiolle"
    ]
   },
   "package": {
    "name": "cerberecontrib-s3",
-   "version": "1.1"
+   "version": "3.1.2"
   },
   "requirements": {
    "host": [
-    "python >=3.8",
+    "python 3.10",
+    "poetry-core >=1.0.0",
+    "poetry-dynamic-versioning >=1.0.0,<2.0.0",
     "pip"
    ],
    "run": [
-    "python >=3.8",
-    "cerbere >=2.1.1",
-    "gdal",
-    "lxml"
+    "python 3.10",
+    "lxml >=4,<5",
+    "more-itertools >=9.1,<10.0.0",
+    "attrs >=24.2.0,<25.1.0",
+    "h5netcdf >=1.3.0",
+    "cerbere >=3.1.2,<4.0.0",
+    "cerberecontrib-ghrsst >=3.1.2,<4.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "d6001d8c27f1833665bd8d4ca13f0d45a6ffa61a306f49a650da8cb38993f165",
-   "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v1.1/cerberecontrib-s3-NOV-FE-1187-DT-115_v1.1.tar.gz"
+   "sha256": "ed0bc1f116f90572c138df0a6f4c8ebefeb78cfca2682f9f04c80652b75c0c5d",
+   "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/3.1.2/cerberecontrib-s3-3.1.2.tar.gz"
   },
   "test": {
+   "commands": [
+    "pip check"
+   ],
    "imports": [
     "cerberecontrib_s3"
+   ],
+   "requires": [
+    "pip",
+    "python 3.10"
    ]
   }
  },
@@ -151,14 +189,19 @@
  "pr_info": {
   "__lazy_json__": "pr_info/cerberecontrib-s3.json"
  },
- "raw_meta_yaml": "{% set name = \"cerberecontrib-s3\" %}\n{% set version = \"1.1\" %}\n\npackage: \n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v{{ version }}/cerberecontrib-s3-NOV-FE-1187-DT-115_v{{ version }}.tar.gz\n  sha256: d6001d8c27f1833665bd8d4ca13f0d45a6ffa61a306f49a650da8cb38993f165\n  \nbuild:\n  number: 0\n  noarch: python\n  script: \n  - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.8\n    - pip\n  run:\n    - python >=3.8\n    - cerbere >=2.1.1\n    - gdal\n    - lxml \n \ntest:\n  imports:\n    - cerberecontrib_s3\n    \nabout:\n  home: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3\n  license: GPL-3.0-or-later\n  license_file: LICENSE.txt\n  summary: Companion package of cerbere for Copernicus Sentinel-3 products.\n\nextra:\n  recipe-maintainers:\n    - erwanbodere\n    - criou-cg\n    - cso2943\n    - marie59\n",
+ "raw_meta_yaml": "{% set python_min = \"3.10\" %}\n{% set name = \"cerberecontrib-s3\" %}\n{% set version = \"3.1.2\" %}\n\npackage: \n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/{{ version }}/cerberecontrib-s3-{{ version }}.tar.gz\n  sha256: ed0bc1f116f90572c138df0a6f4c8ebefeb78cfca2682f9f04c80652b75c0c5d\n  \nbuild:\n  noarch: python\n  script_env:\n    - POETRY_DYNAMIC_VERSIONING_BYPASS={{ version }}\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core >=1.0.0\n    - poetry-dynamic-versioning >=1.0.0,<2.0.0\n    - pip\n  run:\n    - python {{ python_min }}\n    - lxml >=4,<5\n    - more-itertools >=9.1,<10.0.0\n    - attrs >=24.2.0,<25.1.0\n    - h5netcdf >=1.3.0\n    - cerbere >=3.1.2,<4.0.0\n    - cerberecontrib-ghrsst >=3.1.2,<4.0.0\n \ntest:\n  requires:\n    - pip\n    - python {{ python_min }}\n  commands:\n    - pip check\n  imports:\n    - cerberecontrib_s3\n    \nabout:\n  home: https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3\n  license: LGPL-3.0-only\n  license_file: LICENSE.md\n  summary: Companion package of cerbere for Copernicus Sentinel-3 products.\n  doc_url: https://cerbere.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - erwanbodere\n    - criou-cg\n    - cso2943\n    - Marie59\n    - jfpiolle\n",
  "req": {
   "__set__": true,
   "elements": [
+   "attrs",
    "cerbere",
-   "gdal",
+   "cerberecontrib-ghrsst",
+   "h5netcdf",
    "lxml",
+   "more-itertools",
    "pip",
+   "poetry-core",
+   "poetry-dynamic-versioning",
    "python"
   ]
  },
@@ -171,21 +214,29 @@
    "__set__": true,
    "elements": [
     "pip",
+    "poetry-core",
+    "poetry-dynamic-versioning",
     "python"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
+    "attrs",
     "cerbere",
-    "gdal",
+    "cerberecontrib-ghrsst",
+    "h5netcdf",
     "lxml",
+    "more-itertools",
     "python"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python"
+   ]
   }
  },
  "strong_exports": false,
@@ -198,25 +249,33 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python >=3.8"
+    "poetry-core >=1.0.0",
+    "poetry-dynamic-versioning >=1.0.0,<2.0.0",
+    "python 3.10"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "cerbere >=2.1.1",
-    "gdal",
-    "lxml",
-    "python >=3.8"
+    "attrs >=24.2.0,<25.1.0",
+    "cerbere >=3.1.2,<4.0.0",
+    "cerberecontrib-ghrsst >=3.1.2,<4.0.0",
+    "h5netcdf >=1.3.0",
+    "lxml >=4,<5",
+    "more-itertools >=9.1,<10.0.0",
+    "python 3.10"
    ]
   },
   "test": {
    "__set__": true,
-   "elements": []
+   "elements": [
+    "pip",
+    "python 3.10"
+   ]
   }
  },
- "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/NOV-FE-1187-DT-115_v1.1/cerberecontrib-s3-NOV-FE-1187-DT-115_v1.1.tar.gz",
- "version": "1.1",
+ "url": "https://gitlab.ifremer.fr/cerbere/cerberecontrib-s3/-/archive/3.1.2/cerberecontrib-s3-3.1.2.tar.gz",
+ "version": "3.1.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/cerberecontrib-s3.json"
  }
