@@ -28,7 +28,7 @@
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -170,7 +170,7 @@
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -450,7 +450,7 @@
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -601,7 +601,7 @@
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
@@ -758,7 +758,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pyproject-fmt.json"
  },
- "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 2.5.1\n  maturin_version: \">=1.7.1\"\n\npackage:\n  name: pyproject-fmt\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-${{ version }}.tar.gz\n  sha256: c7dfe1f62cc91fdf7ec73043b12c0df03a9a828ce09067fa4bb522fea5b24269\n\nbuild:\n  number: 0\n  # only build for the minimal python version\n  skip: not (match(python, python_min ~ \".*\") and is_abi3 == 'true')\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n  python:\n    entry_points:\n      - pyproject-fmt = pyproject_fmt.__main__:runner\n    version_independent: true\nrequirements:\n  build:\n    - ${{ compiler(\"c\") }}\n    - ${{ compiler(\"rust\") }}\n    - ${{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n        - maturin ${{ maturin_version }}\n  host:\n    - maturin ${{ maturin_version }}\n    - pip\n    - python\n    - python-abi3\n  run:\n    - python\n    - toml-fmt-common ==1.0.1\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: pyproject_fmt\n  - files:\n      recipe:\n        - run_test.py\n      source:\n        - pyproject-fmt/tests/\n    requirements:\n      run:\n        - pytest >=8.2\n        - pytest-cov >=5\n        - pytest-mock >=3.14\n        - python !=${{ python_min }}.*\n    script:\n      - pyproject-fmt --help\n      - python run_test.py\n\nabout:\n  summary: Format your pyproject.toml file\n  license: MIT\n  license_file:\n    - LICENSE.txt\n    - THIRDPARTY.yml\n  homepage: https://pypi.org/project/pyproject-fmt\n  repository: https://github.com/tox-dev/toml-fmt\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 2.5.1\n  maturin_min: 1.7.1\n\npackage:\n  name: pyproject-fmt\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/p/pyproject-fmt/pyproject_fmt-${{ version }}.tar.gz\n  sha256: c7dfe1f62cc91fdf7ec73043b12c0df03a9a828ce09067fa4bb522fea5b24269\n\nbuild:\n  number: 1\n  # only build for the minimal python version\n  skip: not (match(python, python_min ~ \".*\") and is_abi3 == 'true')\n  script:\n    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n  python:\n    entry_points:\n      - pyproject-fmt = pyproject_fmt.__main__:runner\n    version_independent: true\nrequirements:\n  build:\n    - ${{ compiler(\"c\") }}\n    - ${{ compiler(\"rust\") }}\n    - ${{ stdlib(\"c\") }}\n    - cargo-bundle-licenses\n    - if: build_platform != target_platform\n      then:\n        - python\n        - cross-python_${{ target_platform }}\n        - maturin >=${{ maturin_min }}\n  host:\n    - maturin >=${{ maturin_min }}\n    - pip\n    - python\n    - python-abi3\n  run:\n    - python\n    - toml-fmt-common ==1.0.1\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: pyproject_fmt\n  - files:\n      recipe:\n        - run_test.py\n      source:\n        - pyproject-fmt/tests/\n    requirements:\n      run:\n        - pytest >=8.2\n        - pytest-cov >=5\n        - pytest-mock >=3.14\n        - python !=${{ python_min }}.*\n    script:\n      - pyproject-fmt --help\n      - python run_test.py\n\nabout:\n  summary: Format your pyproject.toml file\n  license: MIT\n  license_file:\n    - LICENSE.txt\n    - THIRDPARTY.yml\n  homepage: https://pypi.org/project/pyproject-fmt\n  repository: https://github.com/tox-dev/toml-fmt\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -874,7 +874,7 @@
    "summary": "Format your pyproject.toml file"
   },
   "build": {
-   "number": "0",
+   "number": "1",
    "script": [
     "${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check",
     "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml"
