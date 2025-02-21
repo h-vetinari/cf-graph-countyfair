@@ -117,8 +117,7 @@
    "commands": [
     "pip check",
     "torchmd-train --help",
-    "pytest -v -s tests/test_model_utils.py",
-    "pytest -v -s tests/test_module.py -k \"test_dummy_train\""
+    "pytest -v -k \"not compile\" -s tests"
    ],
    "imports": [
     "torchmdnet"
@@ -264,8 +263,7 @@
    "commands": [
     "pip check",
     "torchmd-train --help",
-    "pytest -v -s tests/test_model_utils.py",
-    "pytest -v -s tests/test_module.py -k \"test_dummy_train\""
+    "pytest -v -k \"not compile\" -s tests"
    ],
    "imports": [
     "torchmdnet"
@@ -419,8 +417,7 @@
    "commands": [
     "pip check",
     "torchmd-train --help",
-    "pytest -v -s tests/test_model_utils.py",
-    "pytest -v -s tests/test_module.py -k \"test_dummy_train\""
+    "pytest -v -k \"not compile\" -s tests"
    ],
    "imports": [
     "torchmdnet"
@@ -504,8 +501,7 @@
    "commands": [
     "pip check",
     "torchmd-train --help",
-    "pytest -v -s tests/test_model_utils.py",
-    "pytest -v -s tests/test_module.py -k \"test_dummy_train\""
+    "pytest -v -k \"not compile\" -s tests"
    ],
    "imports": [
     "torchmdnet"
@@ -623,8 +619,7 @@
    "commands": [
     "pip check",
     "torchmd-train --help",
-    "pytest -v -s tests/test_model_utils.py",
-    "pytest -v -s tests/test_module.py -k \"test_dummy_train\""
+    "pytest -v -k \"not compile\" -s tests"
    ],
    "imports": [
     "torchmdnet"
@@ -693,7 +688,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/torchmd-net.json"
  },
- "raw_meta_yaml": "{% set version = \"2.4.6\" %}\n# see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion\n{% set torch_proc_type = \"cuda\" if cuda_compiler_version != \"None\" else \"cpu\" %}\n\npackage:\n  name: torchmd-net\n  version: {{ version }}\n\nsource:\n  url: https://github.com/torchmd/torchmd-net/archive/{{ version }}.tar.gz\n  sha256: 8bcd2474e08c5bc85fd6bde0f2b1ecea60a34be45d06b9df321d1408ad5a4aad\n\nbuild:\n  # Currently there is no pytorch 2.5.1 for Windows and CUDA 11.8. Only 12+. Same for aarch64.\n  skip: true  # [(win or aarch64) and (cuda_compiler_version == '11.8')]\n  entry_points:\n    - torchmd-train = torchmdnet.scripts.train:main\n  number: 4\n  string: cuda{{ cuda_compiler_version | replace('.', '') }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != \"None\"]\n  string: cpu_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version == \"None\"]\n  rpaths:\n    - lib/\n    - {{ SP_DIR }}/torch/lib\n  missing_dso_whitelist:\n    - \"*/c10.dll\"         # [win]\n    - \"*/torch_cpu.dll\"   # [win]\n    - \"*/c10_cuda.dll\"    # [win]\n\nrequirements:\n  build:\n    - python                                    # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}        # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cuda') }}                    # [cuda_compiler_version not in (undefined, 'None')]\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version not in (undefined, 'None')]\n    - pytorch                                   # [build_platform != target_platform]\n    - pytorch =*={{ torch_proc_type }}*         # [(build_platform != target_platform) or win]\n    - cuda-cudart-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cuda-driver-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\") and linux]\n    - libcufft-dev                              # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcurand-dev                             # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcublas-dev                             # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cuda-nvrtc-dev                            # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcusparse-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcusolver-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  host:\n    - python\n    - setuptools\n    - pip\n    - pytorch =*={{ torch_proc_type }}*\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version not in (undefined, 'None')]\n    - cuda-cudart-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run:\n    - python\n    - h5py\n    - pytorch_geometric\n    - lightning\n    - tqdm\n    - cuda-cudart                               # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run_constrained:\n    - pytorch =*={{ torch_proc_type }}*\n\ntest:\n  imports:\n    - torchmdnet\n  commands:\n    - pip check\n    - torchmd-train --help\n    - pytest -v -s tests/test_model_utils.py\n    - pytest -v -s tests/test_module.py -k \"test_dummy_train\"\n  requires:\n    - pip\n    - pytest\n    # Needed by pytorch for the compile functionality\n    - gxx  # [linux]\n    - clang  # [osx]\n  source_files:\n    - tests\n    - examples\n\nabout:\n  home: https://github.com/torchmd/torchmd-net\n  license: MIT\n  license_file: README.md\n  summary: 'State of the art Pytorch Neural Network Potentials (NNPs)'\n  description: |\n    TorchMD-NET provides state-of-the-art neural networks potentials (NNPs) and a mechanism to train them. It offers efficient and fast implementations of several NNPs and it is integrated in GPU-accelerated molecular dynamics code like ACEMD, OpenMM and TorchMD. TorchMD-NET exposes its NNPs as PyTorch modules.\n  doc_url: https://github.com/torchmd/torchmd-net\n  dev_url: https://github.com/torchmd/torchmd-net\n\nextra:\n  recipe-maintainers:\n    - sef43\n    - stefdoerr\n    - RaulPPelaez\n    - raimis\n    - giadefa\n",
+ "raw_meta_yaml": "{% set version = \"2.4.6\" %}\n# see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion\n{% set torch_proc_type = \"cuda\" if cuda_compiler_version != \"None\" else \"cpu\" %}\n\npackage:\n  name: torchmd-net\n  version: {{ version }}\n\nsource:\n  url: https://github.com/torchmd/torchmd-net/archive/{{ version }}.tar.gz\n  sha256: 8bcd2474e08c5bc85fd6bde0f2b1ecea60a34be45d06b9df321d1408ad5a4aad\n\nbuild:\n  # Currently there is no pytorch 2.5.1 for Windows and CUDA 11.8. Only 12+. Same for aarch64.\n  skip: true  # [(win or aarch64) and (cuda_compiler_version == '11.8')]\n  entry_points:\n    - torchmd-train = torchmdnet.scripts.train:main\n  number: 4\n  string: cuda{{ cuda_compiler_version | replace('.', '') }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != \"None\"]\n  string: cpu_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version == \"None\"]\n  rpaths:\n    - lib/\n    - {{ SP_DIR }}/torch/lib\n  missing_dso_whitelist:\n    - \"*/c10.dll\"         # [win]\n    - \"*/torch_cpu.dll\"   # [win]\n    - \"*/c10_cuda.dll\"    # [win]\n\nrequirements:\n  build:\n    - python                                    # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}        # [build_platform != target_platform]\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cuda') }}                    # [cuda_compiler_version not in (undefined, 'None')]\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version not in (undefined, 'None')]\n    - pytorch                                   # [build_platform != target_platform]\n    - pytorch =*={{ torch_proc_type }}*         # [(build_platform != target_platform) or win]\n    - cuda-cudart-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cuda-driver-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\") and linux]\n    - libcufft-dev                              # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcurand-dev                             # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcublas-dev                             # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - cuda-nvrtc-dev                            # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcusparse-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n    - libcusolver-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  host:\n    - python\n    - setuptools\n    - pip\n    - pytorch =*={{ torch_proc_type }}*\n    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version not in (undefined, 'None')]\n    - cuda-cudart-dev                           # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run:\n    - python\n    - h5py\n    - pytorch_geometric\n    - lightning\n    - tqdm\n    - cuda-cudart                               # [(cuda_compiler_version or \"\").startswith(\"12\")]\n  run_constrained:\n    - pytorch =*={{ torch_proc_type }}*\n\ntest:\n  imports:\n    - torchmdnet\n  commands:\n    - pip check\n    - torchmd-train --help\n    - pytest -v -s tests  # [py<3.12]\n    # Pytorch compile does not support 3.12\n    - pytest -v -k \"not compile\" -s tests  # [py>=3.12]\n  requires:\n    - pip\n    - pytest\n    # Needed by pytorch for the compile functionality\n    - gxx  # [linux]\n    - clang  # [osx]\n  source_files:\n    - tests\n    - examples\n\nabout:\n  home: https://github.com/torchmd/torchmd-net\n  license: MIT\n  license_file: README.md\n  summary: 'State of the art Pytorch Neural Network Potentials (NNPs)'\n  description: |\n    TorchMD-NET provides state-of-the-art neural networks potentials (NNPs) and a mechanism to train them. It offers efficient and fast implementations of several NNPs and it is integrated in GPU-accelerated molecular dynamics code like ACEMD, OpenMM and TorchMD. TorchMD-NET exposes its NNPs as PyTorch modules.\n  doc_url: https://github.com/torchmd/torchmd-net\n  dev_url: https://github.com/torchmd/torchmd-net\n\nextra:\n  recipe-maintainers:\n    - sef43\n    - stefdoerr\n    - RaulPPelaez\n    - raimis\n    - giadefa\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -926,8 +921,7 @@
    "commands": [
     "pip check",
     "torchmd-train --help",
-    "pytest -v -s tests/test_model_utils.py",
-    "pytest -v -s tests/test_module.py -k \"test_dummy_train\""
+    "pytest -v -k \"not compile\" -s tests"
    ],
    "imports": [
     "torchmdnet"
