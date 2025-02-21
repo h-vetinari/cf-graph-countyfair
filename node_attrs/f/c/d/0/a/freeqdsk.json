@@ -33,7 +33,7 @@
   },
   "package": {
    "name": "freeqdsk",
-   "version": "0.5.1"
+   "version": "0.5.2"
   },
   "requirements": {
    "host": [
@@ -50,8 +50,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "58192ebbd5115b38185b3b23d7c50525d63bf6cdd4531ab967cc05b67d2ed13e",
-   "url": "https://pypi.org/packages/source/f/freeqdsk/freeqdsk-0.5.1.tar.gz"
+   "sha256": "7b40430f8368a9ac130d441d43aa50944b4165c8c44fc49b752836bd8e822b4b",
+   "url": "https://pypi.org/packages/source/f/freeqdsk/freeqdsk-0.5.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "freeqdsk",
-   "version": "0.5.1"
+   "version": "0.5.2"
   },
   "requirements": {
    "host": [
@@ -133,8 +133,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "58192ebbd5115b38185b3b23d7c50525d63bf6cdd4531ab967cc05b67d2ed13e",
-   "url": "https://pypi.org/packages/source/f/freeqdsk/freeqdsk-0.5.1.tar.gz"
+   "sha256": "7b40430f8368a9ac130d441d43aa50944b4165c8c44fc49b752836bd8e822b4b",
+   "url": "https://pypi.org/packages/source/f/freeqdsk/freeqdsk-0.5.2.tar.gz"
   },
   "test": {
    "commands": [
@@ -163,7 +163,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/freeqdsk.json"
  },
- "raw_meta_yaml": "{% set name = \"freeqdsk\" %}\n{% set version = \"0.5.1\" %}\n{% set python_min = \"3.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/freeqdsk-{{ version }}.tar.gz\n  sha256: 58192ebbd5115b38185b3b23d7c50525d63bf6cdd4531ab967cc05b67d2ed13e\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools >=65\n    - setuptools-scm >=8\n  run:\n    - python >={{ python_min }}\n    - fortranformat ~=2.0\n    - numpy >=1.22\n\ntest:\n  imports:\n    - freeqdsk\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://pypi.org/project/freeqdsk/\n  summary: GEQDSK and AEQDSK tokamak equilibrium file reader/writer\n  dev_url: https://github.com/freegs-plasma/FreeQDSK\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - LiamPattinson\n",
+ "raw_meta_yaml": "{% set name = \"freeqdsk\" %}\n{% set version = \"0.5.2\" %}\n{% set python_min = \"3.9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/freeqdsk-{{ version }}.tar.gz\n  sha256: 7b40430f8368a9ac130d441d43aa50944b4165c8c44fc49b752836bd8e822b4b\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools >=65\n    - setuptools-scm >=8\n  run:\n    - python >={{ python_min }}\n    - fortranformat ~=2.0\n    - numpy >=1.22\n\ntest:\n  imports:\n    - freeqdsk\n  commands:\n    - pip check\n  requires:\n    - python {{ python_min }}\n    - pip\n\nabout:\n  home: https://pypi.org/project/freeqdsk/\n  summary: GEQDSK and AEQDSK tokamak equilibrium file reader/writer\n  dev_url: https://github.com/freegs-plasma/FreeQDSK\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - LiamPattinson\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -236,8 +236,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/f/freeqdsk/freeqdsk-0.5.1.tar.gz",
- "version": "0.5.1",
+ "url": "https://pypi.org/packages/source/f/freeqdsk/freeqdsk-0.5.2.tar.gz",
+ "version": "0.5.2",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/freeqdsk.json"
  }
