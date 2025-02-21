@@ -8,6 +8,7 @@
   "conda_build": {
    "pkg_format": "2"
   },
+  "conda_build_tool": "rattler-build",
   "conda_forge_output_validation": true,
   "github": {
    "branch_name": "main",
@@ -19,17 +20,16 @@
  "linux_64_meta_yaml": {
   "about": {
    "dev_url": "https://github.com/executablebooks/sphinx-book-theme",
-   "home": "https://sphinx-book-theme.readthedocs.org",
+   "home": "https://sphinx-book-theme.readthedocs.org/",
    "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
    "license_file": "src/LICENSE",
    "summary": "A clean book theme for scientific explanations and documentation with Sphinx"
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": [
-    "PYTHON -m pip install --find-links . --no-index --ignore-installed --no-deps sphinx-book-theme"
-   ]
+   "number": "0",
+   "script": "${{ PYTHON }} -m pip install --find-links . --no-index --ignore-installed --no-deps sphinx-book-theme"
   },
   "extra": {
    "recipe-maintainers": [
@@ -37,58 +37,78 @@
     "conda-forge/jupyter-book"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "sphinx-book-theme",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*",
+      "setuptools"
+     ],
+     "run": [
+      "pydata-sphinx-theme ==0.15.4",
+      "python >=3.9",
+      "sphinx >=6.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "sphinx_book_theme"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "src/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "beautifulsoup4",
+        "coverage",
+        "defusedxml",
+        "myst-nb",
+        "pytest",
+        "pytest-regressions",
+        "python 3.9.*",
+        "sphinx-thebe"
+       ]
+      },
+      "script": "python run_test.py"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "sphinx-book-theme",
-   "version": "1.1.3"
+   "version": "1.1.4"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools"
    ],
    "run": [
-    "pydata-sphinx-theme >=0.15.2",
+    "pydata-sphinx-theme ==0.15.4",
     "python >=3.9",
-    "sphinx >=5"
+    "sphinx >=6.1"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "sha256": "a554a9a7ac3881979a87a2b10f633aa2a5706e72218a10f71be38b3c9e831ae9",
-    "url": "https://pypi.org/packages/py3/s/sphinx-book-theme/sphinx_book_theme-1.1.3-py3-none-any.whl"
-   },
-   {
-    "folder": "src",
-    "sha256": "5f4d7ed67ce681b5732f35b218ea566df4a0d5b683791333207d1c094cbe335f",
-    "url": "https://github.com/executablebooks/sphinx-book-theme/archive/refs/tags/v1.1.3.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "pip check",
-    "cd src",
-    "coverage run --branch --source=sphinx_book_theme -m pytest -vv --color=yes --tb=long -k \"not (build_book or custombranch or repository_buttons)\"",
-    "coverage report --show-missing --skip-covered --fail-under=85"
-   ],
-   "imports": [
-    "sphinx_book_theme"
-   ],
-   "requires": [
-    "beautifulsoup4",
-    "coverage",
-    "defusedxml",
-    "myst-nb",
-    "pip",
-    "python 3.9",
-    "pytest",
-    "pytest-regressions",
-    "sphinx-thebe >=0.2"
-   ],
-   "source_files": [
-    "src/tests"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "843b3f5c8684640f4a2d01abd298beb66452d1b2394cd9ef5be5ebd5640ea0e1",
+   "url": "https://pypi.org/packages/py3/s/sphinx-book-theme/sphinx_book_theme-1.1.4-py3-none-any.whl"
   }
  },
  "linux_64_requirements": {
@@ -130,17 +150,16 @@
  "meta_yaml": {
   "about": {
    "dev_url": "https://github.com/executablebooks/sphinx-book-theme",
-   "home": "https://sphinx-book-theme.readthedocs.org",
+   "home": "https://sphinx-book-theme.readthedocs.org/",
    "license": "BSD-3-Clause",
+   "license_family": "BSD-3-Clause",
    "license_file": "src/LICENSE",
    "summary": "A clean book theme for scientific explanations and documentation with Sphinx"
   },
   "build": {
    "noarch": "python",
-   "number": "1",
-   "script": [
-    "PYTHON -m pip install --find-links . --no-index --ignore-installed --no-deps sphinx-book-theme"
-   ]
+   "number": "0",
+   "script": "${{ PYTHON }} -m pip install --find-links . --no-index --ignore-installed --no-deps sphinx-book-theme"
   },
   "extra": {
    "recipe-maintainers": [
@@ -148,58 +167,78 @@
     "conda-forge/jupyter-book"
    ]
   },
+  "outputs": [
+   {
+    "build": null,
+    "name": "sphinx-book-theme",
+    "requirements": {
+     "build": [],
+     "host": [
+      "pip",
+      "python 3.9.*",
+      "setuptools"
+     ],
+     "run": [
+      "pydata-sphinx-theme ==0.15.4",
+      "python >=3.9",
+      "sphinx >=6.1"
+     ]
+    },
+    "tests": [
+     {
+      "python": {
+       "imports": [
+        "sphinx_book_theme"
+       ],
+       "python_version": "3.9.*"
+      }
+     },
+     {
+      "files": {
+       "recipe": [
+        "run_test.py"
+       ],
+       "source": [
+        "src/tests/**"
+       ]
+      },
+      "requirements": {
+       "run": [
+        "beautifulsoup4",
+        "coverage",
+        "defusedxml",
+        "myst-nb",
+        "pytest",
+        "pytest-regressions",
+        "python 3.9.*",
+        "sphinx-thebe"
+       ]
+      },
+      "script": "python run_test.py"
+     }
+    ]
+   }
+  ],
   "package": {
    "name": "sphinx-book-theme",
-   "version": "1.1.3"
+   "version": "1.1.4"
   },
   "requirements": {
    "host": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools"
    ],
    "run": [
-    "pydata-sphinx-theme >=0.15.2",
+    "pydata-sphinx-theme ==0.15.4",
     "python >=3.9",
-    "sphinx >=5"
+    "sphinx >=6.1"
    ]
   },
-  "schema_version": 0,
-  "source": [
-   {
-    "sha256": "a554a9a7ac3881979a87a2b10f633aa2a5706e72218a10f71be38b3c9e831ae9",
-    "url": "https://pypi.org/packages/py3/s/sphinx-book-theme/sphinx_book_theme-1.1.3-py3-none-any.whl"
-   },
-   {
-    "folder": "src",
-    "sha256": "5f4d7ed67ce681b5732f35b218ea566df4a0d5b683791333207d1c094cbe335f",
-    "url": "https://github.com/executablebooks/sphinx-book-theme/archive/refs/tags/v1.1.3.tar.gz"
-   }
-  ],
-  "test": {
-   "commands": [
-    "pip check",
-    "cd src",
-    "coverage run --branch --source=sphinx_book_theme -m pytest -vv --color=yes --tb=long -k \"not (build_book or custombranch or repository_buttons)\"",
-    "coverage report --show-missing --skip-covered --fail-under=85"
-   ],
-   "imports": [
-    "sphinx_book_theme"
-   ],
-   "requires": [
-    "beautifulsoup4",
-    "coverage",
-    "defusedxml",
-    "myst-nb",
-    "pip",
-    "python 3.9",
-    "pytest",
-    "pytest-regressions",
-    "sphinx-thebe >=0.2"
-   ],
-   "source_files": [
-    "src/tests"
-   ]
+  "schema_version": 1,
+  "source": {
+   "sha256": "843b3f5c8684640f4a2d01abd298beb66452d1b2394cd9ef5be5ebd5640ea0e1",
+   "url": "https://pypi.org/packages/py3/s/sphinx-book-theme/sphinx_book_theme-1.1.4-py3-none-any.whl"
   }
  },
  "name": "sphinx-book-theme",
@@ -216,7 +255,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/sphinx-book-theme.json"
  },
- "raw_meta_yaml": "{% set version = \"1.1.3\" %}\n\npackage:\n  name: sphinx-book-theme\n  version: {{ version }}\n\nsource:\n  - url: https://pypi.org/packages/py3/s/sphinx-book-theme/sphinx_book_theme-{{ version }}-py3-none-any.whl\n    sha256: a554a9a7ac3881979a87a2b10f633aa2a5706e72218a10f71be38b3c9e831ae9\n  - folder: src\n    url: https://github.com/executablebooks/sphinx-book-theme/archive/refs/tags/v{{ version }}.tar.gz\n    sha256: 5f4d7ed67ce681b5732f35b218ea566df4a0d5b683791333207d1c094cbe335f\n\nbuild:\n  number: 1\n  noarch: python\n  script:\n    - {{ PYTHON }} -m pip install --find-links . --no-index --ignore-installed --no-deps sphinx-book-theme\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - pydata-sphinx-theme >=0.15.2\n    - python >={{ python_min }}\n    - sphinx >=5\n\ntest:\n  source_files:\n    - src/tests\n  imports:\n    - sphinx_book_theme\n  commands:\n    - pip check\n    - cd src\n    - coverage run --branch --source=sphinx_book_theme -m pytest -vv --color=yes --tb=long -k \"not (build_book or custombranch or repository_buttons)\"\n    - coverage report --show-missing --skip-covered --fail-under=85\n  requires:\n    - beautifulsoup4\n    - coverage\n    - defusedxml\n    - myst-nb\n    - pip\n    - python {{ python_min }}\n    - pytest\n    - pytest-regressions\n    - sphinx-thebe >=0.2\n\nabout:\n  home: https://sphinx-book-theme.readthedocs.org\n  summary: A clean book theme for scientific explanations and documentation with Sphinx\n  dev_url: https://github.com/executablebooks/sphinx-book-theme\n  license: BSD-3-Clause\n  license_file: src/LICENSE\n\nextra:\n  recipe-maintainers:\n    - anirrudh\n    - conda-forge/jupyter-book\n",
+ "raw_meta_yaml": "# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json\nschema_version: 1\n\ncontext:\n  version: 1.1.4\n\npackage:\n  name: sphinx-book-theme\n  version: ${{ version }}\n\nsource:\n  - url: https://pypi.org/packages/py3/s/sphinx-book-theme/sphinx_book_theme-${{ version }}-py3-none-any.whl\n    sha256: 843b3f5c8684640f4a2d01abd298beb66452d1b2394cd9ef5be5ebd5640ea0e1\n  - url: https://github.com/executablebooks/sphinx-book-theme/archive/refs/tags/v${{ version }}.tar.gz\n    sha256: e845ce8e58c99ab858fae82b4bbbc62bde226dd861c90ba1f91a26e1113a5775\n    target_directory: src\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - ${{ PYTHON }} -m pip install --find-links . --no-index --ignore-installed --no-deps sphinx-book-theme\n\nrequirements:\n  host:\n    - pip\n    - python ${{ python_min }}.*\n    - setuptools\n  run:\n    - pydata-sphinx-theme ==0.15.4\n    - python >=${{ python_min }}\n    - sphinx >=6.1\n\ntests:\n  - python:\n      pip_check: true\n      python_version: ${{ python_min }}.*\n      imports: sphinx_book_theme\n  - files:\n      recipe:\n        - run_test.py\n      source:\n        - src/tests/\n    requirements:\n      run:\n        - beautifulsoup4\n        - coverage\n        - defusedxml\n        - myst-nb\n        - pytest\n        - pytest-regressions\n        - python ${{ python_min }}.*\n        - sphinx-thebe\n    script:\n      - python run_test.py\n\nabout:\n  summary: A clean book theme for scientific explanations and documentation with Sphinx\n  license: BSD-3-Clause\n  license_file: src/LICENSE\n  homepage: https://sphinx-book-theme.readthedocs.org\n  repository: https://github.com/executablebooks/sphinx-book-theme\n\nextra:\n  recipe-maintainers:\n    - anirrudh\n    - conda-forge/jupyter-book\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -273,16 +312,16 @@
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.9",
+    "python 3.9.*",
     "setuptools"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "pydata-sphinx-theme >=0.15.2",
+    "pydata-sphinx-theme ==0.15.4",
     "python >=3.9",
-    "sphinx >=5"
+    "sphinx >=6.1"
    ]
   },
   "test": {
@@ -295,13 +334,13 @@
     "pip",
     "pytest",
     "pytest-regressions",
-    "python 3.9",
-    "sphinx-thebe >=0.2"
+    "python 3.9.*",
+    "sphinx-thebe"
    ]
   }
  },
- "url": "https://pypi.org/packages/py3/s/sphinx-book-theme/sphinx_book_theme-1.1.3-py3-none-any.whl",
- "version": "1.1.3",
+ "url": "https://pypi.org/packages/py3/s/sphinx-book-theme/sphinx_book_theme-1.1.4-py3-none-any.whl",
+ "version": "1.1.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/sphinx-book-theme.json"
  }
