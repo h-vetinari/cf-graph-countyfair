@@ -24,7 +24,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -40,8 +40,8 @@
   "requirements": {
    "host": [
     "pip",
-    "setuptools",
-    "python 3.6"
+    "python 3.6",
+    "setuptools"
    ],
    "run": [
     "pandas",
@@ -117,7 +117,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "0",
+   "number": "1",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -133,8 +133,8 @@
   "requirements": {
    "host": [
     "pip",
-    "setuptools",
-    "python 3.6"
+    "python 3.6",
+    "setuptools"
    ],
    "run": [
     "pandas",
@@ -179,7 +179,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/pybis.json"
  },
- "raw_meta_yaml": "{% set name = \"PyBIS\" %}\n{% set version = \"1.37.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2984fbddbbe957506e4a30c2ce878a496814f5f06a5c694fefab93ee37eee9ca\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - setuptools\n    - python 3.6\n  run:\n    - pandas\n    - pytest\n    - python >=3.6\n    - python-dateutil\n    - requests\n    - tabulate\n    - texttable\n    - urllib3\n\ntest:\n  imports:\n    - pybis\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python 3.6\n\nabout:\n  home: https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis\n  summary: openBIS connection and interaction, optimized for using with Jupyter\n  license: Apache-2.0\n  license_file: LICENSE\n  description: |\n    pyBIS is a Python module for interacting with openBIS. pyBIS is\n    designed to be most useful in a Jupyter Notebook or IPython\n    environment, especially if you are developing Python scripts for\n    automatisation. Jupyter Notebooks offer some sort of IDE for\n    openBIS, supporting TAB completition and immediate data checks,\n    making the life of a researcher hopefully easier.\n  doc_url: https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis/src/python\n\nextra:\n  recipe-maintainers:\n    - fabianegli\n    - laskadam\n",
+ "raw_meta_yaml": "{% set name = \"PyBIS\" %}\n{% set version = \"1.37.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2984fbddbbe957506e4a30c2ce878a496814f5f06a5c694fefab93ee37eee9ca\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n  run:\n    - pandas\n    - pytest\n    - python >={{ python_min }}\n    - python-dateutil\n    - requests\n    - tabulate\n    - texttable\n    - urllib3\n\ntest:\n  imports:\n    - pybis\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis\n  summary: openBIS connection and interaction, optimized for using with Jupyter\n  license: Apache-2.0\n  license_file: LICENSE\n  description: |\n    pyBIS is a Python module for interacting with openBIS. pyBIS is\n    designed to be most useful in a Jupyter Notebook or IPython\n    environment, especially if you are developing Python scripts for\n    automatisation. Jupyter Notebooks offer some sort of IDE for\n    openBIS, supporting TAB completition and immediate data checks,\n    making the life of a researcher hopefully easier.\n  doc_url: https://sissource.ethz.ch/sispub/openbis/tree/master/api-openbis-python3-pybis/src/python\n\nextra:\n  recipe-maintainers:\n    - fabianegli\n    - laskadam\n",
  "req": {
   "__set__": true,
   "elements": [
