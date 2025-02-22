@@ -32,28 +32,27 @@
   },
   "package": {
    "name": "quadax",
-   "version": "0.2.5"
+   "version": "0.2.6"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "setuptools >=40.8.0",
     "wheel",
-    "versioneer-518",
     "versioneer",
     "pip"
    ],
    "run": [
     "python >=3.9",
-    "equinox",
-    "jax >=0.3.2,<=0.5.0",
-    "numpy >=1.20.0,<2.0"
+    "equinox >=0.11.0,<0.12",
+    "jax >=0.3.2,<0.6.0",
+    "numpy >=1.20.0,<3.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "26b57477ea869fba8040ffbb6d9f67be3f63850856d0c5fb2e755676b640007b",
-   "url": "https://pypi.org/packages/source/q/quadax/quadax-0.2.5.tar.gz"
+   "sha256": "62ad201e0e2638bf45aae50f001809c5ebcd206352e11994602f0f12f2795f04",
+   "url": "https://github.com/f0uriest/quadax/archive/refs/tags/v0.2.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -80,7 +79,6 @@
     "python",
     "setuptools",
     "versioneer",
-    "versioneer-518",
     "wheel"
    ]
   },
@@ -120,28 +118,27 @@
   },
   "package": {
    "name": "quadax",
-   "version": "0.2.5"
+   "version": "0.2.6"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "setuptools >=40.8.0",
     "wheel",
-    "versioneer-518",
     "versioneer",
     "pip"
    ],
    "run": [
     "python >=3.9",
-    "equinox",
-    "jax >=0.3.2,<=0.5.0",
-    "numpy >=1.20.0,<2.0"
+    "equinox >=0.11.0,<0.12",
+    "jax >=0.3.2,<0.6.0",
+    "numpy >=1.20.0,<3.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "26b57477ea869fba8040ffbb6d9f67be3f63850856d0c5fb2e755676b640007b",
-   "url": "https://pypi.org/packages/source/q/quadax/quadax-0.2.5.tar.gz"
+   "sha256": "62ad201e0e2638bf45aae50f001809c5ebcd206352e11994602f0f12f2795f04",
+   "url": "https://github.com/f0uriest/quadax/archive/refs/tags/v0.2.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -170,7 +167,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/quadax.json"
  },
- "raw_meta_yaml": "{% set name = \"quadax\" %}\n{% set version = \"0.2.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/quadax-{{ version }}.tar.gz\n  sha256: 26b57477ea869fba8040ffbb6d9f67be3f63850856d0c5fb2e755676b640007b\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=40.8.0\n    - wheel\n    - versioneer-518\n    - versioneer\n    - pip\n  run:\n    - python >={{ python_min }}\n    - equinox\n    - jax >=0.3.2,<=0.5.0\n    - numpy >=1.20.0,<2.0\n\ntest:\n  imports:\n    - quadax\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/f0uriest/quadax\n  summary: Numerical quadrature with JAX\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
+ "raw_meta_yaml": "{% set name = \"quadax\" %}\n{% set version = \"0.2.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/f0uriest/quadax/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: 62ad201e0e2638bf45aae50f001809c5ebcd206352e11994602f0f12f2795f04\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=40.8.0\n    - wheel\n    - versioneer\n    - pip\n  run:\n    - python >={{ python_min }}\n    - equinox >=0.11.0,<0.12\n    - jax >=0.3.2,<0.6.0\n    - numpy >=1.20.0,<3.0\n\ntest:\n  imports:\n    - quadax\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/f0uriest/quadax\n  summary: Numerical quadrature with JAX\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -181,7 +178,6 @@
    "python",
    "setuptools",
    "versioneer",
-   "versioneer-518",
    "wheel"
   ]
  },
@@ -197,7 +193,6 @@
     "python",
     "setuptools",
     "versioneer",
-    "versioneer-518",
     "wheel"
    ]
   },
@@ -231,16 +226,15 @@
     "python 3.9",
     "setuptools >=40.8.0",
     "versioneer",
-    "versioneer-518",
     "wheel"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "equinox",
-    "jax >=0.3.2,<=0.5.0",
-    "numpy >=1.20.0,<2.0",
+    "equinox >=0.11.0,<0.12",
+    "jax >=0.3.2,<0.6.0",
+    "numpy >=1.20.0,<3.0",
     "python >=3.9"
    ]
   },
@@ -252,8 +246,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/q/quadax/quadax-0.2.5.tar.gz",
- "version": "0.2.5",
+ "url": "https://github.com/f0uriest/quadax/archive/refs/tags/v0.2.6.tar.gz",
+ "version": "0.2.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/quadax.json"
  }
