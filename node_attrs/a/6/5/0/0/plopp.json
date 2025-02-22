@@ -46,7 +46,8 @@
      "run": [
       "python >=3.10",
       "matplotlib-base >=3.5",
-      "scipp"
+      "scipp",
+      "lazy_loader"
      ]
     },
     "tests": [
@@ -63,7 +64,7 @@
   ],
   "package": {
    "name": "plopp",
-   "version": "24.10.0"
+   "version": "25.2.0"
   },
   "requirements": {
    "host": [
@@ -74,13 +75,14 @@
    "run": [
     "python >=3.10",
     "matplotlib-base >=3.5",
-    "scipp"
+    "scipp",
+    "lazy_loader"
    ]
   },
   "schema_version": 1,
   "source": {
-   "sha256": "463ae5a95f13a7c1efede9950ae9cc29ad7b2b88d978b49a67399ad34d2f6880",
-   "url": "https://pypi.org/packages/source/p/plopp/plopp-24.10.0.tar.gz"
+   "sha256": "931dc3f59d62c3c9d211cf4c3dd6b88993a5dfb4e94c6bfce7aec374d831fdc6",
+   "url": "https://pypi.org/packages/source/p/plopp/plopp-25.2.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -99,6 +101,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "lazy_loader",
     "matplotlib-base",
     "python",
     "scipp"
@@ -143,7 +146,8 @@
      "run": [
       "python >=3.10",
       "matplotlib-base >=3.5",
-      "scipp"
+      "scipp",
+      "lazy_loader"
      ]
     },
     "tests": [
@@ -160,7 +164,7 @@
   ],
   "package": {
    "name": "plopp",
-   "version": "24.10.0"
+   "version": "25.2.0"
   },
   "requirements": {
    "host": [
@@ -171,13 +175,14 @@
    "run": [
     "python >=3.10",
     "matplotlib-base >=3.5",
-    "scipp"
+    "scipp",
+    "lazy_loader"
    ]
   },
   "schema_version": 1,
   "source": {
-   "sha256": "463ae5a95f13a7c1efede9950ae9cc29ad7b2b88d978b49a67399ad34d2f6880",
-   "url": "https://pypi.org/packages/source/p/plopp/plopp-24.10.0.tar.gz"
+   "sha256": "931dc3f59d62c3c9d211cf4c3dd6b88993a5dfb4e94c6bfce7aec374d831fdc6",
+   "url": "https://pypi.org/packages/source/p/plopp/plopp-25.2.0.tar.gz"
   }
  },
  "name": "plopp",
@@ -194,10 +199,11 @@
  "pr_info": {
   "__lazy_json__": "pr_info/plopp.json"
  },
- "raw_meta_yaml": "context:\n  version: 24.10.0\n  python_min: \"3.10\"\n\npackage:\n  name: plopp\n  version: ${{ version }}\n\nsource:\n- url: https://pypi.org/packages/source/p/plopp/plopp-${{ version }}.tar.gz\n  sha256: 463ae5a95f13a7c1efede9950ae9cc29ad7b2b88d978b49a67399ad34d2f6880\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install .\n\nrequirements:\n  host:\n  - python ${{ python_min }}.*\n  - pip\n  - setuptools\n  run:\n  - python >=${{ python_min }}\n  - matplotlib-base >=3.5\n  - scipp\n\ntests:\n- python:\n    imports:\n    - plopp\n    python_version: ${{ python_min }}.*\n\nabout:\n  homepage: https://scipp.github.io/plopp/\n  summary: Visualization library for Scipp\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MridulS\n",
+ "raw_meta_yaml": "context:\n  version: \"25.2.0\"\n  python_min: \"3.10\"\n\npackage:\n  name: plopp\n  version: ${{ version }}\n\nsource:\n  - url: https://pypi.org/packages/source/p/plopp/plopp-${{ version }}.tar.gz\n    sha256: 931dc3f59d62c3c9d211cf4c3dd6b88993a5dfb4e94c6bfce7aec374d831fdc6\n\nbuild:\n  number: 0\n  noarch: python\n  script: ${{ PYTHON }} -m pip install .\n\nrequirements:\n  host:\n    - python ${{ python_min }}.*\n    - pip\n    - setuptools\n  run:\n    - python >=${{ python_min }}\n    - matplotlib-base >=3.5\n    - scipp\n    - lazy_loader\n\ntests:\n  - python:\n      imports:\n        - plopp\n      python_version: ${{ python_min }}.*\n\nabout:\n  homepage: https://scipp.github.io/plopp/\n  summary: Visualization library for Scipp\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - MridulS\n",
  "req": {
   "__set__": true,
   "elements": [
+   "lazy_loader",
    "matplotlib-base",
    "pip",
    "python",
@@ -221,6 +227,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "lazy_loader",
     "matplotlib-base",
     "python",
     "scipp"
@@ -250,6 +257,7 @@
   "run": {
    "__set__": true,
    "elements": [
+    "lazy_loader",
     "matplotlib-base >=3.5",
     "python >=3.10",
     "scipp"
@@ -262,8 +270,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/p/plopp/plopp-24.10.0.tar.gz",
- "version": "24.10.0",
+ "url": "https://pypi.org/packages/source/p/plopp/plopp-25.2.0.tar.gz",
+ "version": "25.2.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/plopp.json"
  }
