@@ -28,12 +28,12 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
-    "hrzn",
-    "dennisbader"
+    "dennisbader",
+    "madtoinou"
    ]
   },
   "outputs": [
@@ -60,7 +60,7 @@
       "pmdarima >=1.8.0",
       "pyod >=0.9.5",
       "requests >=2.22.0",
-      "scikit-learn >=1.0.1,<1.6.0",
+      "scikit-learn >=1.0.1",
       "scipy >=1.3.2",
       "shap >=0.40.0",
       "statsforecast >=1.4.0",
@@ -74,7 +74,7 @@
     },
     "test": {
      "commands": [
-      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\""
+      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\""
      ],
      "imports": [
       "darts",
@@ -100,6 +100,7 @@
       "darts.utils.historical_forecasts"
      ],
      "requires": [
+      "python 3.9",
       "pip",
       "testfixtures",
       "pytest"
@@ -128,7 +129,7 @@
     },
     "test": {
      "commands": [
-      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\""
+      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\""
      ],
      "imports": [
       "darts",
@@ -154,6 +155,7 @@
       "darts.utils.historical_forecasts"
      ],
      "requires": [
+      "python 3.9",
       "pip",
       "testfixtures",
       "pytest"
@@ -182,7 +184,7 @@
     },
     "test": {
      "commands": [
-      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\""
+      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\""
      ],
      "imports": [
       "darts",
@@ -208,6 +210,7 @@
       "darts.utils.historical_forecasts"
      ],
      "requires": [
+      "python 3.9",
       "pip",
       "testfixtures",
       "pytest"
@@ -239,7 +242,7 @@
     },
     "test": {
      "commands": [
-      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\""
+      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\""
      ],
      "imports": [
       "darts",
@@ -265,10 +268,10 @@
       "darts.utils.historical_forecasts"
      ],
      "requires": [
+      "python 3.9",
       "pip",
       "testfixtures",
-      "pytest",
-      "python 3.9"
+      "pytest"
      ],
      "source_files": [
       "darts"
@@ -278,12 +281,12 @@
   ],
   "package": {
    "name": "u8darts",
-   "version": "0.32.0"
+   "version": "0.33.0"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4dfac666c2db06a5f2264ecfe2fa7f40307c9da0ed812139315ed1d79a7a5bc4",
-   "url": "https://pypi.org/packages/source/u/u8darts/u8darts-0.32.0.tar.gz"
+   "sha256": "9db947a8b3c3428c6860dbfd4d01d072d8245f884b51aaad74a5f6a48a5015c9",
+   "url": "https://pypi.org/packages/source/u/u8darts/u8darts-0.33.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -353,12 +356,12 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1"
+   "number": "0"
   },
   "extra": {
    "recipe-maintainers": [
-    "hrzn",
-    "dennisbader"
+    "dennisbader",
+    "madtoinou"
    ]
   },
   "outputs": [
@@ -385,7 +388,7 @@
       "pmdarima >=1.8.0",
       "pyod >=0.9.5",
       "requests >=2.22.0",
-      "scikit-learn >=1.0.1,<1.6.0",
+      "scikit-learn >=1.0.1",
       "scipy >=1.3.2",
       "shap >=0.40.0",
       "statsforecast >=1.4.0",
@@ -399,7 +402,7 @@
     },
     "test": {
      "commands": [
-      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\""
+      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\""
      ],
      "imports": [
       "darts",
@@ -425,6 +428,7 @@
       "darts.utils.historical_forecasts"
      ],
      "requires": [
+      "python 3.9",
       "pip",
       "testfixtures",
       "pytest"
@@ -453,7 +457,7 @@
     },
     "test": {
      "commands": [
-      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\""
+      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\""
      ],
      "imports": [
       "darts",
@@ -479,6 +483,7 @@
       "darts.utils.historical_forecasts"
      ],
      "requires": [
+      "python 3.9",
       "pip",
       "testfixtures",
       "pytest"
@@ -507,7 +512,7 @@
     },
     "test": {
      "commands": [
-      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\""
+      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\""
      ],
      "imports": [
       "darts",
@@ -533,6 +538,7 @@
       "darts.utils.historical_forecasts"
      ],
      "requires": [
+      "python 3.9",
       "pip",
       "testfixtures",
       "pytest"
@@ -564,7 +570,7 @@
     },
     "test": {
      "commands": [
-      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\""
+      "pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\""
      ],
      "imports": [
       "darts",
@@ -590,10 +596,10 @@
       "darts.utils.historical_forecasts"
      ],
      "requires": [
+      "python 3.9",
       "pip",
       "testfixtures",
-      "pytest",
-      "python 3.9"
+      "pytest"
      ],
      "source_files": [
       "darts"
@@ -603,12 +609,12 @@
   ],
   "package": {
    "name": "u8darts",
-   "version": "0.32.0"
+   "version": "0.33.0"
   },
   "schema_version": 0,
   "source": {
-   "sha256": "4dfac666c2db06a5f2264ecfe2fa7f40307c9da0ed812139315ed1d79a7a5bc4",
-   "url": "https://pypi.org/packages/source/u/u8darts/u8darts-0.32.0.tar.gz"
+   "sha256": "9db947a8b3c3428c6860dbfd4d01d072d8245f884b51aaad74a5f6a48a5015c9",
+   "url": "https://pypi.org/packages/source/u/u8darts/u8darts-0.33.0.tar.gz"
   }
  },
  "name": "u8darts",
@@ -628,7 +634,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/u8darts.json"
  },
- "raw_meta_yaml": "{% set version = \"0.32.0\" %}\n{% set pypi_package_name = \"u8darts\" %}\n\npackage:\n  name: u8darts\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz\n  sha256: 4dfac666c2db06a5f2264ecfe2fa7f40307c9da0ed812139315ed1d79a7a5bc4\n\nbuild:\n  number: 1\n  noarch: python\n\noutputs:\n  - name: u8darts\n    build:\n      noarch: python\n      script: python -m pip install . --no-deps -vv\n    requirements:\n      host:\n        - python {{ python_min }}\n        - setuptools\n        - pip\n      run:\n        - python >={{ python_min }}\n        - holidays >=0.11.1\n        - joblib >=0.16.0\n        - matplotlib-base >=3.3.0\n        - nfoursid >=1.0.0\n        - numpy >=1.19.0,<2.0.0\n        - pandas>=1.0.5\n        - pmdarima >=1.8.0\n        - pyod >=0.9.5\n        - requests >=2.22.0\n        - scikit-learn >=1.0.1,<1.6.0\n        - scipy >=1.3.2\n        - shap >=0.40.0\n        - statsforecast >=1.4.0\n        - statsmodels >=0.14.0\n        - tbats >=1.1.0\n        - tqdm >=4.60.0\n        - typing-extensions\n        - xarray >=0.17.0\n        - xgboost >=1.6.0\n    test:\n      imports:\n        - darts\n        - darts.ad\n        - darts.ad.aggregators\n        - darts.ad.anomaly_model\n        - darts.ad.detectors\n        - darts.ad.scorers\n        - darts.dataprocessing\n        - darts.dataprocessing.dtw\n        - darts.dataprocessing.encoders\n        - darts.dataprocessing.transformers\n        - darts.datasets\n        - darts.explainability\n        - darts.metrics\n        - darts.models\n        - darts.tests\n        - darts.tests.dataprocessing\n        - darts.tests.dataprocessing.transformers\n        - darts.tests.utils\n        - darts.utils\n        - darts.utils.data\n        - darts.utils.historical_forecasts\n      source_files:\n        - darts\n      commands:\n        - pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\"\n      requires:\n        - pip\n        - testfixtures\n        - pytest\n\n  - name: u8darts-notorch\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"u8darts\", exact=True) }}\n        - catboost >=1.0.6\n        - lightgbm >=3.2.0\n        - prophet >=1.1.1\n\n    test:\n      imports:\n        - darts\n        - darts.ad\n        - darts.ad.aggregators\n        - darts.ad.anomaly_model\n        - darts.ad.detectors\n        - darts.ad.scorers\n        - darts.dataprocessing\n        - darts.dataprocessing.dtw\n        - darts.dataprocessing.encoders\n        - darts.dataprocessing.transformers\n        - darts.datasets\n        - darts.explainability\n        - darts.metrics\n        - darts.models\n        - darts.tests\n        - darts.tests.dataprocessing\n        - darts.tests.dataprocessing.transformers\n        - darts.tests.utils\n        - darts.utils\n        - darts.utils.data\n        - darts.utils.historical_forecasts\n      source_files:\n        - darts\n      commands:\n        - pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\"\n      requires:\n        - pip\n        - testfixtures\n        - pytest\n\n  - name: u8darts-torch\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"u8darts\", exact=True) }}\n        - pytorch-lightning >=1.5.0\n        - tensorboardx >=2.1\n        - pytorch >=1.8.0\n\n    test:\n      imports:\n        - darts\n        - darts.ad\n        - darts.ad.aggregators\n        - darts.ad.anomaly_model\n        - darts.ad.detectors\n        - darts.ad.scorers\n        - darts.dataprocessing\n        - darts.dataprocessing.dtw\n        - darts.dataprocessing.encoders\n        - darts.dataprocessing.transformers\n        - darts.datasets\n        - darts.explainability\n        - darts.metrics\n        - darts.models\n        - darts.tests\n        - darts.tests.dataprocessing\n        - darts.tests.dataprocessing.transformers\n        - darts.tests.utils\n        - darts.utils\n        - darts.utils.data\n        - darts.utils.historical_forecasts\n      source_files:\n        - darts\n      commands:\n        - pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\"\n      requires:\n        - pip\n        - testfixtures\n        - pytest\n\n  - name: u8darts-all\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"u8darts\", exact=True) }}\n        - pytorch-lightning >=1.5.0\n        - tensorboardx >=2.1\n        - pytorch >=1.8.0\n        - catboost >=1.0.6\n        - lightgbm >=3.2.0\n        - prophet >=1.1.1\n\n    test:\n      imports:\n        - darts\n        - darts.ad\n        - darts.ad.aggregators\n        - darts.ad.anomaly_model\n        - darts.ad.detectors\n        - darts.ad.scorers\n        - darts.dataprocessing\n        - darts.dataprocessing.dtw\n        - darts.dataprocessing.encoders\n        - darts.dataprocessing.transformers\n        - darts.datasets\n        - darts.explainability\n        - darts.metrics\n        - darts.models\n        - darts.tests\n        - darts.tests.dataprocessing\n        - darts.tests.dataprocessing.transformers\n        - darts.tests.utils\n        - darts.utils\n        - darts.utils.data\n        - darts.utils.historical_forecasts\n      source_files:\n        - darts\n      commands:\n        - pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests\"\n      requires:\n        - pip\n        - testfixtures\n        - pytest\n        - python {{ python_min }}\n\nabout:\n  home: https://unit8co.github.io/darts/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: A python library for user-friendly forecasting and anomaly detection on time series.\n  dev_url: https://github.com/unit8co/darts\n  doc_url: https://unit8co.github.io/darts/\n\nextra:\n  recipe-maintainers:\n    - hrzn\n    - dennisbader\n",
+ "raw_meta_yaml": "{% set version = \"0.33.0\" %}\n{% set pypi_package_name = \"u8darts\" %}\n\npackage:\n  name: u8darts\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ pypi_package_name[0] }}/{{ pypi_package_name }}/{{ pypi_package_name }}-{{ version }}.tar.gz\n  sha256: 9db947a8b3c3428c6860dbfd4d01d072d8245f884b51aaad74a5f6a48a5015c9\n\nbuild:\n  number: 0\n  noarch: python\n\noutputs:\n  - name: u8darts\n    build:\n      noarch: python\n      script: python -m pip install . --no-deps -vv\n    requirements:\n      host:\n        - python {{ python_min }}\n        - setuptools\n        - pip\n      run:\n        - python >={{ python_min }}\n        - holidays >=0.11.1\n        - joblib >=0.16.0\n        - matplotlib-base >=3.3.0\n        - nfoursid >=1.0.0\n        - numpy >=1.19.0,<2.0.0\n        - pandas>=1.0.5\n        - pmdarima >=1.8.0\n        - pyod >=0.9.5\n        - requests >=2.22.0\n        - scikit-learn >=1.0.1\n        - scipy >=1.3.2\n        - shap >=0.40.0\n        - statsforecast >=1.4.0\n        - statsmodels >=0.14.0\n        - tbats >=1.1.0\n        - tqdm >=4.60.0\n        - typing-extensions\n        - xarray >=0.17.0\n        - xgboost >=1.6.0\n    test:\n      imports:\n        - darts\n        - darts.ad\n        - darts.ad.aggregators\n        - darts.ad.anomaly_model\n        - darts.ad.detectors\n        - darts.ad.scorers\n        - darts.dataprocessing\n        - darts.dataprocessing.dtw\n        - darts.dataprocessing.encoders\n        - darts.dataprocessing.transformers\n        - darts.datasets\n        - darts.explainability\n        - darts.metrics\n        - darts.models\n        - darts.tests\n        - darts.tests.dataprocessing\n        - darts.tests.dataprocessing.transformers\n        - darts.tests.utils\n        - darts.utils\n        - darts.utils.data\n        - darts.utils.historical_forecasts\n      source_files:\n        - darts\n      commands:\n        - pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\"\n      requires:\n        - python {{ python_min }}\n        - pip\n        - testfixtures\n        - pytest\n\n  - name: u8darts-notorch\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"u8darts\", exact=True) }}\n        - catboost >=1.0.6\n        - lightgbm >=3.2.0\n        - prophet >=1.1.1\n\n    test:\n      imports:\n        - darts\n        - darts.ad\n        - darts.ad.aggregators\n        - darts.ad.anomaly_model\n        - darts.ad.detectors\n        - darts.ad.scorers\n        - darts.dataprocessing\n        - darts.dataprocessing.dtw\n        - darts.dataprocessing.encoders\n        - darts.dataprocessing.transformers\n        - darts.datasets\n        - darts.explainability\n        - darts.metrics\n        - darts.models\n        - darts.tests\n        - darts.tests.dataprocessing\n        - darts.tests.dataprocessing.transformers\n        - darts.tests.utils\n        - darts.utils\n        - darts.utils.data\n        - darts.utils.historical_forecasts\n      source_files:\n        - darts\n      commands:\n        - pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\"\n      requires:\n        - python {{ python_min }}\n        - pip\n        - testfixtures\n        - pytest\n\n  - name: u8darts-torch\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"u8darts\", exact=True) }}\n        - pytorch-lightning >=1.5.0\n        - tensorboardx >=2.1\n        - pytorch >=1.8.0\n\n    test:\n      imports:\n        - darts\n        - darts.ad\n        - darts.ad.aggregators\n        - darts.ad.anomaly_model\n        - darts.ad.detectors\n        - darts.ad.scorers\n        - darts.dataprocessing\n        - darts.dataprocessing.dtw\n        - darts.dataprocessing.encoders\n        - darts.dataprocessing.transformers\n        - darts.datasets\n        - darts.explainability\n        - darts.metrics\n        - darts.models\n        - darts.tests\n        - darts.tests.dataprocessing\n        - darts.tests.dataprocessing.transformers\n        - darts.tests.utils\n        - darts.utils\n        - darts.utils.data\n        - darts.utils.historical_forecasts\n      source_files:\n        - darts\n      commands:\n        - pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\"\n      requires:\n        - python {{ python_min }}\n        - pip\n        - testfixtures\n        - pytest\n\n  - name: u8darts-all\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"u8darts\", exact=True) }}\n        - pytorch-lightning >=1.5.0\n        - tensorboardx >=2.1\n        - pytorch >=1.8.0\n        - catboost >=1.0.6\n        - lightgbm >=3.2.0\n        - prophet >=1.1.1\n\n    test:\n      imports:\n        - darts\n        - darts.ad\n        - darts.ad.aggregators\n        - darts.ad.anomaly_model\n        - darts.ad.detectors\n        - darts.ad.scorers\n        - darts.dataprocessing\n        - darts.dataprocessing.dtw\n        - darts.dataprocessing.encoders\n        - darts.dataprocessing.transformers\n        - darts.datasets\n        - darts.explainability\n        - darts.metrics\n        - darts.models\n        - darts.tests\n        - darts.tests.dataprocessing\n        - darts.tests.dataprocessing.transformers\n        - darts.tests.utils\n        - darts.utils\n        - darts.utils.data\n        - darts.utils.historical_forecasts\n      source_files:\n        - darts\n      commands:\n        - pytest darts/tests -k \"not test_lagged_training_data_equal_freq and not test_create_lagged_component_names_different_lags and not test_stationarity_tests and not test_stridden_conformal_model and not test_backtest_bad_covariates\"\n      requires:\n        - python {{ python_min }}\n        - pip\n        - testfixtures\n        - pytest\n\nabout:\n  home: https://unit8co.github.io/darts/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: A python library for user-friendly forecasting and anomaly detection on time series.\n  dev_url: https://github.com/unit8co/darts\n  doc_url: https://unit8co.github.io/darts/\n\nextra:\n  recipe-maintainers:\n    - dennisbader\n    - madtoinou\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -750,7 +756,7 @@
     "pytorch >=1.8.0",
     "pytorch-lightning >=1.5.0",
     "requests >=2.22.0",
-    "scikit-learn >=1.0.1,<1.6.0",
+    "scikit-learn >=1.0.1",
     "scipy >=1.3.2",
     "shap >=0.40.0",
     "statsforecast >=1.4.0",
@@ -774,8 +780,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/u/u8darts/u8darts-0.32.0.tar.gz",
- "version": "0.32.0",
+ "url": "https://pypi.org/packages/source/u/u8darts/u8darts-0.33.0.tar.gz",
+ "version": "0.33.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/u8darts.json"
  }
