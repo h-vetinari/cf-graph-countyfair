@@ -28,7 +28,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -38,7 +38,7 @@
   },
   "package": {
    "name": "zodburi",
-   "version": "2.6.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "host": [
@@ -56,8 +56,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "62ef5ca8226f4649e721cd07ac7070a6fce16791a1b1abe57e6a2a6bde7fdbb0",
-   "url": "https://pypi.org/packages/source/z/zodburi/zodburi-2.6.0.tar.gz"
+   "sha256": "4359b964dffdae1e56a19124108d89f3730d15417260f828403cf05d6533cc41",
+   "url": "https://pypi.org/packages/source/z/zodburi/zodburi-3.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -115,7 +115,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "1",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv"
   },
   "extra": {
@@ -125,7 +125,7 @@
   },
   "package": {
    "name": "zodburi",
-   "version": "2.6.0"
+   "version": "3.0.0"
   },
   "requirements": {
    "host": [
@@ -143,8 +143,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "62ef5ca8226f4649e721cd07ac7070a6fce16791a1b1abe57e6a2a6bde7fdbb0",
-   "url": "https://pypi.org/packages/source/z/zodburi/zodburi-2.6.0.tar.gz"
+   "sha256": "4359b964dffdae1e56a19124108d89f3730d15417260f828403cf05d6533cc41",
+   "url": "https://pypi.org/packages/source/z/zodburi/zodburi-3.0.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -173,7 +173,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/zodburi.json"
  },
- "raw_meta_yaml": "{% set name = \"zodburi\" %}\n{% set version = \"2.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 62ef5ca8226f4649e721cd07ac7070a6fce16791a1b1abe57e6a2a6bde7fdbb0\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n\n  run:\n    - python >={{ python_min }}\n    - setuptools\n    - zodb\n    - zconfig\n    - zeo\n\ntest:\n  imports:\n    - zodburi\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/Pylons/zodburi\n  license_file: LICENSE.txt\n  license: ZPL-2.1\n  license_family: Other\n  summary: Construct ZODB storage instances from URIs.\n  doc_url: https://zodburi.readthedocs.io/en/latest/\n  dev_url: https://github.com/Pylons/zodburi\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"zodburi\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4359b964dffdae1e56a19124108d89f3730d15417260f828403cf05d6533cc41\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python {{ python_min }}\n    - setuptools\n\n  run:\n    - python >={{ python_min }}\n    - setuptools\n    - zodb\n    - zconfig\n    - zeo\n\ntest:\n  imports:\n    - zodburi\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/Pylons/zodburi\n  license_file: LICENSE.txt\n  license: ZPL-2.1\n  license_family: Other\n  summary: Construct ZODB storage instances from URIs.\n  doc_url: https://zodburi.readthedocs.io/en/latest/\n  dev_url: https://github.com/Pylons/zodburi\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -248,8 +248,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/z/zodburi/zodburi-2.6.0.tar.gz",
- "version": "2.6.0",
+ "url": "https://pypi.org/packages/source/z/zodburi/zodburi-3.0.0.tar.gz",
+ "version": "3.0.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/zodburi.json"
  }
