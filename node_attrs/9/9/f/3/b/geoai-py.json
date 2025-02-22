@@ -2,6 +2,9 @@
  "archived": false,
  "branch": "main",
  "conda-forge.yml": {
+  "bot": {
+   "automerge": true
+  },
   "conda_build": {
    "error_overlinking": true
   },
@@ -22,7 +25,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -60,7 +63,7 @@
   ],
   "package": {
    "name": "geoai-py",
-   "version": "0.1.0"
+   "version": "0.1.5"
   },
   "requirements": {
    "host": [
@@ -70,13 +73,15 @@
    ],
    "run": [
     "python >=3.9",
-    "segment-geospatial"
+    "segment-geospatial",
+    "albumentations",
+    "transformers"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "cc4c2a0b6fe53496d6f5faeb18de73298acb0b53f904351b28c94486b8be6e3d",
-   "url": "https://pypi.org/packages/source/g/geoai-py/geoai-py-0.1.0.tar.gz"
+   "sha256": "d245a927afbb6b2aefb55ecff9775562aa1f1fb47b062d423d2c853febb26b48",
+   "url": "https://pypi.org/packages/source/g/geoai-py/geoai_py-0.1.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -107,9 +112,11 @@
   "run": {
    "__set__": true,
    "elements": [
+    "albumentations",
     "geoai-py",
     "python",
-    "segment-geospatial"
+    "segment-geospatial",
+    "transformers"
    ]
   },
   "test": {
@@ -129,7 +136,7 @@
   },
   "build": {
    "noarch": "python",
-   "number": "2",
+   "number": "0",
    "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
   },
   "extra": {
@@ -167,7 +174,7 @@
   ],
   "package": {
    "name": "geoai-py",
-   "version": "0.1.0"
+   "version": "0.1.5"
   },
   "requirements": {
    "host": [
@@ -177,13 +184,15 @@
    ],
    "run": [
     "python >=3.9",
-    "segment-geospatial"
+    "segment-geospatial",
+    "albumentations",
+    "transformers"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "cc4c2a0b6fe53496d6f5faeb18de73298acb0b53f904351b28c94486b8be6e3d",
-   "url": "https://pypi.org/packages/source/g/geoai-py/geoai-py-0.1.0.tar.gz"
+   "sha256": "d245a927afbb6b2aefb55ecff9775562aa1f1fb47b062d423d2c853febb26b48",
+   "url": "https://pypi.org/packages/source/g/geoai-py/geoai_py-0.1.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -213,15 +222,17 @@
  "pr_info": {
   "__lazy_json__": "pr_info/geoai-py.json"
  },
- "raw_meta_yaml": "{% set name = \"geoai-py\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geoai-py-{{ version }}.tar.gz\n  sha256: cc4c2a0b6fe53496d6f5faeb18de73298acb0b53f904351b28c94486b8be6e3d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 2\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - segment-geospatial\n\ntest:\n  imports:\n    - geoai\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\noutputs:\n  - name: geoai-py\n  - name: geoai\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"geoai-py\", exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - geoai\n\n\nabout:\n  home: https://github.com/opengeos/geoai\n  summary: A Python package for using Artificial Intelligence (AI) with geospatial data\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - giswqs\n",
+ "raw_meta_yaml": "{% set name = \"geoai-py\" %}\n{% set version = \"0.1.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geoai_py-{{ version }}.tar.gz\n  sha256: d245a927afbb6b2aefb55ecff9775562aa1f1fb47b062d423d2c853febb26b48\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n  run:\n    - python >={{ python_min }}\n    - segment-geospatial\n    - albumentations\n    - transformers\n\ntest:\n  imports:\n    - geoai\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\noutputs:\n  - name: geoai-py\n  - name: geoai\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python {{ python_min }}\n      run:\n        - python >={{ python_min }}\n        - {{ pin_subpackage(\"geoai-py\", exact=True) }}\n\n    test:\n      requires:\n        - python {{ python_min }}\n      imports:\n        - geoai\n\n\nabout:\n  home: https://github.com/opengeos/geoai\n  summary: A Python package for using Artificial Intelligence (AI) with geospatial data\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - giswqs\n",
  "req": {
   "__set__": true,
   "elements": [
+   "albumentations",
    "geoai-py",
    "pip",
    "python",
    "segment-geospatial",
-   "setuptools"
+   "setuptools",
+   "transformers"
   ]
  },
  "requirements": {
@@ -240,9 +251,11 @@
   "run": {
    "__set__": true,
    "elements": [
+    "albumentations",
     "geoai-py",
     "python",
-    "segment-geospatial"
+    "segment-geospatial",
+    "transformers"
    ]
   },
   "test": {
@@ -270,9 +283,11 @@
   "run": {
    "__set__": true,
    "elements": [
+    "albumentations",
     "geoai-py",
     "python >=3.9",
-    "segment-geospatial"
+    "segment-geospatial",
+    "transformers"
    ]
   },
   "test": {
@@ -283,8 +298,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/g/geoai-py/geoai-py-0.1.0.tar.gz",
- "version": "0.1.0",
+ "url": "https://pypi.org/packages/source/g/geoai-py/geoai_py-0.1.5.tar.gz",
+ "version": "0.1.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/geoai-py.json"
  }
