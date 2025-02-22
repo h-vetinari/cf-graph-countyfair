@@ -42,7 +42,7 @@
   },
   "package": {
    "name": "python-zstd",
-   "version": "1.5.6.1"
+   "version": "1.5.6.4"
   },
   "requirements": {
    "build": [
@@ -54,7 +54,7 @@
     "python",
     "setuptools",
     "pip",
-    "zstd"
+    "zstd =1.5.6"
    ],
    "run": [
     "python"
@@ -62,8 +62,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "64a01e79d8d9592cd35f9de2ebc0376e0f94dc8150d6e3ae891a55f190d3490e",
-   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.1.tar.gz"
+   "patches": [
+    "setup.patch"
+   ],
+   "sha256": "f8adbf9813bf24b4faa6a15854137addec14c7166bc15491e3827ec88f3048bb",
+   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -130,7 +133,7 @@
   },
   "package": {
    "name": "python-zstd",
-   "version": "1.5.6.1"
+   "version": "1.5.6.4"
   },
   "requirements": {
    "build": [
@@ -142,7 +145,7 @@
     "python",
     "setuptools",
     "pip",
-    "zstd"
+    "zstd =1.5.6"
    ],
    "run": [
     "python"
@@ -150,8 +153,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "64a01e79d8d9592cd35f9de2ebc0376e0f94dc8150d6e3ae891a55f190d3490e",
-   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.1.tar.gz"
+   "patches": [
+    "setup.patch"
+   ],
+   "sha256": "f8adbf9813bf24b4faa6a15854137addec14c7166bc15491e3827ec88f3048bb",
+   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -187,7 +193,7 @@
   },
   "package": {
    "name": "python-zstd",
-   "version": "1.5.6.1"
+   "version": "1.5.6.4"
   },
   "requirements": {
    "build": [
@@ -199,7 +205,7 @@
     "python",
     "setuptools",
     "pip",
-    "zstd"
+    "zstd =1.5.6"
    ],
    "run": [
     "python"
@@ -207,8 +213,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "64a01e79d8d9592cd35f9de2ebc0376e0f94dc8150d6e3ae891a55f190d3490e",
-   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.1.tar.gz"
+   "patches": [
+    "setup.patch"
+   ],
+   "sha256": "f8adbf9813bf24b4faa6a15854137addec14c7166bc15491e3827ec88f3048bb",
+   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -274,7 +283,7 @@
   },
   "package": {
    "name": "python-zstd",
-   "version": "1.5.6.1"
+   "version": "1.5.6.4"
   },
   "requirements": {
    "build": [
@@ -286,7 +295,7 @@
     "python",
     "setuptools",
     "pip",
-    "zstd"
+    "zstd =1.5.6"
    ],
    "run": [
     "python"
@@ -294,8 +303,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "64a01e79d8d9592cd35f9de2ebc0376e0f94dc8150d6e3ae891a55f190d3490e",
-   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.1.tar.gz"
+   "patches": [
+    "setup.patch"
+   ],
+   "sha256": "f8adbf9813bf24b4faa6a15854137addec14c7166bc15491e3827ec88f3048bb",
+   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -356,7 +368,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/python-zstd.json"
  },
- "raw_meta_yaml": "{% set name = \"python-zstd\" %}\n{% set version = \"1.5.6.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/z/zstd/zstd-{{ version }}.tar.gz\n  sha256: 64a01e79d8d9592cd35f9de2ebc0376e0f94dc8150d6e3ae891a55f190d3490e\n\nbuild:\n  number: 0\n  script:\n    - export ZSTD_EXTERNAL=1  # [not win]\n    - set ZSTD_EXTERNAL=1  # [win]\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - pkg-config\n  host:\n    - python\n    - setuptools\n    - pip\n    - zstd\n  run:\n    - python\n\ntest:\n  imports:\n    - zstd\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/sergey-dryabzhinsky/python-zstd\n  summary: ZSTD Bindings for Python\n  license: BSD-2-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"python-zstd\" %}\n{% set version = \"1.5.6.4\" %}\n{% set zstd_version = '.'.join(version.split('.')[:-1]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/z/zstd/zstd-{{ version }}.tar.gz\n  sha256: f8adbf9813bf24b4faa6a15854137addec14c7166bc15491e3827ec88f3048bb\n  patches:\n    - setup.patch\n\nbuild:\n  number: 0\n  script:\n    - export ZSTD_EXTERNAL=1  # [not win]\n    - set ZSTD_EXTERNAL=1  # [win]\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - pkg-config\n  host:\n    - python\n    - setuptools\n    - pip\n    - zstd ={{ zstd_version }} \n  run:\n    - python\n\ntest:\n  imports:\n    - zstd\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/sergey-dryabzhinsky/python-zstd\n  summary: ZSTD Bindings for Python\n  license: BSD-2-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -420,7 +432,7 @@
     "pip",
     "python",
     "setuptools",
-    "zstd"
+    "zstd =1.5.6"
    ]
   },
   "run": {
@@ -436,8 +448,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.1.tar.gz",
- "version": "1.5.6.1",
+ "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.4.tar.gz",
+ "version": "1.5.6.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/python-zstd.json"
  },
@@ -462,7 +474,7 @@
   },
   "package": {
    "name": "python-zstd",
-   "version": "1.5.6.1"
+   "version": "1.5.6.4"
   },
   "requirements": {
    "build": [
@@ -474,7 +486,7 @@
     "python",
     "setuptools",
     "pip",
-    "zstd"
+    "zstd =1.5.6"
    ],
    "run": [
     "python"
@@ -482,8 +494,11 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "64a01e79d8d9592cd35f9de2ebc0376e0f94dc8150d6e3ae891a55f190d3490e",
-   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.1.tar.gz"
+   "patches": [
+    "setup.patch"
+   ],
+   "sha256": "f8adbf9813bf24b4faa6a15854137addec14c7166bc15491e3827ec88f3048bb",
+   "url": "https://pypi.org/packages/source/z/zstd/zstd-1.5.6.4.tar.gz"
   },
   "test": {
    "commands": [
