@@ -40,7 +40,7 @@
   },
   "package": {
    "name": "matid",
-   "version": "2.1.4"
+   "version": "2.1.5"
   },
   "requirements": {
    "host": [
@@ -55,18 +55,18 @@
     "chronic",
     "future",
     "networkx >=2.4",
-    "numpy <2.0.0",
+    "numpy",
     "python",
     "pybind11",
     "scipy",
     "scikit-learn",
-    "spglib >=1.15.0"
+    "spglib >=2.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7b6c8e023bd91b1f5eba3bae7a1aec7526ed621fc4a585406d69226146cf5f9d",
-   "url": "https://pypi.io/packages/source/m/matid/matid-2.1.4.tar.gz"
+   "sha256": "2cae04aae03947dbac85d37699faceb73498befd9efd34c6e9191982d6f2e4e4",
+   "url": "https://pypi.org/packages/source/m/matid/matid-2.1.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -141,7 +141,7 @@
   },
   "package": {
    "name": "matid",
-   "version": "2.1.4"
+   "version": "2.1.5"
   },
   "requirements": {
    "host": [
@@ -156,18 +156,18 @@
     "chronic",
     "future",
     "networkx >=2.4",
-    "numpy <2.0.0",
+    "numpy",
     "python",
     "pybind11",
     "scipy",
     "scikit-learn",
-    "spglib >=1.15.0"
+    "spglib >=2.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7b6c8e023bd91b1f5eba3bae7a1aec7526ed621fc4a585406d69226146cf5f9d",
-   "url": "https://pypi.io/packages/source/m/matid/matid-2.1.4.tar.gz"
+   "sha256": "2cae04aae03947dbac85d37699faceb73498befd9efd34c6e9191982d6f2e4e4",
+   "url": "https://pypi.org/packages/source/m/matid/matid-2.1.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -206,7 +206,7 @@
   },
   "package": {
    "name": "matid",
-   "version": "2.1.4"
+   "version": "2.1.5"
   },
   "requirements": {
    "host": [
@@ -221,18 +221,18 @@
     "chronic",
     "future",
     "networkx >=2.4",
-    "numpy <2.0.0",
+    "numpy",
     "python",
     "pybind11",
     "scipy",
     "scikit-learn",
-    "spglib >=1.15.0"
+    "spglib >=2.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7b6c8e023bd91b1f5eba3bae7a1aec7526ed621fc4a585406d69226146cf5f9d",
-   "url": "https://pypi.io/packages/source/m/matid/matid-2.1.4.tar.gz"
+   "sha256": "2cae04aae03947dbac85d37699faceb73498befd9efd34c6e9191982d6f2e4e4",
+   "url": "https://pypi.org/packages/source/m/matid/matid-2.1.5.tar.gz"
   },
   "test": {
    "commands": [
@@ -299,7 +299,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/matid.json"
  },
- "raw_meta_yaml": "{% set name = \"matid\" %}\n{% set version = \"2.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz\n  sha256: 7b6c8e023bd91b1f5eba3bae7a1aec7526ed621fc4a585406d69226146cf5f9d\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - pybind11\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n  run:\n    - ase\n    - chronic\n    - future\n    - networkx >=2.4\n    - numpy <2.0.0\n    - python\n    - pybind11\n    - scipy\n    - scikit-learn\n    - spglib >=1.15.0\n\ntest:\n  imports:\n    - matid\n    - matid.classification\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://singroup.github.io/matid/\n  license: Apache-2.0\n  license_family: Other\n  license_file: LICENSE\n  summary: MatID is a python package for identifying and analyzing atomistic systems based on their structure.\n  description: |\n    MatID is a python package for identifying and analyzing atomistic \n    systems based on their structure. MatID is designed to help \n    researchers in the automated analysis and labeling of atomistic \n    datasets.\n  doc_url: https://singroup.github.io/matid/\n  dev_url: https://github.com/SINGROUP/matid\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - lauri-codes\n",
+ "raw_meta_yaml": "{% set name = \"matid\" %}\n{% set version = \"2.1.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matid-{{ version }}.tar.gz\n  sha256: 2cae04aae03947dbac85d37699faceb73498befd9efd34c6e9191982d6f2e4e4\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - pybind11\n    - {{ compiler('cxx') }}\n    - {{ stdlib(\"c\") }}\n  run:\n    - ase\n    - chronic\n    - future\n    - networkx >=2.4\n    - numpy\n    - python\n    - pybind11\n    - scipy\n    - scikit-learn\n    - spglib >=2.0.0\n\ntest:\n  imports:\n    - matid\n    - matid.classification\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://singroup.github.io/matid/\n  license: Apache-2.0\n  license_family: Other\n  license_file: LICENSE\n  summary: MatID is a python package for identifying and analyzing atomistic systems based on their structure.\n  description: |\n    MatID is a python package for identifying and analyzing atomistic \n    systems based on their structure. MatID is designed to help \n    researchers in the automated analysis and labeling of atomistic \n    datasets.\n  doc_url: https://singroup.github.io/matid/\n  dev_url: https://github.com/SINGROUP/matid\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - lauri-codes\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -380,12 +380,12 @@
     "chronic",
     "future",
     "networkx >=2.4",
-    "numpy <2.0.0",
+    "numpy",
     "pybind11",
     "python",
     "scikit-learn",
     "scipy",
-    "spglib >=1.15.0"
+    "spglib >=2.0.0"
    ]
   },
   "test": {
@@ -395,8 +395,8 @@
    ]
   }
  },
- "url": "https://pypi.io/packages/source/m/matid/matid-2.1.4.tar.gz",
- "version": "2.1.4",
+ "url": "https://pypi.org/packages/source/m/matid/matid-2.1.5.tar.gz",
+ "version": "2.1.5",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/matid.json"
  },
@@ -423,7 +423,7 @@
   },
   "package": {
    "name": "matid",
-   "version": "2.1.4"
+   "version": "2.1.5"
   },
   "requirements": {
    "host": [
@@ -438,18 +438,18 @@
     "chronic",
     "future",
     "networkx >=2.4",
-    "numpy <2.0.0",
+    "numpy",
     "python",
     "pybind11",
     "scipy",
     "scikit-learn",
-    "spglib >=1.15.0"
+    "spglib >=2.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "7b6c8e023bd91b1f5eba3bae7a1aec7526ed621fc4a585406d69226146cf5f9d",
-   "url": "https://pypi.io/packages/source/m/matid/matid-2.1.4.tar.gz"
+   "sha256": "2cae04aae03947dbac85d37699faceb73498befd9efd34c6e9191982d6f2e4e4",
+   "url": "https://pypi.org/packages/source/m/matid/matid-2.1.5.tar.gz"
   },
   "test": {
    "commands": [
