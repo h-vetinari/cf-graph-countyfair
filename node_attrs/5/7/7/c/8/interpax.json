@@ -32,26 +32,26 @@
   },
   "package": {
    "name": "interpax",
-   "version": "0.3.5"
+   "version": "0.3.6"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "pip",
     "setuptools",
-    "versioneer-518"
+    "versioneer"
    ],
    "run": [
     "python >=3.9",
     "equinox >=0.11,<0.12",
-    "jax >=0.3.2,<0.5.0",
-    "numpy >=1.20.0,<2.2"
+    "jax >=0.3.2,<0.6.0",
+    "numpy >=1.20.0,<3"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f821bd28bdd60262c1dc553255458c8a4f104782197f33850c7aedb8b7858ab9",
-   "url": "https://pypi.org/packages/source/i/interpax/interpax-0.3.5.tar.gz"
+   "sha256": "c4306e9f13e6c781ccdb2bf36c42f3ed95534b7a40f8526046513bc5a9b051fc",
+   "url": "https://github.com/f0uriest/interpax/archive/refs/tags/v0.3.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -77,7 +77,7 @@
     "pip",
     "python",
     "setuptools",
-    "versioneer-518"
+    "versioneer"
    ]
   },
   "run": {
@@ -116,26 +116,26 @@
   },
   "package": {
    "name": "interpax",
-   "version": "0.3.5"
+   "version": "0.3.6"
   },
   "requirements": {
    "host": [
     "python 3.9",
     "pip",
     "setuptools",
-    "versioneer-518"
+    "versioneer"
    ],
    "run": [
     "python >=3.9",
     "equinox >=0.11,<0.12",
-    "jax >=0.3.2,<0.5.0",
-    "numpy >=1.20.0,<2.2"
+    "jax >=0.3.2,<0.6.0",
+    "numpy >=1.20.0,<3"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "f821bd28bdd60262c1dc553255458c8a4f104782197f33850c7aedb8b7858ab9",
-   "url": "https://pypi.org/packages/source/i/interpax/interpax-0.3.5.tar.gz"
+   "sha256": "c4306e9f13e6c781ccdb2bf36c42f3ed95534b7a40f8526046513bc5a9b051fc",
+   "url": "https://github.com/f0uriest/interpax/archive/refs/tags/v0.3.6.tar.gz"
   },
   "test": {
    "commands": [
@@ -164,7 +164,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/interpax.json"
  },
- "raw_meta_yaml": "{% set name = \"interpax\" %}\n{% set version = \"0.3.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/interpax-{{ version }}.tar.gz\n  sha256: f821bd28bdd60262c1dc553255458c8a4f104782197f33850c7aedb8b7858ab9\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - versioneer-518\n  run:\n    - python >={{ python_min }}\n    - equinox >=0.11,<0.12\n    - jax >=0.3.2,<0.5.0\n    - numpy >=1.20.0,<2.2\n\ntest:\n  imports:\n    - interpax\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/f0uriest/interpax\n  summary: Interpolation and function approximation with JAX\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
+ "raw_meta_yaml": "{% set name = \"interpax\" %}\n{% set version = \"0.3.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/f0uriest/interpax/archive/refs/tags/v{{ version }}.tar.gz\n  sha256: c4306e9f13e6c781ccdb2bf36c42f3ed95534b7a40f8526046513bc5a9b051fc\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - pip\n    - setuptools\n    - versioneer\n  run:\n    - python >={{ python_min }}\n    - equinox >=0.11,<0.12\n    - jax >=0.3.2,<0.6.0\n    - numpy >=1.20.0,<3\n\ntest:\n  imports:\n    - interpax\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/f0uriest/interpax\n  summary: Interpolation and function approximation with JAX\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -174,7 +174,7 @@
    "pip",
    "python",
    "setuptools",
-   "versioneer-518"
+   "versioneer"
   ]
  },
  "requirements": {
@@ -188,7 +188,7 @@
     "pip",
     "python",
     "setuptools",
-    "versioneer-518"
+    "versioneer"
    ]
   },
   "run": {
@@ -220,15 +220,15 @@
     "pip",
     "python 3.9",
     "setuptools",
-    "versioneer-518"
+    "versioneer"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
     "equinox >=0.11,<0.12",
-    "jax >=0.3.2,<0.5.0",
-    "numpy >=1.20.0,<2.2",
+    "jax >=0.3.2,<0.6.0",
+    "numpy >=1.20.0,<3",
     "python >=3.9"
    ]
   },
@@ -240,8 +240,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/i/interpax/interpax-0.3.5.tar.gz",
- "version": "0.3.5",
+ "url": "https://github.com/f0uriest/interpax/archive/refs/tags/v0.3.6.tar.gz",
+ "version": "0.3.6",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/interpax.json"
  }
