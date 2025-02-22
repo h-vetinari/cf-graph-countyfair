@@ -44,7 +44,6 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SylvainCorlay",
     "hajapy",
     "dbast"
    ]
@@ -137,7 +136,6 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SylvainCorlay",
     "hajapy",
     "dbast"
    ]
@@ -230,7 +228,6 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SylvainCorlay",
     "hajapy",
     "dbast"
    ]
@@ -323,7 +320,6 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SylvainCorlay",
     "hajapy",
     "dbast"
    ]
@@ -386,7 +382,6 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SylvainCorlay",
     "hajapy",
     "dbast"
    ]
@@ -479,7 +474,6 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SylvainCorlay",
     "hajapy",
     "dbast"
    ]
@@ -573,7 +567,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/python-rapidjson.json"
  },
- "raw_meta_yaml": "{% set name = \"python-rapidjson\" %}\n{% set version = \"1.20\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 115f08c86d2df7543c02605e77c84727cdabc4b08310d2f097e953efeaaa73eb\n\nbuild:\n  number: 1\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - rapidjson\n  requires:\n    - pytest\n    - pytz\n  source_files:\n    - tests\n  commands:\n    - pytest tests\n\nabout:\n  home: https://github.com/python-rapidjson/python-rapidjson\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python wrapper around rapidjson\n  description: |\n    Python wrapper around RapidJSON. RapidJSON is an extremely fast C++ json serialization library.\n    We do not support legacy python versions, you will need to upgrade to Python 3 to use this library.\n  doc_url: https://python-rapidjson.readthedocs.io\n  dev_url: https://github.com/python-rapidjson/python-rapidjson\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - hajapy\n    - dbast\n",
+ "raw_meta_yaml": "{% set name = \"python-rapidjson\" %}\n{% set version = \"1.20\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 115f08c86d2df7543c02605e77c84727cdabc4b08310d2f097e953efeaaa73eb\n\nbuild:\n  number: 1\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  build:\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - {{ compiler('c') }}\n    - {{ stdlib(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - rapidjson\n  requires:\n    - pytest\n    - pytz\n  source_files:\n    - tests\n  commands:\n    - pytest tests\n\nabout:\n  home: https://github.com/python-rapidjson/python-rapidjson\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python wrapper around rapidjson\n  description: |\n    Python wrapper around RapidJSON. RapidJSON is an extremely fast C++ json serialization library.\n    We do not support legacy python versions, you will need to upgrade to Python 3 to use this library.\n  doc_url: https://python-rapidjson.readthedocs.io\n  dev_url: https://github.com/python-rapidjson/python-rapidjson\n\nextra:\n  recipe-maintainers:\n    - hajapy\n    - dbast\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -676,7 +670,6 @@
   },
   "extra": {
    "recipe-maintainers": [
-    "SylvainCorlay",
     "hajapy",
     "dbast"
    ]
