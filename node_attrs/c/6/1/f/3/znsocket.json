@@ -39,27 +39,27 @@
   },
   "package": {
    "name": "znsocket",
-   "version": "0.2.7"
+   "version": "0.2.8"
   },
   "requirements": {
    "host": [
     "python 3.10",
-    "poetry-core",
+    "hatchling",
     "pip"
    ],
    "run": [
     "python >=3.10,<4.0.0",
-    "python-socketio >=5.11.0,<6.0.0",
-    "eventlet >=0.0.0,<1.0.0",
-    "typer >=0.0.0,<1.0.0",
-    "znjson >=0.2.3,<0.3.0",
-    "redis-py >=5.0.0,<6.0.0"
+    "python-socketio >=5.12.1",
+    "eventlet >=0.39.0",
+    "typer >=0.13",
+    "znjson >=0.2.6",
+    "redis-py >=5.2.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1e5f8225af2ccaa82334064f2054142e68caa4980a64f9d2711761677d8d323e",
-   "url": "https://pypi.org/packages/source/z/znsocket/znsocket-0.2.7.tar.gz"
+   "sha256": "e2190928775414fdd426dc342c1cc2464eb449e6a669b256c54876c94ea1163b",
+   "url": "https://pypi.org/packages/source/z/znsocket/znsocket-0.2.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -83,8 +83,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
     "python"
    ]
   },
@@ -129,27 +129,27 @@
   },
   "package": {
    "name": "znsocket",
-   "version": "0.2.7"
+   "version": "0.2.8"
   },
   "requirements": {
    "host": [
     "python 3.10",
-    "poetry-core",
+    "hatchling",
     "pip"
    ],
    "run": [
     "python >=3.10,<4.0.0",
-    "python-socketio >=5.11.0,<6.0.0",
-    "eventlet >=0.0.0,<1.0.0",
-    "typer >=0.0.0,<1.0.0",
-    "znjson >=0.2.3,<0.3.0",
-    "redis-py >=5.0.0,<6.0.0"
+    "python-socketio >=5.12.1",
+    "eventlet >=0.39.0",
+    "typer >=0.13",
+    "znjson >=0.2.6",
+    "redis-py >=5.2.1"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "1e5f8225af2ccaa82334064f2054142e68caa4980a64f9d2711761677d8d323e",
-   "url": "https://pypi.org/packages/source/z/znsocket/znsocket-0.2.7.tar.gz"
+   "sha256": "e2190928775414fdd426dc342c1cc2464eb449e6a669b256c54876c94ea1163b",
+   "url": "https://pypi.org/packages/source/z/znsocket/znsocket-0.2.8.tar.gz"
   },
   "test": {
    "commands": [
@@ -179,13 +179,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/znsocket.json"
  },
- "raw_meta_yaml": "{% set name = \"znsocket\" %}\n{% set version = \"0.2.7\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/znsocket-{{ version }}.tar.gz\n  sha256: 1e5f8225af2ccaa82334064f2054142e68caa4980a64f9d2711761677d8d323e\n\nbuild:\n  entry_points:\n    - znsocket = znsocket.cli:app\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n    - python-socketio >=5.11.0,<6.0.0\n    - eventlet >=0.0.0,<1.0.0\n    - typer >=0.0.0,<1.0.0\n    - znjson >=0.2.3,<0.3.0\n    - redis-py >=5.0.0,<6.0.0\n\ntest:\n  imports:\n    - znsocket\n  commands:\n    - pip check\n    - znsocket --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zincware/ZnSocket\n  summary: Python implementation of a Redis-compatible API using websockets.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"znsocket\" %}\n{% set version = \"0.2.8\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/znsocket-{{ version }}.tar.gz\n  sha256: e2190928775414fdd426dc342c1cc2464eb449e6a669b256c54876c94ea1163b\n\nbuild:\n  entry_points:\n    - znsocket = znsocket.cli:app\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }},<4.0.0\n    - python-socketio >=5.12.1\n    - eventlet >=0.39.0\n    - typer >=0.13\n    - znjson >=0.2.6\n    - redis-py >=5.2.1\n\ntest:\n  imports:\n    - znsocket\n  commands:\n    - pip check\n    - znsocket --help\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zincware/ZnSocket\n  summary: Python implementation of a Redis-compatible API using websockets.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
    "eventlet",
+   "hatchling",
    "pip",
-   "poetry-core",
    "python",
    "python-socketio",
    "redis-py",
@@ -201,8 +201,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
     "python"
    ]
   },
@@ -234,20 +234,20 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
     "python 3.10"
    ]
   },
   "run": {
    "__set__": true,
    "elements": [
-    "eventlet >=0.0.0,<1.0.0",
+    "eventlet >=0.39.0",
     "python >=3.10,<4.0.0",
-    "python-socketio >=5.11.0,<6.0.0",
-    "redis-py >=5.0.0,<6.0.0",
-    "typer >=0.0.0,<1.0.0",
-    "znjson >=0.2.3,<0.3.0"
+    "python-socketio >=5.12.1",
+    "redis-py >=5.2.1",
+    "typer >=0.13",
+    "znjson >=0.2.6"
    ]
   },
   "test": {
@@ -258,8 +258,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/z/znsocket/znsocket-0.2.7.tar.gz",
- "version": "0.2.7",
+ "url": "https://pypi.org/packages/source/z/znsocket/znsocket-0.2.8.tar.gz",
+ "version": "0.2.8",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/znsocket.json"
  }
