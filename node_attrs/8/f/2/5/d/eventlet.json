@@ -38,7 +38,8 @@
   "extra": {
    "recipe-maintainers": [
     "synapticarbors",
-    "anguslees"
+    "anguslees",
+    "jan-janssen"
    ]
   },
   "outputs": [
@@ -48,13 +49,13 @@
     "requirements": {
      "build": [],
      "host": [
-      "python ==3.7",
+      "python 3.8.*",
       "pip",
       "hatch-vcs >=0.3",
       "hatchling >=1.12.2"
      ],
      "run": [
-      "python >=3.7",
+      "python >=3.8",
       "greenlet >=1.0",
       "dnspython >=1.15.0",
       "pyopenssl"
@@ -78,7 +79,7 @@
      {
       "requirements": {
        "run": [
-        "python 3.7"
+        "python =3.8"
        ]
       },
       "script": "python -c \"import eventlet\""
@@ -88,17 +89,17 @@
   ],
   "package": {
    "name": "eventlet",
-   "version": "0.38.0"
+   "version": "0.39.0"
   },
   "requirements": {
    "host": [
-    "python ==3.7",
+    "python 3.8.*",
     "pip",
     "hatch-vcs >=0.3",
     "hatchling >=1.12.2"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.8",
     "greenlet >=1.0",
     "dnspython >=1.15.0",
     "pyopenssl"
@@ -106,8 +107,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "a5df970a2431526e4973bd5810bb8c41aa4da18baa531aa18799302c24e19510",
-   "url": "https://pypi.org/packages/source/e/eventlet/eventlet-0.38.0.tar.gz"
+   "sha256": "01ba0aa6ee2452690fc02b274a2409598a13b997c7b5af9dc66600fa42015a79",
+   "url": "https://pypi.org/packages/source/e/eventlet/eventlet-0.39.0.tar.gz"
   }
  },
  "linux_64_requirements": {
@@ -159,7 +160,8 @@
   "extra": {
    "recipe-maintainers": [
     "synapticarbors",
-    "anguslees"
+    "anguslees",
+    "jan-janssen"
    ]
   },
   "outputs": [
@@ -169,13 +171,13 @@
     "requirements": {
      "build": [],
      "host": [
-      "python ==3.7",
+      "python 3.8.*",
       "pip",
       "hatch-vcs >=0.3",
       "hatchling >=1.12.2"
      ],
      "run": [
-      "python >=3.7",
+      "python >=3.8",
       "greenlet >=1.0",
       "dnspython >=1.15.0",
       "pyopenssl"
@@ -199,7 +201,7 @@
      {
       "requirements": {
        "run": [
-        "python 3.7"
+        "python =3.8"
        ]
       },
       "script": "python -c \"import eventlet\""
@@ -209,17 +211,17 @@
   ],
   "package": {
    "name": "eventlet",
-   "version": "0.38.0"
+   "version": "0.39.0"
   },
   "requirements": {
    "host": [
-    "python ==3.7",
+    "python 3.8.*",
     "pip",
     "hatch-vcs >=0.3",
     "hatchling >=1.12.2"
    ],
    "run": [
-    "python >=3.7",
+    "python >=3.8",
     "greenlet >=1.0",
     "dnspython >=1.15.0",
     "pyopenssl"
@@ -227,8 +229,8 @@
   },
   "schema_version": 1,
   "source": {
-   "sha256": "a5df970a2431526e4973bd5810bb8c41aa4da18baa531aa18799302c24e19510",
-   "url": "https://pypi.org/packages/source/e/eventlet/eventlet-0.38.0.tar.gz"
+   "sha256": "01ba0aa6ee2452690fc02b274a2409598a13b997c7b5af9dc66600fa42015a79",
+   "url": "https://pypi.org/packages/source/e/eventlet/eventlet-0.39.0.tar.gz"
   }
  },
  "name": "eventlet",
@@ -238,14 +240,14 @@
    "eventlet"
   ]
  },
- "parsing_error": "feedstock parsing error: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error CalledProcessError raised:\n1, ['rattler-build', 'build', '--render-only', '--variant-config', PosixPath('/tmp/tmphj1lv22s/eventlet-feedstock-main/.ci_support/linux_64_.yaml'), '--build-platform', 'linux-64']\nTraceback (most recent call last):\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/make_graph.py\", line 102, in try_load_feedstock\n    data = load_feedstock(name, attrs.data, mark_not_archived=mark_not_archived)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 705, in load_feedstock\n    return load_feedstock_containerized(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/cf-scripts/cf-scripts/cf-scripts/conda_forge_tick/feedstock_parser.py\", line 657, in load_feedstock_containerized\n    data = run_container_operation(\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/micromamba/envs/cf-scripts/lib/python3.11/site-packages/conda_forge_feedstock_ops/container_utils.py\", line 264, in run_container_operation\n    raise ContainerRuntimeError(\nconda_forge_feedstock_ops.container_utils.ContainerRuntimeError: Error running 'conda-forge-tick-container parse-feedstock --existing-feedstock-node-attrs - --log-level info --mark-not-archived' in container - error CalledProcessError raised:\n1, ['rattler-build', 'build', '--render-only', '--variant-config', PosixPath('/tmp/tmphj1lv22s/eventlet-feedstock-main/.ci_support/linux_64_.yaml'), '--build-platform', 'linux-64']\n",
+ "parsing_error": false,
  "platforms": [
   "linux_64"
  ],
  "pr_info": {
   "__lazy_json__": "pr_info/eventlet.json"
  },
- "raw_meta_yaml": "context:\n  version: 0.38.0\n  python_min: \"3.7\"\n\npackage:\n  name: eventlet\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/e/eventlet/eventlet-${{ version }}.tar.gz\n  sha256: a5df970a2431526e4973bd5810bb8c41aa4da18baa531aa18799302c24e19510\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install . -vv\n\nrequirements:\n  host:\n    - python ${{ python_min }}\n    - pip\n    - hatch-vcs >=0.3\n    - hatchling >=1.12.2\n  run:\n    - python >=${{ python_min }}\n    - greenlet >=1.0\n    - dnspython >=1.15.0\n    - pyopenssl\n\ntests:\n  - python:\n      imports:\n        - eventlet\n        - eventlet.green\n        - eventlet.green.OpenSSL\n        - eventlet.green.http\n        - eventlet.green.urllib\n        - eventlet.greenio\n        - eventlet.hubs\n        - eventlet.support\n      pip_check: true\n  - script:\n      - python -c \"import eventlet\"\n    requirements:\n      run:\n        - python ${{ python_min }}\n\nabout:\n  license: MIT\n  license_file: LICENSE\n  summary: Highly concurrent networking library\n  homepage: http://eventlet.net\n  repository: https://github.com/eventlet/eventlet\n  documentation: http://eventlet.net\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n    - anguslees\n",
+ "raw_meta_yaml": "context:\n  version: 0.39.0\n  python_min: \"3.8\"\n\npackage:\n  name: eventlet\n  version: ${{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/e/eventlet/eventlet-${{ version }}.tar.gz\n  sha256: 01ba0aa6ee2452690fc02b274a2409598a13b997c7b5af9dc66600fa42015a79\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install . -vv\n\nrequirements:\n  host:\n    - python =${{ python_min }}\n    - pip\n    - hatch-vcs >=0.3\n    - hatchling >=1.12.2\n  run:\n    - python >=${{ python_min }}\n    - greenlet >=1.0\n    - dnspython >=1.15.0\n    - pyopenssl\n\ntests:\n  - python:\n      imports:\n        - eventlet\n        - eventlet.green\n        - eventlet.green.OpenSSL\n        - eventlet.green.http\n        - eventlet.green.urllib\n        - eventlet.greenio\n        - eventlet.hubs\n        - eventlet.support\n      pip_check: true\n  - script:\n      - python -c \"import eventlet\"\n    requirements:\n      run:\n        - python =${{ python_min }}\n\nabout:\n  license: MIT\n  license_file: LICENSE\n  summary: Highly concurrent networking library\n  homepage: http://eventlet.net\n  repository: https://github.com/eventlet/eventlet\n  documentation: http://eventlet.net\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n    - anguslees\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -301,7 +303,7 @@
     "hatch-vcs >=0.3",
     "hatchling >=1.12.2",
     "pip",
-    "python ==3.7"
+    "python 3.8.*"
    ]
   },
   "run": {
@@ -310,19 +312,19 @@
     "dnspython >=1.15.0",
     "greenlet >=1.0",
     "pyopenssl",
-    "python >=3.7"
+    "python >=3.8"
    ]
   },
   "test": {
    "__set__": true,
    "elements": [
     "pip",
-    "python 3.7"
+    "python =3.8"
    ]
   }
  },
- "url": "https://pypi.org/packages/source/e/eventlet/eventlet-0.38.0.tar.gz",
- "version": "0.38.0",
+ "url": "https://pypi.org/packages/source/e/eventlet/eventlet-0.39.0.tar.gz",
+ "version": "0.39.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/eventlet.json"
  }
