@@ -36,7 +36,7 @@
   },
   "package": {
    "name": "splines",
-   "version": "0.3.0"
+   "version": "0.3.1"
   },
   "requirements": {
    "host": [
@@ -52,8 +52,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c7d2fa8c217a468753307d489bd1fba59532c77aec07ef1e0caa83d1f378f06d",
-   "url": "https://pypi.org/packages/source/s/splines/splines-0.3.0.tar.gz"
+   "sha256": "8a5cf09709254b7872e8bbbfa03aad1dcfa19ec7a49575f3de987c3be17e8a7a",
+   "url": "https://pypi.org/packages/source/s/splines/splines-0.3.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -116,7 +116,7 @@
   },
   "package": {
    "name": "splines",
-   "version": "0.3.0"
+   "version": "0.3.1"
   },
   "requirements": {
    "host": [
@@ -132,8 +132,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "c7d2fa8c217a468753307d489bd1fba59532c77aec07ef1e0caa83d1f378f06d",
-   "url": "https://pypi.org/packages/source/s/splines/splines-0.3.0.tar.gz"
+   "sha256": "8a5cf09709254b7872e8bbbfa03aad1dcfa19ec7a49575f3de987c3be17e8a7a",
+   "url": "https://pypi.org/packages/source/s/splines/splines-0.3.1.tar.gz"
   },
   "test": {
    "commands": [
@@ -162,7 +162,7 @@
  "pr_info": {
   "__lazy_json__": "pr_info/splines.json"
  },
- "raw_meta_yaml": "{% set name = \"splines\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/splines-{{ version }}.tar.gz\n  sha256: c7d2fa8c217a468753307d489bd1fba59532c77aec07ef1e0caa83d1f378f06d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=40.8.0\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n\ntest:\n  imports:\n    - splines\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://splines.readthedocs.io/\n  summary: Splines in Euclidean Space and Beyond\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"splines\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/splines-{{ version }}.tar.gz\n  sha256: 8a5cf09709254b7872e8bbbfa03aad1dcfa19ec7a49575f3de987c3be17e8a7a\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - setuptools >=40.8.0\n    - wheel\n    - pip\n  run:\n    - python >={{ python_min }}\n    - numpy\n\ntest:\n  imports:\n    - splines\n  commands:\n    - pip check\n  requires:\n    - pip\n    - python {{ python_min }}\n\nabout:\n  home: https://splines.readthedocs.io/\n  summary: Splines in Euclidean Space and Beyond\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
@@ -232,8 +232,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/s/splines/splines-0.3.0.tar.gz",
- "version": "0.3.0",
+ "url": "https://pypi.org/packages/source/s/splines/splines-0.3.1.tar.gz",
+ "version": "0.3.1",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/splines.json"
  }
