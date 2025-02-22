@@ -21,12 +21,18 @@
    "doc_url": "https://whenever.readthedocs.io/en/latest/",
    "home": "https://github.com/ariebovenberg/whenever",
    "license": "MIT",
-   "license_file": "LICENSE",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
    "summary": "Foolproof datetimes for maintainable code"
   },
   "build": {
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
@@ -35,13 +41,14 @@
   },
   "package": {
    "name": "whenever",
-   "version": "0.6.17"
+   "version": "0.7.0"
   },
   "requirements": {
    "build": [
     "c_stdlib_stub",
     "c_compiler_stub",
-    "rust_compiler_stub"
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
    ],
    "host": [
     "python",
@@ -56,8 +63,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9c4bfe755c8f06726c4031dbbecd0a7710e2058bc2f3b4e4e331755af015f55f",
-   "url": "https://pypi.org/packages/source/w/whenever/whenever-0.6.17.tar.gz"
+   "sha256": "1b559294d8287ab9b2f63d9c3ec28be8a01f640ccf6286533d8473090b1814d9",
+   "url": "https://pypi.org/packages/source/w/whenever/whenever-0.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -77,6 +84,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "rust_compiler_stub"
    ]
   },
@@ -108,12 +116,18 @@
    "doc_url": "https://whenever.readthedocs.io/en/latest/",
    "home": "https://github.com/ariebovenberg/whenever",
    "license": "MIT",
-   "license_file": "LICENSE",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
    "summary": "Foolproof datetimes for maintainable code"
   },
   "build": {
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
@@ -122,13 +136,14 @@
   },
   "package": {
    "name": "whenever",
-   "version": "0.6.17"
+   "version": "0.7.0"
   },
   "requirements": {
    "build": [
     "c_stdlib_stub",
     "c_compiler_stub",
-    "rust_compiler_stub"
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
    ],
    "host": [
     "python",
@@ -144,8 +159,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9c4bfe755c8f06726c4031dbbecd0a7710e2058bc2f3b4e4e331755af015f55f",
-   "url": "https://pypi.org/packages/source/w/whenever/whenever-0.6.17.tar.gz"
+   "sha256": "1b559294d8287ab9b2f63d9c3ec28be8a01f640ccf6286533d8473090b1814d9",
+   "url": "https://pypi.org/packages/source/w/whenever/whenever-0.7.0.tar.gz"
   },
   "test": {
    "commands": null,
@@ -163,12 +178,18 @@
    "doc_url": "https://whenever.readthedocs.io/en/latest/",
    "home": "https://github.com/ariebovenberg/whenever",
    "license": "MIT",
-   "license_file": "LICENSE",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
    "summary": "Foolproof datetimes for maintainable code"
   },
   "build": {
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
@@ -177,13 +198,14 @@
   },
   "package": {
    "name": "whenever",
-   "version": "0.6.17"
+   "version": "0.7.0"
   },
   "requirements": {
    "build": [
     "c_stdlib_stub",
     "c_compiler_stub",
-    "rust_compiler_stub"
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
    ],
    "host": [
     "python",
@@ -198,8 +220,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9c4bfe755c8f06726c4031dbbecd0a7710e2058bc2f3b4e4e331755af015f55f",
-   "url": "https://pypi.org/packages/source/w/whenever/whenever-0.6.17.tar.gz"
+   "sha256": "1b559294d8287ab9b2f63d9c3ec28be8a01f640ccf6286533d8473090b1814d9",
+   "url": "https://pypi.org/packages/source/w/whenever/whenever-0.7.0.tar.gz"
   },
   "test": {
    "commands": [
@@ -219,6 +241,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "rust_compiler_stub"
    ]
   },
@@ -260,12 +283,13 @@
  "pr_info": {
   "__lazy_json__": "pr_info/whenever.json"
  },
- "raw_meta_yaml": "{% set name = \"whenever\" %}\n{% set version = \"0.6.17\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/whenever-{{ version }}.tar.gz\n  sha256: 9c4bfe755c8f06726c4031dbbecd0a7710e2058bc2f3b4e4e331755af015f55f\n\nbuild:\n  skip: true  # [py<39]\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  build:\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('rust') }}\n  host:\n    - python\n    - setuptools-rust >=1.9\n    - pip\n    - setuptools\n    - wheel\n  run:\n    - python\n    - tzdata >=2020.1  # [win]\n\ntest:\n  imports:\n    - whenever\n  commands:\n    # only do pip check with linux and osx because somehow it fails to detect tzdata even though it's clearly installed on win builds\n    - pip check  # [not win]\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/ariebovenberg/whenever\n  doc_url: https://whenever.readthedocs.io/en/latest/\n  summary: Foolproof datetimes for maintainable code\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
+ "raw_meta_yaml": "{% set name = \"whenever\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/whenever-{{ version }}.tar.gz\n  sha256: 1b559294d8287ab9b2f63d9c3ec28be8a01f640ccf6286533d8473090b1814d9\n\nbuild:\n  skip: true  # [py<39]\n  script:\n    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml\n    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  build:\n    - {{ stdlib('c') }}\n    - {{ compiler('c') }}\n    - {{ compiler('rust') }}\n    - cargo-bundle-licenses\n  host:\n    - python\n    - setuptools-rust >=1.9\n    - pip\n    - setuptools\n    - wheel\n  run:\n    - python\n    - tzdata >=2020.1  # [win]\n\ntest:\n  imports:\n    - whenever\n  commands:\n    # only do pip check with linux and osx because somehow it fails to detect tzdata even though it's clearly installed on win builds\n    - pip check  # [not win]\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/ariebovenberg/whenever\n  doc_url: https://whenever.readthedocs.io/en/latest/\n  summary: Foolproof datetimes for maintainable code\n  license: MIT\n  license_file:\n    - LICENSE\n    - THIRDPARTY.yml\n\nextra:\n  recipe-maintainers:\n    - thewchan\n",
  "req": {
   "__set__": true,
   "elements": [
    "c_compiler_stub",
    "c_stdlib_stub",
+   "cargo-bundle-licenses",
    "pip",
    "python",
    "rust_compiler_stub",
@@ -281,6 +305,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "rust_compiler_stub"
    ]
   },
@@ -319,6 +344,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "rust_compiler_stub"
    ]
   },
@@ -346,8 +372,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/w/whenever/whenever-0.6.17.tar.gz",
- "version": "0.6.17",
+ "url": "https://pypi.org/packages/source/w/whenever/whenever-0.7.0.tar.gz",
+ "version": "0.7.0",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/whenever.json"
  },
@@ -356,12 +382,18 @@
    "doc_url": "https://whenever.readthedocs.io/en/latest/",
    "home": "https://github.com/ariebovenberg/whenever",
    "license": "MIT",
-   "license_file": "LICENSE",
+   "license_file": [
+    "LICENSE",
+    "THIRDPARTY.yml"
+   ],
    "summary": "Foolproof datetimes for maintainable code"
   },
   "build": {
    "number": "0",
-   "script": "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   "script": [
+    "cargo-bundle-licenses --format yaml --output THIRDPARTY.yml",
+    "PYTHON -m pip install . -vv --no-deps --no-build-isolation"
+   ]
   },
   "extra": {
    "recipe-maintainers": [
@@ -370,13 +402,14 @@
   },
   "package": {
    "name": "whenever",
-   "version": "0.6.17"
+   "version": "0.7.0"
   },
   "requirements": {
    "build": [
     "c_stdlib_stub",
     "c_compiler_stub",
-    "rust_compiler_stub"
+    "rust_compiler_stub",
+    "cargo-bundle-licenses"
    ],
    "host": [
     "python",
@@ -392,8 +425,8 @@
   },
   "schema_version": 0,
   "source": {
-   "sha256": "9c4bfe755c8f06726c4031dbbecd0a7710e2058bc2f3b4e4e331755af015f55f",
-   "url": "https://pypi.org/packages/source/w/whenever/whenever-0.6.17.tar.gz"
+   "sha256": "1b559294d8287ab9b2f63d9c3ec28be8a01f640ccf6286533d8473090b1814d9",
+   "url": "https://pypi.org/packages/source/w/whenever/whenever-0.7.0.tar.gz"
   },
   "test": {
    "commands": null,
@@ -411,6 +444,7 @@
    "elements": [
     "c_compiler_stub",
     "c_stdlib_stub",
+    "cargo-bundle-licenses",
     "rust_compiler_stub"
    ]
   },
