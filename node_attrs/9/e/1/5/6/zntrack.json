@@ -39,12 +39,12 @@
   },
   "package": {
    "name": "zntrack",
-   "version": "0.8.0"
+   "version": "0.8.4"
   },
   "requirements": {
    "host": [
     "python 3.10",
-    "poetry-core",
+    "hatchling",
     "pip"
    ],
    "run": [
@@ -52,17 +52,17 @@
     "dvc >=3.50.0,<4.0.0",
     "pyyaml >=6.0.0,<7.0.0",
     "tqdm >=4.0.0,<5.0.0",
-    "znjson >=0.2.0,<0.3.0",
-    "znflow >=0.2.2,<0.3.0",
-    "typer >=0.13.0,<0.14.0",
+    "znjson >=0.2.6,<0.3.0",
+    "znflow >=0.2.5,<0.3.0",
+    "typer >=0.15.0,<0.16.0",
     "znfields >=0.1.2,<0.2.0",
     "pandas >=2.0.0,<3.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5ad0dd4ec517880cb49ac794e0ff990b7dc2ba8395f1b3d9326998ecb69ebe97",
-   "url": "https://pypi.org/packages/source/z/zntrack/zntrack-0.8.0.tar.gz"
+   "sha256": "d03785dc675db0941e7401c4c3e7ed29d3f1e6af70905e6e5c6817f2a759e2f1",
+   "url": "https://pypi.org/packages/source/z/zntrack/zntrack-0.8.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -87,8 +87,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
     "python"
    ]
   },
@@ -137,12 +137,12 @@
   },
   "package": {
    "name": "zntrack",
-   "version": "0.8.0"
+   "version": "0.8.4"
   },
   "requirements": {
    "host": [
     "python 3.10",
-    "poetry-core",
+    "hatchling",
     "pip"
    ],
    "run": [
@@ -150,17 +150,17 @@
     "dvc >=3.50.0,<4.0.0",
     "pyyaml >=6.0.0,<7.0.0",
     "tqdm >=4.0.0,<5.0.0",
-    "znjson >=0.2.0,<0.3.0",
-    "znflow >=0.2.2,<0.3.0",
-    "typer >=0.13.0,<0.14.0",
+    "znjson >=0.2.6,<0.3.0",
+    "znflow >=0.2.5,<0.3.0",
+    "typer >=0.15.0,<0.16.0",
     "znfields >=0.1.2,<0.2.0",
     "pandas >=2.0.0,<3.0.0"
    ]
   },
   "schema_version": 0,
   "source": {
-   "sha256": "5ad0dd4ec517880cb49ac794e0ff990b7dc2ba8395f1b3d9326998ecb69ebe97",
-   "url": "https://pypi.org/packages/source/z/zntrack/zntrack-0.8.0.tar.gz"
+   "sha256": "d03785dc675db0941e7401c4c3e7ed29d3f1e6af70905e6e5c6817f2a759e2f1",
+   "url": "https://pypi.org/packages/source/z/zntrack/zntrack-0.8.4.tar.gz"
   },
   "test": {
    "commands": [
@@ -191,14 +191,14 @@
  "pr_info": {
   "__lazy_json__": "pr_info/zntrack.json"
  },
- "raw_meta_yaml": "{% set name = \"zntrack\" %}\n{% set version = \"0.8.0\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zntrack-{{ version }}.tar.gz\n  sha256: 5ad0dd4ec517880cb49ac794e0ff990b7dc2ba8395f1b3d9326998ecb69ebe97\n\nbuild:\n  entry_points:\n    - zntrack = zntrack.cli:app\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - poetry-core\n    - pip\n  run:\n    - python >={{ python_min }},<4.0\n    - dvc >=3.50.0,<4.0.0\n    - pyyaml >=6.0.0,<7.0.0\n    - tqdm >=4.0.0,<5.0.0\n    - znjson >=0.2.0,<0.3.0\n    - znflow >=0.2.2,<0.3.0\n    - typer >=0.13.0,<0.14.0\n    - znfields >=0.1.2,<0.2.0\n    - pandas >=2.0.0,<3.0.0\n\ntest:\n  imports:\n    - zntrack\n  commands:\n    - pip check\n    - zntrack --help\n  requires:\n    - pip\n    - git\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zincware/ZnTrack\n  summary: Create, Run and Benchmark DVC Pipelines in Python\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml": "{% set name = \"zntrack\" %}\n{% set version = \"0.8.4\" %}\n{% set python_min = \"3.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zntrack-{{ version }}.tar.gz\n  sha256: d03785dc675db0941e7401c4c3e7ed29d3f1e6af70905e6e5c6817f2a759e2f1\n\nbuild:\n  entry_points:\n    - zntrack = zntrack.cli:app\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation\n  number: 0\n\nrequirements:\n  host:\n    - python {{ python_min }}\n    - hatchling\n    - pip\n  run:\n    - python >={{ python_min }},<4.0\n    - dvc >=3.50.0,<4.0.0\n    - pyyaml >=6.0.0,<7.0.0\n    - tqdm >=4.0.0,<5.0.0\n    - znjson >=0.2.6,<0.3.0\n    - znflow >=0.2.5,<0.3.0\n    - typer >=0.15.0,<0.16.0\n    - znfields >=0.1.2,<0.2.0\n    - pandas >=2.0.0,<3.0.0\n\ntest:\n  imports:\n    - zntrack\n  commands:\n    - pip check\n    - zntrack --help\n  requires:\n    - pip\n    - git\n    - python {{ python_min }}\n\nabout:\n  home: https://github.com/zincware/ZnTrack\n  summary: Create, Run and Benchmark DVC Pipelines in Python\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req": {
   "__set__": true,
   "elements": [
    "dvc",
+   "hatchling",
    "pandas",
    "pip",
-   "poetry-core",
    "python",
    "pyyaml",
    "tqdm",
@@ -216,8 +216,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
     "python"
    ]
   },
@@ -253,8 +253,8 @@
   "host": {
    "__set__": true,
    "elements": [
+    "hatchling",
     "pip",
-    "poetry-core",
     "python 3.10"
    ]
   },
@@ -266,10 +266,10 @@
     "python >=3.10,<4.0",
     "pyyaml >=6.0.0,<7.0.0",
     "tqdm >=4.0.0,<5.0.0",
-    "typer >=0.13.0,<0.14.0",
+    "typer >=0.15.0,<0.16.0",
     "znfields >=0.1.2,<0.2.0",
-    "znflow >=0.2.2,<0.3.0",
-    "znjson >=0.2.0,<0.3.0"
+    "znflow >=0.2.5,<0.3.0",
+    "znjson >=0.2.6,<0.3.0"
    ]
   },
   "test": {
@@ -281,8 +281,8 @@
    ]
   }
  },
- "url": "https://pypi.org/packages/source/z/zntrack/zntrack-0.8.0.tar.gz",
- "version": "0.8.0",
+ "url": "https://pypi.org/packages/source/z/zntrack/zntrack-0.8.4.tar.gz",
+ "version": "0.8.4",
  "version_pr_info": {
   "__lazy_json__": "version_pr_info/zntrack.json"
  }
